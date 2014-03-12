@@ -1,0 +1,393 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\providecommand{\versionortoday}{(Unknown version) - \today}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Master’s thesis proposal"
+\pdf_author "Joel Purra"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Master’s thesis proposal
+\end_layout
+
+\begin_layout Author
+Joel Purra, mig@joelpurra.se, joepu444, 070-3521212
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+versionortoday
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+About The Internet Infrastructure Foundation
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (.SE)
+\end_layout
+
+\begin_layout Standard
+.SE is also known as Stiftelsen för internetinfrastruktur (IIS).
+\end_layout
+
+\begin_layout Standard
+The Internet Infrastructure Foundation is an independent organization, responsib
+le for the Swedish top level domain, and working for the benefit of the
+ public that promotes the positive development of the internet in Sweden.
+ Their head office is in Stockholm.
+ In 2012 they had 61 employees and a turnover of almost 120 MSEK.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/docs/SE-Arsredovisning-2012.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Background and context
+\end_layout
+
+\begin_layout Standard
+Part of .SE’s research efforts include continuously analyzing internet infrastruc
+ture and usage in Sweden.
+ Yearly reports convey the status of, for example, 
+\emph on
+Swedes and the internet
+\emph default
+ and 
+\emph on
+.se health status
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/vad-vi-gor/halsolaget/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ to the public, both in Swedish
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/lar-dig-mer/rapporter/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and English
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/english/reports/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Information and statistics are also published on a separate portal, in
+ collaboration with other organizations.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/vad-vi-gor/internetstatistik/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The report 
+\emph on
+.se health status
+\emph default
+ is based on data collected from around 900 .se domain names deemed of importance
+ to the Swedish society as a whole, as well as random selection of 1% of
+ the registered .se domain names.
+ The research is focused on statistics about usage and security in DNS,
+ IP, web and e-mail; the target audience is IT strategists, executives and
+ directors.
+ Data is analyzed and summarized by Anne-Marie Eklund Löwinder, a world-reknown
+ DNS and security expert
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/bloggare/anne-marie/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, while the technical aspects and tools are under the supervision of Patrik
+ Wallström, a well known DNSSEC expert and free and open source software
+ advocate
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/bloggare/pawal/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Subject proposal
+\end_layout
+
+\begin_layout Standard
+Correctly adhering to standards, implementing security and data protection
+ measures, are important for the overall health of the internet, both when
+ looking at specific examples and even more so on a grander scale.
+ National results are already published by .SE, in the 
+\emph on
+.se health status
+\emph default
+ report, alongside helpful tips on how to avoid common problems.
+ In terms of getting an overview of the status in Sweden, the full potential
+ of the tools
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/lar-dig-mer/open-source/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ used
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/dotse"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and data collected has not yet been utilized.
+\end_layout
+
+\begin_layout Standard
+Within the scope of the thesis work, the tools can be improved and/or extended
+ to include new areas, which can then be analyzed as well.
+ Collected data has been, at least partially, stored since 2011 and can
+ potentially be used for retrospective analysis of trends.
+ There is also the possiblity to compare Sweden's country code top-level
+ domain (ccTLD) (.se) with another domain name common in Sweden (.nu, also
+ controlled by .SE) and other ccTLDs.
+\end_layout
+
+\begin_layout Standard
+The combined topics of DNS, IP, web and e-mail are too broad for this thesis,
+ and the scope is to be narrowed down during the first weeks.
+ Expected results include an overview of the national status in the selected
+ field, potentially comparing it to historical data, or another ccTLD.
+\end_layout
+
+\begin_layout Section*
+Relevant courses taken at LiU
+\end_layout
+
+\begin_layout Itemize
+TDDC90 Software Security
+\end_layout
+
+\begin_layout Itemize
+TDDD05 Component Based Software
+\end_layout
+
+\begin_layout Itemize
+TDDD09 Software Engineering Project
+\end_layout
+
+\begin_layout Itemize
+TDDD12 Database Technology
+\end_layout
+
+\begin_layout Itemize
+TDDD24 Web Programming and Interactivity
+\end_layout
+
+\begin_layout Itemize
+TDDD25 Distributed Systems
+\end_layout
+
+\begin_layout Itemize
+TDDD27 Advanced Web Programming
+\end_layout
+
+\begin_layout Itemize
+TDDD43 Advanced Data Models and Databases
+\end_layout
+
+\begin_layout Itemize
+TDST02 Computer Network Infrastructure
+\end_layout
+
+\begin_layout Itemize
+TSIT02 Computer Security
+\end_layout
+
+\end_body
+\end_document
