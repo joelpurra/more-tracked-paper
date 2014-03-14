@@ -100,6 +100,18 @@ key "Eckersley2009unique"
 
 \end_layout
 
+\begin_layout Part
+Ideas
+\end_layout
+
+\begin_layout Section
+Look at
+\end_layout
+
+\begin_layout Itemize
+How many trackers/xper site?
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
