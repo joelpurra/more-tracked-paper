@@ -100,8 +100,93 @@ key "Eckersley2009unique"
 
 \end_layout
 
+\begin_layout Section
+Data brokers
+\end_layout
+
+\begin_layout Quote
+Private data brokers, which compile everything from our sex habits to our
+ license plate license location, are a growing cause of concern.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gigaom.com/2014/03/13/with-data-brokers-selling-lists-of-alcoholics-to-big-business-the-feds-have-some-thinking-to-do/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+Some brokers categorize consumers as "Getting By," "Compulsive Online Gamblers"
+ and "Zero Mobility" and advertise the lists as ideal leads for banks, credit-ca
+rd issuers and payday and subprime lenders, according to a review of data
+ brokers' websites.
+ One company offers lists of "Underbanked Prime Prospects" broken down by
+ race.
+ Others include "Kaching! Let it Ride Compulsive Online Gamblers" and "Speedy
+ Dinero," described as Hispanics in need of fast cash receptive to subprime
+ credit offers.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://online.wsj.com/news/articles/SB10001424052702303874504579377164099831516"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 Ideas
+\end_layout
+
+\begin_layout Section
+Questions
+\end_layout
+
+\begin_layout Itemize
+What kind of external resources are there?
+\end_layout
+
+\begin_layout Itemize
+How to mark certain external resources as known trackers?
+\end_layout
+
+\begin_layout Itemize
+How many external resources/trackers per type image/script/font/css/video/audio/
+object per site/service?
+\end_layout
+
+\begin_layout Itemize
+Is there a difference between government, commercial and personal sites
+ and services?
+\end_layout
+
+\begin_layout Itemize
+Which external resources are loaded from Sweden and abroad respectively?
+\end_layout
+
+\begin_layout Itemize
+Which external resource has the biggest coverage?
+\end_layout
+
+\begin_layout Itemize
+What data could potentially be collected, and subsequently inferred?
+\end_layout
+
+\begin_layout Itemize
+To what extent can the average internet user's browsing habits be correlated
+ across the most commonly visited webpages?
+\end_layout
+
+\begin_layout Itemize
+Are you as tracked using secure HTTPS as insecure HTTP?
+\end_layout
+
+\begin_layout Itemize
+How does this compare to historical data (if readily available from earlier
+ .SE status checks) or other ccTLDs/newTLDs?
 \end_layout
 
 \begin_layout Section
@@ -109,7 +194,29 @@ Look at
 \end_layout
 
 \begin_layout Itemize
-How many trackers/xper site?
+Bonnier, and the companies they own.
+\end_layout
+
+\begin_layout Itemize
+Tidningsstatistik, running stats on the Swedish magazines and newspapers.
+\end_layout
+
+\begin_layout Itemize
+Alexa, to list the biggest sites in Sweden.
+ There's also a related service, for Swedish sites only?
+\end_layout
+
+\begin_layout Part
+Who to talk to
+\end_layout
+
+\begin_layout Description
+Jörgen
+\begin_inset space ~
+\end_inset
+
+Nilsson Scans the Swedish internet for malware daily.
+ Now working at Binero.
 \end_layout
 
 \begin_layout Standard
