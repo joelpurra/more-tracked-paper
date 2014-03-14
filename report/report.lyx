@@ -76,6 +76,16 @@
 
 \begin_layout Title
 Master’s thesis proposal
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add preliminary title, change document metadata
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
@@ -349,14 +359,33 @@ The combined topics of DNS, IP, web and e-mail are too broad for this thesis,
 Problem description
 \end_layout
 
-\begin_layout Standard
-[The problem description shall be detailed and include a background and
- a motivation to why it is important.
+\begin_layout Quote
+The problem description shall be detailed and include a background and a
+ motivation to why it is important.
  Expected results shall also be described.
  The problem description shall be grounded in the literature base and the
  state‐of‐practice of the provider of the thesis (company, research group).
  Plan for adjustment of the problem description along with the progress
- of the literature studies and pre‐ study of the provider.]
+ of the literature studies and pre‐ study of the provider.
+\end_layout
+
+\begin_layout Subsection*
+Background
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Write a couple of definitions; external resources, site/service/domain,
+ tracker, external services (file hosting services, CDNs, advertising, analytics
+, third party content providers, etcetera).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -373,87 +402,140 @@ In everyday web browsing, browers routinely access a lot of material from
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+What kind of data can be collected by trackers, and how can they be aggregated
+ both per person and per group of people?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+How much is does the average user know about external resources being trackers?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 While online privacy has been in the spotlight due to recently uncovered
  large-scale spying operations, the focus has been on national government
  intelligence agencies collecting information around the globe.
- They have been able to traffic data and metadata by, among several techniques,
- covertly hooking into the internet infrastructure.
+ They have been able to intercept traffic data and metadata by, among several
+ techniques, covertly hooking into the internet infrastructure.
  In contrast, external resources are approved by or actively installed by
  site and service owners, and presented openly to users with some technical
  skills.
+ Because these external resources are used on behalf of the service, they
+ are also loaded when end-to-end encryption with HTTPS is enabled for enhanced
+ privacy and security.
+ This encryption gives these private trackers more information than possible
+ with large-scale passive traffic interception, even when there is a security
+ nullifying mixture of encrypted and unencrypted connections.
+\end_layout
+
+\begin_layout Subsection*
+Expected results
+\end_layout
+
+\begin_layout Standard
+Previous research show a variety of ad networks and analytics software used
+ on many of internet's most popular sites.
+ The research was done several years ago, and the assumption is that the
+ number of external resources has increased, both as content delivery networks
+ are used for scalable speed improvements and external services increase
+ their quality.
+\end_layout
+
+\begin_layout Standard
+Sites served over HTTPS are expected to use as many external resources as
+ HTTP, even though some of these external resources might not be served
+ over HTTPS as well.
+\end_layout
+
+\begin_layout Standard
+Media sites are expected to allow more trackers than other categories, as
+ their income model is based on third party advertisements.
+ Other commercial sites are expected to have more trackers than government
+ sites.
+\end_layout
+
+\begin_layout Subsection*
+Direction and scope
+\end_layout
+
+\begin_layout Standard
+The thesis will primarily be written from a Swedish perspective.
+ This is in part because .SE has access to the full list of Swedish .se domains,
+ and part because of their previous work with the 
+\emph on
+.se health status
+\emph default
+ reports.
+\end_layout
+
+\begin_layout Standard
+One assumption is that all external resources can act as trackers, tracking
+ users across domains.
+ While there are lists of known trackers, these will mostly be used to emphasize
+ those external resources as confirmed trackers.
 \end_layout
 
 \begin_layout Section*
 Approach
 \end_layout
 
-\begin_layout Standard
-[The approach is a preliminary description of how the problem will be solved.
+\begin_layout Quote
+The approach is a preliminary description of how the problem will be solved.
  This section shall also include a description of a method to evaluate that
- the problem is solved in a satisfactory way.]
+ the problem is solved in a satisfactory way.
+\end_layout
+
+\begin_layout Standard
+Focus is to look at external domains used by the .SE domains in the 
+\emph on
+.se health status
+\emph default
+ reports.
+ The main groups is also based on the same reports; government, media, banks,
+ larger websites, etcetera.
+ Domain-specific resources from external but private top level domains are
+ secondary to resources loaded from external services/companies.
 \end_layout
 
 \begin_layout Section*
 Literature base
 \end_layout
 
-\begin_layout Standard
-[The literature base describes the planned literature study and gives examples
- of different directions of a good theoretical grounding of the work.]
+\begin_layout Quote
+The literature base describes the planned literature study and gives examples
+ of different directions of a good theoretical grounding of the work.
 \end_layout
 
 \begin_layout Section*
 Time plan
 \end_layout
 
-\begin_layout Standard
-[The time plan describes the activities and milestones of the work with
- the resolution of a week.
+\begin_layout Quote
+The time plan describes the activities and milestones of the work with the
+ resolution of a week.
  Dates for planned final seminar are included.
  For degree projects on advanced level (e.g.
  Master level) dates for half‐time checkpoint are also included.
  For these degree projects the expected results for the half‐time checkpoint
  are also explicitly described.
- This plan is updated in cooperation with the tutor.]
-\end_layout
-
-\begin_layout Standard
-Direction and scope
-\end_layout
-
-\begin_layout Standard
-Currently, we're thinking of looking at external domains used by the .SE
- domains already in the health status report (government, media, banks,
- larger websites).
- Domain-specific resources (images, css, domain scripts) from external but
- private top level domains are secondary to resources loaded from external
- services/companies (file hosting services, CDNs, advertising, analytics,
- third party content providers).
- The assumption is that all external resources can act as trackers, tracking
- users across domains.
-\end_layout
-
-\begin_layout Standard
-Questions, to be answered primarily from a Swedish perspective.
-\end_layout
-
-\begin_layout Standard
-What are the general kinds of trackers, how many and which trackers are
- there?
-\end_layout
-
-\begin_layout Standard
-To what extent can the average internet user's browsing habits be correlated
- across the most commonly visited webpages?
-\end_layout
-
-\begin_layout Standard
-Are you as tracked using secure HTTPS as insecure HTTP?
-\end_layout
-
-\begin_layout Standard
-How does this compare to historical data (if readily available from earlier
- .SE status checks) or other ccTLDs/newTLDs?
+ This plan is updated in cooperation with the tutor.
 \end_layout
 
 \begin_layout Section*
