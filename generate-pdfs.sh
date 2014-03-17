@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+[[ ! `which git` ]] && echo "git is required"
+[[ ! `which lyx` ]] && echo "lyx is required"
+
 deleteTmpLyx(){
 	find "$PWD" -name '*.tmp.lyx' -delete
 }
