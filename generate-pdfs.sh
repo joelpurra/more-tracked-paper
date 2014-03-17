@@ -23,8 +23,6 @@ do
 
 	for rmfile in "$base".{aux,log,out,tex,tmp.lyx}; do [[ -s "$rmfile" ]] && rm "$rmfile"; done;
 
-	open "$base.pdf"
-
 	cd - > /dev/null
 done
 
