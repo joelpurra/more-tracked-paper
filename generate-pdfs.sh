@@ -5,12 +5,14 @@ find "$PWD" -name '*.tmp.lyx' -delete
 
 description=$(git describe --tags --always --dirty=-SNAPSHOT)
 
+echo "Version $description"
+
 for lyx in $(find "$PWD" -name '*.lyx');
 do
 	folder="$(dirname $lyx)"
 	base="${lyx%.lyx}"
 
-	echo "Generating $base.lyx $description"
+	echo "Generating $base.lyx"
 
 	cd "$folder"
 
