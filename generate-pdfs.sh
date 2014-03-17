@@ -1,7 +1,11 @@
 #!/bin/bash
 set -e
 
-find "$PWD" -name '*.tmp.lyx' -delete
+deleteTmpLyx(){
+	find "$PWD" -name '*.tmp.lyx' -delete
+}
+
+deleteTmpLyx
 
 description=$(git describe --tags --always --dirty=-SNAPSHOT)
 
@@ -26,4 +30,4 @@ do
 	cd - > /dev/null
 done
 
-find "$PWD" -name '*.tmp.lyx' -delete
+deleteTmpLyx
