@@ -366,7 +366,7 @@ The problem description shall be detailed and include a background and a
  The problem description shall be grounded in the literature base and the
  state‐of‐practice of the provider of the thesis (company, research group).
  Plan for adjustment of the problem description along with the progress
- of the literature studies and pre‐ study of the provider.
+ of the literature studies and pre-study of the provider.
 \end_layout
 
 \begin_layout Subsection*
@@ -393,7 +393,8 @@ In everyday web browsing, browers routinely access a lot of material from
  other domains or services than the one visited.
  These exernal resources vary from content that the user explicitly want
  to obtain, to implicitly loaded third party services, ads, and non-visible
- resources with the sole purpose of collecting statistical material.
+ resources with the sole purpose of collecting user data and statistical
+ material.
  All are downloaded on behalf of the user with no or few limitations, and
  oftentimes without the user's need, understanding and explicit consent.
  These external resources can all be seen as browsing habit trackers, whose
@@ -430,13 +431,13 @@ How much is does the average user know about external resources being trackers?
 
 \begin_layout Standard
 While online privacy has been in the spotlight due to recently uncovered
- large-scale spying operations, the focus has been on national government
+ mass surveillance operations, the focus has been on national government
  intelligence agencies collecting information around the globe.
  They have been able to intercept traffic data and metadata by, among several
  techniques, covertly hooking into the internet infrastructure.
- In contrast, external resources are approved by or actively installed by
- site and service owners, and presented openly to users with some technical
- skills.
+ In contrast, external resources are approved by and actively installed
+ by site and service owners, and presented openly to users with basic technical
+ skills and tools.
  Because these external resources are used on behalf of the service, they
  are also loaded when end-to-end encryption with HTTPS is enabled for enhanced
  privacy and security.
@@ -452,10 +453,11 @@ Expected results
 \begin_layout Standard
 Previous research show a variety of ad networks and analytics software used
  on many of internet's most popular sites.
- The research was done several years ago, and the assumption is that the
- number of external resources has increased, both as content delivery networks
- are used for scalable speed improvements and external services increase
- their quality.
+ The assumption is that the number of external resources has not decreased.
+ Technical reasons include cloud services hosting sites and services, content
+ delivery networks becoming commonplace for scalable speed improvements
+ and external service providers increasing their quality.
+ Non-technical reasons include the fact 
 \end_layout
 
 \begin_layout Standard
@@ -483,13 +485,151 @@ The thesis will primarily be written from a Swedish perspective.
 .se health status
 \emph default
  reports.
+ Focus is to analyze .se domains in the reports, as they have already been
+ deemed important and results can be incorporated in future reports.
+ The main non-technical grouping is also based on the same reports; government,
+ media, banks, larger websites, etcetera.
 \end_layout
 
 \begin_layout Standard
-One assumption is that all external resources can act as trackers, tracking
- users across domains.
- While there are lists of known trackers, these will mostly be used to emphasize
- those external resources as confirmed trackers.
+One assumption is that all external resources can act as trackers, colleting
+ data and tracking users across domains.
+ While there are lists of known trackers, these will optionally be used
+ to emphasize those external resources as 
+\emph on
+confirmed
+\emph default
+ trackers.
+\end_layout
+
+\begin_layout Subsection*
+Questions
+\end_layout
+
+\begin_layout Standard
+With domain and resource data in place, it will be aggregated to answer
+ the following questions.
+\end_layout
+
+\begin_layout Itemize
+What kinds of resources are there?
+\end_layout
+
+\begin_layout Itemize
+How many resources are internal versus external per domain?
+\end_layout
+
+\begin_layout Itemize
+What is the distribution of different kinds of resources?
+\end_layout
+
+\begin_layout Itemize
+How many external resources are there, considering different levels of uniquenes
+s:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unique URLs?
+\end_layout
+
+\begin_layout Itemize
+Unique per file URL?
+\end_layout
+
+\begin_layout Itemize
+Unique per folder URL?
+\end_layout
+
+\begin_layout Itemize
+Unique per subdomain?
+\end_layout
+
+\begin_layout Itemize
+Unique per domain?
+\end_layout
+
+\begin_layout Itemize
+Unique per TLD?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On how many domains is each external resource is represented?
+\end_layout
+
+\begin_layout Itemize
+How does usage of external resources differ between groups of domains?
+\end_layout
+
+\begin_layout Itemize
+How to mark certain external resources as known trackers?
+\end_layout
+
+\begin_layout Itemize
+What is the usage and distribution of known trackers?
+\end_layout
+
+\begin_layout Itemize
+Are you as tracked using secure HTTPS as insecure HTTP?
+\end_layout
+
+\begin_layout Itemize
+How do the results compare to
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Historical .se data, if readily available from earlier .SE status checks?
+\end_layout
+
+\begin_layout Itemize
+Other ccTLDs?
+\end_layout
+
+\begin_layout Itemize
+Commonly used gTLDs?
+\end_layout
+
+\begin_layout Itemize
+Recently introduced newTLDs?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Additional questions, which can be considered as bonuses
+\end_layout
+
+\begin_layout Itemize
+Could any external resources actually be considered internal, despite being
+ loaded from external domains?
+\end_layout
+
+\begin_layout Itemize
+How to determine if a resource
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Crosses Sweden's borders in transit?
+\end_layout
+
+\begin_layout Itemize
+Is handled by an organisation with base or ownership outside of Sweden?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Which external resources are loaded from Sweden and abroad respectively?
+\end_layout
+
+\begin_layout Itemize
+What user data could potentially be collected, and subsequently inferred?
+\end_layout
+
+\begin_layout Itemize
+To what extent can the average Swedish internet user's browsing habits be
+ correlated across the most commonly visited webpages?
 \end_layout
 
 \begin_layout Section*
@@ -503,15 +643,51 @@ The approach is a preliminary description of how the problem will be solved.
 \end_layout
 
 \begin_layout Standard
-Focus is to look at external domains used by the .SE domains in the 
-\emph on
-.se health status
-\emph default
- reports.
- The main groups is also based on the same reports; government, media, banks,
- larger websites, etcetera.
- Domain-specific resources from external but private top level domains are
- secondary to resources loaded from external services/companies.
+Based on a list of domains, external resources are listed by downloading
+ of the front page of each domain, and analyzing its HTML content.
+ The URLs of external resources will be extracted, and associated with the
+ domain they were loaded from.
+\end_layout
+
+\begin_layout Standard
+In order to facilitate repeatable and improvable analysis, tools will be
+ developed to perform the collection and aggregation steps automatically.
+ .SE already has a set of tools that run monthly; integration and interoperabilit
+y will smooth the process and continious usage.
+\end_layout
+
+\begin_layout Subsection*
+Potential problems
+\end_layout
+
+\begin_layout Itemize
+Due to the dynamic nature of modern web pages, a static HTML analysis might
+ not be enough.
+ How can pages with dynamic script loading be analyzed?
+\end_layout
+
+\begin_layout Itemize
+Script aggregation and concatenation could give misleading numbers if only
+ analyzed per URL.
+ Is it possible to detect which known scripts are actually running?
+\end_layout
+
+\begin_layout Itemize
+Can Google Tag Manager scripts, which is asynchronous script aggregation
+ directed specifically to marketers, be analyzed to show each included service?
+\end_layout
+
+\begin_layout Itemize
+Can collected data served by different services differ depending on which
+ tool is used to fetch the data?
+\end_layout
+
+\begin_layout Itemize
+Would keeping a local cache of recently requested URLs affect the results?
+\end_layout
+
+\begin_layout Itemize
+Will automated collection done in this report be detected and hindered?
 \end_layout
 
 \begin_layout Section*
