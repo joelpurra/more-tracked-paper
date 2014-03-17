@@ -10,7 +10,7 @@ deleteTmpLyx(){
 
 deleteTmpLyx
 
-description=$(git describe --tags --always --dirty=-SNAPSHOT)
+description=$(git describe --tags --match 'v[0-9]*' --always --dirty='-SNAPSHOT')
 
 echo "Version $description"
 
