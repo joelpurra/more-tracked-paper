@@ -167,6 +167,25 @@ target "http://online.wsj.com/news/articles/SB1000142405270230387450457937716409
 
 \end_layout
 
+\begin_layout Section
+Dynamic script loading
+\end_layout
+
+\begin_layout Standard
+Digital marketing made (much) easier.
+ Want to focus on marketing instead of marketing technology? Google Tag
+ Manager lets you add or update your website tags and mobile applications,
+ easily and for free, whenever you want, without bugging the IT folks.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.google.com/tagmanager/"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 Ideas
 \end_layout
