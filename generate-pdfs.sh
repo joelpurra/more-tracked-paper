@@ -16,7 +16,7 @@ echo "Version $description"
 
 for lyx in $(find "$PWD" -name '*.lyx');
 do
-	folder="$(dirname $lyx)"
+	folder="$(dirname '$lyx')"
 	base="${lyx%.lyx}"
 
 	echo "Generating $base.lyx"
