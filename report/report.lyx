@@ -246,7 +246,7 @@ The report
  The research is focused on statistics about usage and security in DNS,
  IP, web and e-mail; the target audience is IT strategists, executives and
  directors.
- Data is analyzed and summarized by Anne-Marie Eklund Löwinder, a world-reknown
+ Data is analyzed and summarized by Anne-Marie Eklund Löwinder, a world-renown
  DNS and security expert
 \begin_inset Foot
 status open
@@ -351,7 +351,7 @@ Within the scope of the thesis work, the tools can be improved and/or extended
  to include new areas, which can then be analyzed as well.
  Collected data has been, at least partially, stored since 2011 and can
  potentially be used for retrospective analysis of trends.
- There is also the possiblity to compare Sweden's country code top-level
+ There is also the possibility to compare Sweden's country code top-level
  domain (ccTLD) (.se) with another domain name common in Sweden (.nu, also
  controlled by .SE) and other ccTLDs.
 \end_layout
@@ -423,9 +423,9 @@ Write a couple of definitions; external resources, site/service/domain,
 \end_layout
 
 \begin_layout Standard
-In everyday web browsing, browers routinely access a lot of material from
+In everyday web browsing, browsers routinely access a lot of material from
  other domains or services than the one visited.
- These exernal resources vary from content that the user explicitly want
+ These external resources vary from content that the user explicitly want
  to obtain, to implicitly loaded third party services, ads, and non-visible
  resources with the sole purpose of collecting user data and statistical
  material.
@@ -533,7 +533,7 @@ The thesis will primarily be written from a Swedish perspective.
 \end_layout
 
 \begin_layout Standard
-One assumption is that all external resources can act as trackers, colleting
+One assumption is that all external resources can act as trackers, collecting
  data and tracking users across domains.
  While there are lists of known trackers, these will optionally be used
  to emphasize those external resources as 
@@ -656,7 +656,7 @@ Crosses Sweden's borders in transit?
 \end_layout
 
 \begin_layout Itemize
-Is handled by an organisation with base or ownership outside of Sweden?
+Is handled by an organization with base or ownership outside of Sweden?
 \end_layout
 
 \end_deeper
@@ -707,7 +707,7 @@ Based on a list of domains, external resources are listed by downloading
 In order to facilitate repeatable and improvable analysis, tools will be
  developed to perform the collection and aggregation steps automatically.
  .SE already has a set of tools that run monthly; integration and interoperabilit
-y will smooth the process and continious usage.
+y will smooth the process and continuous usage.
 \end_layout
 
 \begin_layout Subsection*
