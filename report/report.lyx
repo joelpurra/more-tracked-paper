@@ -80,17 +80,7 @@
 \begin_body
 
 \begin_layout Title
-Master’s thesis proposal
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Add preliminary title, change document metadata
-\end_layout
-
-\end_inset
-
-
+Master’s thesis planning report
 \end_layout
 
 \begin_layout Author
@@ -299,6 +289,19 @@ Subject proposal
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Rewrite after subject has been decided on.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Correctly adhering to standards, implementing security and data protection
  measures, are important for the overall health of the internet, both when
  looking at specific examples and even more so on a grander scale.
@@ -360,8 +363,34 @@ The combined topics of DNS, IP, web and e-mail are too broad for this thesis,
  field, potentially comparing it to historical data, or another ccTLD.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add preliminary title.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Problem description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+recentlyupdated
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Quote
@@ -379,7 +408,7 @@ Background
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
@@ -408,7 +437,7 @@ In everyday web browsing, browers routinely access a lot of material from
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
@@ -422,11 +451,11 @@ What kind of data can be collected by trackers, and how can they be aggregated
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-How much is does the average user know about external resources being trackers?
+How much does the average user know about external resources being trackers?
 \end_layout
 
 \end_inset
@@ -458,7 +487,14 @@ Expected results
 \begin_layout Standard
 Previous research show a variety of ad networks and analytics software used
  on many of internet's most popular sites.
- The assumption is that the number of external resources has not decreased.
+ The 
+\emph on
+.se health status
+\emph default
+ report from 2012 shown that 62% of the top Swedish domains used Google
+ Analytics.
+ The assumption is that the number of external resources is at least as
+ big, as they include Google Analytics.
  Technical reasons include cloud services hosting sites and services, content
  delivery networks becoming commonplace for scalable speed improvements
  and external service providers increasing their quality.
@@ -639,6 +675,19 @@ To what extent can the average Swedish internet user's browsing habits be
 
 \begin_layout Section*
 Approach
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+recentlyupdated
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Quote
@@ -678,8 +727,9 @@ Script aggregation and concatenation could give misleading numbers if only
 \end_layout
 
 \begin_layout Itemize
-Can Google Tag Manager scripts, which is asynchronous script aggregation
- directed specifically to marketers, be analyzed to show each included service?
+Can Google Tag Manager scripts, which is script aggregation with asynchronous
+ loading directed specifically to marketers, be analyzed to show each included
+ service?
 \end_layout
 
 \begin_layout Itemize
@@ -688,11 +738,15 @@ Can collected data served by different services differ depending on which
 \end_layout
 
 \begin_layout Itemize
-Would keeping a local cache of recently requested URLs affect the results?
+Many of the external resources will be overlapping, and downloading them
+ multiple times can be avoided by caching the file the first time in a run.
+ Would keeping a local cache of recently requested URLs affect the results?
 \end_layout
 
 \begin_layout Itemize
-Will automated collection done in this report be detected and hindered?
+Automated downloading of webpages, especially downloading several in short
+ succession, can be detected by site and service owners.
+ Will automated collection done for this report be detected and hindered?
 \end_layout
 
 \begin_layout Section*
