@@ -4,7 +4,12 @@
 \begin_header
 \textclass report
 \begin_preamble
+\usepackage{color}
+\definecolor{updated}{rgb}{0.8,0.85,1}
+
 \providecommand{\versionortoday}{(Unknown version) - \today}
+
+\providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
