@@ -425,6 +425,12 @@ Write a couple of definitions; external resources, site/service/domain,
 \begin_layout Standard
 In everyday web browsing, browsers routinely access a lot of material from
  other domains or services than the one visited.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Feldmann:2004:MEI:1028788.1028833"
+
+\end_inset
+
  These external resources vary from content that the user explicitly want
  to obtain, to implicitly loaded third party services, ads, and non-visible
  resources with the sole purpose of collecting user data and statistical
@@ -434,9 +440,66 @@ In everyday web browsing, browsers routinely access a lot of material from
  These external resources can all be seen as browsing habit trackers, whose
  knowledge and power increase with any additional visits to other domains
  or services loading the same resources.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Malandrino:2013:PAI:2517840.2517868"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+While online privacy has been in the spotlight due to recently uncovered
+ mass surveillance operations, the focus has been on national government
+ intelligence agencies collecting information around the globe.
+ They have been able to intercept traffic data and metadata by, among several
+ techniques, covertly hooking into the internet infrastructure.
+ In contrast, external resources are approved by and actively installed
+ by site and service owners, and presented openly to users with basic technical
+ skills and tools.
+ Because these external resources are used on behalf of the service, they
+ are also loaded when end-to-end encryption with HTTPS is enabled for enhanced
+ privacy and security.
+ This encryption gives these private trackers more information than possible
+ with large-scale passive traffic interception, even when there is a security
+ nullifying mixture of encrypted and unencrypted connections.
+\end_layout
+
+\begin_layout Standard
+Depending on what activities a user performs online, different things can
+ be inferred by trackers on sites where they are installed.
+ Private and sensitive information leaked to third party sites during typical
+ interaction with some of the most popular sites in the world include personal
+ identification (full name, date of birth, email, ip address, geolocation)
+ and sensitive information (sexual orientation, religious beliefs, health
+ issues).
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Malandrino:2013:PAI:2517840.2517868"
+
+\end_inset
+
+ Social buttons, allowing users to share links with a simple click, are
+ tracking users whether they are registered, logged in or not.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Roosendaal:2010:likethis"
+
+\end_inset
+
+ They are especially powerful when the user is registered and logged in,
+ combining the full self-provided details of the user with their browsing
+ habits.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kontaxis:2012:PSP:2362793.2362823"
+
+\end_inset
+
+ Combining and aggregating information from past visitors means that more
+ information can be inferred from future visitors, on a statistical basis.
+ 
 \begin_inset Note Greyedout
 status open
 
@@ -463,23 +526,6 @@ How much does the average user know about external resources being trackers?
 
 \end_layout
 
-\begin_layout Standard
-While online privacy has been in the spotlight due to recently uncovered
- mass surveillance operations, the focus has been on national government
- intelligence agencies collecting information around the globe.
- They have been able to intercept traffic data and metadata by, among several
- techniques, covertly hooking into the internet infrastructure.
- In contrast, external resources are approved by and actively installed
- by site and service owners, and presented openly to users with basic technical
- skills and tools.
- Because these external resources are used on behalf of the service, they
- are also loaded when end-to-end encryption with HTTPS is enabled for enhanced
- privacy and security.
- This encryption gives these private trackers more information than possible
- with large-scale passive traffic interception, even when there is a security
- nullifying mixture of encrypted and unencrypted connections.
-\end_layout
-
 \begin_layout Subsection*
 Expected results
 \end_layout
@@ -487,18 +533,30 @@ Expected results
 \begin_layout Standard
 Previous research show a variety of ad networks and analytics software used
  on many of internet's most popular sites.
- The 
-\emph on
-.se health status
-\emph default
- report from 2012 shown that 62% of the top Swedish domains used Google
- Analytics.
+ Google Analytics usage among Swedish top domains was 57% in 2011 and 62%
+ 2012.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2012:healthstatus"
+
+\end_inset
+
  The assumption is that the number of external resources is at least as
  big, as they include Google Analytics.
  Technical reasons include cloud services hosting sites and services, content
  delivery networks becoming commonplace for scalable speed improvements
  and external service providers increasing their quality.
- Non-technical reasons include the fact 
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add non-technical reasons.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -535,8 +593,9 @@ The thesis will primarily be written from a Swedish perspective.
 \begin_layout Standard
 One assumption is that all external resources can act as trackers, collecting
  data and tracking users across domains.
- While there are lists of known trackers, these will optionally be used
- to emphasize those external resources as 
+ While there are lists of known trackers, used by browser privacy tools,
+ these will optionally be used to emphasize those external resources as
+ 
 \emph on
 confirmed
 \emph default
@@ -704,6 +763,24 @@ Based on a list of domains, external resources are listed by downloading
 \end_layout
 
 \begin_layout Standard
+All external resources get some of the relevant data upon each request,
+ even for static resources with no capabilities to dynamically survey the
+ user's browser.
+ While cookies used for tracking have been a concern for many, they are
+ not necessary in order to identify most users upon return, even uniquelly
+ on a global level.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eckersley2009unique"
+
+\end_inset
+
+ Cookies will not be considered to be an indicator of tracking, as it can
+ be assumed that a combination of other server and client side techniques
+ can achieve the same goal as a tracking cookie.
+\end_layout
+
+\begin_layout Standard
 In order to facilitate repeatable and improvable analysis, tools will be
  developed to perform the collection and aggregation steps automatically.
  .SE already has a set of tools that run monthly; integration and interoperabilit
@@ -771,6 +848,17 @@ The time plan describes the activities and milestones of the work with the
  For these degree projects the expected results for the half‐time checkpoint
  are also explicitly described.
  This plan is updated in cooperation with the tutor.
+\end_layout
+
+\begin_layout Quote
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../references/thesis"
+options "bibtotoc,plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
