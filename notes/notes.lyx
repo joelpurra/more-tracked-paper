@@ -3,7 +3,13 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\usepackage{listing}
+\end_preamble
 \use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -107,10 +113,18 @@ Data brokers
 \begin_layout Quote
 Private data brokers, which compile everything from our sex habits to our
  license plate license location, are a growing cause of concern.
- 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://gigaom.com/2014/03/13/with-data-brokers-selling-lists-of-alcoholics-to-big-business-the-feds-have-some-thinking-to-do/"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -127,10 +141,18 @@ rd issuers and payday and subprime lenders, according to a review of data
  Others include "Kaching! Let it Ride Compulsive Online Gamblers" and "Speedy
  Dinero," described as Hispanics in need of fast cash receptive to subprime
  credit offers.
- 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://online.wsj.com/news/articles/SB10001424052702303874504579377164099831516"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -157,10 +179,18 @@ AS Resource Allocations
  numbering resources are often deployed across multiple economies.
  For this reason the report presented here does not accurately reflect the
  actual number resource distributions across these economies.
- 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://online.wsj.com/news/articles/SB10001424052702303874504579377164099831516"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -177,9 +207,141 @@ Digital marketing made (much) easier.
  Manager lets you add or update your website tags and mobile applications,
  easily and for free, whenever you want, without bugging the IT folks.
  
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.google.com/tagmanager/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+CDN usage
+\end_layout
+
+\begin_layout Quote
+Figure 14: Density of log2 of ratios for objects of Akamai customers requested
+ from TUM and LMU.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Feldmann:2004:MEI:1028788.1028833"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+External resources
+\end_layout
+
+\begin_layout Quote
+Several popular Web sites have a significant component of extraneous material.
+ This material includes advertisements, user-related data gathering mechanisms
+ and flash animations.
+ Such non-essential parts of the page sought by downloaders can be viewed
+ as 
+\emph on
+extraneous
+\emph default
+ content from the perspective of the user and thus potentially undesirable.
+ However, from the content owner's viewpoint, such material is integral
+ for delivering content of interest to subsets of users.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+Popular sites on the Web routinely include extraneous content.
+ Part of the extraneous content may be small images or specific script routines
+ used to detect subsequent click access.
+ Even without registration many Web sites gather information about users
+ via traditional mechanisms such as cookies, tracking navigation patterns
+ via the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Referer
+\end_layout
+
+\end_inset
+
+ HTTP header, or through third party sites such as DoubleClick.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+The first issue is defining extraneous content: a subjective issue dependent
+ on individual users or groups of users.
+ There is a consensus on what 
+\emph on
+kinds
+\emph default
+ of content may generally be viewed as extraneous and this undesirable from
+ the viewpoint of latency.
+ Advertisements and resources that are placed on a user's site solely for
+ the purpose of gathering user/specific data, i.e., content extraneous to
+ the core content of the page, could be considered undesirable.
+ Pop-up and pop-under windows are annoyances that modern browsers often
+ suppress.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+The midday results show a 57% reduction in the number of servers accessed
+ when Adblock is enabled.
+ There is a 27% reduction both in number of objects retrieved and number
+ of bytes downloaded with Adblock enabled.
+ The other timeframes show similar results for the recution in servers,
+ objects and bytes.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+The last column of Table 5 shows a how these differences translate into
+ median download latency reductions.
+ We see a 33% median reduction across the three time periods - consistent
+ with both mean (27-37%) and 90th percentile (28-46%) figures (not shown
+ in Table 5).
+ The latency results are expected given the significant reduction in the
+ number of servers contacted and the number of objects and bytes downloaded.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
@@ -313,8 +475,8 @@ Freddy
 \begin_inset space ~
 \end_inset
 
-Horndahl Domännamnsstatistik.
- Även känd som Krüger.
+Horndahl Domain name statistics, like number or characters, adwords etcetera.
+ Also known as Krüger.
 \end_layout
 
 \begin_layout Standard
