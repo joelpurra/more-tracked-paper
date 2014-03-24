@@ -435,6 +435,12 @@ key "Feldmann:2004:MEI:1028788.1028833"
  to obtain, to implicitly loaded third party services, ads, and non-visible
  resources with the sole purpose of collecting user data and statistical
  material.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
  All are downloaded on behalf of the user with no or few limitations, and
  oftentimes without the user's need, understanding and explicit consent.
  These external resources can all be seen as browsing habit trackers, whose
@@ -531,8 +537,14 @@ Expected results
 \end_layout
 
 \begin_layout Standard
-Previous research show a variety of ad networks and analytics software used
- on many of internet's most popular sites.
+Previous research show that ads were used on 58% of internet's 500 most
+ popular sites.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
  Google Analytics usage among Swedish top domains was 57% in 2011 and 62%
  2012.
 \begin_inset CommandInset citation
@@ -542,10 +554,17 @@ key "Lowinder:2012:healthstatus"
 \end_inset
 
  The assumption is that the number of external resources is at least as
- big, as they include Google Analytics.
+ big, as they include both ads and Google Analytics.
  Technical reasons include cloud services hosting sites and services, content
- delivery networks becoming commonplace for scalable speed improvements
- and external service providers increasing their quality.
+ delivery networks becoming commonplace
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2000:AFI:347319.346248,Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+ for scalable speed improvements and external service providers increasing
+ their quality.
  
 \begin_inset Note Greyedout
 status open
@@ -566,10 +585,15 @@ Sites served over HTTPS are expected to use as many external resources as
 \end_layout
 
 \begin_layout Standard
-Media sites are expected to allow more trackers than other categories, as
- their income model is based on third party advertisements.
- Other commercial sites are expected to have more trackers than government
- sites.
+News sites are expected to allow more trackers than other categories, as
+ their income model include third party advertisements.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+ Commercial sites are expected to have more trackers than government sites.
 \end_layout
 
 \begin_layout Subsection*
