@@ -425,6 +425,26 @@ Tidningsstatistik, running stats on the Swedish magazines and newspapers.
 \end_layout
 
 \begin_layout Itemize
+KIA-index
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.kiaindex.net/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 Alexa, to list the biggest sites in Sweden.
  There's also a related service, for Swedish sites only?
 \end_layout
