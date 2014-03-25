@@ -12,6 +12,9 @@
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
 \end_preamble
 \use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -431,10 +434,33 @@ key "Feldmann:2004:MEI:1028788.1028833"
 
 \end_inset
 
- These external resources vary from content that the user explicitly want
- to obtain, to implicitly loaded third party services, ads, and non-visible
- resources with the sole purpose of collecting user data and statistical
- material.
+ These exteral resources
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "External resources"
+description "Resources downloaded from other domains than the page was served from."
+
+\end_inset
+
+ vary from content
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Content"
+description "Information and data that is presented to the user. Includes text, images, video and sound."
+
+\end_inset
+
+ that the user explicitly want to obtain, to implicitly loaded third party
+ services
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "External service"
+description "A third party service that delives some kind of resource to the user's browser. The service itself can vary from showing additional information and content, to ads and hidden trackers.\\\\\\\\External services include file hosting services, CDNs, advertisting networks, statistics and analytics and third party content."
+
+\end_inset
+
+, ads, and non-visible resources with the sole purpose of collecting user
+ data and statistical material.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
@@ -443,9 +469,16 @@ key "Krishnamurthy:2006:CMC:1135777.1135829"
 
  All are downloaded on behalf of the user with no or few limitations, and
  oftentimes without the user's need, understanding and explicit consent.
- These external resources can all be seen as browsing habit trackers, whose
- knowledge and power increase with any additional visits to other domains
- or services loading the same resources.
+ These external resources can all be seen as browsing habit trackers
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Tracker"
+description "An resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the tracker)."
+
+\end_inset
+
+, whose knowledge and power increase with any additional visits to other
+ domains or services loading the same resources.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Malandrino:2013:PAI:2517840.2517868"
@@ -475,6 +508,21 @@ While online privacy has been in the spotlight due to recently uncovered
 \begin_layout Standard
 Depending on what activities a user performs online, different things can
  be inferred by trackers on sites where they are installed.
+ For example, a tracker on a news site can draw conclusions about interests
+ from content a user reads (or choses 
+\emph on
+not
+\emph default
+ to) by tagging articles with refined keywords and creating an interest
+ graph.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kumar:2013:GBT:2522548.2523129"
+
+\end_inset
+
+ The range of taggable interests of course depend on the content of the
+ news site.
  Private and sensitive information leaked to third party sites during typical
  interaction with some of the most popular sites in the world include personal
  identification (full name, date of birth, email, ip address, geolocation)
@@ -601,6 +649,12 @@ Direction and scope
 \end_layout
 
 \begin_layout Standard
+Emphasis for the thesis will be on technical analysis, producing aggregate
+ numbers regarding domains and external resources.
+ Social aspects and privacy concerns are considered out of scope.
+\end_layout
+
+\begin_layout Standard
 The thesis will primarily be written from a Swedish perspective.
  This is in part because .SE has access to the full list of Swedish .se domains,
  and part because of their previous work with the 
@@ -616,10 +670,34 @@ The thesis will primarily be written from a Swedish perspective.
 
 \begin_layout Standard
 One assumption is that all external resources can act as trackers, collecting
- data and tracking users across domains.
+ data and tracking users across domains using for example the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Referer
+\end_layout
+
+\end_inset
+
+ HTTP header
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+.
  While there are lists of known trackers, used by browser privacy tools,
- these will optionally be used to emphasize those external resources as
- 
+ they are not 100% effective.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+ The lists will instead optionally be used to emphasize those external resources
+ as 
 \emph on
 confirmed
 \emph default
@@ -633,6 +711,32 @@ Questions
 \begin_layout Standard
 With domain and resource data in place, it will be aggregated to answer
  the following questions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Why are these questions important? Why were they chosen?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Group questions by refined category?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -828,9 +932,24 @@ Script aggregation and concatenation could give misleading numbers if only
 \end_layout
 
 \begin_layout Itemize
-Can Google Tag Manager scripts, which is script aggregation with asynchronous
- loading directed specifically to marketers, be analyzed to show each included
- service?
+Can Google Tag Manager
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.google.com/tagmanager/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ scripts, which is script aggregation with asynchronous loading directed
+ specifically to marketers, be analyzed to show each included service?
 \end_layout
 
 \begin_layout Itemize
@@ -846,7 +965,18 @@ Many of the external resources will be overlapping, and downloading them
 
 \begin_layout Itemize
 Automated downloading of webpages, especially downloading several in short
- succession, can be detected by site and service owners.
+ succession, can be seen by site and service owners as disruptive by using
+ system resources and skewing statistical data.
+ Traversing different pages on a single website can also be detected by
+ looking at for example navigational patterns.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
+
+\end_inset
+
+ By only downloading the domain root page and associated resources this
+ tool might not fall into that category of detection.
  Will automated collection done for this report be detected and hindered?
 \end_layout
 
@@ -872,6 +1002,16 @@ The time plan describes the activities and milestones of the work with the
  For these degree projects the expected results for the half‐time checkpoint
  are also explicitly described.
  This plan is updated in cooperation with the tutor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Quote
