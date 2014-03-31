@@ -106,6 +106,32 @@ key "Eckersley2009unique"
 
 \end_layout
 
+\begin_layout Quote
+Perhaps the most important security concept within modern browsers is the
+ idea of the same-origin policy.
+ The principal intent for this mechanism is to make it possible for largely
+ unrestrained scripting and other interactions between pages served as a
+ part of the same site (understood as having a particular DNS host name,
+ or part thereof), whilst almost completely preventing any interference
+ between unrelated sites.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://code.google.com/p/browsersec/wiki/Part2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Data brokers
 \end_layout
