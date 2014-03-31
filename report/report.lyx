@@ -84,6 +84,10 @@ logicalmkup
 
 \begin_layout Title
 Master’s thesis planning report
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Note Greyedout
 status open
 
@@ -200,18 +204,9 @@ Swedes and the internet
 .se health status
 \emph default
 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/vad-vi-gor/halsolaget/"
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2012:healthstatus"
 
 \end_inset
 
@@ -319,19 +314,6 @@ target "https://www.iis.se/bloggare/pawal/"
 
 \begin_layout Section*
 Problem description
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-recentlyupdated
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Quote
@@ -877,19 +859,6 @@ To what extent can the average Swedish internet user's browsing habits be
 
 \begin_layout Section*
 Approach
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-recentlyupdated
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Quote
