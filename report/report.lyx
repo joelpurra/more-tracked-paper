@@ -426,6 +426,113 @@ Write a couple of definitions; external resources, site/service/domain,
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Content"
+description "Information and data that is presented to the user. Includes text, images, video and sound."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Resource"
+description "An entity external to the HTML page that requested it. Types of resources include images, video, audio, CSS, javascript and flash animations."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "External resource"
+description "A resource downloaded from a domain other than the page that requested it was served from."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "External service"
+description "A third party service that delives some kind of resource to the user's browser. The service itself can vary from showing additional information and content, to ads and hidden trackers.\\\\\\\\External services include file hosting services, CDNs, advertisting networks, statistics and analytics collectors, and third party content."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Tracker"
+description "An resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the tracker)."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CDN"
+description "Content delivery network"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Content delivery network"
+description "(CDN) The speed at which data can be delivered is dependant on distance between the user and the server. To reduce latency and download times, a content delivery network places multiple servers with the same content in strategic locations, both geographic and network toplolgy wise, closer to groups of users.\\\\\\\\For example, a CDN could deploy servers in Europe, the US and Australia, and reduce loading speed by setting up the system to automatically use the closest location."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Domain name"
+description "A domain name is a human-readable way to navigate to a service on the internet: example.com. Fully qualified domain names (FQDN) have at least two parts - the top level domain name (TLD) and the second-level domain name - but oftentimes more depending on TLD rules and organizational units.\\\\\\\\Domains are also used, for example, as logical entities in regards to security and privacy scopes on the web, often implemented as same-origin policies. As an example, HTTP cookies are bound to domain that set them."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Third-party content"
+description "Content served by another organization than the organization serving the explicitly requested web page. Also see external resource."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Third-party service"
+description "A service provided by an organization other than the explicitly requested service. Also see external service."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Site"
+description "A collection of web pages under the same organization or topic. Often all web pages on a domain is considered a site, but a single domain can also contain multiple sites."
+
+\end_inset
+
+S
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Service"
+description "A function performed on the internet, and in this document specifically web sites with a specific purpose directed towards human users."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Browser"
+description "Or web browser. Software a user utilizes to retrieve, present and traverse information from the web."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In everyday web browsing, browsers routinely access a lot of material from
  other domains or services than the one visited.
 \begin_inset CommandInset citation
@@ -434,33 +541,10 @@ key "Feldmann:2004:MEI:1028788.1028833"
 
 \end_inset
 
- These exteral resources
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "External resources"
-description "Resources downloaded from other domains than the page was served from."
-
-\end_inset
-
- vary from content
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Content"
-description "Information and data that is presented to the user. Includes text, images, video and sound."
-
-\end_inset
-
- that the user explicitly want to obtain, to implicitly loaded third party
- services
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "External service"
-description "A third party service that delives some kind of resource to the user's browser. The service itself can vary from showing additional information and content, to ads and hidden trackers.\\\\\\\\External services include file hosting services, CDNs, advertisting networks, statistics and analytics and third party content."
-
-\end_inset
-
-, ads, and non-visible resources with the sole purpose of collecting user
- data and statistical material.
+ These exteral resources vary from content that the user explicitly want
+ to obtain, to implicitly loaded third party services, ads, and non-visible
+ resources with the sole purpose of collecting user data and statistical
+ material.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
@@ -469,16 +553,9 @@ key "Krishnamurthy:2006:CMC:1135777.1135829"
 
  All are downloaded on behalf of the user with no or few limitations, and
  oftentimes without the user's need, understanding and explicit consent.
- These external resources can all be seen as browsing habit trackers
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Tracker"
-description "An resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the tracker)."
-
-\end_inset
-
-, whose knowledge and power increase with any additional visits to other
- domains or services loading the same resources.
+ These external resources can all be seen as browsing habit trackers, whose
+ knowledge and power increase with any additional visits to other domains
+ or services loading the same resources.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Malandrino:2013:PAI:2517840.2517868"
