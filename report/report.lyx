@@ -84,6 +84,16 @@ logicalmkup
 
 \begin_layout Title
 Master’s thesis planning report
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add preliminary title.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
@@ -285,98 +295,6 @@ target "https://www.iis.se/bloggare/pawal/"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Section*
-Subject proposal
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Rewrite after subject has been decided on.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Correctly adhering to standards, implementing security and data protection
- measures, are important for the overall health of the internet, both when
- looking at specific examples and even more so on a grander scale.
- National results are already published by .SE, in the 
-\emph on
-.se health status
-\emph default
- report, alongside helpful tips on how to avoid common problems.
- In terms of getting an overview of the status in Sweden, the full potential
- of the tools
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/lar-dig-mer/open-source/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- used
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/dotse"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and data collected has not yet been utilized.
-\end_layout
-
-\begin_layout Standard
-Within the scope of the thesis work, the tools can be improved and/or extended
- to include new areas, which can then be analyzed as well.
- Collected data has been, at least partially, stored since 2011 and can
- potentially be used for retrospective analysis of trends.
- There is also the possibility to compare Sweden's country code top-level
- domain (ccTLD) (.se) with another domain name common in Sweden (.nu, also
- controlled by .SE) and other ccTLDs.
-\end_layout
-
-\begin_layout Standard
-The combined topics of DNS, IP, web and e-mail are too broad for this thesis,
- and the scope is to be narrowed down during the first weeks.
- Expected results include an overview of the national status in the selected
- field, potentially comparing it to historical data, or another ccTLD.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add preliminary title.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section*
