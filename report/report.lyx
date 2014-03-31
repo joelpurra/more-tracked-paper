@@ -116,6 +116,26 @@ versionortoday
 
 \end_layout
 
+\begin_layout Abstract
+While browing the web users are both actively and passively being tracked
+ by multiple companies, for the purpose of building a persona for targeted
+ adverstising.
+ Tracking code is installed on web pages that have adverts as well as those
+ that do not, sometimes in the form of different kinds of external resources
+ which may or may not serve a purpose other than user tracking.
+ The spread and reach of tracking across web pages and domains of different
+ kinds increases the quality of the user data collected and inferred, making
+ it more valuable for advertising purposes.
+ With the extent of the use of trackers and other external resources largely
+ unknown and ever evolving, what is already known raises privacy concerns
+ - data considered personal leak without the user's knowledge or explicit
+ permission and end up in privately owned databases.
+ In this thesis I show the use of resources internal versus external to
+ the entry domain, which the most common confirmed trackers are, what spread
+ they have and how much the average Swedish internet user can expect to
+ be tracked by visiting some of the most import and popular sites in Sweden.
+\end_layout
+
 \begin_layout Section*
 About The Internet Infrastructure Foundation
 \begin_inset Foot
