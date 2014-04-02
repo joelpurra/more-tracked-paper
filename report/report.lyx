@@ -170,18 +170,9 @@ le for the Swedish top level domain, and working for the benefit of the
  public that promotes the positive development of the internet in Sweden.
  Their head office is in Stockholm.
  In 2012 they had 61 employees and a turnover of almost 120 MSEK.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/docs/SE-Arsredovisning-2012.pdf"
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key ".SE:2013:annualreport"
 
 \end_inset
 
