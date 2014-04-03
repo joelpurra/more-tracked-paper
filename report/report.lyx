@@ -126,8 +126,8 @@ versionortoday
 
 \begin_layout Abstract
 How many companies are tracking you online, and how much information does
- the average Swede leak while visiting popular .se websites? Many, and a
- lot - more than you think.
+ the average Swede leak while using popular .se websites? Many, and a lot
+ - more than you think.
  Large organizations 
 \begin_inset Note Greyedout
 status open
@@ -140,26 +140,51 @@ like A, B and C
 
  are able to connect the dots you leave behind during everyday usage, and
  construct a persona that reflects you from their perspective.
- Have you told your family, friend or colleagues about your gambling addiction,
- your sex toy purchases or your alcoholism? Even if you didn't tell anyone,
- these companies know.
- And now they are selling it behind the scenes.
+ Have you told your family, friends or colleagues about your gambling addiction,
+ your sex toy purchases or your alcoholism? 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Replace with different scary personal information.
+\end_layout
+
+\end_inset
+
+ Even if you didn't tell anyone your deepest secrets, these companies might
+ conclude that they can put labels on you by looking at everything you do
+ online.
+ And now they are selling it as hard facts behind the scenes.
 \end_layout
 
 \begin_layout Abstract
 While browing the web users are both actively and passively being tracked
  by multiple companies, for the purpose of building a persona for targeted
  adverstising.
+ Sometimes the data collection is visible, as in social network sites and
+ questionnaires, but it's most common in the form of different kinds of
+ external resources which may or may not serve a purpose other than keeping
+ track of your every click.
  Tracking code is installed on web pages that have adverts as well as those
- that do not, sometimes in the form of different kinds of external resources
- which may or may not serve a purpose other than user tracking.
- The spread and reach of tracking across web pages and domains of different
- kinds increases the quality of the user data collected and inferred, making
- it more valuable for advertising purposes.
+ that do not - the spread and reach of tracking across web pages and domains
+ of different kinds increases the quality of the user data collected and
+ inferred, making it more valuable for advertising purposes.
  With the extent of the use of trackers and other external resources largely
  unknown and ever evolving, what is already known raises privacy concerns
  - data considered personal leak without the user's knowledge or explicit
- permission and end up in privately owned databases.
+ permission and end up in privately owned databases for further distribution.
+ Data collection is the new wild west, and you are the new cattle.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Or Klondyke and gold?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Abstract
