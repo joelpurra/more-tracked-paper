@@ -503,26 +503,27 @@ key "Malandrino:2013:PAI:2517840.2517868"
 
 \end_layout
 
+\begin_layout Itemize
+Server side tracking, or tracking values sent to the same domain and then
+ proxied to external services.
+\end_layout
+
 \begin_layout Part
 Who to talk to
 \end_layout
 
 \begin_layout Description
-Jörgen
-\begin_inset space ~
-\end_inset
-
-Nilsson Scans the Swedish internet for malware daily.
- Now working at Binero.
+JN Scans the Swedish internet for malware daily.
+ Now working at B.
 \end_layout
 
 \begin_layout Description
-Freddy
-\begin_inset space ~
-\end_inset
+FH Domain name statistics, like number or characters, adwords etcetera.
+ Also known as K.
+\end_layout
 
-Horndahl Domain name statistics, like number or characters, adwords etcetera.
- Also known as Krüger.
+\begin_layout Description
+RL Developed one of the predecessors for web page downloading for .SE.
 \end_layout
 
 \begin_layout Standard
