@@ -484,7 +484,7 @@ Publishers reserve areas of their web pages for displaying different kinds
  Combining and aggregating information from past visitors means that more
  information can be assumed about future visitors, on a statistical basis,
  which will define the general audience of the site.
- To generate even more revenue per displayed ad, individual users are
+ To generate even more revenue per displayed ad, individual users are 
 \emph on
 targeted
 \emph default
@@ -1027,7 +1027,7 @@ description "A service provided by an organization other than the explicitly req
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Site"
+symbol "Web site"
 description "A collection of web pages under the same organization or topic. Often all web pages on a domain is considered a site, but a single domain can also contain multiple sites."
 
 \end_inset
@@ -1035,16 +1035,16 @@ description "A collection of web pages under the same organization or topic. Oft
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Service"
-description "A function performed on the internet, and in this document specifically web sites with a specific purpose directed towards human users."
+symbol "Web service"
+description "A function performed on the internet, and in this document specifically web sites with a specific purpose directed towards human users. This includes search engines, social networks, online messaging and email as well as content sites such as news sites and blogs."
 
 \end_inset
 
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Browser"
-description "Or web browser. Software a user utilizes to retrieve, present and traverse information from the web."
+symbol "Web browser"
+description "Or browser. Software a user utilizes to retrieve, present and traverse information from the web."
 
 \end_inset
 
