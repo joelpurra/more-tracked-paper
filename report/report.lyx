@@ -473,8 +473,29 @@ key "Kontaxis:2012:PSP:2362793.2362823"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Publishers reserve areas of their web pages for displaying different kinds
+ and sizes of advertisements alongside content.
+ Ads chosen for the site may be aligned with the content but it is more
+ valuable the more is known about the visitors.
  Combining and aggregating information from past visitors means that more
- information can be inferred from future visitors, on a statistical basis.
+ information can be assumed about future visitors, on a statistical basis,
+ which will define the general audience of the site.
+ To generate even more revenue per displayed ad, individual users are
+\emph on
+targeted
+\emph default
+ with personalized ads depending on their specific personal data and browsing
+ history.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gill:2013:BPF:2504730.2504768"
+
+\end_inset
+
  
 \begin_inset Note Greyedout
 status open
