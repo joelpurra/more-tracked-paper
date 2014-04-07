@@ -975,6 +975,23 @@ target "http://sigcomm.org/events/imc-conference"
 \end_inset
 
 , where some papers of interest have been presented.
+ The Passive and Active Measurements (PAM) Conference
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://pam2014.cs.unm.edu/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ might also have interesting papers, as well as for example ACM's archives.
  As for individuals, one of the most connected researchers in this field
  is Balachander Krishnamurthy
 \begin_inset Foot
@@ -1074,6 +1091,87 @@ The time plan describes the activities and milestones of the work with the
  For these degree projects the expected results for the half‐time checkpoint
  are also explicitly described.
  This plan is updated in cooperation with the tutor.
+\end_layout
+
+\begin_layout Subsection*
+Completed milestones, dates
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-03-07 Initial subject discussion meeting at .SE, with company supervisor
+ Staffan Hagnell.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-03-18 First subject draft ready and sent to examiner, company supervisors
+ and other interested parties.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-03-31 Subject draft approved by examiner.
+\end_layout
+
+\begin_layout Subsection*
+Planned milestones, dates
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W15 Finalize planning report.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W15 Start software development efforts.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W19 Half time evaluation.
+ Have preliminary results ready, as a progress indicator.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W23 Thesis draft for supervisors to review, then revise according to
+ comments.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W24 Thesis draft for the examiner to review, then revise according
+ to comments.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W25 Thesis draft for the opposition/peer review, then revise according
+ to comments.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2014-W28 Thesis approval for presentation.
+\end_layout
+
+\begin_layout Subsection*
+Unplanned milestones
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Opponent/peer A student in the same field is required for the opponent/peer
+ review.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Presentation The presentation date is required to be during the regular
+ semester period.
+ The fall semester starts 2014-09-01.
 \end_layout
 
 \begin_layout Standard
