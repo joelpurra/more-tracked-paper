@@ -1094,7 +1094,7 @@ The time plan describes the activities and milestones of the work with the
 \end_layout
 
 \begin_layout Subsection*
-Completed milestones, dates
+Completed milestones
 \end_layout
 
 \begin_layout Labeling
@@ -1115,7 +1115,7 @@ Completed milestones, dates
 \end_layout
 
 \begin_layout Subsection*
-Planned milestones, dates
+Planned milestones
 \end_layout
 
 \begin_layout Labeling
@@ -1172,6 +1172,17 @@ Opponent/peer A student in the same field is required for the opponent/peer
 Presentation The presentation date is required to be during the regular
  semester period.
  The fall semester starts 2014-09-01.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Publication Thesis must be submitted to LiU E-Press after the presentation.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Evalutation Writing of an individual evaluation report, which is then discussed
+ with the examiner and supervisors.
 \end_layout
 
 \begin_layout Standard
