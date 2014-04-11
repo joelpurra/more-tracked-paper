@@ -92,7 +92,7 @@ Master’s thesis planning report
 status open
 
 \begin_layout Plain Layout
-Preliminary title
+(Preliminary title)
 \end_layout
 
 \end_inset
@@ -105,7 +105,34 @@ Swedes Online: You Are More Tracked Than You Think
 \end_layout
 
 \begin_layout Author
-Joel Purra, mig@joelpurra.se, joepu444, 070-3521212
+Joel Purra
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "mig@joelpurra.se"
+type "mailto:"
+
+\end_inset
+
+, joepu444
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "http://joelpurra.com/"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
++46-70-3521212
 \end_layout
 
 \begin_layout Date
