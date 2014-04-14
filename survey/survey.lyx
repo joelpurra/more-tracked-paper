@@ -1,0 +1,173 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Undersökning
+\end_layout
+
+\begin_layout Enumerate
+Brukar du läsa användarsavtal, policy för personlig integritet och liknande
+ på de hemsidor du besöker?
+\end_layout
+
+\begin_layout Enumerate
+Har du lagt märke till att annonser på hemsidor kan ha varit riktad direkt
+ till dig?
+\end_layout
+
+\begin_layout Enumerate
+Vad för sorts annonser har du märkt varit riktad mot dig?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Fritid och resor
+\end_layout
+
+\begin_layout Enumerate
+Bank och finans
+\end_layout
+
+\begin_layout Enumerate
+Kläder och mode
+\end_layout
+
+\begin_layout Enumerate
+Böcker, film och musik
+\end_layout
+
+\begin_layout Enumerate
+Elektronik och prylar
+\end_layout
+
+\begin_layout Enumerate
+Annat
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Brukar du vara öppen med information om dig själv på nätet?
+\end_layout
+
+\begin_layout Enumerate
+Brukar du delta i reklamtävlingar som företag arrangerar?
+\end_layout
+
+\begin_layout Enumerate
+Är aktiv medlem i något socialt nätverk online, till exempel Facebook eller
+ Google+?
+\end_layout
+
+\begin_layout Enumerate
+Är du försiktig med vilken sorts information du lämnar ut om dig själv?
+\end_layout
+
+\begin_layout Enumerate
+Vilka av dessa hemsidor brukar du besöka?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+(De tio till tjugo största sidorna?)
+\end_layout
+
+\begin_layout Enumerate
+Ingen av ovanstående
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Brukar du läsa eller titta på annonser på hemsidor?
+\end_layout
+
+\begin_layout Enumerate
+Brukar du klicka på annonser på hemsidor?
+\end_layout
+
+\begin_layout Enumerate
+Använder du någon sorts mjukvara som blockerar annonser eller spårnings-
+ eller statistikverktyg?
+\end_layout
+
+\begin_layout Enumerate
+När du surfat på kommersiella hemsidor, har du någonsin lämnat ut:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Ditt namn
+\end_layout
+
+\begin_layout Enumerate
+Ditt telefonnummer
+\end_layout
+
+\begin_layout Enumerate
+Din hemadress
+\end_layout
+
+\begin_layout Enumerate
+Ditt personnummer
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
