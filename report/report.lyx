@@ -583,6 +583,10 @@ Find a reference for cross device tracking.
 
 \end_layout
 
+\begin_layout Subsubsection*
+What is the information used for?
+\end_layout
+
 \begin_layout Standard
 Publishers reserve areas of their web pages for displaying different kinds
  and sizes of advertisements alongside content.
@@ -603,7 +607,21 @@ key "Gill:2013:BPF:2504730.2504768"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about data aggregators selling information for other purposes than
+ advertising.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Greyedout
 status open
 
