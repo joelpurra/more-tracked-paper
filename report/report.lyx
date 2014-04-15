@@ -499,21 +499,33 @@ key "Malandrino:2013:PAI:2517840.2517868"
 
 \end_layout
 
+\begin_layout Subsubsection*
+Trackers are a commercial choice
+\end_layout
+
 \begin_layout Standard
 While online privacy has been in the spotlight due to recently uncovered
  mass surveillance operations, the focus has been on national government
  intelligence agencies collecting information around the globe.
  They have been able to intercept traffic data and metadata by, among several
- techniques, covertly hooking into the internet infrastructure.
+ techniques, covertly hooking into the internet infrastructure and passively
+ listening.
  In contrast, external resources are approved by and actively installed
  by site and service owners, and presented openly to users with basic technical
  skills and tools.
+ Reasons can be technical, for example because distributing resources among
+ systems improves performance.
+ Other times it is because there are positive network effects in using a
+ third-party social network to promote content and products.
+ More and more commonly, allowing a tracker to be installed can also become
+ a source of income - data aggregation companies pay for access to users'
+ data on the right site with the right quantity and quality of visitors.
  Because these external resources are used on behalf of the service, they
  are also loaded when end-to-end encryption with HTTPS is enabled for enhanced
  privacy and security.
- This encryption gives these private trackers more information than possible
- with large-scale passive traffic interception, even when there is a security
- nullifying mixture of encrypted and unencrypted connections.
+ This encryption by-pass gives these private trackers more information than
+ possible with large-scale passive traffic interception, even when there
+ is a security nullifying mixture of encrypted and unencrypted connections.
 \end_layout
 
 \begin_layout Subsubsection*
