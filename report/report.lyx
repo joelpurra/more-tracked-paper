@@ -7,6 +7,8 @@
 \usepackage{color}
 \definecolor{updated}{rgb}{0.8,0.85,1}
 
+\usepackage{numprint}
+
 \providecommand{\versionortoday}{(Unknown version) - \today}
 
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
@@ -215,8 +217,38 @@ Or Klondike and gold?
 \end_layout
 
 \begin_layout Abstract
-To show the overlap between different sites, front pages of Swedish top
- sites were downloaded and their resources counted and grouped.
+To show the overlap between different domains, front pages of approximately
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{900}
+\end_layout
+
+\end_inset
+
+ Swedish top sites and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{13000}
+\end_layout
+
+\end_inset
+
+ randomly selected .se domains were visited and their resources, including
+ those dynamically loaded, recorded.
+ Resources were grouped by mime type, URL protocol, domain, path, if it
+ matches the domain the request originated from and compared to lists of
+ known trackers.
  In this thesis I show the use of resources internal versus external to
  the entry domain, which the most common confirmed trackers are, what spread
  they have and how much the average Swedish internet user can expect to
@@ -252,7 +284,20 @@ The Internet Infrastructure Foundation is an independent organization, responsib
 le for the Swedish top level domain, and working for the benefit of the
  public that promotes the positive development of the internet in Sweden.
  Their head office is in Stockholm.
- In 2012 they had 61 employees and a turnover of almost 120 MSEK.
+ In 2012 they had 61 employees and a turnover of almost 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{120}
+\end_layout
+
+\end_inset
+
+ MSEK.
 \begin_inset CommandInset citation
 LatexCommand cite
 key ".SE:2013:annualreport"
@@ -342,9 +387,21 @@ The report
 \emph on
 .se health status
 \emph default
- is based on data collected from around 900 .se domain names deemed of importance
- to the Swedish society as a whole, as well as random selection of 1% of
- the registered .se domain names.
+ is based on data collected from around 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{900}
+\end_layout
+
+\end_inset
+
+ .se domain names deemed of importance to the Swedish society as a whole,
+ as well as random selection of 1% of the registered .se domain names.
  The research is focused on statistics about usage and security in DNS,
  IP, web and e-mail; the target audience is IT strategists, executives and
  directors.
