@@ -516,6 +516,10 @@ While online privacy has been in the spotlight due to recently uncovered
  nullifying mixture of encrypted and unencrypted connections.
 \end_layout
 
+\begin_layout Subsubsection*
+What is known by trackers?
+\end_layout
+
 \begin_layout Standard
 Depending on what activities a user performs online, different things can
  be inferred by trackers on sites where they are installed.
@@ -556,9 +560,23 @@ key "Roosendaal:2010:likethis"
  They are especially powerful when the user is registered and logged in,
  combining the full self-provided details of the user with their browsing
  habits.
+ Once a user has provided their personal information, it is no longer just
+ the individual browser or device being tracked, but the actual person using
+ it - even after logging out.
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Kontaxis:2012:PSP:2362793.2362823"
+key "Kontaxis:2012:PSP:2362793.2362823,Krishnamurthy:2008:CPO:1397735.1397744"
+
+\end_inset
+
+ This direct association, as opposed to inferred, to the person also allows
+ for tracking across devices where there is an overlap of services used.
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Find a reference for cross device tracking.
+\end_layout
 
 \end_inset
 
