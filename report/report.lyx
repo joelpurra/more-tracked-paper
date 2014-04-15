@@ -409,7 +409,22 @@ numprint{900}
 \emph on
 .se health status
 \emph default
- reports; results may be included in future reports, and tools reused.
+ reports; results may be included in future reports, and code reused by
+ both those reports and potentially other tools like .SE's public tool 
+\emph on
+Domain Check
+\emph default
+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Domain Check.
+\end_layout
+
+\end_inset
+
  Data for the reports is analyzed and summarized by Anne-Marie Eklund Löwinder,
  a world-renown DNS and security expert
 \begin_inset Foot
@@ -980,6 +995,23 @@ In order to facilitate repeatable and improvable analysis, tools will be
  developed to perform the collection and aggregation steps automatically.
  .SE already has a set of tools that run monthly; integration and interoperabilit
 y will smooth the process and continuous usage.
+ There is also a publich .SE tool to allow web site owners to test their
+ own sites, 
+\emph on
+Domain Check
+\emph default
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Domain Check.
+\end_layout
+
+\end_inset
+
+, which might benefit from some of the code developed within the scope of
+ this thesis.
 \end_layout
 
 \begin_layout Subsection*
