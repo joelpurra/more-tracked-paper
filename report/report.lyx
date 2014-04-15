@@ -308,7 +308,7 @@ key ".SE:2013:annualreport"
 \end_layout
 
 \begin_layout Section*
-Background and context
+Context
 \end_layout
 
 \begin_layout Standard
@@ -405,8 +405,13 @@ numprint{900}
  The research is focused on statistics about usage and security in DNS,
  IP, web and e-mail; the target audience is IT strategists, executives and
  directors.
- Data is analyzed and summarized by Anne-Marie Eklund Löwinder, a world-renown
- DNS and security expert
+ The thesis subject has been selected to be in line with the 
+\emph on
+.se health status
+\emph default
+ reports; results may be included in future reports, and tools reused.
+ Data for the reports is analyzed and summarized by Anne-Marie Eklund Löwinder,
+ a world-renown DNS and security expert
 \begin_inset Foot
 status open
 
