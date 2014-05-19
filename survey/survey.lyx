@@ -69,8 +69,17 @@ Brukar du läsa användarsavtal, policy för personlig integritet och liknande
 \end_layout
 
 \begin_layout Enumerate
-Har du lagt märke till att annonser på hemsidor kan ha varit riktad direkt
- till dig?
+Har du lagt märke till att annonser på hemsidor 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+kan ha?
+\end_layout
+
+\end_inset
+
+ varit riktad direkt till dig?
 \end_layout
 
 \begin_layout Enumerate
@@ -99,6 +108,19 @@ Elektronik och prylar
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fler kategorier?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
 Annat
 \end_layout
 
@@ -112,21 +134,81 @@ Brukar du delta i reklamtävlingar som företag arrangerar?
 \end_layout
 
 \begin_layout Enumerate
-Är aktiv medlem i något socialt nätverk online, till exempel Facebook eller
- Google+?
+Brukar du delta i kundundersökningar, som denna, från företag och organisationer
+? 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Kan finnas information från den som genomför undersökningen.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Är aktiv medlem i något socialt nätverk online?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Facebook
+\end_layout
+
+\begin_layout Enumerate
+Google+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fler nätverk?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Annat
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Är du försiktig med vilken sorts information du lämnar ut om dig själv?
 \end_layout
 
 \begin_layout Enumerate
-Vilka av dessa hemsidor brukar du besöka?
+Vilka av dessa hemsidor brukar du besöka: 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Aldrig, ibland, ofta?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-(De tio till tjugo största sidorna?)
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+De tio till tjugo största sidorna inom .se?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -143,10 +225,68 @@ Brukar du klicka på annonser på hemsidor?
 \end_layout
 
 \begin_layout Enumerate
-Använder du någon sorts mjukvara som blockerar annonser eller spårnings-
- eller statistikverktyg?
+Känner du till någon sorts mjukvara som blockerar annonser, spårnings- eller
+ statistikverktyg?
 \end_layout
 
+\begin_layout Enumerate
+Använder du någon sorts mjukvara som blockerar annonser, spårnings- eller
+ statistikverktyg?
+\end_layout
+
+\begin_layout Enumerate
+Känner du till eller använder någon av dessa mjukvaror: 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Nej/känner till/använder?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+AdBlock Plus
+\end_layout
+
+\begin_layout Enumerate
+AdBlock for Chrome, Safari, Opera
+\end_layout
+
+\begin_layout Enumerate
+NoScript
+\end_layout
+
+\begin_layout Enumerate
+Ghostery
+\end_layout
+
+\begin_layout Enumerate
+Disconnect
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fler verktyg?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Annat
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 När du surfat på kommersiella hemsidor, har du någonsin lämnat ut:
 \end_layout
