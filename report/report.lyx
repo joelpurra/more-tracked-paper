@@ -970,8 +970,10 @@ The thesis will primarily be written from a Swedish perspective.
 \end_layout
 
 \begin_layout Standard
-One assumption is that all external resources can act as trackers, collecting
- data and tracking users across domains using for example the 
+One assumption is that all external resources can act as trackers, even
+ for static (non-script) resources with no capabilities to dynamically survey
+ the user's browser, collecting data and tracking users across domains using
+ for example the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1003,23 +1005,6 @@ key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
 confirmed
 \emph default
  trackers.
-\end_layout
-
-\begin_layout Chapter
-Methodology
-\end_layout
-
-\begin_layout Standard
-Based on a list of domains, external resources are listed by downloading
- of the front page of each domain, and analyzing its HTML content.
- The URLs of external resources will be extracted, and associated with the
- domain they were loaded from.
-\end_layout
-
-\begin_layout Standard
-All external resources get some of the relevant data upon each request,
- even for static resources with no capabilities to dynamically survey the
- user's browser.
  While cookies used for tracking have been a concern for many, they are
  not necessary in order to identify most users upon return, even uniquely
  on a global level.
@@ -1032,6 +1017,144 @@ key "Eckersley2009unique"
  Cookies will not be considered to be an indicator of tracking, as it can
  be assumed that a combination of other server and client side techniques
  can achieve the same goal as a tracking cookie.
+\end_layout
+
+\begin_layout Chapter
+Methodology
+\end_layout
+
+\begin_layout Standard
+Based on a list of domains, the front page of each domain is downloaded
+ and parsed the way a browser would.
+ The URL of each requested resource will be extracted, and associated with
+ the domain they were loaded from.
+ This data will then be classified in a number of ways, before being boiled
+ down to statistics about the entire dataset.
+\end_layout
+
+\begin_layout Section
+Tools
+\end_layout
+
+\begin_layout Standard
+In order to download and analyze thousands of webpages in an automated fashion,
+ a set of suitable tools were sought.
+ Tools that are released as free and open source software have been preferred,
+ and the tools written for the thesis have also been released as such.
+ Development was performed in the Mac OS X operating system, but is thought
+ to be runnable on other Unix-like platforms with relative ease.
+\end_layout
+
+\begin_layout Subsection
+HTTP Archive (HAR) format
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.softwareishard.com/blog/har-12-spec/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In an effort to record and analyze network traffic as seen by individual
+ browsers, the data/file format HTTP Archive (HAR) was developed.
+ Browsers such as Google Chrome implement it as a complement to the network
+ graph shown in the Developer Console, from where a HAR file can be exported.
+ While constructed to analyze for example web performance, it also contains
+ data suitable for this thesis: requested URLs and HTTP request/response
+ headers such as referrer and content type.
+ HAR files are based upon the JSON standard 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert a link to the JSON standard.
+\end_layout
+
+\end_inset
+
+, which is a Javascript object compatible data format commonly used to communica
+te dynamic data between client side scripts in browsers and web servers.
+ The most recent specification at the time of writing was HAR 1.2.
+\end_layout
+
+\begin_layout Subsection
+PhantomJS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://phantomjs.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Accessing webpages is normally done by users in a graphical browser; the
+ browser downloads then displays images, executes scripts, plays videos.
+ A browser is user friendly but not optimal for batch usage due to the overhead
+ in constantly drawing results on screen and the lack of automation without
+ external tools such as Selenium Webdriver 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Selenium Webdriver.
+\end_layout
+
+\end_inset
+
+.
+ A good alternative is PhantomJS, which is built as a command line tool
+ without any user interface.
+ It acts like a browser internally, including rendering the webpage to a
+ image buffer that isn't displayed, and is controllable through the use
+ of scripts.
+ One such example script included in the default installation generates
+ HAR files from a webpage visit.
+\end_layout
+
+\begin_layout Subsection
+jq 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to jq.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While there are command line tools to transform data in for example plain
+ text, CSV and XML files, tools to work with JSON files are not as prevalent.
+ One such tools gaining momentum is jq, which is implemented with a domain
+ specific language (DSL) suitable for extracting or transforming data.
+ The DSL is based around a set of filters, similar to pipes in the Unix
+ world, transforming the input and passing it on to the next stage.
+ Jq performs well with large datasets, as it treats data as a stream.
 \end_layout
 
 \begin_layout Section
@@ -1056,8 +1179,8 @@ In order to facilitate repeatable and improvable analysis, tools will be
  developed to perform the collection and aggregation steps automatically.
  .SE already has a set of tools that run monthly; integration and interoperabilit
 y will smooth the process and continuous usage.
- There is also a publich .SE tool to allow web site owners to test their
- own sites, 
+ There is also a public .SE tool to allow web site owners to test their own
+ sites, 
 \emph on
 Domain Check
 \emph default
@@ -1271,6 +1394,14 @@ target "http://www.google.com/tagmanager/"
 \begin_layout Itemize
 Can collected data served by different services differ depending on which
  tool is used to fetch the data?
+\end_layout
+
+\begin_layout Itemize
+Does content and external resources vary between requests? Is it time dependent,
+ or regenerated for each request? One example would be often-updated news
+ sites or blogs, where new content is added and old replaced.
+ Another would be ads, which might be loaded from different sources per
+ request.
 \end_layout
 
 \begin_layout Itemize
