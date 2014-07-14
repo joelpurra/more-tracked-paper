@@ -508,6 +508,11 @@ Server side tracking, or tracking values sent to the same domain and then
  proxied to external services.
 \end_layout
 
+\begin_layout Itemize
+P3P policies, and if they are in use.
+ Check HTTP response headers.
+\end_layout
+
 \begin_layout Part
 Who to talk to
 \end_layout
