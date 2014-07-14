@@ -1167,8 +1167,206 @@ While there are command line tools to transform data in for example plain
 External datasets
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 Disconnect's blocking list
+\end_layout
+
+\begin_layout Standard
+One of the most popular privacy tools is Disconnect, which blocks tracking
+ sites by running as a browser plugin.
+ Disconnect was started by ex-Google engineers, and seems to still have
+ close ties to Google.
+\end_layout
+
+\begin_layout Standard
+The Disconnect software lets users block/unblock loading resources from
+ specific third-party domains.
+ A list of 2143 domains is used as the basis from the blocking.
+ Each entry belongs to an organization, including a link to the organizations
+ webpage.
+ There is also a grouping into categories, here shown with some examples.
+ Worth noting is that the content category isn't blocked by default.
+\end_layout
+
+\begin_layout Subsubsection
+Advertising 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add technorati.com, wpp.com?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+overture.com Yahoo's ad network.
+\end_layout
+
+\begin_layout Description
+omniture.com Adobe's ad network.
+\end_layout
+
+\begin_layout Description
+amazon-adsystem.com Amazon's ad delivery network.
+\end_layout
+
+\begin_layout Subsubsection
+Analytics
+\end_layout
+
+\begin_layout Description
+alexa.com Amazon's web statistics service, considered an authority in web
+ measurement.
+\end_layout
+
+\begin_layout Description
+comscore.com Analytics service that also publishes statistics.
+\end_layout
+
+\begin_layout Description
+gaug.es GitHub's analytics service.
+\end_layout
+
+\begin_layout Description
+coremetrics.com Part of IBM's enterprise marketing services.
+\end_layout
+
+\begin_layout Description
+newrelic.com A suite of systems monitoring and analytics software, up to
+ and including browsers.
+\end_layout
+
+\begin_layout Description
+nielsen.com Consumer studies.
+\end_layout
+
+\begin_layout Description
+statcounter.com Web statistics tool.
+\end_layout
+
+\begin_layout Description
+webtrends.com Digital marketing analytics and optimization across channels.
+\end_layout
+
+\begin_layout Subsubsection
+Content
+\end_layout
+
+\begin_layout Standard
+Sites that deliver content.
+ There is a wide variety of content, from images and videos to A/B testing,
+ comment and helpdesk services.
+ This category is not blocked by default.
+\end_layout
+
+\begin_layout Description
+brightcove.com Video hosting/monetization service.
+\end_layout
+
+\begin_layout Description
+disqus.com A third party comment service.
+\end_layout
+
+\begin_layout Description
+flickr.com Flickr is a photo/video hosting site, owned by Yahoo.
+\end_layout
+
+\begin_layout Description
+instagram.com Facebook's photo/video sharing site.
+\end_layout
+
+\begin_layout Description
+office.com Microsoft's Office suite online.
+\end_layout
+
+\begin_layout Description
+optimizely.com An A/B testing service.
+\end_layout
+
+\begin_layout Description
+truste.com Provides certification and tools for privacy policies in order
+ to gain users' trust; “enabling businesses to safely collect and use customer
+ data across web, mobile, cloud and advertising channels.” This includes
+ ways to selectively opt-out from cookies features; required, functional
+ or advertising.
+\end_layout
+
+\begin_layout Description
+tumblr.com A popular blogging platform.
+\end_layout
+
+\begin_layout Description
+uservoice.com A customer support service.
+\end_layout
+
+\begin_layout Description
+vimeo.com A video site.
+\end_layout
+
+\begin_layout Description
+youtube.com Google's video site.
+\end_layout
+
+\begin_layout Subsubsection
+Disconnect
+\end_layout
+
+\begin_layout Standard
+A special category for Facebook, Google and Twitter.
+ It seems to initially have been designed to block their respective like/+1/twee
+t buttons, but also contains other known tracking domains belonging to the
+ same organization.
+\end_layout
+
+\begin_layout Standard
+It's worth noting that adwords.google.com, doubleclick.net, admob.com and several
+ other of Google's ad networks, are listed here.
+\end_layout
+
+\begin_layout Subsubsection
+Social
+\end_layout
+
+\begin_layout Standard
+Site with an emphasis on social aspects.
+ They often have buttons to vote for, recommend or share with others.
+\end_layout
+
+\begin_layout Description
+addthis.com A link sharing service aggregator.
+\end_layout
+
+\begin_layout Description
+digg.com News aggregator.
+\end_layout
+
+\begin_layout Description
+linkedin.com Professional social network.
+\end_layout
+
+\begin_layout Description
+reddit.com Social new and link sharing, and discussion.
+\end_layout
+
+\begin_layout Subsection
+Public suffix list
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
