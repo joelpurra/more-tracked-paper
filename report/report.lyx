@@ -1033,7 +1033,7 @@ Based on a list of domains, the front page of each domain is downloaded
 \end_layout
 
 \begin_layout Section
-Tools
+Third party tools
 \end_layout
 
 \begin_layout Standard
@@ -1134,12 +1134,18 @@ Insert link to Selenium Webdriver.
 \end_layout
 
 \begin_layout Subsection
-jq 
-\begin_inset Note Greyedout
+jq
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to jq.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://stedolan.github.io/jq/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1155,6 +1161,120 @@ While there are command line tools to transform data in for example plain
  The DSL is based around a set of filters, similar to pipes in the Unix
  world, transforming the input and passing it on to the next stage.
  Jq performs well with large datasets, as it treats data as a stream.
+\end_layout
+
+\begin_layout Section
+External datasets
+\end_layout
+
+\begin_layout Standard
+Disconnect's blocking list
+\end_layout
+
+\begin_layout Section
+Code
+\end_layout
+
+\begin_layout Standard
+In order to efficiently and repeatably download and analyze web pages, special
+ tools have been written.
+ The source code for the respective projects have been released to the public
+ under GNU General Public License version 3.0 (GPL-3.0)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.gnu.org/licenses/gpl.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, so other projects can make use of them as well.
+\end_layout
+
+\begin_layout Subsection
+har-heedless
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/har-heedless"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
+ files, using PhantomJS.
+\end_layout
+
+\begin_layout Standard
+With a simple text file with one domain name per line as input, har-heedless
+ downloads all of their frontpages.
+ Downloads can be made either in serial or in parallel.
+ The resulting HAR data is written in a folder structure per domain, with
+ a timestamp in the file name.
+ The script that extracts HAR data, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+, is based on example code shipped with PhantomJS, but modified to be more
+ stable.
+\end_layout
+
+\begin_layout Subsection
+har-dulcify
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/har-dulcify"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+Extract data from HTTP Archive (HAR) files, quite possibly downloaded by
+ har-heedless, for some aggregate analysis.
+\end_layout
+
+\begin_layout Standard
+HAR files by themselves contain too much data, so the relevant parts need
+ to be extracted.
+ The extracted parts are then broken down into smaller parts that are easier
+ to group and analyze, and added to the data alongside the original.
+ With the expanded data in place, requests are classified by basic measures
+ and matched against external datasets.
 \end_layout
 
 \begin_layout Section
