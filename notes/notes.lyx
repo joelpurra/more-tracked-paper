@@ -513,6 +513,46 @@ P3P policies, and if they are in use.
  Check HTTP response headers.
 \end_layout
 
+\begin_layout Itemize
+Page speed statistics per category or country, for example from Google.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://analytics.blogspot.se/2012/04/global-site-speed-overview-how-fast-are.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Domains serving different content to browsers versus spiders/automated software.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://hasardbonus.se/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 Who to talk to
 \end_layout
