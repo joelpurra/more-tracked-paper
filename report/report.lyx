@@ -1089,7 +1089,7 @@ te dynamic data between client side scripts in browsers and web servers.
 \end_layout
 
 \begin_layout Subsection
-PhantomJS
+phantomjs
 \begin_inset Foot
 status open
 
@@ -1124,7 +1124,7 @@ Insert link to Selenium Webdriver.
 \end_inset
 
 .
- A good alternative is PhantomJS, which is built as a command line tool
+ A good alternative is phantomjs, which is built as a command line tool
  without any user interface.
  It acts like a browser internally, including rendering the webpage to a
  image buffer that isn't displayed, and is controllable through the use
@@ -1418,7 +1418,7 @@ target "https://github.com/joelpurra/har-heedless"
 
 \begin_layout Quotation
 Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
- files, using PhantomJS.
+ files, using phantomjs.
 \end_layout
 
 \begin_layout Standard
@@ -1437,8 +1437,122 @@ netsniff.js
 
 \end_inset
 
-, is based on example code shipped with PhantomJS, but modified to be more
+, is based on example code shipped with phantomjs, but modified to be more
  stable.
+\end_layout
+
+\begin_layout Subsubsection
+get/netsniff.js
+\end_layout
+
+\begin_layout Standard
+A modified version of netsniff.js from the phantomjs project.
+\end_layout
+
+\begin_layout Standard
+Some fixes include:
+\end_layout
+
+\begin_layout Itemize
+Stable output when resources failed to download.
+\end_layout
+
+\begin_layout Itemize
+Adding error messages as HAR comments.
+\end_layout
+
+\begin_layout Itemize
+Adding a base64 encoded page screenshot as an extended field.
+\end_layout
+
+\begin_layout Itemize
+Waiting a period of time after downloading the web page before generating
+ output, to let asynchronous downloading, processing and rendering finish.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+get/har.sh 
+\emph on
+url
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Contains logic to run netsniff.js through phantomjs.
+ If phantomjs crashed or otherwise encountered an error, a fallback HAR
+ file is generated with only a dummy response explaning that an error occurred.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domain.single.sh 
+\emph on
+domain
+\emph default
+ [--screenshot <true|false>]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Downloads the front page of a single domain, and takes care of writing the
+ HAR output to the correct folder and file.
+ If a screenshot has been requested, it is extracted (and removed) from
+ the extended HAR data and written to a separate file parallel to the resulting
+ HAR file.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domain/parallel.sh [parallel-processes [--screenshot <true|false>]] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uses GNU parallel
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add link to GNU parallel, and the offical citation.
+\end_layout
+
+\end_inset
+
+ to download multiple webpages at a time.
+ The number of separate processes running is adjusted per machine, depending
+ on capacity, with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel-processes
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1473,6 +1587,155 @@ HAR files by themselves contain too much data, so the relevant parts need
  to group and analyze, and added to the data alongside the original.
  With the expanded data in place, requests are classified by basic measures
  and matched against external datasets.
+ Scripts are written to perform only a limited task and instead be chained
+ together by piping the data between them.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Write about more scripts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/all.sh [har-folder-path]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Runs 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+preparations.sh
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+data.sh
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate.sh
+\end_layout
+
+\end_inset
+
+ in the same folder, optionally based on HAR files in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-folder-path
+\end_layout
+
+\end_inset
+
+.
+ This is the true one-shot script you want to run for one off analysis.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/preparations.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Downloads and prepares third party data sets, and puts them in the current
+ folder.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/data.sh [har-folder-path]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Processes all HAR files in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-folder-path
+\end_layout
+
+\end_inset
+
+ (defaulting to the current folder), and puts the output in the same folder.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/aggregate.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prepares third party data sets in the current folder.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/latest/all.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finds and lists the paths to the most recent HAR files, per domain.
 \end_layout
 
 \begin_layout Section
