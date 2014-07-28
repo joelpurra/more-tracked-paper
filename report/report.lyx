@@ -1030,6 +1030,7 @@ Based on a list of domains, the front page of each domain is downloaded
  the domain they were loaded from.
  This data will then be classified in a number of ways, before being boiled
  down to statistics about the entire dataset.
+ These aggregates are then compared between datasets.
 \end_layout
 
 \begin_layout Section
@@ -1089,7 +1090,16 @@ te dynamic data between client side scripts in browsers and web servers.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 phantomjs
+\end_layout
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -1124,8 +1134,17 @@ Insert link to Selenium Webdriver.
 \end_inset
 
 .
- A good alternative is phantomjs, which is built as a command line tool
- without any user interface.
+ A good alternative is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+, which is built as a command line tool without any user interface.
  It acts like a browser internally, including rendering the webpage to a
  image buffer that isn't displayed, and is controllable through the use
  of scripts.
@@ -1134,7 +1153,16 @@ Insert link to Selenium Webdriver.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 jq
+\end_layout
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -1156,11 +1184,97 @@ target "https://stedolan.github.io/jq/"
 \begin_layout Standard
 While there are command line tools to transform data in for example plain
  text, CSV and XML files, tools to work with JSON files are not as prevalent.
- One such tools gaining momentum is jq, which is implemented with a domain
- specific language (DSL) suitable for extracting or transforming data.
+ One such tool gaining momentum is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+jq
+\end_layout
+
+\end_inset
+
+, which is implemented with a domain specific language (DSL) suitable for
+ extracting or transforming data.
  The DSL is based around a set of filters, similar to pipes in the Unix
  world, transforming the input and passing it on to the next stage.
- Jq performs well with large datasets, as it treats data as a stream.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+jq
+\end_layout
+
+\end_inset
+
+ performs well with large datasets, as it treats data as a stream where
+ each top-level object is treated separately.
+\end_layout
+
+\begin_layout Subsection
+GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tange2011a"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.gnu.org/software/parallel/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To parallelize task execution, GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+ has been used.
+ It allows an input file to be distributed among several processes/CPU cores,
+ and the results to be combined into a single file.
+ It helps speed up downloading of HAR files, and processing of the JSON
+ data through 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+jq
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1189,8 +1303,11 @@ The Disconnect software lets users block/unblock loading resources from
 \end_layout
 
 \begin_layout Subsubsection
-Advertising 
-\begin_inset Note Note
+Advertising
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
@@ -1357,7 +1474,7 @@ Public suffix list
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
@@ -1418,7 +1535,17 @@ target "https://github.com/joelpurra/har-heedless"
 
 \begin_layout Quotation
 Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
- files, using phantomjs.
+ files, using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1437,8 +1564,17 @@ netsniff.js
 
 \end_inset
 
-, is based on example code shipped with phantomjs, but modified to be more
- stable.
+, is based on example code shipped with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+, but modified to be more stable.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1446,7 +1582,17 @@ get/netsniff.js
 \end_layout
 
 \begin_layout Standard
-A modified version of netsniff.js from the phantomjs project.
+A modified version of netsniff.js from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ project.
 \end_layout
 
 \begin_layout Standard
@@ -1454,7 +1600,7 @@ Some fixes include:
 \end_layout
 
 \begin_layout Itemize
-Stable output when resources failed to download.
+Stable, logged output when resources failed to download.
 \end_layout
 
 \begin_layout Itemize
@@ -1486,9 +1632,39 @@ url
 \end_layout
 
 \begin_layout Standard
-Contains logic to run netsniff.js through phantomjs.
- If phantomjs crashed or otherwise encountered an error, a fallback HAR
- file is generated with only a dummy response explaning that an error occurred.
+Contains logic to run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+ through 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+.
+ If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ crashed or otherwise encountered an error, a fallback HAR file is generated
+ with only a dummy response explaning that an error occurred.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1530,17 +1706,7 @@ domain/parallel.sh [parallel-processes [--screenshot <true|false>]]
 \end_layout
 
 \begin_layout Standard
-Uses GNU parallel
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Add link to GNU parallel, and the offical citation.
-\end_layout
-
-\end_inset
-
- to download multiple webpages at a time.
+Uses GNU parallel to download multiple webpages at a time.
  The number of separate processes running is adjusted per machine, depending
  on capacity, with 
 \begin_inset Flex Code
@@ -1589,6 +1755,20 @@ HAR files by themselves contain too much data, so the relevant parts need
  and matched against external datasets.
  Scripts are written to perform only a limited task and instead be chained
  together by piping the data between them.
+ As the scripts generally connect in only one way, the convenience scripts
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/
+\end_layout
+
+\end_inset
+
+ folder are mostly used.
+ These convenience scripts also leave the files from partial executions,
+ so the can be used for other kinds of analysis.
 \begin_inset Note Note
 status open
 
@@ -1599,6 +1779,11 @@ Write about more scripts.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+At the time of writing, there are 32 scripts in har-dulcify.
+ Here's a selection with explanations.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1645,7 +1830,7 @@ aggregate.sh
 
 \end_inset
 
- in the same folder, optionally based on HAR files in 
+ based on data in the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1655,7 +1840,8 @@ har-folder-path
 
 \end_inset
 
-.
+ (defaulting to the current folder) outputting the results to the current
+ folder.
  This is the true one-shot script you want to run for one off analysis.
 \end_layout
 
@@ -1673,8 +1859,8 @@ one-shot/preparations.sh
 \end_layout
 
 \begin_layout Standard
-Downloads and prepares third party data sets, and puts them in the current
- folder.
+Downloads, prepares and analyses third party data sets, and puts them in
+ the current folder for use by subsequent scripts.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1718,7 +1904,8 @@ one-shot/aggregate.sh
 \end_layout
 
 \begin_layout Standard
-Prepares third party data sets in the current folder.
+Prepares data for aggregation by counting occurances in each domain's data,
+ then adds them together to a single file containing an aggregate analysis.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1736,6 +1923,331 @@ domains/latest/all.sh
 
 \begin_layout Standard
 Finds and lists the paths to the most recent HAR files, per domain.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+extract/request/parts.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Extracts url, status, content-type (mime-type) ecetera from the originating
+ domain front page request and the subsequent requests.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+extract/request/expand-parts.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Keeps the original data, but also expands the url and mime-type into their
+ respective parts, and adds simple grouping to status and mime-type.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/basic.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Add basic classifications, such as if a request is internal or external
+ to the originating domain, and if the request is secured with HTTPS.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/add.sh 
+\family roman
+\emph on
+prepared-disconnect-dataset-path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Matches each requested domain against Disconnect's list of domains to block.
+ Disconnect's original 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+service.json
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/disconnectme/disconnect/raw/master/firefox/content/disconnect.safariextension/opera/chrome/data/services.json"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+disconnect-plaintext.json
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://services.disconnect.me/disconnect-plaintext.json"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) needs to be prepared through 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/prepare-service-list.sh
+\end_layout
+
+\end_inset
+
+ before being used.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification//add.sh 
+\family roman
+\emph on
+prepared-disconnect-dataset-path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Matches each requested domain against Mozilla's list of effective top level
+ domain names.
+ The original 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+effective_tld_names.dat
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://publicsuffix.org/list/effective_tld_names.dat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ needs to be prepared through 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/prepare-list.sh
+\end_layout
+
+\end_inset
+
+ before being used.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/prepare.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/all.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/prepare2.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/merge.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/analysis.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
