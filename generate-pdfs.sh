@@ -11,6 +11,7 @@ deleteTmpLyx(){
 deleteTmpLyx
 
 description=$(git describe --tags --match 'v[0-9]*' --always --dirty='-SNAPSHOT')
+logfile="$(basename "$BASH_SOURCE").log"
 
 echo "Version $description"
 
@@ -25,7 +26,7 @@ do
 
 	# Hacky rewrite of .lyx file
 	cat "$base.lyx" | sed "s/(Unknown version)/$description/" > "$base.tmp.lyx"
-	lyx --force-overwrite --export pdf2 "$base.tmp.lyx" &>/dev/null
+	lyx --force-overwrite --export pdf2 "$base.tmp.lyx" &> "$logfile"
 	mv "$base.tmp.pdf" "$base.pdf"
 
 	for rmfile in "$base".{aux,log,out,tex,tmp.lyx}; do [[ -s "$rmfile" ]] && rm "$rmfile"; done;
