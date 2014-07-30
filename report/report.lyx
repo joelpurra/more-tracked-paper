@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass report
@@ -25,13 +25,13 @@ logicalmkup
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,15 +53,24 @@ logicalmkup
 \pdf_pdfusetitle false
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -1034,6 +1043,280 @@ Based on a list of domains, the front page of each domain is downloaded
 \end_layout
 
 \begin_layout Section
+Related projects
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about HAR Archive.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to facilitate repeatable and improvable analysis, tools will be
+ developed to perform the collection and aggregation steps automatically.
+ .SE already has a set of tools that run monthly; integration and interoperabilit
+y will smooth the process and continuous usage.
+ There is also a public .SE tool to allow web site owners to test their own
+ sites, 
+\emph on
+Domain Check
+\emph default
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Domain Check.
+\end_layout
+
+\end_inset
+
+, which might benefit from some of the code developed within the scope of
+ this thesis.
+\end_layout
+
+\begin_layout Section
+Questions
+\end_layout
+
+\begin_layout Standard
+With domain and resource data in place, it will be aggregated to answer
+ the following questions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Why are these questions important? Why were they chosen?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Group questions by refined category?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What kinds of resources are there?
+\end_layout
+
+\begin_layout Itemize
+How many resources are internal versus external per domain?
+\end_layout
+
+\begin_layout Itemize
+What is the distribution of different kinds of resources?
+\end_layout
+
+\begin_layout Itemize
+How many external resources are there, considering different levels of uniquenes
+s:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unique URLs?
+\end_layout
+
+\begin_layout Itemize
+Unique per file URL?
+\end_layout
+
+\begin_layout Itemize
+Unique per folder URL?
+\end_layout
+
+\begin_layout Itemize
+Unique per subdomain?
+\end_layout
+
+\begin_layout Itemize
+Unique per domain?
+\end_layout
+
+\begin_layout Itemize
+Unique per TLD?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On how many domains is each external resource is represented?
+\end_layout
+
+\begin_layout Itemize
+How does usage of external resources differ between groups of domains?
+\end_layout
+
+\begin_layout Itemize
+How to mark certain external resources as known trackers?
+\end_layout
+
+\begin_layout Itemize
+What is the usage and distribution of known trackers?
+\end_layout
+
+\begin_layout Itemize
+Are you as tracked using secure HTTPS as insecure HTTP?
+\end_layout
+
+\begin_layout Itemize
+How do the results compare to
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Historical .se data, if readily available from earlier .SE status checks?
+\end_layout
+
+\begin_layout Itemize
+Other ccTLDs?
+\end_layout
+
+\begin_layout Itemize
+Commonly used gTLDs?
+\end_layout
+
+\begin_layout Itemize
+Recently introduced newTLDs?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Additional questions, which can be considered as bonuses
+\end_layout
+
+\begin_layout Itemize
+Could any external resources actually be considered internal, despite being
+ loaded from external domains?
+\end_layout
+
+\begin_layout Itemize
+How to determine if a resource
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Crosses Sweden's borders in transit?
+\end_layout
+
+\begin_layout Itemize
+Is handled by an organization with base or ownership outside of Sweden?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Which external resources are loaded from Sweden and abroad respectively?
+\end_layout
+
+\begin_layout Itemize
+What user data could potentially be collected, and subsequently inferred?
+\end_layout
+
+\begin_layout Itemize
+To what extent can the average Swedish internet user's browsing habits be
+ correlated across the most commonly visited webpages?
+\end_layout
+
+\begin_layout Section
+Potential problems
+\end_layout
+
+\begin_layout Itemize
+Due to the dynamic nature of modern web pages, a static HTML analysis might
+ not be enough.
+ How can pages with dynamic script loading be analyzed?
+\end_layout
+
+\begin_layout Itemize
+Script aggregation and concatenation could give misleading numbers if only
+ analyzed per URL.
+ Is it possible to detect which known scripts are actually running?
+\end_layout
+
+\begin_layout Itemize
+Can Google Tag Manager
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.google.com/tagmanager/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ scripts, which is script aggregation with asynchronous loading directed
+ specifically to marketers, be analyzed to show each included service?
+\end_layout
+
+\begin_layout Itemize
+Can collected data served by different services differ depending on which
+ tool is used to fetch the data?
+\end_layout
+
+\begin_layout Itemize
+Does content and external resources vary between requests? Is it time dependent,
+ or regenerated for each request? One example would be often-updated news
+ sites or blogs, where new content is added and old replaced.
+ Another would be ads, which might be loaded from different sources per
+ request.
+\end_layout
+
+\begin_layout Itemize
+Many of the external resources will be overlapping, and downloading them
+ multiple times can be avoided by caching the file the first time in a run.
+ Would keeping a local cache of recently requested URLs affect the results?
+\end_layout
+
+\begin_layout Itemize
+Automated downloading of webpages, especially downloading several in short
+ succession, can be seen by site and service owners as disruptive by using
+ system resources and skewing statistical data.
+ Traversing different pages on a single website can also be detected by
+ looking at for example navigational patterns.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
+
+\end_inset
+
+ By only downloading the domain root page and associated resources this
+ tool might not fall into that category of detection.
+ Will automated collection done for this report be detected and hindered?
+\end_layout
+
+\begin_layout Chapter
+Software
+\end_layout
+
+\begin_layout Section
 Third party tools
 \end_layout
 
@@ -1275,215 +1558,6 @@ jq
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Section
-External datasets
-\end_layout
-
-\begin_layout Subsection
-Disconnect's blocking list
-\end_layout
-
-\begin_layout Standard
-One of the most popular privacy tools is Disconnect, which blocks tracking
- sites by running as a browser plugin.
- Disconnect was started by ex-Google engineers, and seems to still have
- close ties to Google.
-\end_layout
-
-\begin_layout Standard
-The Disconnect software lets users block/unblock loading resources from
- specific third-party domains.
- A list of 2143 domains is used as the basis from the blocking.
- Each entry belongs to an organization, including a link to the organizations
- webpage.
- There is also a grouping into categories, here shown with some examples.
- Worth noting is that the content category isn't blocked by default.
-\end_layout
-
-\begin_layout Subsubsection
-Advertising
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add technorati.com, wpp.com?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-overture.com Yahoo's ad network.
-\end_layout
-
-\begin_layout Description
-omniture.com Adobe's ad network.
-\end_layout
-
-\begin_layout Description
-amazon-adsystem.com Amazon's ad delivery network.
-\end_layout
-
-\begin_layout Subsubsection
-Analytics
-\end_layout
-
-\begin_layout Description
-alexa.com Amazon's web statistics service, considered an authority in web
- measurement.
-\end_layout
-
-\begin_layout Description
-comscore.com Analytics service that also publishes statistics.
-\end_layout
-
-\begin_layout Description
-gaug.es GitHub's analytics service.
-\end_layout
-
-\begin_layout Description
-coremetrics.com Part of IBM's enterprise marketing services.
-\end_layout
-
-\begin_layout Description
-newrelic.com A suite of systems monitoring and analytics software, up to
- and including browsers.
-\end_layout
-
-\begin_layout Description
-nielsen.com Consumer studies.
-\end_layout
-
-\begin_layout Description
-statcounter.com Web statistics tool.
-\end_layout
-
-\begin_layout Description
-webtrends.com Digital marketing analytics and optimization across channels.
-\end_layout
-
-\begin_layout Subsubsection
-Content
-\end_layout
-
-\begin_layout Standard
-Sites that deliver content.
- There is a wide variety of content, from images and videos to A/B testing,
- comment and helpdesk services.
- This category is not blocked by default.
-\end_layout
-
-\begin_layout Description
-brightcove.com Video hosting/monetization service.
-\end_layout
-
-\begin_layout Description
-disqus.com A third party comment service.
-\end_layout
-
-\begin_layout Description
-flickr.com Flickr is a photo/video hosting site, owned by Yahoo.
-\end_layout
-
-\begin_layout Description
-instagram.com Facebook's photo/video sharing site.
-\end_layout
-
-\begin_layout Description
-office.com Microsoft's Office suite online.
-\end_layout
-
-\begin_layout Description
-optimizely.com An A/B testing service.
-\end_layout
-
-\begin_layout Description
-truste.com Provides certification and tools for privacy policies in order
- to gain users' trust; “enabling businesses to safely collect and use customer
- data across web, mobile, cloud and advertising channels.” This includes
- ways to selectively opt-out from cookies features; required, functional
- or advertising.
-\end_layout
-
-\begin_layout Description
-tumblr.com A popular blogging platform.
-\end_layout
-
-\begin_layout Description
-uservoice.com A customer support service.
-\end_layout
-
-\begin_layout Description
-vimeo.com A video site.
-\end_layout
-
-\begin_layout Description
-youtube.com Google's video site.
-\end_layout
-
-\begin_layout Subsubsection
-Disconnect
-\end_layout
-
-\begin_layout Standard
-A special category for Facebook, Google and Twitter.
- It seems to initially have been designed to block their respective like/+1/twee
-t buttons, but also contains other known tracking domains belonging to the
- same organization.
-\end_layout
-
-\begin_layout Standard
-It's worth noting that adwords.google.com, doubleclick.net, admob.com and several
- other of Google's ad networks, are listed here.
-\end_layout
-
-\begin_layout Subsubsection
-Social
-\end_layout
-
-\begin_layout Standard
-Site with an emphasis on social aspects.
- They often have buttons to vote for, recommend or share with others.
-\end_layout
-
-\begin_layout Description
-addthis.com A link sharing service aggregator.
-\end_layout
-
-\begin_layout Description
-digg.com News aggregator.
-\end_layout
-
-\begin_layout Description
-linkedin.com Professional social network.
-\end_layout
-
-\begin_layout Description
-reddit.com Social new and link sharing, and discussion.
-\end_layout
-
-\begin_layout Subsection
-Public suffix list
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write here.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -2080,8 +2154,8 @@ prepared-disconnect-dataset-path
 \end_layout
 
 \begin_layout Standard
-Matches each requested domain against Mozilla's list of effective top level
- domain names, and adds the results to the output.
+Matches each requested domain against Mozilla's Public Suffix list of effective
+ top level domain names, and adds the results to the output.
  The original 
 \begin_inset Flex Code
 status collapsed
@@ -2205,286 +2279,32 @@ Takes counts and lists of values, and reduces them to easy to present values,
  percentages and top lists.
 \end_layout
 
-\begin_layout Section
-Related projects
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about HAR Archive.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In order to facilitate repeatable and improvable analysis, tools will be
- developed to perform the collection and aggregation steps automatically.
- .SE already has a set of tools that run monthly; integration and interoperabilit
-y will smooth the process and continuous usage.
- There is also a public .SE tool to allow web site owners to test their own
- sites, 
-\emph on
-Domain Check
-\emph default
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add link to Domain Check.
-\end_layout
-
-\end_inset
-
-, which might benefit from some of the code developed within the scope of
- this thesis.
-\end_layout
-
-\begin_layout Section
-Questions
-\end_layout
-
-\begin_layout Standard
-With domain and resource data in place, it will be aggregated to answer
- the following questions.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Why are these questions important? Why were they chosen?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Group questions by refined category?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-What kinds of resources are there?
-\end_layout
-
-\begin_layout Itemize
-How many resources are internal versus external per domain?
-\end_layout
-
-\begin_layout Itemize
-What is the distribution of different kinds of resources?
-\end_layout
-
-\begin_layout Itemize
-How many external resources are there, considering different levels of uniquenes
-s:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Unique URLs?
-\end_layout
-
-\begin_layout Itemize
-Unique per file URL?
-\end_layout
-
-\begin_layout Itemize
-Unique per folder URL?
-\end_layout
-
-\begin_layout Itemize
-Unique per subdomain?
-\end_layout
-
-\begin_layout Itemize
-Unique per domain?
-\end_layout
-
-\begin_layout Itemize
-Unique per TLD?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-On how many domains is each external resource is represented?
-\end_layout
-
-\begin_layout Itemize
-How does usage of external resources differ between groups of domains?
-\end_layout
-
-\begin_layout Itemize
-How to mark certain external resources as known trackers?
-\end_layout
-
-\begin_layout Itemize
-What is the usage and distribution of known trackers?
-\end_layout
-
-\begin_layout Itemize
-Are you as tracked using secure HTTPS as insecure HTTP?
-\end_layout
-
-\begin_layout Itemize
-How do the results compare to
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Historical .se data, if readily available from earlier .SE status checks?
-\end_layout
-
-\begin_layout Itemize
-Other ccTLDs?
-\end_layout
-
-\begin_layout Itemize
-Commonly used gTLDs?
-\end_layout
-
-\begin_layout Itemize
-Recently introduced newTLDs?
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Additional questions, which can be considered as bonuses
-\end_layout
-
-\begin_layout Itemize
-Could any external resources actually be considered internal, despite being
- loaded from external domains?
-\end_layout
-
-\begin_layout Itemize
-How to determine if a resource
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Crosses Sweden's borders in transit?
-\end_layout
-
-\begin_layout Itemize
-Is handled by an organization with base or ownership outside of Sweden?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Which external resources are loaded from Sweden and abroad respectively?
-\end_layout
-
-\begin_layout Itemize
-What user data could potentially be collected, and subsequently inferred?
-\end_layout
-
-\begin_layout Itemize
-To what extent can the average Swedish internet user's browsing habits be
- correlated across the most commonly visited webpages?
-\end_layout
-
-\begin_layout Section
-Potential problems
-\end_layout
-
-\begin_layout Itemize
-Due to the dynamic nature of modern web pages, a static HTML analysis might
- not be enough.
- How can pages with dynamic script loading be analyzed?
-\end_layout
-
-\begin_layout Itemize
-Script aggregation and concatenation could give misleading numbers if only
- analyzed per URL.
- Is it possible to detect which known scripts are actually running?
-\end_layout
-
-\begin_layout Itemize
-Can Google Tag Manager
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.google.com/tagmanager/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- scripts, which is script aggregation with asynchronous loading directed
- specifically to marketers, be analyzed to show each included service?
-\end_layout
-
-\begin_layout Itemize
-Can collected data served by different services differ depending on which
- tool is used to fetch the data?
-\end_layout
-
-\begin_layout Itemize
-Does content and external resources vary between requests? Is it time dependent,
- or regenerated for each request? One example would be often-updated news
- sites or blogs, where new content is added and old replaced.
- Another would be ads, which might be loaded from different sources per
- request.
-\end_layout
-
-\begin_layout Itemize
-Many of the external resources will be overlapping, and downloading them
- multiple times can be avoided by caching the file the first time in a run.
- Would keeping a local cache of recently requested URLs affect the results?
-\end_layout
-
-\begin_layout Itemize
-Automated downloading of webpages, especially downloading several in short
- succession, can be seen by site and service owners as disruptive by using
- system resources and skewing statistical data.
- Traversing different pages on a single website can also be detected by
- looking at for example navigational patterns.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
-
-\end_inset
-
- By only downloading the domain root page and associated resources this
- tool might not fall into that category of detection.
- Will automated collection done for this report be detected and hindered?
-\end_layout
-
 \begin_layout Chapter
 Data sources
 \end_layout
 
-\begin_layout Standard
-In order to get a decent sample without, over 100.000 unique domains were
- downloaded.
+\begin_layout Section
+Domains
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
+.SE Health Check domains
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about the health check selection.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Random .se domains
 \end_layout
 
@@ -2497,7 +2317,7 @@ The thesis was written in collaboration with .SE, which runs the .se TLD,
  random from the database of active domains in the zone.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Random .dk domains
 \end_layout
 
@@ -2520,6 +2340,227 @@ target "http://www.dk-hostmaster.dk/"
 
 , helped out with a sample of 10.000 domains, chosen at random from the database
  of active domains in the zone.
+ The zone was exported by DK Hostmaster staff 2014-07-07.
+\end_layout
+
+\begin_layout Section
+External datasets
+\end_layout
+
+\begin_layout Subsection
+Disconnect's blocking list
+\end_layout
+
+\begin_layout Standard
+One of the most popular privacy tools is Disconnect, which blocks tracking
+ sites by running as a browser plugin.
+ Disconnect was started by ex-Google engineers, and seems to still have
+ close ties to Google.
+\end_layout
+
+\begin_layout Standard
+The Disconnect software lets users block/unblock loading resources from
+ specific third-party domains.
+ A list of 2143 domains is used as the basis from the blocking.
+ Each entry belongs to an organization, including a link to the organizations
+ webpage.
+ There is also a grouping into categories, here shown with some examples.
+ Worth noting is that the content category isn't blocked by default.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about top results in datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Advertising
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add technorati.com, wpp.com?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+overture.com Yahoo's ad network.
+\end_layout
+
+\begin_layout Description
+omniture.com Adobe's ad network.
+\end_layout
+
+\begin_layout Description
+amazon-adsystem.com Amazon's ad delivery network.
+\end_layout
+
+\begin_layout Subsubsection
+Analytics
+\end_layout
+
+\begin_layout Description
+alexa.com Amazon's web statistics service, considered an authority in web
+ measurement.
+\end_layout
+
+\begin_layout Description
+comscore.com Analytics service that also publishes statistics.
+\end_layout
+
+\begin_layout Description
+gaug.es GitHub's analytics service.
+\end_layout
+
+\begin_layout Description
+coremetrics.com Part of IBM's enterprise marketing services.
+\end_layout
+
+\begin_layout Description
+newrelic.com A suite of systems monitoring and analytics software, up to
+ and including browsers.
+\end_layout
+
+\begin_layout Description
+nielsen.com Consumer studies.
+\end_layout
+
+\begin_layout Description
+statcounter.com Web statistics tool.
+\end_layout
+
+\begin_layout Description
+webtrends.com Digital marketing analytics and optimization across channels.
+\end_layout
+
+\begin_layout Subsubsection
+Content
+\end_layout
+
+\begin_layout Standard
+Sites that deliver content.
+ There is a wide variety of content, from images and videos to A/B testing,
+ comment and helpdesk services.
+ This category is not blocked by default.
+\end_layout
+
+\begin_layout Description
+brightcove.com Video hosting/monetization service.
+\end_layout
+
+\begin_layout Description
+disqus.com A third party comment service.
+\end_layout
+
+\begin_layout Description
+flickr.com Flickr is a photo/video hosting site, owned by Yahoo.
+\end_layout
+
+\begin_layout Description
+instagram.com Facebook's photo/video sharing site.
+\end_layout
+
+\begin_layout Description
+office.com Microsoft's Office suite online.
+\end_layout
+
+\begin_layout Description
+optimizely.com An A/B testing service.
+\end_layout
+
+\begin_layout Description
+truste.com Provides certification and tools for privacy policies in order
+ to gain users' trust; “enabling businesses to safely collect and use customer
+ data across web, mobile, cloud and advertising channels.” This includes
+ ways to selectively opt-out from cookies features; required, functional
+ or advertising.
+\end_layout
+
+\begin_layout Description
+tumblr.com A popular blogging platform.
+\end_layout
+
+\begin_layout Description
+uservoice.com A customer support service.
+\end_layout
+
+\begin_layout Description
+vimeo.com A video site.
+\end_layout
+
+\begin_layout Description
+youtube.com Google's video site.
+\end_layout
+
+\begin_layout Subsubsection
+Disconnect
+\end_layout
+
+\begin_layout Standard
+A special category for Facebook, Google and Twitter.
+ It seems to initially have been designed to block their respective like/+1/twee
+t buttons, but also contains other known tracking domains belonging to the
+ same organization.
+\end_layout
+
+\begin_layout Standard
+It's worth noting that adwords.google.com, doubleclick.net, admob.com and several
+ other of Google's ad networks, are listed here.
+\end_layout
+
+\begin_layout Subsubsection
+Social
+\end_layout
+
+\begin_layout Standard
+Site with an emphasis on social aspects.
+ They often have buttons to vote for, recommend or share with others.
+\end_layout
+
+\begin_layout Description
+addthis.com A link sharing service aggregator.
+\end_layout
+
+\begin_layout Description
+digg.com News aggregator.
+\end_layout
+
+\begin_layout Description
+linkedin.com Professional social network.
+\end_layout
+
+\begin_layout Description
+reddit.com Social new and link sharing, and discussion.
+\end_layout
+
+\begin_layout Subsection
+Public suffix list
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
