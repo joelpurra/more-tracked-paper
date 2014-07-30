@@ -1046,17 +1046,82 @@ Based on a list of domains, the front page of each domain is downloaded
 Related projects
 \end_layout
 
+\begin_layout Subsection
+.SE Health Status
+\end_layout
+
 \begin_layout Standard
-\begin_inset Note Greyedout
+The thesis topic was chosen to align with the 
+\emph on
+.se health status
+\emph default
+, and one of the sources of lists of domains.
+ Results from this and other runs may be included in future reports.
+\end_layout
+
+\begin_layout Subsection
+HTTP Archive
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Write about HAR Archive.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httparchive.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In an effort to measure web page speed on the internet, initially developed
+ in October 2010, the HTTP Archive collects HAR data and runs analyses on
+ them.
+ Unfortunately, their data dumps are in a custom format, not the original
+ HAR files, but there are some direct comparisons to be made with their
+ 
+\emph on
+Interesting stats
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httparchive.org/interesting.php"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ aggregate data.
+\end_layout
+
+\begin_layout Itemize
+Pages Using Google Libraries API
+\end_layout
+
+\begin_layout Itemize
+HTTPS Requests
+\end_layout
+
+\begin_layout Itemize
+Total Requests per Page
+\end_layout
+
+\begin_layout Subsection
+.SE Domain Check
 \end_layout
 
 \begin_layout Standard
@@ -2226,7 +2291,7 @@ Write here.
 status collapsed
 
 \begin_layout Plain Layout
-aggregate/prepare-for-analysis.sh
+aggregate/prepare2.sh
 \end_layout
 
 \end_inset
@@ -2548,19 +2613,206 @@ reddit.com Social new and link sharing, and discussion.
 
 \begin_layout Subsection
 Public suffix list
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Write here.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://publicsuffix.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Public_Suffix_List"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the domain name system, it is not always obvious what parts of a domain
+ name are a public suffix and which are registerable by Internet users.
+ The main example is 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+example.co.uk
+\end_layout
+
+\end_inset
+
+, where the public suffix 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+ is to different from the TLD 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+uk
+\end_layout
+
+\end_inset
+
+.
+ Because HTTP cookies are based on domains names, it is important to browser
+ vendors to be able to recognize which parts are public suffixes to be able
+ to protect users against supercookies
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/HTTP_cookie#Supercookie"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+; cookies which are scoped to a public suffix, and therefore readable across
+ all web sites under that public suffix.
+ The same dataset is also useful for grouping domains without improperly
+ counting 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+example.co.uk
+\end_layout
+
+\end_inset
+
+ as a 
+\emph on
+user-owned subdomain
+\emph default
+ of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+, which would then render 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+ as the most popular domain under the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+uk
+\end_layout
+
+\end_inset
+
+ TLD.
+\end_layout
+
+\begin_layout Standard
+Swedish examples include second level domains 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+pp.se
+\end_layout
+
+\end_inset
+
+ for privately owned domains and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+tm.se
+\end_layout
+
+\end_inset
+
+ for trademarks
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/data/barred_domains_list.txt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ These second level domains were more important before April 2003
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/.se#Pre_2003_system"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, when first level domain registration rules restricted registration to
+ nation-wide companies, associations and authorities.
+\end_layout
+
+\begin_layout Standard
+The public suffix list specification contains an algorithm for certain wildcard
+ rules that have exceptions, which this thesis has not implemented fully.
+ These 10 exception were deemed insignificant, as 7 of them are Japanese
+ cities grouped by geographic areas and the remaining 3 seem to belong to
+ ccTLD owner organizations.
 \end_layout
 
 \begin_layout Chapter
