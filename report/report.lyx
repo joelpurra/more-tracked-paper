@@ -3170,29 +3170,19 @@ target "https://jquery.com/"
  affect script analysis at a later stage, by reducing the number of third-party
  requests.
  While it's hard to analyze all scripts, based on their wide spread use,
- third-party scripts stay at their respective home servers as software-as-a-serv
-ice 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Check SAAS definition.
+ third-party scripts stay on their respective home servers as software as
+ a service (SaaS) to enable faster update cycles and tracking of HTTP requests.
 \end_layout
 
-\end_inset
-
- to enable faster update cycles and tracking of HTTP requests.
-\end_layout
-
-\begin_layout Standard
-One of the concerns was Google Tag Manager
+\begin_layout Subsection
+Google Tag Manager
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "http://www.google.com/tagmanager/"
+target "https://www.google.com/tagmanager/"
 
 \end_inset
 
@@ -3201,9 +3191,15 @@ target "http://www.google.com/tagmanager/"
 
 \end_inset
 
-, which a script aggregation service with asynchronous loading directed
- specifically to marketers.
- While simplifying management with only on 
+
+\end_layout
+
+\begin_layout Standard
+One of the concerns was Google Tag Manager (GTM), which a script aggregation
+ service with asynchronous loading directed specifically to marketers.
+ Google provides builtin support for their AdWords, Analytics (GA) and DoubleCli
+ck (DC) services.
+ While simplifying management with only one 
 \begin_inset Flex Code
 status collapsed
 
@@ -3213,25 +3209,290 @@ status collapsed
 
 \end_inset
 
- tag, each part seems to 
-\begin_inset Quotes eld
-\end_inset
+ tag, each part should download separately and perform the same duties,
+ including “calling home” to the usual addresses.
+ In order to confirm this, a query was run on one of the data sets.
+\end_layout
 
-call home
-\begin_inset Quotes erd
-\end_inset
-
- to the usual addresses of the separate scripts.
-\begin_inset Note Greyedout
-status open
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-Add data on Google Tag manager.
+Name
 \end_layout
 
 \end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Percentage
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dataset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014-07-25 100k server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Domains with HAR data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+99952
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Domains with GTM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1307
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.3%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requests to GA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2980
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requests to DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GA/GTM domain coverage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1105
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+85%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DC/GTM domain coverage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+738
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+56%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GA+DC/GTM domain coverage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1307
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The numbers point to every domain that uses Google Tag Manager uses at least
+ one of Google Analytics and DoubleClick, and will therefore not obscure
+ information regarding which services are called when further analyzed.
 \end_layout
 
 \begin_layout Subsection
@@ -3240,7 +3501,7 @@ Parallelizing downloads
 
 \begin_layout Standard
 A lot of the time spent downloading a web page is spent waiting for network
- resources.
+ resources, especially during timeouts during retrieval.
  To speed up downloading large amounts of web pages, parallelizing was employed
  using simple scripting techniques, starting multiple processes at once
  in batches, waiting for each batch to finish before starting the next.
@@ -3263,8 +3524,8 @@ parallel
 \begin_layout Standard
 During initial parallelizing tests, the laptop machine was shown to be able
  to handle 100 domain downloads in parallel, but this was later scaled down
- to ensure consistent numbers at the cost of significantly longer download
- times.
+ to ensure system overload would not affect results, at the cost of significantl
+y longer download times.
 \end_layout
 
 \begin_layout Subsection
@@ -3295,6 +3556,17 @@ below the fold
 \emph default
 , meaning outside of the initial view the user has without scrolling in
  any direction, as a page speed improvement.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Check if all images are automatically downloaded by phantomjs, as if the
+ page had been scrolled, as they seem present in screenshots.
+\end_layout
+
+\end_inset
+
  Responsive CSS adapts the page style to the screen size in order to increase
  usability for for example mobile users, and might optimize the quality
  of downloaded images to match the screen size.
@@ -3313,19 +3585,240 @@ phantomjs
 
  uses the physical computer's primary screen size.
  In order to reduce differences between the laptop and server machines,
- a fixed emulated window size of 1024x768 was set.
- The window size also sets a limit on the screenshot size, when rendered.
- 
-\begin_inset Note Greyedout
+ a fixed emulated window size of 1024x768 pixels was chosen.
+ The basis for this is that 1024x768 pixel resolution screens have been
+ the recommended screen size to design for
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Write about screen size statistics.
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.nngroup.com/articles/screen-resolution-and-page-layout/"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+ for a long time
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.nngroup.com/articles/computer-screens-getting-bigger/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, and it still is a common screen size
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gs.statcounter.com/#resolution-ww-monthly-201307-201407"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Screenshots
+\end_layout
+
+\begin_layout Standard
+In order to visually being able to confirm that web pages have been downloaded
+ correctly, a PNG screenshot can optionally be taken when the page has finished
+ downloading.
+ There is a processing cost associated with taking screenshots; it takes
+ time for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ to render the internal buffer as an image, convert it to base64 encoding
+ for the augmented HAR data, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+jq
+\end_layout
+
+\end_inset
+
+to extract the image data, the system to convert the data back to binary
+ and finally write it to disk.
+ Extra processing is also needed to remove the screenshot from the augmented
+ HAR file.
+\end_layout
+
+\begin_layout Standard
+The emulated browser window size also sets a limit on the screenshot size
+ when rendered, but the entire browser canvas is captured.
+ This means that screenshots that are saved to disk in most cases extend
+ beyond the viewport size, most often vertically; this corresponds to scrolling
+ through the entire page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dataset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PNG files
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HAR files
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ratio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014-07-25 100k server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+693 MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110 MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.3:1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014-08-04 health-status server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43000 MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4900 MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.8:1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The ratio of PNG to HAR data size on disk points to the compressed PNG files
+ being up to 10 times the size of the uncompressed HAR files for certain
+ types of pages, for example media domains in the 
+\emph on
+.se health status
+\emph default
+ report dataset.
 \end_layout
 
 \begin_layout Section
@@ -3589,17 +4082,21 @@ Test more load.
 \end_layout
 
 \begin_layout Section
-Unsuccessful downloads
+Unsuccessful domains
 \end_layout
 
 \begin_layout Standard
 Some web sites are not downloaded successfully, for different reasons.
- The DNS settings might not be correct, the server may be unreachable, there
+ The DNS settings might not be correct, the server may be shut down, there
  might have been a temporary network timeout, there might have been a software
  error.
- Each request has been marked as successful or not, so looking at the initial
- page request's status would determine if the domain was correctly downloaded
- or not.
+ Unfortunately, outside of software errors, they are hard to detect without
+ external analysis of connectivity.
+ Each HTTP request has their HTTP status response recorded if it is available;
+ absence indicates failure.
+ Any error output the web page itself has produced, through javascript errors
+ etcetera, have also been recorded in the HAR log or individual entry/request
+ comment fields.
  
 \begin_inset Note Greyedout
 status open
