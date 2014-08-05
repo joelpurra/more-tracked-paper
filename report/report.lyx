@@ -3742,7 +3742,7 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-693 MB
+43000 MB
 \end_layout
 
 \end_inset
@@ -3751,7 +3751,7 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-110 MB
+4900 MB
 \end_layout
 
 \end_inset
@@ -3760,7 +3760,7 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-6.3:1
+8.8:1
 \end_layout
 
 \end_inset
@@ -3780,7 +3780,7 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-43000 MB
+693 MB
 \end_layout
 
 \end_inset
@@ -3789,7 +3789,7 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-4900 MB
+110 MB
 \end_layout
 
 \end_inset
@@ -3798,7 +3798,7 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-8.8:1
+6.3:1
 \end_layout
 
 \end_inset
@@ -4115,11 +4115,371 @@ Analyzing resources
 \end_layout
 
 \begin_layout Standard
+After downloading HAR files, they are processed using har-dulcify.
+\end_layout
+
+\begin_layout Section
+The HAR format
+\end_layout
+
+\begin_layout Standard
+The specification includes fields that have to do with for example request/respo
+nse timings and data sizes.
+ Those, and other fields, are not analyzed in this thesis, so the first
+ step is to extract the relevant information.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+URL The request's URL.
+ Recorded whether the request is successful or not.
+ Values outside of those starting with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+ are mostly ignored.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Status The HTTP status code
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://tools.ietf.org/html/rfc2616"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ found in the server's response.
+ Defined as a 3-digit integer result, it is grouped into classes by the
+ first digit.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Mime-type The HTTP content-type header, which is the body internet media
+ type (previously known as Multipurpose Internet Mail Extensions (MIME)
+ type, or ) combined with optional parameters, such as character encoding.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Referer The URL of the page that requested the resource.
+ Can be used to build a tree of requests, but is limited by the fact that
+ it requires HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<frame>
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<iframe>
+\end_layout
+
+\end_inset
+
+ to differ from the origin page.
+ The word referrer was misspelled 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+referer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wiktionary.org/wiki/referer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ in the original proposal
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://tools.ietf.org/html/rfc1945"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Redirect The URL of the new location of the requested resource, if defined
+ by a 3xx HTTP status.
+\end_layout
+
+\begin_layout Standard
+These properties will be enough to see what kinds of resources are requested,
+ if requests are successful and where the request is made to.
+\end_layout
+
+\begin_layout Section
+Expanding parts
+\end_layout
+
+\begin_layout Subsection
+URL, referer, redirect
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about har-dulcify.
+Write about URLs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Status
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about status codes and groups.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mime-type
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about content-type, encoding.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Classification
+\end_layout
+
+\begin_layout Subsection
+Basic
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about basic classification.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Disconnect.me
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Public Suffix List
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about effective TLD.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about aggregates, percents, coverage per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Origin
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about aggregates, percents, coverage per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Request count
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about aggregates, percents, coverage per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Distinct request count
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about aggregates, percents, coverage per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Questions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about 
+\begin_inset Quotes eld
+\end_inset
+
+custom
+\begin_inset Quotes erd
+\end_inset
+
+ questions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Google Tag Manager
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about GTM question.
 \end_layout
 
 \end_inset
@@ -4144,6 +4504,108 @@ Answer questions posed earlier.
 
 \end_layout
 
+\begin_layout Section
+Differences between data sets
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Top content
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Top public suffixes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Top recognized domains
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Top recognized organizations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about top organizations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Top recognized domain categories
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Discussion and conclusions
 \end_layout
@@ -4161,8 +4623,64 @@ Compare with expected results.
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect's content category.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about the 
+\emph on
+.se health status
+\emph default
+ report findings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Future work
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Mention further grouping, digging into the data.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Mention sharing data when using non-private lists.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
