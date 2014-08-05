@@ -279,7 +279,7 @@ Introduction
 
 \begin_layout Standard
 This thesis is being written in the office of - and in collaboration with
- - .SE (The Internet Infrastructure Foundation), who gratiously supported
+ - .SE (The Internet Infrastructure Foundation), who graciously supported
  me with domain data and internet knowledge.
 \end_layout
 
@@ -1689,7 +1689,7 @@ phantomjs
 
 \begin_layout Standard
 With a simple text file with one domain name per line as input, har-heedless
- downloads all of their frontpages.
+ downloads all of their front pages.
  Downloads can be made either in serial or in parallel.
  The resulting HAR data is written in a folder structure per domain, with
  a timestamp in the file name.
@@ -1717,11 +1717,30 @@ phantomjs
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 get/netsniff.js
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-A modified version of netsniff.js from the 
+A modified version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+ from the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1803,7 +1822,7 @@ phantomjs
 \end_inset
 
  crashed or otherwise encountered an error, a fallback HAR file is generated
- with only a dummy response explaning that an error occurred.
+ with only a dummy response explaining that an error occurred.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2043,7 +2062,7 @@ one-shot/aggregate.sh
 \end_layout
 
 \begin_layout Standard
-Prepares data for aggregation by counting occurances in each domain's data,
+Prepares data for aggregation by counting occurrences in each domain's data,
  then adds them together to a single file containing an aggregate analysis.
 \end_layout
 
@@ -2078,7 +2097,7 @@ extract/request/parts.sh
 \end_layout
 
 \begin_layout Standard
-Extracts url, status, content-type (mime-type) ecetera from the originating
+Extracts url, status, content-type (mime-type) etcetera from the originating
  domain front page request and the subsequent requests.
 \end_layout
 
@@ -2310,7 +2329,7 @@ Rename this script?
 \end_layout
 
 \begin_layout Standard
-Running the aggregation before analysis is currenty not possible in a single
+Running the aggregation before analysis is currently not possible in a single
  step, as 
 \begin_inset Flex Code
 status collapsed
@@ -2649,10 +2668,11 @@ target "https://en.wikipedia.org/wiki/Public_Suffix_List"
 
 \begin_layout Standard
 In the domain name system, it is not always obvious what parts of a domain
- name are a public suffix and which are registerable by Internet users.
+ name are a public suffix and which are open for registration by Internet
+ users.
  The main example is 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 example.co.uk
@@ -2662,7 +2682,7 @@ example.co.uk
 
 , where the public suffix 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 co.uk
@@ -2672,7 +2692,7 @@ co.uk
 
  is to different from the TLD 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 uk
@@ -2704,7 +2724,7 @@ target "https://en.wikipedia.org/wiki/HTTP_cookie#Supercookie"
  The same dataset is also useful for grouping domains without improperly
  counting 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 example.co.uk
@@ -2718,7 +2738,7 @@ user-owned subdomain
 \emph default
  of 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 co.uk
@@ -2728,7 +2748,7 @@ co.uk
 
 , which would then render 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 co.uk
@@ -2738,7 +2758,7 @@ co.uk
 
  as the most popular domain under the 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 uk
@@ -2752,7 +2772,7 @@ uk
 \begin_layout Standard
 Swedish examples include second level domains 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 pp.se
@@ -2762,7 +2782,7 @@ pp.se
 
  for privately owned domains and 
 \begin_inset Flex Code
-status open
+status collapsed
 
 \begin_layout Plain Layout
 tm.se
@@ -2816,15 +2836,776 @@ The public suffix list specification contains an algorithm for certain wildcard
 \end_layout
 
 \begin_layout Chapter
-Retreiving websites and resources
+Retrieving websites and resources
+\end_layout
+
+\begin_layout Section
+Computer machines
 \end_layout
 
 \begin_layout Standard
+Two computers were used to download web pages - one laptop machine and one
+ server machine.
+ The server is significantly more powerful than the laptop, and they downloaded
+ a different number of web pages at a a time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="7">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Machine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OS version
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU architecture
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU cores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Core speed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memory
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Laptop
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mac OS X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.9.2 Mavericks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x86/64 bit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2800 MHz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Debian GNU/Linux
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 Jessie/Sid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x86/64 bit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2500 MHz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Network connection
+\end_layout
+
+\begin_layout Standard
+The laptop machine was connected by ethernet to the .SE office network, which
+ is shared with employees' computers.
+ The server machine was connected to server co-location network, which is
+ shared with other servers.
+ The .SE network technicians said load was kept very low, and only a few
+ percent of the dedicated 100 Mbps per location was used.
+ Both locations are in Stockholm city, and should therefore be well placed
+ in regard to web sites hosted in Sweden.
+\end_layout
+
+\begin_layout Section
+Software considerations
+\end_layout
+
+\begin_layout Standard
+To expedite an automated and repeatable process, a custom set of scripts
+ were written as the project har-heedless.
+ The scripts are written using standard tools, available as open source
+ and on multiple platforms.
+\end_layout
+
+\begin_layout Subsection
+Dynamic web pages
+\end_layout
+
+\begin_layout Standard
+Previous efforts to download and analyze web pages by .SE used a static approach,
+ analyzing the HTML by means of simple searches for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+ strings in HTML and CSS.
+ It had proven hard to maintain, and the software project was abandoned
+ before the thesis was started, but hadn't yet been replaced.
+ In order to better handle the dynamic nature of modern web pages, the headless
+ browser phantomjs was chosen, as it would also download and execute javascript
+ - a major component in both user interfaces as well as active trackers
+ and ads.
+\end_layout
+
+\begin_layout Subsection
+Combined javascript
+\end_layout
+
+\begin_layout Standard
+A common technique for speeding up web site speed is to reduce the number
+ of resources the browser needs to download, by combining or concatenating
+ them in different ways depending on the file format.
+ Javascript is a good example where there are potential benefits
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/speed/docs/best-practices/rtt#CombineExternalJS"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ since functionality often is spread across several files, especially after
+ the plugin style of frameworks such as jQuery
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://jquery.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ emerged.
+ One concern is whether or not script concatenation on a web page would
+ affect script analysis at a later stage, by reducing the number of third-party
+ requests.
+ While it's hard to analyze all scripts, based on their wide spread use,
+ third-party scripts stay at their respective home servers as software-as-a-serv
+ice 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about har-heedless.
+Check SAAS definition.
+\end_layout
+
+\end_inset
+
+ to enable faster update cycles and tracking of HTTP requests.
+\end_layout
+
+\begin_layout Standard
+One of the concerns was Google Tag Manager
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.google.com/tagmanager/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, which a script aggregation service with asynchronous loading directed
+ specifically to marketers.
+ While simplifying management with only on 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<script>
+\end_layout
+
+\end_inset
+
+ tag, each part seems to 
+\begin_inset Quotes eld
+\end_inset
+
+call home
+\begin_inset Quotes erd
+\end_inset
+
+ to the usual addresses of the separate scripts.
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add data on Google Tag manager.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Parallelizing downloads
+\end_layout
+
+\begin_layout Standard
+A lot of the time spent downloading a web page is spent waiting for network
+ resources.
+ To speed up downloading large amounts of web pages, parallelizing was employed
+ using simple scripting techniques, starting multiple processes at once
+ in batches, waiting for each batch to finish before starting the next.
+ This was deemed inefficient, as the download and rendering speed of the
+ slowest web page would be a bottle neck.
+ In a later script versions, GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+ was used, with a setting to not start more jobs if the current CPU/system
+ load was too high.
+\end_layout
+
+\begin_layout Standard
+During initial parallelizing tests, the laptop machine was shown to be able
+ to handle 100 domain downloads in parallel, but this was later scaled down
+ to ensure consistent numbers at the cost of significantly longer download
+ times.
+\end_layout
+
+\begin_layout Subsection
+Screen size
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ is running, it emulates having a browser window by keeping an internal
+ graphics buffer.
+ Even if web page isn't rendered and shown on screen, it still has a screen
+ size, which affects layout.
+ With a bit of javascript or responsive CSS, the screen size can affect
+ downloaded resources.
+ Javascript can be used to delay download of images and other resources
+ that are 
+\emph on
+below the fold
+\emph default
+, meaning outside of the initial view the user has without scrolling in
+ any direction, as a page speed improvement.
+ Responsive CSS adapts the page style to the screen size in order to increase
+ usability for for example mobile users, and might optimize the quality
+ of downloaded images to match the screen size.
+\end_layout
+
+\begin_layout Standard
+By default, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ uses the physical computer's primary screen size.
+ In order to reduce differences between the laptop and server machines,
+ a fixed emulated window size of 1024x768 was set.
+ The window size also sets a limit on the screenshot size, when rendered.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about screen size statistics.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+System load during downloads
+\end_layout
+
+\begin_layout Standard
+System load can affect the end results, if network timeouts occur during
+ downloading and processing of domains' front pages.
+ Apart from CPU and memory limitations, the other users of the .SE network
+ should not be affected by tests.
+\end_layout
+
+\begin_layout Standard
+System load on *NIX systems can be found using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+uptime
+\end_layout
+
+\end_inset
+
+ command.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Load_(computing)"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Other processes were running at the time of these tests, so the numbers
+ are not exclusive to the downloading.
+ The complexity of the front pages of the currently processed domains affects
+ the load, as well if screenshot generations is enabled.
+ Most downloads were done with screenshots enabled.
+ The table below show loads for a single sample.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Machine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Concurrent downloads
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Load
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Load per core
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Laptop
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Laptop
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Test more load.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Unsuccessful downloads
+\end_layout
+
+\begin_layout Standard
+Some web sites are not downloaded successfully, for different reasons.
+ The DNS settings might not be correct, the server may be unreachable, there
+ might have been a temporary network timeout, there might have been a software
+ error.
+ Each request has been marked as successful or not, so looking at the initial
+ page request's status would determine if the domain was correctly downloaded
+ or not.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about many pages were unsuccessful, and if they were re-requested.
 \end_layout
 
 \end_inset
@@ -2833,7 +3614,7 @@ Write about har-heedless.
 \end_layout
 
 \begin_layout Chapter
-Analysing resources
+Analyzing resources
 \end_layout
 
 \begin_layout Standard
