@@ -3125,12 +3125,47 @@ https://
 \end_layout
 
 \begin_layout Subsection
+Flash files
+\end_layout
+
+\begin_layout Standard
+Flash is a scriptable proprietary cross-platform vector based web technology
+ owned by Adobe.
+ Several kinds of content, including video players, games and ads, use Flash
+ because it has historically been better suited than javascript for in-browser
+ moving graphics and video.
+ Flash usage has not been considered for this thesis as the technology isn
+ not available on all popular web browsing platforms, notably Apple's iPad,
+ and is being phased out by HTML 5 features such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<canvas>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<video>
+\end_layout
+
+\end_inset
+
+ elements.
+\end_layout
+
+\begin_layout Subsection
 Combined javascript
 \end_layout
 
 \begin_layout Standard
-A common technique for speeding up web site speed is to reduce the number
- of resources the browser needs to download, by combining or concatenating
+A common technique for speeding up web sites is to reduce the number of
+ resources the browser needs to download, by combining or concatenating
  them in different ways depending on the file format.
  Javascript is a good example where there are potential benefits
 \begin_inset Foot
@@ -4119,6 +4154,17 @@ After downloading HAR files, they are processed using har-dulcify.
 \end_layout
 
 \begin_layout Section
+Screenshots
+\end_layout
+
+\begin_layout Standard
+Screenshots were mainly used for verification during development, to see
+ that ads were loaded properly.
+ While they have been retained, the manual inspection necessary makes it
+ infeasible as a way to verify each and every domain's result.
+\end_layout
+
+\begin_layout Section
 The HAR format
 \end_layout
 
@@ -4276,11 +4322,137 @@ URL, referer, redirect
 \end_layout
 
 \begin_layout Standard
+The URL format has several components
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://tools.ietf.org/html/rfc3986"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, with interesting ones for web listed and/or split up further here.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Scheme In this case, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https
+\end_layout
+
+\end_inset
+
+ protocols have been the most interesting to look at.
+ Other interesting examples that can be found in the wild include 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ftp
+\end_layout
+
+\end_inset
+
+ (for file downloads), 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+data
+\end_layout
+
+\end_inset
+
+ (for resources encoded into the URI) and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+about
+\end_layout
+
+\end_inset
+
+ (mostly used for blank placeholder pages).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Domain For this thesis, the domain part has been of a lot of interest, as
+ it signifies the difference between internal and external resources.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Port While custom ports can be used, they usually implicitly default to
+ 80 for HTTP and 443 for HTTPS.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Path The path specifies a folder or file on the server.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Querystring Most parameters sent back to servers are defined in an RFC compliant
+ way, but there are other variants building on for example `/` as a pseudo-path
+ separator.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Fragment The fragment is in the web context a client-only component, and
+ is not to be sent back to the server as part of a request.
+ The usage affects browsers' presentation, historically only by scrolling
+ to a matching named element, but modern usage includes keeping browser
+ state using javascript, for example following the web spider crawlable
+ hash-bang syntax
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/webmasters/ajax-crawling/docs/getting-started"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about URLs.
+Write more about URLs.
 \end_layout
 
 \end_inset
