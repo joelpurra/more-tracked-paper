@@ -2371,16 +2371,27 @@ Data sources
 Domains
 \end_layout
 
+\begin_layout Standard
+Statistics regarding each list of domains is presented in an appendix.
+\end_layout
+
 \begin_layout Subsection
-.SE Health Check domains
+.SE Health Status domains
 \end_layout
 
 \begin_layout Standard
+When .SE performs their annual .se health status report, they use an in-house
+ curated list of domains of national interest.
+ These domains are mostly from the .se zone and cover government, county,
+ municipality, university and college, government-owned company, bank and
+ insurance, internet service provider (ISP), domain registrar, and media
+ domains.
+ 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about the health check selection.
+Write more about health status domains.
 \end_layout
 
 \end_inset
@@ -2395,10 +2406,59 @@ Random .se domains
 \begin_layout Standard
 The thesis was written in collaboration with .SE, which runs the .se TLD,
  and the work focusing on the state of Swedish domains.
- Initial script development was done using a sample of 10.000 random domains,
- most often tested in groups of 100.
- Final results were collected from a sample of 100.000 domains, chosen at
- random from the database of active domains in the zone.
+ Initial script development was done using a sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ random domains, most often tested in groups of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100}
+\end_layout
+
+\end_inset
+
+.
+ Final results were collected from a sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100000}
+\end_layout
+
+\end_inset
+
+ domains, chosen at random from the database of active domains in the zone.
+ The .se is to be considered Sweden-centric.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about .se domains.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2422,9 +2482,216 @@ target "http://www.dk-hostmaster.dk/"
 
 \end_inset
 
-, helped out with a sample of 10.000 domains, chosen at random from the database
- of active domains in the zone.
+, helped out with a sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ domains, chosen at random from the database of active domains in the zone.
  The zone was exported by DK Hostmaster staff 2014-07-07.
+ The .dk is to be considered Denmark-centric.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about .dk domains.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Random .com, .net, .name domains
+\end_layout
+
+\begin_layout Standard
+The maintainers of the .com, .net and .name TLDs, Verisign, allow downloading
+ of complete lists of domains under an agreement.
+ This allows for a random selection of sites from around the world, as the
+ .com TLD is the biggest, even though usage is not geographically uniform
+ - both in terms of registrations and actual usage.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about Verisign domains.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alexa Top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000000}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://alexa.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alexa, owned by Amazon, is a well-known source of top sites
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.alexa.com/topsites"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ in the world.
+ It is used in many research papers, and can be seen as the standard data
+ set.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+List referenced research papers using it.
+\end_layout
+
+\end_inset
+
+ Their daily 1-month average traffic rank top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000000}
+\end_layout
+
+\end_inset
+
+ list is freely available for download.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://alexa.zendesk.com/hc/en-us/articles/200449834-Does-Alexa-have-a-list-of-its-top-ranked-websites-"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about Alexa.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Reach50
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://reach50.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The top 50 sites in Sweden are presented by by Webmie
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://webmie.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, who base their list on data from a a user panel.
+ The panelists have installed an extension into their browser, tracking
+ their browsing habits by automated means.
+ They also have results grouped by panelists categories: women, men, age
+ 16-34, 35-54, 55+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about Reach50.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2852,9 +3119,8 @@ Two computers were used to download web pages - one laptop machine and one
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="7">
+<lyxtabular version="3" rows="3" columns="6">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2875,16 +3141,7 @@ Machine
 \begin_inset Text
 
 \begin_layout Plain Layout
-OS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-OS version
+OS, version
 \end_layout
 
 \end_inset
@@ -2911,7 +3168,7 @@ CPU cores
 \begin_inset Text
 
 \begin_layout Plain Layout
-Core speed
+Core speed (MHz)
 \end_layout
 
 \end_inset
@@ -2920,7 +3177,7 @@ Core speed
 \begin_inset Text
 
 \begin_layout Plain Layout
-Memory
+Memory (GB)
 \end_layout
 
 \end_inset
@@ -2940,16 +3197,7 @@ Laptop
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mac OS X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10.9.2 Mavericks
+Mac OS X 10.9.2 Mavericks
 \end_layout
 
 \end_inset
@@ -2976,7 +3224,19 @@ x86/64 bit
 \begin_inset Text
 
 \begin_layout Plain Layout
-2800 MHz
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2800}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2985,7 +3245,7 @@ x86/64 bit
 \begin_inset Text
 
 \begin_layout Plain Layout
-8GB
+8
 \end_layout
 
 \end_inset
@@ -3005,16 +3265,7 @@ Server
 \begin_inset Text
 
 \begin_layout Plain Layout
-Debian GNU/Linux
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8 Jessie/Sid
+Debian GNU/Linux 8 Jessie/Sid
 \end_layout
 
 \end_inset
@@ -3041,7 +3292,19 @@ x86/64 bit
 \begin_inset Text
 
 \begin_layout Plain Layout
-2500 MHz
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2500}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3050,7 +3313,7 @@ x86/64 bit
 \begin_inset Text
 
 \begin_layout Plain Layout
-16GB
+16
 \end_layout
 
 \end_inset
@@ -3211,6 +3474,13 @@ target "https://jquery.com/"
 
 \begin_layout Subsection
 Google Tag Manager
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Google-Tag-Manager"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -3591,17 +3861,6 @@ below the fold
 \emph default
 , meaning outside of the initial view the user has without scrolling in
  any direction, as a page speed improvement.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Check if all images are automatically downloaded by phantomjs, as if the
- page had been scrolled, as they seem present in screenshots.
-\end_layout
-
-\end_inset
-
  Responsive CSS adapts the page style to the screen size in order to increase
  usability for for example mobile users, and might optimize the quality
  of downloaded images to match the screen size.
@@ -3673,6 +3932,24 @@ target "http://gs.statcounter.com/#resolution-ww-monthly-201307-201407"
 .
 \end_layout
 
+\begin_layout Standard
+Scripted browser scrolling (vertically) through the page has not been performed,
+ thus javascript scrolling events triggering for example downloading of
+ images below the fold are not guaranteed.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Check if all images are automatically downloaded by phantomjs, as if the
+ page had been scrolled, as they seem present in screenshots.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Screenshots
 \end_layout
@@ -3739,7 +4016,7 @@ Dataset
 \begin_inset Text
 
 \begin_layout Plain Layout
-PNG files
+PNG files (MB)
 \end_layout
 
 \end_inset
@@ -3748,7 +4025,7 @@ PNG files
 \begin_inset Text
 
 \begin_layout Plain Layout
-HAR files
+HAR files (MB)
 \end_layout
 
 \end_inset
@@ -3777,7 +4054,19 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-43000 MB
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{43000}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3786,7 +4075,19 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-4900 MB
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{4900}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3815,7 +4116,19 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-693 MB
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{693}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3824,7 +4137,19 @@ Ratio
 \begin_inset Text
 
 \begin_layout Plain Layout
-110 MB
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{110}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4117,7 +4442,7 @@ Test more load.
 \end_layout
 
 \begin_layout Section
-Unsuccessful domains
+Failed domains
 \end_layout
 
 \begin_layout Standard
@@ -4132,7 +4457,22 @@ Some web sites are not downloaded successfully, for different reasons.
  Any error output the web page itself has produced, through javascript errors
  etcetera, have also been recorded in the HAR log or individual entry/request
  comment fields.
- 
+\end_layout
+
+\begin_layout Standard
+A distinction is made between 
+\emph on
+failed
+\emph default
+ and 
+\emph on
+unsuccessful
+\emph default
+ domains - unsuccessful domains rendered a complete response with a HTTP
+ status that indicated that it was not successful.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
@@ -4151,6 +4491,8 @@ Analyzing resources
 
 \begin_layout Standard
 After downloading HAR files, they are processed using har-dulcify.
+ Most steps can be split up into chunks and run in parallel, which is what
+ the one-shot scripts do.
 \end_layout
 
 \begin_layout Section
@@ -4221,8 +4563,8 @@ target "http://tools.ietf.org/html/rfc2616"
 \end_inset
 
  found in the server's response.
- Defined as a 3-digit integer result, it is grouped into classes by the
- first digit.
+ Defined as a 3-digit integer result, grouped into classes by the first
+ digit.
 \end_layout
 
 \begin_layout Labeling
@@ -4465,16 +4807,8 @@ Status
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about status codes and groups.
-\end_layout
-
-\end_inset
-
-
+The status is grouped into their defined groups by the first digit.
+ Groups outside of the defined range 100-599 are defined as null.
 \end_layout
 
 \begin_layout Subsection
@@ -4482,11 +4816,191 @@ Mime-type
 \end_layout
 
 \begin_layout Standard
+The mime-type is grouped by their usage, which usually is the first group
+ part.
+ Here is a selection of common types grouped together.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Group
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Types
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+script
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+application/javascript, application/x-javascript, text/javascript
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+font
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+application/font-woff, application/x-woff, application/x-font-ttf, font/ttf,
+ font/opentype
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+application/json, application/octet-stream, application/xml
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+image
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+image/gif, image/jpeg, image/png, image/svg+xml
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+style
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+text/css
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+text/html
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+text
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+text/plain
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about content-type, encoding.
+Update list.
 \end_layout
 
 \end_inset
@@ -4503,16 +5017,71 @@ Basic
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about basic classification.
+Simple properties in the request are checked, and their valued saved as
+ a classification property.
+ This property is used for grouping and for further analysis.
 \end_layout
 
+\begin_layout Description
+Successful
+\begin_inset space ~
 \end_inset
 
+request The status of the request is 200-299 or 304.
+\end_layout
 
+\begin_layout Description
+Unsuccessful
+\begin_inset space ~
+\end_inset
+
+request The status is 100-199 or 300-303 or 305-599.
+\end_layout
+
+\begin_layout Description
+Failed
+\begin_inset space ~
+\end_inset
+
+request The log file format is incomplete or the status is null or below
+ 100 or above 599.
+\end_layout
+
+\begin_layout Description
+Same
+\begin_inset space ~
+\end_inset
+
+domain The request is to the same domain that was first visited.
+\end_layout
+
+\begin_layout Description
+Subdomain The request is to a subdomain of the domain that was first visited.
+\end_layout
+
+\begin_layout Description
+Internal
+\begin_inset space ~
+\end_inset
+
+domain The request is to the same domain or a subdomain of the domain that
+ was first visited.
+\end_layout
+
+\begin_layout Description
+External
+\begin_inset space ~
+\end_inset
+
+domain The request is not to an internal domain.
+\end_layout
+
+\begin_layout Description
+Secure
+\begin_inset space ~
+\end_inset
+
+request The request is using HTTPS.
 \end_layout
 
 \begin_layout Subsection
@@ -4520,16 +5089,10 @@ Disconnect.me
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about disconnect.
-\end_layout
-
-\end_inset
-
-
+The URLs in the extended data contains lists of domain components.
+ As the disconnect list of blocked domains is prepared for lookups by domains,
+ each of the matching domains (including shorter domain components) are
+ extracted with organization, organization URL and domain category.
 \end_layout
 
 \begin_layout Subsection
@@ -4537,16 +5100,9 @@ Public Suffix List
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about effective TLD.
-\end_layout
-
-\end_inset
-
-
+The public suffix list is prepared for lookups per domain component.
+ Each request's domain (including shorter domain components) is checked
+ against it, and any matching public suffixes are kept in an array.
 \end_layout
 
 \begin_layout Section
@@ -4554,16 +5110,8 @@ Analysis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about aggregates, percents, coverage per domain.
-\end_layout
-
-\end_inset
-
-
+An analysis, where request classifications are counted, summed and the coverage
+ calculated, is performed as an automated step.
 \end_layout
 
 \begin_layout Subsection
@@ -4571,75 +5119,335 @@ Origin
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about aggregates, percents, coverage per domain.
-\end_layout
-
-\end_inset
-
-
+The origin domains are grouped separately from the requests that stemmed
+ from them.
 \end_layout
 
 \begin_layout Subsection
-Request count
+Requested URLs
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about aggregates, percents, coverage per domain.
-\end_layout
-
-\end_inset
-
-
+All requests are represented with their domain, and other classifications.
 \end_layout
 
 \begin_layout Subsection
-Distinct request count
+Distinct requested URLs
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about aggregates, percents, coverage per domain.
+Even if two requests originating from a domain, it is only counted once.
+ This gives the possibility to calculate coverage per domain later on.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Subsection
+Request/domain counts
 \end_layout
 
+\begin_layout Standard
+All the numbers from all domains added together.
+\end_layout
+
+\begin_layout Subsection
+Request/domain coverage
+\end_layout
+
+\begin_layout Standard
+The summed up counts divided by either the total request count (for requested
+ URLs) or the number of domains in the current group (for distinct requested
+ URLs).
+ This gives a coverage percentage - either for the percentage of the number
+ of requests, or domains that has the value.
+\end_layout
+
+\begin_layout Subsection
+Grouping
+\end_layout
+
+\begin_layout Standard
+In order to not make too broad assumptions, some grouping was performed.
+ The analysis was performed the same way on each of these groups.
+\end_layout
+
+\begin_layout Subsubsection
+Origin domain status
+\end_layout
+
+\begin_layout Standard
+The origin domain's download status was checked, and grouped into both unfiltere
+d and non-failed groups.
+\end_layout
+
+\begin_layout Subsubsection
+Requested URLs
+\end_layout
+
+\begin_layout Standard
+The list of requested URLs was grouped into unfiltered, internal and external
+ URLs.
+\end_layout
+
+\begin_layout Subsection
+Tree
+\end_layout
+
+\begin_layout Standard
+A tree representation of the output after grouping.
+ The origin is represents the original request and the requested URLs
+\end_layout
+
+\begin_layout Itemize
+Unfiltered origin domains
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Origin
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfiltered URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Internal URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+External URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Non-failed origin domains
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Origin
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfiltered URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Internal URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+External URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
 \begin_layout Section
 Questions
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about 
-\begin_inset Quotes eld
-\end_inset
-
-custom
-\begin_inset Quotes erd
-\end_inset
-
- questions.
-\end_layout
-
-\end_inset
-
-
+Where the aggregate analysis isn't enough, there are custom questions.
+ These questions/queries can be run against any previous intermediate step
+ in the process, as they are saved to disk.
 \end_layout
 
 \begin_layout Subsection
@@ -4647,16 +5455,16 @@ Google Tag Manager
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about GTM question.
-\end_layout
+One of the questions posed beforehand was if Google Tag Manager would have
+ an impact upon results.
+ This question is answered in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Google-Tag-Manager"
 
 \end_inset
 
-
+ with the help of this data.
 \end_layout
 
 \begin_layout Chapter
@@ -4816,6 +5624,40 @@ status open
 Write about the 
 \emph on
 .se health status
+\emph default
+ report findings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about the 
+\emph on
+Follow the Money: Understanding Economics of Online Aggregation and Advertising
+\emph default
+ report findings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about 
+\emph on
+Third-party Identity Management Usage on the Web
 \emph default
  report findings.
 \end_layout
