@@ -4449,11 +4449,12 @@ Failed domains
 Some web sites are not downloaded successfully, for different reasons.
  The DNS settings might not be correct, the server may be shut down, there
  might have been a temporary network timeout, there might have been a software
- error.
+ error - or the server has been programmed to not respond to automated requests
+ from PhantomJS and similar tools.
  Unfortunately, outside of software errors, they are hard to detect without
  external analysis of connectivity.
  Each HTTP request has their HTTP status response recorded if it is available;
- absence indicates failure.
+ absence or numbers outside the RFC2616 range (100-599) indicates failure.
  Any error output the web page itself has produced, through javascript errors
  etcetera, have also been recorded in the HAR log or individual entry/request
  comment fields.
@@ -4470,6 +4471,8 @@ unsuccessful
 \emph default
  domains - unsuccessful domains rendered a complete response with a HTTP
  status that indicated that it was not successful.
+ Pages that were unsuccessful have been re-downloaded for testing purposes.
+ It seems that re-downloading helps with some, but not all, failures.
 \end_layout
 
 \begin_layout Standard
@@ -4477,12 +4480,32 @@ unsuccessful
 status open
 
 \begin_layout Plain Layout
-Write about many pages were unsuccessful, and if they were re-requested.
+Write about which datasets were re-downloaded.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert re-downloading table for at least one dataset.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first round of retries rendered the greatest results, and subsequent
+ retries are less successful.
+ This seem to point to intermittent failures being recoverable, and that
+ some domains will not respond.
 \end_layout
 
 \begin_layout Chapter
@@ -4501,7 +4524,7 @@ Screenshots
 
 \begin_layout Standard
 Screenshots were mainly used for verification during development, to see
- that ads were loaded properly.
+ that the pages were loaded properly.
  While they have been retained, the manual inspection necessary makes it
  infeasible as a way to verify each and every domain's result.
 \end_layout
@@ -4563,8 +4586,8 @@ target "http://tools.ietf.org/html/rfc2616"
 \end_inset
 
  found in the server's response.
- Defined as a 3-digit integer result, grouped into classes by the first
- digit.
+ Defined as a 3-digit integer result, 100-599, grouped into classes by the
+ first digit.
 \end_layout
 
 \begin_layout Labeling
@@ -4809,6 +4832,44 @@ Status
 \begin_layout Standard
 The status is grouped into their defined groups by the first digit.
  Groups outside of the defined range 100-599 are defined as null.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+1xx Information
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2xx 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+3xx Redirection
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+4xx 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+5xx Server errors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fill out the proper HTTP status group headings.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -5467,6 +5528,17 @@ reference "sub:Google-Tag-Manager"
  with the help of this data.
 \end_layout
 
+\begin_layout Subsection
+Origins with redirects
+\end_layout
+
+\begin_layout Standard
+Looking at preliminary results, a large portion of domains yielded a redirect
+ as the initial response.
+ In order to look at these redirects specifically, and determine if they
+ redirect to an internal or external domain, a specific question was written.
+\end_layout
+
 \begin_layout Chapter
 Results
 \end_layout
@@ -5667,6 +5739,34 @@ Third-party Identity Management Usage on the Web
 
 \end_layout
 
+\begin_layout Section
+Automated, scalable data collection and repeatable analysis
+\end_layout
+
+\begin_layout Standard
+One of the prerequisites for the type of analysis performed in this thesis
+ was that all collection should be automated, repeatable and be able to
+ handle tens of thousands of domains at a time.
+ This goal has been achieved, and a specialized framework for analyzing
+ web pages's HTTP requests has been built.
+ While most of the code has been tailored to answer questions posed in this
+ thesis, it is also built to be extendable.
+ Separate questions can be written, to query data from any stage in the
+ data preparation or analysis.
+ Tools have been written to easily download and compare separate datasets.
+\end_layout
+
+\begin_layout Standard
+It is hard to convince other researchers to use code with a scope this narrow,
+ as it might not fulfill all of their wishes at once.
+ Fortunately, the code is easy to run, and with proper documentation other
+ groups should be able to at least test simple theories regarding web sites.
+ Some of the lists of domains used as input are publicly available, and
+ thus results can also be shared.
+ This should encourage other groups, as looking at example data might spark
+ interest.
+\end_layout
+
 \begin_layout Chapter
 Future work
 \end_layout
@@ -5710,8 +5810,106 @@ Mention the possibility to educate users with a webpage.
 
 \end_layout
 
+\begin_layout Section
+Other views on the same data
+\end_layout
+
+\begin_layout Subsection
+P3P analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about P3P analysis.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cookie syncing
+\end_layout
+
+\begin_layout Standard
+A recent large-scale study
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://securehomes.esat.kuleuven.be/~gacar/persistent/the_web_never_forgets.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert proper reference.
+\end_layout
+
+\end_inset
+
+ included a cookie syncing privacy analysis.
+ It was shown that unique user identifiers were shared between different
+ third parties.
+ IDs can be shared in different ways.
+ If both third parties exist on the same page, they can be shared through
+ scripts or by looking for any IDs in the location URL.
+ They can also be shared by one third party sending requests to a second
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+A fourth party?
+\end_layout
+
+\end_inset
+
+ third party, either by leaking the location URL as a HTTP referrer or by
+ embedding it in the request URL.
+ In crawls of Alexa's top 3000 domains, one third party script in particular
+ sends requests with synced IDs to 25 domains; the IDs were eventually are
+ shared with 43 domains.
+\end_layout
+
+\begin_layout Standard
+The study used a modified Firefox browser to look at values stored in cookies,
+ showing that a user's browsing history could be reconstructed from 1.4%
+ to 11%.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about the study and how it might have been implemented here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Time plan
+\end_layout
+
+\begin_layout Standard
+The time plan has been scrapped, due to unplanned conferences, holidays
+ and vacations.
 \end_layout
 
 \begin_layout Section
@@ -5752,10 +5950,6 @@ Completed activities and milestones
 2014-03-31 Subject draft approved by examiner.
 \end_layout
 
-\begin_layout Section
-Planned activities and milestones
-\end_layout
-
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 2014-W15 Finalize planning report.
@@ -5764,6 +5958,10 @@ Planned activities and milestones
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 2014-W15 Start software development efforts.
+\end_layout
+
+\begin_layout Section
+Planned activities and milestones
 \end_layout
 
 \begin_layout Labeling
