@@ -5902,12 +5902,18 @@ Subdomain The request is to a subdomain of the domain that was first visited.
 \end_layout
 
 \begin_layout Description
+Superdomain The request is to a domain to which the origin domain is a subdomain.
+ This basic superdomain classification is currently not checked against
+ the public suffix list for invalid superdomains.
+\end_layout
+
+\begin_layout Description
 Internal
 \begin_inset space ~
 \end_inset
 
-domain The request is to the same domain or a subdomain of the domain that
- was first visited.
+domain The request is to the same domain, a subdomain or a superdomain of
+ the domain that was first visited.
 \end_layout
 
 \begin_layout Description
@@ -5924,6 +5930,14 @@ Secure
 \end_inset
 
 request The request is using HTTPS.
+\end_layout
+
+\begin_layout Description
+Insecure
+\begin_inset space ~
+\end_inset
+
+request The request is not using HTTPS.
 \end_layout
 
 \begin_layout Subsection
