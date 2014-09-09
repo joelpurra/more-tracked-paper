@@ -1653,6 +1653,135 @@ target "https://www.gnu.org/licenses/gpl.html"
 \end_layout
 
 \begin_layout Subsection
+har-portent
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/har-portent"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
+\end_layout
+
+\begin_layout Standard
+A set of scripts that both downloads and analyzes websites in a single run.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/download-and-analyze-https-www-combos.sh <parallelism> <domainlists>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uses 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/download-and-analyze.sh
+\end_layout
+
+\end_inset
+
+ to download four variations of the same domains, so any differences between
+ secure/insecure and www-prefixed domains can be observed.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://www.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://www.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/download-and-analyze.sh <prefix> <parallelism> <domainlists>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Downloads a list of domains in parallel, with automatic per-prefix/input
+ file folder and log file and creation.
+ It also performs automatic retries for failed domains, with an increased
+ parallelism as retries are mostly expected to yield another network timeout
+ or error.
+\end_layout
+
+\begin_layout Subsection
 har-heedless
 \begin_inset Foot
 status open
@@ -1779,9 +1908,7 @@ Waiting a period of time after downloading the web page before generating
 status collapsed
 
 \begin_layout Plain Layout
-get/har.sh 
-\emph on
-url
+get/har.sh <url>
 \end_layout
 
 \end_inset
@@ -1822,7 +1949,7 @@ phantomjs
 \end_inset
 
  crashed or otherwise encountered an error, a fallback HAR file is generated
- with only a dummy response explaining that an error occurred.
+ with a dummy response explaining that an error occurred.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1830,11 +1957,7 @@ phantomjs
 status collapsed
 
 \begin_layout Plain Layout
-domain.single.sh 
-\emph on
-domain
-\emph default
- [--screenshot <true|false>]
+url/single.sh <domain> [--screenshot <true|false>]
 \end_layout
 
 \end_inset
@@ -1843,8 +1966,8 @@ domain
 \end_layout
 
 \begin_layout Standard
-Downloads the front page of a single domain, and takes care of writing the
- HAR output to the correct folder and file.
+Downloads a URL of a single domain, and takes care of writing the HAR output
+ to the correct folder and file.
  If a screenshot has been requested, it is extracted (and removed) from
  the extended HAR data and written to a separate file parallel to the resulting
  HAR file.
@@ -1855,7 +1978,7 @@ Downloads the front page of a single domain, and takes care of writing the
 status collapsed
 
 \begin_layout Plain Layout
-domain/parallel.sh [parallel-processes [--screenshot <true|false>]] 
+url/parallel.sh [parallel-processes [--screenshot <true|false>]]
 \end_layout
 
 \end_inset
@@ -1872,6 +1995,45 @@ status collapsed
 
 \begin_layout Plain Layout
 parallel-processes
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domain/parallel.sh <prefix> [parallel-processes [--screenshot <true|false>]]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Download the front pages of a list of domains, in parallel, using a specific
+ prefix, such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://www.
+\end_layout
+
+\end_inset
+
+.
+ See 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+url/parallel.sh
 \end_layout
 
 \end_inset
@@ -1940,7 +2102,7 @@ Write about more scripts.
 \end_layout
 
 \begin_layout Standard
-At the time of writing, there are 32 scripts in har-dulcify.
+At the time of writing, there are 44 scripts in har-dulcify.
  Here's a selection with explanations.
 \end_layout
 
@@ -2144,8 +2306,7 @@ status collapsed
 \begin_layout Plain Layout
 classification/disconnect/add.sh 
 \family roman
-\emph on
-prepared-disconnect-dataset-path
+<prepared-disconnect-dataset-path>
 \end_layout
 
 \end_inset
@@ -2228,8 +2389,9 @@ status collapsed
 \begin_layout Plain Layout
 classification/effective-tld/add.sh 
 \family roman
-\emph on
-prepared-disconnect-dataset-path
+<prepared-disconnect-dataset-path
+\series bold
+>
 \end_layout
 
 \end_inset
@@ -2361,6 +2523,44 @@ aggregate/analysis.sh
 \begin_layout Standard
 Takes counts and lists of values, and reduces them to easy to present values,
  percentages and top lists.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+questions/google-gtm-ga-dc.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyze the impact of Google Tag Manager on coverage for other Google services,
+ specifically Google Analytics and DoubleClick.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+questions/origin-redirects.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyze requests to see if there are redirects from the origin page initially
+ requested.
+ One of the most interesting things to look at is wether or not domains
+ redirect to or from secure https domains.
 \end_layout
 
 \begin_layout Chapter
