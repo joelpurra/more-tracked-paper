@@ -626,6 +626,30 @@ Versign's analysis of the .se TLD.
 Patrik's list of site titles to ignore.
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+The Tangled Web: A Guide to Securing Modern Web Applications
+\emph default
+ by Michał Zalewski
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Micha%C5%82_Zalewski"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 Who to talk to
 \end_layout
