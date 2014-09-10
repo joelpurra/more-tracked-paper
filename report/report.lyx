@@ -7729,7 +7729,7 @@ not invented here
 \end_layout
 
 \begin_layout Section
-Improvements to other open source projects
+Contributions to other open source projects
 \end_layout
 
 \begin_layout Subsection
@@ -7767,6 +7767,23 @@ phantomjs
 \end_inset
 
  example library has been improved much, patches have not yet been submitted.
+ Since it is only an example from their side, a more developed version might
+ no longer serve the same purpose - educating new users on the possibilities
+ of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+.
+ An attempt to break the code down and separate pure bug fixes from other
+ improvements might help.
+ The version written for this thesis is released under the same license
+ as the original, so reuse should not be a problem for those interested.
 \end_layout
 
 \begin_layout Subsection
@@ -7807,23 +7824,29 @@ jq
  language.
  Bugs and inconsistencies have been reported, and lots of input regarding
  for example code sharing through a package management system has been given.
+ Some of the code written has been packaged for easy reuse, and more is
+ on the way.
 \end_layout
 
 \begin_layout Subsection
-Disconnect.me
+Disconnect
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about patches here.
-\end_layout
-
-\end_inset
-
-
+Disconnect relies heavily on their blocking list, as it's the base for both
+ the service of blocking external resources and presenting statistics to
+ the user.
+ While processing the blocking list, a number of errors and inconsistencies
+ were found.
+ Unfortunately, the maintainers do not seem very active in the project,
+ and even trivial data encoding errors were not patched over a month after
+ submission.
+ According to Disconnect's Eason Goodale in an email conversation 2014-08-13,
+ the team has been concentrating on a second version of Disconnect as well
+ as other projects instead.
+ While I can submit patches through Disconnect's github project pages, Goodale's
+ reply seems to indicate they will not be accepted in a timely fashion and
+ perhaps irrelevant by the time the next generation is released to the public.
 \end_layout
 
 \begin_layout Chapter
