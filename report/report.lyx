@@ -1856,6 +1856,13 @@ get/netsniff.js
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:get/netsniff.js"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2304,6 +2311,32 @@ Add basic classifications, such as if a request is internal or external
 status collapsed
 
 \begin_layout Plain Layout
+classification/disconnect/prepare-service-list.sh
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/disconnect/prepare-service-list.sh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prepares Disconnect's blocking list from the original format where blocked
+ domains are stored deep in the structure, to one where domains are top
+ level map keys, prepared for fast lookups.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 classification/disconnect/add.sh 
 \family roman
 <prepared-disconnect-dataset-path>
@@ -2380,6 +2413,30 @@ classification/disconnect/prepare-service-list.sh
 \end_inset
 
  before being used.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/analysis.sh
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/disconnect/analysis.sh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyses Disconnect's blocking list and collects some aggregate numbers.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4595,6 +4652,13 @@ External datasets
 
 \begin_layout Subsection
 Disconnect's blocking list
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7732,6 +7796,84 @@ not invented here
 Contributions to other open source projects
 \end_layout
 
+\begin_layout Standard
+During the development of code for this thesis, other projects have been
+ utilized.
+ In good open source manners, those projects should be improved when possible.
+\end_layout
+
+\begin_layout Subsection
+The HAR specification
+\end_layout
+
+\begin_layout Standard
+After looking at further processing of the data, some improvements might
+ be suggested.
+\end_layout
+
+\begin_layout Standard
+One such suggestion might be to add an absolute/resolved version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+response.redirectURL
+\end_layout
+
+\end_inset
+
+, as specification 1.2 seems to be unclear wether or not it should be kept
+ as-is from the HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Location
+\end_layout
+
+\end_inset
+
+ header or browser's 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+redirectURL
+\end_layout
+
+\end_inset
+
+values - both of which possibly is relative.
+ As subsequent HTTP requests are hard to refer to without relying either
+ on exact request ordering (the executed redirect always coming exactly
+ as the next entry) or at least having the URL resolved (preferably by the
+ browser) before writing it to the HAR data.
+ Current efforts in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:get/netsniff.js"
+
+\end_inset
+
+ to resolve relative URLs using a separate javascript library have proven
+ inexact when it comes to matching against the browser's executed URL, differing
+ for example in wether trailing slashes are kept for domain root requests
+ or not.
+ What would be even better, is a way to refer to the reason for the HTTP
+ request, be it an HTML tag, a script call or a HTTP redirect - but that
+ could to be highly implementation dependent per browser.
+\end_layout
+
 \begin_layout Subsection
 \begin_inset Flex Code
 status collapsed
@@ -7753,6 +7895,13 @@ status collapsed
 \begin_layout Plain Layout
 netsniff.js
 \end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:get/netsniff.js"
 
 \end_inset
 
@@ -7833,18 +7982,37 @@ Disconnect
 \end_layout
 
 \begin_layout Standard
-Disconnect relies heavily on their blocking list, as it's the base for both
- the service of blocking external resources and presenting statistics to
- the user.
- While processing the blocking list, a number of errors and inconsistencies
- were found.
+Disconnect relies heavily on their blocking list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+, as it's the base for both the service of blocking external resources and
+ presenting statistics to the user.
+ While preparing 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:classification/disconnect/prepare-service-list.sh"
+
+\end_inset
+
+ and analyzing 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:classification/disconnect/analysis.sh"
+
+\end_inset
+
+ the blocking list, a number of errors and inconsistencies were found.
  Unfortunately, the maintainers do not seem very active in the project,
  and even trivial data encoding errors were not patched over a month after
  submission.
  According to Disconnect's Eason Goodale in an email conversation 2014-08-13,
  the team has been concentrating on a second version of Disconnect as well
- as other projects instead.
- While I can submit patches through Disconnect's github project pages, Goodale's
+ as other projects.
+ While I can submit patches through Disconnect's Github project pages, Goodale's
  reply seems to indicate they will not be accepted in a timely fashion and
  perhaps irrelevant by the time the next generation is released to the public.
 \end_layout
@@ -7911,7 +8079,7 @@ Other views on the same data
 \end_layout
 
 \begin_layout Subsection
-Platform for Privacy Preferences (P3P)
+Platform for Privacy Preferences (P3P) Project
 \begin_inset Foot
 status open
 
@@ -7927,12 +8095,24 @@ target "http://www.w3.org/P3P/"
 
 \end_inset
 
- analysis
+ HTTP header analysis
 \end_layout
 
 \begin_layout Standard
-In conversations with Dwight Hunter, privacy policy researcher, he was mentioned
- that P3P policies was seen as a good technical solution to policy problems
+P3P is a way for websites to declare their policies and intentions for data
+ collected from web users.
+ It is declared in a machine-readable format, as an XML file and in a compact
+ encoding as a HTTP header.
+ W3C's work started in 1997 and P3P 1.0 became a W3C recommendation in 2002.
+ It never gained enough momentum and the work with P3P 1.1 was suspended
+ in 2006.
+ P3P is still implemented by many websites, even though it may not follow
+ the originally intended usage.
+\end_layout
+
+\begin_layout Standard
+In conversations with Dwight Hunter, privacy policy researcher, he mentioned
+ that P3P policies are seen as a good technical solution to policy problems
  in research he had read.
  
 \begin_inset Note Greyedout
@@ -7944,10 +8124,11 @@ Add references to Dwight's claims?
 
 \end_inset
 
- I countered with saying that there are policy-wise useless P3P headers
- being sent from some webpages, most probably to bypass Internet Explorer's
- strict cookie rules for third-party site without a P3P HTTP header.
- This has been highlighted by Microsoft in 2012, pointing at Google's P3P
+ I countered by saying that there are policy-wise useless P3P headers being
+ sent from some webpages, most probably to bypass Internet Explorer's (not
+ all versions) strict cookie rules for third-party site without a P3P HTTP
+ header.
+ This was been highlighted by Microsoft in 2012, pointing at Google's P3P
  use.
 \end_layout
 
@@ -7976,7 +8157,7 @@ target "http://blogs.msdn.com/b/ie/archive/2012/02/20/google-bypassing-user-priv
 \end_layout
 
 \begin_layout Standard
-Looking at collected HAR data there are many examples.
+Looking at collected HAR data there are many examples of P3P headers.
  In the dataset 
 \begin_inset Quotes eld
 \end_inset
@@ -8034,11 +8215,11 @@ numprint{550}
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="9" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<features rotate="0" islongtable="true" longtabularalignment="center">
+<column alignment="right" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row endhead="true">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8047,7 +8228,7 @@ Count
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8058,7 +8239,28 @@ Value
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{4231}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8074,13 +8276,8 @@ Value
 \uwave off
 \noun off
 \color none
-4231
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8100,10 +8297,36 @@ answer=151657&hl=en for more info."
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2219}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8119,13 +8342,8 @@ answer=151657&hl=en for more info."
 \uwave off
 \noun off
 \color none
-2219
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8145,10 +8363,36 @@ r.py?hl=en&answer=151657 for more info."
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{855}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8164,13 +8408,8 @@ r.py?hl=en&answer=151657 for more info."
 \uwave off
 \noun off
 \color none
-855
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8189,10 +8428,36 @@ CP="NO P3P POLICY"
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{701}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8208,13 +8473,8 @@ CP="NO P3P POLICY"
 \uwave off
 \noun off
 \color none
-701
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8234,10 +8494,36 @@ CP='Olark does not have a P3P policy.
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{138}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8253,13 +8539,8 @@ CP='Olark does not have a P3P policy.
 \uwave off
 \noun off
 \color none
-138
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8278,10 +8559,36 @@ CP:"BrowseAloud has no dedicated privacy protection policy"
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{135}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8297,13 +8604,8 @@ CP:"BrowseAloud has no dedicated privacy protection policy"
 \uwave off
 \noun off
 \color none
-135
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8322,10 +8624,67 @@ CP="Potato"
 \end_layout
 
 \end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\size normal
+\emph on
+Cookie blocked/not saved in IFRAME in Internet Explorer
+\family roman
+\series medium
+\shape up
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://stackoverflow.com/a/16475093"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{128}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8341,13 +8700,8 @@ CP="Potato"
 \uwave off
 \noun off
 \color none
-128
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8367,10 +8721,36 @@ CP="Facebook does not have a P3P policy.
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{113}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8386,13 +8766,8 @@ CP="Facebook does not have a P3P policy.
 \uwave off
 \noun off
 \color none
-113
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8412,6 +8787,11 @@ CP="This is not a P3P policy.
 \end_layout
 
 \end_inset
+
+
+\end_layout
+
+\end_inset
 </cell>
 </row>
 </lyxtabular>
@@ -8422,7 +8802,7 @@ CP="This is not a P3P policy.
 \end_layout
 
 \begin_layout Standard
-There is even a P3P policy with the value 
+Other examples include 
 \family roman
 \series medium
 \shape up
@@ -8457,13 +8837,115 @@ CP="This is not a P3P policy! It is used to bypass IEs problematic handling
 
 \end_inset
 
- occurring 28 times.
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="This is not a P3P policy.
+ Work on P3P has been suspended since 2006: http://www.w3.org/P3P/"
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="This is not a P3P policy.
+ P3P is outdated."
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP=
+\backslash
+"Thanks IE8
+\backslash
+
+\end_layout
+
+\end_inset
+
+ (malformed), 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="No P3P policy because it has been deprecated"
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-While the current state of P3P research is unknown to me, this is but one
- example of where quantitive analysis of real-world web pages shows differences
- between technical, intended or perceived usage.
+This is but one example of where quantitive analysis of real-world web pages
+ shows differences between technical, intended or perceived usage.
+ While P3P may be an outdated example that has been researched
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CMU-CyLab-10-014"
+
+\end_inset
+
+, it shows how automated, generic tooling can help researchers a lot in
+ their understanding of usage in the wild.
 \end_layout
 
 \begin_layout Subsection
@@ -8472,28 +8954,9 @@ Cookie syncing
 
 \begin_layout Standard
 A recent large-scale study
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://securehomes.esat.kuleuven.be/~gacar/persistent/the_web_never_forgets.pdf"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert proper reference.
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
 
 \end_inset
 
@@ -8503,39 +8966,57 @@ Insert proper reference.
  IDs can be shared in different ways.
  If both third parties exist on the same page, they can be shared through
  scripts or by looking for any IDs in the location URL.
- They can also be shared by one third party sending requests to a second
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-A fourth party?
-\end_layout
-
-\end_inset
-
- third party, either by leaking the location URL as a HTTP referrer or by
- embedding it in the request URL.
- In crawls of Alexa's top 3000 domains, one third party script in particular
+ They can also be shared by one third-party sending requests to a second
+ third-party (a fourth-party?), either by leaking the location URL as a
+ HTTP referrer or by embedding it in the request URL.
+ In crawls of Alexa's top 3000 domains, one third-party script in particular
  sends requests with synced IDs to 25 domains; the IDs were eventually are
  shared with 43 domains.
+ They also showed that a user's browsing history reconstruction rate rose
+ from 1.4% to 11% when backend/server-to-server overlaps were modeled.
 \end_layout
 
 \begin_layout Standard
-The study used a modified Firefox browser to look at values stored in cookies,
- showing that a user's browsing history could be reconstructed from 1.4%
- to 11%.
- 
-\begin_inset Note Greyedout
-status open
+The study used a modified Firefox browser to look at values stored in primarily
+ cookies.
+ As all HTTP requests are recorded in this thesis, including HTTP cookie
+ headers, a limited version of the same study could be performed.
+ In addition, they look at in-browser scripting utilizing for example 
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
-Write more about the study and how it might have been implemented here.
+localStorage
 \end_layout
 
 \end_inset
 
+, 
+\begin_inset Flex Code
+status collapsed
 
+\begin_layout Plain Layout
+canvas
+\end_layout
+
+\end_inset
+
+ fingerprinting and ID storage in external plugins like Flash.
+ While that might be possible, the modifications that would need to be made
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ are non-trivial, and my current scope does not allow for that.
+ With their research as a base, cookie respawning and sharing could possibly
+ be confirmed using this thesis' code as a external tool using a different
+ browser platform.
 \end_layout
 
 \begin_layout Chapter
