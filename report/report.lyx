@@ -12,6 +12,39 @@
 \providecommand{\versionortoday}{(Unknown version) - \today}
 
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
+
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\pgfplotsset{compat=1.9}% supress warning
+
+\newcommand{\csvtablestyle}[1]{
+\pgfplotstableset{
+format=file,
+col sep=tab,
+string type,
+begin table=\begin{longtable},
+end table=\end{longtable},
+every odd row/.style={before row={\rowcolor[gray]{0.95}}},
+every head row/.style={before row=\toprule,after row={
+\midrule
+\addlinespace[0pt]
+\endhead
+},
+},
+every last row/.style={after row={
+\bottomrule
+\caption{#1}}
+},
+}
+}
+
+\newcommand{\csvtable}[3]{
+\csvtablestyle{#2}
+\pgfplotstabletypeset[
+columns={#3}
+]{#1}
+}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -4671,7 +4704,7 @@ One of the most popular privacy tools is Disconnect, which blocks tracking
 \begin_layout Standard
 The Disconnect software lets users block/unblock loading resources from
  specific third-party domains.
- A list of 2143 domains is used as the basis from the blocking.
+ A list of 2149 domains is used as the basis from the blocking.
  Each entry belongs to an organization, including a link to the organizations
  webpage.
  There is also a grouping into categories, here shown with some examples.
@@ -4682,6 +4715,63 @@ status open
 
 \begin_layout Plain Layout
 Write about top results in datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Overview
+\end_layout
+
+\begin_layout Standard
+An aggregate analysis of Disconnect's blocking list, as of 2014-09-08.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+csvtable{disconnect.categories.tsv}{Disconnect's categories}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+csvtable{disconnect.domains-per-organization.tsv}{Domains per organization}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+csvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
+ in more than one category}{}
 \end_layout
 
 \end_inset
@@ -8179,10 +8269,7 @@ numprint{1944000}
 
 \end_inset
 
- recorded requests, 
-about 
-\lang english
-
+ recorded requests, about 
 \begin_inset ERT
 status open
 
