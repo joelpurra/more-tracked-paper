@@ -19,7 +19,7 @@
 \usepackage{colortbl}
 \pgfplotsset{compat=1.9}% supress warning
 
-\newcommand{\csvtablestyle}[1]{
+\newcommand{\tsvtablestyle}[1]{
 \pgfplotstableset{
 format=file,
 col sep=tab,
@@ -40,8 +40,8 @@ every last row/.style={after row={
 }
 }
 
-\newcommand{\csvtable}[3]{
-\csvtablestyle{#2}
+\newcommand{\tsvtable}[3]{
+\tsvtablestyle{#2}
 \pgfplotstabletypeset[
 columns={#3}
 ]{#1}
@@ -2978,7 +2978,7 @@ status open
 
 
 \backslash
-csvtable{domains.datasets.tsv}{Datasets in use}{}
+tsvtable{domains.datasets.tsv}{Datasets in use}{}
 \end_layout
 
 \end_inset
@@ -3002,7 +3002,7 @@ status open
 
 
 \backslash
-csvtable{domains.tlds.tsv}{TLDs in dataset in use}{}
+tsvtable{domains.tlds.tsv}{TLDs in dataset in use}{}
 \end_layout
 
 \end_inset
@@ -3069,7 +3069,7 @@ status open
 
 
 \backslash
-csvtable{disconnect.categories.tsv}{Disconnect's categories}{}
+tsvtable{disconnect.categories.tsv}{Disconnect's categories}{}
 \end_layout
 
 \end_inset
@@ -3085,7 +3085,7 @@ status open
 
 
 \backslash
-csvtable{disconnect.domains-per-organization.tsv}{Domains per organization}{}
+tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization}{}
 \end_layout
 
 \end_inset
@@ -3101,7 +3101,7 @@ status open
 
 
 \backslash
-csvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
+tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
  in more than one category}{}
 \end_layout
 
@@ -3505,7 +3505,7 @@ status open
 
 
 \backslash
-csvtable{computer-machines.tsv}{Machine specifications}{}
+tsvtable{computer-machines.tsv}{Machine specifications}{}
 \end_layout
 
 \end_inset
@@ -3714,7 +3714,7 @@ status open
 
 
 \backslash
-csvtable{google-tag-manager.tsv}{Google Tag Manager versus Google Analytics
+tsvtable{google-tag-manager.tsv}{Google Tag Manager versus Google Analytics
  and DoubleClick}{}
 \end_layout
 
@@ -3931,7 +3931,7 @@ status open
 
 
 \backslash
-csvtable{output-filesize.tsv}{Output file size}{}
+tsvtable{output-filesize.tsv}{Output file size}{}
 \end_layout
 
 \end_inset
@@ -4003,7 +4003,7 @@ status open
 
 
 \backslash
-csvtable{system-load.tsv}{System load}{}
+tsvtable{system-load.tsv}{System load}{}
 \end_layout
 
 \end_inset
@@ -4473,7 +4473,7 @@ status open
 
 
 \backslash
-csvtable{mime-types.tsv}{Mime-type grouping}{}
+tsvtable{mime-types.tsv}{Mime-type grouping}{}
 \end_layout
 
 \end_inset
@@ -5643,7 +5643,7 @@ status open
 
 
 \backslash
-csvtable{p3p.counts.tsv}{Top P3P values}{}
+tsvtable{p3p.counts.tsv}{Top P3P values}{}
 \end_layout
 
 \end_inset
