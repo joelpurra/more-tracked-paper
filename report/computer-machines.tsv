@@ -1,0 +1,3 @@
+Machine	OS, version	CPU architecture	CPU cores	Core speed (MHz)	Memory (GB)
+Laptop	Mac OS X 10.9.2 Mavericks	x86/64 bit	2	2800	8
+Server	Debian GNU/Linux 8 Jessie/Sid	x86/64 bit	4	2500	16

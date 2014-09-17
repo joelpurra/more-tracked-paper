@@ -1,0 +1,12 @@
+Name	Date	Total size	Selection	Selection size	Unique
+.SE health status	2014-03-27	980	curated		915
+.se zone	2014-07-10	1318000	random	100000	100000
+.dk zone	2014-07-23	1260000	random	10000	10000
+.com zone	2014-08-27	114178000	random	10000	10000
+.net zone	2014-08-27	15096000	random	10000	10000
+reach50.com	2014-09-01	50	top		50
+Alexa Top 1M	2014-09-01	1000000	top	10000	9986
+			random	10000	9959
+			.se		3364
+			.dk		2637
+Total		132852050		156907	156045

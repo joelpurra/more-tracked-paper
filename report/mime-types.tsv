@@ -1,0 +1,10 @@
+Group	Types
+script	application/javascript, application/x-javascript, text/javascript
+font	application/font-woff, application/x-woff, application/x-font-ttf, font/ttf, font/opentype
+data	application/json, application/octet-stream, binary/octet-stream, application/xml
+image	image/gif, image/jpeg, image/png, image/svg+xml
+style	text/css
+html	text/html, application/xhtml+xml
+text	text/plain
+document	application/pdf
+object	application/x-shockwave-flash

@@ -1,0 +1,9 @@
+Name	Value	Percentage
+Dataset	2014-07-25 100k server	-
+Domains with HAR data	99952	100\%
+Domains with GTM	1307	1.3\%
+Requests to GA	2980	-
+Requests to DC	2019	-
+GA/GTM domain coverage	1105	85\%
+DC/GTM domain coverage	738	56\%
+GA+DC/GTM domain coverage	1307	100\%
