@@ -19,7 +19,15 @@
  footnotesep=5mm,
  footskip=10mm}
 \begin{landscape}
+% Use TiKZ?
+% http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
+\clearpage
+\vspace*{\fill}
+\begin{minipage}{\textwidth}
 }{
+\end{minipage}
+\vfill % equivalent to \vspace{\fill}
+\clearpage
 \end{landscape}
 \pagebreak
 \aftergroup\restoregeometry
