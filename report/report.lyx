@@ -4,6 +4,27 @@
 \begin_header
 \textclass report
 \begin_preamble
+\usepackage{pdflscape}
+\usepackage{geometry}
+
+\newenvironment{wide}{
+\pagebreak
+\newgeometry{
+ top=15mm,
+ inner=15mm,
+ outer=15mm,
+ bottom=15mm,
+ headheight=15pt,
+ headsep=5mm,
+ footnotesep=5mm,
+ footskip=10mm}
+\begin{landscape}
+}{
+\end{landscape}
+\pagebreak
+\aftergroup\restoregeometry
+}
+
 \usepackage{color}
 \definecolor{updated}{rgb}{0.8,0.85,1}
 
