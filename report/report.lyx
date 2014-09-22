@@ -24,6 +24,9 @@
 \clearpage
 \vspace*{\fill}
 \begin{minipage}{\textwidth}
+\setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
 }{
 \end{minipage}
 \vfill % equivalent to \vspace{\fill}
@@ -46,13 +49,22 @@
 \usepackage{pgfplotstable}
 \usepackage{booktabs}
 \usepackage{colortbl}
+\usepackage{array}
 \pgfplotsset{compat=1.9}% supress warning
+
+\newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
+\newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
 
 \newcommand{\tsvtablestyle}[1]{
 \pgfplotstableset{
 format=file,
 col sep=tab,
-string type,
+multicolumn names={c},
+column type=r,
+int detect,
+zerofill=true,
+precision=3,
+1000 sep={\ },
 begin table=\begin{longtable},
 end table=\end{longtable},
 every odd row/.style={before row={\rowcolor[gray]{0.95}}},
@@ -69,10 +81,10 @@ every last row/.style={after row={
 }
 }
 
-\newcommand{\tsvtable}[3]{
+\newcommand{\tsvtable}[4]{
 \tsvtablestyle{#2}
 \pgfplotstabletypeset[
-columns={#3}
+columns={#3},#4
 ]{#1}
 }
 \end_preamble
@@ -96,8 +108,8 @@ logicalmkup
 \font_sf_scale 100
 \font_tt_scale 100
 \graphics default
-\default_output_format default
-\output_sync 0
+\default_output_format pdf2
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -3007,7 +3019,9 @@ status open
 
 
 \backslash
-tsvtable{domains.datasets.tsv}{Datasets in use}{}
+tsvtable{domains.datasets.tsv}{Datasets in use}{}{display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=l},
+ display columns/3/.style={string type, column type=l}}
 \end_layout
 
 \end_inset
@@ -3031,7 +3045,8 @@ status open
 
 
 \backslash
-tsvtable{domains.tlds.tsv}{TLDs in dataset in use}{}
+tsvtable{domains.tlds.tsv}{TLDs in dataset in use}{}{display columns/2/.style={stri
+ng type, column type=l},}
 \end_layout
 
 \end_inset
@@ -3098,7 +3113,8 @@ status open
 
 
 \backslash
-tsvtable{disconnect.categories.tsv}{Disconnect's categories}{}
+tsvtable{disconnect.categories.tsv}{Disconnect's categories}{}{display columns/0/.s
+tyle={string type, column type=l},}
 \end_layout
 
 \end_inset
@@ -3114,7 +3130,7 @@ status open
 
 
 \backslash
-tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization}{}
+tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization}{}{}
 \end_layout
 
 \end_inset
@@ -3131,7 +3147,8 @@ status open
 
 \backslash
 tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
- in more than one category}{}
+ in more than one category}{}{display columns/0/.style={string type, column
+ type=l},}
 \end_layout
 
 \end_inset
@@ -3208,6 +3225,13 @@ webtrends.com Digital marketing analytics and optimization across channels.
 
 \begin_layout Subsubsection
 Content
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Content"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3534,7 +3558,9 @@ status open
 
 
 \backslash
-tsvtable{computer-machines.tsv}{Machine specifications}{}
+tsvtable{computer-machines.tsv}{Machine specifications}{}{display columns/0/.style
+={string type, column type=l}, display columns/1/.style={string type, column
+ type=l}, display columns/2/.style={string type, column type=l}, }
 \end_layout
 
 \end_inset
@@ -3744,7 +3770,8 @@ status open
 
 \backslash
 tsvtable{google-tag-manager.tsv}{Google Tag Manager versus Google Analytics
- and DoubleClick}{}
+ and DoubleClick, dataset	2014-07-25 100k server}{}{display columns/0/.style={str
+ing type, column type=l}, display columns/2/.style={string type, column type=r}}
 \end_layout
 
 \end_inset
@@ -3960,7 +3987,8 @@ status open
 
 
 \backslash
-tsvtable{output-filesize.tsv}{Output file size}{}
+tsvtable{output-filesize.tsv}{Output file size}{}{display columns/0/.style={string
+ type, column type=l}, display columns/3/.style={string type, column type=r}}
 \end_layout
 
 \end_inset
@@ -4032,7 +4060,9 @@ status open
 
 
 \backslash
-tsvtable{system-load.tsv}{System load}{}
+tsvtable{system-load.tsv}{System load}{}{fixed, precision=1, display columns/0/.st
+yle={string type, column type=l}, display columns/1/.style={string type,
+ column type=i}}
 \end_layout
 
 \end_inset
@@ -4502,7 +4532,9 @@ status open
 
 
 \backslash
-tsvtable{mime-types.tsv}{Mime-type grouping}{}
+tsvtable{mime-types.tsv}{Mime-type grouping}{}{display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=l},
+ }
 \end_layout
 
 \end_inset
@@ -5126,6 +5158,223 @@ Write about.
 
 \end_layout
 
+\begin_layout Section
+Disconnect's blocking list matches
+\end_layout
+
+\begin_layout Subsection
+Top domains
+\end_layout
+
+\begin_layout Standard
+A selection of domains, and their coverage across different datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.domains.sorted.tsv}{Top Disconnect domain
+ matches}{}{fixed, display columns/0/.style={string type, column type=l},
+ display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Top categories
+\end_layout
+
+\begin_layout Standard
+Categories and their coverage across different datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.categories.sorted.tsv}{Disconnect category
+ matches}{}{fixed, display columns/0/.style={string type, column type=l},
+ display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Top organizations
+\end_layout
+
+\begin_layout Standard
+A selection of organizations, and their coverage across different datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.organizations.sorted.tsv}{Top Disconnect
+ organization matches}{}{fixed, display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Discussion and conclusions
 \end_layout
@@ -5136,36 +5385,6 @@ status open
 
 \begin_layout Plain Layout
 Compare with expected results.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about disconnect's content category.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about the 
-\emph on
-.se health status
-\emph default
- report findings.
 \end_layout
 
 \end_inset
@@ -5200,6 +5419,343 @@ Write about
 Third-party Identity Management Usage on the Web
 \emph default
  report findings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+.SE Health Status comparison
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about the 
+\emph on
+.se health status
+\emph default
+ report findings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Are there other headings? Reachability and HTTPS is compared to below?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Google Analytics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about Google Analytics.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Trackers which deliver content
+\end_layout
+
+\begin_layout Standard
+In Disconnect's blocking list, there's a category called content 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Content"
+
+\end_inset
+
+.
+ While all other categories are blocked by default, this one is not as it
+ represents external resources deemed 
+\emph on
+desirable
+\emph default
+ to Disconnect's users.
+ So while they are known tracker domains, they are allowed to pass 
+\begin_inset Quotes eld
+\end_inset
+
+by popular demand.
+\begin_inset Quotes erd
+\end_inset
+
+ This brings an advantage to companies that can deliver content, as they
+ can just as well use content usage data as pure web bug/tracker usage data
+ when analyzing patterns.
+\end_layout
+
+\begin_layout Standard
+Google has several popular embeddable services in the content category,
+ including Google Maps
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/maps/documentation/embed/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, Google Translate
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://translate.google.com/manager/website/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and least but not least YouTube
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/youtube/player_parameters"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Those are the visible examples, which users interact with.
+ Lesser known examples include Recaptcha
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/recaptcha/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ which is an embeddable service to block/disallow web crawlers/bots access
+ to web page features, Google Fonts
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.google.com/fonts"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ which serves modern web fonts for easy embedding, and Google Hosted Libraries
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/speed/libraries/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ which serves popular javascript libraries from Google's extensive CDN network
+ instead of the local server for site speed/performance gains.
+ Especially the two latter, served from the googleapis.com domain, are prevalent
+ in several of the datasets - and they are usually loaded on every single
+ page on a web site, and thus gain full insight on users' click paths and
+ web history.
+ In the .se random 100k dataset, 39% of non-failed domains make requests
+ to googleapis.com.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Extract a data table with popular content domains.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Other notable results
+\end_layout
+
+\begin_layout Standard
+Here are some results that differ from my own assumptions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about noteable results.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+HTTP versus HTTPS usage
+\end_layout
+
+\begin_layout Subsubsection
+Zone domain lists
+\end_layout
+
+\begin_layout Standard
+The random zone domain lists (.se, .dk, .com, .net) have download failures for
+ 22-26% of all domains when it comes to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://www.
+\end_layout
+
+\end_inset
+
+ variations.
+ The result is consistent with results from the 
+\emph on
+.SE Health Status
+\emph default
+, where ...
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about .se random htt http results.
+\end_layout
+
+\end_inset
+
+ When it comes to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://www.
+\end_layout
+
+\end_inset
+
+ results in random zone selections are extremely low - a failure rate of
+ over 99% for all of them.
+ This means that unless a site explicitly redirects traffic from http to
+ https, users usually don't gain any advantage typing in the extra 's' in
+ https as the site won't respond.
+\end_layout
+
+\begin_layout Subsubsection
+.SE Health Status
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about reachability.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+.SE Health Status
+\emph default
+ results are better, with a 57% (2013) failure rate.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write a comparison with own results per category?
 \end_layout
 
 \end_inset
@@ -5672,7 +6228,40 @@ status open
 
 
 \backslash
-tsvtable{p3p.counts.tsv}{Top P3P values}{}
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{p3p.counts.tsv}{Top P3P values}{}{display columns/1/.style={string
+ type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
 \end_layout
 
 \end_inset
