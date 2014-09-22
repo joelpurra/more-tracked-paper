@@ -21,16 +21,10 @@
 \begin{landscape}
 % Use TiKZ?
 % http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
-\clearpage
-\vspace*{\fill}
-\begin{minipage}{\textwidth}
 \setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
 \setlength\LTleft{0pt}            % default: \parindent
 \setlength\LTright{0pt}           % default: \fill
 }{
-\end{minipage}
-\vfill % equivalent to \vspace{\fill}
-\clearpage
 \end{landscape}
 \pagebreak
 \aftergroup\restoregeometry
@@ -2261,7 +2255,7 @@ one-shot/preparations.sh
 \end_layout
 
 \begin_layout Standard
-Downloads, prepares and analyses third party data sets, and puts them in
+Downloads, prepares and analyses third party datasets, and puts them in
  the current folder for use by subsequent scripts.
 \end_layout
 
@@ -2880,8 +2874,7 @@ target "http://www.alexa.com/topsites"
 \end_inset
 
  in the world.
- It is used in many research papers, and can be seen as the standard data
- set.
+ It is used in many research papers, and can be seen as the standard dataset.
  
 \begin_inset Note Greyedout
 status open
@@ -3758,7 +3751,7 @@ status collapsed
 
  tag, each part should download separately and perform the same duties,
  including “calling home” to the usual addresses.
- In order to confirm this, a query was run on one of the data sets.
+ In order to confirm this, a query was run on one of the datasets.
 \end_layout
 
 \begin_layout Standard
@@ -5039,6 +5032,35 @@ Looking at preliminary results, a large portion of domains yielded a redirect
  redirect to an internal or external domain, a specific question was written.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Results
 \end_layout
@@ -5057,7 +5079,79 @@ Answer questions posed earlier.
 \end_layout
 
 \begin_layout Section
-Differences between data sets
+Differences between datasets
+\end_layout
+
+\begin_layout Standard
+Domains lists chosen for this thesis come in three major categories - top
+ lists, curated lists and random selection from zone files.
+ While the top lists and curated lists are assumed to primarily contain
+ sites with staff or enthusiasts to take care of them and make sure they
+ are available and functioning, the domain lists randomly extracted from
+ TLD zones might not.
+ Results below seem to fall into groups of non-random and randomly selected
+ domains - and result discussions often group them as such.
+\end_layout
+
+\begin_layout Section
+Failed versus non-failed
+\end_layout
+
+\begin_layout Standard
+Choosing the term non-failed instead of successful when it comes to dividing
+ and focusing result discussions has its basis in the HTTP standard, which
+ defines a status code.
+ Successful requests are generally shown with a HTTP status code of 200
+ (actually the entire 2xx group), or a 304 which means that a previously
+ cached (presumably successful) result is still valid.
+ Many sites respond with a 3xx status, which isn't exactly successful as
+ it doesn't contain actual content, but can not be considered a failure
+ as it will most likely lead to another resource that is successful.
+ While a status response of 4xx or 5xx shows there is a problem of some
+ kind, for the purpose of this thesis a response that contains any HTTP
+ status number is still considered a non-failure, as the remote system has
+ responded with a proper HTTP response as parsed by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+.
+ Overall, 4xx/5xx responses have been very rare; while this can be because
+ of software problems, they do exist and therefore the code seems to work
+ alright.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
+ response code/group coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5065,7 +5159,303 @@ Differences between data sets
 status open
 
 \begin_layout Plain Layout
-Write about.
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+HAR data that doesn't have a parseable HTTP status outcome number (shown
+ as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(null)
+\end_layout
+
+\end_inset
+
+ above) is considered a failed request.
+ Looking at the resulting HAR files means that both local software errors
+ and remote errors are considered failures, and while it might be technically
+ possible to distinguish a software error from a remote error it has not
+ been done apart from during initial development and debugging.
+ In order to reduce temporary or intermittent problems, all domains that
+ failed were retried up to two times.
+\end_layout
+
+\begin_layout Standard
+Non-random domains have a failure rate of below 15% for HTTP, and below
+ 90% for HTTPS.
+ Random zone domains have a failure rate of above 20% for HTTP and above
+ 99% for HTTPS.
+ The very low HTTPS adoption rates among random sites is both surprising
+ and not surprising - while larger sites have felt the pressure to implement
+ them, a non-professional site owner might see it as both an unnecessary
+ technical challenge and an unnecessary additional cost as most X.509 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to X.509.
+\end_layout
+
+\end_inset
+
+ public key infrastructure (PKI) certificates 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to PKI.
+\end_layout
+
+\end_inset
+
+ adds to site hosting bills.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.retries.rates.tsv}{Dataset HAR failure rates}{Dataset,Domains,Suc
+cessful,Unsuccessful,Non-failed,Failed,Non-failure rate,Failure rate}{fixed,
+ display columns/0/.style={string type, column type=l}, display columns/1/.style={
+string type, column type=i}, display columns/2/.style={string type, column
+ type=i}, display columns/3/.style={string type, column type=i}, display
+ columns/4/.style={string type, column type=i}, display columns/5/.style={string
+ type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+During analysis 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-dulcify
+\end_layout
+
+\end_inset
+
+ splits results into unfiltered and non-failed only origin domains.
+ Unless otherwise mentioned, further results are presented based only on
+ non-failed domains in each dataset.
+\end_layout
+
+\begin_layout Section
+Internal versus external resources
+\end_layout
+
+\begin_layout Standard
+The table shows non-failed origin domains having requests strictly to the
+ same domain, subdomains or superdomains - together known as internal domains
+ - or external (non-internal) domains.
+ Origin domains that are not exclusively loading from either internal or
+ external resources are loading from mixed domains.
+ Mixing resources from both internal and external domains is the most common
+ way to compose a web page for datasets not randomly chosen from zones,
+ although it is quite common for random domains as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{Internal
+ versus external resources coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+During analysis 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-dulcify
+\end_layout
+
+\end_inset
+
+ splits results into unfiltered, internal and external resources.
+\end_layout
+
+\begin_layout Section
+Insecure versus secure resources
+\end_layout
+
+\begin_layout Standard
+Using HTTPS to secure the connection between site and site users is considered
+ an effective way to avoid prying eyes on the otherwise technically quite
+ open and insecure internet.
+ Sites which handle sensitive information, such as e-commerce shops, online
+ payment providers and of course banks often tout being secure to use -
+ and they have strong financial incentives to provide a service that is
+ (or at least comes across as) trustworthy.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Reference for strong financial incentives for security?
+\end_layout
+
+\end_inset
+
+ As browsers will warn users if a site secured with HTTPS loads resources
+ over non-HTTPS connections, site developers will have to make sure each
+ and every request is secure to avoid being labeled not trustworthy.
+ This also applies to third-party services, which have to make sure to provide
+ HTTPS in order to be able to continue providing services to sites making
+ the switch to a fully secured experience.
+\end_layout
+
+\begin_layout Standard
+One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
+ can use traffic sniffers to get a hold of sensitive information leaking
+ out through HTTP, or man in the middle attacks on several kinds of resources
+ to insert malicious code, even though the site is supposed to be protected.
+ The follow table shows which to what extent sites manage to take full advantage
+ of HTTPS, and to which extent they fail in requesting either internal or
+ external resources.
+\end_layout
+
+\begin_layout Standard
+While the technology has been around a long time, it doesn't seem as if
+ very many sites actually use HTTPS on their sites.
+ Even origin sites that respond to HTTPS requests seem to either redirect
+ to a HTTP site, or load at least some of its resources over non-HTTPS connectio
+ns.
+ Typing in a HTTPS address into the browser's address bar will actually
+ only give full HTTPS security on 27-58% of the domains - a number where
+ the random domains surprisingly beat the non-random ones.
+\end_layout
+
+\begin_layout Standard
+Why is adoption lower for top sites? As high-traffic sites they might have
+ a high system load, and since HTTPS require some extra processing and data
+ exchange, they might have deferred it until the security is 
+\emph on
+really
+\emph default
+ needed - like when passwords of financial information is entered.
+ Strict HTTPS performance concerns were dismissed by Google engineers in
+ 2xxx 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look up year, insert link.
+\end_layout
+
+\end_inset
+
+ - and Google has since implemented HTTPS as an alternative for most and
+ the default for some services.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Google's HTTPS defaults.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another concern is that curated domain lists seem to exhibit an even lower
+ HTTPS adoption than both random and top domains - the domains have been
+ selected as they are deemed important to the public in some way.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update paragraph after HTTPS for .SE Health Status is finished.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Secure
+ versus insecure resources coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -5074,7 +5464,88 @@ Write about.
 \end_layout
 
 \begin_layout Section
-Top content
+Content type group coverage
+\end_layout
+
+\begin_layout Standard
+The difference between what can be achieved between different types of resources
+ makes the distribution interesting.
+ Images 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Does SVG images allow loading external resources?
+\end_layout
+
+\end_inset
+
+ and text (unless improperly labeled during transfer and parsed as another
+ format) loaded by a browser provide no additional way to load further resources
+, while html, scripts and style do.
+ While data resources can trigger downloading additional resources based
+ on the logic that consumes the data, it still requires another type of
+ resource present to do that.
+\end_layout
+
+\begin_layout Standard
+Objects and external documents can also access additional resources, but
+ the use of those types of resources has been very low in the extracted
+ data.
+ There might be several reasons, but the fact that the tests were run on
+ a headless browser without additional plugins installed is probably the
+ biggest in this case.
+ An additional reason might be adoption of HTML5 and client side javascript
+ instead of Flash for visual, dynamic material and animations.
+ This evolution has been fueled by Apple's resistance towards supporting
+ Flash on their handheld devices.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Reference Apple's Flash implementation resistance.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Origin
+\end_layout
+
+\begin_layout Standard
+Practically all successful origin requests result in a html response.
+ The range is 84-100% html, with the difference being seemingly misconfigured
+ responses, some of which are redirects without actual content.
+\end_layout
+
+\begin_layout Subsection
+Internal
+\end_layout
+
+\begin_layout Standard
+Internal requests exclude the requests to the origin page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{Content
+ type group coverage}{}{fixed, display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5082,7 +5553,51 @@ Top content
 status open
 
 \begin_layout Plain Layout
-Write about.
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+External
+\end_layout
+
+\begin_layout Standard
+External resources from each group enjoy almost the same coverage as their
+ internal counterparts.
+ Among non-zone datasets scripts often reach above 90% coverage, showing
+ that active and popular web pages contain a lot of external dynamic material.
+ Images, while not dynamic, as well as styles and html are also popular
+ to load externally.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
+ type group coverage}{}{fixed, display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -5178,24 +5693,8 @@ status open
 
 
 \backslash
-begin{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 tsvtable{datasets.non-failed.disconnect.domains.sorted.tsv}{Top Disconnect domain
- matches}{}{fixed, display columns/0/.style={string type, column type=l},
+ match coverage}{}{fixed, display columns/0/.style={string type, column type=l},
  display columns/1/.style={string type, column type=i}}
 \end_layout
 
@@ -5210,22 +5709,6 @@ status open
 
 \begin_layout Plain Layout
 Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{wide}
 \end_layout
 
 \end_inset
@@ -5249,24 +5732,8 @@ status open
 
 
 \backslash
-begin{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 tsvtable{datasets.non-failed.disconnect.categories.sorted.tsv}{Disconnect category
- matches}{}{fixed, display columns/0/.style={string type, column type=l},
+ match coverage}{}{fixed, display columns/0/.style={string type, column type=l},
  display columns/1/.style={string type, column type=i}}
 \end_layout
 
@@ -5281,22 +5748,6 @@ status open
 
 \begin_layout Plain Layout
 Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{wide}
 \end_layout
 
 \end_inset
@@ -5320,25 +5771,9 @@ status open
 
 
 \backslash
-begin{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 tsvtable{datasets.non-failed.disconnect.organizations.sorted.tsv}{Top Disconnect
- organization matches}{}{fixed, display columns/0/.style={string type, column
- type=l}, display columns/1/.style={string type, column type=i}}
+ organization match coverage}{}{fixed, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -5368,6 +5803,19 @@ status open
 
 \backslash
 end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
 \end_layout
 
 \end_inset
@@ -6064,6 +6512,35 @@ status open
 
 \begin_layout Plain Layout
 Mention the possibility to educate users with a webpage.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Mention more rigorously testing har-heedless and phantomjs by setting up
+ test servers serving different response types (errors, objects/documents,
+ technically extreme web page content).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Mention more rigorously testing har-dulcify and data manipulation scripts
+ by creating test data sets.
 \end_layout
 
 \end_inset
