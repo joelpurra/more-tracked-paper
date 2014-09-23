@@ -81,6 +81,20 @@ every last row/.style={after row={
 columns={#3},#4
 ]{#1}
 }
+
+\newenvironment{futurework}{
+\begin{center}
+\begin{minipage}{.8\columnwidth}
+\hspace{12pt}
+\hrule
+\hspace{12pt}
+}{
+\hspace{12pt}
+\hrule
+\hspace{12pt}
+\end{minipage}
+\end{center}
+}
 \end_preamble
 \use_default_options true
 \begin_modules
