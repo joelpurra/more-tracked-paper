@@ -356,6 +356,14 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Introduction
 \end_layout
@@ -379,7 +387,7 @@ Swedes and the internet
 \emph default
  and 
 \emph on
-.se health status
+.SE Health Status
 \emph default
 
 \begin_inset CommandInset citation
@@ -444,7 +452,7 @@ target "https://www.iis.se/vad-vi-gor/internetstatistik/"
 \begin_layout Standard
 The report 
 \emph on
-.se health status
+.SE Health Status
 \emph default
  is based on data collected from around 
 \begin_inset ERT
@@ -466,7 +474,7 @@ numprint{900}
  directors.
  The thesis subject has been selected to be in line with the 
 \emph on
-.se health status
+.SE Health Status
 \emph default
  reports; results may be included in future reports, and code reused by
  both those reports and potentially other tools like .SE's public tool 
@@ -605,6 +613,98 @@ numprint{120}
 \begin_inset CommandInset citation
 LatexCommand cite
 key ".SE:2013:annualreport"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Document style
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about document style.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cross-references
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Cross-references"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Many cross-references are given as chapter or section references in parentheses
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Cross-references"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Future work
+\end_layout
+
+\begin_layout Standard
+Ideas, future improvements or research has been written both in chapter
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Future-work"
+
+\end_inset
+
+ and as comments.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This type of comment denotes ideas, future improvements or research.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
 
 \end_inset
 
@@ -975,22 +1075,53 @@ target "http://www.nsa.gov/"
 
 \begin_layout Chapter
 Expected results
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Expected-results"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Previous research show that ads were used on 58% of internet's 500 most
- popular sites.
+Previous research show that ads were used on 58% of internet's 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{500}
+\end_layout
+
+\end_inset
+
+ most popular sites.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
- Google Analytics usage among Swedish top domains was 57% in 2011 and 62%
- 2012.
+ Google Analytics usage in a curated list of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{900}
+\end_layout
+
+\end_inset
+
+ Swedish domains was 44% in 2010, 57% in 2011 and 62% 2012.
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
 
 \end_inset
 
@@ -1052,7 +1183,7 @@ The thesis will primarily be written from a Swedish perspective.
  This is in part because .SE has access to the full list of Swedish .se domains,
  and part because of their previous work with the 
 \emph on
-.se health status
+.SE Health Status
 \emph default
  reports.
  Focus is to analyze .se domains in the reports, as they have already been
@@ -1130,13 +1261,24 @@ Related projects
 \end_layout
 
 \begin_layout Subsection
+
+\emph on
 .SE Health Status
+\emph default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:.SE-Health-Status"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The thesis topic was chosen to align with the 
 \emph on
-.se health status
+.SE Health Status
 \emph default
 , and one of the sources of lists of domains.
  Results from this and other runs may be included in future reports.
@@ -1144,6 +1286,13 @@ The thesis topic was chosen to align with the
 
 \begin_layout Subsection
 HTTP Archive
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:HTTP-Archive"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -1790,7 +1939,7 @@ parallel
  It allows an input file to be distributed among several processes/CPU cores,
  and the results to be combined into a single file.
  It helps speed up downloading of HAR files, and processing of the JSON
- data through jq.
+ data through jq, which is single threaded.
 \end_layout
 
 \begin_layout Section
@@ -1848,27 +1997,7 @@ target "https://github.com/joelpurra/har-portent"
 \end_layout
 
 \begin_layout Quotation
-Using 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
- to download and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-dulcify
-\end_layout
-
-\end_inset
-
- to analyze web pages in aggregate.
+Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
 \end_layout
 
 \begin_layout Standard
@@ -2295,17 +2424,7 @@ target "https://github.com/joelpurra/har-dulcify"
 
 \begin_layout Quote
 Extract data from HTTP Archive (HAR) files, quite possibly downloaded by
- 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
-, for some aggregate analysis.
+ har-heedless, for some aggregate analysis.
 \end_layout
 
 \begin_layout Standard
@@ -2887,13 +3006,17 @@ Statistics regarding each list of domains is presented in an appendix.
 \end_layout
 
 \begin_layout Subsection
-.SE Health Status domains
+
+\emph on
+.SE Health Status
+\emph default
+ domains
 \end_layout
 
 \begin_layout Standard
 When .SE performs their annual 
 \emph on
-.se health status
+.SE Health Status
 \emph default
  report measurements, they use an in-house curated list of domains of national
  interest.
@@ -4351,7 +4474,7 @@ The ratio of PNG to HAR data size on disk points to the compressed PNG files
  being up to 10 times the size of the uncompressed HAR files for certain
  types of pages, for example media domains in the 
 \emph on
-.se health status
+.SE Health Status
 \emph default
  report dataset.
 \end_layout
@@ -5696,8 +5819,8 @@ Choosing the term non-failed instead of successful when it comes to dividing
  status number is still considered a non-failure, as the remote system has
  responded with a proper HTTP response parseable by phantomjs and har-heedless.
  Overall, 4xx/5xx responses have been very rare; while this can be because
- of software problems, they do exist and therefore the code seems to work
- as intended.
+ of software problems, they do exist and therefore the software seems to
+ work as intended.
 \end_layout
 
 \begin_layout Standard
@@ -5779,7 +5902,8 @@ Update table with full result datasets.
 
 \begin_layout Standard
 During analysis har-dulcify splits results into unfiltered, internal and
- external resources.
+ external resources, each treated the same way in terms of classifications,
+ allowing separate conclusions to be drawn.
 \end_layout
 
 \begin_layout Section
@@ -5876,7 +6000,11 @@ Another concern is that curated domain lists seem to exhibit an even lower
 status open
 
 \begin_layout Plain Layout
-Update paragraph after HTTPS for .SE Health Status is finished.
+Update paragraph after HTTPS for 
+\emph on
+.SE Health Status
+\emph default
+ datasets is finished.
 \end_layout
 
 \end_inset
@@ -5916,6 +6044,36 @@ Update table with full result datasets.
 \end_layout
 
 \begin_layout Section
+HTTP, HTTPS and redirects
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about HTTPS to HTTP redirects.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert table based on origin-redirects.sh.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Content type group coverage
 \end_layout
 
@@ -5934,7 +6092,7 @@ Does SVG images allow loading external resources?
 
  and text (unless improperly labeled during transfer and parsed as another
  format) loaded by a browser provide no additional way to load further resources
-, while html, scripts and style do.
+, while html, scripts and styles do.
  While data resources can trigger downloading additional resources based
  on the logic that consumes the data, it still requires another type of
  resource present to do that.
@@ -6034,6 +6192,79 @@ status open
 
 
 \backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As these external files can load other files, it might be possible to build
+ a hierarchy of requests.
+ The easiest way is to look at resources loaded in HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<iframe>
+\end_layout
+
+\end_inset
+
+ (or the now less popular 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<frame>
+\end_layout
+
+\end_inset
+
+) as they will have a HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+referer
+\end_layout
+
+\end_inset
+
+ header set to the URL of the frame.
+ Scripts and styles requesting other resources directly, without the use
+ of frames, cannot be detected as a strict hierarchy.
+ With the large number of requests made from different sites, URLs can be
+ cleaned up (for example removing unique identifiers or looking at domain
+ parts only) and connected in a graph and analyzed for similarities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
  type group coverage}{}{fixed, display columns/0/.style={string type, column
  type=l}, display columns/1/.style={string type, column type=i}}
@@ -6058,15 +6289,46 @@ Update table with full result datasets.
 \end_layout
 
 \begin_layout Section
-Top public suffixes
+Public suffix coverage
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+Resources served from external URLs may well come from other public suffixes;
+ here they have been grouped by TLD.
+ The connections between datasets and TLDs is interesting; .se datasets load
+ more from .se domains than others, and the equivalent is valid for .dk datasets.
+ We can also see that despite Alexa's top 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Write about.
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ being an international list, nearly 19% of them use resources are loaded
+ from .se domains.
+ This points towards those sites being aware of the country of origin for
+ the request, leading to localized content being served.
+ It is also evident that the .com TLD is the most widespread for external
+ resources - it beats same-TLD coverage 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
+ suffixes in external resources}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -6074,50 +6336,12 @@ Write about.
 
 \end_layout
 
-\begin_layout Section
-Top recognized domains
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Top recognized organizations
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about top organizations.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Top recognized domain categories
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about.
+Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -6131,6 +6355,13 @@ Disconnect's blocking list matches
 
 \begin_layout Subsection
 Top domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6170,6 +6401,13 @@ Update table with full result datasets.
 
 \begin_layout Subsection
 Top categories
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-categories"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6209,6 +6447,13 @@ Update table with full result datasets.
 
 \begin_layout Subsection
 Top organizations
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-organizations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6239,6 +6484,23 @@ status open
 
 \begin_layout Plain Layout
 Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Non-blocked external domains
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
 \end_layout
 
 \end_inset
@@ -6327,7 +6589,11 @@ Third-party Identity Management Usage on the Web
 \end_layout
 
 \begin_layout Section
-.SE Health Status comparison
+
+\emph on
+.SE Health Status
+\emph default
+ comparison
 \end_layout
 
 \begin_layout Standard
@@ -6337,22 +6603,9 @@ status open
 \begin_layout Plain Layout
 Write about the 
 \emph on
-.se health status
+.SE Health Status
 \emph default
  report findings.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Are there other headings? Reachability and HTTPS is compared to below?
 \end_layout
 
 \end_inset
@@ -6365,16 +6618,144 @@ Google Analytics
 \end_layout
 
 \begin_layout Standard
+One of the reasons this thesis subject was chosen was the inclusion of a
+ Google Analytics coverage analysis in previous reports.
+ The reports shows overall Google Analytics usage in the curated dataset
+ of 44% 2010, 58% in 2011 and 62% in 2012.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+
+\end_inset
+
+ Today, in 2014, usage in the category with the least coverage (financial
+ services) is 58% while most are above 70% 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains"
+
+\end_inset
+
+.
+ The highest coverage category (government owned corporations) is even above
+ 90%.
+ Since Google Analytics can now be used from the DoubleClick domain as well,
+ it makes more sense to look at the organization Google as a whole.
+ The coverage jumps quite a bit, with most categories landing above 85%
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-organizations"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Reachability
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Write about Google Analytics.
+Write about reachability of HTTP domains.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+HTTPS coverage
+\end_layout
+
+\begin_layout Standard
+.SE have measured HTTPS coverage among curated health status domains since
+ at least 2007.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2008:healthstatus,Lowinder:2009:healthstatus,Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus,Lowinder:2013:healthstatus"
+
+\end_inset
+
+ The reports are a bit unclear about some numbers as measurement methodology
+ and focus has shifted, but the general results seem to line up with the
+ results in this thesis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Verify results when all datasets have been downloaded.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{se.health-status.https.tsv}{.SE Health Status HTTPS coverage 2008-2013}{}{f
+ixed, display columns/0/.style={string type, column type=l}, display columns/1/.st
+yle={string type, column type=i}, display columns/2/.style={string type,
+ column type=i}, display columns/3/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Measurements changed in 2009, so they might not be fully comparable.
+ No HTTPS measurements were performed in 2012.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Ask Amel about exact numbers?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write a comparison with own results per category?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+24% of HTTPS sites redirect from HTTPS back to HTTP in 2013 - see also.
 \end_layout
 
 \begin_layout Section
@@ -6538,7 +6919,7 @@ Other notable results
 \end_layout
 
 \begin_layout Standard
-Here are some results that differ from my own assumptions.
+Some results differ from my own assumptions.
 \end_layout
 
 \begin_layout Standard
@@ -6585,6 +6966,12 @@ http://www.
 \end_inset
 
  variations.
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
  The result is consistent with results from the 
 \emph on
 .SE Health Status
@@ -6625,42 +7012,6 @@ https://www.
  This means that unless a site explicitly redirects traffic from http to
  https, users usually don't gain any advantage typing in the extra 's' in
  https as the site won't respond.
-\end_layout
-
-\begin_layout Subsubsection
-.SE Health Status
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about reachability.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-.SE Health Status
-\emph default
- results are better, with a 57% (2013) failure rate.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write a comparison with own results per category?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -6785,7 +7136,7 @@ reference "sub:get/netsniff.js"
  could to be highly implementation dependent per browser.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 phantomjs
 \end_layout
 
@@ -6807,8 +7158,8 @@ reference "sub:get/netsniff.js"
 
 \end_inset
 
- from the phantomjs example library has been improved much, patches have
- not yet been submitted.
+ from the phantomjs example library has been improved in several ways, patches
+ have not yet been submitted.
  Since it is only an example from their side, a more developed version might
  no longer serve the same purpose - educating new users on the possibilities
  of phantomjs.
@@ -6818,7 +7169,7 @@ reference "sub:get/netsniff.js"
  as the original, so reuse should not be a problem for those interested.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 jq
 \end_layout
 
@@ -6826,8 +7177,9 @@ jq
 Using jq as the main program for data transformation and aggregation has
  given me a fair amount of knowledge of real world usage of the jq domain-specif
 ic language (DSL).
- Bugs and inconsistencies have been reported, and lots of input regarding
- for example code sharing through a package management system has been given.
+ Bugs and inconsistencies have been reported, and input regarding for example
+ code sharing through a package management system and (semantic) versioning
+ has been given.
  Some of the code written has been packaged for easy reuse, and more is
  on the way.
 \end_layout
@@ -6872,8 +7224,28 @@ reference "sub:classification/disconnect/analysis.sh"
  perhaps irrelevant by the time the next generation is released to the public.
 \end_layout
 
+\begin_layout Subsection
+Public Suffix
+\end_layout
+
+\begin_layout Standard
+A tool that parses the public suffix list from its original format to a
+ JSON lookup object format has been written.
+ Using that tool an inconsistency in the data was detected - the TLD .engineering
+ being included twice instead of .engineer and .engineering separately.
+ This had already been detected and reported by others, but it can be used
+ to detect future inconsistencies in an automated manner.
+\end_layout
+
 \begin_layout Chapter
 Future work
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Future-work"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6902,31 +7274,104 @@ Mention sharing data when using non-private lists.
 
 \end_layout
 
+\begin_layout Section
+Creating an information website
+\end_layout
+
 \begin_layout Standard
+As some of this information is hard to retrieve, analyze and process for
+ individuals, especially in aggregate despite code being open source, a
+ separate tool performing the work for anyone should be created.
+ Apart from presenting data already collected as a part of the thesis, it
+ could accept user input to analyze individual domains.
+ With several domains as input, any overlap can be detected and presented
+ to the user as an information sharing graph.
+ One of the inspirations for this thesis was Collusion 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Mention the possibility to educate users with a webpage.
+Insert link to Collusion, or whatever it is called these days.
 \end_layout
 
+\end_inset
+
+, which is a tool to dynamically display from which external domains a page
+ retrieves resources right in the browser.
+ A version of the same tool could be built, where instead of letting the
+ user's browser retrieve sites the server would do it.
+ This way a non-technical user doesn't have to 
+\begin_inset Quotes eld
+\end_inset
+
+risk
+\begin_inset Quotes erd
+\end_inset
+
+ anything by visiting web pages, and their relationship could be displayed
+ anyways.
+ It also allows for cached lookups and a grander scope, where further relationsh
+ips apart from the first hand ones could be suggested.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+If you frequently visit these sites, you might also be visiting theses sites
+ - click to display their relationships as well.
+\begin_inset Quotes erd
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+Over time and with user input, the dataset collected on the server would
+ increase, and a historical graph relating to both results shown in this
+ thesis and the relationships between sites can be created.
+ This is similar to what both the HTTP Archive 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:HTTP-Archive"
+
+\end_inset
+
+ is doing on a large scale but with slightly different focus, and what the
+ 
+\emph on
+.SE Health Status
+\emph default
+ is doing but on a less continuous basis and a shifting focus.
+\end_layout
+
+\begin_layout Section
+Code documentation
+\end_layout
+
+\begin_layout Standard
+With some 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Mention documenting the open source projects, adding more comments to the
- code, extracting jq code to separate libraries.
+
+
+\backslash
+numprint{70}
 \end_layout
 
 \end_inset
 
-
+ scripts written and released as open source for the thesis, the need for
+ documentation has gradually increased.
+ The reason for not writing proper documentation - not having direct collaborato
+rs writing code - is a hinderance for future collaborators or users to get
+ started.
+ While code documentation has not been an explicit part of the thesis plan,
+ it can be seen as an important step for future usage.
+ The code is not magic in any way, but if understanding the functionality
+ of a file required reading over a hundred lines of code instead of two
+ or three lines of comments, it means a rather steep learning curve for
+ something that is supposed to be simple.
 \end_layout
 
 \begin_layout Section
@@ -7092,6 +7537,48 @@ Some of the difference between site screenshots and manually browsing to
  might reduce perceived difference.
 \end_layout
 
+\begin_layout Subsection
+Do Not Track
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about Do Not Track and the response/server-side counter-part.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While the HTTP header 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+DNT
+\end_layout
+
+\end_inset
+
+ (Do Not Track) has not been set, it would have been interesting to look
+ at the difference in response from remote services.
+ As cookie headers can be analyzed, the difference could have been detected
+ both per origin domain and per connected service.
+ See also the P3P analysis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Platform-for-Privacy-(P3P)-Project"
+
+\end_inset
+
+ for a related header.
+\end_layout
+
 \begin_layout Section
 Domain lists
 \end_layout
@@ -7247,13 +7734,133 @@ end{futurework}
 Improving data analysis
 \end_layout
 
+\begin_layout Subsection
+Automated testing
+\end_layout
+
 \begin_layout Standard
+Data transformations have been written in a semi-structured manner, with
+ separate files for most separate tasks, often executed in serial stages.
+ Each task accepts a certain kind of data as input for the transformation
+ to work correctly - but as both input and output from separate stages looks
+ very similar, it is hard to tell which kind of data it accepts and what
+ the expected output is - and if a change in one stage will affect later
+ stages.
+ Writing automated tests for each stage would have helped during both adding
+ functionality and refactoring the structure.
+ At times, there have been rather time-consuming problems with unexpected
+ or illegal input from real world sites - extracting that kind of input
+ to create a test suite would have sped up fixes and raised confidence in
+ that the input would be handled appropriately and output would still be
+ correct.
+ So far that has not been done, and much of the opportunity to gain from
+ tests have been lost as work has progressed past each problem.
+\end_layout
+
+\begin_layout Standard
+One solution to validating both input and output would have been to create
+ JSON schemas 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Mention more rigorously testing har-dulcify and data manipulation scripts
- by creating test data sets.
+Insert link to JSON schema.
+\end_layout
+
+\end_inset
+
+ for each transformation.
+ This kind of verification can easily be automated, and it will help any
+ future changes.
+\end_layout
+
+\begin_layout Subsection
+Code reuse
+\end_layout
+
+\begin_layout Standard
+Much of the code written in shell scripts, both Bash and jq code, is duplicated
+ between files.
+ While common functionality suitable for pipelining have been broken out,
+ shared functions have not.
+ Bash provides the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+source
+\end_layout
+
+\end_inset
+
+ command for sharing functionality.
+ Code sharing in jq through the use of modules and packages is still under
+ development, but there is a way to load a single external command file.
+ This file can be precomposed externally by concatenating files with function
+ definitions first, and the actual usage of those functions second.
+ The improvement was postponed due to the relative little reuse in early
+ scripting and bright outlook on modules and packages support.
+ As the number of scripts grew, code sharing/composition possibilities grew
+ as well - and with them possible improvements in development speed, consistency
+ and correctness.
+ At this stage, software stability is more important for the final dataset
+ download and analysis, and code refactoring can only be postponed.
+ Foreseeing a greater reuse of JSON and jq tools, a separate open source
+ project has been started - jq-hopkok 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to jq-hopkok.
+\end_layout
+
+\end_inset
+
+ - where some scripts have been collected.
+ Many functions and utilities local to har-dulcify are project-agnostic,
+ and thus suitable objects to move to jq-hopkok for ease composition.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the time of writing, jq is released as version 1.4.
+ Support for modules is planned for a version after 1.5.
+ Packages/package managers are external to the jq core, and do not follow
+ the same planning.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Verify version planning.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -7302,12 +7909,102 @@ Insert link.
 \end_inset
 
 ).
- There is a list of site titles for recognized non-content pages available
- internally at .SE, but it has not been incorporated.
+ There is a Sweden-centric list of site titles for recognized non-content
+ pages available internally at .SE, but it has not been incorporated.
 \end_layout
 
 \begin_layout Section
 Other views on the same data
+\end_layout
+
+\begin_layout Subsection
+Cookie syncing
+\end_layout
+
+\begin_layout Standard
+A recent large-scale study
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
+
+\end_inset
+
+ included a cookie syncing privacy analysis.
+ It was shown that unique user identifiers were shared between different
+ third parties.
+ IDs can be shared in different ways.
+ If both third parties exist on the same page, they can be shared through
+ scripts or by looking for any IDs in the location URL.
+ They can also be shared by one third-party sending requests to a second
+ third-party (a fourth-party?), either by leaking the location URL as a
+ HTTP referrer or by embedding it in the request URL.
+ In crawls of Alexa's top 3000 domains, one third-party script in particular
+ sends requests with synced IDs to 25 domains; the IDs were eventually are
+ shared with 43 domains.
+ They also showed that a user's browsing history reconstruction rate rose
+ from 1.4% to 11% when backend/server-to-server overlaps were modeled.
+\end_layout
+
+\begin_layout Standard
+The study used a modified Firefox browser to look at values stored in primarily
+ cookies.
+ As all HTTP requests are recorded in this thesis, including HTTP cookie
+ headers, a limited version of the same study could be performed.
+ In addition, they look at in-browser scripting utilizing for example 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+localStorage
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+canvas
+\end_layout
+
+\end_inset
+
+ fingerprinting and ID storage in external plugins like Flash.
+ While that might be possible, the modifications that would need to be made
+ to phantomjs are non-trivial, and my current scope does not allow for that.
+ With their research as a base, cookie respawning and sharing could possibly
+ be confirmed using this thesis' code as a external tool using a different
+ browser platform.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -7328,6 +8025,13 @@ target "http://www.w3.org/P3P/"
 \end_inset
 
  HTTP header analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Platform-for-Privacy-(P3P)-Project"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7449,40 +8153,8 @@ status open
 
 
 \backslash
-begin{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 tsvtable{p3p.counts.tsv}{Top P3P values}{}{display columns/1/.style={string
  type, column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{wide}
 \end_layout
 
 \end_inset
@@ -7700,65 +8372,33 @@ key "CMU-CyLab-10-014"
  their understanding of usage in the wild.
 \end_layout
 
-\begin_layout Subsection
-Cookie syncing
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A recent large-scale study
-\begin_inset CommandInset citation
-LatexCommand cite
-key "G.-Acar:persistent:2014aa"
-
-\end_inset
-
- included a cookie syncing privacy analysis.
- It was shown that unique user identifiers were shared between different
- third parties.
- IDs can be shared in different ways.
- If both third parties exist on the same page, they can be shared through
- scripts or by looking for any IDs in the location URL.
- They can also be shared by one third-party sending requests to a second
- third-party (a fourth-party?), either by leaking the location URL as a
- HTTP referrer or by embedding it in the request URL.
- In crawls of Alexa's top 3000 domains, one third-party script in particular
- sends requests with synced IDs to 25 domains; the IDs were eventually are
- shared with 43 domains.
- They also showed that a user's browsing history reconstruction rate rose
- from 1.4% to 11% when backend/server-to-server overlaps were modeled.
-\end_layout
-
-\begin_layout Standard
-The study used a modified Firefox browser to look at values stored in primarily
- cookies.
- As all HTTP requests are recorded in this thesis, including HTTP cookie
- headers, a limited version of the same study could be performed.
- In addition, they look at in-browser scripting utilizing for example 
-\begin_inset Flex Code
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-localStorage
+Pages with wide tables end here.
 \end_layout
 
 \end_inset
 
-, 
-\begin_inset Flex Code
-status collapsed
 
-\begin_layout Plain Layout
-canvas
-\end_layout
-
-\end_inset
-
- fingerprinting and ID storage in external plugins like Flash.
- While that might be possible, the modifications that would need to be made
- to phantomjs are non-trivial, and my current scope does not allow for that.
- With their research as a base, cookie respawning and sharing could possibly
- be confirmed using this thesis' code as a external tool using a different
- browser platform.
 \end_layout
 
 \begin_layout Chapter
