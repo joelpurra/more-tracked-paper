@@ -1479,6 +1479,13 @@ In order to download and analyze thousands of webpages in an automated fashion,
 
 \begin_layout Subsection
 HTTP Archive (HAR) format
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:HTTP-Archive-(HAR)-format"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -1521,12 +1528,10 @@ te dynamic data between client side scripts in browsers and web servers.
 \end_layout
 
 \begin_layout Subsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
 phantomjs
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:phantomjs"
 
 \end_inset
 
@@ -1576,33 +1581,15 @@ normal
 \end_inset
 
  browser usage in mind - that is with desktop software functionalities.
- A good alternative for such servers is 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-, which is built as a command line tool without any user interface.
+ A good alternative for such servers is phantomjs, which is built as a command
+ line tool without any user interface.
  It acts like a browser internally, including rendering the webpage to a
  image buffer that isn't displayed, and is controllable through the use
  of scripts.
  One such example script included in the default installation generates
  HAR files from a webpage visit.
+ phantomjs has been implemented on top of the web page renderer Webkit library
  
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- has been implemented on top of the web page renderer Webkit library 
 \begin_inset Note Greyedout
 status open
 
@@ -1632,28 +1619,10 @@ begin{futurework}
 \end_layout
 
 \begin_layout Standard
-There are alternatives to 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-, but they have not been tested within the scope of the thesis.
- Future versions could try alternative automated browsers to verify 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-' results.
+There are alternatives to phantomjs, but they have not been tested within
+ the scope of the thesis.
+ Future versions could try alternative automated browsers to verify phantomjs'
+ results.
  
 \begin_inset Note Greyedout
 status open
@@ -1684,12 +1653,10 @@ end{futurework}
 \end_layout
 
 \begin_layout Subsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
 jq
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:jq"
 
 \end_inset
 
@@ -1715,32 +1682,53 @@ target "https://stedolan.github.io/jq/"
 \begin_layout Standard
 While there are command line tools to transform data in for example plain
  text, CSV and XML files, tools to work with JSON files are not as prevalent.
- One such tool gaining momentum is 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-jq
-\end_layout
-
-\end_inset
-
-, which is implemented with a domain specific language (DSL) suitable for
- extracting or transforming data.
+ One such tool gaining momentum is jq, which is implemented with a domain
+ specific language (DSL) suitable for extracting or transforming data.
  The DSL is based around a set of filters, similar to pipes in the Unix
  world, transforming the input and passing it on to the next stage.
- 
-\begin_inset Flex Code
-status collapsed
+ jq performs well with large datasets, as it treats data as a stream where
+ each top-level object is treated separately.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-jq
+
+
+\backslash
+begin{futurework}
 \end_layout
 
 \end_inset
 
- performs well with large datasets, as it treats data as a stream where
- each top-level object is treated separately.
+
+\end_layout
+
+\begin_layout Standard
+At the time of writing, jq is released as version 1.4.
+ Support for regular expressions is planned for version 1.5, which has been
+ in the making for the duration of the thesis.
+ As the thesis code is run on multiple machines/systems and expected to
+ deliver the same results, using standardized packages has been a part of
+ ensuring that.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1751,6 +1739,13 @@ status collapsed
 \begin_layout Plain Layout
 parallel
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GNU-parallel"
 
 \end_inset
 
@@ -1795,17 +1790,7 @@ parallel
  It allows an input file to be distributed among several processes/CPU cores,
  and the results to be combined into a single file.
  It helps speed up downloading of HAR files, and processing of the JSON
- data through 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-jq
-\end_layout
-
-\end_inset
-
-.
+ data through jq.
 \end_layout
 
 \begin_layout Section
@@ -1863,11 +1848,46 @@ target "https://github.com/joelpurra/har-portent"
 \end_layout
 
 \begin_layout Quotation
-Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
+Using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+ to download and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-dulcify
+\end_layout
+
+\end_inset
+
+ to analyze web pages in aggregate.
 \end_layout
 
 \begin_layout Standard
-A set of scripts that both downloads and analyzes websites in a single run.
+A set of scripts that both downloads and analyzes websites in a single run
+ - see har-heedless 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-heedless"
+
+\end_inset
+
+ and har-dulcify 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-dulcify"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2000,17 +2020,7 @@ target "https://github.com/joelpurra/har-heedless"
 
 \begin_layout Quotation
 Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
- files, using 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-.
+ files, using phantomjs.
 \end_layout
 
 \begin_layout Standard
@@ -2029,17 +2039,8 @@ netsniff.js
 
 \end_inset
 
-, is based on example code shipped with 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-, but modified to be more stable.
+, is based on example code shipped with phantomjs, but modified to be more
+ stable.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2083,17 +2084,7 @@ Insert link to the original netsniff.js example.
 
 \end_inset
 
- from the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- project.
+ from the phantomjs project.
 \end_layout
 
 \begin_layout Standard
@@ -2134,17 +2125,7 @@ begin{futurework}
 \end_layout
 
 \begin_layout Standard
-These patches have not yet been submitted to the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- project.
+These patches have not yet been submitted to the phantomjs project.
  They should be split up into separate parts for the convenience of the
  project maintainers.
  A complete refactoring is also an alternative, but it might be less likely
@@ -2191,29 +2172,9 @@ netsniff.js
 
 \end_inset
 
- through 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-.
- If 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- crashed or otherwise encountered an error, a fallback HAR file is generated
- with a dummy response explaining that an error occurred.
+ through phantomjs.
+ If phantomjs crashed or otherwise encountered an error, a fallback HAR
+ file is generated with a dummy response explaining that an error occurred.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2334,7 +2295,17 @@ target "https://github.com/joelpurra/har-dulcify"
 
 \begin_layout Quote
 Extract data from HTTP Archive (HAR) files, quite possibly downloaded by
- har-heedless, for some aggregate analysis.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+, for some aggregate analysis.
 \end_layout
 
 \begin_layout Standard
@@ -2373,17 +2344,7 @@ Write about more scripts.
 \end_layout
 
 \begin_layout Standard
-At the time of writing, there are 59 scripts in 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-dulcify
-\end_layout
-
-\end_inset
-
-.
+At the time of writing, there are 59 scripts in har-dulcify.
  Here's a selection with explanations.
 \end_layout
 
@@ -2823,17 +2784,7 @@ Rename this script?
 
 \begin_layout Standard
 Running the aggregation before analysis is currently not possible in a single
- step, as 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-jq
-\end_layout
-
-\end_inset
-
- requires all data for the reduce step to be in memory.
+ step, as jq requires all data for the reduce step to be in memory.
  The solution is to first map the data to a suitable format, and then reduce
  them in chunks repeatedly.
 \end_layout
@@ -4131,17 +4082,7 @@ status collapsed
 \begin_layout Standard
 Commercial software from search engines, information collectors and other
  software vendors take these explicit wishes from webmasters into consideration,
- but 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
- has not.
+ but har-heedless has not.
  While it is automated software, it is not spidering software requesting
  many pages, following links to explore the site - it only accesses the
  front page of a domain, and resources explicitly requested by that one
@@ -4182,16 +4123,7 @@ robots.txt
 
  in a domain list preprocessing step, to determine wether or not the request
  should be made.
- The same list can be used to filter further resource requests made by 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
+ The same list can be used to filter further resource requests made by phantomjs
 , perhaps considering also other domains' 
 \begin_inset Flex Code
 status collapsed
@@ -4280,18 +4212,8 @@ Screen size
 \end_layout
 
 \begin_layout Standard
-When 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- is running, it emulates having a browser window by keeping an internal
- graphics buffer.
+When phantomjs is running, it emulates having a browser window by keeping
+ an internal graphics buffer.
  Even if web page isn't rendered and shown on screen, it still has a screen
  size, which affects layout.
  With a bit of javascript or responsive CSS, the screen size can affect
@@ -4309,17 +4231,7 @@ below the fold
 \end_layout
 
 \begin_layout Standard
-By default, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- uses the physical computer's primary screen size.
+By default, phantomjs uses the physical computer's primary screen size.
  In order to reduce differences between the laptop and server machines,
  a fixed emulated window size of 1024x768 pixels was chosen.
  The basis for this is that 1024x768 pixel resolution screens have been
@@ -4401,29 +4313,10 @@ In order to visually being able to confirm that web pages have been downloaded
  correctly, a PNG screenshot can optionally be taken when the page has finished
  downloading.
  There is a processing cost associated with taking screenshots; it takes
- time for 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- to render the internal buffer as an image, convert it to base64 encoding
- for the augmented HAR data, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-jq
-\end_layout
-
-\end_inset
-
-to extract the image data, the system to convert the data back to binary
- and finally write it to disk.
+ time for phantomjs to render the internal buffer as an image, convert it
+ to base64 encoding for the augmented HAR data, jq to extract the image
+ data, the system to convert the data back to binary and finally write it
+ to disk.
  Extra processing is also needed to remove the screenshot from the augmented
  HAR file.
 \end_layout
@@ -4609,7 +4502,7 @@ Some web sites are not downloaded successfully, for different reasons.
  The DNS settings might not be correct, the server may be shut down, there
  might have been a temporary network timeout, there might have been a software
  error - or the server has been programmed to not respond to automated requests
- from PhantomJS and similar tools.
+ from phantomjs and similar tools.
  Unfortunately, outside of software errors, they are hard to detect without
  external analysis of connectivity.
  Each HTTP request has their HTTP status response recorded if it is available;
@@ -4659,17 +4552,7 @@ Analyzing resources
 \end_layout
 
 \begin_layout Standard
-After downloading HAR files, they are processed using 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-dulcify
-\end_layout
-
-\end_inset
-
-, see 
+After downloading HAR files, they are processed using har-dulcify, see 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:har-dulcify"
@@ -5740,17 +5623,8 @@ Update table with full result datasets.
 \end_layout
 
 \begin_layout Standard
-During analysis 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-dulcify
-\end_layout
-
-\end_inset
-
- splits results into unfiltered and filtered, non-failed origin domains.
+During analysis har-dulcify splits results into unfiltered and filtered,
+ non-failed origin domains.
  Unless otherwise mentioned, further results are presented based only on
  non-failed domains in each dataset, as failed origin requests add nothing
  to the further resource analysis.
@@ -5820,27 +5694,7 @@ Choosing the term non-failed instead of successful when it comes to dividing
  While a status response of 4xx or 5xx shows there is a problem of some
  kind, for the purpose of this thesis a response that contains any HTTP
  status number is still considered a non-failure, as the remote system has
- responded with a proper HTTP response parseable by 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
-.
+ responded with a proper HTTP response parseable by phantomjs and har-heedless.
  Overall, 4xx/5xx responses have been very rare; while this can be because
  of software problems, they do exist and therefore the code seems to work
  as intended.
@@ -5924,17 +5778,8 @@ Update table with full result datasets.
 \end_layout
 
 \begin_layout Standard
-During analysis 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-dulcify
-\end_layout
-
-\end_inset
-
- splits results into unfiltered, internal and external resources.
+During analysis har-dulcify splits results into unfiltered, internal and
+ external resources.
 \end_layout
 
 \begin_layout Section
@@ -6940,17 +6785,8 @@ reference "sub:get/netsniff.js"
  could to be highly implementation dependent per browser.
 \end_layout
 
-\begin_layout Subsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Standard
 phantomjs
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -6971,72 +6807,25 @@ reference "sub:get/netsniff.js"
 
 \end_inset
 
- from the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- example library has been improved much, patches have not yet been submitted.
+ from the phantomjs example library has been improved much, patches have
+ not yet been submitted.
  Since it is only an example from their side, a more developed version might
  no longer serve the same purpose - educating new users on the possibilities
- of 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-.
+ of phantomjs.
  An attempt to break the code down and separate pure bug fixes from other
  improvements might help.
  The version written for this thesis is released under the same license
  as the original, so reuse should not be a problem for those interested.
 \end_layout
 
-\begin_layout Subsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Standard
 jq
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Using 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-jq
-\end_layout
-
-\end_inset
-
- as the main program for data transformation and aggregation has given me
- a fair amount of knowledge of real world usage of the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-jq
-\end_layout
-
-\end_inset
-
- language.
+Using jq as the main program for data transformation and aggregation has
+ given me a fair amount of knowledge of real world usage of the jq domain-specif
+ic language (DSL).
  Bugs and inconsistencies have been reported, and lots of input regarding
  for example code sharing through a package management system has been given.
  Some of the code written has been packaged for easy reuse, and more is
@@ -7149,27 +6938,7 @@ Automated testing
 \end_layout
 
 \begin_layout Standard
-So far all testing of 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- has been done manually.
+So far all testing of har-heedless and phantomjs has been done manually.
  It has proven to be a working setup, as thesis results are based on these
  tools, but the features are to be considered fragile as there are no regression
  tests.
@@ -7191,31 +6960,11 @@ reference "sub:get/netsniff.js"
 \end_inset
 
 , screenshots, error handling) might help achieve stability in case of for
- example future improvements of 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-.
+ example future improvements of phantomjs.
  Tests might include setting up a web server with test pages serving different
  kinds of content, as well as different kinds of errors.
- During mass downloading of domains 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- has been observed outputting error messages, such as failed JPEG image
- decoding and unspecified crashes.
+ During mass downloading of domains phantomjs has been observed outputting
+ error messages, such as failed JPEG image decoding and unspecified crashes.
  The extent of these errors have so far not been examined, as they have
  ended up being clumped together with external errors such as network or
  remote server failures.
@@ -7243,17 +6992,8 @@ User-Agent
 \end_inset
 
  string.
- As some sites respond to desktop browser requests, but not 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
-' requests, it is believed they have implemented certain 
+ As some sites respond to desktop browser requests, but not har-heedless'
+ requests, it is believed they have implemented certain 
 \begin_inset Quotes eld
 \end_inset
 
@@ -7271,17 +7011,7 @@ Browser plugins
 \end_layout
 
 \begin_layout Standard
-If possible, a set of common browser plugins could be installed into 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-.
+If possible, a set of common browser plugins could be installed into phantomjs.
  The first that comes into mind is Adobe Flash, which is sometimes used
  to display dynamic ads.
  Flash also has the ability to request resources from other domains, so
@@ -7309,17 +7039,7 @@ System language
 
 \begin_layout Standard
 Tests were run on English language systems, without making any customizations
- to 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-' settings or HTTP 
+ to phantomjs' settings or HTTP 
 \begin_inset Flex Code
 status collapsed
 
@@ -7424,7 +7144,7 @@ reference "sub:Disconnect's-blocking-list"
 status open
 
 \begin_layout Plain Layout
-Insert link to EasyList.
+Insert link to EasyList, verify format.
 \end_layout
 
 \end_inset
@@ -7435,13 +7155,87 @@ Insert link to EasyList.
  It is a mixture of HTML element and URL blocking, and it lacks the connection
  between blocks and corresponding organization.
  There is also Ghostery, which uses a proprietary list that also contains
- organizations.
+ organizations, but it has not been used because of licensing issues.
  
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Insert link to Ghostery.
+Insert link to Ghostery, verify license.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On a technical level, some blocking rule formats have also posed a problem
+ in terms of implementation into the current data processing framework that
+ is har-dulcify.
+ It relies heavily on jq (see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:jq"
+
+\end_inset
+
+), which does not have a public release that implements in regular expressions
+ support, a major part of some blocking lists.
+ The idea is that ads etcetera are filtered matching requests' complete
+ URL against the blocking rules, which are a mixture of both more coarse
+ and more fine-grained than Disconnect's domain based rules.
+ One example is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/ads/
+\end_layout
+
+\end_inset
+
+, matching a folder name that suggests that all URLs containing this particular
+ path substring is serving advertisements.
+ The thought of using a single path substring to block advertisements served
+ from any domain is more coarse than pinpointing a single domain, but it
+ is also more specific as it would not block legitimate content from another
+ subfolder on the same domain.
+ This way general ad serving systems can be blocked, while domains that
+ serve both ads and content is still allowed serve the content without interferi
+ng with the blocking of ads.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the time of writing, jq is released as version 1.4.
+ Support for regular expressions is planned for version 1.5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -7961,17 +7755,7 @@ canvas
 
  fingerprinting and ID storage in external plugins like Flash.
  While that might be possible, the modifications that would need to be made
- to 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
- are non-trivial, and my current scope does not allow for that.
+ to phantomjs are non-trivial, and my current scope does not allow for that.
  With their research as a base, cookie respawning and sharing could possibly
  be confirmed using this thesis' code as a external tool using a different
  browser platform.
