@@ -1565,7 +1565,18 @@ Insert link to Selenium Webdriver.
 \end_inset
 
 .
- A good alternative is 
+ While Webdriver can be used to control several kinds of browsers, such
+ as Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, they are
+ not suitable for usage on a rack server that was not set up with 
+\begin_inset Quotes eld
+\end_inset
+
+normal
+\begin_inset Quotes erd
+\end_inset
+
+ browser usage in mind - that is with desktop software functionalities.
+ A good alternative for such servers is 
 \begin_inset Flex Code
 status collapsed
 
@@ -1581,6 +1592,95 @@ phantomjs
  of scripts.
  One such example script included in the default installation generates
  HAR files from a webpage visit.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ has been implemented on top of the web page renderer Webkit library 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Webkit.
+\end_layout
+
+\end_inset
+
+, also used in Apple Safari, Opera and previously Google Chrome.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are alternatives to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+, but they have not been tested within the scope of the thesis.
+ Future versions could try alternative automated browsers to verify 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+' results.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert names and links to alternatives.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1737,6 +1837,13 @@ target "https://www.gnu.org/licenses/gpl.html"
 
 \begin_layout Subsection
 har-portent
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:har-portent"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -1866,6 +1973,13 @@ Downloads a list of domains in parallel, with automatic per-prefix/input
 
 \begin_layout Subsection
 har-heedless
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:har-heedless"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -1959,6 +2073,16 @@ netsniff.js
 
 \end_inset
 
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to the original netsniff.js example.
+\end_layout
+
+\end_inset
+
  from the 
 \begin_inset Flex Code
 status collapsed
@@ -1991,6 +2115,56 @@ Adding a base64 encoded page screenshot as an extended field.
 \begin_layout Itemize
 Waiting a period of time after downloading the web page before generating
  output, to let asynchronous downloading, processing and rendering finish.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These patches have not yet been submitted to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ project.
+ They should be split up into separate parts for the convenience of the
+ project maintainers.
+ A complete refactoring is also an alternative, but it might be less likely
+ to be accepted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2133,6 +2307,13 @@ url/parallel.sh
 
 \begin_layout Subsection
 har-dulcify
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:har-dulcify"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -2176,10 +2357,10 @@ one-shot/
 
 \end_inset
 
- folder are mostly used.
+ folder are used the most.
  These convenience scripts also leave the files from partial executions,
  so the can be used for other kinds of analysis.
-\begin_inset Note Note
+\begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
@@ -2192,7 +2373,17 @@ Write about more scripts.
 \end_layout
 
 \begin_layout Standard
-At the time of writing, there are 44 scripts in har-dulcify.
+At the time of writing, there are 59 scripts in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-dulcify
+\end_layout
+
+\end_inset
+
+.
  Here's a selection with explanations.
 \end_layout
 
@@ -2703,6 +2894,35 @@ Analyze requests to see if there are redirects from the origin page initially
  redirect to or from secure https domains.
 \end_layout
 
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+multiset/*.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A set of scripts that perform tasks on multiple datasets at once - an aggregate
+ of aggregates usually.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about multiset scripts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Data sources
 \end_layout
@@ -3097,6 +3317,53 @@ status open
 
 \begin_layout Plain Layout
 Write about top results in datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are other open source alternatives to Disconnect's blocking list,
+ but they use data formats that are not as easy to parse.
+ The most popular ones also do not contain information about which organization
+ each blocking rule belongs to.
+ See 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -3793,6 +4060,189 @@ The numbers point to every domain that uses Google Tag Manager uses at least
 \end_layout
 
 \begin_layout Subsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robots.txt
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<meta name="robots" />
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Automated web spider/bot software can bring a significant load to a web
+ server, as the spidering speed can exceed user browsing speed by far -
+ a single web spider can potentially request thousands of pages in the span
+ of minutes, effectively being a denial of service attack 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to DoS information.
+\end_layout
+
+\end_inset
+
+ on an underpowered server.
+ Some sites also have information considered sensitive to being available
+ for spiders, or even for certain (kinds) of spiders such as image spiders.
+ The choice to not serve spiders can stem from technical reasons (bandwidth,
+ server load), to privacy (don't allow information to be indexed in search
+ engines) and business (don't allow data to be collected and aggregated).
+ In order to instruct web spiders not to get certain kind of material, there
+ are two basic mechanisms - the special 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robots.txt
+\end_layout
+
+\end_inset
+
+ file and the HTML header tag
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<meta name="robots" />
+\end_layout
+
+\end_inset
+
+.
+ Both can contain instructions for certain bots not to index certain paths
+ or pages, or not to follow further links stemming from a page.
+\end_layout
+
+\begin_layout Standard
+Commercial software from search engines, information collectors and other
+ software vendors take these explicit wishes from webmasters into consideration,
+ but 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+ has not.
+ While it is automated software, it is not spidering software requesting
+ many pages, following links to explore the site - it only accesses the
+ front page of a domain, and resources explicitly requested by that one
+ page.
+ Information is not retrieved for indexing as such, as only HTTP request
+ metadata is recorded.
+ While some information requested to be not indexed might end up in the
+ screenshots, they are kept in a format hard to re-parse for machines as
+ non-public thesis data used for verification.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Future versions of har-heedless might implement logic that checks 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robots.txt
+\end_layout
+
+\end_inset
+
+ in a domain list preprocessing step, to determine wether or not the request
+ should be made.
+ The same list can be used to filter further resource requests made by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+, perhaps considering also other domains' 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robot.txt
+\end_layout
+
+\end_inset
+
+ files.
+ The tag 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<meta name="robots" />
+\end_layout
+
+\end_inset
+
+ can also be respected, perhaps in terms of not saving screenshots for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+noindex
+\end_layout
+
+\end_inset
+
+ values.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Parallelizing downloads
 \end_layout
 
@@ -4055,8 +4505,8 @@ target "https://en.wikipedia.org/wiki/Load_(computing)"
  are not exclusive to the downloading.
  The complexity of the front pages of the currently processed domains affects
  the load, as well if screenshot generations is enabled.
- Most downloads were done with screenshots enabled.
- The table below show loads for a single sample.
+ Final downloads were done with screenshots enabled.
+ The table below show loads for random samples in time.
 \end_layout
 
 \begin_layout Standard
@@ -4069,7 +4519,7 @@ status open
 \backslash
 tsvtable{system-load.tsv}{System load}{}{fixed, precision=1, display columns/0/.st
 yle={string type, column type=l}, display columns/1/.style={string type,
- column type=i}}
+ column type=l}, display columns/2/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -4083,6 +4533,66 @@ status open
 
 \begin_layout Plain Layout
 Test more load.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+System load has been shown to vary greatly based on the type of request,
+ mainly differing by HTTP and HTTPS response rates.
+ High failure rates mean a lot of time is spent waiting until a set time
+ limit/timeout has been reached.
+ Increasing the upper bound on parallelism and instead dynamically adjusting
+ the number of concurrent requests emphasizing system load should decrease
+ time needed to download a set of domains with a large failure rate (see
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+).
+ Time limits can also be adjusted based on previous dataset results' actual
+ reply timings found in HAR data, instead of setting a high and 
+\begin_inset Quotes eld
+\end_inset
+
+safe
+\begin_inset Quotes erd
+\end_inset
+
+ upper bound timeout, both for page timeouts and individual resources.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -4120,21 +4630,15 @@ unsuccessful
 \emph default
  domains - unsuccessful domains rendered a complete response with a HTTP
  status that indicated that it was not successful.
- Pages that were unsuccessful have been re-downloaded for testing purposes.
- It seems that re-downloading helps with some, but not all, failures.
+ Domains that failed have been re-downloaded; it relieved some, but not
+ all, failures.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about which datasets were re-downloaded.
-\end_layout
-
-\end_inset
-
-
+The first round of retries rendered the greatest results, and subsequent
+ retries are less successful.
+ This seem to point to some intermittent failures being recoverable, and
+ that some domains will not respond.
 \end_layout
 
 \begin_layout Standard
@@ -4150,21 +4654,29 @@ Insert re-downloading table for at least one dataset.
 
 \end_layout
 
-\begin_layout Standard
-The first round of retries rendered the greatest results, and subsequent
- retries are less successful.
- This seem to point to intermittent failures being recoverable, and that
- some domains will not respond.
-\end_layout
-
 \begin_layout Chapter
 Analyzing resources
 \end_layout
 
 \begin_layout Standard
-After downloading HAR files, they are processed using har-dulcify.
- Most steps can be split up into chunks and run in parallel, which is what
- the one-shot scripts do.
+After downloading HAR files, they are processed using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-dulcify
+\end_layout
+
+\end_inset
+
+, see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:har-dulcify"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -5046,6 +5558,17 @@ Looking at preliminary results, a large portion of domains yielded a redirect
  redirect to an internal or external domain, a specific question was written.
 \end_layout
 
+\begin_layout Section
+Multiset queries
+\end_layout
+
+\begin_layout Standard
+After downloading several datasets, it is often interesting to compare them
+ side by side.
+ The multiset queries extract pieces of data from several datasets, and
+ combine them into a single files.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -5109,72 +5632,9 @@ Domains lists chosen for this thesis come in three major categories - top
 
 \begin_layout Section
 Failed versus non-failed
-\end_layout
-
-\begin_layout Standard
-Choosing the term non-failed instead of successful when it comes to dividing
- and focusing result discussions has its basis in the HTTP standard, which
- defines a status code.
- Successful requests are generally shown with a HTTP status code of 200
- (actually the entire 2xx group), or a 304 which means that a previously
- cached (presumably successful) result is still valid.
- Many sites respond with a 3xx status, which isn't exactly successful as
- it doesn't contain actual content, but can not be considered a failure
- as it will most likely lead to another resource that is successful.
- While a status response of 4xx or 5xx shows there is a problem of some
- kind, for the purpose of this thesis a response that contains any HTTP
- status number is still considered a non-failure, as the remote system has
- responded with a proper HTTP response as parsed by 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-heedless
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-phantomjs
-\end_layout
-
-\end_inset
-
-.
- Overall, 4xx/5xx responses have been very rare; while this can be because
- of software problems, they do exist and therefore the code seems to work
- alright.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
- response code/group coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Failed-versus-non-failed"
 
 \end_inset
 
@@ -5193,7 +5653,14 @@ status collapsed
 
 \end_inset
 
- above) is considered a failed request.
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+) is considered a failed request.
  Looking at the resulting HAR files means that both local software errors
  and remote errors are considered failures, and while it might be technically
  possible to distinguish a software error from a remote error it has not
@@ -5204,13 +5671,17 @@ status collapsed
 
 \begin_layout Standard
 Non-random domains have a failure rate of below 15% for HTTP, and below
- 90% for HTTPS.
+ 90% for HTTPS, meaning less than not more than 10% implement HTTPS.
  Random zone domains have a failure rate of above 20% for HTTP and above
  99% for HTTPS.
  The very low HTTPS adoption rates among random sites is both surprising
- and not surprising - while larger sites have felt the pressure to implement
- them, a non-professional site owner might see it as both an unnecessary
- technical challenge and an unnecessary additional cost as most X.509 
+ and not surprising - while larger sites might have felt the pressure to
+ implement them, a non-professional site owner might see it as both an unnecessa
+ry technical challenge and an unnecessary additional cost.
+ With public IPv4 addresses running out and legacy browsers requiring one
+ per HTTPS certificate it can add an additional cost to rent one for exclusive
+ use.
+ Most X.509 
 \begin_inset Note Greyedout
 status open
 
@@ -5230,7 +5701,7 @@ Insert link to PKI.
 
 \end_inset
 
- adds to site hosting bills.
+ costing money to buy and install as well.
 \end_layout
 
 \begin_layout Standard
@@ -5279,9 +5750,131 @@ har-dulcify
 
 \end_inset
 
- splits results into unfiltered and non-failed only origin domains.
+ splits results into unfiltered and filtered, non-failed origin domains.
  Unless otherwise mentioned, further results are presented based only on
- non-failed domains in each dataset.
+ non-failed domains in each dataset, as failed origin requests add nothing
+ to the further resource analysis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A further analysis might disregard 4xx and 5xx responses as well, but current
+ numbers suggest the difference would not be very large.
+ A bigger improvement would be to separate placeholder pages and other domains
+ which do not contain content, like parked domains and advertisement domains.
+ A list used internally in .SE is available, but it has not been incorporated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+HTTP status codes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:HTTP-status-codes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Choosing the term non-failed instead of successful when it comes to dividing
+ and focusing result discussions has its basis in the HTTP standard, which
+ defines a status code.
+ Successful requests are generally shown with a HTTP status code of 200
+ (actually the entire 2xx group), or a 304 which means that a previously
+ cached (presumably successful) result is still valid.
+ Many sites respond with a 3xx status, which isn't exactly successful as
+ it doesn't contain actual content, but can not be considered a failure
+ as it will most likely lead to another resource that is successful.
+ While a status response of 4xx or 5xx shows there is a problem of some
+ kind, for the purpose of this thesis a response that contains any HTTP
+ status number is still considered a non-failure, as the remote system has
+ responded with a proper HTTP response parseable by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+.
+ Overall, 4xx/5xx responses have been very rare; while this can be because
+ of software problems, they do exist and therefore the code seems to work
+ as intended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
+ response code/group coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -6108,7 +6701,7 @@ Here are some results that differ from my own assumptions.
 status open
 
 \begin_layout Plain Layout
-Write more about noteable results.
+Write more about notable results.
 \end_layout
 
 \end_inset
@@ -6157,7 +6750,7 @@ http://www.
 status open
 
 \begin_layout Plain Layout
-Write about .se random htt http results.
+Write about .se random http results.
 \end_layout
 
 \end_inset
@@ -6538,14 +7131,326 @@ Mention the possibility to educate users with a webpage.
 status open
 
 \begin_layout Plain Layout
-Mention more rigorously testing har-heedless and phantomjs by setting up
- test servers serving different response types (errors, objects/documents,
- technically extreme web page content).
+Mention documenting the open source projects, adding more comments to the
+ code, extracting jq code to separate libraries.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Improving domain retrieval
+\end_layout
+
+\begin_layout Subsection
+Automated testing
+\end_layout
+
+\begin_layout Standard
+So far all testing of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ has been done manually.
+ It has proven to be a working setup, as thesis results are based on these
+ tools, but the features are to be considered fragile as there are no regression
+ tests.
+ Automated tests of the different levels (shell scripts, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:get/netsniff.js"
+
+\end_inset
+
+, screenshots, error handling) might help achieve stability in case of for
+ example future improvements of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+.
+ Tests might include setting up a web server with test pages serving different
+ kinds of content, as well as different kinds of errors.
+ During mass downloading of domains 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+ has been observed outputting error messages, such as failed JPEG image
+ decoding and unspecified crashes.
+ The extent of these errors have so far not been examined, as they have
+ ended up being clumped together with external errors such as network or
+ remote server failures.
+\end_layout
+
+\begin_layout Subsection
+Investigating failed domains
+\end_layout
+
+\begin_layout Standard
+There are many reasons domain retrieval could fail, but for top or curated
+ domain lists the chances of the site being down are considerably lower
+ than for randomly selected domains.
+ Despite this, certain sites do not respond to requests from the automated
+ software.
+ There are several ways for a remote system to detect requests from automation
+ software, with the simples one being looking at the HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+User-Agent
+\end_layout
+
+\end_inset
+
+ string.
+ As some sites respond to desktop browser requests, but not 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-heedless
+\end_layout
+
+\end_inset
+
+' requests, it is believed they have implemented certain 
+\begin_inset Quotes eld
+\end_inset
+
+protection
+\begin_inset Quotes erd
+\end_inset
+
+ from this kinds of software.
+ In not modifying the browser to try to avoid these measures I have tried
+ to respect their will not to serve automated requests.
+\end_layout
+
+\begin_layout Subsection
+Browser plugins
+\end_layout
+
+\begin_layout Standard
+If possible, a set of common browser plugins could be installed into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+.
+ The first that comes into mind is Adobe Flash, which is sometimes used
+ to display dynamic ads.
+ Flash also has the ability to request resources from other domains, so
+ it might affect results to not render them.
+ An additional problem might be that Flash has its own cookie system, which
+ used storage external to the browser.
+ This brings a new set of potential problems, as Flash cookies are a big
+ part of evercookies and cookie respawning.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
+
+\end_inset
+
+ This means that a headless browser without persistent storage might end
+ up having identifier cookies set in Flash storage, thus being easily and
+ uniquely identified on subsequent visits.
+ While this might not affect this thesis much, it might affect other kinds
+ of research being conducted based on the same tools.
+\end_layout
+
+\begin_layout Subsection
+System language
+\end_layout
+
+\begin_layout Standard
+Tests were run on English language systems, without making any customizations
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+phantomjs
+\end_layout
+
+\end_inset
+
+' settings or HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Accept-Language
+\end_layout
+
+\end_inset
+
+ headers.
+ While sites have been downloaded from around the world, localized domains
+ might behave differently depending on user language.
+ Google has a recommendation saying that they will prioritize TLDs specific
+ to a region with a certain language (like .se and Sweden) for users sending
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Accept-Language
+\end_layout
+
+\end_inset
+
+ prioritizing Swedish.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Google's language page ranking.
+\end_layout
+
+\end_inset
+
+ This stems from them seeing that localized results have a higher usage
+ rate.
+\end_layout
+
+\begin_layout Subsection
+System fonts
+\end_layout
+
+\begin_layout Standard
+Some of the difference between site screenshots and manually browsing to
+ a site is in the fonts displayed.
+ Most of the domains have been downloaded on a headless server, where fonts
+ have not mattered to the system owner.
+ Installing additional fonts commonly available on average user systems
+ might reduce perceived difference.
+\end_layout
+
+\begin_layout Section
+Domain lists
+\end_layout
+
+\begin_layout Standard
+There are other domain lists that might have been suitable in this thesis.
+ One curated top list is the KIA index, a list of top sites in Sweden aggregatin
+g statistics from different sites' underlying analytics tools.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.kiaindex.net/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Other TLDs, both from other countries and more generic ones, could be used.
+\end_layout
+
+\begin_layout Section
+Ad and privacy blocking lists
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are several lists of known ads and privacy invading trackers in use
+ in blocking software than Disconnect (see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+).
+ One of the most popular ones is EasyList 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to EasyList.
+\end_layout
+
+\end_inset
+
+, which exists in several varieties.
+ They were considered, but in the end not incorporated because of the lower
+ quality of the filter list format.
+ It is a mixture of HTML element and URL blocking, and it lacks the connection
+ between blocks and corresponding organization.
+ There is also Ghostery, which uses a proprietary list that also contains
+ organizations.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Ghostery.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Improving data analysis
 \end_layout
 
 \begin_layout Standard
@@ -6562,18 +7467,49 @@ Mention more rigorously testing har-dulcify and data manipulation scripts
 
 \end_layout
 
+\begin_layout Subsection
+Ignore domains without content
+\end_layout
+
 \begin_layout Standard
+Many domains do not contain any actual content.
+ Examples include web server placeholder pages (
+\begin_inset Quotes eld
+\end_inset
+
+Installation succeeded
+\begin_inset Quotes erd
+\end_inset
+
+), domain listings (
+\begin_inset Quotes eld
+\end_inset
+
+Index of /
+\begin_inset Quotes erd
+\end_inset
+
+), parked domains (
+\begin_inset Quotes eld
+\end_inset
+
+This domain was purchased from ...
+\begin_inset Quotes erd
+\end_inset
+
+) and advertisement domains (like Google Adwords for Domains 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Mention documenting the open source projects, adding more comments to the
- code, extracting jq code to separate libraries.
+Insert link.
 \end_layout
 
 \end_inset
 
-
+).
+ There is a list of site titles for recognized non-content pages available
+ internally at .SE, but it has not been incorporated.
 \end_layout
 
 \begin_layout Section
