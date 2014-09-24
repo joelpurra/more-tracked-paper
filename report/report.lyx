@@ -2699,6 +2699,13 @@ classification/disconnect/add.sh
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/disconnect/add.sh"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2804,6 +2811,13 @@ classification/effective-tld/add.sh
 \series bold
 >
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/effective-tld/add.sh"
 
 \end_inset
 
@@ -3373,29 +3387,44 @@ name "sub:Disconnect's-blocking-list"
 \begin_layout Standard
 One of the most popular privacy tools is Disconnect, which blocks tracking
  sites by running as a browser plugin.
- Disconnect was started by ex-Google engineers, and seems to still have
- close ties to Google.
+ Disconnect was started by ex-Google engineers, and still seems to have
+ close ties to Google as the own domain disconnect.me is listed as a Google
+ content domain in the blocking list.
 \end_layout
 
 \begin_layout Standard
 The Disconnect software lets users block/unblock loading resources from
  specific third-party domains.
- A list of 2149 domains is used as the basis from the blocking.
- Each entry belongs to an organization, including a link to the organizations
- webpage.
- There is also a grouping into categories, here shown with some examples.
- Worth noting is that the content category isn't blocked by default.
- 
-\begin_inset Note Greyedout
+ A list of 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Write about top results in datasets.
+
+
+\backslash
+numprint{2149}
 \end_layout
 
 \end_inset
 
+ domains is used as the basis from the blocking.
+ Each entry belongs to one of 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{980}
+\end_layout
+
+\end_inset
+
+ organizations, which come with a link to their webpage.
+ There is also a grouping into categories, here shown with some examples.
+ Worth noting is that the content category isn't blocked by default.
 \end_layout
 
 \begin_layout Standard
@@ -3446,11 +3475,28 @@ end{futurework}
 \end_layout
 
 \begin_layout Subsubsection
-Overview
+Categories
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Categories"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-An aggregate analysis of Disconnect's blocking list, as of 2014-09-08.
+Summary of Disconnect's categories.
+ Most domains and organizations by far are in the advertisement category.
+ The reason the Disconnect category has so few organizations, is that it
+ is treated as a special category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+ with only Google, Facebook and Twitter.
 \end_layout
 
 \begin_layout Standard
@@ -3461,13 +3507,59 @@ status open
 
 
 \backslash
-tsvtable{disconnect.categories.tsv}{Disconnect's categories}{}{display columns/0/.s
-tyle={string type, column type=l},}
+tsvtable{disconnect.categories.tsv}{Disconnect's categories (2014-09-08)}{}{displa
+y columns/0/.style={string type, column type=l},}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Domains per organization
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Domains-per-organization"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Many organizations have more than one domain.
+ One organization stands out, with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{271}
+\end_layout
+
+\end_inset
+
+ domains - Google.
+ The biggest reason is that they own top level domains such as google.se
+ and google.ch from over 200 TLDs.
+ Yahoo comes in second with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{71}
+\end_layout
+
+\end_inset
+
+ domains, many of which are service-specific subdomains to yahoo.com, such
+ as finance.yahoo.com and travel.yahoo.com.
 \end_layout
 
 \begin_layout Standard
@@ -3478,12 +3570,31 @@ status open
 
 
 \backslash
-tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization}{}{}
+tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization
+ (2014-09-08)}{}{}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Organizations in more than one category
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Organizations-in-more-than-one-category"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some organizations are represented in more than one of the five Disconnect
+ categories.
+ Yahoo has several ad services, several social services, several content
+ services and a single analytics service, putting them in four categories.
 \end_layout
 
 \begin_layout Standard
@@ -3495,8 +3606,8 @@ status open
 
 \backslash
 tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
- in more than one category}{}{display columns/0/.style={string type, column
- type=l},}
+ in more than one category (2014-09-08)}{}{display columns/0/.style={string
+ type, column type=l},}
 \end_layout
 
 \end_inset
@@ -3590,6 +3701,21 @@ Sites that deliver content.
 \end_layout
 
 \begin_layout Description
+apis.google.com One of Google's API domains.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look at which servies are hosted.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
 brightcove.com Video hosting/monetization service.
 \end_layout
 
@@ -3599,6 +3725,11 @@ disqus.com A third party comment service.
 
 \begin_layout Description
 flickr.com Flickr is a photo/video hosting site, owned by Yahoo.
+\end_layout
+
+\begin_layout Description
+googleapis.com One of Google's API domains, hosting third-party files/services
+ such as Google Fonts and Google Hosted Libraries.
 \end_layout
 
 \begin_layout Description
@@ -3634,23 +3765,49 @@ vimeo.com A video site.
 \end_layout
 
 \begin_layout Description
-youtube.com Google's video site.
+www.google.com Google's main domain, which also hosts services such as search.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look at which servies are hosted.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+youtube.com One of Google's video sites.
 \end_layout
 
 \begin_layout Subsubsection
 Disconnect
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-category"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A special category for Facebook, Google and Twitter.
+A special category for non-content resources from Facebook, Google and Twitter.
  It seems to initially have been designed to block their respective like/+1/twee
-t buttons, but also contains other known tracking domains belonging to the
- same organization.
+t buttons which seem to belong in the social category.
+ As the category now contains many other known tracking domains from the
+ same organizations, unblocking the social buttons also lets many other
+ types of resources trough.
 \end_layout
 
 \begin_layout Standard
-It's worth noting that adwords.google.com, doubleclick.net, admob.com and several
- other of Google's ad networks, are listed here.
+It's worth noting that this category includes google-analytics.com plus Google
+ ad networks such as adwords.google.com, doubleclick.net and admob.com.
+ It might have been more appropriate to have them in the analytics and advertise
+ment categories respectively.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3680,6 +3837,13 @@ reddit.com Social new and link sharing, and discussion.
 
 \begin_layout Subsection
 Public suffix list
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Public-suffix-list"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -3876,11 +4040,107 @@ target "https://en.wikipedia.org/wiki/.se#Pre_2003_system"
 \end_layout
 
 \begin_layout Standard
-The public suffix list specification contains an algorithm for certain wildcard
- rules that have exceptions, which this thesis has not implemented fully.
- These 10 exception were deemed insignificant, as 7 of them are Japanese
- cities grouped by geographic areas and the remaining 3 seem to belong to
- ccTLD owner organizations.
+The public suffix list (2014-07-24) contains 6278 rules, against which domains
+ are checked in one of the classification steps 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:classification/effective-tld/add.sh"
+
+\end_inset
+
+.
+ It becomes the basis for the domain's division into public suffix and primary
+ domain (first non-public suffix match), and subsequent grouping.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is also an algorithm for wildcard rules which can have exceptions;
+ this thesis has not implemented wildcards and exceptions in the classification
+ step.
+ There are 24 TLDs with wildcard public suffixes, and 8 non-TLD wildcards.
+ Out of these 8 non-TLD wildcards, 1 is *.sch.uk and 7 are Japanese geographic
+ areas.
+ The 24 wildcards have 10 exception rules; 7 of them are Japanese cities
+ grouped by the previously mentioned geographic areas and the remaining
+ 3 seem to belong to ccTLD owner organizations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apart from ICANN domains, which have been implemented, there are also private
+ domains considered public suffixes listed as rules.
+ They are domains which have subdomains controlled by users/customers, for
+ example joelpurra.github.io which is controlled by me but hosted by the code
+ hosting service github.com.
+ Other examples include cloud hosting/CDN services such as cloudfront.net,
+ amazonaws.com, azurewebsites.net, fastly.net, herokuapp.com, blogs from several
+ blogspot.TLD domains and dyndns.com's wide choice of dynamic domains.
+ One example that looks like a technical choice in order to hinder accidental
+ or malicious setting of cookies is googleapis.com, which is listed despite
+ being (presumably) completely under Google's control.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -5041,6 +5301,13 @@ Fill out the proper HTTP status group headings.
 
 \begin_layout Subsection
 Mime-type
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mime-type"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5189,6 +5456,8 @@ Public Suffix List
 The public suffix list is prepared for lookups per domain component.
  Each request's domain (including shorter domain components) is checked
  against it, and any matching public suffixes are kept in an array.
+ The primary domain (first non-public suffix match) is also kept separately
+ in the aggregate analysis step.
 \end_layout
 
 \begin_layout Section
@@ -5771,10 +6040,14 @@ begin{futurework}
 
 \begin_layout Standard
 A further analysis might disregard 4xx and 5xx responses as well, but current
- numbers suggest the difference would not be very large.
- A bigger improvement would be to separate placeholder pages and other domains
- which do not contain content, like parked domains and advertisement domains.
- A list used internally in .SE is available, but it has not been incorporated.
+ numbers 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+ suggest the difference would not be significant.
 \end_layout
 
 \begin_layout Standard
@@ -5860,7 +6133,7 @@ Internal versus external resources
 
 \begin_layout Standard
 The table shows non-failed origin domains having requests strictly to the
- same domain, subdomains or superdomains - together known as internal domains
+ same domain, subdomains or superdomains - jointly known as internal domains
  - or external (non-internal) domains.
  Origin domains that are not exclusively loading from either internal or
  external resources are loading from mixed domains.
@@ -6045,6 +6318,13 @@ Update table with full result datasets.
 
 \begin_layout Section
 HTTP, HTTPS and redirects
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6078,8 +6358,28 @@ Content type group coverage
 \end_layout
 
 \begin_layout Standard
-The difference between what can be achieved between different types of resources
- makes the distribution interesting.
+Bytes sent from the server to to the browser generally has an associated
+ type, so the browser can parse and use them properly.
+ The types can be grouped 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Mime-type"
+
+\end_inset
+
+; incorrect or unknown types that did not match a group is shown as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(null)
+\end_layout
+
+\end_inset
+
+ below.
+ The difference between what can be achieved between different types of
+ resources makes the distribution interesting.
  Images 
 \begin_inset Note Greyedout
 status open
@@ -6129,7 +6429,7 @@ Origin
 \begin_layout Standard
 Practically all successful origin requests result in a html response.
  The range is 84-100% html, with the difference being seemingly misconfigured
- responses, some of which are redirects without actual content.
+ responses, part of which are redirects without actual content.
 \end_layout
 
 \begin_layout Subsection
@@ -6315,7 +6615,44 @@ numprint{10000}
  This points towards those sites being aware of the country of origin for
  the request, leading to localized content being served.
  It is also evident that the .com TLD is the most widespread for external
- resources - it beats same-TLD coverage 
+ resources - it beats same-TLD coverage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Future downloads could be performed from other countries to measure location-dep
+endent service coverage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6353,6 +6690,26 @@ Update table with full result datasets.
 Disconnect's blocking list matches
 \end_layout
 
+\begin_layout Standard
+Coverage for requested external URL domains matching Disconnect's list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:classification/disconnect/add.sh"
+
+\end_inset
+
+.
+ As the list contains which category and organization each domain belongs
+ to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+, they have been grouped to display aggregates.
+\end_layout
+
 \begin_layout Subsection
 Top domains
 \begin_inset CommandInset label
@@ -6366,6 +6723,66 @@ name "sub:Top-domains"
 
 \begin_layout Standard
 A selection of domains, and their coverage across different datasets.
+ Worth noting is that many recognizable domains belong to organization which
+ have multiple domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Organizations-in-more-than-one-category"
+
+\end_inset
+
+, so their total organization coverage is higher.
+ This first table excludes top Google domains, which dominates the top list
+ for all datasets.
+\end_layout
+
+\begin_layout Subsubsection
+General
+\end_layout
+
+\begin_layout Standard
+Facebook and Twitter have their like and tweet buttons which often are talked
+ about in terms of social sharing, but it seems that their coverage is comparati
+vely low except for the .SE Health Status' media category.
+ AddThis' service includes some of Facebook's and Twitter's buttons' functionali
+ty, among other social sharing sites but they don't have quite the same
+ coverage.
+ Unfortunately, Facebook and Twitter are both in Disconnect's special Disconnect
+ category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+, and are not reflected in the social category aggregates 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-categories"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The domain cloudfront.net belonging to Amazon, is hosting services, file
+ and data on behalf of other organizations on subdomains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
+ While it is clear that Amazon can analyze and use traffic information from
+ hosted services, the data itself can be assumed to belong to the hosted
+ organizations.
+ This is a strong reason why the domain is listed as content in Disconnect's
+ blocking list - because of the variety of services being hosted on subdomains,
+ it cannot be blocked as for example advertisement even if it is being hosted
+ there.
+ It can be seen as a flaw in the Disconnect way of blocking.
 \end_layout
 
 \begin_layout Standard
@@ -6376,9 +6793,160 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.domains.sorted.tsv}{Top Disconnect domain
- match coverage}{}{fixed, display columns/0/.style={string type, column type=l},
- display columns/1/.style={string type, column type=i}}
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One thing to look closer at is cloudfront.net's subdomains, to analyze their
+ content and which sites use them.
+ Are they used as CDNs local to a single domain, or do third-party services
+ host content there? If so, what kind of content? Are there similar patterns
+ for for example Amazon AWS?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top
+ Disconnect domain match coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Google
+\end_layout
+
+\begin_layout Standard
+Google has many domains in Disconnect's blocking list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Domains-per-organization"
+
+\end_inset
+
+, and many in the top results.
+ One of the reasons is that they have several popular services with content
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Trackers-which-deliver-content"
+
+\end_inset
+
+, but the top Disconnect-recognized domain in most datasets is google-analytics.c
+om, with googleapis.com and www.google.com as the top result in the others.
+\end_layout
+
+\begin_layout Standard
+Here we see DoubleClick's, one of Google's ad services, coverage.
+ Unfortunately it has not been included in Disconnect's advertisement category,
+ and it skews the numbers for the advertisement category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-categories"
+
+\end_inset
+
+, nor has Google Analytics been put in the analytics category.
+ Google Analytics is served from its own domain, but Google is making a
+ push to move site owners to the DoubleClick domain, where they have replicated
+ the Google Analytics engine.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Google's push towards DoubleClick.
+\end_layout
+
+\end_inset
+
+ The reason given to site owners using Google Analytics is that the DoubleClick
+ tracker offers implementors additional rich audience information such as
+ age, gender and interests on top of their current technical analysis from
+ Google Analytics.
+ The underlying reason is possibly that Google wants DoubleClick, which
+ brings a lot of income, to have greater coverage across web sites - greater
+ coverage meaning more and higher quality visitor information.
+ While Google owns both services, site owner/visitor/usage policies 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert links to GA, DC policies.
+\end_layout
+
+\end_inset
+
+ might prevent Google from crossmatching information between them without
+ site owner consent.
+ Cookies set to the doubleclick.net domain should be more valuable to Google
+ than those set to google-analytics.com, as they translate to more directed
+ ads.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gill:2013:BPF:2504730.2504768"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.domains.coverage.external.google.sorted.tsv}{Top
+ Disconnect Google domain match coverage}{}{fixed, display columns/0/.style={stri
+ng type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -6422,9 +6990,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.categories.sorted.tsv}{Disconnect category
- match coverage}{}{fixed, display columns/0/.style={string type, column type=l},
- display columns/1/.style={string type, column type=i}}
+tsvtable{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}{Discon
+nect category match coverage}{}{fixed, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -6458,6 +7026,8 @@ name "sub:Top-organizations"
 
 \begin_layout Standard
 A selection of organizations, and their coverage across different datasets.
+ Facebook and Twitter are often touted as the big social network sites,
+ but in terms of domain coverage they are far behind Google.
 \end_layout
 
 \begin_layout Standard
@@ -6468,9 +7038,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.organizations.sorted.tsv}{Top Disconnect
- organization match coverage}{}{fixed, display columns/0/.style={string type,
- column type=l}, display columns/1/.style={string type, column type=i}}
+tsvtable{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}{Top
+ Disconnect organization match coverage}{}{fixed, display columns/0/.style={strin
+g type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -6640,7 +7210,8 @@ reference "sub:Top-domains"
  The highest coverage category (government owned corporations) is even above
  90%.
  Since Google Analytics can now be used from the DoubleClick domain as well,
- it makes more sense to look at the organization Google as a whole.
+ looking only at the Google Analytics domain makes little sense - instead
+ it might make more sense to look at the organization Google as a whole.
  The coverage jumps quite a bit, with most categories landing above 85%
  
 \begin_inset CommandInset ref
@@ -6650,7 +7221,46 @@ reference "sub:Top-organizations"
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is possible to extract the exact coverage for both Google Analytics and
+ DoubleClick from the current dataset.
+ Google Analytics already uses a domain of its own, and by writing a custom
+ question separating DoubleClick's ad and analytics resource URLs analytics
+ on that domain can be found as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -6755,11 +7365,25 @@ Write a comparison with own results per category?
 \end_layout
 
 \begin_layout Standard
-24% of HTTPS sites redirect from HTTPS back to HTTP in 2013 - see also.
+24% of HTTPS sites redirect from HTTPS back to HTTP in 2013 - see also 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
 Trackers which deliver content
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Trackers-which-deliver-content"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6841,7 +7465,6 @@ target "https://developers.google.com/youtube/player_parameters"
 \end_inset
 
 .
- Those are the visible examples, which users interact with.
  Lesser known examples include Recaptcha
 \begin_inset Foot
 status open
@@ -6859,7 +7482,9 @@ target "https://developers.google.com/recaptcha/"
 \end_inset
 
  which is an embeddable service to block/disallow web crawlers/bots access
- to web page features, Google Fonts
+ to web page features.
+ Those are visible examples, which users interact with.
+ Google Fonts
 \begin_inset Foot
 status open
 
@@ -6875,7 +7500,9 @@ target "https://www.google.com/fonts"
 
 \end_inset
 
- which serves modern web fonts for easy embedding, and Google Hosted Libraries
+ which serves modern web fonts for easy embedding, is still visible but
+ not branded.
+ Google Hosted Libraries
 \begin_inset Foot
 status open
 
@@ -6892,13 +7519,12 @@ target "https://developers.google.com/speed/libraries/"
 \end_inset
 
  which serves popular javascript libraries from Google's extensive CDN network
- instead of the local server for site speed/performance gains.
+ instead of the local server for site speed/performance gains are not visible
+ as components, but they can't be removed without affecting functionality.
  Especially the two latter, served from the googleapis.com domain, are prevalent
  in several of the datasets - and they are usually loaded on every single
- page on a web site, and thus gain full insight on users' click paths and
- web history.
- In the .se random 100k dataset, 39% of non-failed domains make requests
- to googleapis.com.
+ page on a web site, and thus gain full (but passive, as opposed to for
+ example Google Analytics) insight on users' click paths and web history.
 \end_layout
 
 \begin_layout Standard
@@ -6937,10 +7563,6 @@ Write more about notable results.
 
 \begin_layout Subsection
 HTTP versus HTTPS usage
-\end_layout
-
-\begin_layout Subsubsection
-Zone domain lists
 \end_layout
 
 \begin_layout Standard
@@ -7586,7 +8208,7 @@ Domain lists
 \begin_layout Standard
 There are other domain lists that might have been suitable in this thesis.
  One curated top list is the KIA index, a list of top sites in Sweden aggregatin
-g statistics from different sites' underlying analytics tools.
+g statistics from different curated sites' underlying analytics tools.
 \begin_inset Foot
 status open
 
@@ -7732,6 +8354,10 @@ end{futurework}
 
 \begin_layout Section
 Improving data analysis
+\end_layout
+
+\begin_layout Standard
+Improvements to the data transformation and analysis steps.
 \end_layout
 
 \begin_layout Subsection
@@ -7913,8 +8539,45 @@ Insert link.
  pages available internally at .SE, but it has not been incorporated.
 \end_layout
 
+\begin_layout Subsection
+Implement public suffix rules, use non-ICANN suffixes
+\end_layout
+
+\begin_layout Standard
+As datasets have been analyzed, public suffix rules have proven to work
+ in general, with co.uk and similar second level domains being properly grouped
+ and primary domains extracted.
+ There are still traces of the wildcard rules 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+ in the data though, which means that while numbers are low, there are domains
+ for which the public suffix rules have not been properly applied.
+\end_layout
+
+\begin_layout Standard
+Other potential improvements would be implementing the non-ICANN, private
+ suffixes.
+ This would for example lower the aggregate numbers for cloudfront.net and
+ amazonaws.com as primary domains in the aggregates, focusing on the fact
+ that subdomains belongs to different organizations.
+ Disconnect's dataset, which lists cloudfront.net as a single tracker entity
+ would still present Amazon as a the single tracking organization behind
+ the domain though, which might be a bit misleading.
+ It is true that they can read traffic data in the same way other web hosting
+ and cloud services host can read traffic data to their customers, but customers
+' common domain name suffix has little to do with it.
+\end_layout
+
 \begin_layout Section
 Other views on the same data
+\end_layout
+
+\begin_layout Standard
+Research that could possibly be performed using the same data and tools.
 \end_layout
 
 \begin_layout Subsection
