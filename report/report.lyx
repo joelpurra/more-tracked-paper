@@ -267,7 +267,7 @@ like A, B and C
 status open
 
 \begin_layout Plain Layout
-Replace with different scary personal information.
+Replace with different scary personal information?
 \end_layout
 
 \end_inset
@@ -309,8 +309,7 @@ Or Klondike and gold?
 \end_layout
 
 \begin_layout Abstract
-To show the overlap between different domains, front pages of approximately
- 
+Front pages of approximately 
 \begin_inset ERT
 status open
 
@@ -318,29 +317,16 @@ status open
 
 
 \backslash
-numprint{900}
+numprint{150000}
 \end_layout
 
 \end_inset
 
- Swedish top sites and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{13000}
-\end_layout
-
-\end_inset
-
- randomly selected .se domains were visited and their resources, including
- those dynamically loaded, recorded.
- Resources were grouped by mime type, URL protocol, domain, path, if it
- matches the domain the request originated from and compared to lists of
- known trackers.
+ random .se, .dk, .com, .net top level domains plus Swedish, Danish and Alexa's
+ top domains were visited and their resources, including those dynamically
+ loaded, recorded.
+ Resources were grouped by mime type, URL protocol, domain, if it matches
+ the domain the request originated from and compared to lists of known trackers.
  In this thesis I show the use of resources internal versus external to
  the entry domain, which the most common confirmed trackers are, what spread
  they have and how much the average Swedish internet user can expect to
@@ -381,7 +367,17 @@ Context
 \begin_layout Standard
 Part of .SE’s research efforts include continuously analyzing internet infrastruc
 ture and usage in Sweden.
- Yearly reports convey the status of, for example, 
+ Yearly reports since 2007 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Was it 2007?
+\end_layout
+
+\end_inset
+
+ convey the status of, for example, 
 \emph on
 Swedes and the internet
 \emph default
@@ -392,7 +388,7 @@ Swedes and the internet
 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lowinder:2012:healthstatus"
+key "Lowinder:2013:healthstatus"
 
 \end_inset
 
@@ -613,6 +609,16 @@ numprint{120}
 \begin_inset CommandInset citation
 LatexCommand cite
 key ".SE:2013:annualreport"
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update with information from the 2013 report.
+\end_layout
 
 \end_inset
 
