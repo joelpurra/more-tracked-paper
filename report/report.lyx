@@ -1022,7 +1022,7 @@ target "http://www2.research.att.com/~bala/papers/"
  grouping Swedish domains as well as looking at Google Analytics coverage.
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
 
 \end_inset
 
@@ -3294,6 +3294,13 @@ target "http://webmie.com/"
 
 \begin_layout Subsection
 Datasets in use
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Datasets-in-use"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3352,6 +3359,13 @@ tsvtable{domains.datasets.tsv}{Datasets in use}{}{display columns/0/.style={stri
 
 \begin_layout Subsection
 TLD distribution
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TLD-distribution"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5942,10 +5956,6 @@ reference "sec:HTTP-status-codes"
 \end_inset
 
 ) is considered a failed request.
- Looking at the resulting HAR files means that both local software errors
- and remote errors are considered failures, and while it might be technically
- possible to distinguish a software error from a remote error it has not
- been done apart from during initial development and debugging.
  In order to reduce temporary or intermittent problems, all domains that
  failed were retried up to two times.
 \end_layout
@@ -6045,15 +6055,11 @@ begin{futurework}
 \end_layout
 
 \begin_layout Standard
-A further analysis might disregard 4xx and 5xx responses as well, but current
- numbers 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:HTTP-status-codes"
-
-\end_inset
-
- suggest the difference would not be significant.
+Looking at the resulting HAR files means that both local software errors
+ and remote errors are considered failures.
+ While it might be technically possible to distinguish a software error
+ from a remote error, it has not been analyzed apart from during initial
+ development and debugging.
 \end_layout
 
 \begin_layout Standard
@@ -6097,9 +6103,19 @@ Choosing the term non-failed instead of successful when it comes to dividing
  kind, for the purpose of this thesis a response that contains any HTTP
  status number is still considered a non-failure, as the remote system has
  responded with a proper HTTP response parseable by phantomjs and har-heedless.
- Overall, 4xx/5xx responses have been very rare; while this can be because
- of software problems, they do exist and therefore the software seems to
- work as intended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about redirect responses.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6133,6 +6149,45 @@ Update table with full result datasets.
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A further analysis might disregard 4xx and 5xx responses as well, but current
+ numbers suggest the difference would not be significant.
+ While this can be because of software problems, they do exist and therefore
+ the software seems to work as intended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Internal versus external resources
 \end_layout
@@ -6146,6 +6201,19 @@ The table shows non-failed origin domains having requests strictly to the
  Mixing resources from both internal and external domains is the most common
  way to compose a web page for datasets not randomly chosen from zones,
  although it is quite common for random domains as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about any exciting conclusions.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6183,6 +6251,167 @@ Update table with full result datasets.
 During analysis har-dulcify splits results into unfiltered, internal and
  external resources, each treated the same way in terms of classifications,
  allowing separate conclusions to be drawn.
+\end_layout
+
+\begin_layout Section
+Request counts
+\end_layout
+
+\begin_layout Standard
+The table shows counts of all requests, internal requests and external requests.
+ External requests matching Disconnect's blocking lists are also shown.
+ These values are then shown as average count per domain, and ratio of all
+ requests.
+ Lastly, Disconnect's matches are shown as ratio of external requests.
+\end_layout
+
+\begin_layout Standard
+It is interesting to look at the number of requests, as they differ between
+ datasets.
+ Random TLD domains have a low 26-29 requests per domain, random Alexa top
+ sites a medium 71-76 - but the very Alexa top comes in at 83-105.
+ The smaller datasets reach50 comes to 87, and the even smaller dataset
+ .SE Health Status' media sets the record at 197 requests per domain!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about internal per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about external per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about internal ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about external ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect over external ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add a totals row, or at least mention request totals.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.requests.counts.sorted.tsv}{Requests, per domain
+ and ratios}{}{fixed, precision=2, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}, display
+ columns/2/.style={string type, column type=i}, display columns/3/.style={string
+ type, column type=i}, display columns/4/.style={string type, column type=i},
+ display columns/5/.style={string type, column type=i}, display columns/6/.style={
+precision=0}, display columns/7/.style={precision=0}, display columns/8/.style={pr
+ecision=0}, display columns/9/.style={precision=0}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -6498,6 +6727,37 @@ status open
 
 
 \backslash
+tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
+ type group coverage}{}{fixed, display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{futurework}
 \end_layout
 
@@ -6507,8 +6767,8 @@ begin{futurework}
 \end_layout
 
 \begin_layout Standard
-As these external files can load other files, it might be possible to build
- a hierarchy of requests.
+As some external file types can trigger further HTTP requests, it might
+ be possible to build a hierarchy of requests.
  The easiest way is to look at resources loaded in HTML 
 \begin_inset Flex Code
 status collapsed
@@ -6563,37 +6823,6 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
- type group coverage}{}{fixed, display columns/0/.style={string type, column
- type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Public suffix coverage
 \end_layout
@@ -6622,6 +6851,57 @@ numprint{10000}
  the request, leading to localized content being served.
  It is also evident that the .com TLD is the most widespread for external
  resources - it beats same-TLD coverage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Compare to TLD counts in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:TLD-distribution"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
+ suffixes in external resources}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6654,37 +6934,6 @@ status open
 
 \backslash
 end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
- suffixes in external resources}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -6799,6 +7048,37 @@ status open
 
 
 \backslash
+tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top
+ Disconnect domain match coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update table with full result datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{futurework}
 \end_layout
 
@@ -6824,37 +7104,6 @@ status open
 
 \backslash
 end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top
- Disconnect domain match coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -6989,6 +7238,19 @@ Categories and their coverage across different datasets.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7034,6 +7296,19 @@ name "sub:Top-organizations"
 A selection of organizations, and their coverage across different datasets.
  Facebook and Twitter are often touted as the big social network sites,
  but in terms of domain coverage they are far behind Google.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7889,19 +8164,6 @@ Mention further grouping, digging into the data.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Mention sharing data when using non-private lists.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Creating an information website
 \end_layout
@@ -7968,7 +8230,22 @@ reference "sub:HTTP-Archive"
 \emph on
 .SE Health Status
 \emph default
- is doing but on a less continuous basis and a shifting focus.
+ is doing but on a less continuous basis and with a shifting focus.
+\end_layout
+
+\begin_layout Section
+Package publicly available data
+\end_layout
+
+\begin_layout Standard
+Datasets based on publicly available datasets can be packaged for other
+ researchers to analyze.
+ While fresh data would be better, a larger dataset can take time to download
+ on a slow connection or computer and all software may not be available
+ to the researcher.
+ It lowers the step in for others who might be interested in the same kind
+ of research, which might lead to the software used in this thesis being
+ improved.
 \end_layout
 
 \begin_layout Section
@@ -7989,8 +8266,8 @@ numprint{70}
 
 \end_inset
 
- scripts written and released as open source for the thesis, the need for
- documentation has gradually increased.
+ scripts written and released as open source, the need for documentation
+ has gradually increased.
  The reason for not writing proper documentation - not having direct collaborato
 rs writing code - is a hinderance for future collaborators or users to get
  started.
