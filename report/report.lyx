@@ -5372,6 +5372,74 @@ Classification
 \end_layout
 
 \begin_layout Subsection
+Public Suffix List
+\end_layout
+
+\begin_layout Standard
+The public suffix list is prepared for lookups per domain component.
+ Each request's domain (including shorter domain components) is checked
+ against it, and any matching public suffixes are kept in an array.
+ A list of private suffixes, as in domain components not in the public suffix
+ list, is also kept.
+ The primary domain (first non-public suffix match, or the shortest private
+ suffix) is extracted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In terms of grouping, it might be good to keep the primary (longest matching)
+ public suffix separately.
+ The public suffix list also contains special wildcard/exception rules and
+ private suffixes 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
+ They have not been used in the thesis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Implement-public-suffix-rules-use-non-ICANN-suffixes"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Basic
 \end_layout
 
@@ -5425,6 +5493,18 @@ Superdomain The request is to a domain to which the origin domain is a subdomain
 \end_layout
 
 \begin_layout Description
+Same
+\begin_inset space ~
+\end_inset
+
+primary
+\begin_inset space ~
+\end_inset
+
+domain The request shared the same primary domain with the origin.
+\end_layout
+
+\begin_layout Description
 Internal
 \begin_inset space ~
 \end_inset
@@ -5466,18 +5546,6 @@ The URLs in the extended data contains lists of domain components.
  As the disconnect list of blocked domains is prepared for lookups by domains,
  each of the matching domains (including shorter domain components) are
  extracted with organization, organization URL and domain category.
-\end_layout
-
-\begin_layout Subsection
-Public Suffix List
-\end_layout
-
-\begin_layout Standard
-The public suffix list is prepared for lookups per domain component.
- Each request's domain (including shorter domain components) is checked
- against it, and any matching public suffixes are kept in an array.
- The primary domain (first non-public suffix match) is also kept separately
- in the aggregate analysis step.
 \end_layout
 
 \begin_layout Section
@@ -6194,8 +6262,8 @@ Internal versus external resources
 
 \begin_layout Standard
 The table shows non-failed origin domains having requests strictly to the
- same domain, subdomains or superdomains - jointly known as internal domains
- - or external (non-internal) domains.
+ same domain, subdomains, superdomains or same primary domain - jointly
+ known as internal domains - or external (non-internal) domains.
  Origin domains that are not exclusively loading from either internal or
  external resources are loading from mixed domains.
  Mixing resources from both internal and external domains is the most common
@@ -7796,10 +7864,7 @@ numprint{457}
 
 \end_inset
 
-
  pages from Alexa's top 
-\lang english
-
 \begin_inset ERT
 status open
 
@@ -9044,6 +9109,13 @@ Insert link.
 
 \begin_layout Subsection
 Implement public suffix rules, use non-ICANN suffixes
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Implement-public-suffix-rules-use-non-ICANN-suffixes"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
