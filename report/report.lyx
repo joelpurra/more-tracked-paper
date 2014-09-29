@@ -7251,6 +7251,45 @@ Write more.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about high content trackers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about low advertisement, compare to DoubleClick.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about low analytics, compare to Google Analytics.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7654,6 +7693,187 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Section
+Cat and Mouse: Content Delivery Tradeoffs in Web Access
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Is this comparison relevant?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Describe the report.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The report looks the top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100}
+\end_layout
+
+\end_inset
+
+ English language sites from 12 categories in Alexa's top list, plus another
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100}
+\end_layout
+
+\end_inset
+
+ sites from a political list.
+ These sites come from 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1116}
+\end_layout
+
+\end_inset
+
+ domains.
+ They used a local proxy server to gather URLs, which means that HTTPS requests
+ were lost.
+ A total of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1113}
+\end_layout
+
+\end_inset
+
+ pages were downloaded from that set, plus 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{457}
+\end_layout
+
+\end_inset
+
+
+ pages from Alexa's top 
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{500}
+\end_layout
+
+\end_inset
+
+ in a secondary list.
+ The overlap was 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{180}
+\end_layout
+
+\end_inset
+
+ pages.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fill in numbers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Does a new dataset need to be downloaded?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{krishnamurthy-2006-cmc-1135777.1135829_ad_coverage.tsv}{Ad coverage}{}{fi
+xed, display columns/0/.style={string type, column type=l}, display columns/1/.sty
+le={string type, column type=i}, display columns/2/.style={string type, column
+ type=i}, display columns/3/.style={string type, column type=i}, display
+ columns/4/.style={string type, column type={|i}}, display columns/5/.style={strin
+g type, column type=i}, display columns/6/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
