@@ -8,6 +8,22 @@ deleteTmpLyx(){
 	find "$PWD" -name '*.tmp.lyx' -delete
 }
 
+touchedLyxFileBases=()
+
+deleteAllTmp(){
+	local tmpFiles=()
+
+	for touchedLyxFileBase in "${touchedLyxFileBases[@]}"; do
+		for rmfile in "$touchedLyxFileBase".{aux,log,out,tex,nlo,toc,tmp.lyx,tmp.pdf}; do
+			[[ -s "$rmfile" ]] && tmpFiles+=("$rmfile");
+		done;
+	done;
+
+	rm "${tmpFiles[@]}"
+}
+
+trap 'deleteAllTmp' EXIT
+
 deleteTmpLyx
 
 description=$(git describe --tags --match 'v[0-9]*' --always --dirty='-SNAPSHOT')
@@ -20,18 +36,17 @@ do
 	folder="$(dirname '$lyx')"
 	base="${lyx%.lyx}"
 
-	echo "Generating $base.lyx"
+	echo -n "Generating $lyx ... "
 
 	cd "$folder"
 
 	# Hacky rewrite of .lyx file
 	cat "$base.lyx" | sed "s/(Unknown version)/$description/" > "$base.tmp.lyx"
+	touchedLyxFileBases+=("$base")
 	lyx --force-overwrite --export pdf2 "$base.tmp.lyx" &> "$logfile"
 	mv "$base.tmp.pdf" "$base.pdf"
 
-	for rmfile in "$base".{aux,log,out,tex,tmp.lyx}; do [[ -s "$rmfile" ]] && rm "$rmfile"; done;
+	echo "done."
 
 	cd - > /dev/null
 done
-
-deleteTmpLyx
