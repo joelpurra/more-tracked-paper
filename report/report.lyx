@@ -7035,6 +7035,24 @@ reference "sub:Disconnect's-blocking-list"
 \end_layout
 
 \begin_layout Subsection
+Domain and organization counts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about how many blocked domains and organizations are represented per
+ dataset.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Top domains
 \begin_inset CommandInset label
 LatexCommand label
