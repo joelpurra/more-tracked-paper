@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-[[ ! `which git` ]] && { echo "git is required"; exit 1; }
-[[ ! `which lyx` ]] && { echo "lyx is required"; exit 1; }
+[[ ! `which git` ]] && { echo "git is required" 1>&2; exit 1; }
+[[ ! `which lyx` ]] && { echo "lyx is required" 1>&2; exit 1; }
 
 deleteTmpLyx(){
 	find "$PWD" -name '*.tmp.lyx' -delete
