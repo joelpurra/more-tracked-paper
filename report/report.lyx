@@ -322,15 +322,16 @@ numprint{150000}
 
 \end_inset
 
- random .se, .dk, .com, .net top level domains plus Swedish, Danish and Alexa's
- top domains were visited and their resources, including those dynamically
- loaded, recorded.
+ random .se, .dk, .com, .net domains and Swedish, Danish and Alexa's top domains
+ were visited and their resources, including those dynamically loaded, recorded.
  Resources were grouped by mime type, URL protocol, domain, if it matches
- the domain the request originated from and compared to lists of known trackers.
+ the domain the request originated from and compared to lists of known trackers
+ and organizations.
  In this thesis I show the use of resources internal versus external to
  the entry domain, which the most common confirmed trackers are, what spread
- they have and how much the average Swedish internet user can expect to
- be tracked by visiting some of the most import and popular sites in Sweden.
+ they have and how much the average internet user can expect to be tracked
+ by visiting some of the most important and popular sites in Sweden, Denmark
+ and worldwide.
 \end_layout
 
 \begin_layout Standard
