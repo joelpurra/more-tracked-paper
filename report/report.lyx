@@ -226,7 +226,7 @@ target "http://joelpurra.com/"
 \begin_inset Newline newline
 \end_inset
 
-+46-70-3521212
++46 70 352 1212
 \end_layout
 
 \begin_layout Date
@@ -246,6 +246,75 @@ versionortoday
 \end_layout
 
 \begin_layout Abstract
+While browsing web sites third-party resources track your online habits
+ and build a persona for advertising and resale.
+ It was previously unknown how many third-party resources, known trackers
+ and tracker companies are represented on an average web site.
+ While downloading over 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{150000}
+\end_layout
+
+\end_inset
+
+ globally popular as well as random .com/.net/.se/.dk web sites, in-browser
+ HTTP traffic was recorded and analyzed.
+ Data shows that known third-party resources including known trackers have
+ a presence on over 70% 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+70-93%
+\end_layout
+
+\end_inset
+
+ of sites, that Google has a presence of over 47% 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+47-90%
+\end_layout
+
+\end_inset
+
+ and that third-party hosted 
+\emph on
+content
+\emph default
+ such as video, scripts and fonts make up a large portion of known trackers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
 How many companies are tracking you online, and how much information does
  the average Swede leak while using popular .se websites? Many, and a lot
  - more than you think.
@@ -278,7 +347,7 @@ Replace with different scary personal information?
  And now they are selling it as hard facts behind the scenes.
 \end_layout
 
-\begin_layout Abstract
+\begin_layout Standard
 While browsing the web users are both actively and passively being tracked
  by multiple companies, for the purpose of building a persona for targeted
  advertising.
@@ -308,7 +377,7 @@ Or Klondike and gold?
 
 \end_layout
 
-\begin_layout Abstract
+\begin_layout Standard
 Front pages of approximately 
 \begin_inset ERT
 status open
@@ -334,40 +403,16 @@ numprint{150000}
  and worldwide.
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Introduction
+\begin_layout Section
+Context
 \end_layout
 
 \begin_layout Standard
 This thesis is being written in the office of - and in collaboration with
  - .SE (The Internet Infrastructure Foundation), who graciously supported
  me with domain data and internet knowledge.
-\end_layout
-
-\begin_layout Section
-Context
-\end_layout
-
-\begin_layout Standard
-Part of .SE’s research efforts include continuously analyzing internet infrastruc
-ture and usage in Sweden.
+ Part of .SE’s research efforts include continuously analyzing internet infrastru
+cture and usage in Sweden.
  Yearly reports since 2007 
 \begin_inset Note Greyedout
 status open
