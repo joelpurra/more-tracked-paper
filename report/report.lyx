@@ -644,6 +644,27 @@ Write more about document style.
 \end_layout
 
 \begin_layout Subsection
+Work in progress notes
+\end_layout
+
+\begin_layout Standard
+There are notes about things that need to be added or improved throughout
+ the document.
+ These notes are have a grey text color.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+This is a work in progress note.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Cross-references
 \begin_inset CommandInset label
 LatexCommand label
@@ -1668,12 +1689,28 @@ In an effort to record and analyze network traffic as seen by individual
  While constructed to analyze for example web performance, it also contains
  data suitable for this thesis: requested URLs and HTTP request/response
  headers such as referrer and content type.
- HAR files are based upon the JSON standard 
+ HAR files are based upon the JSON
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://json.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ standard 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Insert a link to the JSON standard.
+Insert a link to the JSON standard as well.
 \end_layout
 
 \end_inset
@@ -1738,7 +1775,7 @@ normal
 
  browser usage in mind - that is with desktop software functionalities.
  A good alternative for such servers is phantomjs, which is built as a command
- line tool without any user interface.
+ line tool without any graphical user interface.
  It acts like a browser internally, including rendering the webpage to a
  image buffer that isn't displayed, and is controllable through the use
  of scripts.
@@ -1956,7 +1993,22 @@ Code
 \begin_layout Standard
 In order to efficiently and repeatably download and analyze web pages, special
  tools have been written.
- The source code for the respective projects have been released to the public
+ Most of the code is written in bash 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Bash.
+\end_layout
+
+\end_inset
+
+ scripts utilizing external commands when possible, such as jq.
+ The code for the jq commands has been embedded in the bash scripts.
+\end_layout
+
+\begin_layout Standard
+The source code for the respective projects have been released to the public
  under GNU General Public License version 3.0 (GPL-3.0)
 \begin_inset Foot
 status open
@@ -1974,6 +2026,7 @@ target "https://www.gnu.org/licenses/gpl.html"
 \end_inset
 
 , so other projects can make use of them as well.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2008,8 +2061,8 @@ Using har-heedless to download and har-dulcify to analyze web pages in aggregate
 \end_layout
 
 \begin_layout Standard
-A set of scripts that both downloads and analyzes websites in a single run
- - see har-heedless 
+A set of scripts that both downloads, retries failed downloads and analyzes
+ web sites in a single run - see har-heedless 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:har-heedless"
@@ -2050,8 +2103,15 @@ domains/download-and-analyze.sh
 
 \end_inset
 
- to download four variations of the same domains, so any differences between
- secure/insecure and www-prefixed domains can be observed.
+ to download four variations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Dataset-variations"
+
+\end_inset
+
+ of the same domains, so any differences between secure/insecure and www-prefixe
+d domains can be observed.
 \end_layout
 
 \begin_layout Itemize
@@ -2122,9 +2182,9 @@ domains/download-and-analyze.sh <prefix> <parallelism> <domainlists>
 \begin_layout Standard
 Downloads a list of domains in parallel, with automatic per-prefix/input
  file folder and log file and creation.
- It also performs automatic retries for failed domains, with an increased
- parallelism as retries are mostly expected to yield another network timeout
- or error.
+ It also performs automatic retries for failed domains two times per dataset,
+ with an increased parallelism as retries are mostly expected to yield another
+ network timeout or error.
 \end_layout
 
 \begin_layout Subsection
@@ -3001,6 +3061,10 @@ multiset/*.sh
 \begin_layout Standard
 A set of scripts that perform tasks on multiple datasets at once - an aggregate
  of aggregates usually.
+ The scripts were developed late in the process, to extract small pieces
+ of data per dataset for the report.
+ The small pieces of data are combined to files with tab-separated values,
+ which are the source of most data tables in the report.
  
 \begin_inset Note Greyedout
 status open
@@ -3024,6 +3088,17 @@ Domains
 
 \begin_layout Standard
 Statistics regarding each list of domains is presented in an appendix.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Generate domain list tables or tables in this chapter?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -3082,6 +3157,20 @@ numprint{100}
 \end_inset
 
 .
+ A final sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100000}
+\end_layout
+
+\end_inset
+
+ domains was also provided.
  The .se TLD is to be considered Sweden-centric.
 \end_layout
 
@@ -3270,7 +3359,7 @@ target "http://reach50.com/"
 \end_layout
 
 \begin_layout Standard
-The top 50 sites in Sweden are presented by by Webmie
+The top 50 sites in Sweden are presented by Webmie
 \begin_inset Foot
 status open
 
@@ -3286,7 +3375,7 @@ target "http://webmie.com/"
 
 \end_inset
 
-, who base their list on data from a a user panel.
+, who base their list on data from a user panel.
  The panelists have installed an extension into their browser, tracking
  their browsing habits by automated means.
  They also have results grouped by panelists categories: women, men, age
@@ -4176,7 +4265,7 @@ Computer machines
 Two computers were used to download web pages - one laptop machine and one
  server machine.
  The server is significantly more powerful than the laptop, and they downloaded
- a different number of web pages at a a time.
+ a different number of web pages at a time.
 \end_layout
 
 \begin_layout Standard
@@ -4630,8 +4719,8 @@ below the fold
 , meaning outside of the initial view the user has without scrolling in
  any direction, as a page speed improvement.
  Responsive CSS adapts the page style to the screen size in order to increase
- usability for for example mobile users, and might optimize the quality
- of downloaded images to match the screen size.
+ usability for mobiles and other handheld devices, and might optimize the
+ quality of downloaded images to match the screen size.
 \end_layout
 
 \begin_layout Standard
@@ -4758,6 +4847,87 @@ The ratio of PNG to HAR data size on disk points to the compressed PNG files
 .SE Health Status
 \emph default
  report dataset.
+\end_layout
+
+\begin_layout Section
+Dataset variations
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Dataset-variations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each dataset has been used in four variations, effectively quadrupling the
+ number of web sites access attempts.
+ Each of these variations have been downloaded and analyzed separately,
+ then used for both intra- and inter-dataset comparisons.
+\end_layout
+
+\begin_layout Itemize
+HTTP and HTTPS.
+ Enables comparisons between secure and insecure origin web site requests.
+\end_layout
+
+\begin_layout Itemize
+Empty prefix versus www prefix/subdomain.
+ The www subdomain has historically been used to denote a web server serving
+ web sites 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to www prefix claim.
+\end_layout
+
+\end_inset
+
+, and it still seems to have a higher usage than no prefix 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+.
+ The 
+\emph on
+.SE Health Status
+\emph default
+ reports specifically accesses web sites on the www subdomain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{dataset-variations.tsv}{Dataset variations}{}{display columns/0/.style={s
+tring type, column type=l}, display columns/1/.style={string type, column
+ type=l}, display columns/2/.style={string type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each dataset has the variation appended to the name in the results chapter
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Results"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -4899,6 +5069,13 @@ end{futurework}
 
 \begin_layout Section
 Failed domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Failed-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5964,6 +6141,13 @@ begin{wide}
 
 \begin_layout Chapter
 Results
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Results"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6026,12 +6210,19 @@ reference "sec:HTTP-status-codes"
 
 ) is considered a failed request.
  In order to reduce temporary or intermittent problems, all domains that
- failed were retried up to two times.
+ failed were retried up to two times 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-portent"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Non-random domains have a failure rate of below 15% for HTTP, and below
- 90% for HTTPS, meaning less than not more than 10% implement HTTPS.
+Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
+ for HTTPS, meaning that 30-10% implement HTTPS.
  Random zone domains have a failure rate of above 20% for HTTP and above
  99% for HTTPS.
  The very low HTTPS adoption rates among random sites is both surprising
@@ -6105,6 +6296,46 @@ During analysis har-dulcify splits results into unfiltered and filtered,
  Unless otherwise mentioned, further results are presented based only on
  non-failed domains in each dataset, as failed origin requests add nothing
  to the further resource analysis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There might be an overlap between failed HTTP/HTTPS and non-www/www dataset
+ variations, but at the moment they are treated separately.
+ If domains that failed to respond to HTTP requests are removed from the
+ HTTPS set in a filter step, HTTPS failure statistics might be lower - and
+ the same goes for www variations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6484,6 +6715,15 @@ Update table with full result datasets.
 \end_layout
 
 \begin_layout Section
+Request coverage
+\end_layout
+
+\begin_layout Standard
+Write about internal, external and disconnect coverage - as opposed to count
+ and requests per domain.
+\end_layout
+
+\begin_layout Section
 Insecure versus secure resources
 \end_layout
 
@@ -6662,8 +6902,8 @@ Content type group coverage
 \end_layout
 
 \begin_layout Standard
-Bytes sent from the server to to the browser generally has an associated
- type, so the browser can parse and use them properly.
+Bytes sent from the server to the browser generally has an associated type,
+ so the browser can parse and use them properly.
  The types can be grouped 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -7179,7 +7419,15 @@ One thing to look closer at is cloudfront.net's subdomains, to analyze their
  content and which sites use them.
  Are they used as CDNs local to a single domain, or do third-party services
  host content there? If so, what kind of content? Are there similar patterns
- for for example Amazon AWS?
+ for Amazon AWS and other cloud services? See also public suffixes owned
+ by private companies 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7675,20 +7923,79 @@ Reachability
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
+The random zone domain lists (.se, .dk, .com, .net) have download failures for
+ 22-28% of all domains when it comes to 
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
-Write about reachability of HTTP domains.
+http://
 \end_layout
 
 \end_inset
 
+ and 
+\begin_inset Flex Code
+status collapsed
 
+\begin_layout Plain Layout
+http://www.
+\end_layout
+
+\end_inset
+
+ variations, where www has fewer failures.
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+ The HTTP result for .se is consistent with results from the 
+\emph on
+.SE Health Status
+\emph default
+ reports, according to Patrik Wallström, where they only download www variations.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Ask .SE about hard numbers?
+\end_layout
+
+\end_inset
+
+ Curated 
+\emph on
+.SE Health Status
+\emph default
+ lists have fewer failures for both HTTP, generally below 10% for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://www.
+\end_layout
+
+\end_inset
+
+ variation - perhaps explained by the thesis software and network setup
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-domains"
+
+\end_inset
+
+.
+ Several prominent media sites with the same parent company respond as expected
+ when accessed with a normal desktop browser - but not automated requests,
+ suggesting that they detect and block some types of traffic.
 \end_layout
 
 \begin_layout Subsection
-HTTPS coverage
+HTTPS usage
 \end_layout
 
 \begin_layout Standard
@@ -7701,8 +8008,8 @@ key "Lowinder:2008:healthstatus,Lowinder:2009:healthstatus,Lowinder:2010:healths
 \end_inset
 
  The reports are a bit unclear about some numbers as measurement methodology
- and focus has shifted, but the general results seem to line up with the
- results in this thesis 
+ and focus has shifted over the years, but the general results seem to line
+ up with the results in this thesis 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
@@ -7750,7 +8057,7 @@ Measurements changed in 2009, so they might not be fully comparable.
 status open
 
 \begin_layout Plain Layout
-Ask Amel about exact numbers?
+Ask .SE about exact numbers?
 \end_layout
 
 \end_inset
@@ -8146,81 +8453,6 @@ Write more about notable results.
 
 \end_layout
 
-\begin_layout Subsection
-HTTP versus HTTPS usage
-\end_layout
-
-\begin_layout Standard
-The random zone domain lists (.se, .dk, .com, .net) have download failures for
- 22-26% of all domains when it comes to 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://www.
-\end_layout
-
-\end_inset
-
- variations.
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Failed-versus-non-failed"
-
-\end_inset
-
- The result is consistent with results from the 
-\emph on
-.SE Health Status
-\emph default
-, where ...
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about .se random http results.
-\end_layout
-
-\end_inset
-
- When it comes to 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://www.
-\end_layout
-
-\end_inset
-
- results in random zone selections are extremely low - a failure rate of
- over 99% for all of them.
- This means that unless a site explicitly redirects traffic from http to
- https, users usually don't gain any advantage typing in the extra 's' in
- https as the site won't respond.
-\end_layout
-
 \begin_layout Section
 Automated, scalable data collection and repeatable analysis
 \end_layout
@@ -8387,8 +8619,8 @@ ic language (DSL).
  Bugs and inconsistencies have been reported, and input regarding for example
  code sharing through a package management system and (semantic) versioning
  has been given.
- Some of the code written has been packaged for easy reuse, and more is
- on the way.
+ Some of the reusable jq code and helper scripts written for the thesis
+ has been packaged for easy reuse, and more is on the way.
 \end_layout
 
 \begin_layout Subsection
@@ -8683,8 +8915,9 @@ key "G.-Acar:persistent:2014aa"
  This means that a headless browser without persistent storage might end
  up having identifier cookies set in Flash storage, thus being easily and
  uniquely identified on subsequent visits.
- While this might not affect this thesis much, it might affect other kinds
- of research being conducted based on the same tools.
+ While this might not affect this thesis much, as external plugins have
+ not been installed, it might affect other kinds of research being conducted
+ based on the same tools.
 \end_layout
 
 \begin_layout Subsection
@@ -9195,9 +9428,21 @@ key "G.-Acar:persistent:2014aa"
  They can also be shared by one third-party sending requests to a second
  third-party (a fourth-party?), either by leaking the location URL as a
  HTTP referrer or by embedding it in the request URL.
- In crawls of Alexa's top 3000 domains, one third-party script in particular
- sends requests with synced IDs to 25 domains; the IDs were eventually are
- shared with 43 domains.
+ In crawls of Alexa's top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{3000}
+\end_layout
+
+\end_inset
+
+ domains, one third-party script in particular sends requests with synced
+ IDs to 25 domains; the IDs were eventually are shared with 43 domains.
  They also showed that a user's browsing history reconstruction rate rose
  from 1.4% to 11% when backend/server-to-server overlaps were modeled.
 \end_layout
@@ -9790,10 +10035,88 @@ description "Or browser. Software a user utilizes to retrieve, present and trave
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URL"
+description "Uniform Resource Locator"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Uniform Resource Locator"
+description "A standard to define the address to resources, mostly on the internet, for example http://joelpurra.com/projects/masters-thesis/"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HTTP"
+description "Hypertext Transfer Protocol"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HTTPS"
+description "Secure HTTP, where data is transfered encrypted."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Hypertext Transfer Protocol"
+description "(HTTP) A protocol to transfer HTML and other web page resources across the internet."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Do Not Track"
+description "(DNT) A HTTP header used to indicate that the server should not record and track the client's traffic and other data."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DNT"
+description "Do Not Track"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "P3P"
+description "Platform for Privacy Preferences (P3P) Project"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Platform for Privacy Preferences Project"
+description "(P3P) A W3C standard for HTTP where server responses are annotated with an encoded privacy policy, so the client can display it to the user. Work has been discontinued since 2006."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol ".SE"
-description "The Internet Infrastructure Foundation. An independent organization for the benefit of the public that promotes the positive development of the internet in Sweden. .SE is responsible for the .se top level domain."
+description "The Internet Infrastructure Foundation. An independent organization for the benefit of the public that promotes the positive development of the internet in Sweden. .SE is responsible for the .se country code top level domain."
 
 \end_inset
 
@@ -9802,6 +10125,108 @@ description "The Internet Infrastructure Foundation. An independent organization
 LatexCommand nomenclature
 symbol ".se"
 description "The country code top level domain name for Sweden."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".dk"
+description "The country code top level domain name for Denmark."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".com"
+description "A generic top level domain. It has the greatest number of registered domain of all TLDs."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".net"
+description "A generic top level domain."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "TLD"
+description "Top level domain."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Top level domain"
+description "(TLD) The last part of a domain name, such as .se or .com. Registration of TLDs is handled by ICANN."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "gTLD"
+description "Generic top level domain such as .com or .net."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ccTLD"
+description "A top level domain based on a country code, such as .se or .dk."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Alexa"
+description "A web traffic statistic service, owned by Amazon."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "jq"
+description "A tool and domain specific programming language to read and transform JSON data. See the software chapter."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "phantomjs"
+description "Browser software used for automated web site browsing. See the software chapter."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HAR"
+description "HTTP Archive (HAR) format, used to store recorded HTTP metadata from a web page visit. See the software chapter."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JSON"
+description "A data format based on Javascript objects. Often used on the internet for data transfer. Used in this thesis as the basis for all data transformation."
 
 \end_inset
 
