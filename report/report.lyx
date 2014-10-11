@@ -6323,19 +6323,6 @@ string type, column type=i}, display columns/2/.style={string type, column
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 During analysis har-dulcify splits results into unfiltered and filtered,
  non-failed origin domains.
  Unless otherwise mentioned, further results are presented based only on
@@ -6482,19 +6469,6 @@ tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -6572,19 +6546,6 @@ status open
 tsvtable{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{Internal
  versus external resources coverage}{}{fixed, display columns/0/.style={string
  type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -6746,19 +6707,6 @@ ecision=0}, display columns/9/.style={precision=0}}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Request coverage
 \end_layout
@@ -6885,19 +6833,6 @@ status open
 tsvtable{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Secure
  versus insecure resources coverage}{}{fixed, display columns/0/.style={string
  type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -7047,19 +6982,6 @@ tsvtable{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{Con
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 External
 \end_layout
@@ -7084,19 +7006,6 @@ status open
 tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
  type group coverage}{}{fixed, display columns/0/.style={string type, column
  type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -7238,19 +7147,6 @@ status open
 tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
  suffixes in external resources}{}{fixed, display columns/0/.style={string
  type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
@@ -7431,19 +7327,6 @@ tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{To
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7589,19 +7472,6 @@ ng type, column type=l}, display columns/1/.style={string type, column type=i}}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Top categories
 \begin_inset CommandInset label
@@ -7687,19 +7557,6 @@ nect category match coverage}{}{fixed, display columns/0/.style={string type,
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Top organizations
 \begin_inset CommandInset label
@@ -7741,19 +7598,6 @@ status open
 tsvtable{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}{Top
  Disconnect organization match coverage}{}{fixed, display columns/0/.style={strin
 g type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update table with full result datasets.
 \end_layout
 
 \end_inset
