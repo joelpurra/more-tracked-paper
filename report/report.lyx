@@ -6946,6 +6946,50 @@ Reference Apple's Flash implementation resistance.
 
 \end_layout
 
+\begin_layout Standard
+Note that web fonts have fairly low numbers here, but that they can also
+ be served as styles which dynamically load additional fonts URLs.
+ This is how Google Fonts do it, using the fonts.googleapis.com domain 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Trackers-which-deliver-content"
+
+\end_inset
+
+ to serve styles and gstatic.com to serve fonts dynamically selected to match
+ to browser web font compatibility level, which could then be factored into
+ these numbers 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Rerun data analysis with updated font mime types?
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Break out numbers specifically for font mime (group) and fonts,googleapis.com
+ and gstatic.com?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Origin
 \end_layout
@@ -6953,7 +6997,14 @@ Origin
 \begin_layout Standard
 Practically all successful origin requests result in a html response.
  The range is 84-100% html, with the difference being seemingly misconfigured
- responses, part of which are redirects without actual content.
+ responses, part of which are redirects without actual content 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -7261,6 +7312,13 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 
 \begin_layout Subsubsection
 General
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-domains-General"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7376,6 +7434,13 @@ end{futurework}
 
 \begin_layout Subsubsection
 Google
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-domains-Google"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
