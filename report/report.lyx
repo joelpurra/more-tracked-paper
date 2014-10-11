@@ -984,169 +984,6 @@ How much does the average user know about external resources being trackers?
 \end_layout
 
 \begin_layout Chapter
-Related work
-\end_layout
-
-\begin_layout Standard
-Some research has been done surrounding ad networks, trackers and their
- spread on globally popular sites, as well as what kind of private data
- users can expect to more or less inadvertently share in the course of normal
- internet usage.
- Those papers show both some of the problems and solutions in trying to
- analyze external resources.
- The Association for Computing (ACM)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://acm.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- group SIGCOMM
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://sigcomm.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- has a yearly Internet Measurement Conference (IMC)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://sigcomm.org/events/imc-conference"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, where some papers of interest have been presented.
- The Passive and Active Measurements (PAM) Conference
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://pam2014.cs.unm.edu/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- might also have interesting papers, as well as for example ACM's archives.
- As for individuals, one of the most connected researchers in this field
- is Balachander Krishnamurthy
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www2.research.att.com/~bala/papers/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, who has worked with several groups looking at privacy in both online social
- networks (OSNs) and general websites.
-\end_layout
-
-\begin_layout Standard
-.SE themselves have written papers analyzing the technical state of services
- connected to .se domains.
- While they haven't concentrated on exploring the web services connected
- to these domains, they do offer some groundwork in terms of selecting and
- grouping Swedish domains as well as looking at Google Analytics coverage.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
-
-\end_inset
-
- .SE's Internet Fund
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.internetfonden.se/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- has also funded work on discussing and defining online privacy, aimed at
- those working with or developing systems that handle personal data, often
- with some kind of internet connection.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bylund:2013:978-91-87379-12-3:integritet"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Media have made reports regarding mass surveillance, especially by the United
- States intelligence agency National Security Agency (NSA)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.nsa.gov/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, but so far few papers seem to have been written.
- There are also reports on what data private companies are collecting, in
- part by their online efforts, and how they are packaging it for resale.
- While media reports aren't academic papers, they provide an up to date
- source of information needed in explaining parts of the thesis subject.
-\end_layout
-
-\begin_layout Chapter
 Expected results
 \begin_inset CommandInset label
 LatexCommand label
@@ -8628,6 +8465,169 @@ A tool that parses the public suffix list from its original format to a
  being included twice instead of .engineer and .engineering separately.
  This had already been detected and reported by others, but it can be used
  to detect future inconsistencies in an automated manner.
+\end_layout
+
+\begin_layout Chapter
+Related work
+\end_layout
+
+\begin_layout Standard
+Some research has been done surrounding ad networks, trackers and their
+ spread on globally popular sites, as well as what kind of private data
+ users can expect to more or less inadvertently share in the course of normal
+ internet usage.
+ Those papers show both some of the problems and solutions in trying to
+ analyze external resources.
+ The Association for Computing (ACM)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://acm.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ group SIGCOMM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sigcomm.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ has a yearly Internet Measurement Conference (IMC)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sigcomm.org/events/imc-conference"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, where some papers of interest have been presented.
+ The Passive and Active Measurements (PAM) Conference
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://pam2014.cs.unm.edu/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ might also have interesting papers, as well as for example ACM's archives.
+ As for individuals, one of the most connected researchers in this field
+ is Balachander Krishnamurthy
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www2.research.att.com/~bala/papers/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, who has worked with several groups looking at privacy in both online social
+ networks (OSNs) and general websites.
+\end_layout
+
+\begin_layout Standard
+.SE themselves have written papers analyzing the technical state of services
+ connected to .se domains.
+ While they haven't concentrated on exploring the web services connected
+ to these domains, they do offer some groundwork in terms of selecting and
+ grouping Swedish domains as well as looking at Google Analytics coverage.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+
+\end_inset
+
+ .SE's Internet Fund
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.internetfonden.se/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ has also funded work on discussing and defining online privacy, aimed at
+ those working with or developing systems that handle personal data, often
+ with some kind of internet connection.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bylund:2013:978-91-87379-12-3:integritet"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Media have made reports regarding mass surveillance, especially by the United
+ States intelligence agency National Security Agency (NSA)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.nsa.gov/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, but so far few papers seem to have been written.
+ There are also reports on what data private companies are collecting, in
+ part by their online efforts, and how they are packaging it for resale.
+ While media reports aren't academic papers, they provide an up to date
+ source of information needed in explaining parts of the thesis subject.
 \end_layout
 
 \begin_layout Chapter
