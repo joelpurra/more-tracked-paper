@@ -403,387 +403,6 @@ numprint{150000}
  and worldwide.
 \end_layout
 
-\begin_layout Section
-Context
-\end_layout
-
-\begin_layout Standard
-This thesis is being written in the office of - and in collaboration with
- - .SE (The Internet Infrastructure Foundation), who graciously supported
- me with domain data and internet knowledge.
- Part of .SE’s research efforts include continuously analyzing internet infrastru
-cture and usage in Sweden.
- Yearly reports since 2007 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Was it 2007?
-\end_layout
-
-\end_inset
-
- convey the status of, for example, 
-\emph on
-Swedes and the internet
-\emph default
- and 
-\emph on
-.SE Health Status
-\emph default
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lowinder:2013:healthstatus"
-
-\end_inset
-
- to the public, both in Swedish
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/lar-dig-mer/rapporter/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and English
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/english/reports/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- Information and statistics are also published on a separate portal, in
- collaboration with other organizations.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/vad-vi-gor/internetstatistik/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The report 
-\emph on
-.SE Health Status
-\emph default
- is based on data collected from around 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{900}
-\end_layout
-
-\end_inset
-
- .se domain names deemed of importance to the Swedish society as a whole,
- as well as random selection of 1% of the registered .se domain names.
- The research is focused on statistics about usage and security in DNS,
- IP, web and e-mail; the target audience is IT strategists, executives and
- directors.
- The thesis subject has been selected to be in line with the 
-\emph on
-.SE Health Status
-\emph default
- reports; results may be included in future reports, and code reused by
- both those reports and potentially other tools like .SE's public tool 
-\emph on
-Domain Check
-\emph default
-.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add link to Domain Check.
-\end_layout
-
-\end_inset
-
- Data for the reports is analyzed and summarized by Anne-Marie Eklund Löwinder,
- a world-renown DNS and security expert
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/bloggare/anne-marie/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, while the technical aspects and tools are under the supervision of Patrik
- Wallström, a well known DNSSEC expert and free and open source software
- advocate
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/bloggare/pawal/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-People
-\end_layout
-
-\begin_layout Description
-Student Joel Purra, master student for a Master of Science in Information
- Technology and Engineering, Linköping University, Sweden.
-\end_layout
-
-\begin_layout Description
-University
-\begin_inset space ~
-\end_inset
-
-examiner Niklas Carlsson, Associate Professor (Swedish: docent and universitetsl
-ektor) at Division for Database and Information Techniques (ADIT), Department
- of Computer and Information Science (IDA), Linköping University, Sweden.
-\end_layout
-
-\begin_layout Description
-Company
-\begin_inset space ~
-\end_inset
-
-supervisor Patrik Wallström, Project Manager within R&D, .SE (The Internet
- Infrastructure Foundation), Sweden.
-\end_layout
-
-\begin_layout Description
-Company
-\begin_inset space ~
-\end_inset
-
-supervisor Staffan Hagnell, Head of New Businesses, .SE (The Internet Infrastruct
-ure Foundation), Sweden.
-\end_layout
-
-\begin_layout Section
-About The Internet Infrastructure Foundation
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- (.SE)
-\end_layout
-
-\begin_layout Standard
-.SE is also known as Stiftelsen för internetinfrastruktur (IIS).
-\end_layout
-
-\begin_layout Standard
-The Internet Infrastructure Foundation is an independent organization, responsib
-le for the Swedish top level domain, and working for the benefit of the
- public that promotes the positive development of the internet in Sweden.
- Their head office is in Stockholm.
- In 2012 they had 61 employees and a turnover of almost 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{120}
-\end_layout
-
-\end_inset
-
- MSEK.
-\begin_inset CommandInset citation
-LatexCommand cite
-key ".SE:2013:annualreport"
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update with information from the 2013 report.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Document style
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about document style.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Work in progress notes
-\end_layout
-
-\begin_layout Standard
-There are notes about things that need to be added or improved throughout
- the document.
- These notes are have a grey text color.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-This is a work in progress note.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Cross-references
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Cross-references"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Many cross-references are given as chapter or section references in parentheses
- 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Cross-references"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Future work
-\end_layout
-
-\begin_layout Standard
-Ideas, future improvements or research has been written both in chapter
- 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Future-work"
-
-\end_inset
-
- and as comments.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This type of comment denotes ideas, future improvements or research.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Background
 \end_layout
@@ -1517,6 +1136,152 @@ key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
  By only downloading the domain root page and associated resources this
  tool might not fall into that category of detection.
  Will automated collection done for this report be detected and hindered?
+\end_layout
+
+\begin_layout Section
+Document style
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Where is a good place for document style information?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about document style.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Commands, files and code
+\end_layout
+
+\begin_layout Standard
+When text has a strict technical meaning, such as commands, files and code,
+ a monospaced font is used.
+ One example is a command like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input.json jq 'select(.domain == "joelpurra.se")'
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Work in progress notes
+\end_layout
+
+\begin_layout Standard
+There are notes about things that need to be added or improved throughout
+ the document.
+ These notes are have a grey text color.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+This is a work in progress note.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cross-references
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Cross-references"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Many cross-references are given as chapter or section references in parentheses
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Cross-references"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Future work
+\end_layout
+
+\begin_layout Standard
+Ideas, future improvements or research has been written both in chapter
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Future-work"
+
+\end_inset
+
+ and as comments.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This type of comment denotes ideas, future improvements or research.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -8471,6 +8236,210 @@ A tool that parses the public suffix list from its original format to a
 Related work
 \end_layout
 
+\begin_layout Section
+At .SE
+\end_layout
+
+\begin_layout Standard
+Yearly reports since 2007 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Was it 2007?
+\end_layout
+
+\end_inset
+
+ convey the status of, for example, 
+\emph on
+Swedes and the internet
+\emph default
+ and 
+\emph on
+.SE Health Status
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2013:healthstatus"
+
+\end_inset
+
+ to the public, both in Swedish
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/lar-dig-mer/rapporter/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and English
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/english/reports/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Information and statistics are also published on a separate portal, in
+ collaboration with other organizations.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/vad-vi-gor/internetstatistik/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ .SE's Internet Fund
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.internetfonden.se/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ has also funded work on discussing and defining online privacy, aimed at
+ those working with or developing systems that handle personal data, often
+ with some kind of internet connection.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bylund:2013:978-91-87379-12-3:integritet"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While .SE themselves have written papers analyzing the technical state of
+ services connected to .se domains, the focus has not been on exploring the
+ web services connected to these domains.
+ They do offer some groundwork in terms of selecting and grouping Swedish
+ domains, HTTPS usage and Google Analytics coverage.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+
+\end_inset
+
+ The report 
+\emph on
+.SE Health Status
+\emph default
+ is based on data collected from around 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{900}
+\end_layout
+
+\end_inset
+
+ .se domain names deemed of importance to the Swedish society as a whole,
+ as well as random selection of 1% of the registered .se domain names.
+ The research is focused on statistics about usage and security in DNS,
+ IP, web and e-mail; the target audience is IT strategists, executives and
+ directors.
+ The thesis subject has been selected to be in line with the 
+\emph on
+.SE Health Status
+\emph default
+ reports; results may be included in future reports, and code reused by
+ both those reports and potentially other tools like .SE's public tool 
+\emph on
+Domain Check
+\emph default
+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Domain Check.
+\end_layout
+
+\end_inset
+
+ Data for the reports is analyzed and summarized by Anne-Marie Eklund Löwinder,
+ a world-renown DNS and security expert
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/bloggare/anne-marie/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, while the technical aspects and tools are under the supervision of Patrik
+ Wallström, a well known DNSSEC expert and free and open source software
+ advocate
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/bloggare/pawal/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Other research
+\end_layout
+
 \begin_layout Standard
 Some research has been done surrounding ad networks, trackers and their
  spread on globally popular sites, as well as what kind of private data
@@ -8563,46 +8532,6 @@ target "http://www2.research.att.com/~bala/papers/"
 
 , who has worked with several groups looking at privacy in both online social
  networks (OSNs) and general websites.
-\end_layout
-
-\begin_layout Standard
-.SE themselves have written papers analyzing the technical state of services
- connected to .se domains.
- While they haven't concentrated on exploring the web services connected
- to these domains, they do offer some groundwork in terms of selecting and
- grouping Swedish domains as well as looking at Google Analytics coverage.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
-
-\end_inset
-
- .SE's Internet Fund
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.internetfonden.se/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- has also funded work on discussing and defining online privacy, aimed at
- those working with or developing systems that handle personal data, often
- with some kind of internet connection.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bylund:2013:978-91-87379-12-3:integritet"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -9872,6 +9801,107 @@ Add list of collaborators in getting data, domains, help, advice etcetera.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+The Internet Infrastructure Foundation
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (.SE)
+\end_layout
+
+\begin_layout Standard
+.SE is also known as Stiftelsen för internetinfrastruktur (IIS).
+\end_layout
+
+\begin_layout Standard
+This thesis is being written in the office of - and in collaboration with
+ - .SE, who graciously supported me with domain data and internet knowledge.
+ Part of .SE’s research efforts include continuously analyzing internet infrastru
+cture and usage in Sweden.
+ .SE is an independent organization, responsible for the Swedish top level
+ domain, and working for the benefit of the public that promotes the positive
+ development of the internet in Sweden.
+ Their head office is in Stockholm.
+ In 2012 they had 61 employees and a turnover of almost 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{120}
+\end_layout
+
+\end_inset
+
+ MSEK.
+\begin_inset CommandInset citation
+LatexCommand cite
+key ".SE:2013:annualreport"
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update with information from the 2013 report.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Thesis supervision
+\end_layout
+
+\begin_layout Description
+Niklas
+\begin_inset space ~
+\end_inset
+
+Carlsson Associate Professor (Swedish: docent and universitetslektor) at
+ Division for Database and Information Techniques (ADIT), Department of
+ Computer and Information Science (IDA), Linköping University, Sweden.
+ Thank you for being my examiner.
+\end_layout
+
+\begin_layout Description
+Patrik
+\begin_inset space ~
+\end_inset
+
+Wallström Project Manager within R&D, .SE (The Internet Infrastructure Foundation
+), Sweden.
+ Thank for being my technical supervisor.
+\end_layout
+
+\begin_layout Description
+Staffan
+\begin_inset space ~
+\end_inset
+
+Hagnell Head of New Businesses, .SE (The Internet Infrastructure Foundation),
+ Sweden.
+ Thank you for being my company supervisor.
 \end_layout
 
 \begin_layout Standard
