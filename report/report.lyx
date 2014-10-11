@@ -9836,7 +9836,7 @@ cture and usage in Sweden.
  domain, and working for the benefit of the public that promotes the positive
  development of the internet in Sweden.
  Their head office is in Stockholm.
- In 2012 they had 61 employees and a turnover of almost 
+ In 2013 they had 72 employees and a turnover of over 
 \begin_inset ERT
 status open
 
@@ -9844,24 +9844,23 @@ status open
 
 
 \backslash
-numprint{120}
+numprint{140}
 \end_layout
 
 \end_inset
 
  MSEK.
-\begin_inset CommandInset citation
-LatexCommand cite
-key ".SE:2013:annualreport"
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Update with information from the 2013 report.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/om/arsredovisningar/arsredovisning-2013/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
