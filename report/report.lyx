@@ -338,6 +338,9 @@ While browsing the web users are both actively and passively being tracked
  questionnaires, but it's most common in the form of different kinds of
  external resources which may or may not serve a purpose other than keeping
  track of your every click.
+ Secure connections between server and client help against passive data
+ collection along the network path, but not against site owners allowing
+ in-page trackers.
  Tracking code is installed on web pages that have adverts as well as those
  that do not - the spread and reach of tracking across web pages and domains
  of different kinds increases the quality of the user data collected and
@@ -376,6 +379,8 @@ numprint{150000}
 
  random .se, .dk, .com, .net domains and Swedish, Danish and Alexa's top domains
  were visited and their resources, including those dynamically loaded, recorded.
+ Each domain was accessed both with insecure HTTP and secure HTTPS connections
+ to provide a comparison.
  Resources were grouped by mime type, URL protocol, domain, if it matches
  the domain the request originated from and compared to lists of known trackers
  and organizations.
