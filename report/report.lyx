@@ -1077,79 +1077,6 @@ To what extent can the average Swedish internet user's browsing habits be
 \end_layout
 
 \begin_layout Section
-Potential problems
-\end_layout
-
-\begin_layout Itemize
-Due to the dynamic nature of modern web pages, a static HTML analysis might
- not be enough.
- How can pages with dynamic script loading be analyzed?
-\end_layout
-
-\begin_layout Itemize
-Script aggregation and concatenation could give misleading numbers if only
- analyzed per URL.
- Is it possible to detect which known scripts are actually running?
-\end_layout
-
-\begin_layout Itemize
-Can Google Tag Manager
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.google.com/tagmanager/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- scripts, which is script aggregation with asynchronous loading directed
- specifically to marketers, be analyzed to show each included service?
-\end_layout
-
-\begin_layout Itemize
-Can collected data served by different services differ depending on which
- tool is used to fetch the data?
-\end_layout
-
-\begin_layout Itemize
-Does content and external resources vary between requests? Is it time dependent,
- or regenerated for each request? One example would be often-updated news
- sites or blogs, where new content is added and old replaced.
- Another would be ads, which might be loaded from different sources per
- request.
-\end_layout
-
-\begin_layout Itemize
-Many of the external resources will be overlapping, and downloading them
- multiple times can be avoided by caching the file the first time in a run.
- Would keeping a local cache of recently requested URLs affect the results?
-\end_layout
-
-\begin_layout Itemize
-Automated downloading of webpages, especially downloading several in short
- succession, can be seen by site and service owners as disruptive by using
- system resources and skewing statistical data.
- Traversing different pages on a single website can also be detected by
- looking at for example navigational patterns.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
-
-\end_inset
-
- By only downloading the domain root page and associated resources this
- tool might not fall into that category of detection.
- Will automated collection done for this report be detected and hindered?
-\end_layout
-
-\begin_layout Section
 Document style
 \end_layout
 
@@ -2559,9 +2486,112 @@ https://
  It had proven hard to maintain, and the software project was abandoned
  before the thesis was started, but hadn't yet been replaced.
  In order to better handle the dynamic nature of modern web pages, the headless
- browser phantomjs was chosen, as it would also download and execute javascript
- - a major component in both user interfaces as well as active trackers
- and ads.
+ browser phantomjs 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:phantomjs"
+
+\end_inset
+
+ was chosen, as it would also download and execute javascript - a major
+ component in both user interfaces as well as active trackers and ads.
+\end_layout
+
+\begin_layout Subsection
+Cached content
+\end_layout
+
+\begin_layout Standard
+Many of the external resources will be overlapping between web sites and
+ domains, and downloading them multiple times can be avoided by caching
+ the file the first time in a run.
+ Keeping cached content would, depending on per-response cache settings
+ and timeout, result in a different HTTP request and potentially different
+ response.
+ A file that has not changed on the server would generate a HTTP response
+ status of 304 with no data, saving bandwidth and lowering transfer delays,
+ where a changed file would generate a status 200 response with the latest
+ version.
+\end_layout
+
+\begin_layout Standard
+One of the technologies in determining if a locally cached file is the correct/l
+atest version includes the HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Etag standard.
+\end_layout
+
+\end_inset
+
+ header, which is a string representation of a URL/file at a certain version.
+ When content is transferred it may have an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ attached; if the file is cacheable, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ is saved.
+ Subsequent requests for the same, cached URL contain the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ - and the server uses it to determine if a compact 304 response is enough
+ or a full 200 response is necessary.
+ It has been found that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ header can be used for cookieless cross-site tracking by using an arbitrarily
+ chosen per-browser value instead of a file-dependent value 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "M.-Ayenson:2011aa"
+
+\end_inset
+
+.
+ This means that keeping a local file cache might affect how trackers respond;
+ a file cache has not been implemented in har-heedless, making the browser
+ amnesiac.
 \end_layout
 
 \begin_layout Subsection
@@ -3300,7 +3330,14 @@ Some web sites are not downloaded successfully, for different reasons.
  The DNS settings might not be correct, the server may be shut down, there
  might have been a temporary network timeout, there might have been a software
  error - or the server has been programmed to not respond to automated requests
- from phantomjs and similar tools.
+ from phantomjs 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:phantomjs"
+
+\end_inset
+
+ and similar tools.
  Unfortunately, outside of software errors, they are hard to detect without
  external analysis of connectivity.
  Each HTTP request has their HTTP status response recorded if it is available;
@@ -5756,10 +5793,19 @@ Investigating failed domains
 There are many reasons domain retrieval could fail, but for top or curated
  domain lists the chances of the site being down are considerably lower
  than for randomly selected domains.
+ Each web site has been requested up to three times, in order to avoid intermitt
+ent problems 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-domains"
+
+\end_inset
+
+.
  Despite this, certain sites do not respond to requests from the automated
  software.
  There are several ways for a remote system to detect requests from automation
- software, with the simples one being looking at the HTTP 
+ software, with the simplest one being looking at the HTTP 
 \begin_inset Flex Code
 status collapsed
 
@@ -5769,8 +5815,27 @@ User-Agent
 
 \end_inset
 
- string.
- As some sites respond to desktop browser requests, but not har-heedless'
+ browser make/model identifier string.
+\end_layout
+
+\begin_layout Standard
+Automated downloading of webpages, especially downloading several in short
+ succession, can be seen by site and service owners as disruptive by using
+ system resources and skewing statistical data.
+ Traversing different pages on a single website can also be detected by
+ looking at for example navigational patterns.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
+
+\end_inset
+
+ By only downloading the domain root page and associated resources this
+ tool might not fall into that category of detection.
+\end_layout
+
+\begin_layout Standard
+As some sites respond to desktop browser requests, but not har-heedless'
  requests, it is believed they have implemented certain 
 \begin_inset Quotes eld
 \end_inset
@@ -5779,9 +5844,19 @@ protection
 \begin_inset Quotes erd
 \end_inset
 
- from this kinds of software.
- In not modifying the browser to try to avoid these measures I have tried
- to respect their will not to serve automated requests.
+ from this kind of software.
+ In respect of their wish not to serve automated requests, har-heedless'
+ browser has not been modified, for example by using a different 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+User-Agent
+\end_layout
+
+\end_inset
+
+ string, to try to avoid these measures.
 \end_layout
 
 \begin_layout Subsection
