@@ -324,7 +324,7 @@ Replace with different scary personal information?
 
 \end_inset
 
- Even if you didn't tell anyone your deepest secrets, these companies might
+ Even if you did not tell anyone your deepest secrets, these companies might
  conclude that they can put labels on you by looking at everything you do
  online.
  And now they are selling it as hard facts behind the scenes.
@@ -335,7 +335,7 @@ While browsing the web users are both actively and passively being tracked
  by multiple companies, for the purpose of building a persona for targeted
  advertising.
  Sometimes the data collection is visible, as in social network sites and
- questionnaires, but it's most common in the form of different kinds of
+ questionnaires, but it is most common in the form of different kinds of
  external resources which may or may not serve a purpose other than keeping
  track of your every click.
  Secure connections between server and client help against passive data
@@ -1555,7 +1555,7 @@ numprint{980}
 
  organizations, which come with a link to their webpage.
  There is also a grouping into categories, here shown with some examples.
- Worth noting is that the content category isn't blocked by default.
+ Worth noting is that the content category is not blocked by default.
 \end_layout
 
 \begin_layout Standard
@@ -1935,8 +1935,8 @@ t buttons which seem to belong in the social category.
 \end_layout
 
 \begin_layout Standard
-It's worth noting that this category includes google-analytics.com plus Google
- ad networks such as adwords.google.com, doubleclick.net and admob.com.
+It is worth noting that this category includes google-analytics.com plus
+ Google ad networks such as adwords.google.com, doubleclick.net and admob.com.
  It might have been more appropriate to have them in the analytics and advertise
 ment categories respectively.
 \end_layout
@@ -2361,7 +2361,7 @@ https://
 
  strings in HTML and CSS.
  It had proven hard to maintain, and the software project was abandoned
- before the thesis was started, but hadn't yet been replaced.
+ before the thesis was started, but had not yet been replaced.
  In order to better handle the dynamic nature of modern web pages, the headless
  browser phantomjs 
 \begin_inset CommandInset ref
@@ -2551,7 +2551,7 @@ target "https://jquery.com/"
  One concern is whether or not script concatenation on a web page would
  affect script analysis at a later stage, by reducing the number of third-party
  requests.
- While it's hard to analyze all scripts, based on their wide spread use,
+ While it is hard to analyze all scripts, based on their wide spread use,
  third-party scripts stay on their respective home servers as software as
  a service (SaaS) to enable faster update cycles and tracking of HTTP requests.
 \end_layout
@@ -2668,8 +2668,8 @@ Insert link to DoS information.
  Some sites also have information considered sensitive to being available
  for spiders, or even for certain (kinds) of spiders such as image spiders.
  The choice to not serve spiders can stem from technical reasons (bandwidth,
- server load), to privacy (don't allow information to be indexed in search
- engines) and business (don't allow data to be collected and aggregated).
+ server load), to privacy (do not allow information to be indexed in search
+ engines) and business (do not allow data to be collected and aggregated).
  In order to instruct web spiders not to get certain kind of material, there
  are two basic mechanisms - the special 
 \begin_inset Flex Code
@@ -2831,7 +2831,7 @@ Screen size
 \begin_layout Standard
 When phantomjs is running, it emulates having a browser window by keeping
  an internal graphics buffer.
- Even if web page isn't rendered and shown on screen, it still has a screen
+ Even if web page is not rendered and shown on screen, it still has a screen
  size, which affects layout.
  With a bit of javascript or responsive CSS, the screen size can affect
  downloaded resources.
@@ -4197,7 +4197,7 @@ Questions
 \end_layout
 
 \begin_layout Standard
-Where the aggregate analysis isn't enough, there are custom questions.
+Where the aggregate analysis is not enough, there are custom questions.
  These questions/queries can be run against any previous intermediate step
  in the process, as they are saved to disk.
 \end_layout
@@ -4893,7 +4893,7 @@ target "https://developers.google.com/speed/libraries/"
 
  which serves popular javascript libraries from Google's extensive CDN network
  instead of the local server for site speed/performance gains are not visible
- as components, but they can't be removed without affecting functionality.
+ as components, but they cannot be removed without affecting functionality.
  Especially the two latter, served from the googleapis.com domain, are prevalent
  in several of the datasets - and they are usually loaded on every single
  page on a web site, and thus gain full (but passive, as opposed to for
@@ -5116,8 +5116,8 @@ reference "sub:Disconnect's-blocking-list"
 
 \end_inset
 
-, as it's the base for both the service of blocking external resources and
- presenting statistics to the user.
+, as it is the base for both the service of blocking external resources
+ and presenting statistics to the user.
  While preparing 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -5481,7 +5481,7 @@ target "http://www.nsa.gov/"
 , but so far few papers seem to have been written.
  There are also reports on what data private companies are collecting, in
  part by their online efforts, and how they are packaging it for resale.
- While media reports aren't academic papers, they provide an up to date
+ While media reports are not academic papers, they provide an up to date
  source of information needed in explaining parts of the thesis subject.
 \end_layout
 
@@ -5580,7 +5580,7 @@ Insert link to Collusion, or whatever it is called these days.
  retrieves resources right in the browser.
  A version of the same tool could be built, where instead of letting the
  user's browser retrieve sites the server would do it.
- This way a non-technical user doesn't have to 
+ This way a non-technical user does not have to 
 \begin_inset Quotes eld
 \end_inset
 
@@ -7379,7 +7379,7 @@ normal
  A good alternative for such servers is phantomjs, which is built as a command
  line tool without any graphical user interface.
  It acts like a browser internally, including rendering the webpage to a
- image buffer that isn't displayed, and is controllable through the use
+ image buffer that is not displayed, and is controllable through the use
  of scripts.
  One such example script included in the default installation generates
  HAR files from a webpage visit.
@@ -8133,7 +8133,7 @@ Write about more scripts.
 
 \begin_layout Standard
 At the time of writing, there are 59 scripts in har-dulcify.
- Here's a selection with explanations.
+ Here is a selection with explanations.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8760,7 +8760,7 @@ name "sec:Failed-versus-non-failed"
 \end_layout
 
 \begin_layout Standard
-HAR data that doesn't have a parseable HTTP status outcome number (shown
+HAR data that does not have a parseable HTTP status outcome number (shown
  as 
 \begin_inset Flex Code
 status collapsed
@@ -8953,8 +8953,8 @@ Choosing the term non-failed instead of successful when it comes to dividing
  Successful requests are generally shown with a HTTP status code of 200
  (actually the entire 2xx group), or a 304 which means that a previously
  cached (presumably successful) result is still valid.
- Many sites respond with a 3xx status, which isn't exactly successful as
- it doesn't contain actual content, but can not be considered a failure
+ Many sites respond with a 3xx status, which is not exactly successful as
+ it does not contain actual content, but can not be considered a failure
  as it will most likely lead to another resource that is successful.
  While a status response of 4xx or 5xx shows there is a problem of some
  kind, for the purpose of this thesis a response that contains any HTTP
@@ -9282,7 +9282,7 @@ One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
 \end_layout
 
 \begin_layout Standard
-While the technology has been around a long time, it doesn't seem as if
+While the technology has been around a long time, it does not seem as if
  very many sites actually use HTTPS on their sites.
  Even origin sites that respond to HTTPS requests seem to either redirect
  to a HTTP site, or load at least some of its resources over non-HTTPS connectio
@@ -9851,7 +9851,7 @@ Facebook and Twitter have their like and tweet buttons which often are talked
  about in terms of social sharing, but it seems that their coverage is comparati
 vely low except for the .SE Health Status' media category.
  AddThis' service includes some of Facebook's and Twitter's buttons' functionali
-ty, among other social sharing sites but they don't have quite the same
+ty, among other social sharing sites but they do not have quite the same
  coverage.
  Unfortunately, Facebook and Twitter are both in Disconnect's special Disconnect
  category 
