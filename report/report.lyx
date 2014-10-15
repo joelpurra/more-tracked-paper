@@ -442,6 +442,27 @@ key "Malandrino:2013:PAI:2517840.2517868"
 
 \end_inset
 
+ While privacy is both hard to define as well as relative to perspective
+ and context, there is a correlation between trackers and online privacy;
+ more trackers means it becomes harder to control the flow of personal informati
+on and get an overview of where data ends up
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bylund:2013:978-91-87379-12-3:integritet"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add another privacy research summary in English.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
