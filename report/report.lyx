@@ -414,38 +414,41 @@ Background
 
 \begin_layout Standard
 In everyday web browsing, browsers routinely access a lot of material from
- other domains or services than the one visited.
+ other domains or services than the one visited 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Feldmann:2004:MEI:1028788.1028833"
 
 \end_inset
 
+.
  These external resources vary from content that the user explicitly want
  to obtain, to implicitly loaded third party services, ads, and non-visible
  resources with the sole purpose of collecting user data and statistical
- material.
+ material 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
+.
  All are downloaded on behalf of the user with no or few limitations, and
  oftentimes without the user's need, understanding and explicit consent.
  These external resources can all be seen as browsing habit trackers, whose
  knowledge and power increase with any additional visits to other domains
- or services loading the same resources.
+ or services loading the same resources 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Malandrino:2013:PAI:2517840.2517868"
 
 \end_inset
 
+.
  While privacy is both hard to define as well as relative to perspective
  and context, there is a correlation between trackers and online privacy;
  more trackers means it becomes harder to control the flow of personal informati
-on and get an overview of where data ends up
+on and get an overview of where data ends up 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bylund:2013:978-91-87379-12-3:integritet"
@@ -514,47 +517,51 @@ Depending on what activities a user performs online, different things can
 not
 \emph default
  to) by tagging articles with refined keywords and creating an interest
- graph.
+ graph 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kumar:2013:GBT:2522548.2523129"
 
 \end_inset
 
+.
  The range of taggable interests of course depend on the content of the
  news site.
  Private and sensitive information leaked to third party sites during typical
  interaction with some of the most popular sites in the world include personal
  identification (full name, date of birth, email, ip address, geolocation)
  and sensitive information (sexual orientation, religious beliefs, health
- issues).
+ issues) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Malandrino:2013:PAI:2517840.2517868"
 
 \end_inset
 
+.
  Social buttons, allowing users to share links with a simple click, are
- tracking users whether they are registered, logged in or not.
+ tracking users whether they are registered, logged in or not 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Roosendaal:2010:likethis"
 
 \end_inset
 
+.
  They are especially powerful when the user is registered and logged in,
  combining the full self-provided details of the user with their browsing
  habits - all within the bounds of the services' privacy policies agreed
  to by the user.
  Once a user has provided their personal information, it is no longer just
  the individual browser or device being tracked, but the actual person using
- it - even after logging out.
+ it - even after logging out 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kontaxis:2012:PSP:2362793.2362823,Krishnamurthy:2008:CPO:1397735.1397744"
 
 \end_inset
 
+.
  This direct association, as opposed to inferred, to the person also allows
  for tracking across devices where there is an overlap of services used.
 \begin_inset Note Greyedout
@@ -586,14 +593,14 @@ Publishers reserve areas of their web pages for displaying different kinds
 targeted
 \emph default
  with personalized ads depending on their specific personal data and browsing
- history.
+ history 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gill:2013:BPF:2504730.2504768"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -659,13 +666,14 @@ numprint{500}
 
 \end_inset
 
- most popular sites.
+ most popular sites 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
+.
  Google Analytics usage in a curated list of 
 \begin_inset ERT
 status open
@@ -679,17 +687,18 @@ numprint{900}
 
 \end_inset
 
- Swedish domains was 44% in 2010, 57% in 2011 and 62% 2012.
+ Swedish domains was 44% in 2010, 57% in 2011 and 62% 2012 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
 
 \end_inset
 
+.
  The assumption is that the number of external resources is at least as
  big, as they include both ads and Google Analytics.
  Technical reasons include cloud services hosting sites and services, content
- delivery networks becoming commonplace
+ delivery networks becoming commonplace 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2000:AFI:347319.346248,Krishnamurthy:2006:CMC:1135777.1135829"
@@ -719,13 +728,14 @@ Sites served over HTTPS are expected to use as many external resources as
 
 \begin_layout Standard
 News sites are expected to allow more trackers than other categories, as
- their income model include third party advertisements.
+ their income model include third party advertisements 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
+.
  Commercial sites are expected to have more trackers than government sites.
 \end_layout
 
@@ -767,7 +777,7 @@ Referer
 
 \end_inset
 
- HTTP header
+ HTTP header 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
@@ -776,13 +786,14 @@ key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 .
  While there are lists of known trackers, used by browser privacy tools,
- they are not 100% effective.
+ they are not 100% effective 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
+.
  The lists will instead optionally be used to emphasize those external resources
  as 
 \emph on
@@ -791,13 +802,14 @@ confirmed
  trackers.
  While cookies used for tracking have been a concern for many, they are
  not necessary in order to identify most users upon return, even uniquely
- on a global level.
+ on a global level 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Eckersley2009unique"
 
 \end_inset
 
+.
  Cookies will not be considered to be an indicator of tracking, as it can
  be assumed that a combination of other server and client side techniques
  can achieve the same goal as a tracking cookie.
@@ -4313,13 +4325,14 @@ Google Analytics
 One of the reasons this thesis subject was chosen was the inclusion of a
  Google Analytics coverage analysis in previous reports.
  The reports shows overall Google Analytics usage in the curated dataset
- of 44% 2010, 58% in 2011 and 62% in 2012.
+ of 44% 2010, 58% in 2011 and 62% in 2012 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
 
 \end_inset
 
+.
  Today, in 2014, usage in the category with the least coverage (financial
  services) is 58% while most are above 70% 
 \begin_inset CommandInset ref
@@ -4467,13 +4480,14 @@ HTTPS usage
 
 \begin_layout Standard
 .SE have measured HTTPS coverage among curated health status domains since
- at least 2007.
+ at least 2007 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lowinder:2008:healthstatus,Lowinder:2009:healthstatus,Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus,Lowinder:2013:healthstatus"
 
 \end_inset
 
+.
  The reports are a bit unclear about some numbers as measurement methodology
  and focus has shifted over the years, but the general results seem to line
  up with the results in this thesis 
@@ -5170,7 +5184,7 @@ Swedes and the internet
 \emph on
 .SE Health Status
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lowinder:2013:healthstatus"
@@ -5245,14 +5259,14 @@ target "http://www.internetfonden.se/"
 
  has also funded work on discussing and defining online privacy, aimed at
  those working with or developing systems that handle personal data, often
- with some kind of internet connection.
+ with some kind of internet connection 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bylund:2013:978-91-87379-12-3:integritet"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -5260,13 +5274,14 @@ While .SE themselves have written papers analyzing the technical state of
  services connected to .se domains, the focus has not been on exploring the
  web services connected to these domains.
  They do offer some groundwork in terms of selecting and grouping Swedish
- domains, HTTPS usage and Google Analytics coverage.
+ domains, HTTPS usage and Google Analytics coverage 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
 
 \end_inset
 
+.
  The report 
 \emph on
 .SE Health Status
@@ -5733,13 +5748,14 @@ Automated downloading of webpages, especially downloading several in short
  succession, can be seen by site and service owners as disruptive by using
  system resources and skewing statistical data.
  Traversing different pages on a single website can also be detected by
- looking at for example navigational patterns.
+ looking at for example navigational patterns 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tan:2002:DWR:593432.593521,Lourenco:2006:CWC:1145581.1145634"
 
 \end_inset
 
+.
  By only downloading the domain root page and associated resources this
  tool might not fall into that category of detection.
 \end_layout
@@ -5782,13 +5798,14 @@ If possible, a set of common browser plugins could be installed into phantomjs.
  An additional problem might be that Flash has its own cookie system, which
  used storage external to the browser.
  This brings a new set of potential problems, as Flash cookies are a big
- part of evercookies and cookie respawning.
+ part of evercookies and cookie respawning 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "G.-Acar:persistent:2014aa"
 
 \end_inset
 
+.
  This means that a headless browser without persistent storage might end
  up having identifier cookies set in Flash storage, thus being easily and
  uniquely identified on subsequent visits.
@@ -6289,7 +6306,7 @@ Cookie syncing
 \end_layout
 
 \begin_layout Standard
-A recent large-scale study
+A recent large-scale study 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "G.-Acar:persistent:2014aa"
@@ -6740,7 +6757,7 @@ CP="No P3P policy because it has been deprecated"
 \begin_layout Standard
 This is but one example of where quantitive analysis of real-world web pages
  shows differences between technical, intended or perceived usage.
- While P3P may be an outdated example that has been researched
+ While P3P may be an outdated example that has been researched 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CMU-CyLab-10-014"
@@ -7528,13 +7545,6 @@ name "sub:GNU-parallel"
 \end_inset
 
 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Tange2011a"
-
-\end_inset
-
-
 \begin_inset Foot
 status open
 
@@ -7561,6 +7571,13 @@ status collapsed
 \begin_layout Plain Layout
 parallel
 \end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tange2011a"
 
 \end_inset
 
@@ -10017,14 +10034,14 @@ Insert links to GA, DC policies.
  site owner consent.
  Cookies set to the doubleclick.net domain should be more valuable to Google
  than those set to google-analytics.com, as they translate to more directed
- ads.
+ ads 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gill:2013:BPF:2504730.2504768"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
