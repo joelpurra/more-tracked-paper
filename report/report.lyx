@@ -300,7 +300,7 @@ Introduction
 \begin_layout Standard
 How many companies are tracking you online, and how much information does
  the average Swede leak while using popular .se websites? Many, and a lot
- - more than you think.
+ - more than you may think.
  Large organizations 
 \begin_inset Note Greyedout
 status open
@@ -384,8 +384,8 @@ numprint{150000}
  Resources were grouped by mime type, URL protocol, domain, if it matches
  the domain the request originated from and compared to lists of known trackers
  and organizations.
- In this thesis I show the use of resources internal versus external to
- the entry domain, which the most common confirmed trackers are, what spread
+ This thesis shows the use of resources internal versus external to the
+ entry domain, which the most common confirmed trackers are, what spread
  they have and how much the average internet user can expect to be tracked
  by visiting some of the most important and popular sites in Sweden, Denmark
  and worldwide.
@@ -760,7 +760,8 @@ The thesis will primarily be written from a Swedish perspective.
  Focus is to analyze .se domains in the reports, as they have already been
  deemed important and results can be incorporated in future reports.
  The main non-technical grouping is also based on the same reports; government,
- media, banks, larger websites, etcetera.
+ media, financial institutions and other nation-wide publicly relevant organizat
+ion groups.
 \end_layout
 
 \begin_layout Standard
@@ -1142,6 +1143,19 @@ When .SE performs their annual
  service, internet service provider (ISP), domain registrar, and media domains.
  Some domains overlap both within and between categories; domains have been
  deduplicated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write a summary with examples from each dataset.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -3215,12 +3229,18 @@ reference "sub:phantomjs"
 \end_inset
 
  and similar tools.
- Unfortunately, outside of software errors, they are hard to detect without
- external analysis of connectivity.
- Each HTTP request has their HTTP status response recorded if it is available;
+ Unfortunately, outside of local software errors which may result in parseable
+ error messages, sources of the errors are hard to detect without an extensive
+ external analysis of DNS settings and network connectivity - and even so,
+ an automated analysis may include false negatives because of remote system
+ automated request countermeasures.
+\end_layout
+
+\begin_layout Standard
+Each HTTP request has their HTTP status response recorded if it is available;
  absence or numbers outside the RFC2616 range (100-599) indicates failure.
- Any error output the web page itself has produced, through javascript errors
- etcetera, have also been recorded in the HAR log or individual entry/request
+ Any error output the web page itself has produced, mostly because of javascript
+ errors, have also been recorded in the HAR log or individual entry/request
  comment fields.
 \end_layout
 
@@ -3240,23 +3260,33 @@ unsuccessful
 \end_layout
 
 \begin_layout Standard
-The first round of retries rendered the greatest results, and subsequent
- retries are less successful.
- This seem to point to some intermittent failures being recoverable, and
- that some domains will not respond.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Insert re-downloading table for at least one dataset.
+Insert re-downloading table for at least one dataset, like se.2014-07-10.random.100
+000-http-www.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The first round of retries rendered the greatest results, and subsequent
+ retries are less successful.
+ This seem to point to some intermittent failures being recoverable, and
+ that some domains will not respond.
+ Due to diminishing returns in the number of additional successful domains
+ in each retry cycle, the number of retries was limited to two 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-portent"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -3350,7 +3380,7 @@ target "http://tools.ietf.org/html/rfc2616"
 \labelwidthstring 00.00.0000
 Mime-type The HTTP content-type header, which is the body internet media
  type (previously known as Multipurpose Internet Mail Extensions (MIME)
- type, or ) combined with optional parameters, such as character encoding.
+ type) combined with optional parameters, such as character encoding.
 \end_layout
 
 \begin_layout Labeling
@@ -5139,9 +5169,10 @@ reference "sub:classification/disconnect/analysis.sh"
  According to Disconnect's Eason Goodale in an email conversation 2014-08-13,
  the team has been concentrating on a second version of Disconnect as well
  as other projects.
- While I can submit patches through Disconnect's Github project pages, Goodale's
- reply seems to indicate they will not be accepted in a timely fashion and
- perhaps irrelevant by the time the next generation is released to the public.
+ While patches can be submitted through Disconnect's Github project pages,
+ Goodale's reply seems to indicate they will not be accepted in a timely
+ fashion and perhaps irrelevant by the time the next generation is released
+ to the public.
 \end_layout
 
 \begin_layout Subsection
@@ -5559,9 +5590,9 @@ Creating an information website
 \end_layout
 
 \begin_layout Standard
-As some of this information is hard to retrieve, analyze and process for
- individuals, especially in aggregate despite code being open source, a
- separate tool performing the work for anyone should be created.
+Despite thesis code being open source, much of the thesis data is hard to
+ retrieve, analyze and process for individuals.
+ A separate tool performing the work for anyone should be created.
  Apart from presenting data already collected as a part of the thesis, it
  could accept user input to analyze individual domains.
  With several domains as input, any overlap can be detected and presented
@@ -5590,8 +5621,9 @@ risk
 
  anything by visiting web pages, and their relationship could be displayed
  anyways.
- It also allows for cached lookups and a grander scope, where further relationsh
-ips apart from the first hand ones could be suggested.
+ Collecting data server-side also allows for cached lookups and a grander
+ scope, where further relationships apart from the first hand ones could
+ be suggested.
  
 \begin_inset Quotes eld
 \end_inset
@@ -6005,9 +6037,9 @@ reference "sub:jq"
 
 ), which does not have a public release that implements in regular expressions
  support, a major part of some blocking lists.
- The idea is that ads etcetera are filtered matching requests' complete
- URL against the blocking rules, which are a mixture of both more coarse
- and more fine-grained than Disconnect's domain based rules.
+ The idea is that ads and related resources are filtered matching requests'
+ complete URL against the blocking rules, which are a mixture of both more
+ coarse and more fine-grained than Disconnect's domain based rules.
  One example is 
 \begin_inset Flex Code
 status collapsed
@@ -6456,11 +6488,11 @@ Add references to Dwight's claims?
 
 \end_inset
 
- I countered by saying that there are policy-wise useless P3P headers being
- sent from some webpages, most probably to bypass Internet Explorer's (not
- all versions) strict cookie rules for third-party site without a P3P HTTP
- header.
- This was been highlighted by Microsoft in 2012, pointing at Google's P3P
+ Thesis data shows that this is not always true; there are policy-wise useless
+ P3P headers being sent from some webpages, most probably to bypass Internet
+ Explorer's (not all versions) strict cookie rules for third-party site
+ without a P3P HTTP header.
+ This has been highlighted by Microsoft in 2012, pointing at Google's P3P
  use.
 \end_layout
 
@@ -7351,7 +7383,7 @@ target "http://phantomjs.org/"
 
 \begin_layout Standard
 Accessing webpages is normally done by users in a graphical browser; the
- browser downloads then displays images, executes scripts, plays videos.
+ browser downloads then displays images, executes scripts, and plays videos.
  A browser is user friendly but not optimal for batch usage due to the overhead
  in constantly drawing results on screen and the lack of automation without
  external tools such as Selenium Webdriver 
@@ -7658,10 +7690,6 @@ target "https://github.com/joelpurra/har-portent"
 
 \end_layout
 
-\begin_layout Quotation
-Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
-\end_layout
-
 \begin_layout Standard
 A set of scripts that both downloads, retries failed downloads and analyzes
  web sites in a single run - see har-heedless 
@@ -7816,13 +7844,10 @@ target "https://github.com/joelpurra/har-heedless"
 
 \end_layout
 
-\begin_layout Quotation
+\begin_layout Standard
 Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
  files, using phantomjs.
-\end_layout
-
-\begin_layout Standard
-With a simple text file with one domain name per line as input, har-heedless
+ With a simple text file with one domain name per line as input, har-heedless
  downloads all of their front pages.
  Downloads can be made either in serial or in parallel.
  The resulting HAR data is written in a folder structure per domain, with
@@ -8091,13 +8116,9 @@ target "https://github.com/joelpurra/har-dulcify"
 
 \end_layout
 
-\begin_layout Quote
-Extract data from HTTP Archive (HAR) files, quite possibly downloaded by
- har-heedless, for some aggregate analysis.
-\end_layout
-
 \begin_layout Standard
-HAR files by themselves contain too much data, so the relevant parts need
+Extract data from HTTP Archive (HAR) files for an aggregate analysis.
+ HAR files by themselves contain too much data, so the relevant parts need
  to be extracted.
  The extracted parts are then broken down into smaller parts that are easier
  to group and analyze, and added to the data alongside the original.
@@ -8289,8 +8310,9 @@ extract/request/parts.sh
 \end_layout
 
 \begin_layout Standard
-Extracts url, status, content-type (mime-type) etcetera from the originating
- domain front page request and the subsequent requests.
+Extracts url, status, content-type (mime-type) and other individual pieces
+ of data from the originating domain front page request and the subsequent
+ requests.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8795,13 +8817,13 @@ Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
  for HTTPS, meaning that 30-10% implement HTTPS.
  Random zone domains have a failure rate of above 20% for HTTP and above
  99% for HTTPS.
- The very low HTTPS adoption rates among random sites is both surprising
+\end_layout
+
+\begin_layout Standard
+The very low HTTPS adoption rates among random sites is both surprising
  and not surprising - while larger sites might have felt the pressure to
  implement them, a non-professional site owner might see it as both an unnecessa
 ry technical challenge and an unnecessary additional cost.
- With public IPv4 addresses running out and legacy browsers requiring one
- per HTTPS certificate it can add an additional cost to rent one for exclusive
- use.
  Most X.509 
 \begin_inset Note Greyedout
 status open
@@ -8822,7 +8844,10 @@ Insert link to PKI.
 
 \end_inset
 
- costing money to buy and install as well.
+ cost money to buy and install.
+ With public IPv4 addresses running out and legacy browsers requiring one
+ IP-address per HTTPS certificate, it can also lead to an additional fee
+ for renting an exclusive IP-address.
 \end_layout
 
 \begin_layout Standard
@@ -8912,11 +8937,60 @@ begin{futurework}
 \end_layout
 
 \begin_layout Standard
-Looking at the resulting HAR files means that both local software errors
+The difference between the number of domains in the dataset and the number
+ of analyzed domains - for example 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100000}
+\end_layout
+
+\end_inset
+
+ domains in 
+\begin_inset Quotes eld
+\end_inset
+
+se.2014-07-10.random.100000-http-www
+\begin_inset Quotes erd
+\end_inset
+
+ but 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{99428}
+\end_layout
+
+\end_inset
+
+ HAR files - is due to software crashes.
+ A higher domain response rate means a higher risk of a crash; larger datasets
+ have crashes in 0.25-2.5% of domains.
+ Most crashes were observed to be caused by malformed image data triggering
+ an uncaught software exception in the JPEG image decoder used by phantomjs.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Check if captured error messages can confirm the source.
+\end_layout
+
+\end_inset
+
+ Looking at the resulting HAR files means that both local software errors
  and remote errors are considered failures.
- While it might be technically possible to distinguish a software error
- from a remote error, it has not been analyzed apart from during initial
- development and debugging.
+ The analysis can be improved with additional testing and improvements to
+ phantomjs; missing HAR files have been ignored in further analysises.
 \end_layout
 
 \begin_layout Standard
