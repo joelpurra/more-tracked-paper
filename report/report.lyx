@@ -1290,1447 +1290,6 @@ end{futurework}
 \end_layout
 
 \begin_layout Chapter
-Software
-\end_layout
-
-\begin_layout Section
-Third party tools
-\end_layout
-
-\begin_layout Standard
-In order to download and analyze thousands of webpages in an automated fashion,
- a set of suitable tools were sought.
- Tools that are released as free and open source software have been preferred,
- and the tools written for the thesis have also been released as such.
- Development was performed in the Mac OS X operating system, but is thought
- to be runnable on other Unix-like platforms with relative ease.
-\end_layout
-
-\begin_layout Subsection
-HTTP Archive (HAR) format
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:HTTP-Archive-(HAR)-format"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.softwareishard.com/blog/har-12-spec/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In an effort to record and analyze network traffic as seen by individual
- browsers, the data/file format HTTP Archive (HAR) was developed.
- Browsers such as Google Chrome implement it as a complement to the network
- graph shown in the Developer Console, from where a HAR file can be exported.
- While constructed to analyze for example web performance, it also contains
- data suitable for this thesis: requested URLs and HTTP request/response
- headers such as referrer and content type.
- HAR files are based upon the JSON
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://json.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- standard 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert a link to the JSON standard as well.
-\end_layout
-
-\end_inset
-
-, which is a Javascript object compatible data format commonly used to communica
-te dynamic data between client side scripts in browsers and web servers.
- The most recent specification at the time of writing was HAR 1.2.
-\end_layout
-
-\begin_layout Subsection
-phantomjs
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:phantomjs"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://phantomjs.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Accessing webpages is normally done by users in a graphical browser; the
- browser downloads then displays images, executes scripts, plays videos.
- A browser is user friendly but not optimal for batch usage due to the overhead
- in constantly drawing results on screen and the lack of automation without
- external tools such as Selenium Webdriver 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to Selenium Webdriver.
-\end_layout
-
-\end_inset
-
-.
- While Webdriver can be used to control several kinds of browsers, such
- as Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, they are
- not suitable for usage on a rack server that was not set up with 
-\begin_inset Quotes eld
-\end_inset
-
-normal
-\begin_inset Quotes erd
-\end_inset
-
- browser usage in mind - that is with desktop software functionalities.
- A good alternative for such servers is phantomjs, which is built as a command
- line tool without any graphical user interface.
- It acts like a browser internally, including rendering the webpage to a
- image buffer that isn't displayed, and is controllable through the use
- of scripts.
- One such example script included in the default installation generates
- HAR files from a webpage visit.
- phantomjs has been implemented on top of the web page renderer Webkit library
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to Webkit.
-\end_layout
-
-\end_inset
-
-, also used in Apple Safari, Opera and previously Google Chrome.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-There are alternatives to phantomjs, but they have not been tested within
- the scope of the thesis.
- Future versions could try alternative automated browsers to verify phantomjs'
- results.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert names and links to alternatives.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-jq
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:jq"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://stedolan.github.io/jq/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-While there are command line tools to transform data in for example plain
- text, CSV and XML files, tools to work with JSON files are not as prevalent.
- One such tool gaining momentum is jq, which is implemented with a domain
- specific language (DSL) suitable for extracting or transforming data.
- The DSL is based around a set of filters, similar to pipes in the Unix
- world, transforming the input and passing it on to the next stage.
- jq performs well with large datasets, as it treats data as a stream where
- each top-level object is treated separately.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-At the time of writing, jq is released as version 1.4.
- Support for regular expressions is planned for version 1.5, which has been
- in the making for the duration of the thesis.
- As the thesis code is run on multiple machines/systems and expected to
- deliver the same results, using standardized packages has been a part of
- ensuring that.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-GNU 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-parallel
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:GNU-parallel"
-
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Tange2011a"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.gnu.org/software/parallel/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-To parallelize task execution, GNU 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-parallel
-\end_layout
-
-\end_inset
-
- has been used.
- It allows an input file to be distributed among several processes/CPU cores,
- and the results to be combined into a single file.
- It helps speed up downloading of HAR files, and processing of the JSON
- data through jq, which is single threaded.
-\end_layout
-
-\begin_layout Section
-Code
-\end_layout
-
-\begin_layout Standard
-In order to efficiently and repeatably download and analyze web pages, special
- tools have been written.
- Most of the code is written in bash 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add link to Bash.
-\end_layout
-
-\end_inset
-
- scripts utilizing external commands when possible, such as jq.
- The code for the jq commands has been embedded in the bash scripts.
-\end_layout
-
-\begin_layout Standard
-The source code for the respective projects have been released to the public
- under GNU General Public License version 3.0 (GPL-3.0)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.gnu.org/licenses/gpl.html"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, so other projects can make use of them as well.
- 
-\end_layout
-
-\begin_layout Subsection
-har-portent
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:har-portent"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/joelpurra/har-portent"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Quotation
-Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
-\end_layout
-
-\begin_layout Standard
-A set of scripts that both downloads, retries failed downloads and analyzes
- web sites in a single run - see har-heedless 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:har-heedless"
-
-\end_inset
-
- and har-dulcify 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:har-dulcify"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-domains/download-and-analyze-https-www-combos.sh <parallelism> <domainlists>
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Uses 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-domains/download-and-analyze.sh
-\end_layout
-
-\end_inset
-
- to download four variations 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Dataset-variations"
-
-\end_inset
-
- of the same domains, so any differences between secure/insecure and www-prefixe
-d domains can be observed.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://www.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://www.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-domains/download-and-analyze.sh <prefix> <parallelism> <domainlists>
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Downloads a list of domains in parallel, with automatic per-prefix/input
- file folder and log file and creation.
- It also performs automatic retries for failed domains two times per dataset,
- with an increased parallelism as retries are mostly expected to yield another
- network timeout or error.
-\end_layout
-
-\begin_layout Subsection
-har-heedless
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:har-heedless"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/joelpurra/har-heedless"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Quotation
-Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
- files, using phantomjs.
-\end_layout
-
-\begin_layout Standard
-With a simple text file with one domain name per line as input, har-heedless
- downloads all of their front pages.
- Downloads can be made either in serial or in parallel.
- The resulting HAR data is written in a folder structure per domain, with
- a timestamp in the file name.
- The script that extracts HAR data, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-netsniff.js
-\end_layout
-
-\end_inset
-
-, is based on example code shipped with phantomjs, but modified to be more
- stable.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-get/netsniff.js
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:get/netsniff.js"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A modified version of 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-netsniff.js
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to the original netsniff.js example.
-\end_layout
-
-\end_inset
-
- from the phantomjs project.
-\end_layout
-
-\begin_layout Standard
-Some fixes include:
-\end_layout
-
-\begin_layout Itemize
-Stable, logged output when resources failed to download.
-\end_layout
-
-\begin_layout Itemize
-Adding error messages as HAR comments.
-\end_layout
-
-\begin_layout Itemize
-Adding a base64 encoded page screenshot as an extended field.
-\end_layout
-
-\begin_layout Itemize
-Waiting a period of time after downloading the web page before generating
- output, to let asynchronous downloading, processing and rendering finish.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-These patches have not yet been submitted to the phantomjs project.
- They should be split up into separate parts for the convenience of the
- project maintainers.
- A complete refactoring is also an alternative, but it might be less likely
- to be accepted.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-get/har.sh <url>
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Contains logic to run 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-netsniff.js
-\end_layout
-
-\end_inset
-
- through phantomjs.
- If phantomjs crashed or otherwise encountered an error, a fallback HAR
- file is generated with a dummy response explaining that an error occurred.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-url/single.sh <domain> [--screenshot <true|false>]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Downloads a URL of a single domain, and takes care of writing the HAR output
- to the correct folder and file.
- If a screenshot has been requested, it is extracted (and removed) from
- the extended HAR data and written to a separate file parallel to the resulting
- HAR file.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-url/parallel.sh [parallel-processes [--screenshot <true|false>]]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Uses GNU parallel to download multiple webpages at a time.
- The number of separate processes running is adjusted per machine, depending
- on capacity, with 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-parallel-processes
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-domain/parallel.sh <prefix> [parallel-processes [--screenshot <true|false>]]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Download the front pages of a list of domains, in parallel, using a specific
- prefix, such as 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://www.
-\end_layout
-
-\end_inset
-
-.
- See 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-url/parallel.sh
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-har-dulcify
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:har-dulcify"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/joelpurra/har-dulcify"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Quote
-Extract data from HTTP Archive (HAR) files, quite possibly downloaded by
- har-heedless, for some aggregate analysis.
-\end_layout
-
-\begin_layout Standard
-HAR files by themselves contain too much data, so the relevant parts need
- to be extracted.
- The extracted parts are then broken down into smaller parts that are easier
- to group and analyze, and added to the data alongside the original.
- With the expanded data in place, requests are classified by basic measures
- and matched against external datasets.
- Scripts are written to perform only a limited task and instead be chained
- together by piping the data between them.
- As the scripts generally connect in only one way, the convenience scripts
- in the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-one-shot/
-\end_layout
-
-\end_inset
-
- folder are used the most.
- These convenience scripts also leave the files from partial executions,
- so the can be used for other kinds of analysis.
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about more scripts.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-At the time of writing, there are 59 scripts in har-dulcify.
- Here's a selection with explanations.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-one-shot/all.sh [har-folder-path]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Runs 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-preparations.sh
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-data.sh
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-aggregate.sh
-\end_layout
-
-\end_inset
-
- based on data in the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-folder-path
-\end_layout
-
-\end_inset
-
- (defaulting to the current folder) outputting the results to the current
- folder.
- This is the true one-shot script you want to run for one off analysis.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-one-shot/preparations.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Downloads, prepares and analyses third party datasets, and puts them in
- the current folder for use by subsequent scripts.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-one-shot/data.sh [har-folder-path]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Processes all HAR files in the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-har-folder-path
-\end_layout
-
-\end_inset
-
- (defaulting to the current folder), and puts the output in the same folder.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-one-shot/aggregate.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Prepares data for aggregation by counting occurrences in each domain's data,
- then adds them together to a single file containing an aggregate analysis.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-domains/latest/all.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Finds and lists the paths to the most recent HAR files, per domain.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-extract/request/parts.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Extracts url, status, content-type (mime-type) etcetera from the originating
- domain front page request and the subsequent requests.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-extract/request/expand-parts.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Keeps the original data, but also expands the url and mime-type into their
- respective parts, and adds simple grouping to status and mime-type.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/basic.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Add basic classifications, such as if a request is internal or external
- to the originating domain, and if the request is secured with HTTPS.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/disconnect/prepare-service-list.sh
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:classification/disconnect/prepare-service-list.sh"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Prepares Disconnect's blocking list from the original format where blocked
- domains are stored deep in the structure, to one where domains are top
- level map keys, prepared for fast lookups.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/disconnect/add.sh 
-\family roman
-<prepared-disconnect-dataset-path>
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:classification/disconnect/add.sh"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Matches each requested domain against Disconnect's list of domains to block,
- and adds the results to the output.
- Disconnect's original 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-service.json
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/disconnectme/disconnect/raw/master/firefox/content/disconnect.safariextension/opera/chrome/data/services.json"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- (or 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-disconnect-plaintext.json
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://services.disconnect.me/disconnect-plaintext.json"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-) needs to be prepared through 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/disconnect/prepare-service-list.sh
-\end_layout
-
-\end_inset
-
- before being used.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/disconnect/analysis.sh
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:classification/disconnect/analysis.sh"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Analyses Disconnect's blocking list and collects some aggregate numbers.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/effective-tld/add.sh 
-\family roman
-<prepared-disconnect-dataset-path
-\series bold
->
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:classification/effective-tld/add.sh"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Matches each requested domain against Mozilla's Public Suffix list of effective
- top level domain names, and adds the results to the output.
- The original 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-effective_tld_names.dat
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://publicsuffix.org/list/effective_tld_names.dat"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- needs to be prepared through 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-classification/effective-tld/prepare-list.sh
-\end_layout
-
-\end_inset
-
- before being used.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-aggregate/prepare.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-aggregate/prepare2.sh
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Rename this script?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Running the aggregation before analysis is currently not possible in a single
- step, as jq requires all data for the reduce step to be in memory.
- The solution is to first map the data to a suitable format, and then reduce
- them in chunks repeatedly.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-aggregate/analysis.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Takes counts and lists of values, and reduces them to easy to present values,
- percentages and top lists.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-questions/google-gtm-ga-dc.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Analyze the impact of Google Tag Manager on coverage for other Google services,
- specifically Google Analytics and DoubleClick.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-questions/origin-redirects.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Analyze requests to see if there are redirects from the origin page initially
- requested.
- One of the most interesting things to look at is wether or not domains
- redirect to or from secure https domains.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-multiset/*.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A set of scripts that perform tasks on multiple datasets at once - an aggregate
- of aggregates usually.
- The scripts were developed late in the process, to extract small pieces
- of data per dataset for the report.
- The small pieces of data are combined to files with tab-separated values,
- which are the source of most data tables in the report.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about multiset scripts.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
 Data sources
 \end_layout
 
@@ -4575,7 +3134,7 @@ Each dataset has the variation appended to the name in the results chapter
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:Results"
+reference "chap:Detailed-Results"
 
 \end_inset
 
@@ -5760,1567 +4319,6 @@ After downloading several datasets, it is often interesting to compare them
  side by side.
  The multiset queries extract pieces of data from several datasets, and
  combine them into a single files.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Results
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Results"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Answer questions posed earlier.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Differences between datasets
-\end_layout
-
-\begin_layout Standard
-Domains lists chosen for this thesis come in three major categories - top
- lists, curated lists and random selection from zone files.
- While the top lists and curated lists are assumed to primarily contain
- sites with staff or enthusiasts to take care of them and make sure they
- are available and functioning, the domain lists randomly extracted from
- TLD zones might not.
- Results below seem to fall into groups of non-random and randomly selected
- domains - and result discussions often group them as such.
-\end_layout
-
-\begin_layout Section
-Failed versus non-failed
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Failed-versus-non-failed"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-HAR data that doesn't have a parseable HTTP status outcome number (shown
- as 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-(null)
-\end_layout
-
-\end_inset
-
- in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:HTTP-status-codes"
-
-\end_inset
-
-) is considered a failed request.
- In order to reduce temporary or intermittent problems, all domains that
- failed were retried up to two times 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:har-portent"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
- for HTTPS, meaning that 30-10% implement HTTPS.
- Random zone domains have a failure rate of above 20% for HTTP and above
- 99% for HTTPS.
- The very low HTTPS adoption rates among random sites is both surprising
- and not surprising - while larger sites might have felt the pressure to
- implement them, a non-professional site owner might see it as both an unnecessa
-ry technical challenge and an unnecessary additional cost.
- With public IPv4 addresses running out and legacy browsers requiring one
- per HTTPS certificate it can add an additional cost to rent one for exclusive
- use.
- Most X.509 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to X.509.
-\end_layout
-
-\end_inset
-
- public key infrastructure (PKI) certificates 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to PKI.
-\end_layout
-
-\end_inset
-
- costing money to buy and install as well.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.retries.rates.tsv}{Dataset HAR failure rates}{Dataset,Domains,Suc
-cessful,Unsuccessful,Non-failed,Failed,Non-failure rate,Failure rate}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}, display columns/2/.style={string type, column
- type=i}, display columns/3/.style={string type, column type=i}, display
- columns/4/.style={string type, column type=i}, display columns/5/.style={string
- type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-During analysis har-dulcify splits results into unfiltered and filtered,
- non-failed origin domains.
- Unless otherwise mentioned, further results are presented based only on
- non-failed domains in each dataset, as failed origin requests add nothing
- to the further resource analysis.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-There might be an overlap between failed HTTP/HTTPS and non-www/www dataset
- variations, but at the moment they are treated separately.
- If domains that failed to respond to HTTP requests are removed from the
- HTTPS set in a filter step, HTTPS failure statistics might be lower - and
- the same goes for www variations.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Looking at the resulting HAR files means that both local software errors
- and remote errors are considered failures.
- While it might be technically possible to distinguish a software error
- from a remote error, it has not been analyzed apart from during initial
- development and debugging.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-HTTP status codes
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:HTTP-status-codes"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Choosing the term non-failed instead of successful when it comes to dividing
- and focusing result discussions has its basis in the HTTP standard, which
- defines a status code.
- Successful requests are generally shown with a HTTP status code of 200
- (actually the entire 2xx group), or a 304 which means that a previously
- cached (presumably successful) result is still valid.
- Many sites respond with a 3xx status, which isn't exactly successful as
- it doesn't contain actual content, but can not be considered a failure
- as it will most likely lead to another resource that is successful.
- While a status response of 4xx or 5xx shows there is a problem of some
- kind, for the purpose of this thesis a response that contains any HTTP
- status number is still considered a non-failure, as the remote system has
- responded with a proper HTTP response parseable by phantomjs and har-heedless.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about redirect responses.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
- response code/group coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A further analysis might disregard 4xx and 5xx responses as well, but current
- numbers suggest the difference would not be significant.
- While this can be because of software problems, they do exist and therefore
- the software seems to work as intended.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Internal versus external resources
-\end_layout
-
-\begin_layout Standard
-The table shows non-failed origin domains having requests strictly to the
- same domain, subdomains, superdomains or same primary domain - jointly
- known as internal domains - or external (non-internal) domains.
- Origin domains that are not exclusively loading from either internal or
- external resources are loading from mixed domains.
- Mixing resources from both internal and external domains is the most common
- way to compose a web page for datasets not randomly chosen from zones,
- although it is quite common for random domains as well.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about any exciting conclusions.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{Internal
- versus external resources coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-During analysis har-dulcify splits results into unfiltered, internal and
- external resources, each treated the same way in terms of classifications,
- allowing separate conclusions to be drawn.
-\end_layout
-
-\begin_layout Section
-Request counts
-\end_layout
-
-\begin_layout Standard
-The table shows counts of all requests, internal requests and external requests.
- External requests matching Disconnect's blocking lists are also shown.
- These values are then shown as average count per domain, and ratio of all
- requests.
- Lastly, Disconnect's matches are shown as ratio of external requests.
-\end_layout
-
-\begin_layout Standard
-It is interesting to look at the number of requests, as they differ between
- datasets.
- Random TLD domains have a low 26-29 requests per domain, random Alexa top
- sites a medium 71-76 - but the very Alexa top comes in at 83-105.
- The smaller datasets reach50 comes to 87, and the even smaller dataset
- .SE Health Status' media sets the record at 197 requests per domain!
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about internal per domain.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about external per domain.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about disconnect per domain.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about internal ratio.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about external ratio.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about disconnect ratio.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about disconnect over external ratio.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add a totals row, or at least mention request totals.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.requests.counts.sorted.tsv}{Requests, per domain
- and ratios}{}{fixed, precision=2, display columns/0/.style={string type,
- column type=l}, display columns/1/.style={string type, column type=i}, display
- columns/2/.style={string type, column type=i}, display columns/3/.style={string
- type, column type=i}, display columns/4/.style={string type, column type=i},
- display columns/5/.style={string type, column type=i}, display columns/6/.style={
-precision=0}, display columns/7/.style={precision=0}, display columns/8/.style={pr
-ecision=0}, display columns/9/.style={precision=0}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Request coverage
-\end_layout
-
-\begin_layout Standard
-Write about internal, external and disconnect coverage - as opposed to count
- and requests per domain.
-\end_layout
-
-\begin_layout Section
-Insecure versus secure resources
-\end_layout
-
-\begin_layout Standard
-Using HTTPS to secure the connection between site and site users is considered
- an effective way to avoid prying eyes on the otherwise technically quite
- open and insecure internet.
- Sites which handle sensitive information, such as e-commerce shops, online
- payment providers and of course banks often tout being secure to use -
- and they have strong financial incentives to provide a service that is
- (or at least comes across as) trustworthy.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Reference for strong financial incentives for security?
-\end_layout
-
-\end_inset
-
- As browsers will warn users if a site secured with HTTPS loads resources
- over non-HTTPS connections, site developers will have to make sure each
- and every request is secure to avoid being labeled not trustworthy.
- This also applies to third-party services, which have to make sure to provide
- HTTPS in order to be able to continue providing services to sites making
- the switch to a fully secured experience.
-\end_layout
-
-\begin_layout Standard
-One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
- can use traffic sniffers to get a hold of sensitive information leaking
- out through HTTP, or man in the middle attacks on several kinds of resources
- to insert malicious code, even though the site is supposed to be protected.
- The follow table shows which to what extent sites manage to take full advantage
- of HTTPS, and to which extent they fail in requesting either internal or
- external resources.
-\end_layout
-
-\begin_layout Standard
-While the technology has been around a long time, it doesn't seem as if
- very many sites actually use HTTPS on their sites.
- Even origin sites that respond to HTTPS requests seem to either redirect
- to a HTTP site, or load at least some of its resources over non-HTTPS connectio
-ns.
- Typing in a HTTPS address into the browser's address bar will actually
- only give full HTTPS security on 27-58% of the domains - a number where
- the random domains surprisingly beat the non-random ones.
-\end_layout
-
-\begin_layout Standard
-Why is adoption lower for top sites? As high-traffic sites they might have
- a high system load, and since HTTPS require some extra processing and data
- exchange, they might have deferred it until the security is 
-\emph on
-really
-\emph default
- needed - like when passwords of financial information is entered.
- Strict HTTPS performance concerns were dismissed by Google engineers in
- 2xxx 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Look up year, insert link.
-\end_layout
-
-\end_inset
-
- - and Google has since implemented HTTPS as an alternative for most and
- the default for some services.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to Google's HTTPS defaults.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Another concern is that curated domain lists seem to exhibit an even lower
- HTTPS adoption than both random and top domains - the domains have been
- selected as they are deemed important to the public in some way.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update paragraph after HTTPS for 
-\emph on
-.SE Health Status
-\emph default
- datasets is finished.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Secure
- versus insecure resources coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-HTTP, HTTPS and redirects
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:HTTP,-HTTPS-and-redirects"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about HTTPS to HTTP redirects.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert table based on origin-redirects.sh.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Content type group coverage
-\end_layout
-
-\begin_layout Standard
-Bytes sent from the server to the browser generally has an associated type,
- so the browser can parse and use them properly.
- The types can be grouped 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Mime-type"
-
-\end_inset
-
-; incorrect or unknown types that did not match a group is shown as 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-(null)
-\end_layout
-
-\end_inset
-
- below.
- The difference between what can be achieved between different types of
- resources makes the distribution interesting.
- Images 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Does SVG images allow loading external resources?
-\end_layout
-
-\end_inset
-
- and text (unless improperly labeled during transfer and parsed as another
- format) loaded by a browser provide no additional way to load further resources
-, while html, scripts and styles do.
- While data resources can trigger downloading additional resources based
- on the logic that consumes the data, it still requires another type of
- resource present to do that.
-\end_layout
-
-\begin_layout Standard
-Objects and external documents can also access additional resources, but
- the use of those types of resources has been very low in the extracted
- data.
- There might be several reasons, but the fact that the tests were run on
- a headless browser without additional plugins installed is probably the
- biggest in this case.
- An additional reason might be adoption of HTML5 and client side javascript
- instead of Flash for visual, dynamic material and animations.
- This evolution has been fueled by Apple's resistance towards supporting
- Flash on their handheld devices.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Reference Apple's Flash implementation resistance.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Note that web fonts have fairly low numbers here, but that they can also
- be served as styles which dynamically load additional fonts URLs.
- This is how Google Fonts do it, using the fonts.googleapis.com domain 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Trackers-which-deliver-content"
-
-\end_inset
-
- to serve styles and gstatic.com to serve fonts dynamically selected to match
- to browser web font compatibility level, which could then be factored into
- these numbers 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Top-domains-Google"
-
-\end_inset
-
-.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Rerun data analysis with updated font mime types?
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Break out numbers specifically for font mime (group) and fonts,googleapis.com
- and gstatic.com?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Origin
-\end_layout
-
-\begin_layout Standard
-Practically all successful origin requests result in a html response.
- The range is 84-100% html, with the difference being seemingly misconfigured
- responses, part of which are redirects without actual content 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:HTTP,-HTTPS-and-redirects"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Internal
-\end_layout
-
-\begin_layout Standard
-Internal requests exclude the requests to the origin page.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{Content
- type group coverage}{}{fixed, display columns/0/.style={string type, column
- type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-External
-\end_layout
-
-\begin_layout Standard
-External resources from each group enjoy almost the same coverage as their
- internal counterparts.
- Among non-zone datasets scripts often reach above 90% coverage, showing
- that active and popular web pages contain a lot of external dynamic material.
- Images, while not dynamic, as well as styles and html are also popular
- to load externally.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
- type group coverage}{}{fixed, display columns/0/.style={string type, column
- type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As some external file types can trigger further HTTP requests, it might
- be possible to build a hierarchy of requests.
- The easiest way is to look at resources loaded in HTML 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<iframe>
-\end_layout
-
-\end_inset
-
- (or the now less popular 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<frame>
-\end_layout
-
-\end_inset
-
-) as they will have a HTTP 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-referer
-\end_layout
-
-\end_inset
-
- header set to the URL of the frame.
- Scripts and styles requesting other resources directly, without the use
- of frames, cannot be detected as a strict hierarchy.
- With the large number of requests made from different sites, URLs can be
- cleaned up (for example removing unique identifiers or looking at domain
- parts only) and connected in a graph and analyzed for similarities.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Public suffix coverage
-\end_layout
-
-\begin_layout Standard
-Resources served from external URLs may well come from other public suffixes;
- here they have been grouped by TLD.
- The connections between datasets and TLDs is interesting; .se datasets load
- more from .se domains than others, and the equivalent is valid for .dk datasets.
- We can also see that despite Alexa's top 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{10000}
-\end_layout
-
-\end_inset
-
- being an international list, nearly 19% of them use resources are loaded
- from .se domains.
- This points towards those sites being aware of the country of origin for
- the request, leading to localized content being served.
- It is also evident that the .com TLD is the most widespread for external
- resources - it beats same-TLD coverage.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Compare to TLD counts in 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:TLD-distribution"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
- suffixes in external resources}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Future downloads could be performed from other countries to measure location-dep
-endent service coverage.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Disconnect's blocking list matches
-\end_layout
-
-\begin_layout Standard
-Coverage for requested external URL domains matching Disconnect's list 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:classification/disconnect/add.sh"
-
-\end_inset
-
-.
- As the list contains which category and organization each domain belongs
- to 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect's-blocking-list"
-
-\end_inset
-
-, they have been grouped to display aggregates.
-\end_layout
-
-\begin_layout Subsection
-Domain and organization counts
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about how many blocked domains and organizations are represented per
- dataset.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Top domains
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Top-domains"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A selection of domains, and their coverage across different datasets.
- Worth noting is that many recognizable domains belong to organization which
- have multiple domains 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect-Organizations-in-more-than-one-category"
-
-\end_inset
-
-, so their total organization coverage is higher.
- This first table excludes top Google domains, which dominates the top list
- for all datasets.
-\end_layout
-
-\begin_layout Subsubsection
-General
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Top-domains-General"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Facebook and Twitter have their like and tweet buttons which often are talked
- about in terms of social sharing, but it seems that their coverage is comparati
-vely low except for the .SE Health Status' media category.
- AddThis' service includes some of Facebook's and Twitter's buttons' functionali
-ty, among other social sharing sites but they don't have quite the same
- coverage.
- Unfortunately, Facebook and Twitter are both in Disconnect's special Disconnect
- category 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect-category"
-
-\end_inset
-
-, and are not reflected in the social category aggregates 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Top-categories"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-The domain cloudfront.net belonging to Amazon, is hosting services, file
- and data on behalf of other organizations on subdomains 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Public-suffix-list"
-
-\end_inset
-
-.
- While it is clear that Amazon can analyze and use traffic information from
- hosted services, the data itself can be assumed to belong to the hosted
- organizations.
- This is a strong reason why the domain is listed as content in Disconnect's
- blocking list - because of the variety of services being hosted on subdomains,
- it cannot be blocked as for example advertisement even if it is being hosted
- there.
- It can be seen as a flaw in the Disconnect way of blocking.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top
- Disconnect domain match coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-One thing to look closer at is cloudfront.net's subdomains, to analyze their
- content and which sites use them.
- Are they used as CDNs local to a single domain, or do third-party services
- host content there? If so, what kind of content? Are there similar patterns
- for Amazon AWS and other cloud services? See also public suffixes owned
- by private companies 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Public-suffix-list"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Google
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Top-domains-Google"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Google has many domains in Disconnect's blocking list 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect-Domains-per-organization"
-
-\end_inset
-
-, and many in the top results.
- One of the reasons is that they have several popular services with content
- 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Trackers-which-deliver-content"
-
-\end_inset
-
-, but the top Disconnect-recognized domain in most datasets is google-analytics.c
-om, with googleapis.com and www.google.com as the top result in the others.
-\end_layout
-
-\begin_layout Standard
-Here we see DoubleClick's, one of Google's ad services, coverage.
- Unfortunately it has not been included in Disconnect's advertisement category,
- and it skews the numbers for the advertisement category 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Top-categories"
-
-\end_inset
-
-, nor has Google Analytics been put in the analytics category.
- Google Analytics is served from its own domain, but Google is making a
- push to move site owners to the DoubleClick domain, where they have replicated
- the Google Analytics engine.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to Google's push towards DoubleClick.
-\end_layout
-
-\end_inset
-
- The reason given to site owners using Google Analytics is that the DoubleClick
- tracker offers implementors additional rich audience information such as
- age, gender and interests on top of their current technical analysis from
- Google Analytics.
- The underlying reason is possibly that Google wants DoubleClick, which
- brings a lot of income, to have greater coverage across web sites - greater
- coverage meaning more and higher quality visitor information.
- While Google owns both services, site owner/visitor/usage policies 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert links to GA, DC policies.
-\end_layout
-
-\end_inset
-
- might prevent Google from crossmatching information between them without
- site owner consent.
- Cookies set to the doubleclick.net domain should be more valuable to Google
- than those set to google-analytics.com, as they translate to more directed
- ads.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gill:2013:BPF:2504730.2504768"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.disconnect.domains.coverage.external.google.sorted.tsv}{Top
- Disconnect Google domain match coverage}{}{fixed, display columns/0/.style={stri
-ng type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Top categories
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Top-categories"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Categories and their coverage across different datasets.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about high content trackers.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about low advertisement, compare to DoubleClick.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about low analytics, compare to Google Analytics.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}{Discon
-nect category match coverage}{}{fixed, display columns/0/.style={string type,
- column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Top organizations
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Top-organizations"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A selection of organizations, and their coverage across different datasets.
- Facebook and Twitter are often touted as the big social network sites,
- but in terms of domain coverage they are far behind Google.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}{Top
- Disconnect organization match coverage}{}{fixed, display columns/0/.style={strin
-g type, column type=l}, display columns/1/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Non-blocked external domains
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
@@ -10226,6 +7224,3009 @@ description "A data format based on Javascript objects. Often used on the intern
 LatexCommand bibtex
 bibfiles "../references/thesis"
 options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Software
+\end_layout
+
+\begin_layout Section
+Third party tools
+\end_layout
+
+\begin_layout Standard
+In order to download and analyze thousands of webpages in an automated fashion,
+ a set of suitable tools were sought.
+ Tools that are released as free and open source software have been preferred,
+ and the tools written for the thesis have also been released as such.
+ Development was performed in the Mac OS X operating system, but is thought
+ to be runnable on other Unix-like platforms with relative ease.
+\end_layout
+
+\begin_layout Subsection
+HTTP Archive (HAR) format
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:HTTP-Archive-(HAR)-format"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.softwareishard.com/blog/har-12-spec/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In an effort to record and analyze network traffic as seen by individual
+ browsers, the data/file format HTTP Archive (HAR) was developed.
+ Browsers such as Google Chrome implement it as a complement to the network
+ graph shown in the Developer Console, from where a HAR file can be exported.
+ While constructed to analyze for example web performance, it also contains
+ data suitable for this thesis: requested URLs and HTTP request/response
+ headers such as referrer and content type.
+ HAR files are based upon the JSON
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://json.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ standard 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert a link to the JSON standard as well.
+\end_layout
+
+\end_inset
+
+, which is a Javascript object compatible data format commonly used to communica
+te dynamic data between client side scripts in browsers and web servers.
+ The most recent specification at the time of writing was HAR 1.2.
+\end_layout
+
+\begin_layout Subsection
+phantomjs
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:phantomjs"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://phantomjs.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Accessing webpages is normally done by users in a graphical browser; the
+ browser downloads then displays images, executes scripts, plays videos.
+ A browser is user friendly but not optimal for batch usage due to the overhead
+ in constantly drawing results on screen and the lack of automation without
+ external tools such as Selenium Webdriver 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Selenium Webdriver.
+\end_layout
+
+\end_inset
+
+.
+ While Webdriver can be used to control several kinds of browsers, such
+ as Microsoft Internet Explorer, Mozilla Firefox, Google Chrome, they are
+ not suitable for usage on a rack server that was not set up with 
+\begin_inset Quotes eld
+\end_inset
+
+normal
+\begin_inset Quotes erd
+\end_inset
+
+ browser usage in mind - that is with desktop software functionalities.
+ A good alternative for such servers is phantomjs, which is built as a command
+ line tool without any graphical user interface.
+ It acts like a browser internally, including rendering the webpage to a
+ image buffer that isn't displayed, and is controllable through the use
+ of scripts.
+ One such example script included in the default installation generates
+ HAR files from a webpage visit.
+ phantomjs has been implemented on top of the web page renderer Webkit library
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Webkit.
+\end_layout
+
+\end_inset
+
+, also used in Apple Safari, Opera and previously Google Chrome.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are alternatives to phantomjs, but they have not been tested within
+ the scope of the thesis.
+ Future versions could try alternative automated browsers to verify phantomjs'
+ results.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert names and links to alternatives.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+jq
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:jq"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://stedolan.github.io/jq/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While there are command line tools to transform data in for example plain
+ text, CSV and XML files, tools to work with JSON files are not as prevalent.
+ One such tool gaining momentum is jq, which is implemented with a domain
+ specific language (DSL) suitable for extracting or transforming data.
+ The DSL is based around a set of filters, similar to pipes in the Unix
+ world, transforming the input and passing it on to the next stage.
+ jq performs well with large datasets, as it treats data as a stream where
+ each top-level object is treated separately.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the time of writing, jq is released as version 1.4.
+ Support for regular expressions is planned for version 1.5, which has been
+ in the making for the duration of the thesis.
+ As the thesis code is run on multiple machines/systems and expected to
+ deliver the same results, using standardized packages has been a part of
+ ensuring that.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GNU-parallel"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tange2011a"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.gnu.org/software/parallel/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To parallelize task execution, GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+ has been used.
+ It allows an input file to be distributed among several processes/CPU cores,
+ and the results to be combined into a single file.
+ It helps speed up downloading of HAR files, and processing of the JSON
+ data through jq, which is single threaded.
+\end_layout
+
+\begin_layout Section
+Code
+\end_layout
+
+\begin_layout Standard
+In order to efficiently and repeatably download and analyze web pages, special
+ tools have been written.
+ Most of the code is written in bash 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Bash.
+\end_layout
+
+\end_inset
+
+ scripts utilizing external commands when possible, such as jq.
+ The code for the jq commands has been embedded in the bash scripts.
+\end_layout
+
+\begin_layout Standard
+The source code for the respective projects have been released to the public
+ under GNU General Public License version 3.0 (GPL-3.0)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.gnu.org/licenses/gpl.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, so other projects can make use of them as well.
+ 
+\end_layout
+
+\begin_layout Subsection
+har-portent
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:har-portent"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/har-portent"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
+\end_layout
+
+\begin_layout Standard
+A set of scripts that both downloads, retries failed downloads and analyzes
+ web sites in a single run - see har-heedless 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-heedless"
+
+\end_inset
+
+ and har-dulcify 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-dulcify"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/download-and-analyze-https-www-combos.sh <parallelism> <domainlists>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uses 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/download-and-analyze.sh
+\end_layout
+
+\end_inset
+
+ to download four variations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Dataset-variations"
+
+\end_inset
+
+ of the same domains, so any differences between secure/insecure and www-prefixe
+d domains can be observed.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://www.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://www.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/download-and-analyze.sh <prefix> <parallelism> <domainlists>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Downloads a list of domains in parallel, with automatic per-prefix/input
+ file folder and log file and creation.
+ It also performs automatic retries for failed domains two times per dataset,
+ with an increased parallelism as retries are mostly expected to yield another
+ network timeout or error.
+\end_layout
+
+\begin_layout Subsection
+har-heedless
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:har-heedless"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/har-heedless"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+Scriptable batch downloading of webpages to generate HTTP Archive (HAR)
+ files, using phantomjs.
+\end_layout
+
+\begin_layout Standard
+With a simple text file with one domain name per line as input, har-heedless
+ downloads all of their front pages.
+ Downloads can be made either in serial or in parallel.
+ The resulting HAR data is written in a folder structure per domain, with
+ a timestamp in the file name.
+ The script that extracts HAR data, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+, is based on example code shipped with phantomjs, but modified to be more
+ stable.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+get/netsniff.js
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:get/netsniff.js"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A modified version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to the original netsniff.js example.
+\end_layout
+
+\end_inset
+
+ from the phantomjs project.
+\end_layout
+
+\begin_layout Standard
+Some fixes include:
+\end_layout
+
+\begin_layout Itemize
+Stable, logged output when resources failed to download.
+\end_layout
+
+\begin_layout Itemize
+Adding error messages as HAR comments.
+\end_layout
+
+\begin_layout Itemize
+Adding a base64 encoded page screenshot as an extended field.
+\end_layout
+
+\begin_layout Itemize
+Waiting a period of time after downloading the web page before generating
+ output, to let asynchronous downloading, processing and rendering finish.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These patches have not yet been submitted to the phantomjs project.
+ They should be split up into separate parts for the convenience of the
+ project maintainers.
+ A complete refactoring is also an alternative, but it might be less likely
+ to be accepted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+get/har.sh <url>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Contains logic to run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+netsniff.js
+\end_layout
+
+\end_inset
+
+ through phantomjs.
+ If phantomjs crashed or otherwise encountered an error, a fallback HAR
+ file is generated with a dummy response explaining that an error occurred.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+url/single.sh <domain> [--screenshot <true|false>]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Downloads a URL of a single domain, and takes care of writing the HAR output
+ to the correct folder and file.
+ If a screenshot has been requested, it is extracted (and removed) from
+ the extended HAR data and written to a separate file parallel to the resulting
+ HAR file.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+url/parallel.sh [parallel-processes [--screenshot <true|false>]]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uses GNU parallel to download multiple webpages at a time.
+ The number of separate processes running is adjusted per machine, depending
+ on capacity, with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel-processes
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domain/parallel.sh <prefix> [parallel-processes [--screenshot <true|false>]]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Download the front pages of a list of domains, in parallel, using a specific
+ prefix, such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://www.
+\end_layout
+
+\end_inset
+
+.
+ See 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+url/parallel.sh
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+har-dulcify
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:har-dulcify"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/har-dulcify"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+Extract data from HTTP Archive (HAR) files, quite possibly downloaded by
+ har-heedless, for some aggregate analysis.
+\end_layout
+
+\begin_layout Standard
+HAR files by themselves contain too much data, so the relevant parts need
+ to be extracted.
+ The extracted parts are then broken down into smaller parts that are easier
+ to group and analyze, and added to the data alongside the original.
+ With the expanded data in place, requests are classified by basic measures
+ and matched against external datasets.
+ Scripts are written to perform only a limited task and instead be chained
+ together by piping the data between them.
+ As the scripts generally connect in only one way, the convenience scripts
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/
+\end_layout
+
+\end_inset
+
+ folder are used the most.
+ These convenience scripts also leave the files from partial executions,
+ so the can be used for other kinds of analysis.
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about more scripts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the time of writing, there are 59 scripts in har-dulcify.
+ Here's a selection with explanations.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/all.sh [har-folder-path]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Runs 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+preparations.sh
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+data.sh
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate.sh
+\end_layout
+
+\end_inset
+
+ based on data in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-folder-path
+\end_layout
+
+\end_inset
+
+ (defaulting to the current folder) outputting the results to the current
+ folder.
+ This is the true one-shot script you want to run for one off analysis.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/preparations.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Downloads, prepares and analyses third party datasets, and puts them in
+ the current folder for use by subsequent scripts.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/data.sh [har-folder-path]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Processes all HAR files in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+har-folder-path
+\end_layout
+
+\end_inset
+
+ (defaulting to the current folder), and puts the output in the same folder.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one-shot/aggregate.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prepares data for aggregation by counting occurrences in each domain's data,
+ then adds them together to a single file containing an aggregate analysis.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+domains/latest/all.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finds and lists the paths to the most recent HAR files, per domain.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+extract/request/parts.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Extracts url, status, content-type (mime-type) etcetera from the originating
+ domain front page request and the subsequent requests.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+extract/request/expand-parts.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Keeps the original data, but also expands the url and mime-type into their
+ respective parts, and adds simple grouping to status and mime-type.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/basic.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Add basic classifications, such as if a request is internal or external
+ to the originating domain, and if the request is secured with HTTPS.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/prepare-service-list.sh
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/disconnect/prepare-service-list.sh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prepares Disconnect's blocking list from the original format where blocked
+ domains are stored deep in the structure, to one where domains are top
+ level map keys, prepared for fast lookups.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/add.sh 
+\family roman
+<prepared-disconnect-dataset-path>
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/disconnect/add.sh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Matches each requested domain against Disconnect's list of domains to block,
+ and adds the results to the output.
+ Disconnect's original 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+service.json
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/disconnectme/disconnect/raw/master/firefox/content/disconnect.safariextension/opera/chrome/data/services.json"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+disconnect-plaintext.json
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://services.disconnect.me/disconnect-plaintext.json"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) needs to be prepared through 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/prepare-service-list.sh
+\end_layout
+
+\end_inset
+
+ before being used.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/disconnect/analysis.sh
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/disconnect/analysis.sh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyses Disconnect's blocking list and collects some aggregate numbers.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/effective-tld/add.sh 
+\family roman
+<prepared-disconnect-dataset-path
+\series bold
+>
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:classification/effective-tld/add.sh"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Matches each requested domain against Mozilla's Public Suffix list of effective
+ top level domain names, and adds the results to the output.
+ The original 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+effective_tld_names.dat
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://publicsuffix.org/list/effective_tld_names.dat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ needs to be prepared through 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+classification/effective-tld/prepare-list.sh
+\end_layout
+
+\end_inset
+
+ before being used.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/prepare.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/prepare2.sh
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Rename this script?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Running the aggregation before analysis is currently not possible in a single
+ step, as jq requires all data for the reduce step to be in memory.
+ The solution is to first map the data to a suitable format, and then reduce
+ them in chunks repeatedly.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+aggregate/analysis.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Takes counts and lists of values, and reduces them to easy to present values,
+ percentages and top lists.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+questions/google-gtm-ga-dc.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyze the impact of Google Tag Manager on coverage for other Google services,
+ specifically Google Analytics and DoubleClick.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+questions/origin-redirects.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyze requests to see if there are redirects from the origin page initially
+ requested.
+ One of the most interesting things to look at is wether or not domains
+ redirect to or from secure https domains.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+multiset/*.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A set of scripts that perform tasks on multiple datasets at once - an aggregate
+ of aggregates usually.
+ The scripts were developed late in the process, to extract small pieces
+ of data per dataset for the report.
+ The small pieces of data are combined to files with tab-separated values,
+ which are the source of most data tables in the report.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about multiset scripts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Detailed results
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Detailed-Results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Answer questions posed earlier.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Differences between datasets
+\end_layout
+
+\begin_layout Standard
+Domains lists chosen for this thesis come in three major categories - top
+ lists, curated lists and random selection from zone files.
+ While the top lists and curated lists are assumed to primarily contain
+ sites with staff or enthusiasts to take care of them and make sure they
+ are available and functioning, the domain lists randomly extracted from
+ TLD zones might not.
+ Results below seem to fall into groups of non-random and randomly selected
+ domains - and result discussions often group them as such.
+\end_layout
+
+\begin_layout Section
+Failed versus non-failed
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Failed-versus-non-failed"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+HAR data that doesn't have a parseable HTTP status outcome number (shown
+ as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(null)
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+) is considered a failed request.
+ In order to reduce temporary or intermittent problems, all domains that
+ failed were retried up to two times 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-portent"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
+ for HTTPS, meaning that 30-10% implement HTTPS.
+ Random zone domains have a failure rate of above 20% for HTTP and above
+ 99% for HTTPS.
+ The very low HTTPS adoption rates among random sites is both surprising
+ and not surprising - while larger sites might have felt the pressure to
+ implement them, a non-professional site owner might see it as both an unnecessa
+ry technical challenge and an unnecessary additional cost.
+ With public IPv4 addresses running out and legacy browsers requiring one
+ per HTTPS certificate it can add an additional cost to rent one for exclusive
+ use.
+ Most X.509 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to X.509.
+\end_layout
+
+\end_inset
+
+ public key infrastructure (PKI) certificates 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to PKI.
+\end_layout
+
+\end_inset
+
+ costing money to buy and install as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.retries.rates.tsv}{Dataset HAR failure rates}{Dataset,Domains,Suc
+cessful,Unsuccessful,Non-failed,Failed,Non-failure rate,Failure rate}{fixed,
+ display columns/0/.style={string type, column type=l}, display columns/1/.style={
+string type, column type=i}, display columns/2/.style={string type, column
+ type=i}, display columns/3/.style={string type, column type=i}, display
+ columns/4/.style={string type, column type=i}, display columns/5/.style={string
+ type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+During analysis har-dulcify splits results into unfiltered and filtered,
+ non-failed origin domains.
+ Unless otherwise mentioned, further results are presented based only on
+ non-failed domains in each dataset, as failed origin requests add nothing
+ to the further resource analysis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There might be an overlap between failed HTTP/HTTPS and non-www/www dataset
+ variations, but at the moment they are treated separately.
+ If domains that failed to respond to HTTP requests are removed from the
+ HTTPS set in a filter step, HTTPS failure statistics might be lower - and
+ the same goes for www variations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at the resulting HAR files means that both local software errors
+ and remote errors are considered failures.
+ While it might be technically possible to distinguish a software error
+ from a remote error, it has not been analyzed apart from during initial
+ development and debugging.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+HTTP status codes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:HTTP-status-codes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Choosing the term non-failed instead of successful when it comes to dividing
+ and focusing result discussions has its basis in the HTTP standard, which
+ defines a status code.
+ Successful requests are generally shown with a HTTP status code of 200
+ (actually the entire 2xx group), or a 304 which means that a previously
+ cached (presumably successful) result is still valid.
+ Many sites respond with a 3xx status, which isn't exactly successful as
+ it doesn't contain actual content, but can not be considered a failure
+ as it will most likely lead to another resource that is successful.
+ While a status response of 4xx or 5xx shows there is a problem of some
+ kind, for the purpose of this thesis a response that contains any HTTP
+ status number is still considered a non-failure, as the remote system has
+ responded with a proper HTTP response parseable by phantomjs and har-heedless.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about redirect responses.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
+ response code/group coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A further analysis might disregard 4xx and 5xx responses as well, but current
+ numbers suggest the difference would not be significant.
+ While this can be because of software problems, they do exist and therefore
+ the software seems to work as intended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Internal versus external resources
+\end_layout
+
+\begin_layout Standard
+The table shows non-failed origin domains having requests strictly to the
+ same domain, subdomains, superdomains or same primary domain - jointly
+ known as internal domains - or external (non-internal) domains.
+ Origin domains that are not exclusively loading from either internal or
+ external resources are loading from mixed domains.
+ Mixing resources from both internal and external domains is the most common
+ way to compose a web page for datasets not randomly chosen from zones,
+ although it is quite common for random domains as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about any exciting conclusions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{Internal
+ versus external resources coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+During analysis har-dulcify splits results into unfiltered, internal and
+ external resources, each treated the same way in terms of classifications,
+ allowing separate conclusions to be drawn.
+\end_layout
+
+\begin_layout Section
+Request counts
+\end_layout
+
+\begin_layout Standard
+The table shows counts of all requests, internal requests and external requests.
+ External requests matching Disconnect's blocking lists are also shown.
+ These values are then shown as average count per domain, and ratio of all
+ requests.
+ Lastly, Disconnect's matches are shown as ratio of external requests.
+\end_layout
+
+\begin_layout Standard
+It is interesting to look at the number of requests, as they differ between
+ datasets.
+ Random TLD domains have a low 26-29 requests per domain, random Alexa top
+ sites a medium 71-76 - but the very Alexa top comes in at 83-105.
+ The smaller datasets reach50 comes to 87, and the even smaller dataset
+ .SE Health Status' media sets the record at 197 requests per domain!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about internal per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about external per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect per domain.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about internal ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about external ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about disconnect over external ratio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add a totals row, or at least mention request totals.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.requests.counts.sorted.tsv}{Requests, per domain
+ and ratios}{}{fixed, precision=2, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}, display
+ columns/2/.style={string type, column type=i}, display columns/3/.style={string
+ type, column type=i}, display columns/4/.style={string type, column type=i},
+ display columns/5/.style={string type, column type=i}, display columns/6/.style={
+precision=0}, display columns/7/.style={precision=0}, display columns/8/.style={pr
+ecision=0}, display columns/9/.style={precision=0}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Request coverage
+\end_layout
+
+\begin_layout Standard
+Write about internal, external and disconnect coverage - as opposed to count
+ and requests per domain.
+\end_layout
+
+\begin_layout Section
+Insecure versus secure resources
+\end_layout
+
+\begin_layout Standard
+Using HTTPS to secure the connection between site and site users is considered
+ an effective way to avoid prying eyes on the otherwise technically quite
+ open and insecure internet.
+ Sites which handle sensitive information, such as e-commerce shops, online
+ payment providers and of course banks often tout being secure to use -
+ and they have strong financial incentives to provide a service that is
+ (or at least comes across as) trustworthy.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Reference for strong financial incentives for security?
+\end_layout
+
+\end_inset
+
+ As browsers will warn users if a site secured with HTTPS loads resources
+ over non-HTTPS connections, site developers will have to make sure each
+ and every request is secure to avoid being labeled not trustworthy.
+ This also applies to third-party services, which have to make sure to provide
+ HTTPS in order to be able to continue providing services to sites making
+ the switch to a fully secured experience.
+\end_layout
+
+\begin_layout Standard
+One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
+ can use traffic sniffers to get a hold of sensitive information leaking
+ out through HTTP, or man in the middle attacks on several kinds of resources
+ to insert malicious code, even though the site is supposed to be protected.
+ The follow table shows which to what extent sites manage to take full advantage
+ of HTTPS, and to which extent they fail in requesting either internal or
+ external resources.
+\end_layout
+
+\begin_layout Standard
+While the technology has been around a long time, it doesn't seem as if
+ very many sites actually use HTTPS on their sites.
+ Even origin sites that respond to HTTPS requests seem to either redirect
+ to a HTTP site, or load at least some of its resources over non-HTTPS connectio
+ns.
+ Typing in a HTTPS address into the browser's address bar will actually
+ only give full HTTPS security on 27-58% of the domains - a number where
+ the random domains surprisingly beat the non-random ones.
+\end_layout
+
+\begin_layout Standard
+Why is adoption lower for top sites? As high-traffic sites they might have
+ a high system load, and since HTTPS require some extra processing and data
+ exchange, they might have deferred it until the security is 
+\emph on
+really
+\emph default
+ needed - like when passwords of financial information is entered.
+ Strict HTTPS performance concerns were dismissed by Google engineers in
+ 2xxx 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look up year, insert link.
+\end_layout
+
+\end_inset
+
+ - and Google has since implemented HTTPS as an alternative for most and
+ the default for some services.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Google's HTTPS defaults.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another concern is that curated domain lists seem to exhibit an even lower
+ HTTPS adoption than both random and top domains - the domains have been
+ selected as they are deemed important to the public in some way.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update paragraph after HTTPS for 
+\emph on
+.SE Health Status
+\emph default
+ datasets is finished.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Secure
+ versus insecure resources coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+HTTP, HTTPS and redirects
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about HTTPS to HTTP redirects.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert table based on origin-redirects.sh.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Content type group coverage
+\end_layout
+
+\begin_layout Standard
+Bytes sent from the server to the browser generally has an associated type,
+ so the browser can parse and use them properly.
+ The types can be grouped 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Mime-type"
+
+\end_inset
+
+; incorrect or unknown types that did not match a group is shown as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(null)
+\end_layout
+
+\end_inset
+
+ below.
+ The difference between what can be achieved between different types of
+ resources makes the distribution interesting.
+ Images 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Does SVG images allow loading external resources?
+\end_layout
+
+\end_inset
+
+ and text (unless improperly labeled during transfer and parsed as another
+ format) loaded by a browser provide no additional way to load further resources
+, while html, scripts and styles do.
+ While data resources can trigger downloading additional resources based
+ on the logic that consumes the data, it still requires another type of
+ resource present to do that.
+\end_layout
+
+\begin_layout Standard
+Objects and external documents can also access additional resources, but
+ the use of those types of resources has been very low in the extracted
+ data.
+ There might be several reasons, but the fact that the tests were run on
+ a headless browser without additional plugins installed is probably the
+ biggest in this case.
+ An additional reason might be adoption of HTML5 and client side javascript
+ instead of Flash for visual, dynamic material and animations.
+ This evolution has been fueled by Apple's resistance towards supporting
+ Flash on their handheld devices.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Reference Apple's Flash implementation resistance.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that web fonts have fairly low numbers here, but that they can also
+ be served as styles which dynamically load additional fonts URLs.
+ This is how Google Fonts do it, using the fonts.googleapis.com domain 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Trackers-which-deliver-content"
+
+\end_inset
+
+ to serve styles and gstatic.com to serve fonts dynamically selected to match
+ to browser web font compatibility level, which could then be factored into
+ these numbers 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Rerun data analysis with updated font mime types?
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Break out numbers specifically for font mime (group) and fonts,googleapis.com
+ and gstatic.com?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Origin
+\end_layout
+
+\begin_layout Standard
+Practically all successful origin requests result in a html response.
+ The range is 84-100% html, with the difference being seemingly misconfigured
+ responses, part of which are redirects without actual content 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Internal
+\end_layout
+
+\begin_layout Standard
+Internal requests exclude the requests to the origin page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{Content
+ type group coverage}{}{fixed, display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+External
+\end_layout
+
+\begin_layout Standard
+External resources from each group enjoy almost the same coverage as their
+ internal counterparts.
+ Among non-zone datasets scripts often reach above 90% coverage, showing
+ that active and popular web pages contain a lot of external dynamic material.
+ Images, while not dynamic, as well as styles and html are also popular
+ to load externally.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content
+ type group coverage}{}{fixed, display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As some external file types can trigger further HTTP requests, it might
+ be possible to build a hierarchy of requests.
+ The easiest way is to look at resources loaded in HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<iframe>
+\end_layout
+
+\end_inset
+
+ (or the now less popular 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<frame>
+\end_layout
+
+\end_inset
+
+) as they will have a HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+referer
+\end_layout
+
+\end_inset
+
+ header set to the URL of the frame.
+ Scripts and styles requesting other resources directly, without the use
+ of frames, cannot be detected as a strict hierarchy.
+ With the large number of requests made from different sites, URLs can be
+ cleaned up (for example removing unique identifiers or looking at domain
+ parts only) and connected in a graph and analyzed for similarities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Public suffix coverage
+\end_layout
+
+\begin_layout Standard
+Resources served from external URLs may well come from other public suffixes;
+ here they have been grouped by TLD.
+ The connections between datasets and TLDs is interesting; .se datasets load
+ more from .se domains than others, and the equivalent is valid for .dk datasets.
+ We can also see that despite Alexa's top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ being an international list, nearly 19% of them use resources are loaded
+ from .se domains.
+ This points towards those sites being aware of the country of origin for
+ the request, leading to localized content being served.
+ It is also evident that the .com TLD is the most widespread for external
+ resources - it beats same-TLD coverage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Compare to TLD counts in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:TLD-distribution"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
+ suffixes in external resources}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Future downloads could be performed from other countries to measure location-dep
+endent service coverage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Disconnect's blocking list matches
+\end_layout
+
+\begin_layout Standard
+Coverage for requested external URL domains matching Disconnect's list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:classification/disconnect/add.sh"
+
+\end_inset
+
+.
+ As the list contains which category and organization each domain belongs
+ to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+, they have been grouped to display aggregates.
+\end_layout
+
+\begin_layout Subsection
+Domain and organization counts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about how many blocked domains and organizations are represented per
+ dataset.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Top domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-domains"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A selection of domains, and their coverage across different datasets.
+ Worth noting is that many recognizable domains belong to organization which
+ have multiple domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Organizations-in-more-than-one-category"
+
+\end_inset
+
+, so their total organization coverage is higher.
+ This first table excludes top Google domains, which dominates the top list
+ for all datasets.
+\end_layout
+
+\begin_layout Subsubsection
+General
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-domains-General"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Facebook and Twitter have their like and tweet buttons which often are talked
+ about in terms of social sharing, but it seems that their coverage is comparati
+vely low except for the .SE Health Status' media category.
+ AddThis' service includes some of Facebook's and Twitter's buttons' functionali
+ty, among other social sharing sites but they don't have quite the same
+ coverage.
+ Unfortunately, Facebook and Twitter are both in Disconnect's special Disconnect
+ category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+, and are not reflected in the social category aggregates 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-categories"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The domain cloudfront.net belonging to Amazon, is hosting services, file
+ and data on behalf of other organizations on subdomains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
+ While it is clear that Amazon can analyze and use traffic information from
+ hosted services, the data itself can be assumed to belong to the hosted
+ organizations.
+ This is a strong reason why the domain is listed as content in Disconnect's
+ blocking list - because of the variety of services being hosted on subdomains,
+ it cannot be blocked as for example advertisement even if it is being hosted
+ there.
+ It can be seen as a flaw in the Disconnect way of blocking.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top
+ Disconnect domain match coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One thing to look closer at is cloudfront.net's subdomains, to analyze their
+ content and which sites use them.
+ Are they used as CDNs local to a single domain, or do third-party services
+ host content there? If so, what kind of content? Are there similar patterns
+ for Amazon AWS and other cloud services? See also public suffixes owned
+ by private companies 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Google
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-domains-Google"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Google has many domains in Disconnect's blocking list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Domains-per-organization"
+
+\end_inset
+
+, and many in the top results.
+ One of the reasons is that they have several popular services with content
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Trackers-which-deliver-content"
+
+\end_inset
+
+, but the top Disconnect-recognized domain in most datasets is google-analytics.c
+om, with googleapis.com and www.google.com as the top result in the others.
+\end_layout
+
+\begin_layout Standard
+Here we see DoubleClick's, one of Google's ad services, coverage.
+ Unfortunately it has not been included in Disconnect's advertisement category,
+ and it skews the numbers for the advertisement category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-categories"
+
+\end_inset
+
+, nor has Google Analytics been put in the analytics category.
+ Google Analytics is served from its own domain, but Google is making a
+ push to move site owners to the DoubleClick domain, where they have replicated
+ the Google Analytics engine.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Google's push towards DoubleClick.
+\end_layout
+
+\end_inset
+
+ The reason given to site owners using Google Analytics is that the DoubleClick
+ tracker offers implementors additional rich audience information such as
+ age, gender and interests on top of their current technical analysis from
+ Google Analytics.
+ The underlying reason is possibly that Google wants DoubleClick, which
+ brings a lot of income, to have greater coverage across web sites - greater
+ coverage meaning more and higher quality visitor information.
+ While Google owns both services, site owner/visitor/usage policies 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert links to GA, DC policies.
+\end_layout
+
+\end_inset
+
+ might prevent Google from crossmatching information between them without
+ site owner consent.
+ Cookies set to the doubleclick.net domain should be more valuable to Google
+ than those set to google-analytics.com, as they translate to more directed
+ ads.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gill:2013:BPF:2504730.2504768"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.domains.coverage.external.google.sorted.tsv}{Top
+ Disconnect Google domain match coverage}{}{fixed, display columns/0/.style={stri
+ng type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Top categories
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-categories"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Categories and their coverage across different datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about high content trackers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about low advertisement, compare to DoubleClick.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about low analytics, compare to Google Analytics.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}{Discon
+nect category match coverage}{}{fixed, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Top organizations
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Top-organizations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A selection of organizations, and their coverage across different datasets.
+ Facebook and Twitter are often touted as the big social network sites,
+ but in terms of domain coverage they are far behind Google.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}{Top
+ Disconnect organization match coverage}{}{fixed, display columns/0/.style={strin
+g type, column type=l}, display columns/1/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Non-blocked external domains
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
 
 \end_inset
 
