@@ -921,162 +921,6 @@ Add link to Domain Check.
 \end_layout
 
 \begin_layout Section
-Questions
-\end_layout
-
-\begin_layout Standard
-With domain and resource data in place, it will be aggregated to answer
- the following questions.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Why are these questions important? Why were they chosen?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Group questions by refined category?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-What kinds of resources are there?
-\end_layout
-
-\begin_layout Itemize
-How many resources are internal versus external per domain?
-\end_layout
-
-\begin_layout Itemize
-What is the distribution of different kinds of resources?
-\end_layout
-
-\begin_layout Itemize
-How many external resources are there, considering different levels of uniquenes
-s:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Unique URLs?
-\end_layout
-
-\begin_layout Itemize
-Unique per file URL?
-\end_layout
-
-\begin_layout Itemize
-Unique per folder URL?
-\end_layout
-
-\begin_layout Itemize
-Unique per subdomain?
-\end_layout
-
-\begin_layout Itemize
-Unique per domain?
-\end_layout
-
-\begin_layout Itemize
-Unique per TLD?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-On how many domains is each external resource is represented?
-\end_layout
-
-\begin_layout Itemize
-How does usage of external resources differ between groups of domains?
-\end_layout
-
-\begin_layout Itemize
-How to mark certain external resources as known trackers?
-\end_layout
-
-\begin_layout Itemize
-What is the usage and distribution of known trackers?
-\end_layout
-
-\begin_layout Itemize
-Are you as tracked using secure HTTPS as insecure HTTP?
-\end_layout
-
-\begin_layout Itemize
-How do the results compare to
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Historical .se data, if readily available from earlier .SE status checks?
-\end_layout
-
-\begin_layout Itemize
-Other ccTLDs?
-\end_layout
-
-\begin_layout Itemize
-Commonly used gTLDs?
-\end_layout
-
-\begin_layout Itemize
-Recently introduced newTLDs?
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Additional questions, which can be considered as bonuses
-\end_layout
-
-\begin_layout Itemize
-Could any external resources actually be considered internal, despite being
- loaded from external domains?
-\end_layout
-
-\begin_layout Itemize
-How to determine if a resource
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Crosses Sweden's borders in transit?
-\end_layout
-
-\begin_layout Itemize
-Is handled by an organization with base or ownership outside of Sweden?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Which external resources are loaded from Sweden and abroad respectively?
-\end_layout
-
-\begin_layout Itemize
-What user data could potentially be collected, and subsequently inferred?
-\end_layout
-
-\begin_layout Itemize
-To what extent can the average Swedish internet user's browsing habits be
- correlated across the most commonly visited webpages?
-\end_layout
-
-\begin_layout Section
 Document style
 \end_layout
 
@@ -5627,6 +5471,51 @@ Mention further grouping, digging into the data.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Unanswered questions
+\end_layout
+
+\begin_layout Standard
+There are further questions in line with current results which could potentially
+ be answered with additional research.
+\end_layout
+
+\begin_layout Itemize
+Could any external resources actually be considered internal, despite being
+ loaded from external domains?
+\end_layout
+
+\begin_layout Itemize
+How to determine if a resource
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Crosses Sweden's borders in transit?
+\end_layout
+
+\begin_layout Itemize
+Is handled by an organization with base or ownership outside of Sweden?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Which external resources are loaded from Sweden and abroad respectively?
+\end_layout
+
+\begin_layout Itemize
+What user data could potentially be collected, and subsequently inferred?
+\end_layout
+
+\begin_layout Itemize
+To what extent can the average Swedish internet user's browsing habits be
+ correlated across the most commonly visited webpages?
+\end_layout
+
+\begin_layout Itemize
+Can the same techniques be applied to data from countries other than Sweden?
 \end_layout
 
 \begin_layout Section
