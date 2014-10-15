@@ -456,8 +456,14 @@ While online privacy has been in the spotlight due to recently uncovered
  They have been able to intercept traffic data and metadata by, among several
  techniques, covertly hooking into the internet infrastructure and passively
  listening.
- In contrast, external resources are approved by and actively installed
- by site and service owners, and presented openly to users with basic technical
+ Basic connection metadata can always be collected, but without secure connectio
+ns between client and server, any detail in the contents of each request
+ can be extracted.
+\end_layout
+
+\begin_layout Standard
+In contrast, external resources are approved by and actively installed by
+ site and service owners, and presented openly to users with basic technical
  skills and tools.
  Reasons can be technical, for example because distributing resources among
  systems improves performance.
