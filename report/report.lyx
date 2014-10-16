@@ -2294,6 +2294,13 @@ Retrieving websites and resources
 
 \begin_layout Section
 Computer machines
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Computer-machines"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7275,17 +7282,31 @@ options "bibtotoc,plain"
 Software
 \end_layout
 
+\begin_layout Standard
+Development was performed in the Mac OS X operating system while the server
+ machine performing most of the downloading and analysis was running the
+ Linux distribution Debian 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Computer-machines"
+
+\end_inset
+
+.
+ The software is thought to be runnable on other Unix-like platforms with
+ relative ease.
+\end_layout
+
 \begin_layout Section
 Third party tools
 \end_layout
 
 \begin_layout Standard
-In order to download and analyze thousands of webpages in an automated fashion,
- a set of suitable tools were sought.
- Tools that are released as free and open source software have been preferred,
- and the tools written for the thesis have also been released as such.
- Development was performed in the Mac OS X operating system, but is thought
- to be runnable on other Unix-like platforms with relative ease.
+In order to download and analyze tens of thousands of webpages in an automated
+ fashion, a set of suitable tools were sought.
+ Tools released as free and open source software have been preferred, found
+ and selected; code written specifically for the thesis has also been released
+ as such.
 \end_layout
 
 \begin_layout Subsection
@@ -7616,8 +7637,8 @@ key "Tange2011a"
  has been used.
  It allows an input file to be distributed among several processes/CPU cores,
  and the results to be combined into a single file.
- It helps speed up downloading of HAR files, and processing of the JSON
- data through jq, which is single threaded.
+ It helps speed up downloading websites to create HAR files, and processing
+ of the JSON data through jq, which is single threaded.
 \end_layout
 
 \begin_layout Section
@@ -7660,7 +7681,6 @@ target "https://www.gnu.org/licenses/gpl.html"
 \end_inset
 
 , so other projects can make use of them as well.
- 
 \end_layout
 
 \begin_layout Subsection
@@ -7742,6 +7762,8 @@ reference "sec:Dataset-variations"
 
  of the same domains, so any differences between secure/insecure and www-prefixe
 d domains can be observed.
+ This is the true fire-and-forget script you want to run to download and
+ analyze multiple large sets.
 \end_layout
 
 \begin_layout Itemize
@@ -8035,7 +8057,17 @@ url/parallel.sh [parallel-processes [--screenshot <true|false>]]
 \end_layout
 
 \begin_layout Standard
-Uses GNU parallel to download multiple webpages at a time.
+Uses GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+ to download multiple webpages at a time.
  The number of separate processes running is adjusted per machine, depending
  on capacity, with 
 \begin_inset Flex Code
@@ -8191,12 +8223,22 @@ data.sh
 
 \end_inset
 
- and 
+, 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 aggregate.sh
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+questions.sh
 \end_layout
 
 \end_inset
@@ -8213,7 +8255,6 @@ har-folder-path
 
  (defaulting to the current folder) outputting the results to the current
  folder.
- This is the true one-shot script you want to run for one off analysis.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8382,9 +8423,7 @@ Prepares Disconnect's blocking list from the original format where blocked
 status collapsed
 
 \begin_layout Plain Layout
-classification/disconnect/add.sh 
-\family roman
-<prepared-disconnect-dataset-path>
+classification/disconnect/add.sh <prepared-disconnect-dataset-path>
 \end_layout
 
 \end_inset
@@ -8496,11 +8535,7 @@ Analyses Disconnect's blocking list and collects some aggregate numbers.
 status collapsed
 
 \begin_layout Plain Layout
-classification/effective-tld/add.sh 
-\family roman
-<prepared-disconnect-dataset-path
-\series bold
->
+classification/effective-tld/add.sh <prepared-disconnect-dataset-path>
 \end_layout
 
 \end_inset
