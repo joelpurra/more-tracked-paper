@@ -9101,7 +9101,9 @@ status open
 \backslash
 tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP
  response code/group coverage}{}{fixed, display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=i}}
+ type, column type=l}, display columns/1/.style={string type, column type=i},
+ display columns/4/.style={column type=|r}, display columns/8/.style={column
+ type=r|}}
 \end_layout
 
 \end_inset
@@ -9339,8 +9341,9 @@ tsvtable{datasets.non-failed.requests.counts.sorted.tsv}{Requests, per domain
  columns/2/.style={string type, column type=i}, display columns/3/.style={string
  type, column type=i}, display columns/4/.style={string type, column type=i},
  display columns/5/.style={string type, column type=i}, display columns/6/.style={
-precision=0}, display columns/7/.style={precision=0}, display columns/8/.style={pr
-ecision=0}, display columns/9/.style={precision=0}}
+precision=0, column type=|r}, display columns/7/.style={precision=0}, display
+ columns/8/.style={precision=0}, display columns/9/.style={precision=0}, display
+ columns/10/.style={column type=|r}}
 \end_layout
 
 \end_inset
@@ -9529,7 +9532,8 @@ status open
 tsvtable{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{Origin domains
  with redirects}{}{fixed, display columns/0/.style={string type, column type=l},
  display columns/1/.style={string type, column type=i}, display columns/2/.style={
-string type, column type=i}}
+string type, column type=i}, display columns/4/.style={column type=|r}, display
+ columns/7/.style={column type=|r}, display columns/11/.style={column type=|r}}
 \end_layout
 
 \end_inset
