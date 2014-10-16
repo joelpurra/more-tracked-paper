@@ -1841,7 +1841,7 @@ name "sub:Disconnect-Content"
 \begin_layout Standard
 Sites that deliver content.
  There is a wide variety of content, from images and videos to A/B testing,
- comment and helpdesk services.
+ comment and help desk services.
  This category is not blocked by default.
 \end_layout
 
@@ -1852,7 +1852,7 @@ apis.google.com One of Google's API domains.
 status open
 
 \begin_layout Plain Layout
-Look at which servies are hosted.
+Look at which services are hosted.
 \end_layout
 
 \end_inset
@@ -1916,7 +1916,7 @@ www.google.com Google's main domain, which also hosts services such as search.
 status open
 
 \begin_layout Plain Layout
-Look at which servies are hosted.
+Look at which services are hosted.
 \end_layout
 
 \end_inset
@@ -5069,7 +5069,7 @@ redirectURL
 
 \end_inset
 
-values - both of which possibly is relative.
+ values - both of which possibly is relative.
  As subsequent HTTP requests are hard to refer to without relying either
  on exact request ordering (the executed redirect always coming exactly
  as the next entry) or at least having the URL resolved (preferably by the
@@ -9032,7 +9032,7 @@ Check if captured error messages can confirm the source.
  Looking at the resulting HAR files means that both local software errors
  and remote errors are considered failures.
  The analysis can be improved with additional testing and improvements to
- phantomjs; missing HAR files have been ignored in further analysises.
+ phantomjs; missing HAR files have been ignored in further analyses.
 \end_layout
 
 \begin_layout Standard
