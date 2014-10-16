@@ -5023,6 +5023,13 @@ During the development of code for this thesis, other projects have been
 
 \begin_layout Subsection
 The HAR specification
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:The-HAR-specification"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9499,11 +9506,80 @@ Write about HTTPS to HTTP redirects.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+The table shows domains, domains with redirect responses to the origin request
+ and the average length of the redirect chain per domain with redirects.
+ The ratio of redirected domains making strictly internal or strictly external
+ redirects, and how many domains mix internal and external redirect URLs
+ are shown next.
+ The same goes for insecure, secure and mixed security redirects - plus
+ a column with the ratio of domains where the final redirect is to a secure
+ URL.
+ The last column shows the ratio of domains with mismatched redirect URLs
+ without a subsequently requested URL.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Insert table based on origin-redirects.sh.
+
+
+\backslash
+tsvtable{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{Origin domains
+ with redirects}{}{fixed, display columns/0/.style={string type, column type=l},
+ display columns/1/.style={string type, column type=i}, display columns/2/.style={
+string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mismatched redirect and request URLs are in part due to the HAR standard
+ not defining recorded redirect URLs as strictly absolute, and phantomjs
+ returning unparsed/unresolved URLs when a redirect is initially detected
+ in a HTTP response 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:The-HAR-specification"
+
+\end_inset
+
+.
+ Resolving redirect URLs outside of the browser means not all contexts and
+ rules are considered, thus leading to errors.
+ Both the thesis code, phantomjs software and HAR standard can be improved
+ upon.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
