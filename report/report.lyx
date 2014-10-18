@@ -7,6 +7,10 @@
 % set fonts for nicer pdf view
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
 
+\fancyheadoffset{12pt}
+\renewcommand{\sectionmark}[1]{} % Don't use sections in headers
+\renewcommand{\subsectionmark}[1]{} % Don't use subsections in headers
+
 \usepackage{pdflscape}
 \usepackage{geometry}
 
@@ -143,6 +147,7 @@ columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addline
 \use_default_options true
 \begin_modules
 logicalmkup
+customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -210,8 +215,8 @@ logicalmkup
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 1
-\paperpagestyle default
+\papersides 2
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -283,6 +288,66 @@ status open
 
 \backslash
 versionandtoday
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+Joel Purra's Master's Thesis
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Swedes Online: You Are More Tracked Than You Think
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+slshape
+\backslash
+nouppercase{
+\backslash
+leftmark}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+slshape
+\backslash
+nouppercase{
+\backslash
+leftmark}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
