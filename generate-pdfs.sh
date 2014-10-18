@@ -41,7 +41,7 @@ do
 	cd "$folder"
 
 	# Hacky rewrite of .lyx file
-	cat "$base.lyx" | sed "s/(Unknown version)/$description/" > "$base.tmp.lyx"
+	cat "$base.lyx" | sed "s/(Unknown~document~version)/$description/" > "$base.tmp.lyx"
 	touchedLyxFileBases+=("$base")
 	lyx --force-overwrite --export pdf2 "$base.tmp.lyx" &> "$logfile"
 	mv "$base.tmp.pdf" "$base.pdf"

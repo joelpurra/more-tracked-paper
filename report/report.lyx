@@ -35,7 +35,8 @@
 
 \usepackage{numprint}
 
-\providecommand{\versionortoday}{(Unknown version) - \today}
+\providecommand{\versiononly}{(Unknown~document~version)}
+\providecommand{\versionandtoday}{\versiononly~--~\today}
 
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
 
@@ -237,7 +238,7 @@ status open
 
 
 \backslash
-versionortoday
+versionandtoday
 \end_layout
 
 \end_inset
