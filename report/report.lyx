@@ -480,12 +480,21 @@ In contrast, external resources are approved by and actively installed by
  site and service owners, and presented openly to users with basic technical
  skills and tools.
  Reasons can be technical, for example because distributing resources among
- systems improves performance.
+ systems improves performance 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829,Krishnamurthy:2000:AFI:347319.346248"
+
+\end_inset
+
+.
  Other times it is because there are positive network effects in using a
  third-party social network to promote content and products.
- More and more commonly, allowing a tracker to be installed can also become
- a source of income - data aggregation companies pay for access to users'
- data on the right site with the right quantity and quality of visitors.
+ Ads are installed as a source of income.
+ More and more commonly, allowing a non-visible tracker to be installed
+ can also become a source of income - data aggregation companies pay for
+ access to users' data on the right site with the right quantity and quality
+ of visitors.
  Because these external resources are used on behalf of the service, they
  are also loaded when end-to-end encryption with HTTPS is enabled for enhanced
  privacy and security.
