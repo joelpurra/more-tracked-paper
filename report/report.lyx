@@ -6979,9 +6979,14 @@ Hagnell Head of New Businesses, .SE (The Internet Infrastructure Foundation),
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
-set_width "auto"
+set_width "custom"
+width "20text%"
 
 \end_inset
 
@@ -7107,7 +7112,7 @@ description "Uniform Resource Locator"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Uniform Resource Locator"
-description "A standard to define the address to resources, mostly on the internet, for example http://joelpurra.com/projects/masters-thesis/"
+description "(URL) A standard to define the address to resources, mostly on the internet, for example http://joelpurra.com/projects/masters-thesis/"
 
 \end_inset
 
@@ -7283,8 +7288,16 @@ description "HTTP Archive (HAR) format, used to store recorded HTTP metadata fro
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
+symbol "JavaScript Object Notation"
+description "(JSON) A data format based on Javascript objects. Often used on the internet for data transfer. Used in this thesis as the basis for all data transformation."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
 symbol "JSON"
-description "A data format based on Javascript objects. Often used on the internet for data transfer. Used in this thesis as the basis for all data transformation."
+description "JavaScript Object Notation"
 
 \end_inset
 
