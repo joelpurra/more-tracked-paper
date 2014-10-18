@@ -6861,8 +6861,44 @@ Pages with wide tables end here.
 
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../references/thesis"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
 Thanks
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\backslash
+addcontentsline{toc}{chapter}{Thanks}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6878,7 +6914,7 @@ Add list of collaborators in getting data, domains, help, advice etcetera.
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 The Internet Infrastructure Foundation
 \begin_inset Foot
 status open
@@ -6943,7 +6979,7 @@ target "https://www.iis.se/om/arsredovisningar/arsredovisning-2013/"
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Thesis supervision
 \end_layout
 
@@ -6986,6 +7022,21 @@ Hagnell Head of New Businesses, .SE (The Internet Infrastructure Foundation),
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\backslash
+addcontentsline{toc}{chapter}{Nomenclature}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "custom"
@@ -7301,24 +7352,6 @@ description "(JSON) A data format based on Javascript objects. Often used on the
 LatexCommand nomenclature
 symbol "JSON"
 description "JavaScript Object Notation"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "../references/thesis"
-options "bibtotoc,plain"
 
 \end_inset
 
