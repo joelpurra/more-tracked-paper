@@ -831,130 +831,6 @@ Based on a list of domains, the front page of each domain is downloaded
 \end_layout
 
 \begin_layout Section
-Related projects
-\end_layout
-
-\begin_layout Subsection
-
-\emph on
-.SE Health Status
-\emph default
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:.SE-Health-Status"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The thesis topic was chosen to align with the 
-\emph on
-.SE Health Status
-\emph default
-, and one of the sources of lists of domains.
- Results from this and other runs may be included in future reports.
-\end_layout
-
-\begin_layout Subsection
-HTTP Archive
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:HTTP-Archive"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://httparchive.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In an effort to measure web page speed on the internet, initially developed
- in October 2010, the HTTP Archive collects HAR data and runs analyses on
- them.
- Unfortunately, their data dumps are in a custom format, not the original
- HAR files, but there are some direct comparisons to be made with their
- 
-\emph on
-Interesting stats
-\emph default
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://httparchive.org/interesting.php"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- aggregate data.
-\end_layout
-
-\begin_layout Itemize
-Pages Using Google Libraries API
-\end_layout
-
-\begin_layout Itemize
-HTTPS Requests
-\end_layout
-
-\begin_layout Itemize
-Total Requests per Page
-\end_layout
-
-\begin_layout Subsection
-.SE Domain Check
-\end_layout
-
-\begin_layout Standard
-In order to facilitate repeatable and improvable analysis, tools will be
- developed to perform the collection and aggregation steps automatically.
- .SE already has a set of tools that run monthly; integration and interoperabilit
-y will smooth the process and continuous usage.
- There is also a public .SE tool to allow web site owners to test their own
- sites, 
-\emph on
-Domain Check
-\emph default
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add link to Domain Check.
-\end_layout
-
-\end_inset
-
-, which might benefit from some of the code developed within the scope of
- this thesis.
-\end_layout
-
-\begin_layout Section
 Document style
 \end_layout
 
@@ -4335,6 +4211,13 @@ Third-party Identity Management Usage on the Web
 .SE Health Status
 \emph default
  comparison
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:.SE-Health-Status-comparison"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5211,28 +5094,18 @@ At .SE
 \end_layout
 
 \begin_layout Standard
-Yearly reports since 2007 
+Part of .SE's work includes researching internet and technology, with a focus
+ on Sweden - for example, 
+\emph on
+Swedes and the internet
+\emph default
+ and broadband and cell phone bandwidth speed tests 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Was it 2007?
+Insert names of reports.
 \end_layout
-
-\end_inset
-
- convey the status of, for example, 
-\emph on
-Swedes and the internet
-\emph default
- and 
-\emph on
-.SE Health Status
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lowinder:2013:healthstatus"
 
 \end_inset
 
@@ -5314,61 +5187,39 @@ key "Bylund:2013:978-91-87379-12-3:integritet"
 .
 \end_layout
 
-\begin_layout Standard
-While .SE themselves have written papers analyzing the technical state of
- services connected to .se domains, the focus has not been on exploring the
- web services connected to these domains.
- They do offer some groundwork in terms of selecting and grouping Swedish
- domains, HTTPS usage and Google Analytics coverage 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+\begin_layout Subsection
 
-\end_inset
-
-.
- The report 
 \emph on
 .SE Health Status
 \emph default
- is based on data collected from around 
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{900}
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:.SE-Health-Status"
 
 \end_inset
 
- .se domain names deemed of importance to the Swedish society as a whole,
- as well as random selection of 1% of the registered .se domain names.
+
+\end_layout
+
+\begin_layout Standard
+While .SE themselves have written reports analyzing the technical state of
+ services connected to .se domains, 
+\emph on
+.SE Health Status
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2008:healthstatus,Lowinder:2009:healthstatus,Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus,Lowinder:2013:healthstatus"
+
+\end_inset
+
+, the focus has not been on exploring the web services connected to these
+ domains.
  The research is focused on statistics about usage and security in DNS,
  IP, web and e-mail; the target audience is IT strategists, executives and
  directors.
- The thesis subject has been selected to be in line with the 
-\emph on
-.SE Health Status
-\emph default
- reports; results may be included in future reports, and code reused by
- both those reports and potentially other tools like .SE's public tool 
-\emph on
-Domain Check
-\emph default
-.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add link to Domain Check.
-\end_layout
-
-\end_inset
-
  Data for the reports is analyzed and summarized by Anne-Marie Eklund Löwinder,
  a world-renown DNS and security expert
 \begin_inset Foot
@@ -5407,8 +5258,107 @@ target "https://www.iis.se/bloggare/pawal/"
 .
 \end_layout
 
+\begin_layout Standard
+The thesis subject has been selected to be in line with the .SE reports,
+ but focusing on web issues; code may be reused and results may be included
+ in future reports.
+ The 
+\emph on
+.SE Health Status
+\emph default
+ reports do offer some groundwork in terms of selecting and grouping Swedish
+ domains, HTTPS usage and Google Analytics coverage 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:.SE-Health-Status-comparison"
+
+\end_inset
+
+.
+ The report
+\emph on
+ 
+\emph default
+is based on data collected from around 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{900}
+\end_layout
+
+\end_inset
+
+ .se domain names deemed of importance to the Swedish society as a whole,
+ as well as random selection of 1% of the registered .se domain names.
+\end_layout
+
+\begin_layout Subsection
+.SE Domain Check
+\end_layout
+
+\begin_layout Standard
+In order to facilitate repeatable and improvable analysis, tools will be
+ developed to perform the collection and aggregation steps automatically.
+ .SE already has a set of tools that run monthly; integration and interoperabilit
+y will smooth the process and continuous usage.
+ There is also a public .SE tool to allow web site owners to test their own
+ sites, 
+\emph on
+Domain Check
+\emph default
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add link to Domain Check.
+\end_layout
+
+\end_inset
+
+, which might benefit from some of the code developed within the scope of
+ this thesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about .SE's abuse work?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Other research
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about the results of the research, not that there is research.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5528,6 +5478,157 @@ target "http://www.nsa.gov/"
  part by their online efforts, and how they are packaging it for resale.
  While media reports are not academic papers, they provide an up to date
  source of information needed in explaining parts of the thesis subject.
+\end_layout
+
+\begin_layout Subsection
+Cookie syncing
+\end_layout
+
+\begin_layout Standard
+A recent large-scale study 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
+
+\end_inset
+
+ included a cookie syncing privacy analysis.
+ It was shown that unique user identifiers were shared between different
+ third parties.
+ IDs can be shared in different ways.
+ If both third parties exist on the same page, they can be shared through
+ scripts or by looking for any IDs in the location URL.
+ They can also be shared by one third-party sending requests to a second
+ third-party (a fourth-party? 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look up term, might be defined already.
+\end_layout
+
+\end_inset
+
+), either by leaking the location URL as a HTTP referrer or by embedding
+ it in the request URL.
+ In crawls of Alexa's top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{3000}
+\end_layout
+
+\end_inset
+
+ domains, one third-party script in particular sends requests with synced
+ IDs to 25 domains; the IDs were eventually are shared with 43 domains.
+ They also showed that a user's browsing history reconstruction rate rose
+ from 1.4% to 11% when backend/server-to-server overlaps were modeled.
+\end_layout
+
+\begin_layout Standard
+The study used a modified Firefox browser to look at values stored in primarily
+ cookies.
+ As all HTTP requests are recorded in this thesis, including HTTP cookie
+ headers, a limited version of the same study could be performed.
+ In addition, they look at in-browser scripting utilizing for example 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+localStorage
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+canvas
+\end_layout
+
+\end_inset
+
+ fingerprinting and ID storage in external plugins like Flash.
+ While that might be possible, the modifications that would need to be made
+ to phantomjs are non-trivial, and my current scope does not allow for that.
+ With their research as a base, cookie respawning and sharing could possibly
+ be confirmed using this thesis' code as a external tool using a different
+ browser platform.
+\end_layout
+
+\begin_layout Section
+HTTP Archive
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:HTTP-Archive"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httparchive.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In an effort to measure web page speed on the internet, initially developed
+ in October 2010, the HTTP Archive collects HAR data and runs analyses on
+ them.
+ Unfortunately, their data dumps are in a custom format, not the original
+ HAR files, but there are some direct comparisons to be made with their
+ 
+\emph on
+Interesting stats
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://httparchive.org/interesting.php"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ aggregate data.
+\end_layout
+
+\begin_layout Itemize
+Pages Using Google Libraries API
+\end_layout
+
+\begin_layout Itemize
+HTTPS Requests
+\end_layout
+
+\begin_layout Itemize
+Total Requests per Page
 \end_layout
 
 \begin_layout Chapter
@@ -6339,87 +6440,6 @@ Other potential improvements would be implementing the non-ICANN, private
 ' common domain name suffix has little to do with it.
 \end_layout
 
-\begin_layout Section
-Other views on the same data
-\end_layout
-
-\begin_layout Standard
-Research that could possibly be performed using the same data and tools.
-\end_layout
-
-\begin_layout Subsection
-Cookie syncing
-\end_layout
-
-\begin_layout Standard
-A recent large-scale study 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "G.-Acar:persistent:2014aa"
-
-\end_inset
-
- included a cookie syncing privacy analysis.
- It was shown that unique user identifiers were shared between different
- third parties.
- IDs can be shared in different ways.
- If both third parties exist on the same page, they can be shared through
- scripts or by looking for any IDs in the location URL.
- They can also be shared by one third-party sending requests to a second
- third-party (a fourth-party?), either by leaking the location URL as a
- HTTP referrer or by embedding it in the request URL.
- In crawls of Alexa's top 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{3000}
-\end_layout
-
-\end_inset
-
- domains, one third-party script in particular sends requests with synced
- IDs to 25 domains; the IDs were eventually are shared with 43 domains.
- They also showed that a user's browsing history reconstruction rate rose
- from 1.4% to 11% when backend/server-to-server overlaps were modeled.
-\end_layout
-
-\begin_layout Standard
-The study used a modified Firefox browser to look at values stored in primarily
- cookies.
- As all HTTP requests are recorded in this thesis, including HTTP cookie
- headers, a limited version of the same study could be performed.
- In addition, they look at in-browser scripting utilizing for example 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-localStorage
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-canvas
-\end_layout
-
-\end_inset
-
- fingerprinting and ID storage in external plugins like Flash.
- While that might be possible, the modifications that would need to be made
- to phantomjs are non-trivial, and my current scope does not allow for that.
- With their research as a base, cookie respawning and sharing could possibly
- be confirmed using this thesis' code as a external tool using a different
- browser platform.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -6447,6 +6467,14 @@ begin{wide}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Other views on the same data
+\end_layout
+
+\begin_layout Standard
+Research that could possibly be performed using the same data and tools.
 \end_layout
 
 \begin_layout Subsection
@@ -6775,7 +6803,7 @@ CP=
 
 \end_inset
 
- (malformed), 
+ (which is a malformed value), 
 \begin_inset Flex Code
 status collapsed
 
