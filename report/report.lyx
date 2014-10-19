@@ -768,14 +768,13 @@ Methodology
 \end_layout
 
 \begin_layout Standard
-Based on a list of domains, the front page of each domain is downloaded
- and parsed the way a user's browser would.
- The URL of each requested resource is extracted, and associated with the
- domain it was loaded from.
- This data is then classified in a number of ways, before being boiled down
- to statistics about the entire dataset.
- These aggregates are then compared between datasets.
- For methodology details, see 
+Emphasis for the thesis is on a technical analysis, producing aggregate
+ numbers regarding domains and external resources.
+ Social aspects and privacy concerns are considered out of scope.
+\end_layout
+
+\begin_layout Standard
+For methodology details, see 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Methodology-details"
@@ -787,6 +786,32 @@ reference "chap:Methodology-details"
 
 \begin_layout Section
 High level overview
+\end_layout
+
+\begin_layout Standard
+Based on a list of domains, the front page of each domain is downloaded
+ and parsed the way a user's browser would.
+ The URL of each requested resource is extracted, and associated with the
+ domain it was loaded from.
+ This data is then classified in a number of ways, before being boiled down
+ to statistics about the entire dataset.
+ These aggregates are then compared between datasets.
+\end_layout
+
+\begin_layout Standard
+The thesis is primarily written from a Swedish perspective.
+ This is in part because .SE has access to the full list of Swedish .se domains,
+ and part because of their previous work with the 
+\emph on
+.SE Health Status
+\emph default
+ reports.
+ Focus is to analyze .se domains in the reports, as they have already been
+ deemed important and results can be incorporated in future reports, and
+ use other TLDs and domain lists for contrast.
+ The main non-technical grouping is also based on the same reports; government,
+ media, financial institutions and other nation-wide publicly relevant organizat
+ion groups.
 \end_layout
 
 \begin_layout Standard
@@ -821,20 +846,135 @@ Use of domain names and suffix lists.
 \end_layout
 
 \begin_layout Section
-Capturing domain blocking
+Capturing tracker requests
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
+One assumption is that all external resources can act as trackers, even
+ for static (non-script) resources with no capabilities to dynamically survey
+ the user's browser, collecting data and tracking users across domains using
+ for example the 
+\begin_inset Flex Code
+status collapsed
 
 \begin_layout Plain Layout
-Use of blocking lists.
+Referer
 \end_layout
 
 \end_inset
 
+ HTTP header 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
 
+\end_inset
+
+.
+ While there are lists of known trackers, used by browser privacy tools,
+ they are not 100% effective 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+.
+ Lists are instead used to emphasize those external resources as 
+\emph on
+confirmed
+\emph default
+ and 
+\emph on
+recognized
+\emph default
+ trackers.
+\end_layout
+
+\begin_layout Standard
+Resources have not been blocked in the browser during web site retrieval,
+ but have been matched by URL against a third-party list in the analysis
+ step.
+ This way trackers dynamically triggering additional requests have also
+ been recored, which can make a difference if they access another domain
+ or another organization's trackers in the process.
+\end_layout
+
+\begin_layout Standard
+The tracker list of choice is the one used in the privacy tool Disconnect.me,
+ where it is used to block external requests to (most) known tracker domains.
+ It consists of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2149}
+\end_layout
+
+\end_inset
+
+ domains, each belonging to one of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{980}
+\end_layout
+
+\end_inset
+
+ organizations and five categories: advertising, analytics, content, diconnect
+ and social 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+.
+ Not all domains in the list are treated the same by Disconnect.me; despite
+ being listed as known trackers, the content category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Content"
+
+\end_inset
+
+ is not blocked by default in order to not disturb the normal user experience
+ too much.
+ The domain level blocking fits well with the thesis' internal versus external
+ resource reasoning.
+ Because domains are linked to organizations as well as broadly categorized,
+ blocking aggregate counts and coverage can form a bigger picture.
+\end_layout
+
+\begin_layout Standard
+While cookies used for tracking have been a concern for many, they are not
+ necessary in order to identify most users upon return, even uniquely on
+ a global level 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eckersley2009unique"
+
+\end_inset
+
+.
+ Cookies have not been considered to be an indicator of tracking, as it
+ can be assumed that a combination of other server and client side techniques
+ can achieve the same goal as a normal tracking cookie 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -904,83 +1044,6 @@ Write about limitations.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Direction and scope
-\end_layout
-
-\begin_layout Standard
-Emphasis for the thesis will be on technical analysis, producing aggregate
- numbers regarding domains and external resources.
- Social aspects and privacy concerns are considered out of scope.
-\end_layout
-
-\begin_layout Standard
-The thesis will primarily be written from a Swedish perspective.
- This is in part because .SE has access to the full list of Swedish .se domains,
- and part because of their previous work with the 
-\emph on
-.SE Health Status
-\emph default
- reports.
- Focus is to analyze .se domains in the reports, as they have already been
- deemed important and results can be incorporated in future reports.
- The main non-technical grouping is also based on the same reports; government,
- media, financial institutions and other nation-wide publicly relevant organizat
-ion groups.
-\end_layout
-
-\begin_layout Standard
-One assumption is that all external resources can act as trackers, even
- for static (non-script) resources with no capabilities to dynamically survey
- the user's browser, collecting data and tracking users across domains using
- for example the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Referer
-\end_layout
-
-\end_inset
-
- HTTP header 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- While there are lists of known trackers, used by browser privacy tools,
- they are not 100% effective 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- The lists will instead optionally be used to emphasize those external resources
- as 
-\emph on
-confirmed
-\emph default
- trackers.
- While cookies used for tracking have been a concern for many, they are
- not necessary in order to identify most users upon return, even uniquely
- on a global level 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Eckersley2009unique"
-
-\end_inset
-
-.
- Cookies will not be considered to be an indicator of tracking, as it can
- be assumed that a combination of other server and client side techniques
- can achieve the same goal as a tracking cookie.
 \end_layout
 
 \begin_layout Section
