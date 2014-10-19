@@ -845,6 +845,275 @@ Use of domain names and suffix lists.
 
 \end_layout
 
+\begin_layout Standard
+There are three major types of domain lists used in this thesis.
+ The total number of domains is over 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{150000}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Domain-lists-in-use"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Curated
+\begin_inset space ~
+\end_inset
+
+lists The 
+\emph on
+.SE Health Status
+\emph default
+ reports use lists of domains in the categories counties, domain registrars,
+ financial services, government-owned corporations (GOCS), higher education,
+ ISPs, media, municipalities, and public authorities 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:.SE-Health-Status-domains"
+
+\end_inset
+
+.
+ The domains are deemed important to Swedes and internet operations/usage
+ in Sweden.
+\end_layout
+
+\begin_layout Description
+Top
+\begin_inset space ~
+\end_inset
+
+lists Alexa's Top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000000}
+\end_layout
+
+\end_inset
+
+ sites 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Alexa-Top-1000000-sites"
+
+\end_inset
+
+ and Reach50 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Reach50-domains"
+
+\end_inset
+
+ are compiled from internet usage, internationally and in Sweden respectively.
+ The Alexa top list is freely available and used in other research; four
+ selections of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000000}
+\end_layout
+
+\end_inset
+
+ domains were used - top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+, random 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+, all .se and all .dk domains.
+\end_layout
+
+\begin_layout Description
+Random
+\begin_inset space ~
+\end_inset
+
+zone
+\begin_inset space ~
+\end_inset
+
+lists To get snapshot of the status of general sites on the web, random
+ selections directly from the .se 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Random-.se-domains"
+
+\end_inset
+
+, .dk 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Random-.dk-domains"
+
+\end_inset
+
+, .com and .net 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Random-.com,-.net-domains"
+
+\end_inset
+
+ TLD zones were used.
+ The largest set was 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100000}
+\end_layout
+
+\end_inset
+
+ .se domains; 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ domains each from .dk, .com and .net were also used.
+\end_layout
+
+\begin_layout Standard
+Simply assuming domain ownership is always based on second-level domains,
+ such as iis.se or joelpurra.com, is not correct.
+ Not all TLDs' second-level domains are open for registration by the public;
+ examples include the Brazilian top level domain 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.br
+\end_layout
+
+\end_inset
+
+, which only allows commercial registrations under 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.com.br
+\end_layout
+
+\end_inset
+
+.
+ There is a set of such 
+\emph on
+public suffixes
+\emph default
+ used by browser vendors to implement domain-dependent security measures,
+ like preventing super-cookies 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
+ The list has been incorporated into this thesis as a way to group domains
+ like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+company-abc.com.br
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+def-company.com.br
+\end_layout
+
+\end_inset
+
+ as separate entities, instead of incorrectly seeing them as simple subdomains
+ of the public suffix 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.com.br
+\end_layout
+
+\end_inset
+
+ - technically a second-level domain.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Is the technical term correct?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Capturing tracker requests
 \end_layout
@@ -950,7 +1219,7 @@ reference "sub:Disconnect-Content"
  too much.
  The domain level blocking fits well with the thesis' internal versus external
  resource reasoning.
- Because domains are linked to organizations as well as broadly categorized,
+ Because domains are linked to organizations as well as broadly categorized,
  blocking aggregate counts and coverage can form a bigger picture.
 \end_layout
 
@@ -4542,6 +4811,25 @@ description "JavaScript Object Notation"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GOCS"
+description "Government-owned corporations"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Government-owned corporations"
+description "(GOCS) State-owned corporations."
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 \start_of_appendix
 Methodology details
@@ -4577,6 +4865,13 @@ Generate statistics table for each domain list this chapter?
 .SE Health Status
 \emph default
  domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:.SE-Health-Status-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4606,8 +4901,80 @@ Write a summary with examples from each dataset.
 
 \end_layout
 
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Counties
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Domain
+\begin_inset space ~
+\end_inset
+
+registrars
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Financial
+\begin_inset space ~
+\end_inset
+
+services
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Government-owned
+\begin_inset space ~
+\end_inset
+
+corporations (GOCS)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Higher
+\begin_inset space ~
+\end_inset
+
+education
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ISPs
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Media
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Municipalities
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Public
+\begin_inset space ~
+\end_inset
+
+authorities
+\end_layout
+
 \begin_layout Subsection
 Random .se domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Random-.se-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4659,6 +5026,13 @@ numprint{100000}
 
 \begin_layout Subsection
 Random .dk domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Random-.dk-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4697,6 +5071,13 @@ numprint{10000}
 
 \begin_layout Subsection
 Random .com, .net domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Random-.com,-.net-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4738,10 +5119,10 @@ numprint{1000000}
 
 \end_inset
 
-
+ sites
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Alexa-Top-1000000"
+name "sub:Alexa-Top-1000000-sites"
 
 \end_inset
 
@@ -4829,7 +5210,14 @@ target "https://alexa.zendesk.com/hc/en-us/articles/200449834-Does-Alexa-have-a-
 \end_layout
 
 \begin_layout Subsection
-Reach50
+Reach50 domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Reach50-domains"
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -4873,10 +5261,10 @@ target "http://webmie.com/"
 \end_layout
 
 \begin_layout Subsection
-Datasets in use
+Domain lists in use
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Datasets-in-use"
+name "sub:Domain-lists-in-use"
 
 \end_inset
 
@@ -4898,6 +5286,10 @@ target "https://www.iis.se/domaner/statistik/tillvaxt/?chart=active"
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset space \thinspace{}
 \end_inset
 
 
@@ -4994,6 +5386,10 @@ target "https://publicsuffix.org/"
 \end_inset
 
 
+\begin_inset space \thinspace{}
+\end_inset
+
+ 
 \begin_inset Foot
 status open
 
@@ -5026,12 +5422,16 @@ example.co.uk
 
 \end_inset
 
-, where the public suffix 
+, where the 
+\emph on
+public suffix
+\emph default
+ 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
-co.uk
+.co.uk
 \end_layout
 
 \end_inset
@@ -5041,7 +5441,7 @@ co.uk
 status collapsed
 
 \begin_layout Plain Layout
-uk
+.uk
 \end_layout
 
 \end_inset
@@ -5087,7 +5487,7 @@ user-owned subdomain
 status collapsed
 
 \begin_layout Plain Layout
-co.uk
+.co.uk
 \end_layout
 
 \end_inset
@@ -5097,7 +5497,7 @@ co.uk
 status collapsed
 
 \begin_layout Plain Layout
-co.uk
+.co.uk
 \end_layout
 
 \end_inset
@@ -5107,7 +5507,7 @@ co.uk
 status collapsed
 
 \begin_layout Plain Layout
-uk
+.uk
 \end_layout
 
 \end_inset
@@ -5121,7 +5521,7 @@ Swedish examples include second level domains
 status collapsed
 
 \begin_layout Plain Layout
-pp.se
+.pp.se
 \end_layout
 
 \end_inset
@@ -5131,7 +5531,7 @@ pp.se
 status collapsed
 
 \begin_layout Plain Layout
-tm.se
+.tm.se
 \end_layout
 
 \end_inset
@@ -5174,8 +5574,21 @@ target "https://en.wikipedia.org/wiki/.se#Pre_2003_system"
 \end_layout
 
 \begin_layout Standard
-The public suffix list (2014-07-24) contains 6278 rules, against which domains
- are checked in one of the classification steps 
+The public suffix list (2014-07-24) contains 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{6278}
+\end_layout
+
+\end_inset
+
+ rules, against which domains are checked in one of the classification steps
+ 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:classification/effective-tld/add.sh"
@@ -5208,8 +5621,17 @@ There is also an algorithm for wildcard rules which can have exceptions;
  this thesis has not implemented wildcards and exceptions in the classification
  step.
  There are 24 TLDs with wildcard public suffixes, and 8 non-TLD wildcards.
- Out of these 8 non-TLD wildcards, 1 is *.sch.uk and 7 are Japanese geographic
- areas.
+ Out of these 8 non-TLD wildcards, 1 is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+*.sch.uk
+\end_layout
+
+\end_inset
+
+ and 7 are Japanese geographic areas.
  The 24 wildcards have 10 exception rules; 7 of them are Japanese cities
  grouped by the previously mentioned geographic areas and the remaining
  3 seem to belong to ccTLD owner organizations.
@@ -5559,7 +5981,7 @@ alexa.com Amazon's web statistics service, considered an authority in web
  as input for this thesis 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:Alexa-Top-1000000"
+reference "sub:Alexa-Top-1000000-sites"
 
 \end_inset
 
