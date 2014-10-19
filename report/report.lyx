@@ -656,6 +656,204 @@ Based on a list of domains, the front page of each domain is downloaded
 \end_layout
 
 \begin_layout Section
+High level overview
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Previous expected results, methodology and software chapters trimmed down
+ into a more compact format; refer to appendix for software/script details.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Domain categories
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Use of domain names and suffix lists.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Capturing domain blocking
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Use of blocking lists.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Data collection
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Variation of the old retrieving websites and resources chapter, including
+ parallelization.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Data analysis and validation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Variation of the old analyzing resources chapter.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+High level summary of datasets
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write high level summary of datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Limitations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about limitations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Direction and scope
+\end_layout
+
+\begin_layout Standard
+Emphasis for the thesis will be on technical analysis, producing aggregate
+ numbers regarding domains and external resources.
+ Social aspects and privacy concerns are considered out of scope.
+\end_layout
+
+\begin_layout Standard
+The thesis will primarily be written from a Swedish perspective.
+ This is in part because .SE has access to the full list of Swedish .se domains,
+ and part because of their previous work with the 
+\emph on
+.SE Health Status
+\emph default
+ reports.
+ Focus is to analyze .se domains in the reports, as they have already been
+ deemed important and results can be incorporated in future reports.
+ The main non-technical grouping is also based on the same reports; government,
+ media, financial institutions and other nation-wide publicly relevant organizat
+ion groups.
+\end_layout
+
+\begin_layout Standard
+One assumption is that all external resources can act as trackers, even
+ for static (non-script) resources with no capabilities to dynamically survey
+ the user's browser, collecting data and tracking users across domains using
+ for example the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Referer
+\end_layout
+
+\end_inset
+
+ HTTP header 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+.
+ While there are lists of known trackers, used by browser privacy tools,
+ they are not 100% effective 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+.
+ The lists will instead optionally be used to emphasize those external resources
+ as 
+\emph on
+confirmed
+\emph default
+ trackers.
+ While cookies used for tracking have been a concern for many, they are
+ not necessary in order to identify most users upon return, even uniquely
+ on a global level 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eckersley2009unique"
+
+\end_inset
+
+.
+ Cookies will not be considered to be an indicator of tracking, as it can
+ be assumed that a combination of other server and client side techniques
+ can achieve the same goal as a tracking cookie.
+\end_layout
+
+\begin_layout Section
 Document style
 \end_layout
 
@@ -799,3013 +997,6 @@ end{futurework}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Data sources
-\end_layout
-
-\begin_layout Subsection
-Domains
-\end_layout
-
-\begin_layout Standard
-Statistics regarding each list of domains is presented in an appendix.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Generate domain list tables or tables in this chapter?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-
-\emph on
-.SE Health Status
-\emph default
- domains
-\end_layout
-
-\begin_layout Standard
-When .SE performs their annual 
-\emph on
-.SE Health Status
-\emph default
- report measurements, they use an in-house curated list of domains of national
- interest.
- These domains are mostly from the .se zone and cover government, county,
- municipality, higher education, government-owned corporations, financial
- service, internet service provider (ISP), domain registrar, and media domains.
- Some domains overlap both within and between categories; domains have been
- deduplicated.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write a summary with examples from each dataset.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Random .se domains
-\end_layout
-
-\begin_layout Standard
-The thesis was written in collaboration with .SE, which runs the .se TLD,
- and the work focusing on the state of Swedish domains.
- Early script development was done using a sample of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{10000}
-\end_layout
-
-\end_inset
-
- random domains, most often tested in groups of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{100}
-\end_layout
-
-\end_inset
-
-.
- A final sample of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{100000}
-\end_layout
-
-\end_inset
-
- domains was also provided.
- The .se TLD is to be considered Sweden-centric.
-\end_layout
-
-\begin_layout Subsubsection
-Random .dk domains
-\end_layout
-
-\begin_layout Standard
-The Danish .dk TLD organization, DK Hostmaster A/S
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.dk-hostmaster.dk/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, helped out with a sample of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{10000}
-\end_layout
-
-\end_inset
-
- domains, chosen at random from the database of active domains in the zone.
- The .dk TLD is to be considered Denmark-centric.
-\end_layout
-
-\begin_layout Subsubsection
-Random .com, .net domains
-\end_layout
-
-\begin_layout Standard
-The maintainers of the .com, .net and .name TLDs, Verisign, allow downloading
- of the complete zone file under an agreement.
- The .com zone is the largest one by far, and the .net zone is in the top
- 4.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.keepalert.com/top-extension-ranking-july-2014-newgtlds"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- This allows for a random selection of sites from around the world, even
- though usage is not geographically uniform - both in terms of registrations
- and actual usage.
-\end_layout
-
-\begin_layout Subsubsection
-Alexa Top 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{1000000}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://alexa.com/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Alexa, owned by Amazon, is a well-known source of top sites
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.alexa.com/topsites"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- in the world.
- It is used in many research papers, and can be seen as the standard dataset.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-List referenced research papers using it.
-\end_layout
-
-\end_inset
-
- Their daily 1-month average traffic rank top 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{1000000}
-\end_layout
-
-\end_inset
-
- list is freely available for download.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://alexa.zendesk.com/hc/en-us/articles/200449834-Does-Alexa-have-a-list-of-its-top-ranked-websites-"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- As Alexa distinguishes between a site and a domain, some domains with several
- popular sites are listed more than once.
- URL paths have been stripped and domains have been deduplicated before
- downloading.
-\end_layout
-
-\begin_layout Subsubsection
-Reach50
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://reach50.com/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The top 50 sites in Sweden are presented by Webmie
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://webmie.com/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, who base their list on data from a user panel.
- The panelists have installed an extension into their browser, tracking
- their browsing habits by automated means.
- They also have results grouped by panelists categories: women, men, age
- 16-34, 35-54, 55+ but only the unfiltered top list is publicly available.
-\end_layout
-
-\begin_layout Subsubsection
-Datasets in use
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Datasets-in-use"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-These are the final domain lists in use, including full dataset size
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/domaner/statistik/tillvaxt/?chart=active"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://stats.dk-hostmaster.dk/domains/total_domains/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and selection method.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{domains.datasets.tsv}{Datasets in use}{}{display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=l},
- display columns/3/.style={string type, column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-TLD distribution
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:TLD-distribution"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-These are the top TLDs in the list of unique domains.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{domains.tlds.tsv}{TLDs in dataset in use}{}{display columns/2/.style={stri
-ng type, column type=l},}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-External datasets
-\end_layout
-
-\begin_layout Subsubsection
-Disconnect's blocking list
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Disconnect's-blocking-list"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-One of the most popular privacy tools is Disconnect, which blocks tracking
- sites by running as a browser plugin.
- Disconnect was started by ex-Google engineers, and still seems to have
- close ties to Google as the own domain disconnect.me is listed as a Google
- content domain in the blocking list.
-\end_layout
-
-\begin_layout Standard
-The Disconnect software lets users block/unblock loading resources from
- specific third-party domains.
- A list of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{2149}
-\end_layout
-
-\end_inset
-
- domains is used as the basis from the blocking.
- Each entry belongs to one of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{980}
-\end_layout
-
-\end_inset
-
- organizations, which come with a link to their webpage.
- There is also a grouping into categories, here shown with some examples.
- Worth noting is that the content category is not blocked by default.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-There are other open source alternatives to Disconnect's blocking list,
- but they use data formats that are not as easy to parse.
- The most popular ones also do not contain information about which organization
- each blocking rule belongs to.
- See 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:Ad-and-privacy-blocking-lists"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Categories
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Disconnect-Categories"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Summary of Disconnect's categories.
- Most domains and organizations by far are in the advertisement category.
- The reason the Disconnect category has so few organizations, is that it
- is treated as a special category 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect-category"
-
-\end_inset
-
- with only Google, Facebook and Twitter.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{disconnect.categories.tsv}{Disconnect's categories (2014-09-08)}{}{displa
-y columns/0/.style={string type, column type=l},}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Domains per organization
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Disconnect-Domains-per-organization"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Many organizations have more than one domain.
- One organization stands out, with 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{271}
-\end_layout
-
-\end_inset
-
- domains - Google.
- The biggest reason is that they own top level domains such as google.se
- and google.ch from over 200 TLDs.
- Yahoo comes in second with 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{71}
-\end_layout
-
-\end_inset
-
- domains, many of which are service-specific subdomains to yahoo.com, such
- as finance.yahoo.com and travel.yahoo.com.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization
- (2014-09-08)}{}{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Organizations in more than one category
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Disconnect-Organizations-in-more-than-one-category"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Some organizations are represented in more than one of the five Disconnect
- categories.
- Yahoo has several ad services, several social services, several content
- services and a single analytics service, putting them in four categories.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
- in more than one category (2014-09-08)}{}{display columns/0/.style={string
- type, column type=l},}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Advertising
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add technorati.com, wpp.com?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-overture.com Yahoo's ad network.
-\end_layout
-
-\begin_layout Description
-omniture.com Adobe's ad network.
-\end_layout
-
-\begin_layout Description
-amazon-adsystem.com Amazon's ad delivery network.
-\end_layout
-
-\begin_layout Paragraph
-Analytics
-\end_layout
-
-\begin_layout Description
-alexa.com Amazon's web statistics service, considered an authority in web
- measurement.
-\end_layout
-
-\begin_layout Description
-comscore.com Analytics service that also publishes statistics.
-\end_layout
-
-\begin_layout Description
-gaug.es GitHub's analytics service.
-\end_layout
-
-\begin_layout Description
-coremetrics.com Part of IBM's enterprise marketing services.
-\end_layout
-
-\begin_layout Description
-newrelic.com A suite of systems monitoring and analytics software, up to
- and including browsers.
-\end_layout
-
-\begin_layout Description
-nielsen.com Consumer studies.
-\end_layout
-
-\begin_layout Description
-statcounter.com Web statistics tool.
-\end_layout
-
-\begin_layout Description
-webtrends.com Digital marketing analytics and optimization across channels.
-\end_layout
-
-\begin_layout Paragraph
-Content
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Disconnect-Content"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Sites that deliver content.
- There is a wide variety of content, from images and videos to A/B testing,
- comment and help desk services.
- This category is not blocked by default.
-\end_layout
-
-\begin_layout Description
-apis.google.com One of Google's API domains.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Look at which services are hosted.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-brightcove.com Video hosting/monetization service.
-\end_layout
-
-\begin_layout Description
-disqus.com A third party comment service.
-\end_layout
-
-\begin_layout Description
-flickr.com Flickr is a photo/video hosting site, owned by Yahoo.
-\end_layout
-
-\begin_layout Description
-googleapis.com One of Google's API domains, hosting third-party files/services
- such as Google Fonts and Google Hosted Libraries.
-\end_layout
-
-\begin_layout Description
-instagram.com Facebook's photo/video sharing site.
-\end_layout
-
-\begin_layout Description
-office.com Microsoft's Office suite online.
-\end_layout
-
-\begin_layout Description
-optimizely.com An A/B testing service.
-\end_layout
-
-\begin_layout Description
-truste.com Provides certification and tools for privacy policies in order
- to gain users' trust; “enabling businesses to safely collect and use customer
- data across web, mobile, cloud and advertising channels.” This includes
- ways to selectively opt-out from cookies features; required, functional
- or advertising.
-\end_layout
-
-\begin_layout Description
-tumblr.com A popular blogging platform.
-\end_layout
-
-\begin_layout Description
-uservoice.com A customer support service.
-\end_layout
-
-\begin_layout Description
-vimeo.com A video site.
-\end_layout
-
-\begin_layout Description
-www.google.com Google's main domain, which also hosts services such as search.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Look at which services are hosted.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-youtube.com One of Google's video sites.
-\end_layout
-
-\begin_layout Paragraph
-Disconnect
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Disconnect-category"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A special category for non-content resources from Facebook, Google and Twitter.
- It seems to initially have been designed to block their respective like/+1/twee
-t buttons which seem to belong in the social category.
- As the category now contains many other known tracking domains from the
- same organizations, unblocking the social buttons also lets many other
- types of resources trough.
-\end_layout
-
-\begin_layout Standard
-It is worth noting that this category includes google-analytics.com plus
- Google ad networks such as adwords.google.com, doubleclick.net and admob.com.
- It might have been more appropriate to have them in the analytics and advertise
-ment categories respectively.
-\end_layout
-
-\begin_layout Paragraph
-Social
-\end_layout
-
-\begin_layout Standard
-Site with an emphasis on social aspects.
- They often have buttons to vote for, recommend or share with others.
-\end_layout
-
-\begin_layout Description
-addthis.com A link sharing service aggregator.
-\end_layout
-
-\begin_layout Description
-digg.com News aggregator.
-\end_layout
-
-\begin_layout Description
-linkedin.com Professional social network.
-\end_layout
-
-\begin_layout Description
-reddit.com Social new and link sharing, and discussion.
-\end_layout
-
-\begin_layout Subsubsection
-Public suffix list
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Public-suffix-list"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://publicsuffix.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://en.wikipedia.org/wiki/Public_Suffix_List"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In the domain name system, it is not always obvious what parts of a domain
- name are a public suffix and which are open for registration by Internet
- users.
- The main example is 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-example.co.uk
-\end_layout
-
-\end_inset
-
-, where the public suffix 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-co.uk
-\end_layout
-
-\end_inset
-
- is to different from the TLD 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-uk
-\end_layout
-
-\end_inset
-
-.
- Because HTTP cookies are based on domains names, it is important to browser
- vendors to be able to recognize which parts are public suffixes to be able
- to protect users against supercookies
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://en.wikipedia.org/wiki/HTTP_cookie#Supercookie"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-; cookies which are scoped to a public suffix, and therefore readable across
- all web sites under that public suffix.
- The same dataset is also useful for grouping domains without improperly
- counting 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-example.co.uk
-\end_layout
-
-\end_inset
-
- as a 
-\emph on
-user-owned subdomain
-\emph default
- of 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-co.uk
-\end_layout
-
-\end_inset
-
-, which would then render 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-co.uk
-\end_layout
-
-\end_inset
-
- as the most popular domain under the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-uk
-\end_layout
-
-\end_inset
-
- TLD.
-\end_layout
-
-\begin_layout Standard
-Swedish examples include second level domains 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-pp.se
-\end_layout
-
-\end_inset
-
- for privately owned domains and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-tm.se
-\end_layout
-
-\end_inset
-
- for trademarks
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/data/barred_domains_list.txt"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- These second level domains were more important before April 2003
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://en.wikipedia.org/wiki/.se#Pre_2003_system"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, when first level domain registration rules restricted registration to
- nation-wide companies, associations and authorities.
-\end_layout
-
-\begin_layout Standard
-The public suffix list (2014-07-24) contains 6278 rules, against which domains
- are checked in one of the classification steps 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:classification/effective-tld/add.sh"
-
-\end_inset
-
-.
- It becomes the basis for the domain's division into public suffix and primary
- domain (first non-public suffix match), and subsequent grouping.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-There is also an algorithm for wildcard rules which can have exceptions;
- this thesis has not implemented wildcards and exceptions in the classification
- step.
- There are 24 TLDs with wildcard public suffixes, and 8 non-TLD wildcards.
- Out of these 8 non-TLD wildcards, 1 is *.sch.uk and 7 are Japanese geographic
- areas.
- The 24 wildcards have 10 exception rules; 7 of them are Japanese cities
- grouped by the previously mentioned geographic areas and the remaining
- 3 seem to belong to ccTLD owner organizations.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Apart from ICANN domains, which have been implemented, there are also private
- domains considered public suffixes listed as rules.
- They are domains which have subdomains controlled by users/customers, for
- example joelpurra.github.io which is controlled by me but hosted by the code
- hosting service github.com.
- Other examples include cloud hosting/CDN services such as cloudfront.net,
- amazonaws.com, azurewebsites.net, fastly.net, herokuapp.com, blogs from several
- blogspot.TLD domains and dyndns.com's wide choice of dynamic domains.
- One example that looks like a technical choice in order to hinder accidental
- or malicious setting of cookies is googleapis.com, which is listed despite
- being (presumably) completely under Google's control.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Retrieving websites and resources
-\end_layout
-
-\begin_layout Standard
-Web sites based on lists of domains were downloaded using har-heedless,
- see 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:har-heedless"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Computer machines
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Computer-machines"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Two computers were used to download web pages - one laptop machine and one
- server machine.
- The server is significantly more powerful than the laptop, and they downloaded
- a different number of web pages at a time.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{computer-machines.tsv}{Machine specifications}{}{display columns/0/.style
-={string type, column type=l}, display columns/1/.style={string type, column
- type=l}, display columns/2/.style={string type, column type=l}, }
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Network connection
-\end_layout
-
-\begin_layout Standard
-The laptop machine was connected by ethernet to the .SE office network, which
- is shared with employees' computers.
- The server machine was connected to server co-location network, which is
- shared with other servers.
- The .SE network technicians said load was kept very low, and only a few
- percent of the dedicated 100 Mbps per location was used.
- Both locations are in Stockholm city, and should therefore be well placed
- in regard to web sites hosted in Sweden.
-\end_layout
-
-\begin_layout Subsection
-Software considerations
-\end_layout
-
-\begin_layout Standard
-To expedite an automated and repeatable process, a custom set of scripts
- were written as the project har-heedless.
- The scripts are written using standard tools, available as open source
- and on multiple platforms.
-\end_layout
-
-\begin_layout Subsubsection
-Dynamic web pages
-\end_layout
-
-\begin_layout Standard
-Previous efforts to download and analyze web pages by .SE used a static approach,
- analyzing the HTML by means of simple searches for 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://
-\end_layout
-
-\end_inset
-
- strings in HTML and CSS.
- It had proven hard to maintain, and the software project was abandoned
- before the thesis was started, but had not yet been replaced.
- In order to better handle the dynamic nature of modern web pages, the headless
- browser phantomjs 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:phantomjs"
-
-\end_inset
-
- was chosen, as it would also download and execute javascript - a major
- component in both user interfaces as well as active trackers and ads.
-\end_layout
-
-\begin_layout Subsubsection
-Cached content
-\end_layout
-
-\begin_layout Standard
-Many of the external resources will be overlapping between web sites and
- domains, and downloading them multiple times can be avoided by caching
- the file the first time in a run.
- Keeping cached content would, depending on per-response cache settings
- and timeout, result in a different HTTP request and potentially different
- response.
- A file that has not changed on the server would generate a HTTP response
- status of 304 with no data, saving bandwidth and lowering transfer delays,
- where a changed file would generate a status 200 response with the latest
- version.
-\end_layout
-
-\begin_layout Standard
-One of the technologies in determining if a locally cached file is the correct/l
-atest version includes the HTTP 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Etag
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to Etag standard.
-\end_layout
-
-\end_inset
-
- header, which is a string representation of a URL/file at a certain version.
- When content is transferred it may have an 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Etag
-\end_layout
-
-\end_inset
-
- attached; if the file is cacheable, the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Etag
-\end_layout
-
-\end_inset
-
- is saved.
- Subsequent requests for the same, cached URL contain the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Etag
-\end_layout
-
-\end_inset
-
- - and the server uses it to determine if a compact 304 response is enough
- or a full 200 response is necessary.
- It has been found that the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Etag
-\end_layout
-
-\end_inset
-
- header can be used for cookieless cross-site tracking by using an arbitrarily
- chosen per-browser value instead of a file-dependent value 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "M.-Ayenson:2011aa"
-
-\end_inset
-
-.
- This means that keeping a local file cache might affect how trackers respond;
- a file cache has not been implemented in har-heedless, making the browser
- amnesiac.
-\end_layout
-
-\begin_layout Subsubsection
-Flash files
-\end_layout
-
-\begin_layout Standard
-Flash is a scriptable proprietary cross-platform vector based web technology
- owned by Adobe.
- Several kinds of content, including video players, games and ads, use Flash
- because it has historically been better suited than javascript for in-browser
- moving graphics and video.
- Flash usage has not been considered for this thesis as the technology isn
- not available on all popular web browsing platforms, notably Apple's iPad,
- and is being phased out by HTML 5 features such as 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<canvas>
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<video>
-\end_layout
-
-\end_inset
-
- elements.
-\end_layout
-
-\begin_layout Subsubsection
-Combined javascript
-\end_layout
-
-\begin_layout Standard
-A common technique for speeding up web sites is to reduce the number of
- resources the browser needs to download, by combining or concatenating
- them in different ways depending on the file format.
- Javascript is a good example where there are potential benefits
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://developers.google.com/speed/docs/best-practices/rtt#CombineExternalJS"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- since functionality often is spread across several files, especially after
- the plugin style of frameworks such as jQuery
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://jquery.com/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- emerged.
- One concern is whether or not script concatenation on a web page would
- affect script analysis at a later stage, by reducing the number of third-party
- requests.
- While it is hard to analyze all scripts, based on their wide spread use,
- third-party scripts stay on their respective home servers as software as
- a service (SaaS) to enable faster update cycles and tracking of HTTP requests.
-\end_layout
-
-\begin_layout Subsubsection
-Google Tag Manager
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Google-Tag-Manager"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.google.com/tagmanager/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-One of the concerns was Google Tag Manager (GTM), which a script aggregation
- service with asynchronous loading directed specifically to marketers.
- Google provides builtin support for their AdWords, Analytics (GA) and DoubleCli
-ck (DC) services.
- While simplifying management with only one 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<script>
-\end_layout
-
-\end_inset
-
- tag, each part should download separately and perform the same duties,
- including “calling home” to the usual addresses.
- In order to confirm this, a query was run on one of the datasets.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{google-tag-manager.tsv}{Google Tag Manager versus Google Analytics
- and DoubleClick, dataset	2014-07-25 100k server}{}{display columns/0/.style={str
-ing type, column type=l}, display columns/2/.style={string type, column type=r}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The numbers point to every domain that uses Google Tag Manager uses at least
- one of Google Analytics and DoubleClick, and will therefore not obscure
- information regarding which services are called when further analyzed.
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-robots.txt
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<meta name="robots" />
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Automated web spider/bot software can bring a significant load to a web
- server, as the spidering speed can exceed user browsing speed by far -
- a single web spider can potentially request thousands of pages in the span
- of minutes, effectively being a denial of service attack 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to DoS information.
-\end_layout
-
-\end_inset
-
- on an underpowered server.
- Some sites also have information considered sensitive to being available
- for spiders, or even for certain (kinds) of spiders such as image spiders.
- The choice to not serve spiders can stem from technical reasons (bandwidth,
- server load), to privacy (do not allow information to be indexed in search
- engines) and business (do not allow data to be collected and aggregated).
- In order to instruct web spiders not to get certain kind of material, there
- are two basic mechanisms - the special 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-robots.txt
-\end_layout
-
-\end_inset
-
- file and the HTML header tag
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<meta name="robots" />
-\end_layout
-
-\end_inset
-
-.
- Both can contain instructions for certain bots not to index certain paths
- or pages, or not to follow further links stemming from a page.
-\end_layout
-
-\begin_layout Standard
-Commercial software from search engines, information collectors and other
- software vendors take these explicit wishes from webmasters into consideration,
- but har-heedless has not.
- While it is automated software, it is not spidering software requesting
- many pages, following links to explore the site - it only accesses the
- front page of a domain, and resources explicitly requested by that one
- page.
- Information is not retrieved for indexing as such, as only HTTP request
- metadata is recorded.
- While some information requested to be not indexed might end up in the
- screenshots, they are kept in a format hard to re-parse for machines as
- non-public thesis data used for verification.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Future versions of har-heedless might implement logic that checks 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-robots.txt
-\end_layout
-
-\end_inset
-
- in a domain list preprocessing step, to determine wether or not the request
- should be made.
- The same list can be used to filter further resource requests made by phantomjs
-, perhaps considering also other domains' 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-robot.txt
-\end_layout
-
-\end_inset
-
- files.
- The tag 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<meta name="robots" />
-\end_layout
-
-\end_inset
-
- can also be respected, perhaps in terms of not saving screenshots for 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-noindex
-\end_layout
-
-\end_inset
-
- values.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Parallelizing downloads
-\end_layout
-
-\begin_layout Standard
-A lot of the time spent downloading a web page is spent waiting for network
- resources, especially during timeouts during retrieval.
- To speed up downloading large amounts of web pages, parallelizing was employed
- using simple scripting techniques, starting multiple processes at once
- in batches, waiting for each batch to finish before starting the next.
- This was deemed inefficient, as the download and rendering speed of the
- slowest web page would be a bottle neck.
- In a later script versions, GNU 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-parallel
-\end_layout
-
-\end_inset
-
- was used, with a setting to not start more jobs if the current CPU/system
- load was too high.
-\end_layout
-
-\begin_layout Standard
-During initial parallelizing tests, the laptop machine was shown to be able
- to handle 100 domain downloads in parallel, but this was later scaled down
- to ensure system overload would not affect results, at the cost of significantl
-y longer download times.
-\end_layout
-
-\begin_layout Subsubsection
-Screen size
-\end_layout
-
-\begin_layout Standard
-When phantomjs is running, it emulates having a browser window by keeping
- an internal graphics buffer.
- Even if web page is not rendered and shown on screen, it still has a screen
- size, which affects layout.
- With a bit of javascript or responsive CSS, the screen size can affect
- downloaded resources.
- Javascript can be used to delay download of images and other resources
- that are 
-\emph on
-below the fold
-\emph default
-, meaning outside of the initial view the user has without scrolling in
- any direction, as a page speed improvement.
- Responsive CSS adapts the page style to the screen size in order to increase
- usability for mobiles and other handheld devices, and might optimize the
- quality of downloaded images to match the screen size.
-\end_layout
-
-\begin_layout Standard
-By default, phantomjs uses the physical computer's primary screen size.
- In order to reduce differences between the laptop and server machines,
- a fixed emulated window size of 1024x768 pixels was chosen.
- The basis for this is that 1024x768 pixel resolution screens have been
- the recommended screen size to design for
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.nngroup.com/articles/screen-resolution-and-page-layout/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- for a long time
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.nngroup.com/articles/computer-screens-getting-bigger/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, and it still is a common screen size
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://gs.statcounter.com/#resolution-ww-monthly-201307-201407"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Scripted browser scrolling (vertically) through the page has not been performed,
- thus javascript scrolling events triggering for example downloading of
- images below the fold are not guaranteed.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Check if all images are automatically downloaded by phantomjs, as if the
- page had been scrolled, as they seem present in screenshots.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Screenshots
-\end_layout
-
-\begin_layout Standard
-In order to visually being able to confirm that web pages have been downloaded
- correctly, a PNG screenshot can optionally be taken when the page has finished
- downloading.
- There is a processing cost associated with taking screenshots; it takes
- time for phantomjs to render the internal buffer as an image, convert it
- to base64 encoding for the augmented HAR data, jq to extract the image
- data, the system to convert the data back to binary and finally write it
- to disk.
- Extra processing is also needed to remove the screenshot from the augmented
- HAR file.
-\end_layout
-
-\begin_layout Standard
-The emulated browser window size also sets a limit on the screenshot size
- when rendered, but the entire browser canvas is captured.
- This means that screenshots that are saved to disk in most cases extend
- beyond the viewport size, most often vertically; this corresponds to scrolling
- through the entire page.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{output-filesize.tsv}{Output file size}{}{display columns/0/.style={string
- type, column type=l}, display columns/3/.style={string type, column type=r}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The ratio of PNG to HAR data size on disk points to the compressed PNG files
- being up to 10 times the size of the uncompressed HAR files for certain
- types of pages, for example media domains in the 
-\emph on
-.SE Health Status
-\emph default
- report dataset.
-\end_layout
-
-\begin_layout Subsection
-Dataset variations
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Dataset-variations"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Each dataset has been used in four variations, effectively quadrupling the
- number of web sites access attempts.
- Each of these variations have been downloaded and analyzed separately,
- then used for both intra- and inter-dataset comparisons.
-\end_layout
-
-\begin_layout Itemize
-HTTP and HTTPS.
- Enables comparisons between secure and insecure origin web site requests.
-\end_layout
-
-\begin_layout Itemize
-Empty prefix versus www prefix/subdomain.
- The www subdomain has historically been used to denote a web server serving
- web sites 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to www prefix claim.
-\end_layout
-
-\end_inset
-
-, and it still seems to have a higher usage than no prefix 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Failed-versus-non-failed"
-
-\end_inset
-
-.
- The 
-\emph on
-.SE Health Status
-\emph default
- reports specifically accesses web sites on the www subdomain.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{dataset-variations.tsv}{Dataset variations}{}{display columns/0/.style={s
-tring type, column type=l}, display columns/1/.style={string type, column
- type=l}, display columns/2/.style={string type, column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Each dataset has the variation appended to the name in the results chapter
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Detailed-Results"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-System load during downloads
-\end_layout
-
-\begin_layout Standard
-System load can affect the end results, if network timeouts occur during
- downloading and processing of domains' front pages.
- Apart from CPU and memory limitations, the other users of the .SE network
- should not be affected by tests.
-\end_layout
-
-\begin_layout Standard
-System load on *NIX systems can be found using the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-uptime
-\end_layout
-
-\end_inset
-
- command.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://en.wikipedia.org/wiki/Load_(computing)"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- Other processes were running at the time of these tests, so the numbers
- are not exclusive to the downloading.
- The complexity of the front pages of the currently processed domains affects
- the load, as well if screenshot generations is enabled.
- Final downloads were done with screenshots enabled.
- The table below show loads for random samples in time.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{system-load.tsv}{System load}{}{fixed, precision=1, display columns/0/.st
-yle={string type, column type=l}, display columns/1/.style={string type,
- column type=l}, display columns/2/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Test more load.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-System load has been shown to vary greatly based on the type of request,
- mainly differing by HTTP and HTTPS response rates.
- High failure rates mean a lot of time is spent waiting until a set time
- limit/timeout has been reached.
- Increasing the upper bound on parallelism and instead dynamically adjusting
- the number of concurrent requests emphasizing system load should decrease
- time needed to download a set of domains with a large failure rate (see
- 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:Failed-versus-non-failed"
-
-\end_inset
-
-).
- Time limits can also be adjusted based on previous dataset results' actual
- reply timings found in HAR data, instead of setting a high and 
-\begin_inset Quotes eld
-\end_inset
-
-safe
-\begin_inset Quotes erd
-\end_inset
-
- upper bound timeout, both for page timeouts and individual resources.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Failed domains
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Failed-domains"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Some web sites are not downloaded successfully, for different reasons.
- The DNS settings might not be correct, the server may be shut down, there
- might have been a temporary network timeout, there might have been a software
- error - or the server has been programmed to not respond to automated requests
- from phantomjs 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:phantomjs"
-
-\end_inset
-
- and similar tools.
- Unfortunately, outside of local software errors which may result in parseable
- error messages, sources of the errors are hard to detect without an extensive
- external analysis of DNS settings and network connectivity - and even so,
- an automated analysis may include false negatives because of remote system
- automated request countermeasures.
-\end_layout
-
-\begin_layout Standard
-Each HTTP request has their HTTP status response recorded if it is available;
- absence or numbers outside the RFC2616 range (100-599) indicates failure.
- Any error output the web page itself has produced, mostly because of javascript
- errors, have also been recorded in the HAR log or individual entry/request
- comment fields.
-\end_layout
-
-\begin_layout Standard
-A distinction is made between 
-\emph on
-failed
-\emph default
- and 
-\emph on
-unsuccessful
-\emph default
- domains - unsuccessful domains rendered a complete response with a HTTP
- status that indicated that it was not successful.
- Domains that failed have been re-downloaded; it relieved some, but not
- all, failures.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert re-downloading table for at least one dataset, like se.2014-07-10.random.100
-000-http-www.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The first round of retries rendered the greatest results, and subsequent
- retries are less successful.
- This seem to point to some intermittent failures being recoverable, and
- that some domains will not respond.
- Due to diminishing returns in the number of additional successful domains
- in each retry cycle, the number of retries was limited to two 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:har-portent"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Analyzing resources
-\end_layout
-
-\begin_layout Standard
-After downloading HAR files, they are processed using har-dulcify, see 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:har-dulcify"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Screenshots
-\end_layout
-
-\begin_layout Standard
-Screenshots were mainly used for verification during development, to see
- that the pages were loaded properly.
- While they have been retained, the manual inspection necessary makes it
- infeasible as a way to verify each and every domain's result.
-\end_layout
-
-\begin_layout Subsection
-The HAR format
-\end_layout
-
-\begin_layout Standard
-The specification includes fields that have to do with for example request/respo
-nse timings and data sizes.
- Those, and other fields, are not analyzed in this thesis, so the first
- step is to extract the relevant information.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-URL The request's URL.
- Recorded whether the request is successful or not.
- Values outside of those starting with 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://
-\end_layout
-
-\end_inset
-
- or 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https://
-\end_layout
-
-\end_inset
-
- are mostly ignored.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Status The HTTP status code
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://tools.ietf.org/html/rfc2616"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- found in the server's response.
- Defined as a 3-digit integer result, 100-599, grouped into classes by the
- first digit.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Mime-type The HTTP content-type header, which is the body internet media
- type (previously known as Multipurpose Internet Mail Extensions (MIME)
- type) combined with optional parameters, such as character encoding.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Referer The URL of the page that requested the resource.
- Can be used to build a tree of requests, but is limited by the fact that
- it requires HTML 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<frame>
-\end_layout
-
-\end_inset
-
- or 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<iframe>
-\end_layout
-
-\end_inset
-
- to differ from the origin page.
- The word referrer was misspelled 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-referer
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://en.wiktionary.org/wiki/referer"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- in the original proposal
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://tools.ietf.org/html/rfc1945"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Redirect The URL of the new location of the requested resource, if defined
- by a 3xx HTTP status.
-\end_layout
-
-\begin_layout Standard
-These properties will be enough to see what kinds of resources are requested,
- if requests are successful and where the request is made to.
-\end_layout
-
-\begin_layout Subsection
-Expanding parts
-\end_layout
-
-\begin_layout Subsubsection
-URL, referer, redirect
-\end_layout
-
-\begin_layout Standard
-The URL format has several components
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://tools.ietf.org/html/rfc3986"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, with interesting ones for web listed and/or split up further here.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Scheme In this case, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-https
-\end_layout
-
-\end_inset
-
- protocols have been the most interesting to look at.
- Other interesting examples that can be found in the wild include 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-ftp
-\end_layout
-
-\end_inset
-
- (for file downloads), 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-data
-\end_layout
-
-\end_inset
-
- (for resources encoded into the URI) and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-about
-\end_layout
-
-\end_inset
-
- (mostly used for blank placeholder pages).
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Domain For this thesis, the domain part has been of a lot of interest, as
- it signifies the difference between internal and external resources.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Port While custom ports can be used, they usually implicitly default to
- 80 for HTTP and 443 for HTTPS.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Path The path specifies a folder or file on the server.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Querystring Most parameters sent back to servers are defined in an RFC compliant
- way, but there are other variants building on for example `/` as a pseudo-path
- separator.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Fragment The fragment is in the web context a client-only component, and
- is not to be sent back to the server as part of a request.
- The usage affects browsers' presentation, historically only by scrolling
- to a matching named element, but modern usage includes keeping browser
- state using javascript, for example following the web spider crawlable
- hash-bang syntax
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://developers.google.com/webmasters/ajax-crawling/docs/getting-started"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about URLs.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Status
-\end_layout
-
-\begin_layout Standard
-The status is grouped into their defined groups by the first digit.
- Groups outside of the defined range 100-599 are defined as null.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-1xx Information
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-2xx 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-3xx Redirection
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-4xx 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-5xx Server errors
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Fill out the proper HTTP status group headings.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Mime-type
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Mime-type"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The mime-type is grouped by their usage, which usually is the first group
- part.
- Here is a selection of common types grouped together.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{mime-types.tsv}{Mime-type grouping}{}{display columns/0/.style={string
- type, column type=l}, display columns/1/.style={string type, column type=l},
- }
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update list, use most common types.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Classification
-\end_layout
-
-\begin_layout Subsubsection
-Public Suffix List
-\end_layout
-
-\begin_layout Standard
-The public suffix list is prepared for lookups per domain component.
- Each request's domain (including shorter domain components) is checked
- against it, and any matching public suffixes are kept in an array.
- A list of private suffixes, as in domain components not in the public suffix
- list, is also kept.
- The primary domain (first non-public suffix match, or the shortest private
- suffix) is extracted.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In terms of grouping, it might be good to keep the primary (longest matching)
- public suffix separately.
- The public suffix list also contains special wildcard/exception rules and
- private suffixes 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Public-suffix-list"
-
-\end_inset
-
-.
- They have not been used in the thesis 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Implement-public-suffix-rules-use-non-ICANN-suffixes"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Basic
-\end_layout
-
-\begin_layout Standard
-Simple properties in the request are checked, and their valued saved as
- a classification property.
- This property is used for grouping and for further analysis.
-\end_layout
-
-\begin_layout Description
-Successful
-\begin_inset space ~
-\end_inset
-
-request The status of the request is 200-299 or 304.
-\end_layout
-
-\begin_layout Description
-Unsuccessful
-\begin_inset space ~
-\end_inset
-
-request The status is 100-199 or 300-303 or 305-599.
-\end_layout
-
-\begin_layout Description
-Failed
-\begin_inset space ~
-\end_inset
-
-request The log file format is incomplete or the status is null or below
- 100 or above 599.
-\end_layout
-
-\begin_layout Description
-Same
-\begin_inset space ~
-\end_inset
-
-domain The request is to the same domain that was first visited.
-\end_layout
-
-\begin_layout Description
-Subdomain The request is to a subdomain of the domain that was first visited.
-\end_layout
-
-\begin_layout Description
-Superdomain The request is to a domain to which the origin domain is a subdomain.
- This basic superdomain classification is currently not checked against
- the public suffix list for invalid superdomains.
-\end_layout
-
-\begin_layout Description
-Same
-\begin_inset space ~
-\end_inset
-
-primary
-\begin_inset space ~
-\end_inset
-
-domain The request shared the same primary domain with the origin.
-\end_layout
-
-\begin_layout Description
-Internal
-\begin_inset space ~
-\end_inset
-
-domain The request is to the same domain, a subdomain or a superdomain of
- the domain that was first visited.
-\end_layout
-
-\begin_layout Description
-External
-\begin_inset space ~
-\end_inset
-
-domain The request is not to an internal domain.
-\end_layout
-
-\begin_layout Description
-Secure
-\begin_inset space ~
-\end_inset
-
-request The request is using HTTPS.
-\end_layout
-
-\begin_layout Description
-Insecure
-\begin_inset space ~
-\end_inset
-
-request The request is not using HTTPS.
-\end_layout
-
-\begin_layout Subsubsection
-Disconnect.me
-\end_layout
-
-\begin_layout Standard
-The URLs in the extended data contains lists of domain components.
- As the disconnect list of blocked domains is prepared for lookups by domains,
- each of the matching domains (including shorter domain components) are
- extracted with organization, organization URL and domain category.
-\end_layout
-
-\begin_layout Subsection
-Analysis
-\end_layout
-
-\begin_layout Standard
-An analysis, where request classifications are counted, summed and the coverage
- calculated, is performed as an automated step.
-\end_layout
-
-\begin_layout Subsubsection
-Origin
-\end_layout
-
-\begin_layout Standard
-The origin domains are grouped separately from the requests that stemmed
- from them.
-\end_layout
-
-\begin_layout Subsubsection
-Requested URLs
-\end_layout
-
-\begin_layout Standard
-All requests are represented with their domain, and other classifications.
-\end_layout
-
-\begin_layout Subsubsection
-Distinct requested URLs
-\end_layout
-
-\begin_layout Standard
-Even if two requests originating from a domain, it is only counted once.
- This gives the possibility to calculate coverage per domain later on.
-\end_layout
-
-\begin_layout Subsubsection
-Request/domain counts
-\end_layout
-
-\begin_layout Standard
-All the numbers from all domains added together.
-\end_layout
-
-\begin_layout Subsubsection
-Request/domain coverage
-\end_layout
-
-\begin_layout Standard
-The summed up counts divided by either the total request count (for requested
- URLs) or the number of domains in the current group (for distinct requested
- URLs).
- This gives a coverage percentage - either for the percentage of the number
- of requests, or domains that has the value.
-\end_layout
-
-\begin_layout Subsubsection
-Grouping
-\end_layout
-
-\begin_layout Standard
-In order to not make too broad assumptions, some grouping was performed.
- The analysis was performed the same way on each of these groups 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:aggregate/analysis.sh"
-
-\end_inset
-
-.
- The origin domain's download status was checked, and grouped into both
- unfiltered and non-failed groups.
- The list of requested URLs was grouped into unfiltered, internal and external
- URLs.
-\end_layout
-
-\begin_layout Subsection
-Questions
-\end_layout
-
-\begin_layout Standard
-Where the aggregate analysis is not enough, there are custom questions.
- These questions/queries can be run against any previous intermediate step
- in the process, as they are saved to disk.
-\end_layout
-
-\begin_layout Subsubsection
-Google Tag Manager
-\end_layout
-
-\begin_layout Standard
-One of the questions posed beforehand was if Google Tag Manager would have
- an impact upon results.
- This question is answered in 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Google-Tag-Manager"
-
-\end_inset
-
- with the help of this data.
-\end_layout
-
-\begin_layout Subsubsection
-Origins with redirects
-\end_layout
-
-\begin_layout Standard
-Looking at preliminary results, a large portion of domains yielded a redirect
- as the initial response.
- In order to look at these redirects specifically, and determine if they
- redirect to an internal or external domain, a specific question was written.
-\end_layout
-
-\begin_layout Subsection
-Multiset queries
-\end_layout
-
-\begin_layout Standard
-After downloading several datasets, it is often interesting to compare them
- side by side.
- The multiset queries extract pieces of data from several datasets, and
- combine them into a single files.
-\end_layout
-
-\begin_layout Section
-Direction and scope
-\end_layout
-
-\begin_layout Standard
-Emphasis for the thesis will be on technical analysis, producing aggregate
- numbers regarding domains and external resources.
- Social aspects and privacy concerns are considered out of scope.
-\end_layout
-
-\begin_layout Standard
-The thesis will primarily be written from a Swedish perspective.
- This is in part because .SE has access to the full list of Swedish .se domains,
- and part because of their previous work with the 
-\emph on
-.SE Health Status
-\emph default
- reports.
- Focus is to analyze .se domains in the reports, as they have already been
- deemed important and results can be incorporated in future reports.
- The main non-technical grouping is also based on the same reports; government,
- media, financial institutions and other nation-wide publicly relevant organizat
-ion groups.
-\end_layout
-
-\begin_layout Standard
-One assumption is that all external resources can act as trackers, even
- for static (non-script) resources with no capabilities to dynamically survey
- the user's browser, collecting data and tracking users across domains using
- for example the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Referer
-\end_layout
-
-\end_inset
-
- HTTP header 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- While there are lists of known trackers, used by browser privacy tools,
- they are not 100% effective 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- The lists will instead optionally be used to emphasize those external resources
- as 
-\emph on
-confirmed
-\emph default
- trackers.
- While cookies used for tracking have been a concern for many, they are
- not necessary in order to identify most users upon return, even uniquely
- on a global level 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Eckersley2009unique"
-
-\end_inset
-
-.
- Cookies will not be considered to be an indicator of tracking, as it can
- be assumed that a combination of other server and client side techniques
- can achieve the same goal as a tracking cookie.
 \end_layout
 
 \begin_layout Chapter
@@ -7024,6 +4215,2930 @@ description "JavaScript Object Notation"
 
 \begin_layout Chapter
 \start_of_appendix
+Methodology details
+\end_layout
+
+\begin_layout Section
+Domains
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Generate statistics table for each domain list this chapter?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+.SE Health Status
+\emph default
+ domains
+\end_layout
+
+\begin_layout Standard
+When .SE performs their annual 
+\emph on
+.SE Health Status
+\emph default
+ report measurements, they use an in-house curated list of domains of national
+ interest.
+ These domains are mostly from the .se zone and cover government, county,
+ municipality, higher education, government-owned corporations, financial
+ service, internet service provider (ISP), domain registrar, and media domains.
+ Some domains overlap both within and between categories; domains have been
+ deduplicated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write a summary with examples from each dataset.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Random .se domains
+\end_layout
+
+\begin_layout Standard
+The thesis was written in collaboration with .SE, which runs the .se TLD,
+ and the work focusing on the state of Swedish domains.
+ Early script development was done using a sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ random domains, most often tested in groups of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100}
+\end_layout
+
+\end_inset
+
+.
+ A final sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100000}
+\end_layout
+
+\end_inset
+
+ domains was also provided.
+ The .se TLD is to be considered Sweden-centric.
+\end_layout
+
+\begin_layout Subsection
+Random .dk domains
+\end_layout
+
+\begin_layout Standard
+The Danish .dk TLD organization, DK Hostmaster A/S
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.dk-hostmaster.dk/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, helped out with a sample of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ domains, chosen at random from the database of active domains in the zone.
+ The .dk TLD is to be considered Denmark-centric.
+\end_layout
+
+\begin_layout Subsection
+Random .com, .net domains
+\end_layout
+
+\begin_layout Standard
+The maintainers of the .com, .net and .name TLDs, Verisign, allow downloading
+ of the complete zone file under an agreement.
+ The .com zone is the largest one by far, and the .net zone is in the top
+ 4.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.keepalert.com/top-extension-ranking-july-2014-newgtlds"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ This allows for a random selection of sites from around the world, even
+ though usage is not geographically uniform - both in terms of registrations
+ and actual usage.
+\end_layout
+
+\begin_layout Subsection
+Alexa Top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000000}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://alexa.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alexa, owned by Amazon, is a well-known source of top sites
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.alexa.com/topsites"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ in the world.
+ It is used in many research papers, and can be seen as the standard dataset.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+List referenced research papers using it.
+\end_layout
+
+\end_inset
+
+ Their daily 1-month average traffic rank top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000000}
+\end_layout
+
+\end_inset
+
+ list is freely available for download.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://alexa.zendesk.com/hc/en-us/articles/200449834-Does-Alexa-have-a-list-of-its-top-ranked-websites-"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ As Alexa distinguishes between a site and a domain, some domains with several
+ popular sites are listed more than once.
+ URL paths have been stripped and domains have been deduplicated before
+ downloading.
+\end_layout
+
+\begin_layout Subsection
+Reach50
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://reach50.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The top 50 sites in Sweden are presented by Webmie
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://webmie.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, who base their list on data from a user panel.
+ The panelists have installed an extension into their browser, tracking
+ their browsing habits by automated means.
+ They also have results grouped by panelists categories: women, men, age
+ 16-34, 35-54, 55+ but only the unfiltered top list is publicly available.
+\end_layout
+
+\begin_layout Subsection
+Datasets in use
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Datasets-in-use"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These are the final domain lists in use, including full dataset size
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/domaner/statistik/tillvaxt/?chart=active"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://stats.dk-hostmaster.dk/domains/total_domains/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and selection method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.datasets.tsv}{Datasets in use}{}{display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=l},
+ display columns/3/.style={string type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+TLD distribution
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TLD-distribution"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These are the top TLDs in the list of unique domains.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.tlds.tsv}{TLDs in dataset in use}{}{display columns/2/.style={stri
+ng type, column type=l},}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Public suffix list
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Public-suffix-list"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://publicsuffix.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Public_Suffix_List"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the domain name system, it is not always obvious what parts of a domain
+ name are a public suffix and which are open for registration by Internet
+ users.
+ The main example is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+example.co.uk
+\end_layout
+
+\end_inset
+
+, where the public suffix 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+ is to different from the TLD 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+uk
+\end_layout
+
+\end_inset
+
+.
+ Because HTTP cookies are based on domains names, it is important to browser
+ vendors to be able to recognize which parts are public suffixes to be able
+ to protect users against supercookies
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/HTTP_cookie#Supercookie"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+; cookies which are scoped to a public suffix, and therefore readable across
+ all web sites under that public suffix.
+ The same dataset is also useful for grouping domains without improperly
+ counting 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+example.co.uk
+\end_layout
+
+\end_inset
+
+ as a 
+\emph on
+user-owned subdomain
+\emph default
+ of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+, which would then render 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+ as the most popular domain under the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+uk
+\end_layout
+
+\end_inset
+
+ TLD.
+\end_layout
+
+\begin_layout Standard
+Swedish examples include second level domains 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pp.se
+\end_layout
+
+\end_inset
+
+ for privately owned domains and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tm.se
+\end_layout
+
+\end_inset
+
+ for trademarks
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/data/barred_domains_list.txt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ These second level domains were more important before April 2003
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/.se#Pre_2003_system"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, when first level domain registration rules restricted registration to
+ nation-wide companies, associations and authorities.
+\end_layout
+
+\begin_layout Standard
+The public suffix list (2014-07-24) contains 6278 rules, against which domains
+ are checked in one of the classification steps 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:classification/effective-tld/add.sh"
+
+\end_inset
+
+.
+ It becomes the basis for the domain's division into public suffix and primary
+ domain (first non-public suffix match), and subsequent grouping.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is also an algorithm for wildcard rules which can have exceptions;
+ this thesis has not implemented wildcards and exceptions in the classification
+ step.
+ There are 24 TLDs with wildcard public suffixes, and 8 non-TLD wildcards.
+ Out of these 8 non-TLD wildcards, 1 is *.sch.uk and 7 are Japanese geographic
+ areas.
+ The 24 wildcards have 10 exception rules; 7 of them are Japanese cities
+ grouped by the previously mentioned geographic areas and the remaining
+ 3 seem to belong to ccTLD owner organizations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apart from ICANN domains, which have been implemented, there are also private
+ domains considered public suffixes listed as rules.
+ They are domains which have subdomains controlled by users/customers, for
+ example joelpurra.github.io which is controlled by me but hosted by the code
+ hosting service github.com.
+ Other examples include cloud hosting/CDN services such as cloudfront.net,
+ amazonaws.com, azurewebsites.net, fastly.net, herokuapp.com, blogs from several
+ blogspot.TLD domains and dyndns.com's wide choice of dynamic domains.
+ One example that looks like a technical choice in order to hinder accidental
+ or malicious setting of cookies is googleapis.com, which is listed despite
+ being (presumably) completely under Google's control.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Disconnect's blocking list
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One of the most popular privacy tools is Disconnect, which blocks tracking
+ sites by running as a browser plugin.
+ Disconnect was started by ex-Google engineers, and still seems to have
+ close ties to Google as the own domain disconnect.me is listed as a Google
+ content domain in the blocking list.
+\end_layout
+
+\begin_layout Standard
+The Disconnect software lets users block/unblock loading resources from
+ specific third-party domains.
+ A list of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2149}
+\end_layout
+
+\end_inset
+
+ domains is used as the basis from the blocking.
+ Each entry belongs to one of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{980}
+\end_layout
+
+\end_inset
+
+ organizations, which come with a link to their webpage.
+ There is also a grouping into categories, here shown with some examples.
+ Worth noting is that the content category is not blocked by default.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are other open source alternatives to Disconnect's blocking list,
+ but they use data formats that are not as easy to parse.
+ The most popular ones also do not contain information about which organization
+ each blocking rule belongs to.
+ See 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Categories
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Categories"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Summary of Disconnect's categories.
+ Most domains and organizations by far are in the advertisement category.
+ The reason the Disconnect category has so few organizations, is that it
+ is treated as a special category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+ with only Google, Facebook and Twitter.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{disconnect.categories.tsv}{Disconnect's categories (2014-09-08)}{}{displa
+y columns/0/.style={string type, column type=l},}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Domains per organization
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Domains-per-organization"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Many organizations have more than one domain.
+ One organization stands out, with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{271}
+\end_layout
+
+\end_inset
+
+ domains - Google.
+ The biggest reason is that they own top level domains such as google.se
+ and google.ch from over 200 TLDs.
+ Yahoo comes in second with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{71}
+\end_layout
+
+\end_inset
+
+ domains, many of which are service-specific subdomains to yahoo.com, such
+ as finance.yahoo.com and travel.yahoo.com.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization
+ (2014-09-08)}{}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Organizations in more than one category
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Organizations-in-more-than-one-category"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some organizations are represented in more than one of the five Disconnect
+ categories.
+ Yahoo has several ad services, several social services, several content
+ services and a single analytics service, putting them in four categories.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
+ in more than one category (2014-09-08)}{}{display columns/0/.style={string
+ type, column type=l},}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Advertising
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add technorati.com, wpp.com?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+overture.com Yahoo's ad network.
+\end_layout
+
+\begin_layout Description
+omniture.com Adobe's ad network.
+\end_layout
+
+\begin_layout Description
+amazon-adsystem.com Amazon's ad delivery network.
+\end_layout
+
+\begin_layout Subsection
+Analytics
+\end_layout
+
+\begin_layout Description
+alexa.com Amazon's web statistics service, considered an authority in web
+ measurement.
+\end_layout
+
+\begin_layout Description
+comscore.com Analytics service that also publishes statistics.
+\end_layout
+
+\begin_layout Description
+gaug.es GitHub's analytics service.
+\end_layout
+
+\begin_layout Description
+coremetrics.com Part of IBM's enterprise marketing services.
+\end_layout
+
+\begin_layout Description
+newrelic.com A suite of systems monitoring and analytics software, up to
+ and including browsers.
+\end_layout
+
+\begin_layout Description
+nielsen.com Consumer studies.
+\end_layout
+
+\begin_layout Description
+statcounter.com Web statistics tool.
+\end_layout
+
+\begin_layout Description
+webtrends.com Digital marketing analytics and optimization across channels.
+\end_layout
+
+\begin_layout Subsection
+Content
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-Content"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sites that deliver content.
+ There is a wide variety of content, from images and videos to A/B testing,
+ comment and help desk services.
+ This category is not blocked by default.
+\end_layout
+
+\begin_layout Description
+apis.google.com One of Google's API domains.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look at which services are hosted.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+brightcove.com Video hosting/monetization service.
+\end_layout
+
+\begin_layout Description
+disqus.com A third party comment service.
+\end_layout
+
+\begin_layout Description
+flickr.com Flickr is a photo/video hosting site, owned by Yahoo.
+\end_layout
+
+\begin_layout Description
+googleapis.com One of Google's API domains, hosting third-party files/services
+ such as Google Fonts and Google Hosted Libraries.
+\end_layout
+
+\begin_layout Description
+instagram.com Facebook's photo/video sharing site.
+\end_layout
+
+\begin_layout Description
+office.com Microsoft's Office suite online.
+\end_layout
+
+\begin_layout Description
+optimizely.com An A/B testing service.
+\end_layout
+
+\begin_layout Description
+truste.com Provides certification and tools for privacy policies in order
+ to gain users' trust; “enabling businesses to safely collect and use customer
+ data across web, mobile, cloud and advertising channels.” This includes
+ ways to selectively opt-out from cookies features; required, functional
+ or advertising.
+\end_layout
+
+\begin_layout Description
+tumblr.com A popular blogging platform.
+\end_layout
+
+\begin_layout Description
+uservoice.com A customer support service.
+\end_layout
+
+\begin_layout Description
+vimeo.com A video site.
+\end_layout
+
+\begin_layout Description
+www.google.com Google's main domain, which also hosts services such as search.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Look at which services are hosted.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+youtube.com One of Google's video sites.
+\end_layout
+
+\begin_layout Subsection
+Disconnect
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect-category"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A special category for non-content resources from Facebook, Google and Twitter.
+ It seems to initially have been designed to block their respective like/+1/twee
+t buttons which seem to belong in the social category.
+ As the category now contains many other known tracking domains from the
+ same organizations, unblocking the social buttons also lets many other
+ types of resources trough.
+\end_layout
+
+\begin_layout Standard
+It is worth noting that this category includes google-analytics.com plus
+ Google ad networks such as adwords.google.com, doubleclick.net and admob.com.
+ It might have been more appropriate to have them in the analytics and advertise
+ment categories respectively.
+\end_layout
+
+\begin_layout Subsection
+Social
+\end_layout
+
+\begin_layout Standard
+Site with an emphasis on social aspects.
+ They often have buttons to vote for, recommend or share with others.
+\end_layout
+
+\begin_layout Description
+addthis.com A link sharing service aggregator.
+\end_layout
+
+\begin_layout Description
+digg.com News aggregator.
+\end_layout
+
+\begin_layout Description
+linkedin.com Professional social network.
+\end_layout
+
+\begin_layout Description
+reddit.com Social new and link sharing, and discussion.
+\end_layout
+
+\begin_layout Section
+Retrieving websites and resources
+\end_layout
+
+\begin_layout Standard
+Web sites based on lists of domains were downloaded using har-heedless,
+ see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:har-heedless"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Computer machines
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Computer-machines"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Two computers were used to download web pages - one laptop machine and one
+ server machine.
+ The server is significantly more powerful than the laptop, and they downloaded
+ a different number of web pages at a time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{computer-machines.tsv}{Machine specifications}{}{display columns/0/.style
+={string type, column type=l}, display columns/1/.style={string type, column
+ type=l}, display columns/2/.style={string type, column type=l}, }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Network connection
+\end_layout
+
+\begin_layout Standard
+The laptop machine was connected by ethernet to the .SE office network, which
+ is shared with employees' computers.
+ The server machine was connected to server co-location network, which is
+ shared with other servers.
+ The .SE network technicians said load was kept very low, and only a few
+ percent of the dedicated 100 Mbps per location was used.
+ Both locations are in Stockholm city, and should therefore be well placed
+ in regard to web sites hosted in Sweden.
+\end_layout
+
+\begin_layout Subsection
+Software considerations
+\end_layout
+
+\begin_layout Standard
+To expedite an automated and repeatable process, a custom set of scripts
+ were written as the project har-heedless.
+ The scripts are written using standard tools, available as open source
+ and on multiple platforms.
+\end_layout
+
+\begin_layout Subsubsection
+Dynamic web pages
+\end_layout
+
+\begin_layout Standard
+Previous efforts to download and analyze web pages by .SE used a static approach,
+ analyzing the HTML by means of simple searches for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+ strings in HTML and CSS.
+ It had proven hard to maintain, and the software project was abandoned
+ before the thesis was started, but had not yet been replaced.
+ In order to better handle the dynamic nature of modern web pages, the headless
+ browser phantomjs 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:phantomjs"
+
+\end_inset
+
+ was chosen, as it would also download and execute javascript - a major
+ component in both user interfaces as well as active trackers and ads.
+\end_layout
+
+\begin_layout Subsubsection
+Cached content
+\end_layout
+
+\begin_layout Standard
+Many of the external resources will be overlapping between web sites and
+ domains, and downloading them multiple times can be avoided by caching
+ the file the first time in a run.
+ Keeping cached content would, depending on per-response cache settings
+ and timeout, result in a different HTTP request and potentially different
+ response.
+ A file that has not changed on the server would generate a HTTP response
+ status of 304 with no data, saving bandwidth and lowering transfer delays,
+ where a changed file would generate a status 200 response with the latest
+ version.
+\end_layout
+
+\begin_layout Standard
+One of the technologies in determining if a locally cached file is the correct/l
+atest version includes the HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to Etag standard.
+\end_layout
+
+\end_inset
+
+ header, which is a string representation of a URL/file at a certain version.
+ When content is transferred it may have an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ attached; if the file is cacheable, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ is saved.
+ Subsequent requests for the same, cached URL contain the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ - and the server uses it to determine if a compact 304 response is enough
+ or a full 200 response is necessary.
+ It has been found that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Etag
+\end_layout
+
+\end_inset
+
+ header can be used for cookieless cross-site tracking by using an arbitrarily
+ chosen per-browser value instead of a file-dependent value 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "M.-Ayenson:2011aa"
+
+\end_inset
+
+.
+ This means that keeping a local file cache might affect how trackers respond;
+ a file cache has not been implemented in har-heedless, making the browser
+ amnesiac.
+\end_layout
+
+\begin_layout Subsubsection
+Flash files
+\end_layout
+
+\begin_layout Standard
+Flash is a scriptable proprietary cross-platform vector based web technology
+ owned by Adobe.
+ Several kinds of content, including video players, games and ads, use Flash
+ because it has historically been better suited than javascript for in-browser
+ moving graphics and video.
+ Flash usage has not been considered for this thesis as the technology isn
+ not available on all popular web browsing platforms, notably Apple's iPad,
+ and is being phased out by HTML 5 features such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<canvas>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<video>
+\end_layout
+
+\end_inset
+
+ elements.
+\end_layout
+
+\begin_layout Subsubsection
+Combined javascript
+\end_layout
+
+\begin_layout Standard
+A common technique for speeding up web sites is to reduce the number of
+ resources the browser needs to download, by combining or concatenating
+ them in different ways depending on the file format.
+ Javascript is a good example where there are potential benefits
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/speed/docs/best-practices/rtt#CombineExternalJS"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ since functionality often is spread across several files, especially after
+ the plugin style of frameworks such as jQuery
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://jquery.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ emerged.
+ One concern is whether or not script concatenation on a web page would
+ affect script analysis at a later stage, by reducing the number of third-party
+ requests.
+ While it is hard to analyze all scripts, based on their wide spread use,
+ third-party scripts stay on their respective home servers as software as
+ a service (SaaS) to enable faster update cycles and tracking of HTTP requests.
+\end_layout
+
+\begin_layout Subsubsection
+Google Tag Manager
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Google-Tag-Manager"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.google.com/tagmanager/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One of the concerns was Google Tag Manager (GTM), which a script aggregation
+ service with asynchronous loading directed specifically to marketers.
+ Google provides builtin support for their AdWords, Analytics (GA) and DoubleCli
+ck (DC) services.
+ While simplifying management with only one 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<script>
+\end_layout
+
+\end_inset
+
+ tag, each part should download separately and perform the same duties,
+ including “calling home” to the usual addresses.
+ In order to confirm this, a query was run on one of the datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{google-tag-manager.tsv}{Google Tag Manager versus Google Analytics
+ and DoubleClick, dataset	2014-07-25 100k server}{}{display columns/0/.style={str
+ing type, column type=l}, display columns/2/.style={string type, column type=r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The numbers point to every domain that uses Google Tag Manager uses at least
+ one of Google Analytics and DoubleClick, and will therefore not obscure
+ information regarding which services are called when further analyzed.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robots.txt
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<meta name="robots" />
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Automated web spider/bot software can bring a significant load to a web
+ server, as the spidering speed can exceed user browsing speed by far -
+ a single web spider can potentially request thousands of pages in the span
+ of minutes, effectively being a denial of service attack 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to DoS information.
+\end_layout
+
+\end_inset
+
+ on an underpowered server.
+ Some sites also have information considered sensitive to being available
+ for spiders, or even for certain (kinds) of spiders such as image spiders.
+ The choice to not serve spiders can stem from technical reasons (bandwidth,
+ server load), to privacy (do not allow information to be indexed in search
+ engines) and business (do not allow data to be collected and aggregated).
+ In order to instruct web spiders not to get certain kind of material, there
+ are two basic mechanisms - the special 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robots.txt
+\end_layout
+
+\end_inset
+
+ file and the HTML header tag
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<meta name="robots" />
+\end_layout
+
+\end_inset
+
+.
+ Both can contain instructions for certain bots not to index certain paths
+ or pages, or not to follow further links stemming from a page.
+\end_layout
+
+\begin_layout Standard
+Commercial software from search engines, information collectors and other
+ software vendors take these explicit wishes from webmasters into consideration,
+ but har-heedless has not.
+ While it is automated software, it is not spidering software requesting
+ many pages, following links to explore the site - it only accesses the
+ front page of a domain, and resources explicitly requested by that one
+ page.
+ Information is not retrieved for indexing as such, as only HTTP request
+ metadata is recorded.
+ While some information requested to be not indexed might end up in the
+ screenshots, they are kept in a format hard to re-parse for machines as
+ non-public thesis data used for verification.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Future versions of har-heedless might implement logic that checks 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robots.txt
+\end_layout
+
+\end_inset
+
+ in a domain list preprocessing step, to determine wether or not the request
+ should be made.
+ The same list can be used to filter further resource requests made by phantomjs
+, perhaps considering also other domains' 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+robot.txt
+\end_layout
+
+\end_inset
+
+ files.
+ The tag 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<meta name="robots" />
+\end_layout
+
+\end_inset
+
+ can also be respected, perhaps in terms of not saving screenshots for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+noindex
+\end_layout
+
+\end_inset
+
+ values.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Parallelizing downloads
+\end_layout
+
+\begin_layout Standard
+A lot of the time spent downloading a web page is spent waiting for network
+ resources, especially during timeouts during retrieval.
+ To speed up downloading large amounts of web pages, parallelizing was employed
+ using simple scripting techniques, starting multiple processes at once
+ in batches, waiting for each batch to finish before starting the next.
+ This was deemed inefficient, as the download and rendering speed of the
+ slowest web page would be a bottle neck.
+ In a later script versions, GNU 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parallel
+\end_layout
+
+\end_inset
+
+ was used, with a setting to not start more jobs if the current CPU/system
+ load was too high.
+\end_layout
+
+\begin_layout Standard
+During initial parallelizing tests, the laptop machine was shown to be able
+ to handle 100 domain downloads in parallel, but this was later scaled down
+ to ensure system overload would not affect results, at the cost of significantl
+y longer download times.
+\end_layout
+
+\begin_layout Subsubsection
+Screen size
+\end_layout
+
+\begin_layout Standard
+When phantomjs is running, it emulates having a browser window by keeping
+ an internal graphics buffer.
+ Even if web page is not rendered and shown on screen, it still has a screen
+ size, which affects layout.
+ With a bit of javascript or responsive CSS, the screen size can affect
+ downloaded resources.
+ Javascript can be used to delay download of images and other resources
+ that are 
+\emph on
+below the fold
+\emph default
+, meaning outside of the initial view the user has without scrolling in
+ any direction, as a page speed improvement.
+ Responsive CSS adapts the page style to the screen size in order to increase
+ usability for mobiles and other handheld devices, and might optimize the
+ quality of downloaded images to match the screen size.
+\end_layout
+
+\begin_layout Standard
+By default, phantomjs uses the physical computer's primary screen size.
+ In order to reduce differences between the laptop and server machines,
+ a fixed emulated window size of 1024x768 pixels was chosen.
+ The basis for this is that 1024x768 pixel resolution screens have been
+ the recommended screen size to design for
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.nngroup.com/articles/screen-resolution-and-page-layout/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ for a long time
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.nngroup.com/articles/computer-screens-getting-bigger/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, and it still is a common screen size
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gs.statcounter.com/#resolution-ww-monthly-201307-201407"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Scripted browser scrolling (vertically) through the page has not been performed,
+ thus javascript scrolling events triggering for example downloading of
+ images below the fold are not guaranteed.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Check if all images are automatically downloaded by phantomjs, as if the
+ page had been scrolled, as they seem present in screenshots.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Screenshots
+\end_layout
+
+\begin_layout Standard
+In order to visually being able to confirm that web pages have been downloaded
+ correctly, a PNG screenshot can optionally be taken when the page has finished
+ downloading.
+ There is a processing cost associated with taking screenshots; it takes
+ time for phantomjs to render the internal buffer as an image, convert it
+ to base64 encoding for the augmented HAR data, jq to extract the image
+ data, the system to convert the data back to binary and finally write it
+ to disk.
+ Extra processing is also needed to remove the screenshot from the augmented
+ HAR file.
+\end_layout
+
+\begin_layout Standard
+The emulated browser window size also sets a limit on the screenshot size
+ when rendered, but the entire browser canvas is captured.
+ This means that screenshots that are saved to disk in most cases extend
+ beyond the viewport size, most often vertically; this corresponds to scrolling
+ through the entire page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{output-filesize.tsv}{Output file size}{}{display columns/0/.style={string
+ type, column type=l}, display columns/3/.style={string type, column type=r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The ratio of PNG to HAR data size on disk points to the compressed PNG files
+ being up to 10 times the size of the uncompressed HAR files for certain
+ types of pages, for example media domains in the 
+\emph on
+.SE Health Status
+\emph default
+ report dataset.
+\end_layout
+
+\begin_layout Subsection
+Dataset variations
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Dataset-variations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each dataset has been used in four variations, effectively quadrupling the
+ number of web sites access attempts.
+ Each of these variations have been downloaded and analyzed separately,
+ then used for both intra- and inter-dataset comparisons.
+\end_layout
+
+\begin_layout Itemize
+HTTP and HTTPS.
+ Enables comparisons between secure and insecure origin web site requests.
+\end_layout
+
+\begin_layout Itemize
+Empty prefix versus www prefix/subdomain.
+ The www subdomain has historically been used to denote a web server serving
+ web sites 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to www prefix claim.
+\end_layout
+
+\end_inset
+
+, and it still seems to have a higher usage than no prefix 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+.
+ The 
+\emph on
+.SE Health Status
+\emph default
+ reports specifically accesses web sites on the www subdomain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{dataset-variations.tsv}{Dataset variations}{}{display columns/0/.style={s
+tring type, column type=l}, display columns/1/.style={string type, column
+ type=l}, display columns/2/.style={string type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each dataset has the variation appended to the name in the results chapter
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Detailed-Results"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+System load during downloads
+\end_layout
+
+\begin_layout Standard
+System load can affect the end results, if network timeouts occur during
+ downloading and processing of domains' front pages.
+ Apart from CPU and memory limitations, the other users of the .SE network
+ should not be affected by tests.
+\end_layout
+
+\begin_layout Standard
+System load on *NIX systems can be found using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+uptime
+\end_layout
+
+\end_inset
+
+ command.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Load_(computing)"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Other processes were running at the time of these tests, so the numbers
+ are not exclusive to the downloading.
+ The complexity of the front pages of the currently processed domains affects
+ the load, as well if screenshot generations is enabled.
+ Final downloads were done with screenshots enabled.
+ The table below show loads for random samples in time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{system-load.tsv}{System load}{}{fixed, precision=1, display columns/0/.st
+yle={string type, column type=l}, display columns/1/.style={string type,
+ column type=l}, display columns/2/.style={string type, column type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Test more load.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+System load has been shown to vary greatly based on the type of request,
+ mainly differing by HTTP and HTTPS response rates.
+ High failure rates mean a lot of time is spent waiting until a set time
+ limit/timeout has been reached.
+ Increasing the upper bound on parallelism and instead dynamically adjusting
+ the number of concurrent requests emphasizing system load should decrease
+ time needed to download a set of domains with a large failure rate (see
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+).
+ Time limits can also be adjusted based on previous dataset results' actual
+ reply timings found in HAR data, instead of setting a high and 
+\begin_inset Quotes eld
+\end_inset
+
+safe
+\begin_inset Quotes erd
+\end_inset
+
+ upper bound timeout, both for page timeouts and individual resources.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Failed domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Failed-domains"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some web sites are not downloaded successfully, for different reasons.
+ The DNS settings might not be correct, the server may be shut down, there
+ might have been a temporary network timeout, there might have been a software
+ error - or the server has been programmed to not respond to automated requests
+ from phantomjs 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:phantomjs"
+
+\end_inset
+
+ and similar tools.
+ Unfortunately, outside of local software errors which may result in parseable
+ error messages, sources of the errors are hard to detect without an extensive
+ external analysis of DNS settings and network connectivity - and even so,
+ an automated analysis may include false negatives because of remote system
+ automated request countermeasures.
+\end_layout
+
+\begin_layout Standard
+Each HTTP request has their HTTP status response recorded if it is available;
+ absence or numbers outside the RFC2616 range (100-599) indicates failure.
+ Any error output the web page itself has produced, mostly because of javascript
+ errors, have also been recorded in the HAR log or individual entry/request
+ comment fields.
+\end_layout
+
+\begin_layout Standard
+A distinction is made between 
+\emph on
+failed
+\emph default
+ and 
+\emph on
+unsuccessful
+\emph default
+ domains - unsuccessful domains rendered a complete response with a HTTP
+ status that indicated that it was not successful.
+ Domains that failed have been re-downloaded; it relieved some, but not
+ all, failures.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert re-downloading table for at least one dataset, like se.2014-07-10.random.100
+000-http-www.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first round of retries rendered the greatest results, and subsequent
+ retries are less successful.
+ This seem to point to some intermittent failures being recoverable, and
+ that some domains will not respond.
+ Due to diminishing returns in the number of additional successful domains
+ in each retry cycle, the number of retries was limited to two 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-portent"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Analyzing resources
+\end_layout
+
+\begin_layout Standard
+After downloading HAR files, they are processed using har-dulcify, see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:har-dulcify"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Screenshots
+\end_layout
+
+\begin_layout Standard
+Screenshots were mainly used for verification during development, to see
+ that the pages were loaded properly.
+ While they have been retained, the manual inspection necessary makes it
+ infeasible as a way to verify each and every domain's result.
+\end_layout
+
+\begin_layout Subsection
+The HAR format
+\end_layout
+
+\begin_layout Standard
+The specification includes fields that have to do with for example request/respo
+nse timings and data sizes.
+ Those, and other fields, are not analyzed in this thesis, so the first
+ step is to extract the relevant information.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+URL The request's URL.
+ Recorded whether the request is successful or not.
+ Values outside of those starting with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+ are mostly ignored.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Status The HTTP status code
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://tools.ietf.org/html/rfc2616"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ found in the server's response.
+ Defined as a 3-digit integer result, 100-599, grouped into classes by the
+ first digit.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Mime-type The HTTP content-type header, which is the body internet media
+ type (previously known as Multipurpose Internet Mail Extensions (MIME)
+ type) combined with optional parameters, such as character encoding.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Referer The URL of the page that requested the resource.
+ Can be used to build a tree of requests, but is limited by the fact that
+ it requires HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<frame>
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<iframe>
+\end_layout
+
+\end_inset
+
+ to differ from the origin page.
+ The word referrer was misspelled 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+referer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wiktionary.org/wiki/referer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ in the original proposal
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://tools.ietf.org/html/rfc1945"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Redirect The URL of the new location of the requested resource, if defined
+ by a 3xx HTTP status.
+\end_layout
+
+\begin_layout Standard
+These properties will be enough to see what kinds of resources are requested,
+ if requests are successful and where the request is made to.
+\end_layout
+
+\begin_layout Subsection
+Expanding parts
+\end_layout
+
+\begin_layout Subsubsection
+URL, referer, redirect
+\end_layout
+
+\begin_layout Standard
+The URL format has several components
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://tools.ietf.org/html/rfc3986"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, with interesting ones for web listed and/or split up further here.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Scheme In this case, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https
+\end_layout
+
+\end_inset
+
+ protocols have been the most interesting to look at.
+ Other interesting examples that can be found in the wild include 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ftp
+\end_layout
+
+\end_inset
+
+ (for file downloads), 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+data
+\end_layout
+
+\end_inset
+
+ (for resources encoded into the URI) and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+about
+\end_layout
+
+\end_inset
+
+ (mostly used for blank placeholder pages).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Domain For this thesis, the domain part has been of a lot of interest, as
+ it signifies the difference between internal and external resources.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Port While custom ports can be used, they usually implicitly default to
+ 80 for HTTP and 443 for HTTPS.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Path The path specifies a folder or file on the server.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Querystring Most parameters sent back to servers are defined in an RFC compliant
+ way, but there are other variants building on for example `/` as a pseudo-path
+ separator.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Fragment The fragment is in the web context a client-only component, and
+ is not to be sent back to the server as part of a request.
+ The usage affects browsers' presentation, historically only by scrolling
+ to a matching named element, but modern usage includes keeping browser
+ state using javascript, for example following the web spider crawlable
+ hash-bang syntax
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://developers.google.com/webmasters/ajax-crawling/docs/getting-started"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write more about URLs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Status
+\end_layout
+
+\begin_layout Standard
+The status is grouped into their defined groups by the first digit.
+ Groups outside of the defined range 100-599 are defined as null.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+1xx Information
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+2xx 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+3xx Redirection
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+4xx 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+5xx Server errors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fill out the proper HTTP status group headings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mime-type
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mime-type"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mime-type is grouped by their usage, which usually is the first group
+ part.
+ Here is a selection of common types grouped together.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{mime-types.tsv}{Mime-type grouping}{}{display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=l},
+ }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Update list, use most common types.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Classification
+\end_layout
+
+\begin_layout Subsubsection
+Public Suffix List
+\end_layout
+
+\begin_layout Standard
+The public suffix list is prepared for lookups per domain component.
+ Each request's domain (including shorter domain components) is checked
+ against it, and any matching public suffixes are kept in an array.
+ A list of private suffixes, as in domain components not in the public suffix
+ list, is also kept.
+ The primary domain (first non-public suffix match, or the shortest private
+ suffix) is extracted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In terms of grouping, it might be good to keep the primary (longest matching)
+ public suffix separately.
+ The public suffix list also contains special wildcard/exception rules and
+ private suffixes 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+.
+ They have not been used in the thesis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Implement-public-suffix-rules-use-non-ICANN-suffixes"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Basic
+\end_layout
+
+\begin_layout Standard
+Simple properties in the request are checked, and their valued saved as
+ a classification property.
+ This property is used for grouping and for further analysis.
+\end_layout
+
+\begin_layout Description
+Successful
+\begin_inset space ~
+\end_inset
+
+request The status of the request is 200-299 or 304.
+\end_layout
+
+\begin_layout Description
+Unsuccessful
+\begin_inset space ~
+\end_inset
+
+request The status is 100-199 or 300-303 or 305-599.
+\end_layout
+
+\begin_layout Description
+Failed
+\begin_inset space ~
+\end_inset
+
+request The log file format is incomplete or the status is null or below
+ 100 or above 599.
+\end_layout
+
+\begin_layout Description
+Same
+\begin_inset space ~
+\end_inset
+
+domain The request is to the same domain that was first visited.
+\end_layout
+
+\begin_layout Description
+Subdomain The request is to a subdomain of the domain that was first visited.
+\end_layout
+
+\begin_layout Description
+Superdomain The request is to a domain to which the origin domain is a subdomain.
+ This basic superdomain classification is currently not checked against
+ the public suffix list for invalid superdomains.
+\end_layout
+
+\begin_layout Description
+Same
+\begin_inset space ~
+\end_inset
+
+primary
+\begin_inset space ~
+\end_inset
+
+domain The request shared the same primary domain with the origin.
+\end_layout
+
+\begin_layout Description
+Internal
+\begin_inset space ~
+\end_inset
+
+domain The request is to the same domain, a subdomain or a superdomain of
+ the domain that was first visited.
+\end_layout
+
+\begin_layout Description
+External
+\begin_inset space ~
+\end_inset
+
+domain The request is not to an internal domain.
+\end_layout
+
+\begin_layout Description
+Secure
+\begin_inset space ~
+\end_inset
+
+request The request is using HTTPS.
+\end_layout
+
+\begin_layout Description
+Insecure
+\begin_inset space ~
+\end_inset
+
+request The request is not using HTTPS.
+\end_layout
+
+\begin_layout Subsubsection
+Disconnect.me
+\end_layout
+
+\begin_layout Standard
+The URLs in the extended data contains lists of domain components.
+ As the disconnect list of blocked domains is prepared for lookups by domains,
+ each of the matching domains (including shorter domain components) are
+ extracted with organization, organization URL and domain category.
+\end_layout
+
+\begin_layout Subsection
+Analysis
+\end_layout
+
+\begin_layout Standard
+An analysis, where request classifications are counted, summed and the coverage
+ calculated, is performed as an automated step.
+\end_layout
+
+\begin_layout Subsubsection
+Origin
+\end_layout
+
+\begin_layout Standard
+The origin domains are grouped separately from the requests that stemmed
+ from them.
+\end_layout
+
+\begin_layout Subsubsection
+Requested URLs
+\end_layout
+
+\begin_layout Standard
+All requests are represented with their domain, and other classifications.
+\end_layout
+
+\begin_layout Subsubsection
+Distinct requested URLs
+\end_layout
+
+\begin_layout Standard
+Even if two requests originating from a domain, it is only counted once.
+ This gives the possibility to calculate coverage per domain later on.
+\end_layout
+
+\begin_layout Subsubsection
+Request/domain counts
+\end_layout
+
+\begin_layout Standard
+All the numbers from all domains added together.
+\end_layout
+
+\begin_layout Subsubsection
+Request/domain coverage
+\end_layout
+
+\begin_layout Standard
+The summed up counts divided by either the total request count (for requested
+ URLs) or the number of domains in the current group (for distinct requested
+ URLs).
+ This gives a coverage percentage - either for the percentage of the number
+ of requests, or domains that has the value.
+\end_layout
+
+\begin_layout Subsubsection
+Grouping
+\end_layout
+
+\begin_layout Standard
+In order to not make too broad assumptions, some grouping was performed.
+ The analysis was performed the same way on each of these groups 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:aggregate/analysis.sh"
+
+\end_inset
+
+.
+ The origin domain's download status was checked, and grouped into both
+ unfiltered and non-failed groups.
+ The list of requested URLs was grouped into unfiltered, internal and external
+ URLs.
+\end_layout
+
+\begin_layout Subsection
+Questions
+\end_layout
+
+\begin_layout Standard
+Where the aggregate analysis is not enough, there are custom questions.
+ These questions/queries can be run against any previous intermediate step
+ in the process, as they are saved to disk.
+\end_layout
+
+\begin_layout Subsubsection
+Google Tag Manager
+\end_layout
+
+\begin_layout Standard
+One of the questions posed beforehand was if Google Tag Manager would have
+ an impact upon results.
+ This question is answered in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Google-Tag-Manager"
+
+\end_inset
+
+ with the help of this data.
+\end_layout
+
+\begin_layout Subsubsection
+Origins with redirects
+\end_layout
+
+\begin_layout Standard
+Looking at preliminary results, a large portion of domains yielded a redirect
+ as the initial response.
+ In order to look at these redirects specifically, and determine if they
+ redirect to an internal or external domain, a specific question was written.
+\end_layout
+
+\begin_layout Subsection
+Multiset queries
+\end_layout
+
+\begin_layout Standard
+After downloading several datasets, it is often interesting to compare them
+ side by side.
+ The multiset queries extract pieces of data from several datasets, and
+ combine them into a single files.
+\end_layout
+
+\begin_layout Chapter
 Software
 \end_layout
 
