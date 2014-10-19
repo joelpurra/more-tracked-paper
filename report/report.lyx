@@ -366,7 +366,22 @@ Or Klondike and gold?
 \end_layout
 
 \begin_layout Standard
-Front pages of approximately 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Mention related work?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This thesis uses large-scale measurements to characterize how different
+ kinds of domains in Sweden and internationally use web site resources.
+ Front pages of approximately 
 \begin_inset ERT
 status open
 
@@ -386,11 +401,107 @@ numprint{150000}
  Resources were grouped by mime type, URL protocol, domain, if it matches
  the domain the request originated from and compared to lists of known trackers
  and organizations.
- This thesis shows the use of resources internal versus external to the
- entry domain, which the most common confirmed trackers are, what spread
- they have and how much the average internet user can expect to be tracked
- by visiting some of the most important and popular sites in Sweden, Denmark
- and worldwide.
+\end_layout
+
+\begin_layout Itemize
+Software for automated, repeatable retrieval and analysis of large amounts
+ of web sites was developed, and released as open source (see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Software"
+
+\end_inset
+
+).
+ Datasets based on publicly available domain lists have been released for
+ scientific scrutinization.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://joelpurra.com/projects/masters-thesis/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The data allows analysis of web sites' HTTP requests including the use
+ of resources internal versus external to the entry domain, which the most
+ common confirmed tracker organizations are, what spread they have and how
+ much the average internet user can expect to be tracked by visiting some
+ of the most important and popular sites in Sweden, Denmark and worldwide.
+\end_layout
+
+\begin_layout Itemize
+First, adaption of HTTPS for different domains is characterized from a Swedish
+ perspective.
+ The adaption between classes of domains within Sweden, as well as against
+ popular international domains are compared.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Highlight some key findings and their implications.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about users' (in-)ability to protect their own privacy using HTTPS.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert reference to results chapter.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Second, the use of third-party trackers and other third-party services for
+ different classes of domains, is analyzed.
+ Using public lists of potential tracker domains, we analyze and compare
+ the wide spread adaption of these services across domains within Sweden,
+ as well as internationally.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Highlight some key findings and their implications.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert reference to results chapter.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7151,6 +7262,13 @@ After downloading several datasets, it is often interesting to compare them
 
 \begin_layout Chapter
 Software
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Software"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
