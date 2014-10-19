@@ -769,12 +769,20 @@ Methodology
 
 \begin_layout Standard
 Based on a list of domains, the front page of each domain is downloaded
- and parsed the way a browser would.
- The URL of each requested resource will be extracted, and associated with
- the domain they were loaded from.
- This data will then be classified in a number of ways, before being boiled
- down to statistics about the entire dataset.
+ and parsed the way a user's browser would.
+ The URL of each requested resource is extracted, and associated with the
+ domain it was loaded from.
+ This data is then classified in a number of ways, before being boiled down
+ to statistics about the entire dataset.
  These aggregates are then compared between datasets.
+ For methodology details, see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Methodology-details"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -4474,6 +4482,13 @@ description "JavaScript Object Notation"
 \begin_layout Chapter
 \start_of_appendix
 Methodology details
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Methodology-details"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
