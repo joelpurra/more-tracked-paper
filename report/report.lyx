@@ -858,12 +858,12 @@ One assumption is that all external resources can act as trackers, even
 status collapsed
 
 \begin_layout Plain Layout
-Referer
+referer
 \end_layout
 
 \end_inset
 
- HTTP header 
+ (sic) HTTP header 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
