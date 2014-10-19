@@ -641,181 +641,6 @@ How much does the average user know about external resources being trackers?
 \end_layout
 
 \begin_layout Chapter
-Expected results
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Expected-results"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Previous research show that ads were used on 58% of internet's 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{500}
-\end_layout
-
-\end_inset
-
- most popular sites 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- Google Analytics usage in a curated list of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{900}
-\end_layout
-
-\end_inset
-
- Swedish domains was 44% in 2010, 57% in 2011 and 62% 2012 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healthstatus"
-
-\end_inset
-
-.
- The assumption is that the number of external resources is at least as
- big, as they include both ads and Google Analytics.
- Technical reasons include cloud services hosting sites and services, content
- delivery networks becoming commonplace 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Krishnamurthy:2000:AFI:347319.346248,Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
- for scalable speed improvements and external service providers increasing
- their quality.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add non-technical reasons.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Sites served over HTTPS are expected to use as many external resources as
- HTTP, even though some of these external resources might not be served
- over HTTPS as well.
-\end_layout
-
-\begin_layout Standard
-News sites are expected to allow more trackers than other categories, as
- their income model include third party advertisements 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- Commercial sites are expected to have more trackers than government sites.
-\end_layout
-
-\begin_layout Section
-Direction and scope
-\end_layout
-
-\begin_layout Standard
-Emphasis for the thesis will be on technical analysis, producing aggregate
- numbers regarding domains and external resources.
- Social aspects and privacy concerns are considered out of scope.
-\end_layout
-
-\begin_layout Standard
-The thesis will primarily be written from a Swedish perspective.
- This is in part because .SE has access to the full list of Swedish .se domains,
- and part because of their previous work with the 
-\emph on
-.SE Health Status
-\emph default
- reports.
- Focus is to analyze .se domains in the reports, as they have already been
- deemed important and results can be incorporated in future reports.
- The main non-technical grouping is also based on the same reports; government,
- media, financial institutions and other nation-wide publicly relevant organizat
-ion groups.
-\end_layout
-
-\begin_layout Standard
-One assumption is that all external resources can act as trackers, even
- for static (non-script) resources with no capabilities to dynamically survey
- the user's browser, collecting data and tracking users across domains using
- for example the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-Referer
-\end_layout
-
-\end_inset
-
- HTTP header 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- While there are lists of known trackers, used by browser privacy tools,
- they are not 100% effective 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
-
-\end_inset
-
-.
- The lists will instead optionally be used to emphasize those external resources
- as 
-\emph on
-confirmed
-\emph default
- trackers.
- While cookies used for tracking have been a concern for many, they are
- not necessary in order to identify most users upon return, even uniquely
- on a global level 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Eckersley2009unique"
-
-\end_inset
-
-.
- Cookies will not be considered to be an indicator of tracking, as it can
- be assumed that a combination of other server and client side techniques
- can achieve the same goal as a tracking cookie.
-\end_layout
-
-\begin_layout Chapter
 Methodology
 \end_layout
 
@@ -975,11 +800,11 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Section
 Data sources
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Domains
 \end_layout
 
@@ -998,7 +823,7 @@ Generate domain list tables or tables in this chapter?
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 
 \emph on
 .SE Health Status
@@ -1033,7 +858,7 @@ Write a summary with examples from each dataset.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Random .se domains
 \end_layout
 
@@ -1084,7 +909,7 @@ numprint{100000}
  The .se TLD is to be considered Sweden-centric.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Random .dk domains
 \end_layout
 
@@ -1122,7 +947,7 @@ numprint{10000}
  The .dk TLD is to be considered Denmark-centric.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Random .com, .net domains
 \end_layout
 
@@ -1151,7 +976,7 @@ target "http://www.keepalert.com/top-extension-ranking-july-2014-newgtlds"
  and actual usage.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Alexa Top 
 \begin_inset ERT
 status open
@@ -1248,7 +1073,7 @@ target "https://alexa.zendesk.com/hc/en-us/articles/200449834-Does-Alexa-have-a-
  downloading.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Reach50
 \begin_inset Foot
 status open
@@ -1292,7 +1117,7 @@ target "http://webmie.com/"
  16-34, 35-54, 55+ but only the unfiltered top list is publicly available.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Datasets in use
 \begin_inset CommandInset label
 LatexCommand label
@@ -1357,7 +1182,7 @@ tsvtable{domains.datasets.tsv}{Datasets in use}{}{display columns/0/.style={stri
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 TLD distribution
 \begin_inset CommandInset label
 LatexCommand label
@@ -1389,11 +1214,11 @@ ng type, column type=l},}
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 External datasets
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Disconnect's blocking list
 \begin_inset CommandInset label
 LatexCommand label
@@ -1494,7 +1319,7 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Categories
 \begin_inset CommandInset label
 LatexCommand label
@@ -1536,7 +1361,7 @@ y columns/0/.style={string type, column type=l},}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Domains per organization
 \begin_inset CommandInset label
 LatexCommand label
@@ -1599,7 +1424,7 @@ tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Organizations in more than one category
 \begin_inset CommandInset label
 LatexCommand label
@@ -1635,7 +1460,7 @@ tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Advertising
 \end_layout
 
@@ -1664,7 +1489,7 @@ omniture.com Adobe's ad network.
 amazon-adsystem.com Amazon's ad delivery network.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Analytics
 \end_layout
 
@@ -1702,7 +1527,7 @@ statcounter.com Web statistics tool.
 webtrends.com Digital marketing analytics and optimization across channels.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Content
 \begin_inset CommandInset label
 LatexCommand label
@@ -1803,7 +1628,7 @@ Look at which services are hosted.
 youtube.com One of Google's video sites.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Disconnect
 \begin_inset CommandInset label
 LatexCommand label
@@ -1830,7 +1655,7 @@ It is worth noting that this category includes google-analytics.com plus
 ment categories respectively.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Social
 \end_layout
 
@@ -1855,7 +1680,7 @@ linkedin.com Professional social network.
 reddit.com Social new and link sharing, and discussion.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Public suffix list
 \begin_inset CommandInset label
 LatexCommand label
@@ -2163,11 +1988,23 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Section
 Retrieving websites and resources
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+Web sites based on lists of domains were downloaded using har-heedless,
+ see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:har-heedless"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
 Computer machines
 \begin_inset CommandInset label
 LatexCommand label
@@ -2203,7 +2040,7 @@ tsvtable{computer-machines.tsv}{Machine specifications}{}{display columns/0/.sty
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Network connection
 \end_layout
 
@@ -2218,7 +2055,7 @@ The laptop machine was connected by ethernet to the .SE office network, which
  in regard to web sites hosted in Sweden.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Software considerations
 \end_layout
 
@@ -2229,7 +2066,7 @@ To expedite an automated and repeatable process, a custom set of scripts
  and on multiple platforms.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Dynamic web pages
 \end_layout
 
@@ -2270,7 +2107,7 @@ reference "sub:phantomjs"
  component in both user interfaces as well as active trackers and ads.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Cached content
 \end_layout
 
@@ -2367,7 +2204,7 @@ key "M.-Ayenson:2011aa"
  amnesiac.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Flash files
 \end_layout
 
@@ -2402,7 +2239,7 @@ status collapsed
  elements.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Combined javascript
 \end_layout
 
@@ -2452,7 +2289,7 @@ target "https://jquery.com/"
  a service (SaaS) to enable faster update cycles and tracking of HTTP requests.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Google Tag Manager
 \begin_inset CommandInset label
 LatexCommand label
@@ -2523,7 +2360,7 @@ The numbers point to every domain that uses Google Tag Manager uses at least
  information regarding which services are called when further analyzed.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 \begin_inset Flex Code
 status collapsed
 
@@ -2687,7 +2524,7 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Parallelizing downloads
 \end_layout
 
@@ -2720,7 +2557,7 @@ During initial parallelizing tests, the laptop machine was shown to be able
 y longer download times.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Screen size
 \end_layout
 
@@ -2817,7 +2654,7 @@ Check if all images are automatically downloaded by phantomjs, as if the
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Screenshots
 \end_layout
 
@@ -2869,7 +2706,7 @@ The ratio of PNG to HAR data size on disk points to the compressed PNG files
  report dataset.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Dataset variations
 \begin_inset CommandInset label
 LatexCommand label
@@ -2950,7 +2787,7 @@ reference "chap:Detailed-Results"
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 System load during downloads
 \end_layout
 
@@ -3087,7 +2924,7 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Failed domains
 \begin_inset CommandInset label
 LatexCommand label
@@ -3171,7 +3008,7 @@ reference "sub:har-portent"
 .
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Section
 Analyzing resources
 \end_layout
 
@@ -3186,7 +3023,7 @@ reference "sub:har-dulcify"
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Screenshots
 \end_layout
 
@@ -3197,7 +3034,7 @@ Screenshots were mainly used for verification during development, to see
  infeasible as a way to verify each and every domain's result.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 The HAR format
 \end_layout
 
@@ -3346,11 +3183,11 @@ These properties will be enough to see what kinds of resources are requested,
  if requests are successful and where the request is made to.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Expanding parts
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 URL, referer, redirect
 \end_layout
 
@@ -3493,7 +3330,7 @@ Write more about URLs.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Status
 \end_layout
 
@@ -3540,7 +3377,7 @@ Fill out the proper HTTP status group headings.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Mime-type
 \begin_inset CommandInset label
 LatexCommand label
@@ -3588,11 +3425,11 @@ Update list, use most common types.
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Classification
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Public Suffix List
 \end_layout
 
@@ -3660,7 +3497,7 @@ end{futurework}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Basic
 \end_layout
 
@@ -3758,7 +3595,7 @@ Insecure
 request The request is not using HTTPS.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Disconnect.me
 \end_layout
 
@@ -3769,7 +3606,7 @@ The URLs in the extended data contains lists of domain components.
  extracted with organization, organization URL and domain category.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Analysis
 \end_layout
 
@@ -3778,7 +3615,7 @@ An analysis, where request classifications are counted, summed and the coverage
  calculated, is performed as an automated step.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Origin
 \end_layout
 
@@ -3787,7 +3624,7 @@ The origin domains are grouped separately from the requests that stemmed
  from them.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Requested URLs
 \end_layout
 
@@ -3795,7 +3632,7 @@ Requested URLs
 All requests are represented with their domain, and other classifications.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Distinct requested URLs
 \end_layout
 
@@ -3804,7 +3641,7 @@ Even if two requests originating from a domain, it is only counted once.
  This gives the possibility to calculate coverage per domain later on.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Request/domain counts
 \end_layout
 
@@ -3812,7 +3649,7 @@ Request/domain counts
 All the numbers from all domains added together.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Request/domain coverage
 \end_layout
 
@@ -3824,287 +3661,27 @@ The summed up counts divided by either the total request count (for requested
  of requests, or domains that has the value.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Grouping
 \end_layout
 
 \begin_layout Standard
 In order to not make too broad assumptions, some grouping was performed.
- The analysis was performed the same way on each of these groups.
-\end_layout
+ The analysis was performed the same way on each of these groups 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:aggregate/analysis.sh"
 
-\begin_layout Subsubsection
-Origin domain status
-\end_layout
+\end_inset
 
-\begin_layout Standard
-The origin domain's download status was checked, and grouped into both unfiltere
-d and non-failed groups.
-\end_layout
-
-\begin_layout Subsubsection
-Requested URLs
-\end_layout
-
-\begin_layout Standard
-The list of requested URLs was grouped into unfiltered, internal and external
+.
+ The origin domain's download status was checked, and grouped into both
+ unfiltered and non-failed groups.
+ The list of requested URLs was grouped into unfiltered, internal and external
  URLs.
 \end_layout
 
 \begin_layout Subsection
-Tree
-\end_layout
-
-\begin_layout Standard
-A tree representation of the output after grouping.
- The origin is represents the original request and the requested URLs
-\end_layout
-
-\begin_layout Itemize
-Unfiltered origin domains
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Origin
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Unfiltered URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Distinct requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Internal URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Distinct requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-External URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Distinct requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Non-failed origin domains
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Origin
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Unfiltered URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Distinct requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Internal URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Distinct requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-External URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Distinct requested URLs
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Counts
-\end_layout
-
-\begin_layout Itemize
-Coverage
-\end_layout
-
-\end_deeper
-\end_deeper
-\end_deeper
-\begin_layout Section
 Questions
 \end_layout
 
@@ -4114,7 +3691,7 @@ Where the aggregate analysis is not enough, there are custom questions.
  in the process, as they are saved to disk.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Google Tag Manager
 \end_layout
 
@@ -4131,7 +3708,7 @@ reference "sub:Google-Tag-Manager"
  with the help of this data.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Origins with redirects
 \end_layout
 
@@ -4142,7 +3719,7 @@ Looking at preliminary results, a large portion of domains yielded a redirect
  redirect to an internal or external domain, a specific question was written.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Multiset queries
 \end_layout
 
@@ -4151,6 +3728,83 @@ After downloading several datasets, it is often interesting to compare them
  side by side.
  The multiset queries extract pieces of data from several datasets, and
  combine them into a single files.
+\end_layout
+
+\begin_layout Section
+Direction and scope
+\end_layout
+
+\begin_layout Standard
+Emphasis for the thesis will be on technical analysis, producing aggregate
+ numbers regarding domains and external resources.
+ Social aspects and privacy concerns are considered out of scope.
+\end_layout
+
+\begin_layout Standard
+The thesis will primarily be written from a Swedish perspective.
+ This is in part because .SE has access to the full list of Swedish .se domains,
+ and part because of their previous work with the 
+\emph on
+.SE Health Status
+\emph default
+ reports.
+ Focus is to analyze .se domains in the reports, as they have already been
+ deemed important and results can be incorporated in future reports.
+ The main non-technical grouping is also based on the same reports; government,
+ media, financial institutions and other nation-wide publicly relevant organizat
+ion groups.
+\end_layout
+
+\begin_layout Standard
+One assumption is that all external resources can act as trackers, even
+ for static (non-script) resources with no capabilities to dynamically survey
+ the user's browser, collecting data and tracking users across domains using
+ for example the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Referer
+\end_layout
+
+\end_inset
+
+ HTTP header 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+.
+ While there are lists of known trackers, used by browser privacy tools,
+ they are not 100% effective 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+.
+ The lists will instead optionally be used to emphasize those external resources
+ as 
+\emph on
+confirmed
+\emph default
+ trackers.
+ While cookies used for tracking have been a concern for many, they are
+ not necessary in order to identify most users upon return, even uniquely
+ on a global level 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eckersley2009unique"
+
+\end_inset
+
+.
+ Cookies will not be considered to be an indicator of tracking, as it can
+ be assumed that a combination of other server and client side techniques
+ can achieve the same goal as a tracking cookie.
 \end_layout
 
 \begin_layout Chapter
@@ -8749,13 +8403,269 @@ aggregate/analysis.sh
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:aggregate/analysis.sh"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Takes counts and lists of values, and reduces them to easy to present values,
  percentages and top lists.
+ Results are also grouped in order to draw separate conclusions regarding
+ non-failed domains and internal/external resources.
+ A tree representation of the output after grouping.
+ The origin represents the original request of the subsequently requested
+ URLs.
 \end_layout
 
+\begin_layout Itemize
+Unfiltered origin domains
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Origin
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfiltered URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Internal URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+External URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Non-failed origin domains
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Origin
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfiltered URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Internal URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+External URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Distinct requested URLs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Counts
+\end_layout
+
+\begin_layout Itemize
+Coverage
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
 \begin_layout Subsubsection
 \begin_inset Flex Code
 status collapsed
