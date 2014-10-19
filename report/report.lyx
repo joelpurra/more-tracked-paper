@@ -1122,6 +1122,142 @@ end{futurework}
 \end_layout
 
 \begin_layout Chapter
+Results
+\end_layout
+
+\begin_layout Standard
+Also see detailed results in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Detailed-Results"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Internal, external and organizations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about general characterization of internal/external resources per
+ category, and implications.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about top Disconnect organizations, some Google results, in Sweden
+ versus internationally.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+HTTP, HTTPS and redirects
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about which category of domains use HTTP, which use HTTPS and which
+ redirect.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add stacked bar charts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about mixed security.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Trackers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about trackers in http://www.
+ datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add graphs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about trackers in https://www.
+ datasets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
 Discussion and conclusions
 \end_layout
 
