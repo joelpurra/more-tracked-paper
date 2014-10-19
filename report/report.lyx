@@ -425,7 +425,7 @@ key "Feldmann:2004:MEI:1028788.1028833"
 
 .
  These external resources vary from content that the user explicitly want
- to obtain, to implicitly loaded third party services, ads, and non-visible
+ to obtain, to implicitly loaded third-party services, ads, and non-visible
  resources with the sole purpose of collecting user data and statistical
  material 
 \begin_inset CommandInset citation
@@ -527,7 +527,7 @@ key "Kumar:2013:GBT:2522548.2523129"
 .
  The range of taggable interests of course depend on the content of the
  news site.
- Private and sensitive information leaked to third party sites during typical
+ Private and sensitive information leaked to third-party sites during typical
  interaction with some of the most popular sites in the world include personal
  identification (full name, date of birth, email, ip address, geolocation)
  and sensitive information (sexual orientation, religious beliefs, health
@@ -5281,7 +5281,7 @@ brightcove.com Video hosting/monetization service.
 \end_layout
 
 \begin_layout Description
-disqus.com A third party comment service.
+disqus.com A third-party comment service.
 \end_layout
 
 \begin_layout Description
@@ -7158,7 +7158,7 @@ reference "sec:Computer-machines"
 \end_layout
 
 \begin_layout Section
-Third party tools
+Third-party tools
 \end_layout
 
 \begin_layout Standard
@@ -8131,7 +8131,7 @@ one-shot/preparations.sh
 \end_layout
 
 \begin_layout Standard
-Downloads, prepares and analyses third party datasets, and puts them in
+Downloads, prepares and analyses third-party datasets, and puts them in
  the current folder for use by subsequent scripts.
 \end_layout
 
