@@ -10792,12 +10792,6 @@ Insert link to PKI.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -10805,35 +10799,13 @@ status open
 
 
 \backslash
-tsvtable{datasets.retries.rates.tsv}{Dataset,Domains,Successful,Unsuccessful,Non-fa
-iled,Failed,Non-failure rate,Failure rate}{fixed, display columns/0/.style={strin
-g type, column type=l}, display columns/1/.style={string type, column type=i},
- display columns/2/.style={string type, column type=i}, display columns/3/.style={
-string type, column type=i}, display columns/4/.style={string type, column
- type=i}, display columns/5/.style={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Dataset-HAR-failure-rates"
-
-\end_inset
-
-Dataset HAR failure rates
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.retries.rates.tsv}{Dataset HAR failure rates}{Dataset,Domains
+,Successful,Unsuccessful,Non-failed,Failed,Non-failure rate,Failure rate}{fixed,
+ display columns/0/.style={string type, column type=l}, display columns/1/.style={
+string type, column type=i}, display columns/2/.style={string type, column
+ type=i}, display columns/3/.style={string type, column type=i}, display
+ columns/4/.style={string type, column type=i}, display columns/5/.style={string
+ type, column type=i}}
 \end_layout
 
 \end_inset
@@ -11019,12 +10991,6 @@ Write about redirect responses.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11032,33 +10998,11 @@ status open
 
 
 \backslash
-tsvtable{datasets.request-status.coverage.origin.sorted.tsv}{}{fixed, display
- columns/0/.style={string type, column type=l}, display columns/1/.style={string
- type, column type=i}, display columns/4/.style={column type=|r}, display
- columns/8/.style={column type=r|}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Dataset-origin-HTTP-response-code-group-coverage"
-
-\end_inset
-
-Dataset origin HTTP response code/group coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin
+ HTTP response code/group coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i},
+ display columns/4/.style={column type=|r}, display columns/8/.style={column
+ type=r|}}
 \end_layout
 
 \end_inset
@@ -11134,12 +11078,6 @@ Write about any exciting conclusions.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11147,32 +11085,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Internal-versus-external-resources-coverage"
-
-\end_inset
-
-Internal versus external resources coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{Inte
+rnal versus external resources coverage}{}{fixed, display columns/0/.style={strin
+g type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -11312,12 +11227,6 @@ Add a totals row, or at least mention request totals.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11325,38 +11234,15 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.requests.counts.sorted.tsv}{}{fixed, precision=2,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}, display columns/2/.style={string type, column
- type=i}, display columns/3/.style={string type, column type=i}, display
- columns/4/.style={string type, column type=i}, display columns/5/.style={string
- type, column type=i}, display columns/6/.style={precision=0, column type=|r},
- display columns/7/.style={precision=0}, display columns/8/.style={precision=0},
- display columns/9/.style={precision=0}, display columns/10/.style={column
- type=|r}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Requests-per-domain-and-ratios"
-
-\end_inset
-
-Requests, per domain and ratios
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.requests.counts.sorted.tsv}{Requests, per domain
+ and ratios}{}{fixed, precision=2, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}, display
+ columns/2/.style={string type, column type=i}, display columns/3/.style={string
+ type, column type=i}, display columns/4/.style={string type, column type=i},
+ display columns/5/.style={string type, column type=i}, display columns/6/.style={
+precision=0, column type=|r}, display columns/7/.style={precision=0}, display
+ columns/8/.style={precision=0}, display columns/9/.style={precision=0}, display
+ columns/10/.style={column type=|r}}
 \end_layout
 
 \end_inset
@@ -11480,12 +11366,6 @@ Update paragraph after HTTPS for
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11493,32 +11373,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.classification.secure.coverage.sorted.tsv}{}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Secure-versus-insecure-resources-coverage"
-
-\end_inset
-
-Secure versus insecure resources coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Secure
+ versus insecure resources coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -11564,12 +11421,6 @@ The table shows domains, domains with redirect responses to the origin request
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11577,34 +11428,12 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{}{fixed, display
- columns/0/.style={string type, column type=l}, display columns/1/.style={string
- type, column type=i}, display columns/2/.style={string type, column type=i},
- display columns/4/.style={column type=|r}, display columns/7/.style={column
- type=|r}, display columns/11/.style={column type=|r}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Origin-domains-with-redirects"
-
-\end_inset
-
-Origin domains with redirects
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{Origin
+ domains with redirects}{}{fixed, display columns/0/.style={string type,
+ column type=l}, display columns/1/.style={string type, column type=i}, display
+ columns/2/.style={string type, column type=i}, display columns/4/.style={column
+ type=|r}, display columns/7/.style={column type=|r}, display columns/11/.style={c
+olumn type=|r}}
 \end_layout
 
 \end_inset
@@ -11801,12 +11630,6 @@ Internal requests exclude the requests to the origin page.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11814,32 +11637,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Content-type-group-coverage-internal"
-
-\end_inset
-
-Content type group coverage (internal)
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{Conten
+t type group coverage (internal)}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -11861,12 +11661,6 @@ External resources from each group enjoy almost the same coverage as their
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -11874,32 +11668,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Content-type-group-coverage-external"
-
-\end_inset
-
-Content type group coverage (external)
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Conten
+t type group coverage (external)}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -12031,12 +11802,6 @@ reference "sub:TLD-distribution"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -12044,32 +11809,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Public-suffixes-in-external-resources"
-
-\end_inset
-
-Public suffixes in external resources
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public
+ suffixes in external resources}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -12239,12 +11981,6 @@ reference "sub:Public-suffix-list"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -12252,32 +11988,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{}{fixed,
- display columns/0/.style={string type, column type=l}, display columns/1/.style={
-string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Top-Disconnect-domain-match-coverage"
-
-\end_inset
-
-Top Disconnect domain match coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top
+ Disconnect domain match coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -12421,12 +12134,6 @@ key "Gill:2013:BPF:2504730.2504768"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -12434,32 +12141,10 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.domains.coverage.external.google.sorted.tsv}{}{f
-ixed, display columns/0/.style={string type, column type=l}, display columns/1/.st
-yle={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Top-Disconnect-Google-domain-match-coverage"
-
-\end_inset
-
-Top Disconnect Google domain match coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.disconnect.domains.coverage.external.google.sorted.tsv}
+{Top Disconnect Google domain match coverage}{}{fixed, display columns/0/.style={
+string type, column type=l}, display columns/1/.style={string type, column
+ type=i}}
 \end_layout
 
 \end_inset
@@ -12535,12 +12220,6 @@ Write about low analytics, compare to Google Analytics.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -12548,32 +12227,9 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}{}{fixe
-d, display columns/0/.style={string type, column type=l}, display columns/1/.style
-={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Disconnect-category-match-coverage"
-
-\end_inset
-
-Disconnect category match coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}{Di
+sconnect category match coverage}{}{fixed, display columns/0/.style={string
+ type, column type=l}, display columns/1/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -12612,12 +12268,6 @@ Write more.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -12625,32 +12275,10 @@ status open
 
 
 \backslash
-tsvtable{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}{}{f
-ixed, display columns/0/.style={string type, column type=l}, display columns/1/.st
-yle={string type, column type=i}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Top-Disconnect-organization-match-coverage"
-
-\end_inset
-
-Top Disconnect organization match coverage
-\end_layout
-
-\end_inset
-
-
+tsvtablewide{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}
+{Top Disconnect organization match coverage}{}{fixed, display columns/0/.style={s
+tring type, column type=l}, display columns/1/.style={string type, column
+ type=i}}
 \end_layout
 
 \end_inset
