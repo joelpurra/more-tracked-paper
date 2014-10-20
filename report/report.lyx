@@ -7333,7 +7333,8 @@ status collapsed
 
  tag, each part should download separately and perform the same duties,
  including “calling home” to the usual addresses.
- In order to confirm this, a query was run on one of the datasets.
+ In order to confirm this, a query was run on one of the datasets,  se.2014-07-10.
+random.100000-http-www.
  
 \begin_inset Note Note
 status open
@@ -7388,8 +7389,7 @@ name "tab:Google-Tag-Manager-versus-Google-Analytics-and-DoubleClick"
 
 \end_inset
 
-Google Tag Manager versus Google Analytics and DoubleClick, dataset 2014-07-25
- 100k server
+Google Tag Manager versus Google Analytics and DoubleClick
 \end_layout
 
 \end_inset

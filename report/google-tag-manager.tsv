@@ -1,8 +1,6 @@
 Name	Value	Percentage
-Domains with HAR data	99952	100\%
-Domains with GTM	1307	1.3\%
-Requests to GA	2980	-
-Requests to DC	2019	-
-GA/GTM domain coverage	1105	85\%
-DC/GTM domain coverage	738	56\%
-GA+DC/GTM domain coverage	1307	100\%
+Non-failed domains	77261	100\%
+Domains with GTM	1453	1.9\%
+GA/GTM domain coverage	1229	85\%
+DC/GTM domain coverage	821	57\%
+GA+DC/GTM domain coverage	1453	100\%
