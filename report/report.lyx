@@ -521,6 +521,14 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Background
 \end_layout
@@ -881,10 +889,7 @@ lists The
 \emph on
 .SE Health Status
 \emph default
- reports use lists of 
-approximately 
-\lang english
-
+ reports use lists of approximately 
 \begin_inset ERT
 status open
 
@@ -5935,7 +5940,7 @@ end{futurework}
 \end_layout
 
 \begin_layout Section
-Disconnect's blocking list
+Disconnect.me's blocking list
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Disconnect's-blocking-list"
@@ -5956,7 +5961,7 @@ One of the most popular privacy tools is Disconnect, which blocks tracking
 \begin_layout Standard
 The Disconnect software lets users block/unblock loading resources from
  specific third-party domains.
- A list of 
+ The dataset from 2014-09-08 has a list of 
 \begin_inset ERT
 status open
 
@@ -5969,7 +5974,7 @@ numprint{2149}
 
 \end_inset
 
- domains is used as the basis from the blocking.
+ domains used as the basis for the blocking.
  Each entry belongs to one of 
 \begin_inset ERT
 status open
@@ -6068,8 +6073,8 @@ status open
 
 
 \backslash
-tsvtable{disconnect.categories.tsv}{Disconnect's categories (2014-09-08)}{}{displa
-y columns/0/.style={string type, column type=l},}
+tsvtable{disconnect.categories.tsv}{Disconnect's categories}{}{display columns/0/.s
+tyle={string type, column type=l},}
 \end_layout
 
 \end_inset
@@ -6089,7 +6094,33 @@ name "sub:Disconnect-Domains-per-organization"
 \end_layout
 
 \begin_layout Standard
-Many organizations have more than one domain.
+The dataset shows 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{459}
+\end_layout
+
+\end_inset
+
+ of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{980}
+\end_layout
+
+\end_inset
+
+ organizations have more than one domain.
  One organization stands out, with 
 \begin_inset ERT
 status open
@@ -6105,7 +6136,20 @@ numprint{271}
 
  domains - Google.
  The biggest reason is that they own top level domains such as google.se
- and google.ch from over 200 TLDs.
+ and google.ch from over 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{200}
+\end_layout
+
+\end_inset
+
+ TLDs.
  Yahoo comes in second with 
 \begin_inset ERT
 status open
@@ -6121,9 +6165,23 @@ numprint{71}
 
  domains, many of which are service-specific subdomains to yahoo.com, such
  as finance.yahoo.com and travel.yahoo.com.
+ See figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Domains-per-organization"
+
+\end_inset
+
+ for the distribution.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -6131,8 +6189,157 @@ status open
 
 
 \backslash
-tsvtable{disconnect.domains-per-organization.tsv}{Domains per organization
- (2014-09-08)}{}{}
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{loglogaxis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylabel=Organizations,
+\end_layout
+
+\begin_layout Plain Layout
+
+	width=0.95*
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	height=0.5*
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	log ticks with fixed point,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xmin=0.7,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ymin=0.7,
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlarge x limits=upper,
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlarge y limits=upper,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xtick={1,2,3,4,10,32,40,71,271},
+\end_layout
+
+\begin_layout Plain Layout
+
+	ytick=data,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		ybar,
+\end_layout
+
+\begin_layout Plain Layout
+
+		bar width=3pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+		thick,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=black,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[x=Domains per organization,y=Organizations]
+\end_layout
+
+\begin_layout Plain Layout
+
+	{disconnect.domains-per-organization.tsv};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{loglogaxis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Domains-per-organization"
+
+\end_inset
+
+Domains per organization
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6167,8 +6374,8 @@ status open
 
 \backslash
 tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{Organizations
- in more than one category (2014-09-08)}{}{display columns/0/.style={string
- type, column type=l},}
+ in more than one category}{}{display columns/0/.style={string type, column
+ type=l},}
 \end_layout
 
 \end_inset
