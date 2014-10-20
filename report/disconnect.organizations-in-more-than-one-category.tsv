@@ -1,27 +1,21 @@
-Organization	Categories
-Yahoo!	4
-Amazon.com	3
-33Across	2
-Admicro	2
-Adobe	2
-AdOn Network	2
-Akamai	2
-AOL	2
-AT Internet	2
-Automattic	2
-BV! MEDIA	2
-comScore	2
-Facebook	2
-Google	2
-Hearst	2
-I-Behavior	2
-IBM	2
-LivePerson	2
-Microsoft	2
-Nielsen	2
-Oracle	2
-Prime Visibility	2
-QuinStreet	2
-QUISMA	2
-TrackingSoft	2
-WPP	2
+Name	Count	Advertising	Analytics	Content	Disconnect	Social
+Yahoo!	4	true	true	true	false	true
+Amazon.com	3	true	true	true	false	false
+33Across	2	true	false	true	false	false
+Adobe	2	true	false	true	false	false
+Akamai	2	true	false	true	false	false
+AOL	2	true	false	true	false	false
+AT Internet	2	true	true	false	false	false
+Automattic	2	false	true	true	false	false
+comScore	2	true	true	false	false	false
+Facebook	2	false	false	true	true	false
+Google	2	false	false	true	true	false
+Hearst	2	true	true	false	false	false
+IBM	2	true	true	false	false	false
+LivePerson	2	false	true	true	false	false
+Microsoft	2	true	false	true	false	false
+Nielsen	2	true	true	false	false	false
+Oracle	2	true	false	true	false	false
+QuinStreet	2	true	true	false	false	false
+TrackingSoft	2	true	true	false	false	false
+WPP	2	true	true	false	false	false

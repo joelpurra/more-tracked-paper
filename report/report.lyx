@@ -6164,7 +6164,7 @@ name "sub:Disconnect's-blocking-list"
 \end_layout
 
 \begin_layout Standard
-One of the most popular privacy tools is Disconnect, which blocks tracking
+One of the most popular privacy tools is Disconnect.me, which blocks tracking
  sites by running as a browser plugin.
  Disconnect was started by ex-Google engineers, and still seems to have
  close ties to Google as the own domain disconnect.me is listed as a Google
@@ -6173,8 +6173,8 @@ One of the most popular privacy tools is Disconnect, which blocks tracking
 
 \begin_layout Standard
 The Disconnect software lets users block/unblock loading resources from
- specific third-party domains.
- The dataset from 2014-09-08 has a list of 
+ specific third-party domains and domain categories.
+ The dataset (2014-09-08) has a list of 
 \begin_inset ERT
 status open
 
@@ -6202,8 +6202,13 @@ numprint{980}
 \end_inset
 
  organizations, which come with a link to their webpage.
- There is also a grouping into categories, here shown with some examples.
- Worth noting is that the content category is not blocked by default.
+ There is also a grouping into categories - see description and examples
+ later in this chapter.
+ Worth noting is that the content category is 
+\emph on
+not
+\emph default
+ blocked by default.
 \end_layout
 
 \begin_layout Standard
@@ -6636,8 +6641,20 @@ name "sub:Disconnect-Organizations-in-more-than-one-category"
 \begin_layout Standard
 Some organizations are represented in more than one of the five Disconnect
  categories.
+ Organizations represented in the content category may be blocked in part
+ - but by serving content, they can achieve at least partial tracking.
  Yahoo has several ad services, several social services, several content
  services and a single analytics service, putting them in four categories.
+ At least one organization, Google, is misrepresented in the categories;
+ the special Disconnect category contains both their advertisement and analytics
+ service domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+.
  See table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6662,8 +6679,12 @@ status open
 
 
 \backslash
-tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{}{display
- columns/0/.style={string type, column type=l}}
+tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{}{string
+ replace*={true}{x}, string replace*={false}{}, display columns/0/.style={string
+ type, column type=l}, display columns/2/.style={string type, column type=c},
+ display columns/3/.style={string type, column type=c}, display columns/4/.style={
+string type, column type=c}, display columns/5/.style={string type, column
+ type=c}, display columns/6/.style={string type, column type=c}}
 \end_layout
 
 \end_inset
