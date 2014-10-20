@@ -83,6 +83,39 @@ columns={#2},#3
 ]{#1}
 }
 
+\newcommand{\tsvtablestylewide}[1]{
+\pgfplotstableset{
+format=file,
+col sep=tab,
+multicolumn names={c},
+column type=r,
+int detect,
+zerofill=true,
+precision=3,
+1000 sep={\ },
+begin table=\begin{longtable},
+end table=\end{longtable},
+every odd row/.style={before row={\rowcolor[gray]{0.95}}},
+every head row/.style={before row=\toprule,after row={
+\midrule
+\addlinespace[0pt]
+\endhead
+},
+},
+every last row/.style={after row={
+\bottomrule
+\caption{#1}}
+},
+}
+}
+
+\newcommand{\tsvtablewide}[4]{
+\tsvtablestyle{#2}
+\pgfplotstabletypeset[
+columns={#3},#4
+]{#1}
+}
+
 \newenvironment{futurework}{
 \begin{center}
 \begin{minipage}{.8\columnwidth}
