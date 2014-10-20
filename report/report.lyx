@@ -266,7 +266,7 @@ numprint{150000}
 \end_inset
 
  globally popular as well as random .com/.net/.se/.dk web sites, in-browser
- HTTP traffic was recorded and analyzed.
+ HTTP/HTTPS traffic was recorded.
  Data shows that known third-party resources including known trackers have
  a presence on over 70% 
 \begin_inset Note Greyedout
