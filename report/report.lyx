@@ -50,7 +50,7 @@
 \newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
 \newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
 
-\newcommand{\tsvtablestyle}[1]{
+\newcommand{\tsvtablestyle}[0]{
 \pgfplotstableset{
 format=file,
 col sep=tab,
@@ -71,15 +71,15 @@ every head row/.style={before row=\toprule,after row={
 },
 every last row/.style={after row={
 \bottomrule
-\caption{#1}}
+}
 },
 }
 }
 
-\newcommand{\tsvtable}[4]{
-\tsvtablestyle{#2}
+\newcommand{\tsvtable}[3]{
+\tsvtablestyle
 \pgfplotstabletypeset[
-columns={#3},#4
+columns={#2},#3
 ]{#1}
 }
 
