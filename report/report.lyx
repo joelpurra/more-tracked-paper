@@ -768,6 +768,20 @@ Methodology
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Previous expected results, methodology and software chapters trimmed down
+ into a more compact format; refer to appendix for software/script details.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Emphasis for the thesis is on a technical analysis, producing aggregate
  numbers regarding domains and external resources.
  Social aspects and privacy concerns are considered out of scope.
@@ -795,7 +809,14 @@ Based on a list of domains, the front page of each domain is downloaded
  domain it was loaded from.
  This data is then classified in a number of ways, before being boiled down
  to statistics about the entire dataset.
- These aggregates are then compared between datasets.
+ Lastly, these aggregates are compared between datasets - see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Detailed-Results"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -814,35 +835,8 @@ The thesis is primarily written from a Swedish perspective.
 ion groups.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Previous expected results, methodology and software chapters trimmed down
- into a more compact format; refer to appendix for software/script details.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Domain categories
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Use of domain names and suffix lists.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -868,6 +862,14 @@ reference "sub:Domain-lists-in-use"
 \end_inset
 
 .
+ See details in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Domains"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Description
@@ -879,9 +881,25 @@ lists The
 \emph on
 .SE Health Status
 \emph default
- reports use lists of domains in the categories counties, domain registrars,
- financial services, government-owned corporations (GOCS), higher education,
- ISPs, media, municipalities, and public authorities 
+ reports use lists of 
+approximately 
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1000}
+\end_layout
+
+\end_inset
+
+ domains in the categories counties, domain registrars, financial services,
+ government-owned corporations (GOCS), higher education, ISPs, media, municipali
+ties, and public authorities 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:.SE-Health-Status-domains"
@@ -1032,8 +1050,8 @@ numprint{10000}
 
 \begin_layout Standard
 Simply assuming domain ownership is always based on second-level domains,
- such as iis.se or joelpurra.com, is not correct.
- Not all TLDs' second-level domains are open for registration by the public;
+ such as iis.se or joelpurra.com, is incorrect.
+ Not all TLDs' second-level domains are open for registration to the public;
  examples include the Brazilian top level domain 
 \begin_inset Flex Code
 status collapsed
@@ -1068,8 +1086,14 @@ reference "sub:Public-suffix-list"
 \end_inset
 
 .
- The list has been incorporated into this thesis as a way to group domains
- like 
+ The list has been incorporated into this thesis as a way to classify 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-Suffix-List-classification"
+
+\end_inset
+
+ and group domains like 
 \begin_inset Flex Code
 status collapsed
 
@@ -1114,15 +1138,73 @@ Is the technical term correct?
 
 \end_layout
 
+\begin_layout Standard
+For the thesis, the shortest non-public suffix part of a domain has been
+ labeled the primary domain.
+ The domain 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+example.com.br
+\end_layout
+
+\end_inset
+
+ is the primary domain for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+machine100.services.example.com.br
+\end_layout
+
+\end_inset
+
+, as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.com.br
+\end_layout
+
+\end_inset
+
+ is a public suffix.
+ The term superdomain has also been used for the opposite of subdomain;
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+example.org
+\end_layout
+
+\end_inset
+
+ is a superdomain of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+www.example.org
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Capturing tracker requests
 \end_layout
 
 \begin_layout Standard
-One assumption is that all external resources can act as trackers, even
- for static (non-script) resources with no capabilities to dynamically survey
- the user's browser, collecting data and tracking users across domains using
- for example the 
+One assumption is that all resources external to the initially requested
+ (origin) domain can act as trackers, even for static (non-script) resources
+ with no capabilities to dynamically survey the user's browser, collecting
+ data and tracking users across domains using for example the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1162,8 +1244,15 @@ recognized
 
 \begin_layout Standard
 Resources have not been blocked in the browser during web site retrieval,
- but have been matched by URL against a third-party list in the analysis
- step.
+ but have been matched by URL against a third-party list in the classification
+ step 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect.me-classification"
+
+\end_inset
+
+ of the data analysis.
  This way trackers dynamically triggering additional requests have also
  been recored, which can make a difference if they access another domain
  or another organization's trackers in the process.
@@ -1264,6 +1353,107 @@ Variation of the old retrieving websites and resources chapter, including
 
 \end_layout
 
+\begin_layout Standard
+The lists of domains have been fed to har-heedless, a tool specifically
+ written for this thesis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-heedless"
+
+\end_inset
+
+.
+ Using the headless
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The browser doesn't have a visible window, as it is built for automation.
+\end_layout
+
+\end_inset
+
+ browser phantomjs, the front page of each domain has been accessed and
+ processed the way a normal browser would.
+ HTTP/HTTPS traffic metadata such as requested URLs and their HTTP request/respo
+nse headers have been recorded in the HTTP Archive (HAR) data format 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:HTTP-Archive-(HAR)-format"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to make comparisons between insecure HTTP and secure HTTPS, domains
+ have been accessed using both protocols.
+ As web sites traditionally have been hosted on the www subdomain, not all
+ domains have been configured to respond to HTTP requests to the primary
+ domain - thus both the www prefix and no prefix have been accessed.
+ This means four variations, quadrupling the number of accesses 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Dataset-variations"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Multiple domains have been retrieved in parallel 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Parallelizing-downloads"
+
+\end_inset
+
+, with adjustable parallelism to fit the computer machine's power 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:System-load-during-downloads"
+
+\end_inset
+
+.
+ To reduce the risk of intermittent errors - either in software, on the
+ network or in the remote system - each failed access has been retried up
+ to two times 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-domains"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about software considerations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+See details in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Retrieving-websites-and-resources"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Data analysis and validation
 \end_layout
@@ -1281,6 +1471,17 @@ Variation of the old analyzing resources chapter.
 
 \end_layout
 
+\begin_layout Standard
+See details in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Analyzing-resources"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 High level summary of datasets
 \end_layout
@@ -1296,6 +1497,17 @@ Write high level summary of datasets.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+See details in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Detailed-Results"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -4755,6 +4967,38 @@ description "A top level domain based on a country code, such as .se or .dk."
 \end_inset
 
 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Primary domain"
+description "For the thesis, the first non-public suffix part of a domain name has been labeled the primary domain. For example example.com.br has been labeled the primary domain for www.company-abc.com.br, as .com.br is a public suffix."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Subdomain"
+description "A domain name that belongs to another domain name zone. For example service.example.net is a subdomain to example.net."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Superdomain"
+description "For the thesis, domains in parent zones have been labeled superdomains to their subdomains, such as such as example.se being a superdomain to www.example.se."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Public suffix"
+description "The part of a domain name that is unavilable for registrations, used for grouping. All TLDs are public suffixes, but some have one or more levels of public suffixes, such as .com.br for commercial domains in Brazil or .pp.se for privately owned personal domains (a public suffix which has been deprecated, but still exists)."
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4844,6 +5088,13 @@ name "chap:Methodology-details"
 
 \begin_layout Section
 Domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5133,7 +5384,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
-target "http://alexa.com/"
+target "http://www.alexa.com/topsites"
 
 \end_inset
 
@@ -5146,23 +5397,7 @@ target "http://alexa.com/"
 \end_layout
 
 \begin_layout Standard
-Alexa, owned by Amazon, is a well-known source of top sites
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.alexa.com/topsites"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- in the world.
+Alexa, owned by Amazon, is a well-known source of top sites in the world.
  It is used in many research papers, and can be seen as the standard dataset.
  
 \begin_inset Note Greyedout
@@ -6172,6 +6407,13 @@ reddit.com Social new and link sharing, and discussion.
 
 \begin_layout Section
 Retrieving websites and resources
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Retrieving-websites-and-resources"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6198,10 +6440,11 @@ name "sec:Computer-machines"
 \end_layout
 
 \begin_layout Standard
-Two computers were used to download web pages - one laptop machine and one
- server machine.
+Two computers were used to download web pages during development - one laptop
+ machine and one server machine.
  The server is significantly more powerful than the laptop, and they downloaded
  a different number of web pages at a time.
+ The final datasets were downloaded on the server.
 \end_layout
 
 \begin_layout Standard
@@ -6708,6 +6951,13 @@ end{futurework}
 
 \begin_layout Subsubsection
 Parallelizing downloads
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Parallelizing-downloads"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6971,6 +7221,13 @@ reference "chap:Detailed-Results"
 
 \begin_layout Subsection
 System load during downloads
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:System-load-during-downloads"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7192,6 +7449,13 @@ reference "sub:har-portent"
 
 \begin_layout Section
 Analyzing resources
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Analyzing-resources"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7609,10 +7873,24 @@ Update list, use most common types.
 
 \begin_layout Subsection
 Classification
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Classification"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 Public Suffix List
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Public-Suffix-List-classification"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7681,6 +7959,13 @@ end{futurework}
 
 \begin_layout Subsubsection
 Basic
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Basic-classification"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7779,6 +8064,13 @@ request The request is not using HTTPS.
 
 \begin_layout Subsubsection
 Disconnect.me
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Disconnect.me-classification"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
