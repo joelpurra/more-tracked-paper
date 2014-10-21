@@ -862,18 +862,35 @@ reference "chap:Detailed-Results"
 
 \begin_layout Standard
 The thesis is primarily written from a Swedish perspective.
- This is in part because .SE has access to the full list of Swedish .se domains,
- and part because of their previous work with the 
+ This is in part because .SE
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This thesis was written in the office of The Internet Infrastructure Foundation
+ (.SE), the .se TLD registry.
+\end_layout
+
+\end_inset
+
+ has access to the full list of Swedish .se domains, and in part because
+ of their previous work with the 
 \emph on
 .SE Health Status
 \emph default
- reports.
- Focus is to analyze .se domains in the reports, as they have already been
- deemed important and results can be incorporated in future reports, and
- use other TLDs and domain lists for contrast.
- The main non-technical grouping is also based on the same reports; government,
- media, financial institutions and other nation-wide publicly relevant organizat
-ion groups.
+ reports 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:.SE-Health-Status"
+
+\end_inset
+
+.
+ The reports focus on analyzing government, media, financial institutions
+ and other nation-wide publicly relevant organization groups' domains, as
+ they have been deemed important to Sweden and Swedes.
+ This thesis incorporates those lists, but focus on only the associated
+ web sites.
 \end_layout
 
 \begin_layout Section
@@ -1236,13 +1253,21 @@ www.example.org
 
 \begin_layout Section
 Capturing tracker requests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Capturing-tracker-requests"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 One assumption is that all resources external to the initially requested
- (origin) domain can act as trackers, even for static (non-script) resources
- with no capabilities to dynamically survey the user's browser, collecting
- data and tracking users across domains using for example the 
+ (origin) domain can act as trackers, even for static (non-script, non-executabl
+e) resources with no capabilities to dynamically survey the user's browser,
+ collecting data and tracking users across domains using for example the
+ 
 \begin_inset Flex Code
 status collapsed
 
@@ -1378,20 +1403,6 @@ Data collection
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Variation of the old retrieving websites and resources chapter, including
- parallelization.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The lists of domains have been fed to har-heedless, a tool specifically
  written for this thesis 
 \begin_inset CommandInset ref
@@ -1412,7 +1423,14 @@ The browser doesn't have a visible window, as it is built for automation.
 \end_inset
 
  browser phantomjs, the front page of each domain has been accessed and
- processed the way a normal browser would.
+ processed the way a normal browser would 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Software-considerations"
+
+\end_inset
+
+.
  HTTP/HTTPS traffic metadata such as requested URLs and their HTTP request/respo
 nse headers have been recorded in the HTTP Archive (HAR) data format 
 \begin_inset CommandInset ref
@@ -1429,11 +1447,34 @@ In order to make comparisons between insecure HTTP and secure HTTPS, domains
  have been accessed using both protocols.
  As web sites traditionally have been hosted on the www subdomain, not all
  domains have been configured to respond to HTTP requests to the primary
- domain - thus both the www prefix and no prefix have been accessed.
- This means four variations, quadrupling the number of accesses 
+ domain - thus both the added www prefix and no added prefix have been accessed.
+ This means four variations for each domain in the domain lists, quadrupling
+ the number of accesses 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Dataset-variations"
+
+\end_inset
+
+ to over 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{600000}
+\end_layout
+
+\end_inset
+
+.
+ List variations have been kept separate; downloaded and analyzed as different
+ datasets 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:High-level-summary"
 
 \end_inset
 
@@ -1469,19 +1510,6 @@ reference "sec:Failed-domains"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about software considerations.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 See details in 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1497,20 +1525,230 @@ Data analysis and validation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Variation of the old analyzing resources chapter.
-\end_layout
+With HAR data in place, each domain list variation is analyzed as a single
+ dataset by the purpose-built har-dulcify 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:har-dulcify"
 
 \end_inset
 
+.
+ It uses the command line JSON processor jq 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:jq"
 
+\end_inset
+
+ to transform the JSON-based HAR data to formats tailored to analyze specific
+ parts of each domain and their HTTP requests/responses.
 \end_layout
 
 \begin_layout Standard
-See details in 
+Data extracted includes URL, HTTP status, mime-type, referer and redirect
+ values - both for the origin domain's front page and any resources requests
+ by it 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Extracting-HAR-format-parts"
+
+\end_inset
+
+.
+ Each piece of data is then expanded, to simplify further classification
+ and extraction of individual bits of information; URLs are split into component
+s such as scheme (protocol) and host (domain), the status is labeled by
+ status group and the mime-type split into type and encoding 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Expanding-parts"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Once data has been extracted and expanded, there are three classification
+ steps.
+ The first loads the public suffix list and matches domains against it,
+ in order to separate the FQDN into public suffixes, private prefixes and
+ extract the primary domain 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-Suffix-List-classification"
+
+\end_inset
+
+.
+ The primary domain, which is the first non-public suffix match, or the
+ shortest private suffix, is used as one of the basic classifications; is
+ a HTTP request made to a domain with the same primary domain as the origin
+ domain's primary domain? Other basic classifications 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Basic-classification"
+
+\end_inset
+
+ compare the origin domain with each requested resource's URL, to see if
+ they are made to the same domain, a subdomain or a superdomain.
+ Same domain, subdomain, superdomain and same primary domain requests often
+ overlap in their classification - collectively they are called internal
+ requests.
+ Any request not considered an internal request is an external request -
+ which is one of the fundamental ideas behind the thesis' result grouping
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Internal-versus-external"
+
+\end_inset
+
+.
+ Mime-types are counted and grouped, to show differences in resource usage
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Content-type-group-coverage"
+
+\end_inset
+
+.
+ To get an overview of domain groups, their primary domains and public suffixes
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Public-suffix-coverage"
+
+\end_inset
+
+ are also kept.
+ Another fundamental distinction is also wether a request is secure - using
+ the HTTPS protocol - or insecure.
+ Finally, Disconnect's blocking list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Capturing-tracker-requests"
+
+\end_inset
+
+ is mixed in, to be able to potentially classify each requests' domain as
+ a known tracker 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect.me-classification"
+
+\end_inset
+
+, which includes a mapping to categories and organizations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Disconnect's-blocking-list-matches"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+After classification has completed, numbers are collected across the dataset's
+ domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Analysis"
+
+\end_inset
+
+.
+ Counts are summed up per domain 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Request-counts"
+
+\end_inset
+
+, but also reduced to boolean values indicating if a request matches a certain
+ classification property or primary/tracker domain, so that a single domain
+ making an excessive number of requests would not skew numbers aggregated
+ across domains.
+ This allows domain coverage calculations, meaning on what proportion of
+ domains a certain value is present.
+\end_layout
+
+\begin_layout Standard
+Most of the results presented in the thesis report are based on non-failed
+ origin domains.
+ Non-failed means that the initial HTTP request to the domain's front page
+ returned a proper HTTP status code, even if it was not indicative of a
+ complete success 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+.
+ Subsequent requests made while loading the front pages were grouped into
+ unfiltered, only internal and only external requests 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Internal-versus-external"
+
+\end_inset
+
+.
+ The analysis is therefore split into six versions 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:aggregate/analysis.sh"
+
+\end_inset
+
+, although not all of them are interesting for the end results.
+\end_layout
+
+\begin_layout Standard
+Apart from these general aggregates, har-dulcify allows specific questions/queri
+es to be executed against any of the steps from HAR data to the complete
+ aggregates.
+ This way very specific questions, including Google Tag Manager implications
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Google-Tag-Manager"
+
+\end_inset
+
+ and redirect chain statistics 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+, such as can be answered 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Questions"
+
+\end_inset
+
+.
+ There are also multiset scripts, collecting values from several datasets
+ - the basis for most of the detailed results' tables; see chapter 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Detailed-Results"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+See also analysis details in 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Analyzing-resources"
@@ -1522,6 +1760,13 @@ reference "sec:Analyzing-resources"
 
 \begin_layout Section
 High level summary of datasets
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:High-level-summary"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2037,13 +2282,14 @@ http://www.
 
 \end_inset
 
- variations, where www has fewer failures.
+ variations, where www has fewer failures 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
 
 \end_inset
 
+.
  The HTTP result for .se is consistent with results from the 
 \emph on
 .SE Health Status
@@ -7009,7 +7255,7 @@ status open
 \backslash
 tsvtable{computer-machines.tsv}{}{display columns/0/.style={string type, column
  type=l}, display columns/1/.style={string type, column type=l}, display
- columns/2/.style={string type, column type=l}, }
+ columns/2/.style={string type, column type=l}}
 \end_layout
 
 \end_inset
@@ -7057,6 +7303,13 @@ The laptop machine was connected by ethernet to the .SE office network, which
 
 \begin_layout Subsection
 Software considerations
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Software-considerations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8191,7 +8444,14 @@ Screenshots were mainly used for verification during development, to see
 \end_layout
 
 \begin_layout Subsection
-The HAR format
+Extracting HAR format parts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Extracting-HAR-format-parts"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8341,6 +8601,13 @@ These properties will be enough to see what kinds of resources are requested,
 
 \begin_layout Subsection
 Expanding parts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Expanding-parts"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -8820,6 +9087,13 @@ The URLs in the extended data contains lists of domain components.
 
 \begin_layout Subsection
 Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Analysis"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8837,7 +9111,7 @@ The origin domains are grouped separately from the requests that stemmed
 \end_layout
 
 \begin_layout Subsubsection
-Requested URLs
+Requested URL counts
 \end_layout
 
 \begin_layout Standard
@@ -8849,8 +9123,12 @@ Distinct requested URLs
 \end_layout
 
 \begin_layout Standard
-Even if two requests originating from a domain, it is only counted once.
- This gives the possibility to calculate coverage per domain later on.
+Requested URL counts can skew aggregate results if a single domains makes
+ an excessive amount of requests to a certain URL/domain/tracker or in a
+ certain classification.
+ Reducing counts to boolean values, indicating at least one request matched
+ the classification, gives the possibility to calculate coverage per domain
+ later on.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8895,6 +9173,13 @@ reference "sub:aggregate/analysis.sh"
 
 \begin_layout Subsection
 Questions
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Questions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11072,6 +11357,13 @@ end{futurework}
 
 \begin_layout Section
 Internal versus external resources
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Internal-versus-external"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11124,6 +11416,13 @@ During analysis har-dulcify splits results into unfiltered, internal and
 
 \begin_layout Section
 Request counts
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Request-counts"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11276,8 +11575,18 @@ Request coverage
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
 Write about internal, external and disconnect coverage - as opposed to count
  and requests per domain.
+ Or is this already covered by other sections?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -11514,6 +11823,13 @@ end{futurework}
 
 \begin_layout Section
 Content type group coverage
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Content-type-group-coverage"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11774,6 +12090,13 @@ end{futurework}
 
 \begin_layout Section
 Public suffix coverage
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Public-suffix-coverage"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11879,6 +12202,13 @@ end{futurework}
 
 \begin_layout Section
 Disconnect's blocking list matches
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Disconnect's-blocking-list-matches"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
