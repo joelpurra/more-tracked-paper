@@ -110,7 +110,7 @@ every last row/.style={after row={
 }
 
 \newcommand{\tsvtablewide}[4]{
-\tsvtablestyle{#2}
+\tsvtablestylewide{#2}
 \pgfplotstabletypeset[
 columns={#3},#4
 ]{#1}
