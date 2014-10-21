@@ -8323,7 +8323,17 @@ reference "sub:phantomjs"
 
 \begin_layout Standard
 Each HTTP request has their HTTP status response recorded if it is available;
- absence or numbers outside the RFC2616 range (100-599) indicates failure.
+ absence or numbers outside the RFC2616 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add proper RFC bibliography entries.
+\end_layout
+
+\end_inset
+
+ range (100-599) indicates failure.
  Any error output the web page itself has produced, mostly because of javascript
  errors, have also been recorded in the HAR log or individual entry/request
  comment fields.
@@ -8549,6 +8559,16 @@ target "https://tools.ietf.org/html/rfc1945"
 
 \end_inset
 
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add proper RFC bibliography entries.
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -8591,6 +8611,16 @@ target "https://tools.ietf.org/html/rfc3986"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add proper RFC bibliography entries.
 \end_layout
 
 \end_inset
