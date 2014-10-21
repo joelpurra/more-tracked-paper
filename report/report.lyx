@@ -934,15 +934,15 @@ numprint{150000}
 
 \end_inset
 
- 
+; see table 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Domain-lists-in-use"
+LatexCommand ref
+reference "tab:Domain-lists-in-use"
 
 \end_inset
 
 .
- See details in 
+ See also details in 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Domains"
@@ -5512,11 +5512,146 @@ name "sec:Domains"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Domain-lists-in-use"
+
+\end_inset
+
+ has the final domain lists in use, including full dataset size
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Generate statistics table for each domain list this chapter?
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/domaner/statistik/tillvaxt/?chart=active"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://stats.dk-hostmaster.dk/domains/total_domains/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and selection method.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:TLDs-in-dataset-in-use"
+
+\end_inset
+
+ shows the top TLDs in the list of unique domains.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.datasets.tsv}{}{display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=l}, display
+ columns/3/.style={string type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Domain-lists-in-use"
+
+\end_inset
+
+Domain lists in use
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.tlds.tsv}{}{display columns/2/.style={string type, column
+ type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:TLDs-in-dataset-in-use"
+
+\end_inset
+
+TLDs in dataset in use
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5548,17 +5683,35 @@ When .SE performs their annual
  interest.
  These domains are mostly from the .se zone and cover government, county,
  municipality, higher education, government-owned corporations, financial
- service, internet service provider (ISP), domain registrar, and media domains.
+ service, internet service provider (ISP), domain registrar, and media domains
+ - see table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:.SE-Health-Status-categories"
+
+\end_inset
+
+.
  Some domains overlap both within and between categories; domains have been
  deduplicated.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Float table
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Write a summary with examples from each dataset.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.se-health-status.tsv}{}{display columns/0/.style={string type,
+ column type=l}, display columns/3/.style={string type, column type=l}}
 \end_layout
 
 \end_inset
@@ -5566,69 +5719,31 @@ Write a summary with examples from each dataset.
 
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Counties
-\end_layout
+\begin_layout Plain Layout
+\begin_inset Caption Standard
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Domain
-\begin_inset space ~
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:.SE-Health-Status-categories"
+
 \end_inset
 
-registrars
+.SE Health Status
+\emph default
+ domain categories
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Financial
-\begin_inset space ~
 \end_inset
 
-services
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Government-owned
-\begin_inset space ~
 \end_inset
 
-corporations (GOCS)
-\end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Higher
-\begin_inset space ~
-\end_inset
-
-education
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-ISPs
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Media
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Municipalities
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Public
-\begin_inset space ~
-\end_inset
-
-authorities
 \end_layout
 
 \begin_layout Subsection
@@ -5907,179 +6022,6 @@ target "http://webmie.com/"
  their browsing habits by automated means.
  They also have results grouped by panelists categories: women, men, age
  16-34, 35-54, 55+ but only the unfiltered top list is publicly available.
-\end_layout
-
-\begin_layout Subsection
-Domain lists in use
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Domain-lists-in-use"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Domain-lists-in-use"
-
-\end_inset
-
- has the final domain lists in use, including full dataset size
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/domaner/statistik/tillvaxt/?chart=active"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \thinspace{}
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://stats.dk-hostmaster.dk/domains/total_domains/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and selection method.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{domains.datasets.tsv}{}{display columns/0/.style={string type, column
- type=l}, display columns/1/.style={string type, column type=l}, display
- columns/3/.style={string type, column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Domain-lists-in-use"
-
-\end_inset
-
-Domain lists in use
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-TLD distribution
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:TLD-distribution"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:TLDs-in-dataset-in-use"
-
-\end_inset
-
- shows the top TLDs in the list of unique domains.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{domains.tlds.tsv}{}{display columns/2/.style={string type, column
- type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:TLDs-in-dataset-in-use"
-
-\end_inset
-
-TLDs in dataset in use
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -12152,10 +12094,10 @@ numprint{10000}
 status open
 
 \begin_layout Plain Layout
-Compare to TLD counts in 
+Compare to TLD counts in table 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:TLD-distribution"
+reference "tab:TLDs-in-dataset-in-use"
 
 \end_inset
 
