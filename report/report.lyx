@@ -4,6 +4,9 @@
 \begin_header
 \textclass report
 \begin_preamble
+% set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
 \usepackage{pdflscape}
 \usepackage{geometry}
 
