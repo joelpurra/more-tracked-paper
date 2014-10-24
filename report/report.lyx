@@ -5050,6 +5050,13 @@ phantomsection
 addcontentsline{toc}{chapter}{Thanks}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+markboth{Thanks}{}
+\end_layout
+
 \end_inset
 
 
@@ -5186,6 +5193,13 @@ status open
 phantomsection
 \backslash
 addcontentsline{toc}{chapter}{Nomenclature}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+markboth{Nomenclature}{}
 \end_layout
 
 \end_inset
