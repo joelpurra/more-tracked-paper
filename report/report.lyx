@@ -513,40 +513,6 @@ numprint{150000}
 \end_layout
 
 \begin_layout Itemize
-Software for automated, repeatable retrieval and analysis of large amounts
- of web sites was developed, and released as open source (see 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Software"
-
-\end_inset
-
-).
- Datasets based on publicly available domain lists have been released for
- scientific scrutinization.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://joelpurra.com/projects/masters-thesis/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- The data allows analysis of web sites' HTTP requests including the use
- of resources internal versus external to the entry domain, which the most
- common confirmed tracker organizations are, what spread they have and how
- much the average internet user can expect to be tracked by visiting some
- of the most important and popular sites in Sweden, Denmark and worldwide.
-\end_layout
-
-\begin_layout Itemize
 First, adaption of HTTPS for different domains is characterized from a Swedish
  perspective.
  The adaption between classes of domains within Sweden, as well as against
@@ -611,6 +577,40 @@ Insert reference to results chapter.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+Software for automated, repeatable retrieval and analysis of large amounts
+ of web sites was developed, and released as open source (see 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Software"
+
+\end_inset
+
+).
+ Datasets based on publicly available domain lists have been released for
+ scientific scrutinization.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://joelpurra.com/projects/masters-thesis/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The data allows analysis of web sites' HTTP requests including the use
+ of resources internal versus external to the entry domain, which the most
+ common confirmed tracker organizations are, what spread they have and how
+ much the average internet user can expect to be tracked by visiting some
+ of the most important and popular sites in Sweden, Denmark and worldwide.
 \end_layout
 
 \begin_layout Standard
