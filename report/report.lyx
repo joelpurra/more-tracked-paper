@@ -7648,26 +7648,14 @@ status collapsed
  tag, each part should download separately and perform the same duties,
  including “calling home” to the usual addresses.
  In order to confirm this, a query was run on one of the datasets,  se.2014-07-10.
-random.100000-http-www.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Tables after here do not have 
-\begin_inset Quotes eld
-\end_inset
-
-see table
-\begin_inset Quotes erd
-\end_inset
-
- references to them.
-\end_layout
+random.100000-http-www - see table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Google-Tag-Manager-versus-Google-Analytics-and-DoubleClick"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -7717,9 +7705,9 @@ Google Tag Manager versus Google Analytics and DoubleClick
 \end_layout
 
 \begin_layout Standard
-The numbers point to every domain that uses Google Tag Manager uses at least
- one of Google Analytics and DoubleClick, and will therefore not obscure
- information regarding which services are called when further analyzed.
+The numbers point to that every domain that uses Google Tag Manager uses
+ at least one of Google Analytics and DoubleClick, and will therefore not
+ obscure information regarding which services are called when further analyzed.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8102,6 +8090,14 @@ The ratio of PNG to HAR data size on disk points to the compressed PNG files
 .SE Health Status
 \emph default
  report dataset.
+ See table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Output-file-size"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -8203,8 +8199,14 @@ Dataset variations
 \end_layout
 
 \begin_layout Standard
-Each dataset has the variation appended to the name in the results chapter
- 
+Each dataset in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Dataset-variations"
+
+\end_inset
+
+ has the variation appended to the name in the results chapter 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:Detailed-Results"
@@ -8264,7 +8266,14 @@ target "https://en.wikipedia.org/wiki/Load_(computing)"
  The complexity of the front pages of the currently processed domains affects
  the load, as well if screenshot generations is enabled.
  Final downloads were done with screenshots enabled.
- The table below show loads for random samples in time.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:System-load"
+
+\end_inset
+
+ show loads for random samples in time.
 \end_layout
 
 \begin_layout Standard
@@ -8905,7 +8914,14 @@ name "sub:Mime-type"
 \begin_layout Standard
 The mime-type is grouped by their usage, which usually is the first group
  part.
- Here is a selection of common types grouped together.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mime-type-grouping"
+
+\end_inset
+
+ shows a selection of common types grouped together.
 \end_layout
 
 \begin_layout Standard
