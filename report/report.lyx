@@ -5026,7 +5026,7 @@ Pages with wide tables end here.
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "../references/thesis"
+bibfiles "../references/thesis,../references/rfc-selection"
 options "bibtotoc,plain"
 
 \end_inset
@@ -8430,12 +8430,9 @@ reference "sub:phantomjs"
 \begin_layout Standard
 Each HTTP request has their HTTP status response recorded if it is available;
  absence or numbers outside the RFC2616 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add proper RFC bibliography entries.
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc2616"
 
 \end_inset
 
@@ -8649,29 +8646,10 @@ target "https://en.wiktionary.org/wiki/referer"
 
 \end_inset
 
- in the original proposal
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://tools.ietf.org/html/rfc1945"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add proper RFC bibliography entries.
-\end_layout
+ in the original proposal 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc1945"
 
 \end_inset
 
@@ -8705,29 +8683,10 @@ URL, referer, redirect
 \end_layout
 
 \begin_layout Standard
-The URL format has several components
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://tools.ietf.org/html/rfc3986"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add proper RFC bibliography entries.
-\end_layout
+The URL format has several components 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc3986"
 
 \end_inset
 
