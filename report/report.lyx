@@ -48,6 +48,7 @@
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
 
 \usepackage{longtable}
+\usepackage{caption}
 \usepackage{pgfplotstable}
 \usepackage{booktabs}
 \usepackage{colortbl}
@@ -67,8 +68,8 @@ int detect,
 zerofill=true,
 precision=3,
 1000 sep={\ },
-begin table=\begin{longtable},
-end table=\end{longtable},
+begin table=\begin{longtable*},
+end table=\end{longtable*},
 every odd row/.style={before row={\rowcolor[gray]{0.95}}},
 every head row/.style={before row=\toprule,after row={
 \toprule
