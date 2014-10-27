@@ -3,7 +3,16 @@
 *~
 
 *.xhtml
-*.log
-*.tmp.lyx
-*.tex
+
+*.aux
 *.emergency
+*.lof
+*.log
+*.lot
+*.nlo
+*.out
+*.synctex
+*.tex
+*.tmp.lyx
+*.tmp.pdf
+*.toc

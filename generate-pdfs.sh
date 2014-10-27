@@ -14,7 +14,7 @@ deleteAllTmp(){
 	local tmpFiles=()
 
 	for touchedLyxFileBase in "${touchedLyxFileBases[@]}"; do
-		for rmfile in "$touchedLyxFileBase".{aux,log,out,tex,nlo,toc,tmp.lyx,tmp.pdf}; do
+		for rmfile in "$touchedLyxFileBase".{aux,log,out,tex,nlo,toc,lof,lot,synctex,tmp.lyx,tmp.pdf}; do
 			[[ -s "$rmfile" ]] && tmpFiles+=("$rmfile");
 		done;
 	done;
