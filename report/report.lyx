@@ -409,6 +409,22 @@ Introduction
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+markboth{Introduction}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 How many companies are tracking you online, and how much information does
  the average Swede leak while using popular .se websites? Many, and a lot
  - more than you may think.
