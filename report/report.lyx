@@ -166,12 +166,15 @@ ytick=data,
 y dir=reverse,
 yticklabel pos=right,
 symbolic y coords={alexa.2014-09-01.random.10000-http,alexa.2014-09-01.random.10000-http-www,alexa.2014-09-01.random.10000-https,alexa.2014-09-01.random.10000-https-www,alexa.2014-09-01.top.10000-http,alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.dk.10000-http,alexa.2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.dk.10000-https,alexa.2014-09-01.top.dk.10000-https-www,alexa.2014-09-01.top.se.10000-http,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https,alexa.2014-09-01.top.se.10000-https-www,com.2014-08-29.random.10000-http,com.2014-08-29.random.10000-http-www,com.2014-08-29.random.10000-https,com.2014-08-29.random.10000-https-www,dk.2014-07-23.random.10000-http,dk.2014-07-23.random.10000-http-www,dk.2014-07-23.random.10000-https,dk.2014-07-23.random.10000-https-www,net.2014-08-29.random.10000-http,net.2014-08-29.random.10000-http-www,net.2014-08-29.random.10000-https,net.2014-08-29.random.10000-https-www,reach50.2014w35.se-http,reach50.2014w35.se-http-www,reach50.2014w35.se-https,reach50.2014w35.se-https-www,se.2014-07-10.random.100000-http,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.counties-http,se.healthstatus.2013.counties-http-www,se.healthstatus.2013.counties-https,se.healthstatus.2013.counties-https-www,se.healthstatus.2013.domain-registrars-http,se.healthstatus.2013.domain-registrars-http-www,se.healthstatus.2013.domain-registrars-https,se.healthstatus.2013.domain-registrars-https-www,se.healthstatus.2013.financial-services-http,se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.financial-services-https,se.healthstatus.2013.financial-services-https-www,se.healthstatus.2013.gocs-http,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.gocs-https,se.healthstatus.2013.gocs-https-www,se.healthstatus.2013.higher-education-http,se.healthstatus.2013.higher-education-http-www,se.healthstatus.2013.higher-education-https,se.healthstatus.2013.higher-education-https-www,se.healthstatus.2013.isps-http,se.healthstatus.2013.isps-http-www,se.healthstatus.2013.isps-https,se.healthstatus.2013.isps-https-www,se.healthstatus.2013.media-http,se.healthstatus.2013.media-http-www,se.healthstatus.2013.media-https,se.healthstatus.2013.media-https-www,se.healthstatus.2013.municipalities-http,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https,se.healthstatus.2013.municipalities-https-www,se.healthstatus.2013.public-authorities-http,se.healthstatus.2013.public-authorities-http-www,se.healthstatus.2013.public-authorities-https,se.healthstatus.2013.public-authorities-https-www},
+legend image code/.code={%
+\draw[#1] (0pt,-4pt) rectangle (8pt,4pt);
+},
 },
 allDatasetsStackedXbarFullPage/.style=
 {	
 enlarge y limits=0.006,
 width=.6\textwidth,
-height=1.45\textwidth,
+height=1.4\textwidth,
 font=\small
 }
 }
