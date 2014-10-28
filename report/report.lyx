@@ -11491,6 +11491,355 @@ During analysis har-dulcify splits results into unfiltered, internal and
  allowing separate conclusions to be drawn.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	% xlabel=Resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% ylabel=Datasets,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% legend pos=outer north east,
+\end_layout
+
+\begin_layout Plain Layout
+
+	width=.65
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	height=1.5
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xbar stacked,
+\end_layout
+
+\begin_layout Plain Layout
+
+	y dir=reverse,
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlarge x limits=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlarge y limits=0.006,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xmajorgrids,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabel pos=right,
+\end_layout
+
+\begin_layout Plain Layout
+
+	bar width=6pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+	fill opacity=0.9,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xticklabel style={
+\end_layout
+
+\begin_layout Plain Layout
+
+		/pgf/number format/fixed,
+\end_layout
+
+\begin_layout Plain Layout
+
+		/pgf/number format/precision=2
+\end_layout
+
+\begin_layout Plain Layout
+
+	},
+\end_layout
+
+\begin_layout Plain Layout
+
+	ytick=data,
+\end_layout
+
+\begin_layout Plain Layout
+
+	symbolic y coords={alexa.2014-09-01.random.10000-http,alexa.2014-09-01.random.10000-h
+ttp-www,alexa.2014-09-01.random.10000-https,alexa.2014-09-01.random.10000-https-www,al
+exa.2014-09-01.top.10000-http,alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10
+000-https,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.dk.10000-http,alexa.
+2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.dk.10000-https,alexa.2014-09-01.top.
+dk.10000-https-www,alexa.2014-09-01.top.se.10000-http,alexa.2014-09-01.top.se.10000-http-
+www,alexa.2014-09-01.top.se.10000-https,alexa.2014-09-01.top.se.10000-https-www,com.2014-
+08-29.random.10000-http,com.2014-08-29.random.10000-http-www,com.2014-08-29.random.10000
+-https,com.2014-08-29.random.10000-https-www,dk.2014-07-23.random.10000-http,dk.2014-07
+-23.random.10000-http-www,dk.2014-07-23.random.10000-https,dk.2014-07-23.random.10000-ht
+tps-www,net.2014-08-29.random.10000-http,net.2014-08-29.random.10000-http-www,net.2014-
+08-29.random.10000-https,net.2014-08-29.random.10000-https-www,reach50.2014w35.se-http,
+reach50.2014w35.se-http-www,reach50.2014w35.se-https,reach50.2014w35.se-https-www,se.20
+14-07-10.random.100000-http,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.10
+0000-https,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.counties-http,se.
+healthstatus.2013.counties-http-www,se.healthstatus.2013.counties-https,se.healthstatu
+s.2013.counties-https-www,se.healthstatus.2013.domain-registrars-http,se.healthstatus.2
+013.domain-registrars-http-www,se.healthstatus.2013.domain-registrars-https,se.health
+status.2013.domain-registrars-https-www,se.healthstatus.2013.financial-services-http,
+se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.financial-servic
+es-https,se.healthstatus.2013.financial-services-https-www,se.healthstatus.2013.gocs-h
+ttp,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.gocs-https,se.healthstatus.2
+013.gocs-https-www,se.healthstatus.2013.higher-education-http,se.healthstatus.2013.high
+er-education-http-www,se.healthstatus.2013.higher-education-https,se.healthstatus.201
+3.higher-education-https-www,se.healthstatus.2013.isps-http,se.healthstatus.2013.isps-h
+ttp-www,se.healthstatus.2013.isps-https,se.healthstatus.2013.isps-https-www,se.healthst
+atus.2013.media-http,se.healthstatus.2013.media-http-www,se.healthstatus.2013.media-http
+s,se.healthstatus.2013.media-https-www,se.healthstatus.2013.municipalities-http,se.heal
+thstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https,se.hea
+lthstatus.2013.municipalities-https-www,se.healthstatus.2013.public-authorities-http,
+se.healthstatus.2013.public-authorities-http-www,se.healthstatus.2013.public-authoriti
+es-https,se.healthstatus.2013.public-authorities-https-www},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=green,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Internal]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+addlegendentry{Internal}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=orange,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Mixed]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+addlegendentry{Mixed}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=red,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=External]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+addlegendentry{External}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:internal-external-mixed"
+
+\end_inset
+
+Internal, mixed and external resources strict coverage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Request counts
 \begin_inset CommandInset label
