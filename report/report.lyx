@@ -2135,6 +2135,21 @@ Write about general characterization of internal/external resources per
 \end_layout
 
 \begin_layout Standard
+With each request classified as either internal or external, it is easy
+ to see how sites divide their resources.
+ While less than 10% of top sites use strictly internal resources, up to
+ 93% of top sites are composed sites using a mixture of both - see figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:internal-mixed-external-resources"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
@@ -11481,7 +11496,18 @@ The table shows non-failed origin domains having requests strictly to the
  known as internal domains - or external (non-internal) domains.
  Origin domains that are not exclusively loading from either internal or
  external resources are loading from mixed domains.
- Mixing resources from both internal and external domains is the most common
+ See also the proportions in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:internal-mixed-external-resources"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Mixing resources from both internal and external domains is the most common
  way to compose a web page for datasets not randomly chosen from zones,
  although it is quite common for random domains as well.
 \end_layout
