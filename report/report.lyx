@@ -12096,7 +12096,12 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	% legend pos=outer north east,
+	legend columns=-1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend style={at={(0.5,-16pt)},anchor=north}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12139,9 +12144,49 @@ tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
 
 \begin_layout Plain Layout
 
-% 
+
 \backslash
 addlegendentry{Internal}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=yellow,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Mixed]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Mixed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12167,46 +12212,6 @@ addplot[
 
 \begin_layout Plain Layout
 
-	table[y=Dataset,x=Mixed]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-addlegendentry{Mixed}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=red,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
 	table[y=Dataset,x=External]
 \end_layout
 
@@ -12219,7 +12224,7 @@ tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
 
 \begin_layout Plain Layout
 
-% 
+
 \backslash
 addlegendentry{External}
 \end_layout
