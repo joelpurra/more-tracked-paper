@@ -628,7 +628,7 @@ Insert reference to results chapter.
 
 \begin_layout Itemize
 Software for automated, repeatable retrieval and analysis of large amounts
- of web sites was developed, and released as open source (see 
+ of web sites was developed, and released as open source (see appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Software"
@@ -974,7 +974,7 @@ Emphasis for the thesis is on a technical analysis, producing aggregate
 \end_layout
 
 \begin_layout Standard
-For methodology details, see 
+For methodology details, see appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Methodology-details"
@@ -995,7 +995,7 @@ Based on a list of domains, the front page of each domain is downloaded
  domain it was loaded from.
  This data is then classified in a number of ways, before being boiled down
  to statistics about the entire dataset.
- Lastly, these aggregates are compared between datasets - see 
+ Lastly, these aggregates are compared between datasets - see appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -1882,7 +1882,7 @@ reference "sub:Questions"
 
 .
  There are also multiset scripts, collecting values from several datasets
- - the basis for most of the detailed results' tables; see chapter 
+ - the basis for most of the detailed results' tables; see appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -1928,7 +1928,7 @@ Write high level summary of datasets.
 \end_layout
 
 \begin_layout Standard
-See details in 
+See details in appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -2106,7 +2106,7 @@ Results
 \end_layout
 
 \begin_layout Standard
-Also see detailed results in 
+Also see detailed results in appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
