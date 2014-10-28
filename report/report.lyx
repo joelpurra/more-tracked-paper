@@ -11195,6 +11195,14 @@ Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
  for HTTPS, meaning that 30-10% implement HTTPS.
  Random zone domains have a failure rate of above 20% for HTTP and above
  99% for HTTPS.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HTTP-status-codes"
+
+\end_inset
+
+ visualizes this.
 \end_layout
 
 \begin_layout Standard
@@ -11426,6 +11434,17 @@ Write about redirect responses.
 \end_layout
 
 \begin_layout Standard
+See the table below, and also figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HTTP-status-codes"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11475,6 +11494,433 @@ status open
 
 \backslash
 end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.request-status.coverage.origin.sorted.tsv}
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbarFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% xlabel=Failures,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% ylabel=Datasets,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend columns=-1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend style={at={(0.5,-16pt)},anchor=north}
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=orange,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=1xx]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{1xx}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=green,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=2xx]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{2xx}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=yellow,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=3xx]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{3xx}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=orange,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=4xx]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{4xx}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=orange,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=5xx]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{5xx}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=red,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=(null)]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsRequestStatusCoverageOriginSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{(null)}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:HTTP-status-codes"
+
+\end_inset
+
+Distribution of HTTP status codes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
 \end_layout
 
 \end_inset
