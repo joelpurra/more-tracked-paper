@@ -12540,6 +12540,14 @@ ns.
  Typing in a HTTPS address into the browser's address bar will actually
  only give full HTTPS security on 27-58% of the domains - a number where
  the random domains surprisingly beat the non-random ones.
+ See table for the table below for numbers and figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:secure-mixed-insecure-resources"
+
+\end_inset
+
+ for an overview.
 \end_layout
 
 \begin_layout Standard
@@ -12607,6 +12615,314 @@ status open
 \backslash
 tsvtablewidedatasets{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Se
 cure versus insecure resources coverage}{}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.non-failed.classification.secure.coverage.sorted.tsv}
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSorted
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbarFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% xlabel=Security,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% ylabel=Datasets,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend columns=-1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend style={at={(0.5,-16pt)},anchor=north}
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=green,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=All sec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Secure}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=yellow,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Mix sec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Mixed}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=orange,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=All insec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Insecure}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:secure-mixed-insecure-resources"
+
+\end_inset
+
+Distribution of domains with strictly secure, mixed or strictly insecure
+ resources
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
 \end_layout
 
 \end_inset
