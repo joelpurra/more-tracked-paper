@@ -12965,6 +12965,25 @@ The table shows domains, domains with redirect responses to the origin request
  URL.
  The last column shows the ratio of domains with mismatched redirect URLs
  without a subsequently requested URL.
+ See figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:secure-mixed-insecure-redirects"
+
+\end_inset
+
+ for the distribution, which also shows the percentage of final secure redirect
+ with an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -13029,6 +13048,434 @@ status open
 
 \backslash
 end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.non-failed.origin-redirects.coverage.sorted.tsv}
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbarFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% xlabel=Security,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% ylabel=Datasets,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend columns=-1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend style={at={(0.5,-16pt)},anchor=north}
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=green,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Sec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Secure}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=yellow,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Mix sec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Mixed}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=orange,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Insec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Insecure}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=lightgray,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Mism]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Mismatch}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot+[
+\end_layout
+
+\begin_layout Plain Layout
+
+		stack plots=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+		only marks,
+\end_layout
+
+\begin_layout Plain Layout
+
+		mark=x,
+\end_layout
+
+\begin_layout Plain Layout
+
+		mark size=3pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=white,
+\end_layout
+
+\begin_layout Plain Layout
+
+		draw=black,
+\end_layout
+
+\begin_layout Plain Layout
+
+		thick,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill opacity=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    	update limits=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Final sec]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Final redirect secure}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:secure-mixed-insecure-redirects"
+
+\end_inset
+
+Distribution of domains with strictly secure, mixed or strictly insecure
+ redirects
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
 \end_layout
 
 \end_inset
