@@ -145,6 +145,19 @@ columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addline
 \end{center}
 }
 
+% Speed up pgfplots/tikz figure generation by caching results.
+% LyX needs to be configured per user;
+% In LyX Preferences, File Handling, Converters:
+% For LaTeX (pdflatex) -> PDF (pdflatex) set the Converted field to:
+% pdflatex -shell-escape $$i
+% (Adding  -shell-escape is what is important.)
+\usepgfplotslibrary{external}
+% When using LyX, the command is executed in a temporary working directory; can't use a folder prefix.
+\tikzexternalize[prefix=.generated.]
+% Use to remake all or remake a single figure.
+%\tikzset{external/force remake}
+%\tikzset{external/remake next}
+
 \pgfplotsset{allDatasetsStackedXbar/.style=
 {	
 xbar stacked=plus,

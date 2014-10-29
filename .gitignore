@@ -4,6 +4,8 @@
 
 *.xhtml
 
+.generated.*-figure*.*
+
 *.aux
 *.emergency
 *.lof
