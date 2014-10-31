@@ -799,6 +799,13 @@ key "Smith:2011aa,Bylund:2013:978-91-87379-12-3:integritet"
 
 \begin_layout Section
 Trackers are a commercial choice
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Trackers-are-a-commercial-choice"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12007,12 +12014,60 @@ reference "fig:internal-mixed-external-resources"
 \end_inset
 
 .
+ More detailed examples of distributions of resources are shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+; the leftmost marker in each dataset shows the level of domains with 0%
+ internal (strictly external) resources and the right hand marker 99% internal
+ resources.
+ To the right of the 99% marker are domains using strictly internal resources;
+ the vertical difference between the two markers shows the ratio of mixed
+ resource usage.
 \end_layout
 
 \begin_layout Standard
 Mixing resources from both internal and external domains is the most common
  way to compose a web page for datasets not randomly chosen from zones,
  although it is quite common for random domains as well.
+ They do show relatively high tendencies to either extreme, with only either
+ internal or external resources; in addition the usage of external resources
+ is lower in HTTPS variations.
+ As can be noted in both figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:internal-mixed-external-resources"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+, the top domains are very similar in terms of resource distribution between
+ HTTP and HTTPS datasets.
+ This means that active tracking on top sites is as prevalent when surfing
+ a website over a secure, encrypted connection as on an insecure.
+ Random .dk sites has the highest ratio of internal resources, but even so
+ more than two thirds of domains load external resources.
+ Strictly external plus mixed resource usage is above 80% in most and 90%
+ in many datasets.
+ The same is true for for HTTPS, confirming the thesis' hypotheses that
+ tracking is installed through the use of external resources, deliberately
+ or not, on HTTPS sites as well 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Trackers-are-a-commercial-choice"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -12318,6 +12373,358 @@ name "fig:internal-mixed-external-resources"
 
 Distribution of domains with strictly internal, mixed or strictly external
  resources
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstabletranspose[colnames from=Dataset]
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sort
+ed.tsv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDF,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDFFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Ratio of internal resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylabel=Ratio of domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend pos=north west,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[red,solid,mark=*,every mark/.append style={red,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.10000-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.10000-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[red,dashed,mark=square*,every mark/.append style={red,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.10000-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.10000-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[blue,solid,mark=*,every mark/.append style={blue,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.se.10000-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.se.10000-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[blue,dashed,mark=square*,every mark/.append style={blue,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.se.10000-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.se.10000-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[brown,solid,mark=*,every mark/.append style={brown,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.2014-07-10.random.100000-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.2014-07-10.random.100000-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[brown,dashed,mark=square*,every mark/.append style={brown,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.2014-07-10.random.100000-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.2014-07-10.random.100000-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[violet,solid,mark=*,every mark/.append style={violet,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.healthstatus.2013.municipalities-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.healthstatus.2013.municipalities-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[violet,dashed,mark=square*,every mark/.append style={violet,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.healthstatus.2013.municipalities-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsInternalDomainNormalizedCumulative
+Sorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.healthstatus.2013.municipalities-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+Cumulative distribution of the ratio of internal resources per domain
 \end_layout
 
 \end_inset
@@ -13032,16 +13439,12 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	width=
-\backslash
-textwidth,
+	datasetsCDF,
 \end_layout
 
 \begin_layout Plain Layout
 
-	height=1.425
-\backslash
-textwidth,
+	datasetsCDFFullPage,
 \end_layout
 
 \begin_layout Plain Layout
@@ -13052,76 +13455,6 @@ textwidth,
 \begin_layout Plain Layout
 
 	ylabel=Ratio of domains,
-\end_layout
-
-\begin_layout Plain Layout
-
-	xmin=0,
-\end_layout
-
-\begin_layout Plain Layout
-
-	xmax=1,
-\end_layout
-
-\begin_layout Plain Layout
-
-	ymin=0,
-\end_layout
-
-\begin_layout Plain Layout
-
-	ymax=1,
-\end_layout
-
-\begin_layout Plain Layout
-
-	grid=both,
-\end_layout
-
-\begin_layout Plain Layout
-
-	xtick={0,.1,...,1.1},
-\end_layout
-
-\begin_layout Plain Layout
-
-	ytick={0,.1,...,1.1},
-\end_layout
-
-\begin_layout Plain Layout
-
-	enlargelimits=false,
-\end_layout
-
-\begin_layout Plain Layout
-
-	% Marks 0% and 99%.
-\end_layout
-
-\begin_layout Plain Layout
-
-	mark repeat=99,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend pos=south east,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend style={
-\end_layout
-
-\begin_layout Plain Layout
-
-		cells={anchor=west},
-\end_layout
-
-\begin_layout Plain Layout
-
-	}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13386,8 +13719,7 @@ name "fig:Cumulative-distribution-ratio-secure-resources"
 
 \end_inset
 
-Cumulative distribution of the ratio of secure resources per domain in each
- dataset
+Cumulative distribution of the ratio of secure resources per domain
 \end_layout
 
 \end_inset
