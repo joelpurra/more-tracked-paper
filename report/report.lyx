@@ -11460,16 +11460,26 @@ Choosing the term non-failed instead of successful when it comes to dividing
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about redirect responses.
-\end_layout
+Many domains are either configured correctly, or perhaps did not by either
+ configuration or chance not respond during domain scanning.
+ While most non-failed domains produce 2xx responses, there is a high ratio
+ of 3xx redirect class responses.
+ With some 20% of random domains and around 50% or top sites redirecting
+ their visitors, it begs further research.
+ Many of them are 301, considered permanent, redirects; they indicate that
+ the information supposedly found at the domain is actually found somewhere
+ else.
+ The difference between http and http-www datasets seems to suggest that
+ redirects lead to the other (above 90%), or a secure variant; this thesis
+ has looked at redirects within the same domain and to HTTPS variations
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -11480,7 +11490,7 @@ reference "fig:HTTP-status-codes"
 
 \end_inset
 
-.
+, for HTTP status code results.
 \end_layout
 
 \begin_layout Standard
