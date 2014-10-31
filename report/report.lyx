@@ -53,7 +53,7 @@
 \usepackage{booktabs}
 \usepackage{colortbl}
 \usepackage{array}
-\pgfplotsset{compat=1.9}% supress warning
+\pgfplotsset{compat=1.11}% supress warning
 
 \newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
 \newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
@@ -474,7 +474,7 @@ markboth{Introduction}{}
 \begin_layout Standard
 How many companies are tracking you online, and how much information does
  the average Swede leak while using popular .se websites? Many, and a lot
- - more than you may think.
+ -- more than you may think.
  Large organizations 
 \begin_inset Note Greyedout
 status open
@@ -516,12 +516,12 @@ While browsing the web users are both actively and passively being tracked
  collection along the network path, but not against site owners allowing
  in-page trackers.
  Tracking code is installed on web pages that have adverts as well as those
- that do not - the spread and reach of tracking across web pages and domains
+ that do not -- the spread and reach of tracking across web pages and domains
  of different kinds increases the quality of the user data collected and
  inferred, making it more valuable for advertising purposes.
  With the extent of the use of trackers and other external resources largely
  unknown and ever evolving, what is already known raises privacy concerns
- - data considered personal leak without the user's knowledge or explicit
+ -- data considered personal leak without the user's knowledge or explicit
  permission and end up in privately owned databases for further distribution.
  Data collection is the new wild west, and you are the new cattle.
  
@@ -816,7 +816,7 @@ key "Krishnamurthy:2006:CMC:1135777.1135829,Krishnamurthy:2000:AFI:347319.346248
  third-party social network to promote content and products.
  Ads are installed as a source of income.
  More and more commonly, allowing a non-visible tracker to be installed
- can also become a source of income - data aggregation companies pay for
+ can also become a source of income -- data aggregation companies pay for
  access to users' data on the right site with the right quantity and quality
  of visitors.
  Because these external resources are used on behalf of the service, they
@@ -873,11 +873,11 @@ key "Roosendaal:2010:likethis"
 .
  They are especially powerful when the user is registered and logged in,
  combining the full self-provided details of the user with their browsing
- habits - all within the bounds of the services' privacy policies agreed
+ habits -- all within the bounds of the services' privacy policies agreed
  to by the user.
  Once a user has provided their personal information, it is no longer just
  the individual browser or device being tracked, but the actual person using
- it - even after logging out 
+ it -- even after logging out 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kontaxis:2012:PSP:2362793.2362823,Krishnamurthy:2008:CPO:1397735.1397744"
@@ -1011,7 +1011,8 @@ Based on a list of domains, the front page of each domain is downloaded
  domain it was loaded from.
  This data is then classified in a number of ways, before being boiled down
  to statistics about the entire dataset.
- Lastly, these aggregates are compared between datasets - see appendix 
+ Lastly, these aggregates are compared between datasets -- see appendix
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -1174,7 +1175,7 @@ numprint{1000000}
 
 \end_inset
 
- domains were used - top 
+ domains were used -- top 
 \begin_inset ERT
 status open
 
@@ -1340,7 +1341,7 @@ status collapsed
 
 \end_inset
 
- - technically a second-level domain.
+ -- technically a second-level domain.
  
 \begin_inset Note Greyedout
 status open
@@ -1608,7 +1609,8 @@ In order to make comparisons between insecure HTTP and secure HTTPS, domains
  have been accessed using both protocols.
  As web sites traditionally have been hosted on the www subdomain, not all
  domains have been configured to respond to HTTP requests to the primary
- domain - thus both the added www prefix and no added prefix have been accessed.
+ domain -- thus both the added www prefix and no added prefix have been
+ accessed.
  This means four variations for each domain in the domain lists, quadrupling
  the number of accesses 
 \begin_inset CommandInset ref
@@ -1658,9 +1660,9 @@ reference "sub:System-load-during-downloads"
 \end_inset
 
 .
- To reduce the risk of intermittent errors - either in software, on the
- network or in the remote system - each failed access has been retried up
- to two times 
+ To reduce the risk of intermittent errors -- either in software, on the
+ network or in the remote system -- each failed access has been retried
+ up to two times 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-domains"
@@ -1708,7 +1710,7 @@ reference "sub:jq"
 
 \begin_layout Standard
 Data extracted includes URL, HTTP status, mime-type, referer and redirect
- values - both for the origin domain's front page and any resources requests
+ values -- both for the origin domain's front page and any resources requests
  by it 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -1756,9 +1758,9 @@ reference "sub:Basic-classification"
  compare the origin domain with each requested resource's URL, to see if
  they are made to the same domain, a subdomain or a superdomain.
  Same domain, subdomain, superdomain and same primary domain requests often
- overlap in their classification - collectively they are called internal
+ overlap in their classification -- collectively they are called internal
  requests.
- Any request not considered an internal request is an external request -
+ Any request not considered an internal request is an external request --
  which is one of the fundamental ideas behind the thesis' result grouping
  
 \begin_inset CommandInset ref
@@ -1786,8 +1788,8 @@ reference "sec:Public-suffix-coverage"
 \end_inset
 
  are also kept.
- Another fundamental distinction is also wether a request is secure - using
- the HTTPS protocol - or insecure.
+ Another fundamental distinction is also wether a request is secure -- using
+ the HTTPS protocol -- or insecure.
  Finally, Disconnect's blocking list 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -1898,7 +1900,7 @@ reference "sub:Questions"
 
 .
  There are also multiset scripts, collecting values from several datasets
- - the basis for most of the detailed results' tables; see appendix 
+ -- the basis for most of the detailed results' tables; see appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -2154,7 +2156,7 @@ Write about general characterization of internal/external resources per
 With each request classified as either internal or external, it is easy
  to see how sites divide their resources.
  While less than 10% of top sites use strictly internal resources, up to
- 93% of top sites are composed sites using a mixture of both - see figure
+ 93% of top sites are composed sites using a mixture of both -- see figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2379,7 +2381,7 @@ reference "sub:Top-domains"
  The highest coverage category (government owned corporations) is even above
  90%.
  Since Google Analytics can now be used from the DoubleClick domain as well,
- looking only at the Google Analytics domain makes little sense - instead
+ looking only at the Google Analytics domain makes little sense -- instead
  it might make more sense to look at the organization Google as a whole.
  The coverage jumps quite a bit, with most categories landing above 85%
  
@@ -2495,7 +2497,7 @@ http://www.
 
 \end_inset
 
- variation - perhaps explained by the thesis software and network setup
+ variation -- perhaps explained by the thesis software and network setup
  
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -2505,7 +2507,7 @@ reference "sec:Failed-domains"
 
 .
  Several prominent media sites with the same parent company respond as expected
- when accessed with a normal desktop browser - but not automated requests,
+ when accessed with a normal desktop browser -- but not automated requests,
  suggesting that they detect and block some types of traffic.
 \end_layout
 
@@ -2631,7 +2633,8 @@ Write a comparison with own results per category?
 \end_layout
 
 \begin_layout Standard
-24% of HTTPS sites redirect from HTTPS back to HTTP in 2013 - see also 
+24% of HTTPS sites redirect from HTTPS back to HTTP in 2013 -- see also
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:HTTP,-HTTPS-and-redirects"
@@ -3003,7 +3006,7 @@ target "https://developers.google.com/speed/libraries/"
  instead of the local server for site speed/performance gains are not visible
  as components, but they cannot be removed without affecting functionality.
  Especially the two latter, served from the googleapis.com domain, are prevalent
- in several of the datasets - and they are usually loaded on every single
+ in several of the datasets -- and they are usually loaded on every single
  page on a web site, and thus gain full (but passive, as opposed to for
  example Google Analytics) insight on users' click paths and web history.
 \end_layout
@@ -3140,7 +3143,7 @@ redirectURL
 
 \end_inset
 
- values - both of which possibly is relative.
+ values -- both of which possibly is relative.
  As subsequent HTTP requests are hard to refer to without relying either
  on exact request ordering (the executed redirect always coming exactly
  as the next entry) or at least having the URL resolved (preferably by the
@@ -3167,7 +3170,7 @@ reference "sub:get/netsniff.js"
  for example in wether trailing slashes are kept for domain root requests
  or not.
  What would be even better, is a way to refer to the reason for the HTTP
- request, be it an HTML tag, a script call or a HTTP redirect - but that
+ request, be it an HTML tag, a script call or a HTTP redirect -- but that
  could to be highly implementation dependent per browser.
 \end_layout
 
@@ -3196,7 +3199,7 @@ reference "sub:get/netsniff.js"
  from the phantomjs example library has been improved in several ways, patches
  have not yet been submitted.
  Since it is only an example from their side, a more developed version might
- no longer serve the same purpose - educating new users on the possibilities
+ no longer serve the same purpose -- educating new users on the possibilities
  of phantomjs.
  An attempt to break the code down and separate pure bug fixes from other
  improvements might help.
@@ -3267,8 +3270,8 @@ Public Suffix
 \begin_layout Standard
 A tool that parses the public suffix list from its original format to a
  JSON lookup object format has been written.
- Using that tool an inconsistency in the data was detected - the TLD .engineering
- being included twice instead of .engineer and .engineering separately.
+ Using that tool an inconsistency in the data was detected -- the TLD .engineerin
+g being included twice instead of .engineer and .engineering separately.
  This had already been detected and reported by others, but it can be used
  to detect future inconsistencies in an automated manner.
 \end_layout
@@ -3283,7 +3286,7 @@ At .SE
 
 \begin_layout Standard
 Part of .SE's work includes researching internet and technology, with a focus
- on Sweden - for example, 
+ on Sweden -- for example, 
 \emph on
 Swedes and the internet
 \emph default
@@ -3932,7 +3935,7 @@ risk
 \end_inset
 
 If you frequently visit these sites, you might also be visiting theses sites
- - click to display their relationships as well.
+ -- click to display their relationships as well.
 \begin_inset Quotes erd
 \end_inset
 
@@ -3993,9 +3996,9 @@ numprint{70}
 
  scripts written and released as open source, the need for documentation
  has gradually increased.
- The reason for not writing proper documentation - not having direct collaborato
-rs writing code - is a hinderance for future collaborators or users to get
- started.
+ The reason for not writing proper documentation -- not having direct collaborat
+ors writing code -- is a hinderance for future collaborators or users to
+ get started.
  While code documentation has not been an explicit part of the thesis plan,
  it can be seen as an important step for future usage.
  The code is not magic in any way, but if understanding the functionality
@@ -4417,14 +4420,14 @@ Automated testing
 Data transformations have been written in a semi-structured manner, with
  separate files for most separate tasks, often executed in serial stages.
  Each task accepts a certain kind of data as input for the transformation
- to work correctly - but as both input and output from separate stages looks
- very similar, it is hard to tell which kind of data it accepts and what
- the expected output is - and if a change in one stage will affect later
- stages.
+ to work correctly -- but as both input and output from separate stages
+ looks very similar, it is hard to tell which kind of data it accepts and
+ what the expected output is -- and if a change in one stage will affect
+ later stages.
  Writing automated tests for each stage would have helped during both adding
  functionality and refactoring the structure.
  At times, there have been rather time-consuming problems with unexpected
- or illegal input from real world sites - extracting that kind of input
+ or illegal input from real world sites -- extracting that kind of input
  to create a test suite would have sped up fixes and raised confidence in
  that the input would be handled appropriately and output would still be
  correct.
@@ -4476,12 +4479,12 @@ source
  The improvement was postponed due to the relative little reuse in early
  scripting and bright outlook on modules and packages support.
  As the number of scripts grew, code sharing/composition possibilities grew
- as well - and with them possible improvements in development speed, consistency
- and correctness.
+ as well -- and with them possible improvements in development speed, consistenc
+y and correctness.
  At this stage, software stability is more important for the final dataset
  download and analysis, and code refactoring can only be postponed.
  Foreseeing a greater reuse of JSON and jq tools, a separate open source
- project has been started - jq-hopkok 
+ project has been started -- jq-hopkok 
 \begin_inset Note Greyedout
 status open
 
@@ -4491,7 +4494,7 @@ Insert link to jq-hopkok.
 
 \end_inset
 
- - where some scripts have been collected.
+ -- where some scripts have been collected.
  Many functions and utilities local to har-dulcify are project-agnostic,
  and thus suitable objects to move to jq-hopkok for ease composition.
 \begin_inset ERT
@@ -5179,8 +5182,8 @@ target "https://www.iis.se/"
 \end_layout
 
 \begin_layout Standard
-This thesis is being written in the office of - and in collaboration with
- - .SE, who graciously supported me with domain data and internet knowledge.
+This thesis is being written in the office of -- and in collaboration with
+ -- .SE, who graciously supported me with domain data and internet knowledge.
  Part of .SE’s research efforts include continuously analyzing internet infrastru
 cture and usage in Sweden.
  .SE is an independent organization, responsible for the Swedish top level
@@ -5859,7 +5862,7 @@ When .SE performs their annual
  These domains are mostly from the .se zone and cover government, county,
  municipality, higher education, government-owned corporations, financial
  service, internet service provider (ISP), domain registrar, and media domains
- - see table 
+ -- see table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:.SE-Health-Status-categories"
@@ -6056,7 +6059,7 @@ target "http://www.keepalert.com/top-extension-ranking-july-2014-newgtlds"
 \end_inset
 
  This allows for a random selection of sites from around the world, even
- though usage is not geographically uniform - both in terms of registrations
+ though usage is not geographically uniform -- both in terms of registrations
  and actual usage.
 \end_layout
 
@@ -6587,7 +6590,7 @@ numprint{980}
 \end_inset
 
  organizations, which come with a link to their webpage.
- There is also a grouping into categories - see description and examples
+ There is also a grouping into categories -- see description and examples
  later in this chapter.
  Worth noting is that the content category is 
 \emph on
@@ -6773,7 +6776,7 @@ numprint{271}
 
 \end_inset
 
- domains - Google.
+ domains -- Google.
  The biggest reason is that they own top level domains such as google.se
  and google.ch from over 
 \begin_inset ERT
@@ -7027,7 +7030,7 @@ name "sub:Disconnect-Organizations-in-more-than-one-category"
 Some organizations are represented in more than one of the five Disconnect
  categories.
  Organizations represented in the content category may be blocked in part
- - but by serving content, they can achieve at least partial tracking.
+ -- but by serving content, they can achieve at least partial tracking.
  Yahoo has several ad services, several social services, several content
  services and a single analytics service, putting them in four categories.
  At least one organization, Google, is misrepresented in the categories;
@@ -7364,8 +7367,8 @@ name "sec:Computer-machines"
 \end_layout
 
 \begin_layout Standard
-Two computers were used to download web pages during development - one laptop
- machine and one server machine (table 
+Two computers were used to download web pages during development -- one
+ laptop machine and one server machine (table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Machine-specifications"
@@ -7495,7 +7498,7 @@ reference "sub:phantomjs"
 
 \end_inset
 
- was chosen, as it would also download and execute javascript - a major
+ was chosen, as it would also download and execute javascript -- a major
  component in both user interfaces as well as active trackers and ads.
 \end_layout
 
@@ -7570,7 +7573,7 @@ Etag
 
 \end_inset
 
- - and the server uses it to determine if a compact 304 response is enough
+ -- and the server uses it to determine if a compact 304 response is enough
  or a full 200 response is necessary.
  It has been found that the 
 \begin_inset Flex Code
@@ -7726,7 +7729,7 @@ status collapsed
  tag, each part should download separately and perform the same duties,
  including “calling home” to the usual addresses.
  In order to confirm this, a query was run on one of the datasets,  se.2014-07-10.
-random.100000-http-www - see table 
+random.100000-http-www -- see table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Google-Tag-Manager-versus-Google-Analytics-and-DoubleClick"
@@ -7813,7 +7816,7 @@ status collapsed
 
 \begin_layout Standard
 Automated web spider/bot software can bring a significant load to a web
- server, as the spidering speed can exceed user browsing speed by far -
+ server, as the spidering speed can exceed user browsing speed by far --
  a single web spider can potentially request thousands of pages in the span
  of minutes, effectively being a denial of service attack 
 \begin_inset Note Greyedout
@@ -7832,7 +7835,7 @@ Insert link to DoS information.
  server load), to privacy (do not allow information to be indexed in search
  engines) and business (do not allow data to be collected and aggregated).
  In order to instruct web spiders not to get certain kind of material, there
- are two basic mechanisms - the special 
+ are two basic mechanisms -- the special 
 \begin_inset Flex Code
 status collapsed
 
@@ -7862,7 +7865,7 @@ Commercial software from search engines, information collectors and other
  software vendors take these explicit wishes from webmasters into consideration,
  but har-heedless has not.
  While it is automated software, it is not spidering software requesting
- many pages, following links to explore the site - it only accesses the
+ many pages, following links to explore the site -- it only accesses the
  front page of a domain, and resources explicitly requested by that one
  page.
  Information is not retrieved for indexing as such, as only HTTP request
@@ -8489,8 +8492,8 @@ name "sec:Failed-domains"
 Some web sites are not downloaded successfully, for different reasons.
  The DNS settings might not be correct, the server may be shut down, there
  might have been a temporary network timeout, there might have been a software
- error - or the server has been programmed to not respond to automated requests
- from phantomjs 
+ error -- or the server has been programmed to not respond to automated
+ requests from phantomjs 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:phantomjs"
@@ -8500,9 +8503,9 @@ reference "sub:phantomjs"
  and similar tools.
  Unfortunately, outside of local software errors which may result in parseable
  error messages, sources of the errors are hard to detect without an extensive
- external analysis of DNS settings and network connectivity - and even so,
- an automated analysis may include false negatives because of remote system
- automated request countermeasures.
+ external analysis of DNS settings and network connectivity -- and even
+ so, an automated analysis may include false negatives because of remote
+ system automated request countermeasures.
 \end_layout
 
 \begin_layout Standard
@@ -8529,7 +8532,7 @@ failed
 \emph on
 unsuccessful
 \emph default
- domains - unsuccessful domains rendered a complete response with a HTTP
+ domains -- unsuccessful domains rendered a complete response with a HTTP
  status that indicated that it was not successful.
  Domains that failed have been re-downloaded; it relieved some, but not
  all, failures.
@@ -8737,7 +8740,14 @@ key "rfc1945"
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Redirect The URL of the new location of the requested resource, if defined
- by a 3xx HTTP status.
+ by a 3xx 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Status"
+
+\end_inset
+
+ HTTP status.
 \end_layout
 
 \begin_layout Standard
@@ -8892,6 +8902,13 @@ Write more about URLs.
 
 \begin_layout Subsubsection
 Status
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Status"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9291,7 +9308,7 @@ Request/domain coverage
 The summed up counts divided by either the total request count (for requested
  URLs) or the number of domains in the current group (for distinct requested
  URLs).
- This gives a coverage percentage - either for the percentage of the number
+ This gives a coverage percentage -- either for the percentage of the number
  of requests, or domains that has the value.
 \end_layout
 
@@ -9528,7 +9545,7 @@ normal
 \begin_inset Quotes erd
 \end_inset
 
- browser usage in mind - that is with desktop software functionalities.
+ browser usage in mind -- that is with desktop software functionalities.
  A good alternative for such servers is phantomjs, which is built as a command
  line tool without any graphical user interface.
  It acts like a browser internally, including rendering the webpage to a
@@ -9812,7 +9829,7 @@ target "https://github.com/joelpurra/har-portent"
 
 \begin_layout Standard
 A set of scripts that both downloads, retries failed downloads and analyzes
- web sites in a single run - see har-heedless 
+ web sites in a single run -- see har-heedless 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:har-heedless"
@@ -11074,7 +11091,7 @@ multiset/*.sh
 \end_layout
 
 \begin_layout Standard
-A set of scripts that perform tasks on multiple datasets at once - an aggregate
+A set of scripts that perform tasks on multiple datasets at once -- an aggregate
  of aggregates usually.
  The scripts were developed late in the process, to extract small pieces
  of data per dataset for the report.
@@ -11151,14 +11168,14 @@ Differences between datasets
 \end_layout
 
 \begin_layout Standard
-Domains lists chosen for this thesis come in three major categories - top
+Domains lists chosen for this thesis come in three major categories -- top
  lists, curated lists and random selection from zone files.
  While the top lists and curated lists are assumed to primarily contain
  sites with staff or enthusiasts to take care of them and make sure they
  are available and functioning, the domain lists randomly extracted from
  TLD zones might not.
  Results below seem to fall into groups of non-random and randomly selected
- domains - and result discussions often group them as such.
+ domains -- and result discussions often group them as such.
 \end_layout
 
 \begin_layout Section
@@ -11220,7 +11237,7 @@ reference "fig:HTTP-status-codes"
 
 \begin_layout Standard
 The very low HTTPS adoption rates among random sites is both surprising
- and not surprising - while larger sites might have felt the pressure to
+ and not surprising -- while larger sites might have felt the pressure to
  implement them, a non-professional site owner might see it as both an unnecessa
 ry technical challenge and an unnecessary additional cost.
  Most X.509 
@@ -11297,8 +11314,8 @@ begin{futurework}
 There might be an overlap between failed HTTP/HTTPS and non-www/www dataset
  variations, but at the moment they are treated separately.
  If domains that failed to respond to HTTP requests are removed from the
- HTTPS set in a filter step, HTTPS failure statistics might be lower - and
- the same goes for www variations.
+ HTTPS set in a filter step, HTTPS failure statistics might be lower --
+ and the same goes for www variations.
 \end_layout
 
 \begin_layout Standard
@@ -11335,7 +11352,7 @@ begin{futurework}
 
 \begin_layout Standard
 The difference between the number of domains in the dataset and the number
- of analyzed domains - for example 
+ of analyzed domains -- for example 
 \begin_inset ERT
 status open
 
@@ -11369,7 +11386,7 @@ numprint{99428}
 
 \end_inset
 
- HAR files - is due to software crashes.
+ HAR files -- is due to software crashes.
  A higher domain response rate means a higher risk of a crash; larger datasets
  have crashes in 0.25-2.5% of domains.
  Most crashes were observed to be caused by malformed image data triggering
@@ -11954,8 +11971,8 @@ name "sec:Internal-versus-external"
 
 \begin_layout Standard
 The table shows non-failed origin domains having requests strictly to the
- same domain, subdomains, superdomains or same primary domain - jointly
- known as internal domains - or external (non-internal) domains.
+ same domain, subdomains, superdomains or same primary domain -- jointly
+ known as internal domains -- or external (non-internal) domains.
  Origin domains that are not exclusively loading from either internal or
  external resources are loading from mixed domains.
  See also the proportions in figure 
@@ -12341,8 +12358,8 @@ The table shows counts of all requests, internal requests and external requests.
 It is interesting to look at the number of requests, as they differ between
  datasets.
  Random TLD domains have a low 26-29 requests per domain, random Alexa top
- sites a medium 71-76 - but the very Alexa top comes in at 83-105.
- The smaller datasets reach50 comes to 87, and the even smaller dataset
+ sites a medium 71-76 -- but the very Alexa top comes in at 83-105.
+ The smaller datasets Reach50 comes to 87, and the even smaller dataset
  .SE Health Status' media sets the record at 197 requests per domain!
 \end_layout
 
@@ -12481,8 +12498,8 @@ Request coverage
 status open
 
 \begin_layout Plain Layout
-Write about internal, external and disconnect coverage - as opposed to count
- and requests per domain.
+Write about internal, external and disconnect coverage -- as opposed to
+ count and requests per domain.
  Or is this already covered by other sections?
 \end_layout
 
@@ -12500,7 +12517,7 @@ Using HTTPS to secure the connection between site and site users is considered
  an effective way to avoid prying eyes on the otherwise technically quite
  open and insecure internet.
  Sites which handle sensitive information, such as e-commerce shops, online
- payment providers and of course banks often tout being secure to use -
+ payment providers and of course banks often tout being secure to use --
  and they have strong financial incentives to provide a service that is
  (or at least comes across as) trustworthy.
  
@@ -12538,7 +12555,7 @@ While the technology has been around a long time, it does not seem as if
  to a HTTP site, or load at least some of its resources over non-HTTPS connectio
 ns.
  Typing in a HTTPS address into the browser's address bar will actually
- only give full HTTPS security on 27-58% of the domains - a number where
+ only give full HTTPS security on 27-58% of the domains -- a number where
  the random domains surprisingly beat the non-random ones.
  See table for the table below for numbers and figure 
 \begin_inset CommandInset ref
@@ -12589,7 +12606,7 @@ Why is adoption lower for top sites? As high-traffic sites they might have
 \emph on
 really
 \emph default
- needed - like when passwords of financial information is entered.
+ needed -- like when passwords of financial information is entered.
  Strict HTTPS performance concerns were dismissed by Google engineers in
  2xxx 
 \begin_inset Note Greyedout
@@ -12601,7 +12618,7 @@ Look up year, insert link.
 
 \end_inset
 
- - and Google has since implemented HTTPS as an alternative for most and
+ -- and Google has since implemented HTTPS as an alternative for most and
  the default for some services.
  
 \begin_inset Note Greyedout
@@ -12618,7 +12635,7 @@ Insert link to Google's HTTPS defaults.
 
 \begin_layout Standard
 Another concern is that curated domain lists seem to exhibit an even lower
- HTTPS adoption than both random and top domains - the domains have been
+ HTTPS adoption than both random and top domains -- the domains have been
  selected as they are deemed important to the public in some way.
  
 \begin_inset Note Greyedout
@@ -13419,7 +13436,7 @@ The table shows domains, domains with redirect responses to the origin request
  The ratio of redirected domains making strictly internal or strictly external
  redirects, and how many domains mix internal and external redirect URLs
  are shown next.
- The same goes for insecure, secure and mixed security redirects - plus
+ The same goes for insecure, secure and mixed security redirects -- plus
  a column with the ratio of domains where the final redirect is to a secure
  URL.
  The last column shows the ratio of domains with mismatched redirect URLs
@@ -14241,7 +14258,7 @@ numprint{10000}
  This points towards those sites being aware of the country of origin for
  the request, leading to localized content being served.
  It is also evident that the .com TLD is the most widespread for external
- resources - it beats same-TLD coverage.
+ resources -- it beats same-TLD coverage.
 \end_layout
 
 \begin_layout Standard
@@ -14443,7 +14460,7 @@ reference "sub:Public-suffix-list"
  hosted services, the data itself can be assumed to belong to the hosted
  organizations.
  This is a strong reason why the domain is listed as content in Disconnect's
- blocking list - because of the variety of services being hosted on subdomains,
+ blocking list -- because of the variety of services being hosted on subdomains,
  it cannot be blocked as for example advertisement even if it is being hosted
  there.
  It can be seen as a flaw in the Disconnect way of blocking.
@@ -14575,7 +14592,7 @@ Insert link to Google's push towards DoubleClick.
  age, gender and interests on top of their current technical analysis from
  Google Analytics.
  The underlying reason is possibly that Google wants DoubleClick, which
- brings a lot of income, to have greater coverage across web sites - greater
+ brings a lot of income, to have greater coverage across web sites -- greater
  coverage meaning more and higher quality visitor information.
  While Google owns both services, site owner/visitor/usage policies 
 \begin_inset Note Greyedout
