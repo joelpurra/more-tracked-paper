@@ -12543,28 +12543,41 @@ One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
  can use traffic sniffers to get a hold of sensitive information leaking
  out through HTTP, or man in the middle attacks on several kinds of resources
  to insert malicious code, even though the site is supposed to be protected.
- The follow table shows which to what extent sites manage to take full advantage
- of HTTPS, and to which extent they fail in requesting either internal or
- external resources.
-\end_layout
-
-\begin_layout Standard
-While the technology has been around a long time, it does not seem as if
- very many sites actually use HTTPS on their sites.
- Even origin sites that respond to HTTPS requests seem to either redirect
- to a HTTP site, or load at least some of its resources over non-HTTPS connectio
-ns.
- Typing in a HTTPS address into the browser's address bar will actually
- only give full HTTPS security on 27-58% of the domains -- a number where
- the random domains surprisingly beat the non-random ones.
- See table for the table below for numbers and figure 
+ The following table shows which to what extent sites manage to take full
+ advantage of HTTPS, and to which extent they fail in requesting either
+ internal or external resources.
+ See also figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:secure-mixed-insecure-resources"
 
 \end_inset
 
- for an overview.
+ for an overview and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-secure-resources"
+
+\end_inset
+
+ for secure resource ratio per domain.
+\end_layout
+
+\begin_layout Standard
+While the technology has been around a long time, it does not seem as if
+ very many sites actually use HTTPS on their sites.
+ Even origin sites that respond to HTTPS requests seem to either redirect
+ to a HTTP site 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+, or load at least some of its resources over non-HTTPS connections.
+ Typing in a HTTPS address into the browser's address bar will actually
+ only give full HTTPS security on 27-58% of the domains -- a number where
+ the random domains surprisingly beat the non-random ones.
 \end_layout
 
 \begin_layout Standard
@@ -13002,14 +13015,19 @@ textwidth,
 
 \begin_layout Plain Layout
 
-	height=1.45
+	height=1.425
 \backslash
 textwidth,
 \end_layout
 
 \begin_layout Plain Layout
 
-	% smooth,
+	xlabel=Ratio of secure resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylabel=Ratio of domains,
 \end_layout
 
 \begin_layout Plain Layout
@@ -13344,27 +13362,8 @@ name "fig:Cumulative-distribution-ratio-secure-resources"
 
 \end_inset
 
-Cumulative distribution 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-y
-\end_layout
-
-\end_inset
-
- of the ratio of secure resources 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-x
-\end_layout
-
-\end_inset
-
- per domain in each dataset
+Cumulative distribution of the ratio of secure resources per domain in each
+ dataset
 \end_layout
 
 \end_inset
