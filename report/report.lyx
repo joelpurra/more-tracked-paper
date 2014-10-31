@@ -718,28 +718,6 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Can the longtables inside table floats be created without counting them?
- Those tables are now counted twice and may be improperly referenced in
- the text.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset FloatList figure
 
 \end_inset
