@@ -12551,6 +12551,38 @@ reference "fig:secure-mixed-insecure-resources"
 \end_layout
 
 \begin_layout Standard
+The cumulative distribution of the ratio of secure resources (out of all
+ requested resources) per domain is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-secure-resources"
+
+\end_inset
+
+.
+ The first marker in each dataset shows the ratio of domains with no secure
+ resources at all.
+ The second marker shows 99% secure resources, which marks the start of
+ fully secure domains.
+ The vertical differences between the two markers for each dataset shows
+ the range of sites with mixed security.
+ We can see that HTTPS datasets have much better security than their HTTP
+ counterparts.
+ Looking at se.2014-07-10.random.100000-http-www which has over 60% completely
+ insecure domains, 30% mixed security and less than 10% domains with only
+ secure resources.
+ Comparing it with se.2014-07-10.random.100000-https-www, we see that it has
+ less than 10% completely insecure domains, a bit more than 30% mixed security
+ and over 55% domains with only secure resources.
+ The ratios of completely insecure and completely secure domains have almost
+ been reversed.
+ We can also see that many domains in the HTTPS datasets have between 90%
+ and 99% secure resources -- around 25% of municipalities for example --
+ which seems like a relatively small gap to close to get a completely secure
+ site.
+\end_layout
+
+\begin_layout Standard
 Why is adoption lower for top sites? As high-traffic sites they might have
  a high system load, and since HTTPS require some extra processing and data
  exchange, they might have deferred it until the security is 
@@ -12889,6 +12921,433 @@ name "fig:secure-mixed-insecure-resources"
 
 Distribution of domains with strictly secure, mixed or strictly insecure
  resources
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstabletranspose[colnames from=Dataset]
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted{d
+atasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	width=
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	height=1.45
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% smooth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xmin=0,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xmax=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ymin=0,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ymax=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	grid=both,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xtick={0,.1,...,1.1},
+\end_layout
+
+\begin_layout Plain Layout
+
+	ytick={0,.1,...,1.1},
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlargelimits=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+	% Marks 0% and 99%.
+\end_layout
+
+\begin_layout Plain Layout
+
+	mark repeat=99,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend pos=south east,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend style={
+\end_layout
+
+\begin_layout Plain Layout
+
+		cells={anchor=west},
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[red,solid,mark=*,every mark/.append style={red,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.10000-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.10000-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[red,dashed,mark=square*,every mark/.append style={red,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.10000-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.10000-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[blue,solid,mark=*,every mark/.append style={blue,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.se.10000-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.se.10000-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[blue,dashed,mark=square*,every mark/.append style={blue,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=alexa.2014-09-01.top.se.10000-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{alexa.2014-09-01.top.se.10000-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[brown,solid,mark=*,every mark/.append style={brown,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.2014-07-10.random.100000-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.2014-07-10.random.100000-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[brown,dashed,mark=square*,every mark/.append style={brown,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.2014-07-10.random.100000-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.2014-07-10.random.100000-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[violet,solid,mark=*,every mark/.append style={violet,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.healthstatus.2013.municipalities-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.healthstatus.2013.municipalities-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[violet,dashed,mark=square*,every mark/.append style={violet,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.healthstatus.2013.municipalities-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsSecureNormalizedCumulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.healthstatus.2013.municipalities-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cumulative-distribution-ratio-secure-resources"
+
+\end_inset
+
+Cumulative distribution 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+y
+\end_layout
+
+\end_inset
+
+ of the ratio of secure resources 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+
+ per domain in each dataset
 \end_layout
 
 \end_inset
