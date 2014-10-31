@@ -191,6 +191,30 @@ height=1.4\textwidth,
 font=\small
 }
 }
+
+\pgfplotsset{datasetsCDF/.style=
+{	
+xmin=0,
+xmax=1,
+ymin=0,
+ymax=1,
+grid=both,
+xtick={0,.1,...,1.1},
+ytick={0,.1,...,1.1},
+enlargelimits=false,
+% Marks 0% and 99%.
+mark repeat=99,
+legend pos=south east,
+legend style={
+cells={anchor=west},
+},
+},
+datasetsCDFFullPage/.style=
+{	
+width=\textwidth,
+height=1.425\textwidth,
+}
+}
 \end_preamble
 \use_default_options true
 \begin_modules
