@@ -55,6 +55,15 @@
 \usepackage{array}
 \pgfplotsset{compat=1.11}% supress warning
 
+\pgfplotstableset{
+% Write all longtable tables to disk.
+every table/.append style={outfile={.generated.report-table\@arabic\c@LT@tables.tex}},
+% Use cached/written files as input.
+include outfiles,
+% Change to true to force re-generation. It's easier to just delete all generated files.
+force remake=false,
+}
+
 \newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
 \newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
 
