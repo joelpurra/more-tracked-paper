@@ -6711,7 +6711,7 @@ status open
 
 \backslash
 tsvtable{disconnect.categories.tsv}{}{display columns/0/.style={string type,
- column type=l},}
+ column type=l}}
 \end_layout
 
 \end_inset
@@ -7126,11 +7126,78 @@ Advertising
 \end_layout
 
 \begin_layout Standard
+While this category has the most domains and organizations by far (see table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Disconnect's-categories"
+
+\end_inset
+
+), many of the actors are unknown to the general public making it harder
+ to know how information is collected and used.
+ Several recognizable companies -- such as AT&T, Deutsche Post DHL, eBay,
+ Forbes, HP, IDG, Match.com, Monster, Opera, Salesforce.com, Telstra and Tinder
+ -- are listed with their primary domains.
+ This suggests that they can follow their own customers across sites where
+ their trackers are installed, without the use of more advanced techniques,
+ such as cookie-sharing 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+amazon-adsystem.com Amazon's ad delivery network.
+ Several amazon.tld domains, like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ca
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+co.uk
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+de
+\end_layout
+
+\end_inset
+
+ are also listed here - but amazon.com is not.
+\end_layout
+
+\begin_layout Description
+appnexus.com The AppNexus ad network.
+\end_layout
+
+\begin_layout Description
+imiclk.com Akamai's ad network.
+ 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-Add technorati.com, wpp.com?
+Verify domain usage.
 \end_layout
 
 \end_inset
@@ -7147,7 +7214,7 @@ omniture.com Adobe's ad network.
 \end_layout
 
 \begin_layout Description
-amazon-adsystem.com Amazon's ad delivery network.
+tradedoubler.com The TradeDouble ad network.
 \end_layout
 
 \begin_layout Subsection
@@ -11469,11 +11536,11 @@ Choosing the term non-failed instead of successful when it comes to dividing
 \end_layout
 
 \begin_layout Standard
-Many domains are either configured correctly, or perhaps did not by either
- configuration or chance not respond during domain scanning.
+The majority of domains domains are responding to HTTP requests during domain
+ scanning, but many do not either by configuration or chance.
  While most non-failed domains produce 2xx responses, there is a high ratio
  of 3xx redirect class responses.
- With some 20% of random domains and around 50% or top sites redirecting
+ With some 20% of random domains and around 50% of top sites redirecting
  their visitors, it begs further research.
  Many of them are 301, considered permanent, redirects; they indicate that
  the information supposedly found at the domain is actually found somewhere
