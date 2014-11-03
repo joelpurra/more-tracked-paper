@@ -12368,6 +12368,16 @@ name "fig:internal-mixed-external-resources"
 
 \end_inset
 
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Strictly internal, mixed or strictly external resources
+\end_layout
+
+\end_inset
+
 Distribution of domains with strictly internal, mixed or strictly external
  resources
 \end_layout
@@ -12718,6 +12728,16 @@ end{tikzpicture}
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Ratio of internal resources per domain
+\end_layout
 
 \end_inset
 
@@ -13377,6 +13397,16 @@ name "fig:secure-mixed-insecure-resources"
 
 \end_inset
 
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Strictly secure, mixed or strictly insecure resources
+\end_layout
+
+\end_inset
+
 Distribution of domains with strictly secure, mixed or strictly insecure
  resources
 \end_layout
@@ -13713,6 +13743,16 @@ end{tikzpicture}
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Cumulative-distribution-ratio-secure-resources"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Ratio of secure resources per domain
+\end_layout
 
 \end_inset
 
@@ -14213,6 +14253,11 @@ addplot+[
 
 \begin_layout Plain Layout
 
+		line legend,
+\end_layout
+
+\begin_layout Plain Layout
+
 	]
 \end_layout
 
@@ -14265,6 +14310,16 @@ end{tikzpicture}
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:secure-mixed-insecure-redirects"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Strictly secure, mixed or strictly insecure redirects
+\end_layout
 
 \end_inset
 
