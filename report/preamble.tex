@@ -61,6 +61,7 @@ force remake=false,
 \newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
 \newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
 
+% TODO: reduce code-duplication between \tsvtablestyle/wide/widedatasets/superwidedatasets
 \newcommand{\tsvtablestyle}[0]{
 \pgfplotstableset{
 format=file,
@@ -131,6 +132,35 @@ columns={#3},#4
 \tsvtablestylewide{#2}
 \pgfplotstabletypeset[
 columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i},#4
+]{#1}
+}
+
+\newcommand{\tsvtablesuperwidedatasets}[4]{
+\tsvtablestylewide{#2}
+\pgfplotstabletypeset[
+columns={#3},force remake=true,every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i},%
+% Remove dataset dates.
+display columns/0/.append style={string replace*={2014-09-01.}{}},%
+display columns/0/.append style={string replace*={2014-08-29.}{}},%
+display columns/0/.append style={string replace*={2014-07-23.}{}},%
+display columns/0/.append style={string replace*={2014w35.}{}},%
+display columns/0/.append style={string replace*={2014-07-10.}{}},%
+% Shorten health status datasets.
+display columns/0/.append style={string replace*={healthstatus.2013.}{hs.}},%
+display columns/0/.append style={string replace*={.domain-registrars}{.registrars}},%
+display columns/0/.append style={string replace*={.financial-services}{.financial}},%
+display columns/0/.append style={string replace*={.higher-education}{.education}},%
+display columns/0/.append style={string replace*={.public-authorities}{.pubauth}},%
+% Shorten dataset counts.
+display columns/0/.append style={string replace*={100000}{100k}},%
+display columns/0/.append style={string replace*={10000}{10k}},%
+% Shorten dataset type.
+display columns/0/.append style={string replace*={random.}{rnd.}},%
+display columns/0/.append style={string replace*={-https-www}{-sw}},%
+display columns/0/.append style={string replace*={-https}{-s}},%
+display columns/0/.append style={string replace*={-http-www}{-hw}},%
+display columns/0/.append style={string replace*={-http}{-h}},%
+,#4
 ]{#1}
 }
 
