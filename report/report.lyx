@@ -14846,8 +14846,8 @@ status open
 
 
 \backslash
-tsvtablewidedatasets{datasets.non-failed.disconnect.domains.coverage.external.sorted.ts
-v}{Top Disconnect domain match coverage}{}{}
+tsvtablesuperwidedatasets{datasets.non-failed.disconnect.domains.coverage.external.sor
+ted.tsv}{Top Disconnect domain match coverage}{}{}
 \end_layout
 
 \end_inset
@@ -14998,8 +14998,8 @@ status open
 
 
 \backslash
-tsvtablewidedatasets{datasets.non-failed.disconnect.domains.coverage.external.google.so
-rted.tsv}{Top Disconnect Google domain match coverage}{}{}
+tsvtablesuperwidedatasets{datasets.non-failed.disconnect.domains.coverage.external.goo
+gle.sorted.tsv}{Top Disconnect Google domain match coverage}{}{}
 \end_layout
 
 \end_inset
@@ -15129,8 +15129,8 @@ status open
 
 
 \backslash
-tsvtablewidedatasets{datasets.non-failed.disconnect.organizations.coverage.external.so
-rted.tsv}{Top Disconnect organization match coverage}{}{}
+tsvtablesuperwidedatasets{datasets.non-failed.disconnect.organizations.coverage.exter
+nal.sorted.tsv}{Top Disconnect organization match coverage}{}{}
 \end_layout
 
 \end_inset
