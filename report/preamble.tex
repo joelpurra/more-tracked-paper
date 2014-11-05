@@ -36,7 +36,15 @@
 
 \usepackage{numprint}
 
-\providecommand{\versiononly}{(Unknown~document~version)}
+\newcommand{\readsinglelinefile}[1]{
+	\newread\inputstream%
+	\immediate\openin\inputstream=#1%
+	\immediate\read\inputstream to \singlelinecontents%
+	\singlelinecontents%
+	\immediate\closein\inputstream%
+}
+
+\providecommand{\versiononly}{\IfFileExists{.generated.version}{\readsinglelinefile{.generated.version}}{(Unknown~document~version)}}%
 \providecommand{\versionandtoday}{\versiononly~--~\today}
 
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
