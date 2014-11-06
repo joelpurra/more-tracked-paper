@@ -68,6 +68,7 @@ force remake=false,
 
 \newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
 \newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
+\newcolumntype{t}{>{\arraybackslash}p{.3\linewidth}}
 
 % TODO: reduce code-duplication between \tsvtablestyle/wide/widedatasets/superwidedatasets
 \newcommand{\tsvtablestyle}[0]{

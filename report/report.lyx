@@ -1954,7 +1954,8 @@ Results
 \end_layout
 
 \begin_layout Standard
-Also see detailed results in appendix 
+See the table below and the following sections in this chapter for an overview.
+ Detailed results can be found in appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -1964,21 +1965,33 @@ reference "chap:Detailed-Results"
 .
 \end_layout
 
-\begin_layout Section
-Internal, external and organizations
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Add three-column tables.
+
+
+\backslash
+tsvtablewide{results-summary.tsv}{Results summary}{}{force remake=true, every
+ nth row={1}{before row/.add={
+\backslash
+addlinespace[0pt]
+\backslash
+midrule
+\backslash
+addlinespace[0pt]}{}}, display columns/0/.style={string type, column type=t},
+ display columns/1/.style={string type, column type=|t|}, display columns/2/.style
+={string type, column type=t}}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Internal, external and organizations
 \end_layout
 
 \begin_layout Standard
@@ -2052,19 +2065,6 @@ Write about top Disconnect organizations, some Google results, in Sweden
 
 \begin_layout Section
 HTTP, HTTPS and redirects
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add three-column tables.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2174,19 +2174,6 @@ Write about mixed security.
 
 \begin_layout Section
 Trackers
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add three-column tables.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
