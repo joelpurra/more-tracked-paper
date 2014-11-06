@@ -140,14 +140,14 @@ columns={#3},#4
 \newcommand{\tsvtablewidedatasets}[4]{
 \tsvtablestylewide{#2}
 \pgfplotstabletypeset[
-columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i},#4
+columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i|},#4
 ]{#1}
 }
 
 \newcommand{\tsvtablesuperwidedatasets}[4]{
 \tsvtablestylewide{#2}
 \pgfplotstabletypeset[
-columns={#3},force remake=true,every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i},%
+columns={#3},force remake=true,every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i|},%
 % Remove dataset dates.
 display columns/0/.append style={string replace*={2014-09-01.}{}},%
 display columns/0/.append style={string replace*={2014-08-29.}{}},%

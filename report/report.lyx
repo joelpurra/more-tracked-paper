@@ -11562,7 +11562,8 @@ tsvtablewidedatasets{datasets.retries.rates.tsv}{Dataset HAR failure rates}{Data
 ,Domains,Successful,Unsuccessful,Non-failed,Failed,Non-failure rate,Failure
  rate}{display columns/2/.style={string type, column type=i}, display columns/3/.s
 tyle={string type, column type=i}, display columns/4/.style={string type,
- column type=i}, display columns/5/.style={string type, column type=i}}
+ column type=i}, display columns/5/.style={string type, column type=i}, display
+ columns/6/.style={column type=|r}}
 \end_layout
 
 \end_inset
@@ -12355,7 +12356,8 @@ status open
 
 \backslash
 tsvtablewidedatasets{datasets.non-failed.classification.domain-scope.coverage.sorted.t
-sv}{Internal versus external resources coverage}{}{}
+sv}{Internal versus external resources coverage}{}{display columns/6/.style={colu
+mn type=|r}}
 \end_layout
 
 \end_inset
@@ -13397,7 +13399,8 @@ status open
 
 \backslash
 tsvtablewidedatasets{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Se
-cure versus insecure resources coverage}{}{}
+cure versus insecure resources coverage}{}{display columns/5/.style={column
+ type=|r}, display columns/8/.style={column type=|r}}
 \end_layout
 
 \end_inset
