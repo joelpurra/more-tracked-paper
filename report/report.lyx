@@ -294,7 +294,7 @@ How many companies are tracking you online, and how much information does
 status open
 
 \begin_layout Plain Layout
-like A, B and C
+such as A, B and C
 \end_layout
 
 \end_inset
@@ -1094,7 +1094,7 @@ status collapsed
 public suffixes
 \emph default
  used by browser vendors to implement domain-dependent security measures,
- like preventing super-cookies 
+ such as preventing super-cookies 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Public-suffix-list"
@@ -1109,7 +1109,7 @@ reference "sub:Public-Suffix-List-classification"
 
 \end_inset
 
- and group domains like 
+ and group domains such as 
 \begin_inset Flex Code
 status collapsed
 
@@ -1378,7 +1378,7 @@ reference "sub:har-heedless"
 status open
 
 \begin_layout Plain Layout
-The browser doesn't have a visible window, as it is built for automation.
+The browser does not have a visible window, as it is built for automation.
 \end_layout
 
 \end_inset
@@ -1546,7 +1546,7 @@ reference "sub:Public-Suffix-List-classification"
 .
  The primary domain, which is the first non-public suffix match, or the
  shortest private suffix, is used as one of the basic classifications; is
- a HTTP request made to a domain with the same primary domain as the origin
+ an HTTP request made to a domain with the same primary domain as the origin
  domain's primary domain? Other basic classifications 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -1772,6 +1772,37 @@ Write about limitations.
 
 \end_layout
 
+\begin_layout Standard
+With lists of domains as input, this thesis only looks at the front page
+ of domains.
+ While others have spidered entire web sites from the root to find, for
+ example, a specific group of external services 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert reference to spidering for federated logins.
+\end_layout
+
+\end_inset
+
+, this is an overview of all resources.
+ The front page is assumed to contain many, if not most, of the different
+ types used on a domain.
+ Analysis has mostly been performed on each predefined domain list as a
+ whole, but dynamic -- and perhaps iterative -- re-grouping of domain based
+ on results could improve accuracy, understanding and crystallize details.
+ It would also be of interest to build a graph of domains and interconnected
+ services, to visualize potential information sharing between them 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Document style
 \end_layout
@@ -1809,7 +1840,7 @@ Commands, files and code
 \begin_layout Standard
 When text has a strict technical meaning, such as commands, files and code,
  a monospaced font is used.
- One example is a command like 
+ One example is a command such as 
 \begin_inset Flex Code
 status collapsed
 
@@ -1942,6 +1973,19 @@ Internal, external and organizations
 status open
 
 \begin_layout Plain Layout
+Add three-column tables.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
 Write about general characterization of internal/external resources per
  category, and implications.
 \end_layout
@@ -1953,10 +1997,17 @@ Write about general characterization of internal/external resources per
 
 \begin_layout Standard
 With each request classified as either internal or external, it is easy
- to see how sites divide their resources.
- While less than 10% of top sites use strictly internal resources, up to
- 93% of top sites are composed sites using a mixture of both -- see figure
- 
+ to see how sites divide their resources 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Internal-versus-external"
+
+\end_inset
+
+.
+ Less than 10% of top sites use strictly internal resources, meaning up
+ to 93% of top sites are composed using at least a portion external resources
+ -- see figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -1964,6 +2015,25 @@ reference "fig:internal-mixed-external-resources"
 \end_inset
 
 .
+ This means external resources -- here seen as trackers -- have actively
+ been installed, be it as a commercial choice or for technical reasons 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Trackers-are-a-commercial-choice"
+
+\end_inset
+
+.
+ The difference between HTTP and HTTPS datasets is generally small, showing
+ that users are as tracked on insecure as on secure sites -- see how dataset
+ HTTP/HTTPS variation lines follow each other in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+ for an illustration.
 \end_layout
 
 \begin_layout Standard
@@ -1989,8 +2059,86 @@ HTTP, HTTPS and redirects
 status open
 
 \begin_layout Plain Layout
+Add three-column tables.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
 Write about which category of domains use HTTP, which use HTTPS and which
  redirect.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When typing in an address, it is convenient to omit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+http://
+\end_layout
+
+\end_inset
+
+ schema part -- or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+https://
+\end_layout
+
+\end_inset
+
+ for a security minded individual.
+ In general, HTTPS usage is very low at less than 5% among random domains,
+ but Reach50 top sites are leading the way at 53% 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+ response rate.
+ Sites which implement HTTPS sometimes take advantage of redirects to direct
+ the user from an insecure to a secure connection.
+ Surprisingly, this is not very common -- while many redirect to a preferred
+ variant of their domain name, usually the www subdomain, only a few percent
+ elect to redirect to a secure URL 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It seems that Swedish media shun secure connections -- none of them present
+ a fully secured domain, serving mixed content in case of responding to
+ secure requests.
+ At the same time, they use the most internal and external resources --
+ with numbers several times higher than other domain lists -- and more than
+ 20% of them go to known trackers.
+ Counties, higher education and 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
 \end_layout
 
 \end_inset
@@ -2026,6 +2174,19 @@ Write about mixed security.
 
 \begin_layout Section
 Trackers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add three-column tables.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2670,7 +2831,7 @@ name "sec:Trackers-which-deliver-content"
 \end_layout
 
 \begin_layout Standard
-In Disconnect's blocking list, there's a category called content 
+In Disconnect's blocking list, there is a category called content 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Disconnect-Content"
@@ -2969,7 +3130,7 @@ reference "sub:get/netsniff.js"
  for example in wether trailing slashes are kept for domain root requests
  or not.
  What would be even better, is a way to refer to the reason for the HTTP
- request, be it an HTML tag, a script call or a HTTP redirect -- but that
+ request, be it an HTML tag, a script call or an HTTP redirect -- but that
  could to be highly implementation dependent per browser.
 \end_layout
 
@@ -3499,7 +3660,7 @@ Look up term, might be defined already.
 
 \end_inset
 
-), either by leaking the location URL as a HTTP referrer or by embedding
+), either by leaking the location URL as an HTTP referrer or by embedding
  it in the request URL.
  In crawls of Alexa's top 
 \begin_inset ERT
@@ -3545,7 +3706,7 @@ canvas
 
 \end_inset
 
- fingerprinting and ID storage in external plugins like Flash.
+ fingerprinting and ID storage in external plugins such as Flash.
  While that might be possible, the modifications that would need to be made
  to phantomjs are non-trivial, and my current scope does not allow for that.
  With their research as a base, cookie respawning and sharing could possibly
@@ -3978,7 +4139,7 @@ Accept-Language
  While sites have been downloaded from around the world, localized domains
  might behave differently depending on user language.
  Google has a recommendation saying that they will prioritize TLDs specific
- to a region with a certain language (like .se and Sweden) for users sending
+ to a region with a certain language (such as .se and Sweden) for users sending
  
 \begin_inset Flex Code
 status collapsed
@@ -4412,6 +4573,13 @@ end{futurework}
 
 \begin_layout Subsection
 Ignore domains without content
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Ignore-domains-without-content"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4440,7 +4608,7 @@ This domain was purchased from ...
 \begin_inset Quotes erd
 \end_inset
 
-) and advertisement domains (like Google Adwords for Domains 
+) and advertisement domains (such as Google Adwords for Domains 
 \begin_inset Note Greyedout
 status open
 
@@ -4496,7 +4664,89 @@ Other potential improvements would be implementing the non-ICANN, private
 \end_layout
 
 \begin_layout Subsection
-Dynamic selection, incremental adding and updating of domains
+Separating analysis steps
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Separating-analysis-steps"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As some of the analysis relies on aggregate numbers, such as domain and
+ requests counts, they expect the entire dataset to be available at the
+ start of the analysis.
+ Saving these numbers in an intermediate step would allow further dataset
+ refinement without having to perform the same filtering multiple times,
+ and thus ease second-level filtering.
+ Custom data questions 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Questions"
+
+\end_inset
+
+ are one example, as they need to carry the number of (non-failed) domains
+ throughout the calculations, even though only a small subset of the data
+ is interesting, in order to present them as part of the output.
+\end_layout
+
+\begin_layout Standard
+Another example is the current analysis split into unfiltered and non-failed
+ domains, which then is further split into unfiltered, internal and external
+ resources 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:aggregate/analysis.sh"
+
+\end_inset
+
+.
+ If the first step had been made as a separate filtering step instead of
+ an integrated part, further analysis would have been clearer as well as
+ easier to modularize.
+\end_layout
+
+\begin_layout Standard
+Saving the intermediate filtering results would simplify selecting for example
+ non-failed domains which only use secure resources 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Insecure-versus-secure-resources"
+
+\end_inset
+
+, to look at their usage of internal/external/tracker usage compared to
+ insecure domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Internal-versus-external"
+
+\end_inset
+
+.
+ While redirects have been analyzed to some extent 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+, another interesting idea would be to select domains with redirects 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+ and perhaps consume the redirects -- especially from secure domain variations
+ looking at secure redirects -- before performing further analysis.
+\end_layout
+
+\begin_layout Subsection
+Dynamic grouping, domain selection
 \end_layout
 
 \begin_layout Standard
@@ -4510,12 +4760,7 @@ reference "sec:Dataset-variations"
 
  and then har-dulcify use the most recent HAR data to perform the aggregate
  analysis for the entire dataset.
- While this is good enough for the thesis, the technique could be improved
- upon by allowing incremental updates.
-\end_layout
-
-\begin_layout Standard
-The overlap between different domain lists have been downloaded multiple
+ The overlap between different domain lists have been downloaded multiple
  times, and each round of downloads have started from zero to be sure that
  the domain list results represent a specific point in time.
  It would be beneficial to download each unique domain once then select
@@ -4523,9 +4768,56 @@ The overlap between different domain lists have been downloaded multiple
  by domain lists, after they have been downloaded.
  This would allow a more dynamic grouping, and possibly re-arranging of
  domains to enable more interesting second-level analysis.
- For example.
- the random TLD zone selections could have been grouped together, or all
- sites from/popular in Sweden.
+\end_layout
+
+\begin_layout Itemize
+All curated or top lists grouped together.
+\end_layout
+
+\begin_layout Itemize
+All random TLD zone selections grouped together.
+\end_layout
+
+\begin_layout Itemize
+All sites from, or popular in, Sweden grouped together.
+\end_layout
+
+\begin_layout Itemize
+Exclude domains which are deemed to be have no content 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Ignore-domains-without-content"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Use of external tools to classify domains based on, for example, web server
+ IP-addresses mapped to a geographical locations 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert link to geoip information.
+\end_layout
+
+\end_inset
+
+, domain registrar or HTTPS certificate properties such as validity.
+\end_layout
+
+\begin_layout Itemize
+Similarity selection -- allowing a selection of domains to be the basis
+ of finding similar domains.
+ Similarities could be based on number of HTTP requests, specific external
+ service usage or even individual unique IDs in query strings for services
+ such as Google Analytics and Google AdWords.
+\end_layout
+
+\begin_layout Subsection
+Incremental adding and updating of domains
 \end_layout
 
 \begin_layout Standard
@@ -4541,9 +4833,10 @@ reference "sec:Creating-an-information-web-site"
 \end_inset
 
 ,  without having to recalculate all steps for the entire dataset results.
- Some late analysis steps introduce coverage calculations and other arithmetical
- divisions, which may cause some data/precision loss if reversed, but if
- these data reductions can be deferred to a separate mapping step, computing
+ While most incremental updates are a matter of easy addition and subtraction,
+ some late analysis steps introduce coverage calculations and other arithmetical
+ divisions, which may cause some data/precision loss if reversed.
+ If these data reductions can be deferred to a separate mapping step, computing
  time might be acceptable.
 \end_layout
 
@@ -4615,7 +4908,7 @@ name "sub:Platform-for-Privacy-(P3P)-Project"
 P3P is a way for websites to declare their policies and intentions for data
  collected from web users.
  It is declared in a machine-readable format, as an XML file and in a compact
- encoding as a HTTP header.
+ encoding as an HTTP header.
  W3C's work started in 1997 and P3P 1.0 became a W3C recommendation in 2002.
  It never gained enough momentum and the work with P3P 1.1 was suspended
  in 2006.
@@ -5160,7 +5453,7 @@ Patrik
 
 Wallström Project Manager within R&D, .SE (The Internet Infrastructure Foundation
 ), Sweden.
- Thank for being my technical supervisor.
+ Thank you for being my technical supervisor.
 \end_layout
 
 \begin_layout Description
@@ -6731,6 +7024,18 @@ reference "fig:Domains-per-organization"
 \end_inset
 
  for the distribution.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Fix floating on the page with the following figure.
+ It, and other floats, seems to displace text into the footer.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7051,7 +7356,7 @@ key "G.-Acar:persistent:2014aa"
 
 \begin_layout Description
 amazon-adsystem.com Amazon's ad delivery network.
- Several amazon.tld domains, like 
+ Several amazon.tld domains, such as 
 \begin_inset Flex Code
 status collapsed
 
@@ -7081,7 +7386,7 @@ de
 
 \end_inset
 
- are also listed here - but amazon.com is not.
+ are also listed here -- but amazon.com is not.
 \end_layout
 
 \begin_layout Description
@@ -7117,6 +7422,15 @@ tradedoubler.com The TradeDouble ad network.
 
 \begin_layout Subsection
 Analytics
+\end_layout
+
+\begin_layout Standard
+Analytics services offer a simple way for web site owners to gather data
+ about their visitors.
+ The service is often completely hosted on external servers, and the only
+ connection is a javascript file loaded by the web site.
+ The script collects data, sends it back to the service and then presents
+ aggregate numbers and graphs to the web site owner.
 \end_layout
 
 \begin_layout Description
@@ -7496,7 +7810,7 @@ Many of the external resources will be overlapping between web sites and
  Keeping cached content would, depending on per-response cache settings
  and timeout, result in a different HTTP request and potentially different
  response.
- A file that has not changed on the server would generate a HTTP response
+ A file that has not changed on the server would generate an HTTP response
  status of 304 with no data, saving bandwidth and lowering transfer delays,
  where a changed file would generate a status 200 response with the latest
  version.
@@ -8515,7 +8829,7 @@ failed
 \emph on
 unsuccessful
 \emph default
- domains -- unsuccessful domains rendered a complete response with a HTTP
+ domains -- unsuccessful domains rendered a complete response with an HTTP
  status that indicated that it was not successful.
  Domains that failed have been re-downloaded; it relieved some, but not
  all, failures.
@@ -8526,8 +8840,8 @@ unsuccessful
 status open
 
 \begin_layout Plain Layout
-Insert re-downloading table for at least one dataset, like se.2014-07-10.random.100
-000-http-www.
+Insert re-downloading table for at least one dataset, for example se.2014-07-10.ra
+ndom.100000-http-www.
 \end_layout
 
 \end_inset
@@ -11421,7 +11735,7 @@ name "sec:HTTP-status-codes"
 Choosing the term non-failed instead of successful when it comes to dividing
  and focusing result discussions has its basis in the HTTP standard, which
  defines a status code.
- Successful requests are generally shown with a HTTP status code of 200
+ Successful requests are generally shown with an HTTP status code of 200
  (actually the entire 2xx group), or a 304 which means that a previously
  cached (presumably successful) result is still valid.
  Many sites respond with a 3xx status, which is not exactly successful as
@@ -12923,6 +13237,13 @@ Write about internal, external and disconnect coverage -- as opposed to
 
 \begin_layout Section
 Insecure versus secure resources
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Insecure-versus-secure-resources"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12980,7 +13301,7 @@ reference "fig:Cumulative-distribution-ratio-secure-resources"
 While the technology has been around a long time, it does not seem as if
  very many sites actually use HTTPS on their sites.
  Even origin sites that respond to HTTPS requests seem to either redirect
- to a HTTP site 
+ to an HTTP site 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:HTTP,-HTTPS-and-redirects"
@@ -12988,7 +13309,7 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_inset
 
 , or load at least some of its resources over non-HTTPS connections.
- Typing in a HTTPS address into the browser's address bar will actually
+ Typing in an HTTPS address into the browser's address bar will actually
  only give full HTTPS security on 27-58% of the domains -- a number where
  the random domains surprisingly beat the non-random ones.
 \end_layout
@@ -13032,7 +13353,7 @@ Why is adoption lower for top sites? As high-traffic sites they might have
 \emph on
 really
 \emph default
- needed -- like when passwords of financial information is entered.
+ needed -- such as when passwords of financial information is entered.
  Strict HTTPS performance concerns were dismissed by Google engineers in
  2xxx 
 \begin_inset Note Greyedout
@@ -13775,24 +14096,12 @@ name "sec:HTTP,-HTTPS-and-redirects"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about HTTPS to HTTP redirects.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The table shows domains, domains with redirect responses to the origin request
- and the average length of the redirect chain per domain with redirects.
- The ratio of redirected domains making strictly internal or strictly external
- redirects, and how many domains mix internal and external redirect URLs
- are shown next.
+The table shows domains, domains with redirect responses to the origin request,
+ the ratio of domains with redirects and the average length of the redirect
+ chain per domain with redirects.
+ Show next is the ratio of redirected domains making strictly internal or
+ strictly external redirects, and how many domains mix internal and external
+ redirect URLs.
  The same goes for insecure, secure and mixed security redirects -- plus
  a column with the ratio of domains where the final redirect is to a secure
  URL.
@@ -13805,7 +14114,7 @@ reference "fig:secure-mixed-insecure-redirects"
 
 \end_inset
 
- for the distribution, which also shows the percentage of final secure redirect
+ for the distribution, which also shows the percentage of final secure redirects
  with an 
 \begin_inset Flex Code
 status collapsed
@@ -13816,7 +14125,79 @@ x
 
 \end_inset
 
+; not all mixed redirects lead to secure sites -- sometimes they lead back
+ to an insecure site.
+\end_layout
+
+\begin_layout Standard
+Most domains that redirect make a single redirect, but every few sites make
+ more than one; the average is around 1.23 redirects.
+ With 49-71% of top sites in the HTTP variations redirecting, but only 30-36%
+ of HTTP-www variations redirecting, it seems that the www subdomain still
+ is in use, rather than not using any subdomain.
+ For random domains numbers are a bit more even, with 24-31% of both HTTP
+ and HTTP-www variations redirecting.
+ More detailed data than in the below table clearly shows that domains generally
+ pick either www or no subdomain, and redirect from one to the other; the
+ www subdomain is most common as the final destination, especially for HTTPS
+ variations.
+\end_layout
+
+\begin_layout Standard
+A difference between top and random domains, is that top domains keep their
+ redirects mostly internal, while random domains redirect elsewhere.
+ Curated sites are in between, with a portion of HTTP-www variations redirecting
+ externally.
+ This seems to suggest that top sites has contents, while random domains
+ to a larger extent do not -- 39-60% of them end up being aliases for another
+ domain than a user would have typed in.
+\end_layout
+
+\begin_layout Standard
+When it comes to security, it is no surprise to see HTTP variations redirect
+ mostly to other insecure URLs.
+ The extent of domains implementing HTTPS but then redirecting to HTTP is
+ more surprising -- only in 23-35% of top sites will let you stay on a fully
+ secure connection -- and that number excludes mixed resource security in
+ later stages of the browsing experience 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Insecure-versus-secure-resources"
+
+\end_inset
+
 .
+ An additional few percent of HTTPS domains even mix security usage during
+ redirects and take a 
+\emph on
+detour
+\emph default
+ over an insecure URL in the process of redirecting the user to the final,
+ secure destination -- meaning that even if you type in a secure address
+ 
+\emph on
+and
+\emph default
+ end up on a secure address, you may have passed through something completely
+ insecure along the way.
+ While this might be considered a corner case, it nullifies some of the
+ security measures put in place by HTTPS, and could leak for example a carelessl
+y set session identifier.
+\end_layout
+
+\begin_layout Standard
+Here it is a surprise to see that financial institutions in the 
+\emph on
+.SE Health Status
+\emph default
+ domain lists do not take advantage of HTTPS, by redirecting users entering
+ through HTTP -- at less than 20% fully secured redirects and a surprising
+ ratio of mixed redirects, they are at about the same level as general Swedish
+ top sites.
+ Even more surprising is that they even elect to redirect users away from
+ HTTPS enabled pages to insecure variants in 60% of HTTPS-www domains.
+ Counties, higher education and media are worse yet -- all make no effort
+ in redirecting users from HTTP to HTTPS.
 \end_layout
 
 \begin_layout Standard
@@ -13829,8 +14210,54 @@ status open
 \backslash
 tsvtablewidedatasets{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{Origin
  domains with redirects}{}{display columns/2/.style={string type, column
- type=i}, display columns/4/.style={column type=|r}, display columns/7/.style={col
-umn type=|r}, display columns/11/.style={column type=|r}}
+ type=i}, display columns/5/.style={column type=|r}, display columns/8/.style={col
+umn type=|r}, display columns/12/.style={column type=|r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyzing domains redirecting to secure URLs would be a good candidate for
+ a refined selection 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Separating-analysis-steps"
+
+\end_inset
+
+.
+ Do the redirects help, or is the net result that insecure resources are
+ loaded anyways?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -13858,7 +14285,7 @@ begin{futurework}
 The mismatched redirect and request URLs are in part due to the HAR standard
  not defining recorded redirect URLs as strictly absolute, and phantomjs
  returning unparsed/unresolved URLs when a redirect is initially detected
- in a HTTP response 
+ in an HTTP response 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:The-HAR-specification"
@@ -14562,7 +14989,7 @@ status collapsed
 
 \end_inset
 
-) as they will have a HTTP 
+) as they will have an HTTP 
 \begin_inset Flex Code
 status collapsed
 
