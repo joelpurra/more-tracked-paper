@@ -4,19 +4,54 @@ Over 90\% of most categories' domains rely on external resources (\ref{sec:Inter
 }	{
 Uses more external resources than .dk, but less than .com and .net (\ref{sec:Internal-versus-external})
 }	{
+There are as many external resources, meaning as much tracking, on secure as insecure domains (figure \ref{fig:Cumulative-distribution-ratio-internal-resources})
+}
+{
+Less than 5\% of municipalities are secure and Swedish media sites are completely insecure (\ref{sec:Insecure-versus-secure-resources})
+}	{
+YYY
+}	{
+ZZZ
+}
+{
+25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely - it's close, but still considered insecure (figure \ref{fig:Cumulative-distribution-ratio-secure-resources})
+}	{
+YYY
+}	{
+ZZZ
+}
+{
+XXX
+}	{
+Only 3\% respond to secure requests, in line with .dk and .net, while .com has 5-6\% response rate (\ref{sec:Failed-versus-non-failed})
+}	{
+ZZZ
+}
+{
+Financial instititions redirect \emph{to insecure} sites from 60\% of responding secure domains (\ref{sec:HTTP,-HTTPS-and-redirects})
+}	{
 Many random domains use only external resources due to redirects away from the origin domain (\ref{sec:HTTP,-HTTPS-and-redirects})
+}	{
+50\% of top sites always redirect to the www subdomain, 13\% always redirect to their primary domain (\ref{sec:HTTP,-HTTPS-and-redirects})
 }
 {
-a
+XXX
 }	{
-b
+YYY
 }	{
-c
+ZZZ
 }
 {
-x
+XXX
 }	{
-y
+YYY
 }	{
-z
+ZZZ
+}
+{
+XXX
+}	{
+YYY
+}	{
+ZZZ
 }
