@@ -237,8 +237,8 @@ numprint{150000}
 
  globally popular as well as random .com/.net/.se/.dk web sites, in-browser
  HTTP/HTTPS traffic was recorded.
- Data shows that known third-party resources including known trackers have
- a presence on over 70% 
+ Data shows that known third-party resources including known trackers are
+ present on over 70% 
 \begin_inset Note Greyedout
 status open
 
@@ -248,17 +248,8 @@ status open
 
 \end_inset
 
- of sites, that Google has a presence of over 47% 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-47-90%
-\end_layout
-
-\end_inset
-
- and that third-party hosted 
+ of sites, that tracking is as prevalent on secure as insecure sites and
+ that third-party hosted 
 \emph on
 content
 \emph default
@@ -1311,7 +1302,7 @@ numprint{980}
 
 \end_inset
 
- organizations and five categories: advertising, analytics, content, diconnect
+ organizations and five categories: advertising, analytics, content, disconnect
  and social 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -2009,8 +2000,8 @@ Write about general characterization of internal/external resources per
 \end_layout
 
 \begin_layout Standard
-With each request classified as either internal or external, it is easy
- to see how sites divide their resources 
+With each request classified as either internal or external to the originating
+ domain, it is easy to see how sites divide their resources 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Internal-versus-external"
@@ -2028,8 +2019,9 @@ reference "fig:internal-mixed-external-resources"
 \end_inset
 
 .
- This means external resources -- here seen as trackers -- have actively
- been installed, be it as a commercial choice or for technical reasons 
+ This means external resources -- in this thesis seen as trackers -- have
+ actively been installed, be it as a commercial choice or for technical
+ reasons 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Trackers-are-a-commercial-choice"
@@ -2039,7 +2031,7 @@ reference "sec:Trackers-are-a-commercial-choice"
 .
  The difference between HTTP and HTTPS datasets is generally small, showing
  that users are as tracked on insecure as on secure sites -- see how dataset
- HTTP/HTTPS variation lines follow each other in 
+ HTTP/HTTPS variation lines follow each other in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
@@ -2082,17 +2074,18 @@ Write about which category of domains use HTTP, which use HTTPS and which
 \end_layout
 
 \begin_layout Standard
-When typing in an address, it is convenient to omit the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://
-\end_layout
+In general, HTTPS usage is very low at less than 5% among random domains,
+ but Reach50 top sites are leading the way with a 53% response rate 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
 
 \end_inset
 
- schema part -- or 
+.
+ Sites which implement HTTPS sometimes take advantage of redirects to direct
+ the user from an insecure to a secure connection, for example when the
+ user didn't type in 
 \begin_inset Flex Code
 status collapsed
 
@@ -2102,18 +2095,7 @@ https://
 
 \end_inset
 
- for a security minded individual.
- In general, HTTPS usage is very low at less than 5% among random domains,
- but Reach50 top sites are leading the way at 53% 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Failed-versus-non-failed"
-
-\end_inset
-
- response rate.
- Sites which implement HTTPS sometimes take advantage of redirects to direct
- the user from an insecure to a secure connection.
+ into the browser's address bar.
  Surprisingly, this is not very common -- while many redirect to a preferred
  variant of their domain name, usually the www subdomain, only a few percent
  elect to redirect to a secure URL 
@@ -2130,9 +2112,9 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 It seems that Swedish media shun secure connections -- none of them present
  a fully secured domain, serving mixed content in case of responding to
  secure requests.
- At the same time, they use the most internal and external resources --
- with numbers several times higher than other domain lists -- and more than
- 20% of them go to known trackers.
+ At the same time, they use the highest count of both internal and external
+ resources -- with numbers several times higher than other domain lists
+ -- and more than 20% of requests go to known trackers.
  Counties, higher education and 
 \begin_inset Note Greyedout
 status open
@@ -4230,7 +4212,7 @@ reference "sub:System-load-during-downloads"
  or continuously monitor, domain lists in a timely manor.
  While downloaded HAR file output is easy enough to combine from different
  machines, it might be worth investigating already parallelized software,
- such as spookystuff 
+ such as spookystuff
 \begin_inset Foot
 status open
 
@@ -4770,7 +4752,14 @@ All sites from, or popular in, Sweden grouped together.
 \end_layout
 
 \begin_layout Itemize
-Exclude domains which are deemed to be have no content 
+Use classifications from one dataset variation as the basis of selection
+ in another, for example looking at how many domains which respond to HTTPS
+ requests also redirect their HTTP redirects to use HTTPS.
+\end_layout
+
+\begin_layout Itemize
+Exclude domains which are deemed to be have no content, such as parked domains
+ and other placeholders 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Ignore-domains-without-content"
@@ -14139,8 +14128,8 @@ A difference between top and random domains, is that top domains keep their
  Curated sites are in between, with a portion of HTTP-www variations redirecting
  externally.
  This seems to suggest that top sites has contents, while random domains
- to a larger extent do not -- 39-60% of them end up being aliases for another
- domain than a user would have typed in.
+ to a larger extent do not -- 39-60% of redirected domains end up being
+ aliases for another domain than a user would have typed in.
 \end_layout
 
 \begin_layout Standard
