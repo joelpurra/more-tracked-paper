@@ -22,8 +22,7 @@
 \begin{landscape}
 % Use TiKZ?
 % http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
-\setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
-\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTleft{0pt}            % default: \fill
 \setlength\LTright{0pt}           % default: \fill
 }{
 \end{landscape}
@@ -50,6 +49,8 @@
 \providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
 
 \usepackage{longtable}
+\setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
+
 \usepackage{caption}
 \usepackage{pgfplotstable}
 \usepackage{booktabs}
@@ -147,7 +148,7 @@ columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addline
 \newcommand{\tsvtablesuperwidedatasets}[4]{
 \tsvtablestylewide{#2}
 \pgfplotstabletypeset[
-columns={#3},force remake=true,every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i|},%
+columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i|},%
 % Remove dataset dates.
 display columns/0/.append style={string replace*={2014-09-01.}{}},%
 display columns/0/.append style={string replace*={2014-08-29.}{}},%
@@ -212,11 +213,6 @@ xtick={0,.2,.4,.6,.8,1},
 minor xtick={.1,.3,.5,.7,.9},
 xminorgrids=true,
 xmajorgrids=true,
-% The number style seems to have stopped working?
-xticklabel style={
-/pgf/number format/fixed,
-/pgf/number format/precision=2
-},
 ytick=data,
 y dir=reverse,
 yticklabel pos=right,
@@ -231,6 +227,16 @@ enlarge y limits=0.006,
 width=.6\textwidth,
 height=1.4\textwidth,
 font=\small
+},
+xticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
+},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
 }
 }
 
