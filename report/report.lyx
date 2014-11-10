@@ -15162,6 +15162,126 @@ Write about how many blocked domains and organizations are represented per
 
 \end_layout
 
+\begin_layout Standard
+The below table shows the number of domains in the dataset, the number of
+ requests classified as trackers in the Disconnect dataset (see also 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Request-counts"
+
+\end_inset
+
+ for other types of requests) followed by aggregate counts for domains,
+ organizations and categories for these requests.
+ Next we see Disconnect requests per domain in the dataset, and the same
+ number per Disconnect organization.
+ The last section contains the ratios out of the total 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2149}
+\end_layout
+
+\end_inset
+
+ domains and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{980}
+\end_layout
+
+\end_inset
+
+ organizations (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about organization ratio.
+\end_layout
+
+\end_inset
+
+ While it is hard to compare Disconnect's organizations' coverage across
+ datasets as the number of domains increases the chance of additional organizati
+ons being represented, it seems clear that global top sites use a broad
+ range of trackers.
+ The 
+\emph on
+.SE Health Status'
+\emph default
+ media category has the highest number of tracker requests per domain, much
+ higher than for example public authorities and random zone domains.
+ What is more interesting than request counts is the number of organizations
+ per domain -- while more information may be leaked as the number of requests
+ to an organization increase, the same amount could potentially leak through
+ with just one or two carefully composed requests.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add organization ratio plot.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtablewidedatasets{datasets.non-failed.disconnect.counts.sorted.tsv}{Disconnect
+ requests, organizations and categories counts and ratios}{}{force remake=true,
+ display columns/2/.style={string type, column type=i}, display columns/3/.style={
+string type, column type=i}, display columns/4/.style={string type, column
+ type=i}, display columns/5/.style={string type, column type=i}, display
+ columns/6/.style={column type=|r}, display columns/8/.style={column type=|r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Top domains
 \begin_inset CommandInset label
