@@ -2160,7 +2160,59 @@ Trackers
 
 \begin_layout Standard
 While looking at the number of requests made to trackers can give a hint
- towards how much tracking is installed a website
+ towards how much tracking is installed on a website, but it can be argued
+ that one or two carefully composed requests can contain the same information
+ as several request.
+ The difference is merely technical, as not all types of resources can be
+ efficiently bundled and transferred in a single requests, but require more
+ than one -- therefore it's more interesting to look at the number of organizati
+ons which resources are loaded from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Domain-and-organization"
+
+\end_inset
+
+.
+ The organization count per domain for a few datasets is shown in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Organizations-per-domain"
+
+\end_inset
+
+.
+ While random .se domain variations have a different characteristic due to
+ the very low response rate for secure connections 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+, it can again be seen that the amount of tracking is the same in other
+ HTTP-www as HTTPS-www variation -- the figure shows that the lines follow
+ each other, with over 80% having some tracking installed.
+ Out of the Swedish media domains, 50% share information with more than
+ seven tracker organizations -- and one of them is sharing information with
+ 38 organizations.
+ In the larger Alexa global top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ dataset, 70% of sites allow more than one external organization, 10% allow
+ 13 or more and 1% even allow more than 48 trackers -- just on the front
+ page of the domain.
 \end_layout
 
 \begin_layout Standard
@@ -11562,6 +11614,22 @@ Insert link to PKI.
  With public IPv4 addresses running out and legacy browsers requiring one
  IP-address per HTTPS certificate, it can also lead to an additional fee
  for renting an exclusive IP-address.
+ The random zone domains responding to HTTPS requests exhibit behavior more
+ similar to top and curated sites, see figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Organizations-per-domain"
+
+\end_inset
+
+, suggesting that a similar kind of effort has been put in developing them.
 \end_layout
 
 \begin_layout Standard
@@ -15243,6 +15311,28 @@ reference "fig:Organizations-per-domain"
 \end_layout
 
 \begin_layout Standard
+The 
+\emph on
+.SE Health Status'
+\emph default
+ media category has over 40 tracker requests on average -- the highest number
+ of tracker requests per domain, much higher than for example public authorities
+ and random zone domains at 5-7, with top domains having 17-32 requests
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Request-counts"
+
+\end_inset
+
+.
+ What is more interesting than request counts is the number of tracker organizat
+ions per domain -- while more information may be leaked as the number of
+ requests to an organization increase, the same amount could potentially
+ leak through with just one or two carefully composed requests.
+\end_layout
+
+\begin_layout Standard
 While it is hard to compare Disconnect's organizations' coverage across
  datasets as the number of domains increases the chance of additional organizati
 ons being represented, it seems global top sites use a broad range of trackers
@@ -15273,17 +15363,6 @@ numprint{980}
 \end_inset
 
  organizations.
- The 
-\emph on
-.SE Health Status'
-\emph default
- media category has the highest number of tracker requests per domain, much
- higher than for example public authorities and random zone domains, but
- close to top domains.
- What is more interesting than request counts is the number of organizations
- per domain -- while more information may be leaked as the number of requests
- to an organization increase, the same amount could potentially leak through
- with just one or two carefully composed requests.
  Looking at figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -15293,9 +15372,9 @@ reference "fig:Organizations-per-domain"
 
  we see that top sites have requests to more organizations than random domains
  do.
- Over 40% of random .se HTTP-www domains have no trackers, about as many
- have share some information with one tracker and the top 1% have six or
- more.
+ Over 40% of random .se HTTP-www domains have no known trackers, about as
+ many have share some information with one tracker and the top 1% have six
+ or more.
  This is compared to 32% of Alexa's top site sharing information with more
  than five organizations, 10% have 13 or more, and 1% share information
  with at least 48 organizations.
@@ -15305,7 +15384,14 @@ reference "fig:Organizations-per-domain"
  end up, and even more so how it is used in a second stage.
  It is also clear that the non-zone domains have as much tracking on when
  using a secure connection as on an insecure connection, while the difference
- for zone domains can be explained by the low HTTPS usage.
+ for zone domains can be explained by the very low HTTPS usage 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -15662,6 +15748,64 @@ ulativeSorted;
 	
 \backslash
 addlegendentry{se.healthstatus.2013.municipalities-https-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[teal,solid,mark=*,every mark/.append style={teal,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.healthstatus.2013.media-http-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCum
+ulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.healthstatus.2013.media-http-www}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addplot+[teal,dashed,mark=square*,every mark/.append style={teal,solid},]
+\end_layout
+
+\begin_layout Plain Layout
+
+		table[x=colnames,y=se.healthstatus.2013.media-https-www]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCum
+ulativeSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+addlegendentry{se.healthstatus.2013.media-https-www}
 \end_layout
 
 \begin_layout Plain Layout

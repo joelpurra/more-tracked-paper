@@ -37,7 +37,7 @@ Many random domains use only external resources due to redirects away from the o
 {
 XXX
 }	{
-YYY
+40% of random .se domains have no known trackers - 60% do (\ref{sub:Domain-and-organization}).
 }	{
 A few global top domains load more than 75 known trackers on their front page alone (\ref{sub:Domain-and-organization}).
 }
