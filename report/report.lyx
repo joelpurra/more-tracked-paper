@@ -2159,6 +2159,11 @@ Trackers
 \end_layout
 
 \begin_layout Standard
+While looking at the number of requests made to trackers can give a hint
+ towards how much tracking is installed a web site
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Greyedout
 status open
 
@@ -2302,7 +2307,7 @@ key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healths
  services) is 58% while most are above 70% 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:Top-domains"
+reference "sub:Top-domains-Google"
 
 \end_inset
 
@@ -2519,7 +2524,11 @@ name "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
 
 \end_inset
 
-.SE Health Status HTTPS coverage 2008-2013
+
+\emph on
+.SE Health Status
+\emph default
+ HTTPS coverage 2008-2013
 \end_layout
 
 \end_inset
@@ -5518,7 +5527,7 @@ description "A third party service that delives some kind of resource to the use
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Tracker"
-description "An resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the tracker)."
+description "A resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the same tracker)."
 
 \end_inset
 
@@ -5542,7 +5551,7 @@ description "(CDN) The speed at which data can be delivered is dependant on dist
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "Domain name"
-description "A domain name is a human-readable way to navigate to a service on the internet: example.com. Fully qualified domain names (FQDN) have at least two parts - the top level domain name (TLD) and the second-level domain name - but oftentimes more depending on TLD rules and organizational units.\\\\\\\\Domains are also used, for example, as logical entities in regards to security and privacy scopes on the web, often implemented as same-origin policies. As an example, HTTP cookies are bound to domain that set them."
+description "A human-readable way to navigate to a service on the internet: example.com. Often implicitly meaning FQDN. Domains are also used, for example, as logical entities in regards to security and privacy scopes on the web, often implemented as same-origin policies. As an example, HTTP cookies are bound to domain that set them."
 
 \end_inset
 
@@ -5707,8 +5716,16 @@ description "A generic top level domain."
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "TLD"
-description "Top level domain."
+symbol "FQDN"
+description "Fully qualified domain name"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Fully qualified domain name"
+description "(FQDN) A domain name specific enough to be used on the internet. Has at least a TLD and a second-level domain name - but oftentimes more depending on TLD rules and organizational units."
 
 \end_inset
 
@@ -5765,6 +5782,14 @@ description "For the thesis, domains in parent zones have been labeled superdoma
 LatexCommand nomenclature
 symbol "Public suffix"
 description "The part of a domain name that is unavilable for registrations, used for grouping. All TLDs are public suffixes, but some have one or more levels of public suffixes, such as .com.br for commercial domains in Brazil or .pp.se for privately owned personal domains (a public suffix which has been deprecated, but still exists)."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Zone"
+description "A technical as well as administrative part of DNS. Each dot in a domain name represents another zone, from the implicit root zone to TLDs and privately owned zones -- which in turn can contain more privately controlled zones."
 
 \end_inset
 
@@ -13065,7 +13090,11 @@ It is interesting to look at the number of requests, as they differ between
  Random TLD domains have a low 26-29 requests per domain, random Alexa top
  sites a medium 71-76 -- but the very Alexa top comes in at 83-105.
  The smaller datasets Reach50 comes to 87, and the even smaller dataset
- .SE Health Status' media sets the record at 197 requests per domain!
+ 
+\emph on
+.SE Health Status
+\emph default
+' media sets the record at 197 requests per domain!
 \end_layout
 
 \begin_layout Standard
@@ -15146,6 +15175,13 @@ reference "sub:Disconnect's-blocking-list"
 
 \begin_layout Subsection
 Domain and organization counts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Domain-and-organization"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15263,13 +15299,13 @@ reference "fig:Organizations-per-domain"
  This is compared to 32% of Alexa's top site sharing information with more
  than five organizations, 10% have 13 or more, and 1% share information
  with at least 48 organizations.
- There's even a couple of domains among the Alexa sites that have more than
- 75 recognized tracker organizations just on the front page -- a clear example
- of how it is impossible to tell where your browsing habits can end up --
- and even more so how it is used in a second stage.
- It is also clear that the zone domains have as much tracking on when using
- a secure connection as on an insecure connection, while the difference
- for random zone domains can be explained by the low HTTPS usage.
+ There are even a couple of domains among the Alexa sites which have more
+ than 75 recognized tracker organizations just on the front page -- a clear
+ example of how it is impossible to tell where your browsing habits can
+ end up, and even more so how it is used in a second stage.
+ It is also clear that the non-zone domains have as much tracking on when
+ using a secure connection as on an insecure connection, while the difference
+ for zone domains can be explained by the low HTTPS usage.
 \end_layout
 
 \begin_layout Standard
@@ -15753,7 +15789,11 @@ name "sub:Top-domains-General"
 \begin_layout Standard
 Facebook and Twitter have their like and tweet buttons which often are talked
  about in terms of social sharing, but it seems that their coverage is comparati
-vely low except for the .SE Health Status' media category.
+vely low except for the 
+\emph on
+.SE Health Status
+\emph default
+' media category.
  AddThis' service includes some of Facebook's and Twitter's buttons' functionali
 ty, among other social sharing sites but they do not have quite the same
  coverage.
