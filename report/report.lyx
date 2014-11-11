@@ -11997,7 +11997,7 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	% xlabel=Failures,
+	% xlabel=Ratio of domains,
 \end_layout
 
 \begin_layout Plain Layout
@@ -12542,7 +12542,7 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	% xlabel=Resources,
+	% xlabel=Ratio of domains,
 \end_layout
 
 \begin_layout Plain Layout
@@ -13358,7 +13358,7 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	% xlabel=Security,
+	% xlabel=Ratio of domains,
 \end_layout
 
 \begin_layout Plain Layout
@@ -14024,7 +14024,7 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	% xlabel=Security,
+	% xlabel=Ratio of domains with redirects,
 \end_layout
 
 \begin_layout Plain Layout
