@@ -1751,19 +1751,6 @@ Limitations
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about limitations.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 With lists of domains as input, this thesis only looks at the front page
  of domains.
  While others have spidered entire websites from the root to find, for example,
@@ -1804,19 +1791,6 @@ status open
 
 \begin_layout Plain Layout
 Where is a good place for document style information?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about document style.
 \end_layout
 
 \end_inset
@@ -3015,27 +2989,6 @@ Extract a data table with popular content domains.
 \end_layout
 
 \begin_layout Section
-Other notable results
-\end_layout
-
-\begin_layout Standard
-Some results differ from my own assumptions.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about notable results.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
 Automated, scalable data collection and repeatable analysis
 \end_layout
 
@@ -3823,19 +3776,6 @@ name "chap:Future-work"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Mention further grouping, digging into the data.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Unanswered questions
 \end_layout
@@ -4540,11 +4480,17 @@ y and correctness.
  download and analysis, and code refactoring can only be postponed.
  Foreseeing a greater reuse of JSON and jq tools, a separate open source
  project has been started -- jq-hopkok 
-\begin_inset Note Greyedout
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to jq-hopkok.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/joelpurra/jq-hopkok"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8428,18 +8374,6 @@ target "http://gs.statcounter.com/#resolution-ww-monthly-201307-201407"
 Scripted browser scrolling (vertically) through the page has not been performed,
  thus javascript scrolling events triggering for example downloading of
  images below the fold are not guaranteed.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Check if all images are automatically downloaded by phantomjs, as if the
- page had been scrolled, as they seem present in screenshots.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -8557,24 +8491,21 @@ HTTP and HTTPS.
 \begin_layout Itemize
 Empty prefix versus www prefix/subdomain.
  The www subdomain has historically been used to denote a web server serving
- websites 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to www prefix claim.
-\end_layout
-
-\end_inset
-
-, and it still seems to have a higher usage than no prefix 
+ websites, and it still seems to have a higher usage than no prefix (
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "sec:Failed-versus-non-failed"
 
 \end_inset
 
-.
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+).
  The 
 \emph on
 .SE Health Status
@@ -8747,19 +8678,6 @@ System load
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Test more load.
 \end_layout
 
 \end_inset
@@ -9237,19 +9155,6 @@ target "https://developers.google.com/webmasters/ajax-crawling/docs/getting-star
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about URLs.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Status
 \begin_inset CommandInset label
@@ -9367,19 +9272,6 @@ Mime-type grouping
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update list, use most common types.
 \end_layout
 
 \end_inset
@@ -9828,12 +9720,9 @@ target "http://json.org/"
 \end_inset
 
  standard 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert a link to the JSON standard as well.
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc7159"
 
 \end_inset
 
@@ -10386,12 +10275,18 @@ netsniff.js
 
 \end_inset
 
- 
-\begin_inset Note Greyedout
+
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to the original netsniff.js example.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ariya/phantomjs/blob/master/examples/netsniff.js"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10639,20 +10534,10 @@ one-shot/
  folder are used the most.
  These convenience scripts also leave the files from partial executions,
  so the can be used for other kinds of analysis.
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about more scripts.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-At the time of writing, there are 59 scripts in har-dulcify.
+At the time of writing, there are 67 scripts in har-dulcify.
  Here is a selection with explanations.
 \end_layout
 
@@ -11064,43 +10949,7 @@ classification/effective-tld/prepare-list.sh
 status collapsed
 
 \begin_layout Plain Layout
-aggregate/prepare.sh
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-aggregate/prepare2.sh
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Rename this script?
+aggregate/prepare*.sh
 \end_layout
 
 \end_inset
@@ -11432,6 +11281,27 @@ Analyze requests to see if there are redirects from the origin page initially
 status collapsed
 
 \begin_layout Plain Layout
+questions/ratio-buckets.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Collects occurrences of arbitrary things and ratios of other things per
+ domain, puts them into 100+ counter buckets and calculates normalized and
+ cumulative versions.
+ Used to get the number of Disconnect organizations and ratios of internal
+ and secure resources.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 multiset/*.sh
 \end_layout
 
@@ -11446,18 +11316,7 @@ A set of scripts that perform tasks on multiple datasets at once -- an aggregate
  The scripts were developed late in the process, to extract small pieces
  of data per dataset for the report.
  The small pieces of data are combined to files with tab-separated values,
- which are the source of most data tables in the report.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more about multiset scripts.
-\end_layout
-
-\end_inset
-
-
+ which are the source of most data tables and figures in the report.
 \end_layout
 
 \begin_layout Standard
@@ -11494,19 +11353,6 @@ Detailed results
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Detailed-Results"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Answer questions posed earlier.
-\end_layout
 
 \end_inset
 
@@ -11758,16 +11604,6 @@ numprint{99428}
  have crashes in 0.25-2.5% of domains.
  Most crashes were observed to be caused by malformed image data triggering
  an uncaught software exception in the JPEG image decoder used by phantomjs.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Check if captured error messages can confirm the source.
-\end_layout
-
-\end_inset
-
  Looking at the resulting HAR files means that both local software errors
  and remote errors are considered failures.
  The analysis can be improved with additional testing and improvements to
