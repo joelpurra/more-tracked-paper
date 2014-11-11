@@ -252,8 +252,11 @@ ytick={0,.1,...,1.1},
 enlargelimits=false,
 % Marks 0% and 99%.
 mark repeat=99,
-legend pos=south east,
+% Using a custom position below.
+% legend pos=south east,
 legend style={
+at={(.99,.01)},
+anchor=south east,
 cells={anchor=west},
 },
 },
@@ -291,3 +294,27 @@ mark indices={1},
 }
 }
 
+\newcommand{\CDFPlotFromDataset}[3]{
+	\addplot+[#3,solid,mark=*,every mark/.append style={#3,solid},]
+		table[x=colnames,y=#2-http-www]
+		{#1};
+	\addlegendentry{#2-http-www}
+	\addplot+[#3,dashed,mark=square*,every mark/.append style={#3,solid},]
+		table[x=colnames,y=#2-https-www]
+		{#1};
+	\addlegendentry{#2-https-www}
+}
+
+\newcommand{\CDFPlotFromDefaultDatasets}[1]{
+	\CDFPlotFromDataset{#1}{alexa.2014-09-01.top.10000}{red}
+	\CDFPlotFromDataset{#1}{alexa.2014-09-01.top.se.10000}{blue}
+	\CDFPlotFromDataset{#1}{se.2014-07-10.random.100000}{brown}
+	\CDFPlotFromDataset{#1}{se.healthstatus.2013.municipalities}{violet}
+	% \CDFPlotFromDataset{#1}{se.healthstatus.2013.media}{teal}
+}
+
+\newcommand{\CDFPlotFromDefaultDatasetsFile}[1]{
+	\pgfplotstabletranspose[colnames from=Dataset]\tableTransposedDatasetsFromFile{#1}
+
+	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsFromFile}
+}
