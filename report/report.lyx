@@ -218,10 +218,10 @@ leftmark}
 \end_layout
 
 \begin_layout Abstract
-While browsing web sites third-party resources track your online habits,
+While browsing websites third-party resources track your online habits,
  which can be considered an invasion of privacy.
  It was previously unknown how many third-party resources, known trackers
- and tracker companies are represented on an average web site.
+ and tracker companies are represented on an average website.
  While downloading over 
 \begin_inset ERT
 status open
@@ -235,8 +235,8 @@ numprint{150000}
 
 \end_inset
 
- globally popular as well as random .com/.net/.se/.dk web sites, in-browser
- HTTP/HTTPS traffic was recorded.
+ globally popular as well as random .com/.net/.se/.dk websites, in-browser HTTP/HTTP
+S traffic was recorded.
  Data shows that known third-party resources including known trackers are
  present on over 70% 
 \begin_inset Note Greyedout
@@ -357,7 +357,7 @@ Mention related work?
 
 \begin_layout Standard
 This thesis uses large-scale measurements to characterize how different
- kinds of domains in Sweden and internationally use web site resources.
+ kinds of domains in Sweden and internationally use website resources.
  Front pages of approximately 
 \begin_inset ERT
 status open
@@ -449,7 +449,7 @@ Insert reference to results chapter.
 
 \begin_layout Itemize
 Software for automated, repeatable retrieval and analysis of large amounts
- of web sites was developed, and released as open source (see appendix 
+ of websites was developed, and released as open source (see appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Software"
@@ -474,8 +474,8 @@ target "http://joelpurra.com/projects/masters-thesis/"
 
 \end_inset
 
- The data allows analysis of web sites' HTTP requests including the use
- of resources internal versus external to the entry domain, which the most
+ The data allows analysis of websites' HTTP requests including the use of
+ resources internal versus external to the entry domain, which the most
  common confirmed tracker organizations are, what spread they have and how
  much the average internet user can expect to be tracked by visiting some
  of the most important and popular sites in Sweden, Denmark and worldwide.
@@ -842,7 +842,7 @@ reference "sub:.SE-Health-Status"
  and other nation-wide publicly relevant organization groups' domains, as
  they have been deemed important to Sweden and Swedes.
  This thesis incorporates those lists, but focus on only the associated
- web sites.
+ websites.
 \end_layout
 
 \begin_layout Section
@@ -1258,7 +1258,7 @@ recognized
 \end_layout
 
 \begin_layout Standard
-Resources have not been blocked in the browser during web site retrieval,
+Resources have not been blocked in the browser during website retrieval,
  but have been matched by URL against a third-party list in the classification
  step 
 \begin_inset CommandInset ref
@@ -1397,7 +1397,7 @@ reference "sub:HTTP-Archive-(HAR)-format"
 \begin_layout Standard
 In order to make comparisons between insecure HTTP and secure HTTPS, domains
  have been accessed using both protocols.
- As web sites traditionally have been hosted on the www subdomain, not all
+ As websites traditionally have been hosted on the www subdomain, not all
  domains have been configured to respond to HTTP requests to the primary
  domain -- thus both the added www prefix and no added prefix have been
  accessed.
@@ -1766,8 +1766,8 @@ Write about limitations.
 \begin_layout Standard
 With lists of domains as input, this thesis only looks at the front page
  of domains.
- While others have spidered entire web sites from the root to find, for
- example, a specific group of external services 
+ While others have spidered entire websites from the root to find, for example,
+ a specific group of external services 
 \begin_inset Note Greyedout
 status open
 
@@ -2160,7 +2160,7 @@ Trackers
 
 \begin_layout Standard
 While looking at the number of requests made to trackers can give a hint
- towards how much tracking is installed a web site
+ towards how much tracking is installed a website
 \end_layout
 
 \begin_layout Standard
@@ -2945,8 +2945,8 @@ target "https://developers.google.com/speed/libraries/"
  as components, but they cannot be removed without affecting functionality.
  Especially the two latter, served from the googleapis.com domain, are prevalent
  in several of the datasets -- and they are usually loaded on every single
- page on a web site, and thus gain full (but passive, as opposed to for
- example Google Analytics) insight on users' click paths and web history.
+ page on a website, and thus gain full (but passive, as opposed to for example
+ Google Analytics) insight on users' click paths and web history.
 \end_layout
 
 \begin_layout Standard
@@ -3016,7 +3016,7 @@ not invented here
 
  mentality.
  Fortunately, the code is easy to run, and with proper documentation other
- groups should be able to at least test simple theories regarding web sites.
+ groups should be able to at least test simple theories regarding websites.
  Some of the lists of domains used as input are publicly available, and
  thus results can also be shared.
  This should encourage other groups, as looking at example data might spark
@@ -3441,7 +3441,7 @@ In order to facilitate repeatable and improvable analysis, tools will be
  developed to perform the collection and aggregation steps automatically.
  .SE already has a set of tools that run monthly; integration and interoperabilit
 y will smooth the process and continuous usage.
- There is also a public .SE tool to allow web site owners to test their own
+ There is also a public .SE tool to allow website owners to test their own
  sites, 
 \emph on
 Domain Check
@@ -3830,7 +3830,7 @@ Can the same techniques be applied to data from countries other than Sweden?
 \end_layout
 
 \begin_layout Section
-Creating an information web site
+Creating an information website
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Creating-an-information-web-site"
@@ -4001,8 +4001,8 @@ Investigating failed domains
 There are many reasons domain retrieval could fail, but for top or curated
  domain lists the chances of the site being down are considerably lower
  than for randomly selected domains.
- Each web site has been requested up to three times, in order to avoid intermitt
-ent problems 
+ Each website has been requested up to three times, in order to avoid intermitte
+nt problems 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-domains"
@@ -4238,9 +4238,9 @@ target "https://github.com/tribbloid/spookystuff"
 \end_inset
 
 .
- Built to spider and extract data from web sites using multiple -- even
- thousands -- of machines on Amazon's cloud computing platform, it could
- enable analysis of for example entire TLD zones.
+ Built to spider and extract data from websites using multiple -- even thousands
+ -- of machines on Amazon's cloud computing platform, it could enable analysis
+ of for example entire TLD zones.
  
 \begin_inset Note Greyedout
 status open
@@ -6517,7 +6517,7 @@ target "https://en.wikipedia.org/wiki/HTTP_cookie#Supercookie"
 \end_inset
 
 ; cookies which are scoped to a public suffix, and therefore readable across
- all web sites under that public suffix.
+ all websites under that public suffix.
  The same dataset is also useful for grouping domains without improperly
  counting 
 \begin_inset Flex Code
@@ -7426,12 +7426,12 @@ Analytics
 \end_layout
 
 \begin_layout Standard
-Analytics services offer a simple way for web site owners to gather data
+Analytics services offer a simple way for website owners to gather data
  about their visitors.
  The service is often completely hosted on external servers, and the only
- connection is a javascript file loaded by the web site.
+ connection is a javascript file loaded by the website.
  The script collects data, sends it back to the service and then presents
- aggregate numbers and graphs to the web site owner.
+ aggregate numbers and graphs to the website owner.
 \end_layout
 
 \begin_layout Description
@@ -7642,8 +7642,8 @@ name "sec:Retrieving-websites-and-resources"
 \end_layout
 
 \begin_layout Standard
-Web sites based on lists of domains were downloaded using har-heedless,
- see 
+Websites based on lists of domains were downloaded using har-heedless, see
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:har-heedless"
@@ -7738,7 +7738,7 @@ The laptop machine was connected by ethernet to the .SE office network, which
  The .SE network technicians said load was kept very low, and only a few
  percent of the dedicated 100 Mbps per location was used.
  Both locations are in Stockholm city, and should therefore be well placed
- in regard to web sites hosted in Sweden.
+ in regard to websites hosted in Sweden.
 \end_layout
 
 \begin_layout Subsection
@@ -7805,7 +7805,7 @@ Cached content
 \end_layout
 
 \begin_layout Standard
-Many of the external resources will be overlapping between web sites and
+Many of the external resources will be overlapping between websites and
  domains, and downloading them multiple times can be avoided by caching
  the file the first time in a run.
  Keeping cached content would, depending on per-response cache settings
@@ -7937,9 +7937,9 @@ Combined javascript
 \end_layout
 
 \begin_layout Standard
-A common technique for speeding up web sites is to reduce the number of
- resources the browser needs to download, by combining or concatenating
- them in different ways depending on the file format.
+A common technique for speeding up websites is to reduce the number of resources
+ the browser needs to download, by combining or concatenating them in different
+ ways depending on the file format.
  Javascript is a good example where there are potential benefits
 \begin_inset Foot
 status open
@@ -8492,20 +8492,20 @@ name "sec:Dataset-variations"
 
 \begin_layout Standard
 Each dataset has been used in four variations, effectively quadrupling the
- number of web sites access attempts.
+ number of websites access attempts.
  Each of these variations have been downloaded and analyzed separately,
  then used for both intra- and inter-dataset comparisons.
 \end_layout
 
 \begin_layout Itemize
 HTTP and HTTPS.
- Enables comparisons between secure and insecure origin web site requests.
+ Enables comparisons between secure and insecure origin website requests.
 \end_layout
 
 \begin_layout Itemize
 Empty prefix versus www prefix/subdomain.
  The www subdomain has historically been used to denote a web server serving
- web sites 
+ websites 
 \begin_inset Note Greyedout
 status open
 
@@ -8527,7 +8527,7 @@ reference "sec:Failed-versus-non-failed"
 \emph on
 .SE Health Status
 \emph default
- reports specifically accesses web sites on the www subdomain.
+ reports specifically accesses websites on the www subdomain.
 \end_layout
 
 \begin_layout Standard
@@ -8787,7 +8787,7 @@ name "sec:Failed-domains"
 \end_layout
 
 \begin_layout Standard
-Some web sites are not downloaded successfully, for different reasons.
+Some websites are not downloaded successfully, for different reasons.
  The DNS settings might not be correct, the server may be shut down, there
  might have been a temporary network timeout, there might have been a software
  error -- or the server has been programmed to not respond to automated
@@ -10127,7 +10127,7 @@ target "https://github.com/joelpurra/har-portent"
 
 \begin_layout Standard
 A set of scripts that both downloads, retries failed downloads and analyzes
- web sites in a single run -- see har-heedless 
+ websites in a single run -- see har-heedless 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:har-heedless"
@@ -15961,7 +15961,7 @@ Insert link to Google's push towards DoubleClick.
  age, gender and interests on top of their current technical analysis from
  Google Analytics.
  The underlying reason is possibly that Google wants DoubleClick, which
- brings a lot of income, to have greater coverage across web sites -- greater
+ brings a lot of income, to have greater coverage across websites -- greater
  coverage meaning more and higher quality visitor information.
  While Google owns both services, site owner/visitor/usage policies 
 \begin_inset Note Greyedout
