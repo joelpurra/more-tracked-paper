@@ -3791,6 +3791,16 @@ Could any external resources actually be considered internal, despite being
 \end_layout
 
 \begin_layout Itemize
+Could internal resources also be seen as external, if another organization
+ manage the servers?
+\end_layout
+
+\begin_layout Itemize
+How can more domains be connected to organizations, in terms of ownership,
+ as in Disconnect's blocking list?
+\end_layout
+
+\begin_layout Itemize
 How to determine if a resource
 \end_layout
 
@@ -3804,10 +3814,6 @@ Is handled by an organization with base or ownership outside of Sweden?
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-Which external resources are loaded from Sweden and abroad respectively?
-\end_layout
-
 \begin_layout Itemize
 What user data could potentially be collected, and subsequently inferred?
 \end_layout
@@ -11860,7 +11866,7 @@ begin{axis}[
 \backslash
 XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted}{1xx}{1xx}{orange}
+tableDatasetsRequestStatusCoverageOriginSorted}{1xx}{1xx}{orange}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11873,7 +11879,7 @@ tableDatasetsRequestStatusCoverageOriginSorted}{1xx}{1xx}{orange}
 \backslash
 XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted}{2xx}{2xx}{green}
+tableDatasetsRequestStatusCoverageOriginSorted}{2xx}{2xx}{green}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11886,7 +11892,7 @@ tableDatasetsRequestStatusCoverageOriginSorted}{2xx}{2xx}{green}
 \backslash
 XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted}{3xx}{3xx}{yellow}
+tableDatasetsRequestStatusCoverageOriginSorted}{3xx}{3xx}{yellow}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11899,7 +11905,7 @@ tableDatasetsRequestStatusCoverageOriginSorted}{3xx}{3xx}{yellow}
 \backslash
 XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted}{4xx}{4xx}{orange}
+tableDatasetsRequestStatusCoverageOriginSorted}{4xx}{4xx}{orange}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11912,7 +11918,7 @@ tableDatasetsRequestStatusCoverageOriginSorted}{4xx}{4xx}{orange}
 \backslash
 XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted}{5xx}{5xx}{orange}
+tableDatasetsRequestStatusCoverageOriginSorted}{5xx}{5xx}{orange}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11925,7 +11931,7 @@ tableDatasetsRequestStatusCoverageOriginSorted}{5xx}{5xx}{orange}
 \backslash
 XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted}{(null)}{(null)}{red}
+tableDatasetsRequestStatusCoverageOriginSorted}{(null)}{(null)}{red}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12129,6 +12135,59 @@ status open
 
 
 \backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at internal versus external domains, with regards to the origin
+ domain, is easy to do as it is only a matter of string comparison.
+ The next step would be to use organization grouping, as seen in the Disconnect
+ classifications 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Disconnect's-blocking-list-matches"
+
+\end_inset
+
+.
+ While it requires more extensive reverse requests' domain usage mapping
+ work to detect private CDN domains plus manual classification work, and
+ might only be effective for top organizations with many services, it adds
+ to seeing legal entities as information receivers rather than the merely
+ technical domain partitioning.
+ It also adds more questions -- could for example a private CDN domain hosted
+ in another organization's datacenter be seen as both internal and external?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 end{wide}
 \end_layout
 
@@ -12238,7 +12297,7 @@ begin{axis}[
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Internal}{Interna
-l}{green}
+l}{green}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12252,7 +12311,7 @@ l}{green}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Mixed}{Mixed}{yel
-low}
+low}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12266,7 +12325,7 @@ low}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{External}{Externa
-l}{orange}
+l}{orange}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12980,7 +13039,7 @@ begin{axis}[
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationSecureCoverageSorted}{All sec}{Secure}{green
-}
+}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12994,7 +13053,7 @@ tableDatasetsNonFailedClassificationSecureCoverageSorted}{All sec}{Secure}{green
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationSecureCoverageSorted}{Mix sec}{Mixed}{yellow
-}
+}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13008,7 +13067,7 @@ tableDatasetsNonFailedClassificationSecureCoverageSorted}{Mix sec}{Mixed}{yellow
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationSecureCoverageSorted}{All insec}{Insecure}{o
-range}
+range}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13562,7 +13621,7 @@ begin{axis}[
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Sec}{Secure}{
-green}
+green}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13576,7 +13635,7 @@ green}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mix sec}{Mixe
-d}{yellow}
+d}{yellow}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13590,7 +13649,7 @@ d}{yellow}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Insec}{Insecu
-re}{orange}
+re}{orange}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13604,7 +13663,7 @@ re}{orange}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mism}{Mismatc
-h}{lightgray}
+h}{lightgray}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -14928,7 +14987,77 @@ name "sub:Top-organizations"
 \begin_layout Standard
 A selection of organizations, and their coverage across different datasets.
  Facebook and Twitter are often touted as the big social network sites,
- but in terms of domain coverage they are far behind Google.
+ but in terms of domain coverage they are far behind Google -- see figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:google-facebook-twitter-coverage"
+
+\end_inset
+
+.
+ As these three organizations, and most of their domains, are included in
+ the Disconnect category of Disconnect's blocking list 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+, an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+
+ has been added to show their collective Disconnect category coverage 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-categories"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Google is very popular with all Alexa and most Swedish curated datasets
+ having a coverage above 80% -- and many closer to 90%.
+ Random domains have a lower reliance on Google at 47-62% -- still about
+ half of all domains.
+ Apart from the .SE Health Status list of Swedish media domains, Facebook
+ doesn't reach 40% in top or curated domains.
+ Facebook coverage on random zone domains is 6-10%, which is also much lower
+ than Google's numbers.
+ Twitter generally has even lower coverage, at about half of that of Facebook
+ on average.
+ As can be seen, Google alone oftentimes has a coverage higher than the
+ domains in the Disconnect category -- it shows that Google's content domains
+ are in use 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Organizations-in-more-than-one-category"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about other organizations.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14954,6 +15083,387 @@ status open
 \backslash
 tsvtablesuperwidedatasets{datasets.non-failed.disconnect.organizations.coverage.exter
 nal.sorted.tsv}{Top Disconnect organization match coverage}{}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% TODO: Move this table read to the categories heading.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% TODO DEBUG REMOVE
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{external/remake next}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbarPart2,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Google}{Goo
+gle}{red!90!white}{bar shift=1pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Facebook}{F
+acebook}{blue!90!white}{bar shift=0pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Twitter}{Tw
+itter}{cyan!70!white}{bar shift=-1pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot+[
+\end_layout
+
+\begin_layout Plain Layout
+
+		stack plots=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+		only marks,
+\end_layout
+
+\begin_layout Plain Layout
+
+		mark=x,
+\end_layout
+
+\begin_layout Plain Layout
+
+		mark size=3pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=white,
+\end_layout
+
+\begin_layout Plain Layout
+
+		draw=black,
+\end_layout
+
+\begin_layout Plain Layout
+
+		semithick,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill opacity=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+    	update limits=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+		line legend,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Disconnect]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Disconnect}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:google-facebook-twitter-coverage"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Google, Facebook and Twitter coverage
+\end_layout
+
+\end_inset
+
+Ratio of domains with requests to Google, Facebook and Twitter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
 \end_layout
 
 \end_inset

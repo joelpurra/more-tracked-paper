@@ -246,9 +246,21 @@ xbar stacked=plus,
 },
 }
 
-\newcommand{\XBarPlotFromDataset}[4]{
+\pgfplotsset{allDatasetsMultiXbar/.style=
+{
+xbar,
+},
+allDatasetsMultiXbarPart2/.style=
+{
+bar width=4pt,
+% bar direction=y,
+very thin,
+},
+}
+
+\newcommand{\XBarPlotFromDataset}[5]{
 	\addplot[
-			fill=#4,
+			fill=#4,#5
 		]
 		table[y=Dataset,x=#2]
 		{#1};
