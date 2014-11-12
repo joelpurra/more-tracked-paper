@@ -1,20 +1,20 @@
 Swedish top/curated	Random .se	Other findings
 {
-Over 90\% of most categories' domains rely on external resources (\ref{sec:Internal-versus-external})
+Over 90\% of most categories' domains rely on external resources -- considered trackers (\ref{sec:Internal-versus-external})
 }	{
 Uses more external resources than .dk, but less than .com and .net (\ref{sec:Internal-versus-external})
 }	{
 There are as many external resources, meaning as much tracking, on secure as insecure top domains (figure \ref{fig:Cumulative-distribution-ratio-internal-resources})
 }
 {
-Less than 5\% of municipalities are secure and Swedish media sites are completely insecure (\ref{sec:Insecure-versus-secure-resources})
+Only 13 of 290 municipalities have fully secure websites; no Swedish media sites are completely secure (\ref{sec:Insecure-versus-secure-resources})
 }	{
 YYY
 }	{
 ZZZ
 }
 {
-25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely - it's close, but still considered insecure (figure \ref{fig:Cumulative-distribution-ratio-secure-resources})
+25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely -- it's close, but still considered insecure (figure \ref{fig:Cumulative-distribution-ratio-secure-resources})
 }	{
 YYY
 }	{
@@ -37,9 +37,9 @@ Many random domains use only external resources due to redirects away from the o
 {
 XXX
 }	{
-40% of random .se domains have no known trackers - 60% do (\ref{sub:Domain-and-organization}).
+40\% of random .se domains have no known trackers -- 60\% do (figure \ref{fig:Organizations-per-domain})
 }	{
-A few global top domains load more than 75 known trackers on their front page alone (\ref{sub:Domain-and-organization}).
+A few global top domains load more than 75 known trackers on their front page alone (\ref{sub:Domain-and-organization})
 }
 {
 XXX

@@ -12966,6 +12966,16 @@ One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
  The following table shows which to what extent sites manage to take full
  advantage of HTTPS, and to which extent they fail in requesting either
  internal or external resources.
+ Note that HTTP domains that redirect to HTTPS 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+ right away and/or only load HTTPS resources are shown as fully secure,
+ as the analysis excludes the origin request -- although in general an initial
+ request to HTTP can potentially nullify all subsequent security measures.
  See also figures 
 \begin_inset CommandInset ref
 LatexCommand ref
