@@ -11780,6 +11780,35 @@ Pages with wide tables end here.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -11973,6 +12002,35 @@ Distribution of HTTP status codes
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset
@@ -12202,6 +12260,35 @@ status open
 
 \begin_layout Plain Layout
 Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
 \end_layout
 
 \end_inset
@@ -12515,6 +12602,35 @@ Cumulative distribution of the ratio of internal resources per domain
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset
@@ -12952,6 +13068,35 @@ Pages with wide tables end here.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -13237,6 +13382,35 @@ Cumulative distribution of the ratio of secure resources per domain
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset
@@ -13534,6 +13708,35 @@ Pages with wide tables end here.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -13801,6 +14004,35 @@ Distribution of domains with strictly secure, mixed or strictly insecure
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset
@@ -14448,6 +14680,35 @@ Pages with wide tables end here.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -14598,6 +14859,35 @@ Cumulative distribution of the number of organizations per domain
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset
@@ -15003,6 +15293,49 @@ Pages with wide tables end here.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Keeping read of datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv
+ outside of groups, as it is re-used between figures.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -15086,7 +15419,7 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	bar width=2pt,
+	bar width=2.5pt,
 \end_layout
 
 \begin_layout Plain Layout
@@ -15105,7 +15438,7 @@ begin{axis}[
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Disconnect}{Di
-sconnect}{orange!80!white}{bar shift=2pt,}
+sconnect}{orange!80!white}{bar shift=3pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15119,7 +15452,7 @@ sconnect}{orange!80!white}{bar shift=2pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Content}{Conte
-nt}{olive!80!white}{bar shift=1pt,}
+nt}{olive!80!white}{bar shift=1.5pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15147,7 +15480,7 @@ dvertising}{teal!80!white}{bar shift=0pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Analytics}{Ana
-lytics}{purple!80!white}{bar shift=-1pt,}
+lytics}{purple!80!white}{bar shift=-1.5pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15161,7 +15494,7 @@ lytics}{purple!80!white}{bar shift=-1pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Social}{Social
-}{brown!80!white}{bar shift=-2pt,}
+}{brown!80!white}{bar shift=-3pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15213,6 +15546,35 @@ Ratio of domains with requests to Google, Facebook and Twitter
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset
@@ -15396,6 +15758,35 @@ Pages with wide tables end here.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -15488,7 +15879,7 @@ begin{axis}[
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Google}{Goo
-gle}{red!90!white}{bar shift=1pt,}
+gle}{red!90!white}{bar shift=2pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15516,7 +15907,7 @@ acebook}{blue!90!white}{bar shift=0pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Twitter}{Tw
-itter}{cyan!70!white}{bar shift=-1pt,}
+itter}{cyan!70!white}{bar shift=-2pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15653,6 +16044,35 @@ Ratio of domains with requests to Google, Facebook and Twitter
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
 \end_layout
 
 \end_inset

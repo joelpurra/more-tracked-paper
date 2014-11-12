@@ -30,6 +30,26 @@
 \aftergroup\restoregeometry
 }
 
+\newenvironment{portraitdatapage}{
+\pagebreak
+\newgeometry{
+ top=15mm,
+ inner=15mm,
+ outer=15mm,
+ bottom=15mm,
+ headheight=15pt,
+ headsep=5mm,
+ footnotesep=5mm,
+ footskip=10mm}
+% Use TiKZ?
+% http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
+\setlength\LTleft{0pt}            % default: \fill
+\setlength\LTright{0pt}           % default: \fill
+}{
+\pagebreak
+\aftergroup\restoregeometry
+}
+
 \usepackage{color}
 \definecolor{updated}{rgb}{0.8,0.85,1}
 
@@ -222,9 +242,9 @@ legend image code/.code={%
 },
 allDatasetsXbarFullPage/.style=
 {
-enlarge y limits=0.006,
-width=.6\textwidth,
-height=1.4\textwidth,
+enlarge y limits=0.008,
+width=.65\textwidth,
+height=1.47\textwidth,
 font=\small,
 legend columns=-1,
 legend style={at={(0.5,-16pt)},anchor=north}
@@ -292,7 +312,7 @@ cells={anchor=west},
 datasetsCDFFullPage/.style=
 {
 width=\textwidth,
-height=1.41\textwidth,
+height=1.46\textwidth,
 }
 }
 
