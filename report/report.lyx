@@ -14973,6 +14973,282 @@ d.tsv}{Disconnect category match coverage}{}{}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbarPart2,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ultra thin,
+\end_layout
+
+\begin_layout Plain Layout
+
+	bar width=2pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Disconnect}{Di
+sconnect}{orange!80!white}{bar shift=2pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Content}{Conte
+nt}{olive!80!white}{bar shift=1pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Advertising}{A
+dvertising}{teal!80!white}{bar shift=0pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Analytics}{Ana
+lytics}{purple!80!white}{bar shift=-1pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Social}{Social
+}{brown!80!white}{bar shift=-2pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:google-facebook-twitter-coverage-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Google, Facebook and Twitter coverage
+\end_layout
+
+\end_inset
+
+Ratio of domains with requests to Google, Facebook and Twitter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Top organizations
 \begin_inset CommandInset label
@@ -15131,48 +15407,6 @@ status open
 
 \begin_layout Plain Layout
 
-% TODO: Move this table read to the categories heading.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}
-\backslash
-tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
 
 \backslash
 pgfplotstableread[
@@ -15203,22 +15437,6 @@ tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-% TODO DEBUG REMOVE
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tikzset{external/remake next}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 
