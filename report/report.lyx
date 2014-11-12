@@ -11807,6 +11807,15 @@ pgfplotstableread[
 tableDatasetsRequestStatusCoverageOriginSorted
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
 
@@ -11828,27 +11837,12 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	allDatasetsStackedXbarFullPage,
+	allDatasetsXbar,
 \end_layout
 
 \begin_layout Plain Layout
 
-	% xlabel=Ratio of domains,
-\end_layout
-
-\begin_layout Plain Layout
-
-	% ylabel=Datasets,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend columns=-1,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend style={at={(0.5,-16pt)},anchor=north}
+	allDatasetsXbarFullPage,
 \end_layout
 
 \begin_layout Plain Layout
@@ -11864,36 +11858,9 @@ begin{axis}[
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=orange,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=1xx]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{1xx}
+tableDatasetsRequestStatusCoverageOriginSorted}{1xx}{1xx}{orange}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11904,36 +11871,9 @@ addlegendentry{1xx}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=green,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=2xx]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{2xx}
+tableDatasetsRequestStatusCoverageOriginSorted}{2xx}{2xx}{green}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11944,36 +11884,9 @@ addlegendentry{2xx}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=yellow,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=3xx]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{3xx}
+tableDatasetsRequestStatusCoverageOriginSorted}{3xx}{3xx}{yellow}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11984,36 +11897,9 @@ addlegendentry{3xx}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=orange,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=4xx]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{4xx}
+tableDatasetsRequestStatusCoverageOriginSorted}{4xx}{4xx}{orange}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12024,36 +11910,9 @@ addlegendentry{4xx}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=orange,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=5xx]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{5xx}
+tableDatasetsRequestStatusCoverageOriginSorted}{5xx}{5xx}{orange}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12064,36 +11923,9 @@ addlegendentry{5xx}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=red,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=(null)]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsRequestStatusCoverageOriginSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{(null)}
+tableDatasetsRequestStatusCoverageOriginSorted}{(null)}{(null)}{red}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12352,6 +12184,15 @@ pgfplotstableread[
 tableDatasetsNonFailedClassificationDomainScopeCoverageSorted
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
 
@@ -12373,27 +12214,12 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	allDatasetsStackedXbarFullPage,
+	allDatasetsXbar,
 \end_layout
 
 \begin_layout Plain Layout
 
-	% xlabel=Ratio of domains,
-\end_layout
-
-\begin_layout Plain Layout
-
-	% ylabel=Datasets,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend columns=-1,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend style={at={(0.5,-16pt)},anchor=north}
+	allDatasetsXbarFullPage,
 \end_layout
 
 \begin_layout Plain Layout
@@ -12409,36 +12235,10 @@ begin{axis}[
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=green,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Internal]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Internal}
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Internal}{Interna
+l}{green}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12449,36 +12249,10 @@ addlegendentry{Internal}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=yellow,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Mixed]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Mixed}
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Mixed}{Mixed}{yel
+low}
 \end_layout
 
 \begin_layout Plain Layout
@@ -12489,36 +12263,10 @@ addlegendentry{Mixed}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=orange,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=External]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationDomainScopeCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{External}
+tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{External}{Externa
+l}{orange}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13178,6 +12926,15 @@ pgfplotstableread[
 tableDatasetsNonFailedClassificationSecureCoverageSorted
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
 
@@ -13199,27 +12956,12 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	allDatasetsStackedXbarFullPage,
+	allDatasetsXbar,
 \end_layout
 
 \begin_layout Plain Layout
 
-	% xlabel=Ratio of domains,
-\end_layout
-
-\begin_layout Plain Layout
-
-	% ylabel=Datasets,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend columns=-1,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend style={at={(0.5,-16pt)},anchor=north}
+	allDatasetsXbarFullPage,
 \end_layout
 
 \begin_layout Plain Layout
@@ -13235,36 +12977,10 @@ begin{axis}[
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=green,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=All sec]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationSecureCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Secure}
+tableDatasetsNonFailedClassificationSecureCoverageSorted}{All sec}{Secure}{green
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13275,36 +12991,10 @@ addlegendentry{Secure}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=yellow,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Mix sec]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationSecureCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Mixed}
+tableDatasetsNonFailedClassificationSecureCoverageSorted}{Mix sec}{Mixed}{yellow
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13315,36 +13005,10 @@ addlegendentry{Mixed}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=orange,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=All insec]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationSecureCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Insecure}
+tableDatasetsNonFailedClassificationSecureCoverageSorted}{All insec}{Insecure}{o
+range}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13844,6 +13508,15 @@ pgfplotstableread[
 tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
 
@@ -13865,27 +13538,12 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	allDatasetsStackedXbarFullPage,
+	allDatasetsXbar,
 \end_layout
 
 \begin_layout Plain Layout
 
-	% xlabel=Ratio of domains with redirects,
-\end_layout
-
-\begin_layout Plain Layout
-
-	% ylabel=Datasets,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend columns=-1,
-\end_layout
-
-\begin_layout Plain Layout
-
-	legend style={at={(0.5,-16pt)},anchor=north}
+	allDatasetsXbarFullPage,
 \end_layout
 
 \begin_layout Plain Layout
@@ -13901,36 +13559,10 @@ begin{axis}[
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=green,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Sec]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Secure}
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Sec}{Secure}{
+green}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13941,36 +13573,10 @@ addlegendentry{Secure}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=yellow,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Mix sec]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Mixed}
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mix sec}{Mixe
+d}{yellow}
 \end_layout
 
 \begin_layout Plain Layout
@@ -13981,36 +13587,10 @@ addlegendentry{Mixed}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=orange,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Insec]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Insecure}
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Insec}{Insecu
+re}{orange}
 \end_layout
 
 \begin_layout Plain Layout
@@ -14021,36 +13601,10 @@ addlegendentry{Insecure}
 
 
 \backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=lightgray,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[y=Dataset,x=Mism]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
+XBarPlotFromDataset{
 \backslash
-tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addlegendentry{Mismatch}
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mism}{Mismatc
+h}{lightgray}
 \end_layout
 
 \begin_layout Plain Layout

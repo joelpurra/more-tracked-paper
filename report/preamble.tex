@@ -201,9 +201,8 @@ display columns/0/.append style={string replace*={-http}{-h}},%
 %\tikzset{external/force remake}
 %\tikzset{external/remake next}
 
-\pgfplotsset{allDatasetsStackedXbar/.style=
+\pgfplotsset{allDatasetsXbar/.style=
 {
-xbar stacked=plus,
 enlarge x limits=false,
 bar width=6pt,
 fill opacity=0.9,
@@ -221,12 +220,14 @@ legend image code/.code={%
 \draw[#1] (0pt,-4pt) rectangle (8pt,4pt);
 },
 },
-allDatasetsStackedXbarFullPage/.style=
+allDatasetsXbarFullPage/.style=
 {
 enlarge y limits=0.006,
 width=.6\textwidth,
 height=1.4\textwidth,
-font=\small
+font=\small,
+legend columns=-1,
+legend style={at={(0.5,-16pt)},anchor=north}
 },
 xticklabel style={
 /pgf/number format/fixed,
@@ -238,6 +239,20 @@ yticklabel style={
 /pgf/number format/fixed zerofill,
 /pgf/number format/precision=2
 }
+}
+\pgfplotsset{allDatasetsStackedXbar/.style=
+{
+xbar stacked=plus,
+},
+}
+
+\newcommand{\XBarPlotFromDataset}[4]{
+	\addplot[
+			fill=#4,
+		]
+		table[y=Dataset,x=#2]
+		{#1};
+	\addlegendentry{#3}
 }
 
 \pgfplotsset{datasetsCDF/.style=
