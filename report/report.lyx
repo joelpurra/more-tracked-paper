@@ -15297,35 +15297,6 @@ Pages with wide tables end here.
 status open
 
 \begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{portraitdatapage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 Keeping read of datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv
  outside of groups, as it is re-used between figures.
 \end_layout
@@ -15361,6 +15332,35 @@ pgfplotstableread[
 	]{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
 \end_layout
 
 \end_inset
