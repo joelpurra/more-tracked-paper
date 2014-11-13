@@ -1132,17 +1132,6 @@ status collapsed
 \end_inset
 
  -- technically a second-level domain.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Is the technical term correct?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3451,12 +3440,12 @@ y will smooth the process and continuous usage.
 \emph on
 Domain Check
 \emph default
- 
-\begin_inset Note Greyedout
+
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Add link to Domain Check.
+Domänkollen was not publicly released at the time of writing.
 \end_layout
 
 \end_inset
@@ -3846,12 +3835,18 @@ Despite thesis code being open source, much of the thesis data is hard to
  could accept user input to analyze individual domains.
  With several domains as input, any overlap can be detected and presented
  to the user as an information sharing graph.
- One of the inspirations for this thesis was Collusion 
-\begin_inset Note Greyedout
+ One of the inspirations for this thesis was Collusion
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Collusion, or whatever it is called these days.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://collusion.toolness.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4126,17 +4121,23 @@ Accept-Language
 
 \end_inset
 
- prioritizing Swedish.
- 
-\begin_inset Note Greyedout
+ prioritizing Swedish
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Google's language page ranking.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://googlewebmastercentral.blogspot.se/2010/03/working-with-multi-regional-websites.html"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
+.
  This stems from them seeing that localized results have a higher usage
  rate.
 \end_layout
@@ -4239,17 +4240,6 @@ target "https://github.com/tribbloid/spookystuff"
  Built to spider and extract data from websites using multiple -- even thousands
  -- of machines on Amazon's cloud computing platform, it could enable analysis
  of for example entire TLD zones.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Check spookystuff data for facts.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -4301,34 +4291,78 @@ reference "sub:Disconnect's-blocking-list"
 \end_inset
 
 ).
- One of the most popular ones is EasyList 
-\begin_inset Note Greyedout
+ One of the most popular ones is EasyList
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to EasyList, verify format.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://easylist.adblockplus.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-, which exists in several varieties.
- They were considered, but in the end not incorporated because of the lower
- quality of the filter list format.
+, which exists in several varieties -- privacy blocking, country specific,
+ social media content blocking and others.
+ They were considered, but in the end not incorporated because of the filter
+ list format.
  It is a mixture of HTML element and URL blocking, and it lacks the connection
- between blocks and corresponding organization.
- There is also Ghostery, which uses a proprietary list that also contains
- organizations, but it has not been used because of licensing issues.
- 
-\begin_inset Note Greyedout
+ between blocks and corresponding organization
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Ghostery, verify license.
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://easylist-downloads.adblockplus.org/easylist.txt"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+.
+ There is also Ghostery
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.ghostery.com/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, which uses a proprietary list that also contains organizations, but it
+ has not been used because of licensing issues
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.ghostery.com/eula"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4438,12 +4472,18 @@ Data transformations have been written in a semi-structured manner, with
 
 \begin_layout Standard
 One solution to validating both input and output would have been to create
- JSON schemas 
-\begin_inset Note Greyedout
+ JSON schemas
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to JSON schema.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://json-schema.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4524,17 +4564,6 @@ At the time of writing, jq is released as version 1.4.
  Support for modules is planned for a version after 1.5.
  Packages/package managers are external to the jq core, and do not follow
  the same planning.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Verify version planning.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4590,17 +4619,23 @@ This domain was purchased from ...
 \begin_inset Quotes erd
 \end_inset
 
-) and advertisement domains (such as Google Adwords for Domains 
-\begin_inset Note Greyedout
+) and advertisement domains (such as Google Adsense for Domains
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.google.com/domainpark/index.html"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-).
+, now retired, or similar Adsense usage).
  There is a Sweden-centric list of site titles for recognized non-content
  pages available internally at .SE, but it has not been incorporated.
 \end_layout
@@ -4784,12 +4819,18 @@ reference "sub:Ignore-domains-without-content"
 
 \begin_layout Itemize
 Use of external tools to classify domains based on, for example, web server
- IP-addresses mapped to a geographical locations 
-\begin_inset Note Greyedout
+ IP-addresses mapped to a geographical locations
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to geoip information.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Geolocation_software"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5794,6 +5835,30 @@ description "The part of a domain name that is unavilable for registrations, use
 LatexCommand nomenclature
 symbol "Zone"
 description "A technical as well as administrative part of DNS. Each dot in a domain name represents another zone, from the implicit root zone to TLDs and privately owned zones -- which in turn can contain more privately controlled zones."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SLD"
+description "Second-level domain"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ccSLD"
+description "Country-code second-level domain. A SLD that belongs to a country code TLD. A ccSLD is not for public use, which are required to register their domains on the third domain level."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Second-level domain"
+description "(SLD) A domain that is directly below a TLD. Can be a domain registerable to the public, or a ccSLD."
 
 \end_inset
 
@@ -7399,18 +7464,7 @@ appnexus.com The AppNexus ad network.
 \end_layout
 
 \begin_layout Description
-imiclk.com Akamai's ad network.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Verify domain usage.
-\end_layout
-
-\end_inset
-
-
+imiclk.com Akamai's ad network Adroit.
 \end_layout
 
 \begin_layout Description
@@ -7833,17 +7887,14 @@ Etag
 
 \end_inset
 
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to Etag standard.
-\end_layout
+ header 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc7232"
 
 \end_inset
 
- header, which is a string representation of a URL/file at a certain version.
+, which is a string representation of a URL/file at a certain version.
  When content is transferred it may have an 
 \begin_inset Flex Code
 status collapsed
@@ -8784,10 +8835,10 @@ reference "sub:phantomjs"
 
 \begin_layout Standard
 Each HTTP request has their HTTP status response recorded if it is available;
- absence or numbers outside the RFC2616 
+ absence or numbers outside the RFC7231 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "rfc2616"
+key "rfc7231"
 
 \end_inset
 
@@ -9173,18 +9224,25 @@ name "sub:Status"
 \end_layout
 
 \begin_layout Standard
-The status is grouped into their defined groups by the first digit.
+The status is grouped into their defined groups by the first digit 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc7231"
+
+\end_inset
+
+.
  Groups outside of the defined range 100-599 are defined as null.
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-1xx Information
+1xx Informational
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-2xx 
+2xx Successful
 \end_layout
 
 \begin_layout Labeling
@@ -9194,25 +9252,12 @@ The status is grouped into their defined groups by the first digit.
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-4xx 
+4xx Client error
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-5xx Server errors
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Fill out the proper HTTP status group headings.
-\end_layout
-
-\end_inset
-
-
+5xx Server error
 \end_layout
 
 \begin_layout Subsubsection
@@ -9769,12 +9814,18 @@ Accessing webpages is normally done by users in a graphical browser; the
  browser downloads then displays images, executes scripts, and plays videos.
  A browser is user friendly but not optimal for batch usage due to the overhead
  in constantly drawing results on screen and the lack of automation without
- external tools such as Selenium Webdriver 
-\begin_inset Note Greyedout
+ external tools such as Selenium Webdriver
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Selenium Webdriver.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://docs.seleniumhq.org/projects/webdriver/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9799,12 +9850,17 @@ normal
  One such example script included in the default installation generates
  HAR files from a webpage visit.
  phantomjs has been implemented on top of the web page renderer Webkit library
- 
-\begin_inset Note Greyedout
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Webkit.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.webkit.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9831,19 +9887,39 @@ begin{futurework}
 \begin_layout Standard
 There are alternatives to phantomjs, but they have not been tested within
  the scope of the thesis.
- Future versions could try alternative automated browsers to verify phantomjs'
- results.
- 
-\begin_inset Note Greyedout
+ Future versions could try alternative automated browsers, such as SlimerJS
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert names and links to alternatives.
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://slimerjs.org/"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+ or both with CasperJS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://casperjs.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, to verify phantomjs' results.
 \end_layout
 
 \begin_layout Standard
@@ -10010,12 +10086,18 @@ Code
 \begin_layout Standard
 In order to efficiently and repeatably download and analyze web pages, special
  tools have been written.
- Most of the code is written in bash 
-\begin_inset Note Greyedout
+ Most of the code is written in bash
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Add link to Bash.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.gnu.org/software/bash/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11442,27 +11524,14 @@ The very low HTTPS adoption rates among random sites is both surprising
  and not surprising -- while larger sites might have felt the pressure to
  implement them, a non-professional site owner might see it as both an unnecessa
 ry technical challenge and an unnecessary additional cost.
- Most X.509 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to X.509.
-\end_layout
+ Most X.509 public key infrastructure (PKI) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc5280"
 
 \end_inset
 
- public key infrastructure (PKI) certificates 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert link to PKI.
-\end_layout
-
-\end_inset
-
- cost money to buy and install.
+ certificates cost money to buy and install.
  With public IPv4 addresses running out and legacy browsers requiring one
  IP-address per HTTPS certificate, it can also lead to an additional fee
  for renting an exclusive IP-address.
@@ -12974,29 +13043,66 @@ really
 \emph default
  needed -- such as when passwords of financial information is entered.
  Strict HTTPS performance concerns were dismissed by Google engineers in
- 2xxx 
-\begin_inset Note Greyedout
+ 2010
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Look up year, insert link.
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  -- and Google has since implemented HTTPS as an alternative for most and
- the default for some services.
- 
-\begin_inset Note Greyedout
+ the default for some services
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Google's HTTPS defaults.
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gmailblog.blogspot.se/2010/01/default-https-access-for-gmail.html"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+.
+ HTTPS is also a positive 
+\begin_inset Quotes eld
+\end_inset
+
+signal
+\begin_inset Quotes erd
+\end_inset
+
+ in Google's PageRank algorithm, meaning the use of HTTPS will lead to a
+ better position in Google's search results
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://googleonlinesecurity.blogspot.in/2014/08/https-as-ranking-signal_6.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -14104,18 +14210,34 @@ status collapsed
  The difference between what can be achieved between different types of
  resources makes the distribution interesting.
  Images 
-\begin_inset Note Greyedout
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Does SVG images allow loading external resources?
+Scalable Vector Graphics (SVG) images can load resources.
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/TR/SVG/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
- and text (unless improperly labeled during transfer and parsed as another
- format) loaded by a browser provide no additional way to load further resources
-, while html, scripts and styles do.
+ and text
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Unless improperly labeled during transfer and parsed as another format.
+\end_layout
+
+\end_inset
+
+ loaded by a browser generally provide no additional way to load further
+ resources, while html, scripts and styles do.
  While data resources can trigger downloading additional resources based
  on the logic that consumes the data, it still requires another type of
  resource present to do that.
@@ -14131,18 +14253,23 @@ Objects and external documents can also access additional resources, but
  An additional reason might be adoption of HTML5 and client side javascript
  instead of Flash for visual, dynamic material and animations.
  This evolution has been fueled by Apple's resistance towards supporting
- Flash on their handheld devices.
- 
-\begin_inset Note Greyedout
+ Flash on their handheld devices
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Reference Apple's Flash implementation resistance.
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.apple.com/hotnews/thoughts-on-flash/"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -15120,17 +15247,28 @@ reference "sub:Top-categories"
 , nor has Google Analytics been put in the analytics category.
  Google Analytics is served from its own domain, but Google is making a
  push to move site owners to the DoubleClick domain, where they have replicated
- the Google Analytics engine.
- 
-\begin_inset Note Greyedout
+ the Google Analytics engine
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert link to Google's push towards DoubleClick.
+
+\emph on
+Update your Analytics tracking code to support Display Advertising
+\emph default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://support.google.com/analytics/answer/2444872"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
+.
  The reason given to site owners using Google Analytics is that the DoubleClick
  tracker offers implementors additional rich audience information such as
  age, gender and interests on top of their current technical analysis from
@@ -15138,12 +15276,23 @@ Insert link to Google's push towards DoubleClick.
  The underlying reason is possibly that Google wants DoubleClick, which
  brings a lot of income, to have greater coverage across websites -- greater
  coverage meaning more and higher quality visitor information.
- While Google owns both services, site owner/visitor/usage policies 
-\begin_inset Note Greyedout
+ While Google owns both services, site owner/visitor/usage policies
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Insert links to GA, DC policies.
+
+\emph on
+Policy requirements for Google Analytics Advertising Features
+\emph default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://support.google.com/analytics/answer/2700409"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
