@@ -3553,6 +3553,45 @@ key "Bylund:2013:978-91-87379-12-3:integritet"
 \end_layout
 
 \begin_layout Subsection
+Characterization of the Web and its Traffic
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about TWEB paper 
+\emph on
+Characterizing Organizational use of Web-based Services: Methodology, Challenges
+, Observations and Insights
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Privacy related research
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about privacy, tracker research etcetera.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 
 \emph on
 .SE Health Status
@@ -3639,7 +3678,7 @@ key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healths
 
 \end_inset
 
- 
+ which have been discussed in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:.SE-Health-Status-comparison"
@@ -3673,21 +3712,33 @@ numprint{900}
 \end_layout
 
 \begin_layout Standard
-In order to facilitate repeatable and improvable analysis, tools will be
- developed to perform the collection and aggregation steps automatically.
+In order to facilitate repeatable and improvable analysis for this thesis,
+ tools have been developed to perform the collection and aggregation steps
+ automatically.
  .SE already has a set of tools that run monthly; integration and interoperabilit
 y will smooth the process and continuous usage.
  There is also a public .SE tool to allow website owners to test their own
  sites, 
 \emph on
-Domain Check
+Domänkollen
 \emph default
 
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Domänkollen was not publicly released at the time of writing.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Domain Check
+\emph default
+.
+\begin_inset Quotes erd
+\end_inset
+
+ Domänkollen was not publicly released at the time of writing.
 \end_layout
 
 \end_inset
