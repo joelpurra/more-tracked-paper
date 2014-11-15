@@ -256,24 +256,33 @@ content
  such as video, scripts and fonts make up a large portion of known trackers.
 \end_layout
 
-\begin_layout Chapter*
-Introduction
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-markboth{Introduction}{}
-\end_layout
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -479,31 +488,6 @@ target "http://joelpurra.com/projects/masters-thesis/"
  common confirmed tracker organizations are, what spread they have and how
  much the average internet user can expect to be tracked by visiting some
  of the most important and popular sites in Sweden, Denmark and worldwide.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList figure
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
