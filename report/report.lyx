@@ -290,32 +290,13 @@ Introduction
 How many companies are tracking you online, and how much information does
  the average Swede leak while using popular .se websites? Many, and a lot
  -- more than you may think.
- Large organizations 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-such as A, B and C
-\end_layout
-
-\end_inset
-
- are able to connect the dots you leave behind during everyday usage, and
- construct a persona that reflects you from their perspective.
+ Large organizations like Google, Facebook and Amazon are able to connect
+ the dots you leave behind during everyday usage, and construct a persona
+ that reflects you from their perspective.
  Have you told your family, friends or colleagues about your gambling addiction,
- your sex toy purchases or your alcoholism? 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Replace with different scary personal information?
-\end_layout
-
-\end_inset
-
- Even if you did not tell anyone your deepest secrets, these companies might
- conclude that they can put labels on you by looking at everything you do
- online.
+ your sex toy purchases, or your alcoholism? Even if you did not tell anyone
+ your deepest secrets, these companies might conclude that they can put
+ labels on you by looking at everything you do online.
  And now they are selling it as hard facts behind the scenes.
 \end_layout
 
@@ -339,17 +320,6 @@ While browsing the web users are both actively and passively being tracked
  -- data considered personal leak without the user's knowledge or explicit
  permission and end up in privately owned databases for further distribution.
  Data collection is the new wild west, and you are the new cattle.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Or Klondike and gold?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -388,6 +358,7 @@ numprint{150000}
  Resources were grouped by mime type, URL protocol, domain, if it matches
  the domain the request originated from and compared to lists of known trackers
  and organizations.
+ The thesis makes three primary contributions.
 \end_layout
 
 \begin_layout Itemize
