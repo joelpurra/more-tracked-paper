@@ -430,7 +430,7 @@ Insert reference to results chapter.
 
 \begin_layout Itemize
 Software for automated, repeatable retrieval and analysis of large amounts
- of websites was developed, and released as open source (see appendix 
+ of websites was developed, and released as open source (see Appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Software"
@@ -1296,7 +1296,7 @@ numprint{980}
 
 \end_inset
 
- organizations and five categories -- see table 
+ organizations and five categories -- see Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Disconnect's-categories"
@@ -1378,7 +1378,7 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 
 .
  One third of organizations have two domains and Google alone has 271 domains,
- as seen in figure 
+ as seen in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Domains-per-organization"
@@ -1387,7 +1387,7 @@ reference "fig:Domains-per-organization"
 
 .
  Some organizations have their domains categorized in more than one category,
- shown in table 
+ shown in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Organizations-in-more-than-one-category"
@@ -2216,7 +2216,7 @@ reference "sec:Internal-versus-external"
 .
  Less than 10% of top sites use strictly internal resources, meaning up
  to 93% of top sites are composed using at least a portion external resources
- -- see figure 
+ -- see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -2236,7 +2236,7 @@ reference "sec:Trackers-are-a-commercial-choice"
 .
  The difference between HTTP and HTTPS datasets is generally small, showing
  that users are as tracked on insecure as on secure sites -- see how dataset
- HTTP/HTTPS variation lines follow each other in figure 
+ HTTP/HTTPS variation lines follow each other in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
@@ -2379,7 +2379,7 @@ reference "sub:Domain-and-organization"
 \end_inset
 
 .
- The organization count per domain for a few datasets is shown in figure
+ The organization count per domain for a few datasets is shown in Figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2736,7 +2736,7 @@ Verify results when all datasets have been downloaded.
 
 \end_inset
 
- See table 
+ See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
@@ -2968,7 +2968,7 @@ numprint{180}
 \end_inset
 
  pages.
- See table 
+ See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Cat-and-Mouse-ad-coverage"
@@ -5307,7 +5307,7 @@ numprint{550}
 
 \end_inset
 
- unique values, including those in table 
+ unique values, including those in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Top-P3P-values"
@@ -6343,7 +6343,7 @@ When .SE performs their annual
  These domains are mostly from the .se zone and cover government, county,
  municipality, higher education, government-owned corporations, financial
  service, internet service provider (ISP), domain registrar, and media domains
- -- see table 
+ -- see Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:.SE-Health-Status-categories"
@@ -7101,9 +7101,9 @@ There are other open source alternatives to Disconnect's blocking list,
  but they use data formats that are not as easy to parse.
  The most popular ones also do not contain information about which organization
  each blocking rule belongs to.
- See 
+ See Section 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "sec:Ad-and-privacy-blocking-lists"
 
 \end_inset
@@ -7149,7 +7149,7 @@ reference "sub:Disconnect-category"
 \end_inset
 
  with only Google, Facebook and Twitter.
- See table 
+ See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Disconnect's-categories"
@@ -7242,7 +7242,7 @@ numprint{71}
 
  domains, many of which are service-specific subdomains to yahoo.com, such
  as finance.yahoo.com and travel.yahoo.com.
- See figure 
+ See Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Domains-per-organization"
@@ -7281,7 +7281,7 @@ reference "sub:Disconnect-category"
 \end_inset
 
 .
- See table 
+ See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Organizations-in-more-than-one-category"
@@ -7300,7 +7300,7 @@ Advertising
 \end_layout
 
 \begin_layout Standard
-While this category has the most domains and organizations by far (see table
+While this category has the most domains and organizations by far (see Table
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7625,7 +7625,7 @@ name "sec:Computer-machines"
 
 \begin_layout Standard
 Two computers were used to download web pages during development -- one
- laptop machine and one server machine (table 
+ laptop machine and one server machine (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Machine-specifications"
@@ -7983,7 +7983,7 @@ status collapsed
  tag, each part should download separately and perform the same duties,
  including “calling home” to the usual addresses.
  In order to confirm this, a query was run on one of the datasets,  se.2014-07-10.
-random.100000-http-www -- see table 
+random.100000-http-www -- see Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Google-Tag-Manager-versus-Google-Analytics-and-DoubleClick"
@@ -8413,7 +8413,7 @@ The ratio of PNG to HAR data size on disk points to the compressed PNG files
 .SE Health Status
 \emph default
  report dataset.
- See table 
+ See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Output-file-size"
@@ -8519,14 +8519,15 @@ Dataset variations
 \end_layout
 
 \begin_layout Standard
-Each dataset in table 
+Each dataset in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Dataset-variations"
 
 \end_inset
 
- has the variation appended to the name in the results chapter 
+ has the variation appended to the name in the detailed results, Chapter
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:Detailed-Results"
@@ -11437,14 +11438,14 @@ key "rfc5280"
  IP-address per HTTPS certificate, it can also lead to an additional fee
  for renting an exclusive IP-address.
  The random zone domains responding to HTTPS requests exhibit behavior more
- similar to top and curated sites, see figures 
+ similar to top and curated sites, see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
 
 \end_inset
 
- and 
+ and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Organizations-per-domain"
@@ -11653,7 +11654,7 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_layout
 
 \begin_layout Standard
-See the table below, and also figure 
+See the table below, and also Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:HTTP-status-codes"
@@ -12054,7 +12055,7 @@ The table shows non-failed origin domains having requests strictly to the
  known as internal domains -- or external (non-internal) domains.
  Origin domains that are not exclusively loading from either internal or
  external resources are loading from mixed domains.
- See also the proportions in figure 
+ See also the proportions in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -12084,7 +12085,7 @@ Mixing resources from both internal and external domains is the most common
  They do show relatively high tendencies to either extreme, with only either
  internal or external resources; in addition the usage of external resources
  is lower in HTTPS variations.
- As can be noted in both figure 
+ As can be noted in both Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -12869,14 +12870,14 @@ reference "sec:HTTP,-HTTPS-and-redirects"
  right away and/or only load HTTPS resources are shown as fully secure,
  as the analysis excludes the origin request -- although in general an initial
  request to HTTP can potentially nullify all subsequent security measures.
- See also figures 
+ See also Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:secure-mixed-insecure-resources"
 
 \end_inset
 
- for an overview and 
+ for an overview and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-secure-resources"
@@ -12905,7 +12906,7 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 
 \begin_layout Standard
 The cumulative distribution of the ratio of secure resources (out of all
- requested resources) per domain is shown in figure 
+ requested resources) per domain is shown in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-secure-resources"
@@ -13477,7 +13478,7 @@ The table shows domains, domains with redirect responses to the origin request,
  URL.
  The last column shows the ratio of domains with mismatched redirect URLs
  without a subsequently requested URL.
- See figure 
+ See Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:secure-mixed-insecure-redirects"
@@ -14404,7 +14405,7 @@ numprint{10000}
 status open
 
 \begin_layout Plain Layout
-Compare to TLD counts in table 
+Compare to TLD counts in Table 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "tab:TLDs-in-dataset-in-use"
@@ -14626,7 +14627,7 @@ numprint{980}
 \end_inset
 
  organizations.
- Looking at figure 
+ Looking at Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Organizations-per-domain"
@@ -15675,7 +15676,7 @@ name "sub:Top-organizations"
 \begin_layout Standard
 A selection of organizations, and their coverage across different datasets.
  Facebook and Twitter are often touted as the big social network sites,
- but in terms of domain coverage they are far behind Google -- see figure
+ but in terms of domain coverage they are far behind Google -- see Figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
