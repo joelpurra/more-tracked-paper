@@ -4048,10 +4048,32 @@ Total Requests per Page
 \end_layout
 
 \begin_layout Chapter
-Future work
+Conclusions and future work
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Future-work"
+name "chap:Conclusions-and-future-work"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this chapter we first summarize our main conclusions, list unanswered
+ questions, and then we discuss promising directions for future work.
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Summarize conclusions.
+\end_layout
 
 \end_inset
 
@@ -4212,21 +4234,8 @@ Code documentation
 \end_layout
 
 \begin_layout Standard
-With some 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{70}
-\end_layout
-
-\end_inset
-
- scripts written and released as open source, the need for documentation
- has gradually increased.
+With some 75 scripts written and released as open source, the need for documenta
+tion has gradually increased.
  The reason for not writing proper documentation -- not having direct collaborat
 ors writing code -- is a hinderance for future collaborators or users to
  get started.
@@ -5163,44 +5172,7 @@ reference "sec:Creating-an-information-web-site"
  time might be acceptable.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
-Other views on the same data
-\end_layout
-
-\begin_layout Standard
-Research that could possibly be performed using the same data and tools.
-\end_layout
-
-\begin_layout Subsection
 Platform for Privacy Preferences (P3P) Project
 \begin_inset Foot
 status open
@@ -5359,7 +5331,7 @@ status open
 
 
 \backslash
-tsvtable{p3p.counts.tsv}{}{display columns/1/.style={string type, column type=l}}
+tsvtable{p3p.counts.tsv}{}{display columns/1/.style={string type, column type=T}}
 \end_layout
 
 \end_inset
@@ -5507,7 +5479,20 @@ status collapsed
 \noun off
 \color none
 CP="This is not a P3P policy.
- Work on P3P has been suspended since 2006: http://www.w3.org/P3P/"
+ Work on P3P has been suspended since 2006: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{http://www.w3.org/P3P/}
+\end_layout
+
+\end_inset
+
+"
 \end_layout
 
 \end_inset
@@ -5598,35 +5583,6 @@ key "CMU-CyLab-10-014"
 
 , it shows how automated, generic tooling can help researchers a lot in
  their understanding of usage in the wild.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
