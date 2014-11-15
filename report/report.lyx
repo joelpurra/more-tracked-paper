@@ -716,34 +716,9 @@ Methodology
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Previous expected results, methodology and software chapters trimmed down
- into a more compact format; refer to appendix for software/script details.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Emphasis for the thesis is on a technical analysis, producing aggregate
  numbers regarding domains and external resources.
  Social aspects and privacy concerns are considered out of scope.
-\end_layout
-
-\begin_layout Standard
-For methodology details, see appendix 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Methodology-details"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Section
@@ -757,8 +732,24 @@ Based on a list of domains, the front page of each domain is downloaded
  domain it was loaded from.
  This data is then classified in a number of ways, before being boiled down
  to statistics about the entire dataset.
- Lastly, these aggregates are compared between datasets -- see appendix
- 
+ Lastly, these aggregates are compared between datasets.
+ In the following sections we describe each of these steps in more detail.
+ For yet more details of the methodology, we refer to Appendix 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Methodology-details"
+
+\end_inset
+
+.
+ The software developed is described in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Software"
+
+\end_inset
+
+ and the details of the results are presented in Appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -803,39 +794,6 @@ reference "sub:.SE-Health-Status"
 
 \begin_layout Section
 Domain categories
-\end_layout
-
-\begin_layout Standard
-There are three major types of domain lists used in this thesis.
- The total number of domains is over 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{150000}
-\end_layout
-
-\end_inset
-
-; see table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Domain-lists-in-use"
-
-\end_inset
-
-.
- See also details in 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:Domains"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Description
@@ -1012,8 +970,91 @@ numprint{10000}
 \end_layout
 
 \begin_layout Standard
-Simply assuming domain ownership is always based on second-level domains,
- such as iis.se or joelpurra.com, is incorrect.
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Domain-lists-in-use"
+
+\end_inset
+
+ summarizes the domain lists and samples from each of theses lists used
+ in the thesis.
+ More details on each sublist is provided in Appendix 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Methodology-details"
+
+\end_inset
+
+.
+ However, at a high level we categorize the lists in three main categories.
+ In total there are more than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{150000}
+\end_layout
+
+\end_inset
+
+ domains considered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.datasets.tsv}{}{display columns/0/.style={string type, column
+ type=l}, display columns/1/.style={string type, column type=l}, display
+ columns/3/.style={string type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Domain-lists-in-use"
+
+\end_inset
+
+Domain lists in use
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We note that it is incorrect to assume that domain ownership is always based
+ on second-level domains, such as iis.se or joelpurra.com.
  Not all TLDs' second-level domains are open for registration to the public;
  examples include the Brazilian top level domain 
 \begin_inset Flex Code
@@ -1220,7 +1261,15 @@ reference "sub:Disconnect.me-classification"
 
 \begin_layout Standard
 The tracker list of choice is the one used in the privacy tool Disconnect.me,
- where it is used to block external requests to (most) known tracker domains.
+ where it is used to block external requests to (most) known tracker domains
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+.
  It consists of 
 \begin_inset ERT
 status open
@@ -1247,16 +1296,69 @@ numprint{980}
 
 \end_inset
 
- organizations and five categories: advertising, analytics, content, disconnect
- and social 
+ organizations and five categories -- see table 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect's-blocking-list"
+LatexCommand ref
+reference "tab:Disconnect's-categories"
 
 \end_inset
 
-.
- Not all domains in the list are treated the same by Disconnect.me; despite
+ for the number of domains per category.
+ The domain level blocking fits well with the thesis' internal versus external
+ resource reasoning.
+ Because domains are linked to organizations as well as broadly categorized,
+ blocking aggregate counts and coverage can form a bigger picture.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{disconnect.categories.tsv}{}{display columns/0/.style={string type,
+ column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Disconnect's-categories"
+
+\end_inset
+
+Disconnect's categories
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Not all domains in the list are treated the same by Disconnect.me; despite
  being listed as known trackers, the content category 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -1266,10 +1368,285 @@ reference "sub:Disconnect-Content"
 
  is not blocked by default in order to not disturb the normal user experience
  too much.
- The domain level blocking fits well with the thesis' internal versus external
- resource reasoning.
- Because domains are linked to organizations as well as broadly categorized,
- blocking aggregate counts and coverage can form a bigger picture.
+ Most organizations are only associated with one domain, but some organizations
+ have more than one domain 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Organizations-in-more-than-one-category"
+
+\end_inset
+
+.
+ One third of organizations have two domains and Google alone has 271 domains,
+ as seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Domains-per-organization"
+
+\end_inset
+
+.
+ Some organizations have their domains categorized in more than one category,
+ shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Organizations-in-more-than-one-category"
+
+\end_inset
+
+.
+ Due to the relaxed blocking of the content category this can provide a
+ way to track users despite being labeled a tracker organization.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfplotstableread[
+\end_layout
+
+\begin_layout Plain Layout
+
+		format=file,
+\end_layout
+
+\begin_layout Plain Layout
+
+		col sep=tab,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]{disconnect.domains-per-organization.tsv}
+\backslash
+tableDisconnectDomainsPerOrganization
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{loglogaxis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylabel=Organizations,
+\end_layout
+
+\begin_layout Plain Layout
+
+	width=
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	height=0.5*
+\backslash
+textwidth,
+\end_layout
+
+\begin_layout Plain Layout
+
+	log ticks with fixed point,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xmin=0.7,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ymin=0.7,
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlarge x limits=upper,
+\end_layout
+
+\begin_layout Plain Layout
+
+	enlarge y limits=upper,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xtick={1,2,3,4,10,32,40,71,271},
+\end_layout
+
+\begin_layout Plain Layout
+
+	ytick=data,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+		ybar,
+\end_layout
+
+\begin_layout Plain Layout
+
+		bar width=3pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+		thick,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=black,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[x=Domains per organization,y=Organizations]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDisconnectDomainsPerOrganization;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{loglogaxis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Domains-per-organization"
+
+\end_inset
+
+Domains per organization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{}{string
+ replace*={true}{x}, string replace*={false}{}, display columns/0/.style={string
+ type, column type=l}, display columns/2/.style={string type, column type=c},
+ display columns/3/.style={string type, column type=c}, display columns/4/.style={
+string type, column type=c}, display columns/5/.style={string type, column
+ type=c}, display columns/6/.style={string type, column type=c}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Organizations-in-more-than-one-category"
+
+\end_inset
+
+Organizations in more than one category
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1408,7 +1785,7 @@ reference "sec:Failed-domains"
 \end_layout
 
 \begin_layout Standard
-See details in 
+Details about website and resource retrieval can be found in 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Retrieving-websites-and-resources"
@@ -1635,7 +2012,7 @@ reference "sub:Questions"
 
 .
  There are also multiset scripts, collecting values from several datasets
- -- the basis for most of the detailed results' tables; see appendix 
+ -- the basis for most of the detailed results' tables; see Appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -1646,7 +2023,7 @@ reference "chap:Detailed-Results"
 \end_layout
 
 \begin_layout Standard
-See also analysis details in 
+See also analysis details in Appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Analyzing-resources"
@@ -1681,7 +2058,7 @@ Write high level summary of datasets.
 \end_layout
 
 \begin_layout Standard
-See details in appendix 
+See details in Appendix 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "chap:Detailed-Results"
@@ -1724,139 +2101,6 @@ key "G.-Acar:persistent:2014aa"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Section
-Document style
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Where is a good place for document style information?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Commands, files and code
-\end_layout
-
-\begin_layout Standard
-When text has a strict technical meaning, such as commands, files and code,
- a monospaced font is used.
- One example is a command such as 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<input.json jq 'select(.domain == "joelpurra.se")'
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Work in progress notes
-\end_layout
-
-\begin_layout Standard
-There are notes about things that need to be added or improved throughout
- the document.
- These notes are have a grey text color.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-This is a work in progress note.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Cross-references
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Cross-references"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Many cross-references are given as chapter or section references in parentheses
- 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Cross-references"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Future work
-\end_layout
-
-\begin_layout Standard
-Ideas, future improvements or research has been written both in chapter
- 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Future-work"
-
-\end_inset
-
- and as comments.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{futurework}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This type of comment denotes ideas, future improvements or research.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{futurework}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
@@ -5993,53 +6237,6 @@ status open
 
 
 \backslash
-tsvtable{domains.datasets.tsv}{}{display columns/0/.style={string type, column
- type=l}, display columns/1/.style={string type, column type=l}, display
- columns/3/.style={string type, column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Domain-lists-in-use"
-
-\end_inset
-
-Domain lists in use
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 tsvtable{domains.tlds.tsv}{}{display columns/2/.style={string type, column
  type=l}}
 \end_layout
@@ -6913,52 +7110,6 @@ reference "tab:Disconnect's-categories"
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{disconnect.categories.tsv}{}{display columns/0/.style={string type,
- column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Disconnect's-categories"
-
-\end_inset
-
-Disconnect's categories
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Domains per organization
 \begin_inset CommandInset label
@@ -7051,215 +7202,6 @@ reference "fig:Domains-per-organization"
 
  for the distribution.
  
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Fix floating on the page with the following figure.
- It, and other floats, seems to displace text into the footer.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{disconnect.domains-per-organization.tsv}
-\backslash
-tableDisconnectDomainsPerOrganization
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{loglogaxis}[
-\end_layout
-
-\begin_layout Plain Layout
-
-	xlabel=Domains,
-\end_layout
-
-\begin_layout Plain Layout
-
-	ylabel=Organizations,
-\end_layout
-
-\begin_layout Plain Layout
-
-	width=
-\backslash
-textwidth,
-\end_layout
-
-\begin_layout Plain Layout
-
-	height=0.5*
-\backslash
-textwidth,
-\end_layout
-
-\begin_layout Plain Layout
-
-	log ticks with fixed point,
-\end_layout
-
-\begin_layout Plain Layout
-
-	xmin=0.7,
-\end_layout
-
-\begin_layout Plain Layout
-
-	ymin=0.7,
-\end_layout
-
-\begin_layout Plain Layout
-
-	enlarge x limits=upper,
-\end_layout
-
-\begin_layout Plain Layout
-
-	enlarge y limits=upper,
-\end_layout
-
-\begin_layout Plain Layout
-
-	xtick={1,2,3,4,10,32,40,71,271},
-\end_layout
-
-\begin_layout Plain Layout
-
-	ytick=data,
-\end_layout
-
-\begin_layout Plain Layout
-
-]
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-addplot[
-\end_layout
-
-\begin_layout Plain Layout
-
-		ybar,
-\end_layout
-
-\begin_layout Plain Layout
-
-		bar width=3pt,
-\end_layout
-
-\begin_layout Plain Layout
-
-		thick,
-\end_layout
-
-\begin_layout Plain Layout
-
-		fill=black,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]
-\end_layout
-
-\begin_layout Plain Layout
-
-	table[x=Domains per organization,y=Organizations]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-tableDisconnectDomainsPerOrganization;
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{loglogaxis}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Domains-per-organization"
-
-\end_inset
-
-Domains per organization
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -7301,52 +7243,6 @@ reference "tab:Organizations-in-more-than-one-category"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{}{string
- replace*={true}{x}, string replace*={false}{}, display columns/0/.style={string
- type, column type=l}, display columns/2/.style={string type, column type=c},
- display columns/3/.style={string type, column type=c}, display columns/4/.style={
-string type, column type=c}, display columns/5/.style={string type, column
- type=c}, display columns/6/.style={string type, column type=c}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Organizations-in-more-than-one-category"
-
-\end_inset
-
-Organizations in more than one category
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
