@@ -2108,10 +2108,52 @@ Results
 \end_layout
 
 \begin_layout Standard
-See the table below and the following sections in this chapter for an overview.
- Detailed results can be found in appendix 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+For each result:
+\end_layout
+
+\begin_layout Enumerate
+Describe expectations.
+\end_layout
+
+\begin_layout Enumerate
+Describe what is shown in figure/table.
+\end_layout
+
+\begin_layout Enumerate
+Describe key observations.
+\end_layout
+
+\begin_layout Enumerate
+Provide insight/discussion about this observation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add small figures to illustrate main points.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This chapter presents the main results.
+ Supplementary results and additional details are provided in Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Detailed-Results"
 
 \end_inset
