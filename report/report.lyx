@@ -218,10 +218,10 @@ leftmark}
 \end_layout
 
 \begin_layout Abstract
-While browsing websites third-party resources track your online habits,
- which can be considered an invasion of privacy.
- It was previously unknown how many third-party resources, known trackers
- and tracker companies are represented on an average website.
+When you are browsing websites, third-party resources track your online
+ habits; such tracking can be considered an invasion of privacy.
+ It was previously unknown how many third-party resources, trackers and
+ tracker companies are present on an average website.
  While downloading over 
 \begin_inset ERT
 status open
@@ -253,7 +253,8 @@ status open
 \emph on
 content
 \emph default
- such as video, scripts and fonts make up a large portion of known trackers.
+ such as video, scripts and fonts make up a large portion of the known trackers
+ seen on a typical website.
 \end_layout
 
 \begin_layout Standard
