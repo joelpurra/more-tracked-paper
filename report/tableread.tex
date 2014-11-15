@@ -1,0 +1,38 @@
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{disconnect.domains-per-organization.tsv}\tableDisconnectDomainsPerOrganization
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.request-status.coverage.origin.sorted.tsv}\tableDatasetsRequestStatusCoverageOriginSorted
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.classification.secure.coverage.sorted.tsv}\tableDatasetsNonFailedClassificationSecureCoverageSorted
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.origin-redirects.coverage.sorted.tsv}\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted
+
+\pgfplotstabletranspose[
+	colnames from=Dataset
+	]\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted{datasets.non-failed.ratio-buckets.disconnect-organizations.normalized.cumulative.sorted.tsv}

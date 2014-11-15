@@ -5,6 +5,7 @@
 \textclass report
 \begin_preamble
 \include{preamble}
+\include{tableread}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -1409,30 +1410,6 @@ status open
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{disconnect.domains-per-organization.tsv}
-\backslash
-tableDisconnectDomainsPerOrganization
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11793,39 +11770,6 @@ status open
 
 
 \backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.request-status.coverage.origin.sorted.tsv}
-\backslash
-tableDatasetsRequestStatusCoverageOriginSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{tikzpicture}
 \end_layout
 
@@ -12272,39 +12216,6 @@ begin{portraitdatapage}
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}
-\backslash
-tableDatasetsNonFailedClassificationDomainScopeCoverageSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -13118,39 +13029,6 @@ status open
 
 
 \backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.non-failed.classification.secure.coverage.sorted.tsv}
-\backslash
-tableDatasetsNonFailedClassificationSecureCoverageSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{tikzpicture}
 \end_layout
 
@@ -13749,39 +13627,6 @@ begin{portraitdatapage}
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.non-failed.origin-redirects.coverage.sorted.tsv}
-\backslash
-tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -14751,26 +14596,6 @@ status open
 
 
 \backslash
-pgfplotstabletranspose[colnames from=Dataset]
-\backslash
-tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCum
-ulativeSorted{datasets.non-failed.ratio-buckets.disconnect-organizations.normalized.c
-umulative.sorted.tsv}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{tikzpicture}
 \end_layout
 
@@ -15348,53 +15173,6 @@ Pages with wide tables end here.
 status open
 
 \begin_layout Plain Layout
-Keeping read of datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv
- outside of groups, as it is re-used between figures.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}
-\backslash
-tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 Pages with data start here.
 \end_layout
 
@@ -15842,39 +15620,6 @@ begin{portraitdatapage}
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pgfplotstableread[
-\end_layout
-
-\begin_layout Plain Layout
-
-		format=file,
-\end_layout
-
-\begin_layout Plain Layout
-
-		col sep=tab,
-\end_layout
-
-\begin_layout Plain Layout
-
-	]{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}
-\backslash
-tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
