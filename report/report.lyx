@@ -3253,6 +3253,15 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_layout
 
 \begin_layout Section
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Cat and Mouse
+\end_layout
+
+\end_inset
+
 Cat and Mouse: Content Delivery Tradeoffs in Web Access
 \end_layout
 
@@ -3633,6 +3642,15 @@ Extract a data table with popular content domains.
 \end_layout
 
 \begin_layout Section
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Automated data collection and analysis
+\end_layout
+
+\end_inset
+
 Automated, scalable data collection and repeatable analysis
 \end_layout
 
@@ -3673,7 +3691,7 @@ not invented here
 \end_layout
 
 \begin_layout Section
-Contributions to other open source projects
+Open source contributions
 \end_layout
 
 \begin_layout Standard
@@ -4393,6 +4411,15 @@ canvas
 \end_layout
 
 \begin_layout Section
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+HTTP Archive
+\end_layout
+
+\end_inset
+
 HTTP Archive
 \begin_inset CommandInset label
 LatexCommand label
@@ -5586,6 +5613,15 @@ reference "sec:Creating-an-information-web-site"
 \end_layout
 
 \begin_layout Section
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Platform for Privacy Preferences (P3P) analysis
+\end_layout
+
+\end_inset
+
 Platform for Privacy Preferences (P3P) Project
 \begin_inset Foot
 status open
@@ -7097,6 +7133,15 @@ target "http://webmie.com/"
 \end_layout
 
 \begin_layout Section
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Public suffix list
+\end_layout
+
+\end_inset
+
 Public suffix list
 \begin_inset CommandInset label
 LatexCommand label
