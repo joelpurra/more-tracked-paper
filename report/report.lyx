@@ -3321,7 +3321,14 @@ key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healths
 \end_inset
 
 .
- Today, in 2014, usage in the category with the least coverage (financial
+\end_layout
+
+\begin_layout Standard
+Thesis data from the HTTP-www 
+\emph on
+.SE Health Status
+\emph default
+ domain lists shows usage in the category with the least coverage (financial
  services) is 58% while most are above 70% 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -3329,12 +3336,13 @@ reference "sub:Top-domains-Google"
 
 \end_inset
 
-.
+; the average is 76%.
  The highest coverage category (government owned corporations) is even above
  90%.
- Since Google Analytics can now be used from the DoubleClick domain as well,
- looking only at the Google Analytics domain makes little sense -- instead
- it might make more sense to look at the organization Google as a whole.
+ Since Google Analytics can now be used from the DoubleClick domain as well
+ as Google offering several other services, looking only at the Google Analytics
+ domain makes little sense -- instead it might make more sense to look at
+ the organization Google as a whole.
  The coverage jumps quite a bit, with most categories landing above 85%
  
 \begin_inset CommandInset ref
@@ -3343,7 +3351,7 @@ reference "sub:Top-organizations"
 
 \end_inset
 
-.
+, which is also the overall average.
 \end_layout
 
 \begin_layout Standard
