@@ -3523,8 +3523,9 @@ status open
 \backslash
 tsvtable{se.health-status.https.tsv}{}{fixed, display columns/0/.style={string
  type, column type=l}, display columns/1/.style={string type, column type=i},
- display columns/2/.style={string type, column type=i}, display columns/3/.style={
-string type, column type=i}}
+ display columns/2/.style={clear infinite, string type, column type=i}, display
+ columns/3/.style={clear infinite, string type, column type=i}, display columns/4
+/.style={clear infinite}, display columns/5/.style={clear infinite}}
 \end_layout
 
 \end_inset
