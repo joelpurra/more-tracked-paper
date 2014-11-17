@@ -85,7 +85,7 @@ every table/.append style={outfile={.generated.report-table\@arabic\c@LT@tables.
 % Use cached/written files as input.
 include outfiles,
 % Change to true to force re-generation. It's easier to just delete all generated files.
-%force remake=true,
+% force remake=true,
 }
 
 \newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
@@ -186,6 +186,9 @@ display columns/0/.append style={string replace*={.public-authorities}{.pubauth}
 % Shorten dataset counts.
 display columns/0/.append style={string replace*={100000}{100k}},%
 display columns/0/.append style={string replace*={10000}{10k}},%
+% Shorten Alexa datasets.
+display columns/0/.append style={string replace*={alexa.top.se.10k.}{alexa.top.se.}},%
+display columns/0/.append style={string replace*={alexa.top.dk.10k.}{alexa.top.dk.}},%
 % Shorten dataset type.
 display columns/0/.append style={string replace*={random.}{rnd.}},%
 display columns/0/.append style={string replace*={-https-www}{-sw}},%
@@ -223,6 +226,8 @@ display columns/0/.append style={string replace*={-http}{-h}},%
 %\tikzset{external/force remake}
 %\tikzset{external/remake next}
 
+\usepgfplotslibrary{groupplots}
+
 \pgfplotsset{allDatasetsXbar/.style=
 {
 enlarge x limits=false,
@@ -250,6 +255,22 @@ height=1.47\textwidth,
 font=\small,
 legend columns=-1,
 legend style={at={(0.5,-16pt)},anchor=north}
+},
+allDatasetsXbarMiniResults/.style=
+{
+enlarge y limits=0.1,
+width=.35\textwidth,
+height=.3\textwidth,
+font=\tiny,
+legend columns=-1,
+legend style={at={(0.5,-12pt)},anchor=north},
+symbolic y coords={alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https-www,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https-www,},
+xticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
 },
 xticklabel style={
 /pgf/number format/fixed,

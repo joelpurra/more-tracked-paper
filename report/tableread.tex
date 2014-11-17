@@ -36,3 +36,20 @@
 \pgfplotstabletranspose[
 	colnames from=Dataset
 	]\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted{datasets.non-failed.ratio-buckets.disconnect-organizations.normalized.cumulative.sorted.tsv}
+
+% Summaries
+% TODO: see if it's possible to filter rows from tables loaded above
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.request-status.coverage.origin.sorted.summary.tsv}\tableDatasetsRequestStatusCoverageOriginSortedSummary
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.classification.domain-scope.coverage.sorted.summary.tsv}\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary
+
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.origin-redirects.coverage.sorted.summary.tsv}\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary

@@ -2163,6 +2163,411 @@ addlinespace[0pt]}{}}, display columns/0/.style={string type, column type=t},
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% TODO DEBUG REMOVE
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{external/remake next}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{groupplot}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	group style={group size=3 by 1},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=A.
+ Origin HTTP response codes,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsRequestStatusCoverageOriginSortedSummary}{2xx}{2xx}{green}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsRequestStatusCoverageOriginSortedSummary}{3xx}{3xx}{yellow}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsRequestStatusCoverageOriginSortedSummary}{(null)}{(null)}{red}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=B.
+ Origin redirects,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Sec}{S
+ecure}{green}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Mix
+ sec}{Mixed}{yellow}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Insec}
+{Insecure}{orange}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Mism}{
+Mismatch}{lightgray}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=C.
+ Resource distibution,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-
+hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Internal}{
+Internal}{green}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Mixed}{Mix
+ed}{yellow}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{External}{
+External}{orange}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{groupplot}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Result-selection-http-codes-redirects-internal-external"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Selection of www variations
+\end_layout
+
+\end_inset
+
+Selection of HTTP-www and HTTPS-www variations from figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HTTP-status-codes"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:secure-mixed-insecure-redirects"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:internal-mixed-external-resources"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Should se.2014-07-10.random.100000-https-www results be blanked out in B and
+ C because of 0.3% response rates?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Internal, external and organizations
 \end_layout
@@ -2192,15 +2597,22 @@ reference "sec:Internal-versus-external"
 
 .
  Less than 10% of top sites use strictly internal resources, meaning up
- to 93% of top sites are composed using at least a portion external resources
+ to 93% of top sites are composed using at least a portion of external resources
  -- see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-internal-external"
+
+\end_inset
+
+.C for a selection and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
 
 \end_inset
 
-.
+ for all datasets.
  This means external resources -- in this thesis seen as trackers -- have
  actively been installed, be it as a commercial choice or for technical
  reasons 
@@ -2256,8 +2668,25 @@ Write about which category of domains use HTTP, which use HTTPS and which
 \end_layout
 
 \begin_layout Standard
-In general, HTTPS usage is very low at less than 5% among random domains,
- but Reach50 top sites are leading the way with a 53% response rate 
+In general, HTTPS usage is very low at less than 0.6% among random domains,
+ see random .se 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(null)
+\end_layout
+
+\end_inset
+
+ responses in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-internal-external"
+
+\end_inset
+
+.A, but Reach50 top sites are leading the way with a 53% response rate 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
@@ -2288,6 +2717,24 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_inset
 
 .
+ See redirects (3xx responses) in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-internal-external"
+
+\end_inset
+
+.A and redirect details in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-internal-external"
+
+\end_inset
+
+.B, where it is shown that redirects more often point to insecure than secure
+ URLs.
+ The random .se domains seem to act differently, but due to the very low
+ response rate of 0.3% when using HTTPS it is hard to draw conclusions.
 \end_layout
 
 \begin_layout Standard
@@ -2297,17 +2744,6 @@ It seems that Swedish media shun secure connections -- none of them present
  At the same time, they use the highest count of both internal and external
  resources -- with numbers several times higher than other domain lists
  -- and more than 20% of requests go to known trackers.
- Counties, higher education and 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write here.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
