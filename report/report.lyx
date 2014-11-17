@@ -15917,6 +15917,19 @@ Write more.
 status open
 
 \begin_layout Plain Layout
+Add column showing all and any Disconnect coverage.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
 Write about high content trackers.
 \end_layout
 
@@ -16184,7 +16197,7 @@ end{tikzpicture}
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:google-facebook-twitter-coverage-1"
+name "fig:top-categories"
 
 \end_inset
 
@@ -16193,12 +16206,12 @@ name "fig:google-facebook-twitter-coverage-1"
 status open
 
 \begin_layout Plain Layout
-Google, Facebook and Twitter coverage
+Top categories
 \end_layout
 
 \end_inset
 
-Ratio of domains with requests to Google, Facebook and Twitter
+Ratio of domains with requests to Disconnect's categories
 \end_layout
 
 \end_inset
