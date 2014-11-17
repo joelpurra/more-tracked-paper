@@ -2175,22 +2175,6 @@ status open
 
 \begin_layout Plain Layout
 
-% TODO DEBUG REMOVE
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tikzset{external/remake next}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 
 \backslash
 begin{tikzpicture}
@@ -2205,7 +2189,22 @@ begin{groupplot}[
 
 \begin_layout Plain Layout
 
-	group style={group size=3 by 1},
+	group style={
+\end_layout
+
+\begin_layout Plain Layout
+
+		group size=3 by 1,
+\end_layout
+
+\begin_layout Plain Layout
+
+		horizontal sep=8pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+	},
 \end_layout
 
 \begin_layout Plain Layout
@@ -2515,7 +2514,7 @@ name "fig:Result-selection-http-codes-redirects-internal-external"
 status open
 
 \begin_layout Plain Layout
-Selection of www variations
+HTTP status, redirects, resource distribution
 \end_layout
 
 \end_inset
@@ -2556,6 +2555,355 @@ status open
 \begin_layout Plain Layout
 Should se.2014-07-10.random.100000-https-www results be blanked out in B and
  C because of 0.3% response rates?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{groupplot}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	group style={
+\end_layout
+
+\begin_layout Plain Layout
+
+		group size=3 by 1,
+\end_layout
+
+\begin_layout Plain Layout
+
+		horizontal sep=8pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+	},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=A.
+ Internal resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDF,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDFMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Ratio of internal resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylabel=Ratio of domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.
+normalized.cumulative.sorted.tsv}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+legend{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=B.
+ Secure resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDF,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDFMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Ratio of secure resources,
+\end_layout
+
+\begin_layout Plain Layout
+
+	%ylabel=Ratio of domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalize
+d.cumulative.sorted.tsv}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+legend{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=C.
+ Disconnect's organizations,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDF,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsOccurances,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsOccurancesMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Number of organizations,
+\end_layout
+
+\begin_layout Plain Layout
+
+	%ylabel=Ratio of domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={},
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend columns=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend style={at={(1.025,.5)}, anchor=west},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+CDFPlotFromDefaultDatasets{
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCum
+ulativeSorted}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+legend{alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.1
+00k-sw,se.hs.municip-hw,se.hs.municip-sw}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{groupplot}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Result-selection-internal-secure-organizations"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Internal resources, secure resources, Disconnect's organizations
+\end_layout
+
+\end_inset
+
+Small versions of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-internal-resources"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-secure-resources"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Organizations-per-domain"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

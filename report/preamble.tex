@@ -259,7 +259,7 @@ legend style={at={(0.5,-16pt)},anchor=north}
 allDatasetsXbarMiniResults/.style=
 {
 enlarge y limits=0.1,
-width=.35\textwidth,
+width=.4\textwidth,
 height=.3\textwidth,
 font=\tiny,
 legend columns=-1,
@@ -267,7 +267,7 @@ legend style={at={(0.5,-12pt)},anchor=north},
 symbolic y coords={alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https-www,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https-www,},
 xticklabel style={
 /pgf/number format/fixed,
-/pgf/number format/fixed zerofill,
+/pgf/number format/fixed zerofill=false,
 /pgf/number format/precision=1
 },
 title style={at={(.5,.95)}},
@@ -336,6 +336,27 @@ datasetsCDFFullPage/.style=
 {
 width=\textwidth,
 height=1.46\textwidth,
+},
+datasetsCDFMiniResults/.style=
+{
+width=.35\textwidth,
+height=.3\textwidth,
+font=\tiny,
+xtick={0,.2,...,1.0},
+ytick={0,.2,...,1.0},
+minor xtick={0,.1,...,1.1},
+minor ytick={0,.1,...,1.1},
+xticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
 }
 }
 
@@ -363,7 +384,29 @@ yticklabel style={
 % Marks 0.1.
 mark repeat=1,
 mark indices={1},
-}
+},
+datasetsOccurancesMiniResults/.style=
+{
+width=.35\textwidth,
+height=.3\textwidth,
+font=\tiny,
+xmax=15,
+xtick={0.1,1,5,10,15},
+ytick={0,.2,...,1.0},
+minor xtick={2,3,4,6,7,8,9,11,12,13,14},
+xticklabel={%
+	\pgfmathfloatparsenumber{\tick}%
+	% \pgfmathfloatexp{\pgfmathresult}%
+	\pgfmathprintnumber[fixed,precision=0]{\pgfmathresult}%
+},
+minor ytick={0,.1,...,1.1},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
+},
 }
 
 \newcommand{\CDFPlotFromDataset}[3]{
