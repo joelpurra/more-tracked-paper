@@ -2225,7 +2225,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=A.
+	title=a.
  Origin HTTP response codes,
 \end_layout
 
@@ -2306,7 +2306,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=B.
+	title=b.
  Origin redirects,
 \end_layout
 
@@ -2404,7 +2404,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=C.
+	title=c.
  Resource distibution,
 \end_layout
 
@@ -2629,7 +2629,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=A.
+	title=a.
  Internal resources,
 \end_layout
 
@@ -2694,7 +2694,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=B.
+	title=b.
  Secure resources,
 \end_layout
 
@@ -2764,7 +2764,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=C.
+	title=c.
  Disconnect's organizations,
 \end_layout
 
@@ -2953,7 +2953,7 @@ reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-.C for a selection and Figure 
+c for a selection and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -3034,7 +3034,7 @@ reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-.A, but Reach50 top sites are leading the way with a 53% response rate 
+a, but Reach50 top sites are leading the way with a 53% response rate 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
@@ -3072,14 +3072,14 @@ reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-.A and redirect details in Figure 
+a and redirect details in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-.B, where it is shown that redirects more often point to insecure than secure
+b, where it is shown that redirects more often point to insecure than secure
  URLs.
  The random .se domains seem to act differently, but due to the very low
  response rate of 0.3% when using HTTPS it is hard to draw conclusions.
