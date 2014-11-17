@@ -1,7 +1,8 @@
-Year	Domains	Answering	Correct	All rate	Correct rate
-2008	1685	722	112	0.75	0.16
-2009	663	168	129	0.25	0.19
-2010	670	227	190	0.34	0.28
-2011	912	175	159	0.19	0.17
-2012	913	nan	nan	nan	nan
-2013	1224	458	339	0.28	0.19
+Source	Domains	Answering	Correct	All rate	Correct rate	Redirects to HTTP
+2008	1685	722	112	0.75	0.16	nan
+2009	663	168	129	0.25	0.19	nan
+2010	670	227	190	0.34	0.28	nan
+2011	912	175	159	0.19	0.17	nan
+2012	913	nan	nan	nan	nan	nan
+2013	1224	458	339	0.28	0.19	0.24
+Thesis	911	218	nan	0.24	nan	0.22

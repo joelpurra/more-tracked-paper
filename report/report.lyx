@@ -3479,32 +3479,46 @@ key "Lowinder:2008:healthstatus,Lowinder:2009:healthstatus,Lowinder:2010:healths
 .
  The reports are a bit unclear about some numbers as measurement methodology
  and focus has shifted over the years, but the general results seem to line
- up with the results in this thesis 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Failed-versus-non-failed"
-
-\end_inset
-
-.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Verify results when all datasets have been downloaded.
+ up with the results in this thesis.
+ Quality of the HTTPS certificate is also considered by looking at for example
+ expiry date, deeming them correct or not.
+ Measurements changed in 2009, so they might not be fully comparable.
+ No HTTPS measurements were performed in 2012.
 \end_layout
 
-\end_inset
-
- See Table 
+\begin_layout Standard
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
 
 \end_inset
 
-.
+ shows values extracted from reports 2008-2013 as well as numbers from this
+ thesis.
+ Thesis results show a 24% HTTPS response rate 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Failed-versus-non-failed"
+
+\end_inset
+
+ while the report shows 28%.
+ The 2013 report also finds that 24% of HTTPS sites redirect from HTTPS
+ back to HTTP.
+ In this thesis is is shown that 22% of 
+\emph on
+.SE Health Status
+\emph default
+ HTTPS domains have non-secure redirects 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP,-HTTPS-and-redirects"
+
+\end_inset
+
+ -- meaning insecure or mixed security redirects -- which is close to the
+ report findings.
 \end_layout
 
 \begin_layout Standard
@@ -3525,7 +3539,8 @@ tsvtable{se.health-status.https.tsv}{}{fixed, display columns/0/.style={string
  type, column type=l}, display columns/1/.style={string type, column type=i},
  display columns/2/.style={clear infinite, string type, column type=i}, display
  columns/3/.style={clear infinite, string type, column type=i}, display columns/4
-/.style={clear infinite}, display columns/5/.style={clear infinite}}
+/.style={clear infinite}, display columns/5/.style={clear infinite}, display
+ columns/6/.style={clear infinite}}
 \end_layout
 
 \end_inset
@@ -3558,47 +3573,6 @@ name "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Measurements changed in 2009, so they might not be fully comparable.
- No HTTPS measurements were performed in 2012.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Ask .SE about exact numbers?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write a comparison with own results per category?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-24% of HTTPS sites redirect from HTTPS back to HTTP in 2013 -- see also
- 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:HTTP,-HTTPS-and-redirects"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Section
