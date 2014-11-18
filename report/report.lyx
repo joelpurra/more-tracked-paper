@@ -3584,60 +3584,43 @@ name "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
 \end_layout
 
 \begin_layout Section
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
 Cat and Mouse
 \end_layout
 
-\end_inset
-
+\begin_layout Standard
+The paper 
+\emph on
 Cat and Mouse: Content Delivery Tradeoffs in Web Access
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Is this comparison relevant?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Describe the report.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The report looks the top 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{100}
-\end_layout
-
-\end_inset
-
- English language sites from 12 categories in Alexa's top list, plus another
+\emph default
  
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2006:CMC:1135777.1135829"
+
+\end_inset
+
+ uses a similar approach to detecting trackers -- or in their case advertisement
+s -- as in this thesis, using the Firefox browser plugin AdBlock as the
+ base for their blocking model.
+ The ad blocking list Filterset.G from 2005-10-10 contains 108 domains as
+ well as from 55 regular expressions.
+ Matching was done after collecting requested URLs using a local proxy server,
+ which means that HTTPS requests were lost.
+\end_layout
+
+\begin_layout Standard
+As this thesis uses in-browser URL capturing, HTTPS requests have been captured.
+ On the other hand, not performing URL path matching 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+ -- the way Disconnect does it -- might lead to fewer detected trackers,
+ as the paper shows that only 38% of their ad matches were domain matches,
+ plus 10% which matched both domain and path rules.
+ Their matching found 872 unique servers from 108 domain rules -- the 
 \begin_inset ERT
 status open
 
@@ -3645,12 +3628,51 @@ status open
 
 
 \backslash
-numprint{100}
+numprint{2149}
 \end_layout
 
 \end_inset
 
- sites from a political list.
+ domains (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1326}
+\end_layout
+
+\end_inset
+
+ in the advertisement category) in the currently used Disconnect dataset
+ might be enough, as subdomains are matched as well.
+\end_layout
+
+\begin_layout Standard
+The paper also discusses serving content alongside advertisments as a way
+ to avoid blocking of trackers 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-categories"
+
+\end_inset
+
+, as well as obfuscating tracker URLs by changing domains or paths, perhaps
+ by using CDNs 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "note:cloudfront.net-cdn-subdomains"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The report looks the top 100 English language sites from 12 categories in
+ Alexa's top list, plus another 100 sites from a political list.
  These sites come from 
 \begin_inset ERT
 status open
@@ -3665,8 +3687,6 @@ numprint{1116}
 \end_inset
 
  domains.
- They used a local proxy server to gather URLs, which means that HTTPS requests
- were lost.
  A total of 
 \begin_inset ERT
 status open
@@ -3680,47 +3700,9 @@ numprint{1113}
 
 \end_inset
 
- pages were downloaded from that set, plus 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{457}
-\end_layout
-
-\end_inset
-
- pages from Alexa's top 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{500}
-\end_layout
-
-\end_inset
-
+ pages were downloaded from that set, plus 457 pages from Alexa's top 500
  in a secondary list.
- The overlap was 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{180}
-\end_layout
-
-\end_inset
-
- pages.
+ The overlap was 180 pages.
  See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3728,7 +3710,14 @@ reference "tab:Cat-and-Mouse-ad-coverage"
 
 \end_inset
 
-.
+ for ad coverage per dataset and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Cat-and-Mouse-adserver-match-distribution"
+
+\end_inset
+
+ for ad domain match percentage.
 \end_layout
 
 \begin_layout Standard
@@ -3736,7 +3725,7 @@ reference "tab:Cat-and-Mouse-ad-coverage"
 status open
 
 \begin_layout Plain Layout
-Fill in numbers.
+Can a relevant comparison be made with thesis results?
 \end_layout
 
 \end_inset
@@ -3774,9 +3763,7 @@ status open
 tsvtable{krishnamurthy-2006-cmc-1135777.1135829_ad_coverage.tsv}{}{fixed,
  display columns/0/.style={string type, column type=l}, display columns/1/.style={
 string type, column type=i}, display columns/2/.style={string type, column
- type=i}, display columns/3/.style={string type, column type=i}, display
- columns/4/.style={string type, column type={|i}}, display columns/5/.style={strin
-g type, column type=i}, display columns/6/.style={string type, column type=i}}
+ type=i}, display columns/3/.style={string type, column type=i}}
 \end_layout
 
 \end_inset
@@ -3795,6 +3782,53 @@ name "tab:Cat-and-Mouse-ad-coverage"
 \end_inset
 
 Cat and Mouse ad coverage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{krishnamurthy-2006-cmc-1135777.1135829_adserver_match_distribution.tsv}{}
+{force remake=true, fixed, precision=1, display columns/0/.style={string
+ type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Cat-and-Mouse-adserver-match-distribution"
+
+\end_inset
+
+Cat and Mouse ad server match distribution
 \end_layout
 
 \end_inset
@@ -15703,6 +15737,13 @@ status open
 \backslash
 begin{futurework}
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "note:cloudfront.net-cdn-subdomains"
 
 \end_inset
 
