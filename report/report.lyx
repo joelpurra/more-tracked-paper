@@ -2114,19 +2114,6 @@ Provide insight/discussion about this observation.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add small figures to illustrate main points.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 This chapter presents the main results.
  Supplementary results and additional details are provided in Appendix 
 \begin_inset CommandInset ref
@@ -2146,8 +2133,8 @@ status open
 
 
 \backslash
-tsvtablewide{results-summary.tsv}{Results summary}{}{every nth row={1}{before
- row/.add={
+tsvtablewide{results-summary.tsv}{Results summary}{}{force remake=true, every
+ nth row={1}{before row/.add={
 \backslash
 addlinespace[0pt]
 \backslash
@@ -2519,7 +2506,7 @@ HTTP status, redirects, resource distribution
 
 \end_inset
 
-Selection of HTTP-www and HTTPS-www variations from figures 
+Selection of HTTP-www and HTTPS-www variations from Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:HTTP-status-codes"
@@ -2882,7 +2869,7 @@ Internal resources, secure resources, Disconnect's organizations
 
 \end_inset
 
-Small versions of 
+Small versions of Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
@@ -2976,11 +2963,11 @@ reference "sec:Trackers-are-a-commercial-choice"
  HTTP/HTTPS variation lines follow each other in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Cumulative-distribution-ratio-internal-resources"
+reference "fig:Result-selection-internal-secure-organizations"
 
 \end_inset
 
- for an illustration.
+a for an illustration.
 \end_layout
 
 \begin_layout Standard
@@ -3099,19 +3086,6 @@ It seems that Swedish media shun secure connections -- none of them present
 status open
 
 \begin_layout Plain Layout
-Add stacked bar charts.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
 Write about mixed security.
 \end_layout
 
@@ -3144,11 +3118,11 @@ reference "sub:Domain-and-organization"
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Organizations-per-domain"
+reference "fig:Result-selection-internal-secure-organizations"
 
 \end_inset
 
-.
+c.
  While random .se domain variations have a different characteristic due to
  the very low response rate for secure connections 
 \begin_inset CommandInset ref
@@ -3188,19 +3162,6 @@ status open
 \begin_layout Plain Layout
 Write about trackers in http://www.
  datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add graphs.
 \end_layout
 
 \end_inset
