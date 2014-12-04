@@ -658,6 +658,26 @@ Toppdomänlagen, which affects .SE's work, and possibly the
 .
 \end_layout
 
+\begin_layout Itemize
+Internet-Wide Scan Data Repository
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://scans.io/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ to upload data into?
+\end_layout
+
 \begin_layout Part
 Who to talk to
 \end_layout
