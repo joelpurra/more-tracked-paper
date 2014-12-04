@@ -3546,6 +3546,13 @@ name "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
 
 \begin_layout Section
 Cat and Mouse
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Cat-and-Mouse"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3612,11 +3619,11 @@ numprint{1326}
 \end_layout
 
 \begin_layout Standard
-The paper also discusses serving content alongside advertisments as a way
+The paper also discusses serving content alongside advertisements as a way
  to avoid blocking of trackers 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:Top-categories"
+reference "sub:Disconnect-categories-coverage"
 
 \end_inset
 
@@ -15607,7 +15614,7 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 \end_inset
 
 , so their total organization coverage is higher.
- This first table excludes top Google domains, which dominates the top list
+ This first table excludes top Google domains, which dominate the top list
  for all datasets.
 \end_layout
 
@@ -15644,7 +15651,7 @@ reference "sub:Disconnect-category"
 , and are not reflected in the social category aggregates 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:Top-categories"
+reference "sub:Disconnect-categories-coverage"
 
 \end_inset
 
@@ -15668,7 +15675,17 @@ reference "sub:Public-suffix-list"
  blocking list -- because of the variety of services being hosted on subdomains,
  it cannot be blocked as for example advertisement even if it is being hosted
  there.
- It can be seen as a flaw in the Disconnect way of blocking.
+ It can be seen as a flaw in the Disconnect way of blocking, even though
+ listing individual subdomains in other categories might be a way to override
+ the content bypass -- but as these non-branded domains can be seen as throw-awa
+y domains, it can become a game of cat and mouse 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Cat-and-Mouse"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -15781,7 +15798,7 @@ Here we see DoubleClick's, one of Google's ad services, coverage.
  and it skews the numbers for the advertisement category 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:Top-categories"
+reference "sub:Disconnect-categories-coverage"
 
 \end_inset
 
@@ -15870,10 +15887,10 @@ gle.sorted.tsv}{Top Disconnect Google domain match coverage}{}{}
 \end_layout
 
 \begin_layout Subsection
-Top categories
+Categories
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Top-categories"
+name "sub:Disconnect-categories-coverage"
 
 \end_inset
 
@@ -15881,20 +15898,94 @@ name "sub:Top-categories"
 \end_layout
 
 \begin_layout Standard
-Categories and their coverage across different datasets.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more.
-\end_layout
+Disconnect's categories and their coverage across different datasets are
+ shown in the table below.
+ As mentioned earlier, the special Disconnect category contains major Facebook,
+ Google and Twitter domains -- domains that could also have been listed
+ as advertising, analytics or social domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
 
 \end_inset
 
+.
+ The content category, which bypasses Disconnect's blocking by default,
+ can for this reason be seen as the most accurate in terms of coverage,
+ as domains have presumably been added as content in a manual process of
+ whitelisting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Content"
 
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The highest coverage being connected with the Disconnect category explains
+ the low coverage of advertising, analytics and social.
+ If, for example, the two domains facebook.com and twitter.com would be included
+ in the social category, coverage would be 35-56% percentage points higher
+ for top domains and 9-11% percentage points higher for random domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-General"
+
+\end_inset
+
+ -- and more accurate.
+ The same goes for advertising and doubleclick.net (30-50%, 7-36%) and analytics
+ and google-analytics.com (63-76%, 24-32%) 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+What is surprising is the high coverage of content from known trackers.
+ While the Disconnect category has the highest coverage overall, the content
+ category is the second largest -- significantly larger than the advertising,
+ analytics and social categories in most datasets.
+ While a large portion of this is due to extensive usage of Google's hosted
+ services 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+, all organizations with only content domains as well as those with 
+\begin_inset Quotes eld
+\end_inset
+
+mixed
+\begin_inset Quotes erd
+\end_inset
+
+ domains (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Organizations-in-more-than-one-category"
+
+\end_inset
+
+) are let through to 67-78% of top domains and 38-56% or random domains.
+ Mixing advertisement, or in this case tracking in general, with content
+ has previously been discussed as way for organizations to avoid in-browser
+ blocking 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Cat-and-Mouse"
+
+\end_inset
+
+ -- and it seems prevalent.
 \end_layout
 
 \begin_layout Standard
@@ -15903,45 +15994,6 @@ status open
 
 \begin_layout Plain Layout
 Add column showing all and any Disconnect coverage.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about high content trackers.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about low advertisement, compare to DoubleClick.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about low analytics, compare to Google Analytics.
 \end_layout
 
 \end_inset
@@ -15959,6 +16011,56 @@ status open
 \backslash
 tsvtablewidedatasets{datasets.non-failed.disconnect.categories.coverage.external.sorte
 d.tsv}{Disconnect category match coverage}{}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The current analysis performed for this thesis is built in such a way that
+ the Disconnect blocking list used for matching can easily be replaced with
+ an updated version.
+ This also opens up the possibility of using a locally modified blocking
+ list, re-categorizing each of the Disconnect category's domains as either
+ advertising, analytics or social.
+ The per-organization aggregate analysis would still produce the same numbers
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-organizations"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -16311,7 +16413,7 @@ x
  has been added to show their collective Disconnect category coverage 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sub:Top-categories"
+reference "sub:Disconnect-categories-coverage"
 
 \end_inset
 
