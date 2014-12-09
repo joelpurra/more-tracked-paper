@@ -219,8 +219,12 @@ leftmark}
 \end_layout
 
 \begin_layout Abstract
-When you are browsing websites, third-party resources track your online
- habits; such tracking can be considered an invasion of privacy.
+When you are browsing websites, third-party resources record your online
+ habits; such 
+\emph on
+tracking
+\emph default
+ can be considered an invasion of privacy.
  It was previously unknown how many third-party resources, trackers and
  tracker companies are present on an average website.
  While downloading over 
@@ -288,11 +292,14 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-How many companies are tracking you online, and how much information does
- the average Swede leak while using popular .se websites? Many, and a lot
- -- more than you may think.
+How many companies are recording your online trail, and how much information
+ does the average Swede leak while using popular .se websites? Many, and
+ a lot -- more than you may think.
  Large organizations like Google, Facebook and Amazon are able to connect
- the dots you leave behind during everyday usage, and construct a persona
+ the dots you leave behind during everyday usage, and construct a 
+\emph on
+persona
+\emph default
  that reflects you from their perspective.
  Have you told your family, friends or colleagues about your gambling addiction,
  your sex toy purchases, or your alcoholism? Even if you did not tell anyone
@@ -302,7 +309,10 @@ How many companies are tracking you online, and how much information does
 \end_layout
 
 \begin_layout Standard
-While browsing the web users are both actively and passively being tracked
+While browsing the web users are both actively and passively being 
+\emph on
+tracked
+\emph default
  by multiple companies, for the purpose of building a persona for targeted
  advertising.
  Sometimes the data collection is visible, as in social network sites and
@@ -623,8 +633,11 @@ key "Roosendaal:2010:likethis"
  habits -- all within the bounds of the services' privacy policies agreed
  to by the user.
  Once a user has provided their personal information, it is no longer just
- the individual browser or device being tracked, but the actual person using
- it -- even after logging out 
+ the individual browser or device being tracked, but the actual 
+\emph on
+person
+\emph default
+ using it -- even after logging out 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kontaxis:2012:PSP:2362793.2362823,Krishnamurthy:2008:CPO:1397735.1397744"
@@ -663,11 +676,43 @@ Publishers reserve areas of their web pages for displaying different kinds
 \emph on
 targeted
 \emph default
- with personalized ads depending on their specific personal data and browsing
- history 
+ with 
+\emph on
+personalized
+\emph default
+ ads depending on their specific personal data and browsing history 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gill:2013:BPF:2504730.2504768"
+
+\end_inset
+
+.
+ Indicators such as geographic location, hardware platform/browser combinations
+ have been shown to result in 
+\emph on
+price steering
+\emph default
+ and 
+\emph on
+price discrimination
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hannak:2014:MPD:2663716.2663744,Mikians:2013:CSP:2535372.2535415"
+
+\end_inset
+
+.
+ While the effects of a web-wide user tracking have not been broadly measured
+ with regards to pricing in e-commerce, using a larger and broader portion
+ of a user's internet history and contributions would be a logical step
+ for online shopping, as it has been used to personalize web search results
+ and social network update feeds 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dou:2007:LEA:1242572.1242651,Pariser:2011:filterbubble"
 
 \end_inset
 
@@ -3249,23 +3294,6 @@ name "sec:.SE-Health-Status-comparison"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about the 
-\emph on
-.SE Health Status
-\emph default
- report findings.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Google Analytics
 \end_layout
@@ -4218,6 +4246,19 @@ g being included twice instead of .engineer and .engineering separately.
 Related work
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about privacy, tracker research etcetera.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 At .SE
 \end_layout
@@ -4331,23 +4372,6 @@ Characterizing Organizational use of Web-based Services: Methodology, Challenges
 , Observations and Insights
 \emph default
 .
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Privacy related research
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about privacy, tracker research etcetera.
 \end_layout
 
 \end_inset
@@ -4472,6 +4496,91 @@ numprint{900}
 \end_layout
 
 \begin_layout Subsection
+Challenges in Measuring Online Advertising Systems 
+\end_layout
+
+\begin_layout Standard
+The paper 
+\emph on
+Challenges in Measuring Online Advertising Systems
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Guha:2010:CMO:1879141.1879152"
+
+\end_inset
+
+ shows that identifying ads and how data collected from trackers affect
+ ads has several challenges.
+ This thesis does not look at 
+\emph on
+which
+\emph default
+ ads are shown to a user, but rather where ads are served from.
+ Potentially relevant to this thesis would be for example DNS load-balancing
+ by ad networks, cookies differing between browser instances and local proxies
+ affecting the HTTP request.
+\end_layout
+
+\begin_layout Standard
+Final dataset downloads were performed by a single machine 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Computer-machines"
+
+\end_inset
+
+ so there should not be any proxy partially affecting the results 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Network-connection"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Load-balancing such as using multiple (round-robin) DNS records might lead
+ to varying results, depending on the remote system setup.
+ Browser instances themselves are short-lived and share the same system-level
+ DNS cache, so requests made within the DNS records' time to live (TTL)
+ should act, and thus vary, uniformly.
+\end_layout
+
+\begin_layout Standard
+Cookies might affect which ad network is used by an ad network aggregator;
+ in this case each request is made by a new browser instance without any
+ cookies, so results should be random -- at least from the client-side point
+ of view 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Software-considerations-cookies"
+
+\end_inset
+
+.
+ As domains/web sites are not reloaded, but rather requested four separate
+ times 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Dataset-variations"
+
+\end_inset
+
+, results may differ but in a way unaffected by browser history and cache
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Software-considerations-cached-content"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
 .SE Domain Check
 \end_layout
 
@@ -4522,142 +4631,6 @@ Write about .SE's abuse work?
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Other research
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about the results of the research, not that there is research.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Some research has been done surrounding ad networks, trackers and their
- spread on globally popular sites, as well as what kind of private data
- users can expect to more or less inadvertently share in the course of normal
- internet usage.
- Those papers show both some of the problems and solutions in trying to
- analyze external resources.
- The Association for Computing (ACM)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://acm.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- group SIGCOMM
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://sigcomm.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- has a yearly Internet Measurement Conference (IMC)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://sigcomm.org/events/imc-conference"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, where some papers of interest have been presented.
- The Passive and Active Measurements (PAM) Conference
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://pam2014.cs.unm.edu/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- might also have interesting papers, as well as for example ACM's archives.
- As for individuals, one of the most connected researchers in this field
- is Balachander Krishnamurthy
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www2.research.att.com/~bala/papers/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, who has worked with several groups looking at privacy in both online social
- networks (OSNs) and general websites.
-\end_layout
-
-\begin_layout Standard
-Media have made reports regarding mass surveillance, especially by the United
- States intelligence agency National Security Agency (NSA)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.nsa.gov/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, but so far few papers seem to have been written.
- There are also reports on what data private companies are collecting, in
- part by their online efforts, and how they are packaging it for resale.
- While media reports are not academic papers, they provide an up to date
- source of information needed in explaining parts of the thesis subject.
 \end_layout
 
 \begin_layout Subsection
@@ -8478,6 +8451,13 @@ Machine specifications
 
 \begin_layout Subsection
 Network connection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Network-connection"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8507,6 +8487,35 @@ To expedite an automated and repeatable process, a custom set of scripts
  were written as the project har-heedless.
  The scripts are written using standard tools, available as open source
  and on multiple platforms.
+\end_layout
+
+\begin_layout Subsubsection
+Cookies
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Software-considerations-cookies"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cookies stored by a web site may affect content upon requesting subsequent
+ resources, and is one of the primary means of keeping track of a browser.
+ Each browser instance has been started without any cookies, and while cookie
+ usage has not been turned off, none have been stored after finalizing the
+ web page request.
+ A cookie analysis still possible by looking at HTTP headers, but they have
+ not been considered as an indicator of tracking as other techniques can
+ serve the same purpose 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "G.-Acar:persistent:2014aa,Eckersley2009unique"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8552,6 +8561,13 @@ reference "sub:phantomjs"
 
 \begin_layout Subsubsection
 Cached content
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Software-considerations-cached-content"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14868,7 +14884,7 @@ Rerun data analysis with updated font mime types?
 status open
 
 \begin_layout Plain Layout
-Break out numbers specifically for font mime (group) and fonts,googleapis.com
+Break out numbers specifically for font mime (group) and fonts.googleapis.com
  and gstatic.com?
 \end_layout
 
