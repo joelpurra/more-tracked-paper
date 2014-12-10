@@ -539,11 +539,13 @@ While online privacy has been in the spotlight due to recently uncovered
  mass surveillance operations, the focus has been on national government
  intelligence agencies collecting information around the globe.
  Public worry regarding surveillance in Sweden is low.
- Only 9% of Swedes say they worry to some degree about government surveillance,
- but at 18% twice as many worry about companies' surveillance 
+ Only 9% of adult Swedish internet users say they worry to some degree about
+ government surveillance, but at 20% twice as many worry about companies'
+ surveillance -- a number that has been steadily rising from 11% in 2011
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Ahlgren:2014aa"
+key "Ahlgren:2014aa,Findahl:2014aa"
 
 \end_inset
 
@@ -557,8 +559,11 @@ covertly
  Basic connection metadata can always be collected, but without secure connectio
 ns between client and server, any detail in the contents of each request
  can be extracted.
- In contrast, external resources are approved by and actively installed
- by site and service owners, and presented openly to users with basic technical
+\end_layout
+
+\begin_layout Standard
+In contrast, external resources are approved by and actively installed by
+ site and service owners, and presented openly to users with basic technical
  skills and tools.
  Reasons can be technical, for example because distributing resources among
  systems improves performance 
@@ -570,7 +575,7 @@ key "Krishnamurthy:2006:CMC:1135777.1135829,Krishnamurthy:2000:AFI:347319.346248
 
 .
  Other times it is because there are positive network effects in using a
- third-party social network to promote content and products.
+ third-party online social network (OSN) to promote content and products.
  Ads are installed as a source of income.
  More and more commonly, allowing a non-visible tracker to be installed
  can also become a source of income -- data aggregation companies pay for
@@ -619,8 +624,11 @@ key "Malandrino:2013:PAI:2517840.2517868"
 \end_inset
 
 .
- Social buttons, allowing users to share links with a simple click, are
- tracking users whether they are registered, logged in or not 
+\end_layout
+
+\begin_layout Standard
+Social buttons, allowing users to share links with a simple click, are tracking
+ users whether they are registered or not, logged in or not 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Roosendaal:2010:likethis"
@@ -647,17 +655,6 @@ key "Kontaxis:2012:PSP:2362793.2362823,Krishnamurthy:2008:CPO:1397735.1397744"
 .
  This direct association, as opposed to inferred, to the person also allows
  for tracking across devices where there is an overlap of services used.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Find a reference for cross device tracking.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -688,7 +685,10 @@ key "Gill:2013:BPF:2504730.2504768"
 \end_inset
 
 .
- Indicators such as geographic location, hardware platform/browser combinations
+\end_layout
+
+\begin_layout Standard
+Indicators such as geographic location, hardware platform/browser combinations
  have been shown to result in 
 \emph on
 price steering
@@ -697,7 +697,7 @@ price steering
 \emph on
 price discrimination
 \emph default
- 
+ on some e-commerce web sites 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hannak:2014:MPD:2663716.2663744,Mikians:2013:CSP:2535372.2535415"
@@ -713,6 +713,30 @@ key "Hannak:2014:MPD:2663716.2663744,Mikians:2013:CSP:2535372.2535415"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Dou:2007:LEA:1242572.1242651,Pariser:2011:filterbubble"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As user data is aggregated, it also ends up in silos mostly of out users'
+ reach -- owned for example by largely invisible data aggregation companies
+ where data can be sold in bulk, or social networks where data can be used
+ to improve the service and increase per-user advertising incomes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Saez-Trumper:2014:BCC:2660460.2660477,Aimeur:2013:SIP:2545118.2545186"
+
+\end_inset
+
+.
+ With portions of a users' social network data publicly available and connectabl
+e with other social network accounts, it can be used to derive individuals'
+ lifestyles 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yuan:2013:WKY:2512938.2512945"
 
 \end_inset
 
@@ -1687,7 +1711,7 @@ key "Eckersley2009unique"
  can achieve the same goal as a normal tracking cookie 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "G.-Acar:persistent:2014aa"
+key "Acar:2014:WNF:2660267.2660347"
 
 \end_inset
 
@@ -2118,7 +2142,7 @@ Insert reference to spidering for federated logins.
  services, to visualize potential information sharing between them 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "G.-Acar:persistent:2014aa"
+key "Acar:2014:WNF:2660267.2660347"
 
 \end_inset
 
@@ -4260,126 +4284,6 @@ Write about privacy, tracker research etcetera.
 \end_layout
 
 \begin_layout Section
-At .SE
-\end_layout
-
-\begin_layout Standard
-Part of .SE's work includes researching internet and technology, with a focus
- on Sweden -- for example, 
-\emph on
-Swedes and the internet
-\emph default
- and broadband and cell phone bandwidth speed tests 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert names of reports.
-\end_layout
-
-\end_inset
-
- to the public, both in Swedish
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/lar-dig-mer/rapporter/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and English
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/english/reports/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- Information and statistics are also published on a separate portal, in
- collaboration with other organizations.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/vad-vi-gor/internetstatistik/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- .SE's Internet Fund
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.internetfonden.se/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- has also funded work on discussing and defining online privacy, aimed at
- those working with or developing systems that handle personal data, often
- with some kind of internet connection 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bylund:2013:978-91-87379-12-3:integritet"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Characterization of the Web and its Traffic
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about TWEB paper 
-\emph on
-Characterizing Organizational use of Web-based Services: Methodology, Challenges
-, Observations and Insights
-\emph default
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 
 \emph on
 .SE Health Status
@@ -4495,7 +4399,29 @@ numprint{900}
  as well as random selection of 1% of the registered .se domain names.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
+Characterization of the Web and its Traffic
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write about TWEB paper 
+\emph on
+Characterizing Organizational use of Web-based Services: Methodology, Challenges
+, Observations and Insights
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Challenges in Measuring Online Advertising Systems 
 \end_layout
 
@@ -4580,7 +4506,7 @@ reference "sub:Software-considerations-cached-content"
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 .SE Domain Check
 \end_layout
 
@@ -4633,7 +4559,7 @@ Write about .SE's abuse work?
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Cookie syncing
 \end_layout
 
@@ -4641,7 +4567,7 @@ Cookie syncing
 A recent large-scale study 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "G.-Acar:persistent:2014aa"
+key "Acar:2014:WNF:2660267.2660347"
 
 \end_inset
 
@@ -5125,7 +5051,7 @@ If possible, a set of common browser plugins could be installed into phantomjs.
  part of evercookies and cookie respawning 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "G.-Acar:persistent:2014aa"
+key "Acar:2014:WNF:2660267.2660347"
 
 \end_inset
 
@@ -7553,7 +7479,21 @@ target "https://en.wikipedia.org/wiki/HTTP_cookie#Supercookie"
 
 ; cookies which are scoped to a public suffix, and therefore readable across
  all websites under that public suffix.
- The same dataset is also useful for grouping domains without improperly
+ It should be noted that all subdomains do not have to point to servers
+ owned by the same organization -- it can be used as a way to allow tracking
+ cookies for server-to-server tracking behind the scenes (external linkage)
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy:2013:POS:2498345.2498600"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The same dataset is also useful for grouping domains without improperly
  counting 
 \begin_inset Flex Code
 status collapsed
@@ -7599,10 +7539,7 @@ status collapsed
 \end_inset
 
  TLD.
-\end_layout
-
-\begin_layout Standard
-Swedish examples include second level domains 
+ Swedish examples include second level domains 
 \begin_inset Flex Code
 status collapsed
 
@@ -8082,7 +8019,7 @@ reference "tab:Disconnect's-categories"
  such as cookie-sharing 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "G.-Acar:persistent:2014aa"
+key "Acar:2014:WNF:2660267.2660347"
 
 \end_inset
 
@@ -8511,7 +8448,7 @@ Cookies stored by a web site may affect content upon requesting subsequent
  serve the same purpose 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "G.-Acar:persistent:2014aa,Eckersley2009unique"
+key "Acar:2014:WNF:2660267.2660347,Eckersley2009unique"
 
 \end_inset
 
