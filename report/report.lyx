@@ -720,27 +720,33 @@ key "Dou:2007:LEA:1242572.1242651,Pariser:2011:filterbubble"
 \end_layout
 
 \begin_layout Standard
-As user data is aggregated, it also ends up in silos mostly of out users'
- reach -- owned for example by largely invisible data aggregation companies
- where data can be sold in bulk, or social networks where data can be used
- to improve the service and increase per-user advertising incomes 
+Social networks can use web site tracking data about their users' to increase
+ per-user advertising incomes by personalization, but they will try to keep
+ most of the information to themselves 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Saez-Trumper:2014:BCC:2660460.2660477,Aimeur:2013:SIP:2545118.2545186"
+key "Saez-Trumper:2014:BCC:2660460.2660477,Aimeur:2013:SIP:2545118.2545186,Yuan:2013:WKY:2512938.2512945"
 
 \end_inset
 
 .
- With portions of a users' social network data publicly available and connectabl
-e with other social network accounts, it can be used to derive individuals'
- lifestyles 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Yuan:2013:WKY:2512938.2512945"
+ There are also companies that only collect information for resale -- 
+\emph on
+data aggregators
+\emph default
+ -- that thrive on combining data sources and package them as targeted informati
+on for other companies to consume.
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Write here
+\end_layout
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -3274,23 +3280,6 @@ Compare with expected results.
 status open
 
 \begin_layout Plain Layout
-Write about the 
-\emph on
-Follow the Money: Understanding Economics of Online Aggregation and Advertising
-\emph default
- report findings.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
 Write about 
 \emph on
 Third-party Identity Management Usage on the Web
@@ -3597,7 +3586,11 @@ name "tab:SE-Health-Status-HTTPS-coverage-2008-2013"
 \end_layout
 
 \begin_layout Section
+
+\emph on
 Cat and Mouse
+\emph default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Cat-and-Mouse"
@@ -3795,13 +3788,17 @@ string type, column type=i}, display columns/2/.style={string type, column
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\emph on
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Cat-and-Mouse-ad-coverage"
 
 \end_inset
 
-Cat and Mouse ad coverage
+Cat and Mouse
+\emph default
+ ad coverage
 \end_layout
 
 \end_inset
@@ -3842,13 +3839,216 @@ tsvtable{krishnamurthy-2006-cmc-1135777.1135829_adserver_match_distribution.tsv}
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\emph on
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Cat-and-Mouse-adserver-match-distribution"
 
 \end_inset
 
-Cat and Mouse ad server match distribution
+Cat and Mouse
+\emph default
+ ad server match distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\emph on
+Follow the Money
+\emph default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Follow-the-Money"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 
+\emph on
+Follow the Money: Understanding Economics of Online Aggregation and Advertising
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gill:2013:BPF:2504730.2504768"
+
+\end_inset
+
+ some of the economical motivations behind tracking users across the web
+ are explored.
+ Using HTTP traffic recorded from different networks, the paper looks at
+ the presence of different 
+\emph on
+aggregators
+\emph default
+ (trackers) on sites which are 
+\emph on
+publishers
+\emph default
+ of content.
+ To distinguish publishers from aggregators, the domains in each session
+ are grouped with regards to the originating request's domain's IP-address'
+ network autonomous system (AS) number -- requests to another AS number
+ are counted as third parties/aggregators.
+ In some cases looking at AS numbers leads to confusion, for example when
+ multiple publishers are hosted on CDN service; separating publishers and
+ aggregators by domain names is then used.
+\end_layout
+
+\begin_layout Standard
+The largest dataset, a mobile network with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{3000000}
+\end_layout
+
+\end_inset
+
+ users and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1500000000}
+\end_layout
+
+\end_inset
+
+ sessions, presumably excludes HTTPS traffic, as it would be unavailable
+ to public network operators.
+ The paper's Figure 3 shows that aggregator coverage is higher for the very
+ top publishers; over 70% for the top 10.
+ Google again shows a significantly greater coverage at 80%, compared to
+ Facebook's 23% in second place.
+ The coverage of top aggregators on top publishers are shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Follow-the-Money-aggregators"
+
+\end_inset
+
+, alongside numbers from this thesis.
+\end_layout
+
+\begin_layout Standard
+This thesis shows even higher numbers for Disconnect's matching of Google
+ and Facebook -- even when looking at the Alexa's top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ sites.
+ Microsoft doesn't seem to have as much coverage in the top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{100000}
+\end_layout
+
+\end_inset
+
+, but the other organizations show about the same coverage.
+ It looks like the paper has grouped AdMob under Global Crossing, which
+ was a large network provider connecting 70 countries before being acquired
+ in 2011.
+ AdMob was acquired by Google already in 2009, so it's unclear why it's
+ listed separately; one reason might be because the dataset is mobile-centric
+ and that AS number is still labeled Global Crossing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{gill-2013-bpf-2504730.2504768_aggregators.tsv}{}{fixed, precision=2,
+ display columns/0/.style={string type, column type=l}, display columns/4/.style={
+clear infinite, column type=|r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Follow-the-Money-aggregators"
+
+\end_inset
+
+
+\emph default
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Follow the Money
+\emph default
+ aggregators
+\end_layout
+
+\end_inset
+
+
+\emph on
+Follow the Money
+\emph default
+ aggregators' revenue, users and publisher coverage fractions plus this
+ thesis' Disconnect organization coverage
 \end_layout
 
 \end_inset
