@@ -3826,8 +3826,7 @@ status open
 
 \backslash
 tsvtable{krishnamurthy-2006-cmc-1135777.1135829_adserver_match_distribution.tsv}{}
-{force remake=true, fixed, precision=1, display columns/0/.style={string
- type, column type=l}}
+{fixed, precision=1, display columns/0/.style={string type, column type=l}}
 \end_layout
 
 \end_inset
@@ -13065,6 +13064,18 @@ mn type=|r}}
 During analysis har-dulcify splits results into unfiltered, internal and
  external resources, each treated the same way in terms of classifications,
  allowing separate conclusions to be drawn.
+ Further analysis showing internal/external ratios are generally calculated
+ per domain which has at least one internal/external request.
+ This makes a rather large difference for random zone domains, which have
+ a rather high ratio of domains with no internal or no external resources
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Requests-per-domain-and-ratios"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -13528,11 +13539,77 @@ name "sec:Request-counts"
 \end_layout
 
 \begin_layout Standard
-The table shows counts of all requests, internal requests and external requests.
+The table shows counts of domains and domains which have at least one internal/e
+xternal request.
+ Following that counts of all requests, internal requests and external requests.
  External requests matching Disconnect's blocking lists are also shown.
- These values are then shown as average count per domain, and ratio of all
- requests.
- Lastly, Disconnect's matches are shown as ratio of external requests.
+ This table is mostly interesting to show the scale of the data collection,
+ in terms of number of requests made and analyzed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Add a totals row, or at least mention request totals.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtablewidedatasets{datasets.non-failed.requests.counts.sorted.tsv}{Requests
+ per domain}{}{display columns/1/.style={string type, column type=i}, display
+ columns/2/.style={string type, column type=i}, display columns/3/.style={string
+ type, column type=i}, display columns/4/.style={string type, column type=|i},
+ display columns/5/.style={string type, column type=i}, display columns/6/.style={
+string type, column type=i}, display columns/7/.style={string type, column
+ type=i}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Requests per domain and ratios
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Requests-per-domain-and-ratios"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Shown in the table below are ratios based on the request counts in Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Request-counts"
+
+\end_inset
+
+.
+ First the ratio of domains with at least one internal/external request.
+ Requests are then shown as average count per domain, internal per domain
+ with internal requests and external per domain with external requests.
+ External Disconnect requests are shown per domain with external requests.
+ After that comes ratios of requests; internal/external/Disconnect out of
+ all requests, external over internal and Disconnect request ratio out of
+ the external requests.
 \end_layout
 
 \begin_layout Standard
@@ -13631,7 +13708,7 @@ Write about disconnect ratio.
 status open
 
 \begin_layout Plain Layout
-Write about disconnect over external ratio.
+Write about external over internal ratio.
 \end_layout
 
 \end_inset
@@ -13644,7 +13721,7 @@ Write about disconnect over external ratio.
 status open
 
 \begin_layout Plain Layout
-Add a totals row, or at least mention request totals.
+Write about disconnect over external ratio.
 \end_layout
 
 \end_inset
@@ -13660,32 +13737,12 @@ status open
 
 
 \backslash
-tsvtablewidedatasets{datasets.non-failed.requests.counts.sorted.tsv}{Requests,
- per domain and ratios}{}{display columns/2/.style={string type, column type=i},
- display columns/3/.style={string type, column type=i}, display columns/4/.style={
-string type, column type=i}, display columns/5/.style={string type, column
- type=i}, display columns/6/.style={precision=0, column type=|r}, display
- columns/7/.style={precision=0}, display columns/8/.style={precision=0}, display
- columns/9/.style={precision=0}, display columns/10/.style={column type=|r}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Request coverage
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about internal, external and disconnect coverage -- as opposed to
- count and requests per domain.
- Or is this already covered by other sections?
+tsvtablewidedatasets{datasets.non-failed.requests.ratios.sorted.tsv}{Requests
+ per domain and ratios}{}{display columns/1/.style={string type, column type=i},
+ display columns/4/.style={precision=0, column type=|r}, display columns/5/.style=
+{precision=0}, display columns/6/.style={precision=0}, display columns/7/.style={p
+recision=0}, display columns/8/.style={column type=|r}, display columns/11/.style=
+{column type=|r}}
 \end_layout
 
 \end_inset
@@ -14425,9 +14482,10 @@ status open
 
 \backslash
 tsvtablewidedatasets{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{Origin
- domains with redirects}{}{display columns/2/.style={string type, column
- type=i}, display columns/5/.style={column type=|r}, display columns/8/.style={col
-umn type=|r}, display columns/12/.style={column type=|r}}
+ domains with redirects}{}{display columns/1/.style={string type, column
+ type=i}, display columns/2/.style={string type, column type=i|}, display
+ columns/5/.style={column type=|r}, display columns/8/.style={column type=|r},
+ display columns/12/.style={column type=|r}}
 \end_layout
 
 \end_inset
