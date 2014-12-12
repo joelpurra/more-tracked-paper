@@ -15366,6 +15366,25 @@ reference "sub:Disconnect's-blocking-list"
 , they have been grouped to display aggregates.
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtablesuperwidedatasets{datasets.non-failed.classification.disconnect.coverage.sort
+ed.tsv}{Disconnect coverage internal/external}{}{display columns/2/.style={string
+ type, column type=i}, display columns/5/.style={string type, column type=|i},
+ display columns/8/.style={column type=|r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Domain and organization counts
 \begin_inset CommandInset label
