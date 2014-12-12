@@ -15069,16 +15069,6 @@ reference "sub:Top-domains-Google"
 status open
 
 \begin_layout Plain Layout
-Rerun data analysis with updated font mime types?
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
 Break out numbers specifically for font mime (group) and fonts.googleapis.com
  and gstatic.com?
 \end_layout
@@ -15097,7 +15087,7 @@ Practically all successful origin requests result in a html response.
  The range is 84-100% html, with the difference being seemingly misconfigured
  responses, part of which are redirects without actual content 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "sec:HTTP,-HTTPS-and-redirects"
 
 \end_inset
@@ -15110,7 +15100,8 @@ Internal
 \end_layout
 
 \begin_layout Standard
-Internal requests exclude the requests to the origin page.
+Internal request ratios for domains with at least one internal request,
+ excluding the origin request.
 \end_layout
 
 \begin_layout Standard
