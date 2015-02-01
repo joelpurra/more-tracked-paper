@@ -16289,9 +16289,10 @@ name "sub:Disconnect-categories-coverage"
 
 \begin_layout Standard
 Disconnect's categories and their coverage across different datasets are
- shown in the table below.
+ shown in the table below, as well as the coverage of domains where any
+ (at least one) external resource matches Disconnect's blocking list.
  As mentioned earlier, the special Disconnect category contains major Facebook,
- Google and Twitter domains -- domains that could also have been listed
+ Google and Twitter domains -- domains which could also have been listed
  as advertising, analytics or social domains 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -16311,6 +16312,21 @@ reference "sub:Disconnect-Content"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:top-categories"
+
+\end_inset
+
+ shows each category's coverage (x axis) per dataset.
+ The grey bar in the background shows ratio of domains with any (at least
+ one) external request matching Disconnect's blocking list for each dataset;
+ it effectively shows the union of the coverage of all categories per domain.
+ In some cases a single category has the same coverage as the union.
 \end_layout
 
 \begin_layout Standard
@@ -16379,19 +16395,6 @@ reference "sec:Cat-and-Mouse"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add column showing all and any Disconnect coverage.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -16400,7 +16403,8 @@ status open
 
 \backslash
 tsvtablewidedatasets{datasets.non-failed.disconnect.categories.coverage.external.sorte
-d.tsv}{Disconnect category match coverage}{}{}
+d.tsv}{Disconnect category match coverage}{}{display columns/2/.style={column
+ type=r|}}
 \end_layout
 
 \end_inset
@@ -16573,6 +16577,20 @@ begin{axis}[
 \begin_layout Plain Layout
 
 ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Any}{Any}{blac
+k!20!white}{bar shift=0pt, bar width=8.5pt}
 \end_layout
 
 \begin_layout Plain Layout
