@@ -32,6 +32,7 @@ customHeadersFooters
 \output_sync 1
 \bibtex_command default
 \index_command default
+\float_placement p
 \paperfontsize default
 \spacing single
 \use_hyperref true
