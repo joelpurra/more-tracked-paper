@@ -1453,15 +1453,17 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 \end_inset
 
 .
- One third of organizations have two domains and Google alone has 271 domains,
- as seen in Figure 
+ Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Domains-per-organization"
 
 \end_inset
 
-.
+ shows the number of organizations (out of the 980 organizations) that have
+ a certain number of tracker domains (x­axis).
+ We see that 47% (459 of 980) have at least two domains listed by Disconnect.me.
+ Google (rightmost point) alone has 271 domains and Yahoo has 71.
  Some organizations have their domains categorized in more than one category,
  shown in Table 
 \begin_inset CommandInset ref
@@ -2965,7 +2967,7 @@ reference "fig:Organizations-per-domain"
 
 \end_inset
 
-
+ showing a selection of HTTP-www and HTTPS-www variations
 \end_layout
 
 \end_inset
@@ -3007,15 +3009,16 @@ reference "sec:Internal-versus-external"
 
 .
  Less than 10% of top sites use strictly internal resources, meaning up
- to 93% of top sites are composed using at least a portion of external resources
- -- see Figure 
+ to 93% of top sites are composed using at least a portion of external resources.
+ See the percentage of domains (x axis) using strictly internal, mixed and
+ strictly external resources in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-c for a selection and Figure 
+c for a selection of datasets, and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -3034,15 +3037,75 @@ reference "sec:Trackers-are-a-commercial-choice"
 
 .
  The difference between HTTP and HTTPS datasets is generally small, showing
- that users are as tracked on insecure as on secure sites -- see how dataset
- HTTP/HTTPS variation lines follow each other in Figure 
+ that users are as tracked on insecure as on secure sites.
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-internal-secure-organizations"
 
 \end_inset
 
-a for an illustration.
+a shows the cumulative distribution function (CDF) of the ratio of external
+ resources used by each domain, with 0% and 99% internal resources marked.
+ In particular, we show the ratio of domains (y­axis) as a function of the
+ ratio of external resources seen by each domain (x­axis).
+ Similar to the HTTPS adaption, we observe significant differences between
+ randomly selected domains and the most popular (top ranked) domains.
+ See how dataset HTTP/HTTPS variation lines follow each other for most datasets,
+ again pointing towards 
+\begin_inset Quotes eld
+\end_inset
+
+secure
+\begin_inset Quotes erd
+\end_inset
+
+ HTTPS serving as many trackers as insecure HTTP.
+ For the HTTP variation of random .se domains 40% use strictly external resources
+; this seems to be connected with the fact that many domains are 
+\begin_inset Quotes eld
+\end_inset
+
+parked
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A parked domain is one that has been purchased from a domain name retailer,
+ but only shows a placeholder message -- usually an advertisement for the
+ domain name retailer itself.
+\end_layout
+
+\end_inset
+
+ and load all their resources from an external domain which serves the domain
+ name retailer's resources for all parked domains.
+ The same domains do not have HTTPS enabled, as can be seen in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-internal-external"
+
+\end_inset
+
+a, and the remaining HTTPS domains show the same internal resource ratio
+ characteristics as top domains.
+ There is a wide variety of parked page styles, as well as other front pages
+ without actual content, but they have not yet been fully investigated and
+ separately analyzed 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Ignore-domains-without-content"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3064,22 +3127,17 @@ HTTP, HTTPS and redirects
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about which category of domains use HTTP, which use HTTPS and which
- redirect.
-\end_layout
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-In general, HTTPS usage is very low at less than 0.6% among random domains,
- see random .se 
+a shows the ratio of domains which respond to requests as non-null responses
+ on the x axis.
+ In general, HTTPS usage is very low at less than 0.6% among random domains
+ -- see random .se 
 \begin_inset Flex Code
 status collapsed
 
@@ -3089,14 +3147,8 @@ status collapsed
 
 \end_inset
 
- responses in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-internal-external"
-
-\end_inset
-
-a, but Reach50 top sites are leading the way with a 53% response rate 
+ responses.
+ Reach50 top sites are leading the way with a 53% response rate 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
@@ -3104,7 +3156,10 @@ reference "sec:Failed-versus-non-failed"
 \end_inset
 
 .
- Sites which implement HTTPS sometimes take advantage of redirects to direct
+\end_layout
+
+\begin_layout Standard
+Sites which implement HTTPS sometimes take advantage of redirects to direct
  the user from an insecure to a secure connection, for example when the
  user didn't type in 
 \begin_inset Flex Code
@@ -3127,24 +3182,35 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_inset
 
 .
- See redirects (3xx responses) in Figure 
+ The average number of redirects for domains with redirects is 1.23, but
+ some domains have multiple, chained redirects to a mixture of HTTP and
+ HTTPS URLs.
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-a and redirect details in Figure 
+a shows the ratio of domains responding with redirects (x axis' 3xx responses),
+ and the effect of these redirects are detailed in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-http-codes-redirects-internal-external"
 
 \end_inset
 
-b, where it is shown that redirects more often point to insecure than secure
- URLs.
- The random .se domains seem to act differently, but due to the very low
- response rate of 0.3% when using HTTPS it is hard to draw conclusions.
+b as ratio of domains (x axis) which are strictly secure, have mixed HTTP/HTTPS
+ redirects, are strictly insecure or which could not be determined because
+ of URL verification mismatches.
+ It is shown that redirects more often point to insecure than secure URLs
+ -- even if the origin request was made to a secure URL.
+ The secure random .se domains have a higher secure redirect ratio, but due
+ to the very low response rate of 0.3% when using HTTPS -- and even fewer
+ with redirects -- it is hard to draw solid conclusions.
 \end_layout
 
 \begin_layout Standard
@@ -3154,19 +3220,6 @@ It seems that Swedish media shun secure connections -- none of them present
  At the same time, they use the highest count of both internal and external
  resources -- with numbers several times higher than other domain lists
  -- and more than 20% of requests go to known trackers.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about mixed security.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -3189,7 +3242,11 @@ reference "sub:Domain-and-organization"
 \end_inset
 
 .
- The organization count per domain for a few datasets is shown in Figure
+\end_layout
+
+\begin_layout Standard
+The CDF of the ratio of domains (y axis) with the number of organizations
+ detected per domain (x axis) for a selection of datasets is shown in Figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3198,20 +3255,25 @@ reference "fig:Result-selection-internal-secure-organizations"
 \end_inset
 
 c.
- While random .se domain variations have a different characteristic due to
- the very low response rate for secure connections 
+ The random .se domain HTTPS variation has a different characteristic than
+ others, with 40% of domains having no detected third party organizations;
+ it can be due to the very low response rate for that particular variation
+ 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
 
 \end_inset
 
-, it can again be seen that the amount of tracking is the same in other
- HTTP-www as HTTPS-www variation -- the figure shows that the lines follow
- each other, with over 80% having some tracking installed.
- Out of the Swedish media domains, 50% share information with more than
- seven tracker organizations -- and one of them is sharing information with
- 38 organizations.
+ It can again be seen that the amount of tracking is the same in other HTTP-www
+ variations as in their respective HTTPS-www variation -- the figure shows
+ that the lines follow each other, with over 80% having some tracking installed.
+\end_layout
+
+\begin_layout Standard
+Out of the Swedish media domains, 50% share information with more than seven
+ tracker organizations -- and one of them is sharing information with 38
+ organizations.
  In the larger Alexa global top 
 \begin_inset ERT
 status open
@@ -3226,36 +3288,8 @@ numprint{10000}
 \end_inset
 
  dataset, 70% of sites allow more than one external organization, 10% allow
- 13 or more and 1% even allow more than 48 trackers -- just on the front
- page of the domain.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about trackers in http://www.
- datasets.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about trackers in https://www.
- datasets.
-\end_layout
-
-\end_inset
-
-
+ 13 or more and 1% even allow more than 48 trackers -- and that is looking
+ only on the front page of the domain.
 \end_layout
 
 \begin_layout Chapter
@@ -7068,6 +7102,25 @@ description "(GOCS) State-owned corporations."
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CDF"
+description "Cumulative distribution function."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Cumulative distribution function"
+description "(CDF) In this thesis usually a graph which shows the ratio of a property as seen per domain on the x axis, with the cumulative ratio of domains which show this property on the y axis. The steeper the curve is above an x value range, the higher the ratio of domains which fall within the range."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -8149,8 +8202,9 @@ reference "fig:Domains-per-organization"
 
 \end_inset
 
- for the distribution.
- 
+ for the distribution of organizations (y axis) with a certain number of
+ associated domains (x axis), where Google is the datapoint to the far right
+ on the x axis.
 \end_layout
 
 \begin_layout Subsection
@@ -12350,18 +12404,29 @@ reference "sub:har-portent"
 \end_layout
 
 \begin_layout Standard
-Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
- for HTTPS, meaning that 30-10% implement HTTPS.
- Random zone domains have a failure rate of above 20% for HTTP and above
- 99% for HTTPS.
- Figure 
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:HTTP-status-codes"
 
 \end_inset
 
- visualizes this.
+ visualizes the percentage of requests in each HTTP status category and
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+null
+\end_layout
+
+\end_inset
+
+ for no response on the x axis.
+ Non-random domains have a failure rate of below 15% for HTTP, and 70-90%
+ for HTTPS, meaning that 30-10% implement HTTPS.
+ Random zone domains have a failure rate of above 20% for HTTP and above
+ 99% for HTTPS.
 \end_layout
 
 \begin_layout Standard
@@ -12381,7 +12446,8 @@ key "rfc5280"
  IP-address per HTTPS certificate, it can also lead to an additional fee
  for renting an exclusive IP-address.
  The random zone domains responding to HTTPS requests exhibit behavior more
- similar to top and curated sites, see Figure 
+ similar to top and curated sites -- see how dataset variation lines follow
+ each other in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
@@ -12395,7 +12461,8 @@ reference "fig:Organizations-per-domain"
 
 \end_inset
 
-, suggesting that a similar kind of effort has been put in developing them.
+ -- suggesting that a similar kind of effort has been put in developing
+ them.
 \end_layout
 
 \begin_layout Standard
@@ -12574,6 +12641,29 @@ Choosing the term non-failed instead of successful when it comes to dividing
 \end_layout
 
 \begin_layout Standard
+The table below details the percentage of domains in each response code
+ group, especially for 3xx (redirect) responses, as well as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+null
+\end_layout
+
+\end_inset
+
+ for no response.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HTTP-status-codes"
+
+\end_inset
+
+ also visualize the results as percentages (x axis) per dataset.
+\end_layout
+
+\begin_layout Standard
 The majority of domains domains are responding to HTTP requests during domain
  scanning, but many do not either by configuration or chance.
  While most non-failed domains produce 2xx responses, there is a high ratio
@@ -12594,17 +12684,6 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-See the table below, and also Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:HTTP-status-codes"
-
-\end_inset
-
-, for HTTP status code results.
 \end_layout
 
 \begin_layout Standard
@@ -12965,27 +13044,33 @@ The table shows non-failed origin domains having requests strictly to the
  known as internal domains -- or external (non-internal) domains.
  Origin domains that are not exclusively loading from either internal or
  external resources are loading from mixed domains.
- See also the proportions in Figure 
+ See also Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
 
 \end_inset
 
-.
- More detailed examples of distributions of resources are shown in 
+ visualizing the proportions (x axis) per dataset.
+\end_layout
+
+\begin_layout Standard
+More detailed examples of distributions of resources are shown in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
 
 \end_inset
 
-; the leftmost marker in each dataset shows the level of domains with 0%
- internal (strictly external) resources and the right hand marker 99% internal
- resources.
+, with ratio of internal resources per domain (as opposed to external resources)
+ on the x axis, and what cumulative ratio of domains exhibit this property
+ on the y axis.
+ The leftmost marker in each dataset shows the ratio of domains (y axis)
+ with 0% internal (strictly external) resources and the right hand marker
+ 99% internal resources.
  To the right of the 99% marker are domains using strictly internal resources;
- the vertical difference between the two markers shows the ratio of mixed
- resource usage.
+ the vertical difference (y axis) between the two markers shows the ratio
+ of mixed resource usage.
 \end_layout
 
 \begin_layout Standard
@@ -13548,16 +13633,99 @@ xternal request.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+If we include all dataset variations 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Add a totals row, or at least mention request totals.
+
+
+\backslash
+numprint{252481}
 \end_layout
 
 \end_inset
 
+ domains responded to the request; out of those 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{172898}
+\end_layout
+
+\end_inset
+
+ made at least one internal request and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{199358}
+\end_layout
+
+\end_inset
+
+ external dittos.
+ A total of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{9877940}
+\end_layout
+
+\end_inset
+
+ requests have been analyzed; 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{4498575}
+\end_layout
+
+\end_inset
+
+ were internal, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{5379365}
+\end_layout
+
+\end_inset
+
+ external and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2389917}
+\end_layout
+
+\end_inset
+
+ matched disconnect's blocking list.
 \end_layout
 
 \begin_layout Standard
@@ -13770,7 +13938,7 @@ Using HTTPS to secure the connection between site and site users is considered
  and they have strong financial incentives to provide a service that is
  (or at least comes across as) trustworthy.
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -13792,9 +13960,12 @@ One of the concerns with mixing in HTTP on an HTTPS site is that an attacker
  can use traffic sniffers to get a hold of sensitive information leaking
  out through HTTP, or man in the middle attacks on several kinds of resources
  to insert malicious code, even though the site is supposed to be protected.
- The following table shows which to what extent sites manage to take full
- advantage of HTTPS, and to which extent they fail in requesting either
- internal or external resources.
+\end_layout
+
+\begin_layout Standard
+The following table shows to what extent sites manage to take full advantage
+ of HTTPS, and to which extent they fail in requesting either internal or
+ external resources.
  Note that HTTP domains that redirect to HTTPS 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -13805,21 +13976,18 @@ reference "sec:HTTP,-HTTPS-and-redirects"
  right away and/or only load HTTPS resources are shown as fully secure,
  as the analysis excludes the origin request -- although in general an initial
  request to HTTP can potentially nullify all subsequent security measures.
- See also Figure 
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:secure-mixed-insecure-resources"
 
 \end_inset
 
- for an overview and Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Cumulative-distribution-ratio-secure-resources"
-
-\end_inset
-
- for secure resource ratio per domain.
+ shows an overview of ratio of domains with strictly secure requests, mixed
+ security or strictly secure requests (x axis) per dataset.
 \end_layout
 
 \begin_layout Standard
@@ -13840,8 +14008,9 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 \end_layout
 
 \begin_layout Standard
-The cumulative distribution of the ratio of secure resources (out of all
- requested resources) per domain is shown in Figure 
+The cumulative distribution of domains (y axis) with a certain ratio of
+ secure resources (out of all requested resources) per domain (x axis) is
+ shown on in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-secure-resources"
@@ -13855,7 +14024,10 @@ reference "fig:Cumulative-distribution-ratio-secure-resources"
  fully secure domains.
  The vertical differences between the two markers for each dataset shows
  the range of sites with mixed security.
- We can see that HTTPS datasets have much better security than their HTTP
+\end_layout
+
+\begin_layout Standard
+We can see that HTTPS datasets have much better security than their HTTP
  counterparts.
  Looking at se.2014-07-10.random.100000-http-www which has over 60% completely
  insecure domains, 30% mixed security and less than 10% domains with only
@@ -13946,21 +14118,6 @@ target "http://googleonlinesecurity.blogspot.in/2014/08/https-as-ranking-signal_
 Another concern is that curated domain lists seem to exhibit an even lower
  HTTPS adoption than both random and top domains -- the domains have been
  selected as they are deemed important to the public in some way.
- 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Update paragraph after HTTPS for 
-\emph on
-.SE Health Status
-\emph default
- datasets is finished.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -14380,15 +14537,21 @@ The table shows domains, domains with redirect responses to the origin request,
  URL.
  The last column shows the ratio of domains with mismatched redirect URLs
  without a subsequently requested URL.
- See Figure 
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:secure-mixed-insecure-redirects"
 
 \end_inset
 
- for the distribution, which also shows the percentage of final secure redirects
- with an 
+ shows the distribution of strictly secure, mixed security and strictly
+ insecure redirects (x axis) per dataset.
+ The percentage of mismatched URLs is also shown.
+ An additional mark shows the percentage of final secure redirects with
+ an 
 \begin_inset Flex Code
 status collapsed
 
@@ -14398,8 +14561,8 @@ x
 
 \end_inset
 
-; not all mixed redirects lead to secure sites -- sometimes they lead back
- to an insecure site.
+, as not all mixed redirects lead to secure sites -- sometimes they lead
+ back to an insecure site.
 \end_layout
 
 \begin_layout Standard
@@ -15443,15 +15606,20 @@ reference "sub:Disconnect's-blocking-list"
 \end_inset
 
 ).
- Figure 
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Organizations-per-domain"
 
 \end_inset
 
- shows the cumulative distribution of domains with requests to between 0
- and 99 organizations, as well as those with 100 or more.
+ shows the cumulative distribution of domains (y axis) with requests to
+ between 0 and 99 organizations (x axis).
+ Domains with 100 or more organizations are shown in the rightmost segment
+ of the graph.
 \end_layout
 
 \begin_layout Standard
@@ -15473,7 +15641,8 @@ reference "sec:Request-counts"
  What is more interesting than request counts is the number of tracker organizat
 ions per domain -- while more information may be leaked as the number of
  requests to an organization increase, the same amount could potentially
- leak through with just one or two carefully composed requests.
+ leak through with just one or two carefully composed requests to each organizat
+ion.
 \end_layout
 
 \begin_layout Standard
@@ -16604,17 +16773,20 @@ name "sub:Top-organizations"
 \begin_layout Standard
 A selection of organizations, and their coverage across different datasets.
  Facebook and Twitter are often touted as the big social network sites,
- but in terms of domain coverage they are far behind Google -- see Figure
- 
+ but in terms of domain coverage they are far behind Google.
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:google-facebook-twitter-coverage"
 
 \end_inset
 
-.
- As these three organizations, and most of their domains, are included in
- the Disconnect category of Disconnect's blocking list 
+ shows the coverage of these three organizations (x axis) per dataset.
+ As these organizations, and most of their domains, are included in the
+ Disconnect category of Disconnect's blocking list 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Disconnect-category"
@@ -16665,24 +16837,11 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 Write about other organizations.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write more.
 \end_layout
 
 \end_inset
