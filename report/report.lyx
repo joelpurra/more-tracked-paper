@@ -1072,7 +1072,7 @@ status open
 
 
 \backslash
-numprint{150000}
+numprint{156000}
 \end_layout
 
 \end_inset
@@ -1379,7 +1379,7 @@ reference "tab:Disconnect's-categories"
 
 \end_inset
 
- for the number of domains per category.
+ for the number of domains and organizations per category.
  The domain level blocking fits well with the thesis' internal versus external
  resource reasoning.
  Because domains are linked to organizations as well as broadly categorized,
@@ -1465,7 +1465,7 @@ reference "fig:Domains-per-organization"
  We see that 47% (459 of 980) have at least two domains listed by Disconnect.me.
  Google (rightmost point) alone has 271 domains and Yahoo has 71.
  Some organizations have their domains categorized in more than one category,
- shown in Table 
+ as shown in detail in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Organizations-in-more-than-one-category"
@@ -4247,7 +4247,7 @@ target "https://developers.google.com/speed/libraries/"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -6221,7 +6221,7 @@ numprint{550}
 
 \end_inset
 
- unique values, including those in Table 
+ unique values, including example values shown in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Top-P3P-values"
@@ -7158,7 +7158,8 @@ reference "tab:Domain-lists-in-use"
 
 \end_inset
 
- has the final domain lists in use, including full dataset size
+ has the details of the final domain lists in use, including full dataset
+ size
 \begin_inset Foot
 status open
 
@@ -7203,6 +7204,15 @@ reference "tab:TLDs-in-dataset-in-use"
 \end_inset
 
  shows the top TLDs in the list of unique domains.
+ This list can be compared to the per-TLD (or technically public suffix)
+ results in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Public-suffix-coverage"
+
+\end_inset
+
+, which shows the coverage of TLDs for external requests per dataset.
 \end_layout
 
 \begin_layout Standard
@@ -7283,7 +7293,7 @@ reference "tab:.SE-Health-Status-categories"
 
 \end_inset
 
-.
+ for category domain counts and descriptions.
  Some domains overlap both within and between categories; domains have been
  deduplicated.
 \end_layout
@@ -8109,7 +8119,7 @@ reference "tab:Disconnect's-categories"
 
 \end_inset
 
-.
+ for domain and organization count per category.
 \end_layout
 
 \begin_layout Subsection
@@ -8242,7 +8252,8 @@ reference "tab:Organizations-in-more-than-one-category"
 
 \end_inset
 
-.
+ for organizations in more than one category, and which categories they
+ are represented in.
 \end_layout
 
 \begin_layout Standard
@@ -8579,14 +8590,14 @@ name "sec:Computer-machines"
 
 \begin_layout Standard
 Two computers were used to download web pages during development -- one
- laptop machine and one server machine (Table 
+ laptop machine and one server machine -- see Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Machine-specifications"
 
 \end_inset
 
-).
+ for specifications.
  The server is significantly more powerful than the laptop, and they downloaded
  a different number of web pages at a time.
  The final datasets were downloaded on the server.
