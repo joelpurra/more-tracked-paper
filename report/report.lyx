@@ -2210,8 +2210,8 @@ status open
 
 
 \backslash
-tsvtablewide{results-summary.tsv}{Results summary}{}{force remake=true, every
- nth row={1}{before row/.add={
+tsvtablewide{results-summary.tsv}{Results summary}{}{every nth row={1}{before
+ row/.add={
 \backslash
 addlinespace[0pt]
 \backslash
@@ -15510,23 +15510,84 @@ name "sec:Disconnect's-blocking-list-matches"
 \end_layout
 
 \begin_layout Standard
-Coverage for requested external URL domains matching Disconnect's list 
+The table below shows coverage for requested URLs' domains matching Disconnect's
+ blocking list 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:classification/disconnect/add.sh"
 
 \end_inset
 
+, for internal and external resources separately as well as all resources
+ together.
+ Coverage per domain for top domains is shown later in this section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Top-domains"
+
+\end_inset
+
 .
- As the list contains which category and organization each domain belongs
- to 
+ As the blocking list contains details about which category and organization
+ each domain belongs to 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Disconnect's-blocking-list"
 
 \end_inset
 
-, they have been grouped to display aggregates.
+, they have been used grouped to display aggregates per category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-categories-coverage"
+
+\end_inset
+
+ and organization 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-organizations"
+
+\end_inset
+
+ as well.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cumulative-distribution-ratio-disconnect-matches"
+
+\end_inset
+
+ shows the CDF of the percentage of domains (y axis) which have a certain
+ ratio of all requests match Disconnect's blocking list (x axis).
+ The leftmost marker for each dataset shows 0% Disconnect matches, and the
+ rightmost marker shows 99% matches.
+\end_layout
+
+\begin_layout Standard
+About 20% of Alexa's top 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{10000}
+\end_layout
+
+\end_inset
+
+ sites make more than 50% of their requests to known tracker domains; similarly
+ 50% of domains from the same datasets load more than 20% of their resources
+ form known tracker domains.
+ Other datasets rely less on this kind of external resource, at around or
+ less than 10% using 50% or more tracker resources -- but again the number
+ of requests is less interesting than the number of organizations potentially
+ collecting the leaked user traffic data.
 \end_layout
 
 \begin_layout Standard
@@ -15538,9 +15599,266 @@ status open
 
 \backslash
 tsvtablesuperwidedatasets{datasets.non-failed.classification.disconnect.coverage.sort
-ed.tsv}{Disconnect coverage internal/external}{}{display columns/2/.style={string
- type, column type=i}, display columns/5/.style={string type, column type=|i},
- display columns/8/.style={column type=|r}}
+ed.tsv}{Disconnect coverage for internal, external and all requests}{}{display
+ columns/2/.style={string type, column type=i}, display columns/5/.style={string
+ type, column type=|i}, display columns/8/.style={column type=|r}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{external/remake next}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDF,
+\end_layout
+
+\begin_layout Plain Layout
+
+	datasetsCDFFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+	xlabel=Ratio of Disconnect matches,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ylabel=Ratio of domains,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+CDFPlotFromDefaultDatasets{
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsDisconnectMatchNormalizedCumulativ
+eSorted}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+CDFPlotFromDataset{
+\backslash
+tableTransposedDatasetsNonFailedRatioBucketsIsDisconnectMatchNormalizedCumulativ
+eSorted}{se.healthstatus.2013.media}{teal}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cumulative-distribution-ratio-disconnect-matches"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Ratio of Disconnect matches per domain
+\end_layout
+
+\end_inset
+
+Cumulative distribution of the ratio of Disconnect's blocking list matches
+ for all resources per domain
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
 \end_layout
 
 \end_inset
