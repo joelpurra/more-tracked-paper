@@ -227,8 +227,10 @@ tracking
 \emph default
  can be considered an invasion of privacy.
  It was previously unknown how many third-party resources, trackers and
- tracker companies are present on an average website.
- While downloading over 
+ tracker companies are present in the different classes of websites chosen:
+ globally popular websites, random samples of .se/.dk/.com/.net domains and
+ curated lists of websites of public interest in Sweden.
+ The in-browser HTTP/HTTPS traffic was recorded while downloading over 
 \begin_inset ERT
 status open
 
@@ -241,10 +243,13 @@ numprint{150000}
 
 \end_inset
 
- globally popular as well as random .com/.net/.se/.dk websites, in-browser HTTP/HTTP
-S traffic was recorded.
- Data shows that known third-party resources including known trackers are
- present on over 70% 
+ websites, allowing comparison of HTTPS adaption and third-party tracking
+ within and across the different classes of websites.
+\end_layout
+
+\begin_layout Abstract
+The data shows that known third-party resources including known trackers
+ are present on over 70% 
 \begin_inset Note Greyedout
 status open
 
@@ -254,13 +259,21 @@ status open
 
 \end_inset
 
- of sites, that tracking is as prevalent on secure as insecure sites and
- that third-party hosted 
+ of sites, that third-party hosted 
 \emph on
 content
 \emph default
  such as video, scripts and fonts make up a large portion of the known trackers
- seen on a typical website.
+ seen on a typical website and that tracking is as prevalent on secure as
+ insecure sites.
+\end_layout
+
+\begin_layout Abstract
+The observation that content is being served by known trackers may suggest
+ that trackers are moving to providing services to the end user to avoid
+ being blocked by privacy tools and ad blockers, while the observation that
+ there is little difference in tracking between using HTTP and HTTPS connections
+ may suggest that users are given a false sense of privacy when using HTTPS.
 \end_layout
 
 \begin_layout Standard
