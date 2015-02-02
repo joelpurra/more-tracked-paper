@@ -801,16 +801,67 @@ key "Saez-Trumper:2014:BCC:2660460.2660477,Aimeur:2013:SIP:2545118.2545186,Yuan:
 .
  There are also companies that only collect information for resale -- 
 \emph on
+data brokers
+\emph default
+ or 
+\emph on
 data aggregators
 \emph default
- -- that thrive on combining data sources and package them as targeted informati
-on for other companies to consume.
+ -- which thrive on combining data sources and package them as targeted
+ information for other companies to consume
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+CBS 60 Minutes - 
+\emph on
+The Data Brokers: Selling your personal information
+\emph default
  
-\begin_inset Note Greyedout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.cbsnews.com/news/the-data-brokers-selling-your-personal-information/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ The market for tracking data resale is expected to grow, as the amount
+ of data increases and quality improves.
+ The Wall Street Journal investigated some of these companies and their
+ offerings:
+\end_layout
+
+\begin_layout Quote
+Some brokers categorize consumers as "Getting By," "Compulsive Online Gamblers"
+ and "Zero Mobility" and advertise the lists as ideal leads for banks, credit-ca
+rd issuers and payday and subprime lenders, according to a review of data
+ brokers' websites.
+ One company offers lists of "Underbanked Prime Prospects" broken down by
+ race.
+ Others include "Kaching! Let it Ride Compulsive Online Gamblers" and "Speedy
+ Dinero," described as Hispanics in need of fast cash receptive to subprime
+ credit offers.
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Write here
+Wall Street Journal - 
+\emph on
+Data Brokers Come Under Fresh Scrutiny; Consumer Profiles Marketed to Lenders
+\emph default
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://online.wsj.com/news/articles/SB10001424052702303874504579377164099831516"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -819,32 +870,7 @@ Write here
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about data aggregators selling information for other purposes than
- advertising.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-What kind of data can be collected by trackers, and how can they be aggregated
- both per person and per group of people?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
