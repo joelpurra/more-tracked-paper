@@ -965,6 +965,13 @@ reference "sub:.SE-Health-Status"
 
 \begin_layout Section
 Domain categories
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Domain-categories"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -1402,7 +1409,7 @@ key "Malandrino:2013:PAI:2517840.2517868,Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
-.
+ due to not being complete, always up to date or accurate.
  Lists are instead used to emphasize those external resources as 
 \emph on
 confirmed
@@ -2194,11 +2201,113 @@ name "sec:High-level-summary"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+Domains lists chosen for this thesis come in three major categories -- top
+ lists, curated lists and random selection from zone files (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Domain-categories"
+
+\end_inset
+
+ and Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Domain-lists-in-use"
+
+\end_inset
+
+, Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Domains"
+
+\end_inset
+
+).
+ While the top lists and curated lists are assumed to primarily contain
+ sites with staff or enthusiasts to take care of them and make sure they
+ are available and functioning, the domain lists randomly extracted from
+ TLD zones might not.
+ Results (Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Results"
+
+\end_inset
+
+, Appendix 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Detailed-Results"
+
+\end_inset
+
+) seem to fall into groups of non-random and randomly selected domains --
+ and result discussions often group them as such.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:TLDs-in-dataset-in-use"
+
+\end_inset
+
+ shows the top TLDs in the list of unique domains; while random TLD samples
+ of course come from a single TLD, top lists are mixed.
+ Looking at the complete dataset selection, the gTLD .org, ccTLDs .ru and
+ .de are about the same size.
+ This list can be compared to the per-TLD (or technically public suffix)
+ results in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Public-suffix-coverage"
+
+\end_inset
+
+, which shows the coverage of TLDs for external requests per dataset.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Write high level summary of datasets.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.tlds.tsv}{}{display columns/2/.style={string type, column
+ type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:TLDs-in-dataset-in-use"
+
+\end_inset
+
+TLDs in dataset in use
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2207,18 +2316,120 @@ Write high level summary of datasets.
 \end_layout
 
 \begin_layout Standard
-See details in Appendix 
+The curated 
+\emph on
+.SE Health Status
+\emph default
+ domain categories in Table 
 \begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Detailed-Results"
+LatexCommand ref
+reference "tab:.SE-Health-Status-categories"
+
+\end_inset
+
+ show that the number of domains per category is significantly lower than
+ the top lists and random domains.
+ This puts a limit on the certainty with which conclusions can be drawn,
+ but still serves a purpose in that the categories often show different
+ characteristics.
+\end_layout
+
+\begin_layout Standard
+The most interesting category is the media category, as it is the most extreme
+ example in terms of requests per domain and tracking 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Requests-per-domain-and-ratios"
+
+\end_inset
+
+.
+ While the thesis is limited to the front pages of each domain 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Limitations"
+
+\end_inset
+
+, it would be interesting to see if users are still tracked after logging
+ in to financial websites 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Internal-versus-external"
+
+\end_inset
+
+.
+ It is also interesting to see how public authorities, government, county
+ and municipality websites include trackers from foreign countries 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Domain-and-organization-counts"
 
 \end_inset
 
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{domains.se-health-status.tsv}{}{display columns/0/.style={string type,
+ column type=l}, display columns/3/.style={string type, column type=l}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:.SE-Health-Status-categories"
+
+\end_inset
+
+.SE Health Status
+\emph default
+ domain categories
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Limitations
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Limitations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2226,12 +2437,9 @@ With lists of domains as input, this thesis only looks at the front page
  of domains.
  While others have spidered entire websites from the root to find, for example,
  a specific group of external services 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Insert reference to spidering for federated logins.
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vapen:2014aa"
 
 \end_inset
 
@@ -7421,7 +7629,8 @@ reference "tab:TLDs-in-dataset-in-use"
 
 \end_inset
 
- shows the top TLDs in the list of unique domains.
+ shows the top TLDs in the list of unique domains; while random TLD samples
+ of course come from a single TLD, top lists are mixed.
  This list can be compared to the per-TLD (or technically public suffix)
  results in Table 
 \begin_inset CommandInset ref
@@ -7434,48 +7643,6 @@ reference "sec:Public-suffix-coverage"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{domains.tlds.tsv}{}{display columns/2/.style={string type, column
- type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:TLDs-in-dataset-in-use"
-
-\end_inset
-
-TLDs in dataset in use
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -7517,52 +7684,6 @@ reference "tab:.SE-Health-Status-categories"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{domains.se-health-status.tsv}{}{display columns/0/.style={string type,
- column type=l}, display columns/3/.style={string type, column type=l}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\emph on
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:.SE-Health-Status-categories"
-
-\end_inset
-
-.SE Health Status
-\emph default
- domain categories
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
