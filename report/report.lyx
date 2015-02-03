@@ -440,7 +440,7 @@ reference "sec:Results-Internal-and-external-requests"
  and 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sec:Results-Trackers-and-tracker-organizations"
+reference "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
 
 \end_inset
 
@@ -492,7 +492,7 @@ reference "sec:Results-Internal-and-external-requests"
  users' traffic data and personal information is leaked (see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Results-Trackers-and-tracker-organizations"
+reference "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
 
 \end_inset
 
@@ -2946,13 +2946,6 @@ status open
 
 
 \backslash
-tikzset{external/remake next}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{tikzpicture}
 \end_layout
 
@@ -3273,12 +3266,26 @@ hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
 
 \begin_layout Plain Layout
 
-	legend columns=2,
+	legend columns=3,
 \end_layout
 
 \begin_layout Plain Layout
 
 ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{An
+y}{black!20!white}{bar shift=0pt, bar width=8.5pt}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3835,161 +3842,6 @@ reference "fig:Organizations-per-domain"
 \end_layout
 
 \begin_layout Section
-Internal and external requests
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Results-Internal-and-external-requests"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-With each request classified as either internal or external to the originating
- domain, it is easy to see how sites divide their resources 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Internal-versus-external"
-
-\end_inset
-
-.
- Less than 10% of top sites use strictly internal resources, meaning up
- to 93% of top sites are composed using at least a portion of external resources.
- See the percentage of domains (x axis) using strictly internal, mixed and
- strictly external resources in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
-
-\end_inset
-
-a for a selection of datasets, and Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:internal-mixed-external-resources"
-
-\end_inset
-
- for all datasets.
- This means external resources -- in this thesis seen as trackers -- have
- actively been installed, be it as a commercial choice or for technical
- reasons 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Trackers-are-a-commercial-choice"
-
-\end_inset
-
-.
- The difference between HTTP and HTTPS datasets is generally small, showing
- that users are as tracked on insecure as on secure sites.
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Result-selection-internal-secure-organizations"
-
-\end_inset
-
-a shows the cumulative distribution function (CDF) of the ratio of external
- resources used by each domain, with 0% and 99% internal resources marked.
- In particular, we show the ratio of domains (y axis) as a function of the
- ratio of internal resources seen by each domain (x axis).
- This maps to the bar graph in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
-
-\end_inset
-
-a; 0% is all external, over 99% is all internal -- in between means mixed
- security.
- Similar to the HTTPS adaption, we observe significant differences between
- randomly selected domains and the most popular (top ranked) domains.
- See how dataset HTTP/HTTPS variation lines follow each other for most datasets,
- again pointing towards 
-\begin_inset Quotes eld
-\end_inset
-
-secure
-\begin_inset Quotes erd
-\end_inset
-
- HTTPS serving as many trackers as insecure HTTP.
- This means that a secure, encrypted connection protecting against eavesdropping
- doesn't automatically lead to 
-\emph on
-privacy
-\emph default
- -- something which users might be lead to believe when it is called a 
-\begin_inset Quotes eld
-\end_inset
-
-secure connection
-\begin_inset Quotes erd
-\end_inset
-
- as well as through the use of 
-\begin_inset Quotes eld
-\end_inset
-
-security symbols
-\begin_inset Quotes erd
-\end_inset
-
- such as padlocks.
-\end_layout
-
-\begin_layout Standard
-For the HTTP variation of random .se domains 40% use strictly external resources;
- this seems to be connected with the fact that many domains are 
-\begin_inset Quotes eld
-\end_inset
-
-parked
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-A parked domain is one that has been purchased from a domain name retailer,
- but only shows a placeholder message -- usually an advertisement for the
- domain name retailer itself.
-\end_layout
-
-\end_inset
-
- and load all their resources from an external domain which serves the domain
- name retailer's resources for all parked domains.
- The same domains seem to not have HTTPS enabled, as can be seen in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-secure"
-
-\end_inset
-
-a, and the remaining HTTPS domains show the same internal resource ratio
- characteristics as top domains.
- There is a wide variety of parked page styles, as well as other front pages
- without actual content, but they have not yet been fully investigated and
- separately analyzed 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Ignore-domains-without-content"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
 HTTP, HTTPS and redirects
 \begin_inset CommandInset label
 LatexCommand label
@@ -4069,8 +3921,11 @@ numprint{1.23}
 
 \end_inset
 
-, but some domains have multiple, chained redirects to a mixture of HTTP
- and HTTPS URLs.
+, but some domains have multiple, chained redirects; a few even to a 
+\emph on
+mixture
+\emph default
+ of HTTP and HTTPS URLs.
 \end_layout
 
 \begin_layout Standard
@@ -4091,28 +3946,189 @@ reference "fig:Result-selection-http-codes-redirects-secure"
 
 b as ratio of domains (x axis) which are strictly secure, have mixed HTTP/HTTPS
  redirects, are strictly insecure or which could not be determined because
- of URL verification mismatches.
- It is shown that redirects more often point to insecure than secure URLs
- -- even if the origin request was made to a secure URL.
+ of recorded URL mismatches.
+ It is shown that redirects more often point to 
+\emph on
+insecure
+\emph default
+ than secure URLs -- even if the origin request was made to a secure URL.
  The secure random .se domains have a higher secure redirect ratio, but due
  to the very low response rate of 0.3% when using HTTPS -- and even fewer
- with redirects -- it is hard to draw solid conclusions.
+ which use redirects -- it is hard to draw solid conclusions.
 \end_layout
 
 \begin_layout Standard
-It seems that Swedish media shun secure connections -- none of them present
- a fully secured domain, serving mixed content in case of responding to
- secure requests.
+It seems that Swedish media shun secure connections -- 
+\emph on
+not one
+\emph default
+ of them present a fully secured domain, serving mixed content in case of
+ responding to secure requests.
  At the same time, they use the highest count of both internal and external
  resources -- with numbers several times higher than other domain lists
  -- and more than 20% of requests go to known trackers.
 \end_layout
 
 \begin_layout Section
-Trackers and tracker organizations
+Internal and external requests
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Results-Trackers-and-tracker-organizations"
+name "sec:Results-Internal-and-external-requests"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With each request classified as either internal or external to the originating
+ domain, it is easy to see how sites divide their resources 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Internal-versus-external"
+
+\end_inset
+
+.
+ Less than 10% of top sites use strictly internal resources, meaning up
+ to 93% of top sites are composed using at least a portion of external resources.
+ See the percentage of domains (x axis) using strictly internal, mixed and
+ strictly external resources in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+a for a selection of datasets, and Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:internal-mixed-external-resources"
+
+\end_inset
+
+ for all datasets.
+ This means external resources -- in this thesis seen as trackers -- have
+ actively been installed, be it as a commercial choice or for technical
+ reasons 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Trackers-are-a-commercial-choice"
+
+\end_inset
+
+.
+ The difference between HTTP and HTTPS datasets is generally small, showing
+ that users are 
+\emph on
+as tracked
+\emph default
+ on insecure as on secure sites.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-secure-organizations"
+
+\end_inset
+
+a shows the cumulative distribution function (CDF) of the ratio of external
+ resources used by each domain, with 0% and 99% internal resources marked.
+ In particular, we show the ratio of domains (y axis) as a function of the
+ ratio of internal resources seen by each domain (x axis).
+ This maps to the bar graph in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+a; 0% is all external, over 99% is all internal -- in between means mixed
+ security.
+ Similar to the HTTPS adaption, we observe significant differences between
+ randomly selected domains and the most popular (top ranked) domains.
+ See how dataset HTTP/HTTPS variation lines follow each other for most datasets,
+ again pointing towards 
+\begin_inset Quotes eld
+\end_inset
+
+secure
+\begin_inset Quotes erd
+\end_inset
+
+ HTTPS serving as many trackers as insecure HTTP.
+ This means that a secure, encrypted connection protecting against eavesdropping
+ doesn't automatically lead to 
+\emph on
+privacy
+\emph default
+ -- something which users might be lead to believe when it is called a 
+\begin_inset Quotes eld
+\end_inset
+
+secure connection
+\begin_inset Quotes erd
+\end_inset
+
+ as well as through the use of 
+\begin_inset Quotes eld
+\end_inset
+
+security symbols
+\begin_inset Quotes erd
+\end_inset
+
+ such as padlocks.
+\end_layout
+
+\begin_layout Standard
+For the HTTP variation of random .se domains 40% use strictly external resources;
+ this seems to be connected with the fact that many domains are 
+\emph on
+parked
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A parked domain is one that has been purchased from a domain name retailer,
+ but only shows a placeholder message -- usually an advertisement for the
+ domain name retailer itself.
+\end_layout
+
+\end_inset
+
+ and load all their resources from an external domain which serves the domain
+ name retailer's resources for all parked domains.
+ The same domains seem to not have HTTPS enabled, as can be seen in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-http-codes-redirects-secure"
+
+\end_inset
+
+a, and the remaining HTTPS domains show the same internal resource ratio
+ characteristics as top domains.
+ There is a wide variety of parked page styles, as well as other front pages
+ without actual content, but they have not yet been fully investigated and
+ separately analyzed 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Ignore-domains-without-content"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Trackers, tracker categories and tracker organizations
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
 
 \end_inset
 
@@ -4138,27 +4154,20 @@ reference "sub:Domain-and-organization-counts"
 \end_layout
 
 \begin_layout Standard
-The CDF of the ratio of domains (y axis) with the number of organizations
- detected per domain (x axis) for a selection of datasets is shown in Figure
- 
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-internal-secure-organizations"
 
 \end_inset
 
-c.
- The random .se domain HTTPS variation has a different characteristic than
+c shows the CDF of the ratio of domains (y axis) with the number of organization
+s detected per domain (x axis) for a selection of datasets.
+ The random .se domain HTTP variation has a different characteristic than
  others, with 40% of domains having no detected third party organizations;
- it can be due to the very low response rate for that particular variation
- 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Failed-versus-non-failed"
-
-\end_inset
-
-; around 55% of random Swedish HTTP domains have 1-3 trackers, and about
+ it can be due to domain registrars who serve parked domain page not being
+ listed as trackers.
+ Around 55% of random Swedish HTTP domains have 1-3 trackers, and about
  5% have more than 3.
 \end_layout
 
@@ -4223,18 +4232,26 @@ reference "sub:Domain-and-organization-counts"
 .
  This means that any guesswork in what types of articles individuals read
  would read in a printed newspaper is gone -- and with that probably the
- guesswork in exactly what kind of opinions these individuals hold.
+ guesswork in exactly what kind of 
+\emph on
+personal opinions
+\emph default
+ these individuals hold.
  While it is already known that commercial media outlets makes their money
  through advertising, this level of tracking might be surprising -- it seems
  to indicate that what news users read online is very well known.
  It could also mean that this type of intimate knowledge of what news is
- popular connected with the kind of click traffic advertisers are seeing
+ popular, connected with the kind of click traffic advertisers are seeing,
  means that they have financial incentive to control exactly what the media
  writes.
- Does bad news bring more clicks than good? Write more about bad news.
- Advertisers could also expand article categorization with fine-grained
- details and connect article reading to visits on other sites to improve
- click-through rates.
+ Does bad news bring more 
+\emph on
+advertisement clicks
+\emph default
+ (as opposed to visitors/readers) than good? -- write more about bad news.
+ Advertisers could also provide their own expanded article categorization
+ with fine-grained details and connect article reading to visits on other
+ sites to improve click-through rates.
 \end_layout
 
 \begin_layout Standard
@@ -4245,7 +4262,72 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 \end_inset
 
-c shows Google, Facebook and Twitter's coverage as well as an 
+b shows coverage of the five categories in Disconnect.me's blocking list
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Capturing-tracker-requests"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Disconnect-Categories"
+
+\end_inset
+
+), as well the grey 
+\begin_inset Quotes eld
+\end_inset
+
+any
+\begin_inset Quotes erd
+\end_inset
+
+ bar showing the union of known tracker coverage (x axis).
+ The special Disconnect category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+ is predominant in most datasets, showing coverage almost as large as the
+ union of all categories.
+ The second largest category is content -- which is 
+\emph on
+not blocked by default
+\emph default
+ by Disconnect.me -- as these requests have been 
+\emph on
+deemed desirable
+\emph default
+ even to privacy-aware users.
+ This means that even when running Disconnect.me's software, users are 
+\emph on
+still tracked
+\emph default
+ on 60-70% of websites.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+c shows Google, Facebook and Twitter's coverage as well as the grey 
+\begin_inset Quotes eld
+\end_inset
+
+any
+\begin_inset Quotes erd
+\end_inset
+
+ bar showing the union of known tracker coverage and an 
 \begin_inset Flex Code
 status collapsed
 
@@ -4257,7 +4339,11 @@ x
 
  marking the coverage of the entire Disconnect category of Disconnect.me's
  blocking list which they are part of.
- The organization with the most spread, by far, is Google.
+ The organization with the most spread, 
+\emph on
+by far
+\emph default
+, is Google.
  Google alone has higher coverage than the Disconnect category, meaning
  that a portion of websites use resources from Google domains in the content
  category 
@@ -4291,9 +4377,12 @@ reference "sub:Top-organizations"
  than Google's numbers.
  Twitter generally has even lower coverage, at about half of that of Facebook
  on average.
- As can be seen, Google alone oftentimes has a coverage higher than the
- domains in the Disconnect category -- it shows that Google's content domains
- are in use 
+ As can be seen, Google alone oftentimes has a coverage 
+\emph on
+higher
+\emph default
+ than the domains in the Disconnect category -- it shows that Google's content
+ domains are in use 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Disconnect-Organizations-in-more-than-one-category"
@@ -4301,6 +4390,15 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 \end_inset
 
 .
+ In fact, at around 90% of the 
+\emph on
+total
+\emph default
+ tracker coverage, Google's coverage approaches that of the union of 
+\emph on
+all
+\emph default
+ known trackers.
 \end_layout
 
 \begin_layout Chapter
@@ -9266,7 +9364,7 @@ omniture.com Adobe's ad network.
 \end_layout
 
 \begin_layout Description
-tradedoubler.com The TradeDouble ad network.
+tradedoubler.com The TradeDoubler ad network.
 \end_layout
 
 \begin_layout Subsection
@@ -9391,7 +9489,7 @@ optimizely.com An A/B testing service.
 truste.com Provides certification and tools for privacy policies in order
  to gain users' trust; “enabling businesses to safely collect and use customer
  data across web, mobile, cloud and advertising channels.” This includes
- ways to selectively opt-out from cookies features; required, functional
+ ways to selectively opt-out from cookies by feature level; required, functional
  or advertising.
 \end_layout
 
@@ -18098,6 +18196,12 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 \end_inset
 
 .
+ In fact, at around 90% of the total tracker coverage, Google's coverage
+ approaches that of the union of 
+\emph on
+all other
+\emph default
+ known trackers.
 \end_layout
 
 \begin_layout Standard
@@ -18235,6 +18339,20 @@ begin{axis}[
 \begin_layout Plain Layout
 
 ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Any}{Any}{blac
+k!20!white}{bar shift=0pt, bar width=8.5pt}
 \end_layout
 
 \begin_layout Plain Layout
