@@ -5288,7 +5288,12 @@ name "sec:Follow-the-Money"
 \end_layout
 
 \begin_layout Standard
-Gill and Erramilli et al 
+Gill and Erramilli 
+\emph on
+et al.
+
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gill:2013:BPF:2504730.2504768"
@@ -5907,16 +5912,12 @@ Related work
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Write about privacy, tracker research etcetera.
-\end_layout
-
-\end_inset
-
-
+Privacy research, tracker research and internet measurement can be challenging,
+ as has been shown by others.
+ As .SE have in-house experts, their information was very valuable at an
+ early stage -- several pitfalls may have been avoided.
+ This chapter discusses results in comparison to others' experience, methodology
+ limitations and puts the work in a context.
 \end_layout
 
 \begin_layout Section
@@ -6035,21 +6036,228 @@ numprint{900}
  as well as random selection of 1% of the registered .se domain names.
 \end_layout
 
-\begin_layout Section
-Characterization of the Web and its Traffic
+\begin_layout Standard
+Results for the .se zone and curated lists have during meetings with Wallström
+ and Eklund Löwinder been reported to be reasonable regarding comparable
+ results, such as reachability, HTTPS adaptation and Google Analytics coverage.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+The thesis' software has been written with continuous usage over time in
+ mind:
+\end_layout
+
+\begin_layout Itemize
+Open source software and open standards have been chosen.
+\end_layout
+
+\begin_layout Itemize
+A client-only architecture was chosen, over one where for example database
+ server software would be required.
+\end_layout
+
+\begin_layout Itemize
+Repeated usage does not overwrite downloaded metadata.
+\end_layout
+
+\begin_layout Itemize
+Downloaded metadata is saved together with a screenshot, for visual validation
+ as well as avoiding having to save downloaded data and to render it in
+ the future.
+\end_layout
+
+\begin_layout Itemize
+Analysis software is written to only load the most recent data.
+\end_layout
+
+\begin_layout Itemize
+Analysis software ha been written with continuous merging of results in
+ mind, so that each new piece of data would be immediately integrated into
+ aggregate results.
+\end_layout
+
+\begin_layout Itemize
+Thesis input (domain lists) preparation was automated based on .SE:s internally
+ used data formats.
+\end_layout
+
+\begin_layout Standard
+As the thesis is more detailed in analyzing web content than previous reports,
+ there is not yet enough historic data to show a change over time.
+\end_layout
+
+\begin_layout Section
+
+\emph on
+Characterizing Organizational use of Web-based Services
+\end_layout
+
+\begin_layout Standard
+Gill and Arlitt 
+\emph on
+et al.
+
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gill:2011:COU:2019643.2019646"
+
+\end_inset
+
+ analyze several HTTP datasets collected in HTTP proxies at different times
+ and in different organizations.
+ Two datasets are from 2008; one enterprise and one university.
+ They are contrasted with a dataset collected at a residential cable modem
+ ISP in 1997.
+\end_layout
+
+\begin_layout Standard
+The paper introduces methods to identify and categorize the collected traffic
+ to 
+\emph on
+services providers
+\emph default
+ (organizations) and 
+\emph on
+service instances
+\emph default
+ (a service with a specific use, possibly accessed through different domains
+ names) by looking at over 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Write about TWEB paper 
+
+
+\backslash
+numprint{2000000}
+\end_layout
+
+\end_inset
+
+ unique HTTP 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Host
+\end_layout
+
+\end_inset
+
+ header values in total.
+ First domain components are grouped in different ways, such as 
 \emph on
-Characterizing Organizational use of Web-based Services: Methodology, Challenges
-, Observations and Insights
+brands
 \emph default
+ (first part after the public suffix), then top results are manually consolidate
+d to service providers.
+ Further consolidation is done by looking at domain name system (DNS) and
+ organization identifiers from Regional Internet Registry (RIR) entries.
+ Services are then grouped to 
+\emph on
+service classes
+\emph default
+; some automated grouping is also possible by looking at HTML metadata.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+using the Centroid method
+\begin_inset Quotes erd
+\end_inset
+
+; insert reference to Han, E.
+ and Karypis, G.
+ 2000.
+ Centroid-based document classification: Analysis and experi- mental results.
+ In Proc.
+ PKDD.
+ Lyons, France.
+\end_layout
+
+\end_inset
+
+ This thesis chose to use the public suffix list for automatic domain part
+ identification, down to the brand (primary domain) level 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
 .
+ In combination with Disconnect's blocking list, organizations and a simple
+ categorization is obtained 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect's-blocking-list"
+
+\end_inset
+
+.
+ It is a less generic way and possibly not fully effective on historical
+ data, but accurate for the amount of work put in, as manual grouping and
+ classification work is avoided by using crowdsourcing.
+\end_layout
+
+\begin_layout Standard
+The single domain which is easiest to compare is doubleclick.net, listed
+ as a separate brand in the paper, is shown to have 19% of transactions
+ in the 2008 datasets.
+ Thesis numbers (11-53%) are higher for most datasets 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+, but the paper datasets also contain repeated and continuous use of services
+ -- such as Facebook and client side applications -- which may lower relative
+ numbers for other services.
+\end_layout
+
+\begin_layout Standard
+While a comparison between paper and thesis numbers would be possible for
+ HTTP methods, HTTP status codes as well as content types, they would require
+ additional, slightly modified analysis of existing requests.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(Can't make the comparison; thesis numbers in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+ are for origin requests.)
+\end_layout
+
+\begin_layout Plain Layout
+Paper data shows a surprising amount of 200 status responses (72-78%), especiall
+y in combination with the amount of 304 responses (12-21%), in comparison
+ with the thesis (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+: 55-62%, and close to 0%).
+ Of course, the thesis never re-requests a website, which would explain
+ the lack of 304 responses.
+ The difference is instead a lot of 3xx redirect responses, as more than
+ 50% of top sites redirect to their preferred, canonical URL.
 \end_layout
 
 \end_inset
@@ -6058,7 +6266,9 @@ Characterizing Organizational use of Web-based Services: Methodology, Challenges
 \end_layout
 
 \begin_layout Section
-Challenges in Measuring Online Advertising Systems 
+
+\emph on
+Challenges in Measuring Online Advertising Systems
 \end_layout
 
 \begin_layout Standard
@@ -6083,9 +6293,10 @@ which
  Potentially relevant to this thesis would be for example DNS load-balancing
  by ad networks, cookies differing between browser instances and local proxies
  affecting the HTTP request.
+ This is how they were considered and dealt with:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Final dataset downloads were performed by a single machine 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -6103,7 +6314,7 @@ reference "sub:Network-connection"
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Load-balancing such as using multiple (round-robin) DNS records might lead
  to varying results, depending on the remote system setup.
  Browser instances themselves are short-lived and share the same system-level
@@ -6111,7 +6322,7 @@ Load-balancing such as using multiple (round-robin) DNS records might lead
  should act, and thus vary, uniformly.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Cookies might affect which ad network is used by an ad network aggregator;
  in this case each request is made by a new browser instance without any
  cookies, so results should be random -- at least from the client-side point
@@ -6187,7 +6398,12 @@ Cookie syncing
 \end_layout
 
 \begin_layout Standard
-A recent large-scale study 
+A recent large-scale study by Acar 
+\emph on
+et al.
+
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Acar:2014:WNF:2660267.2660347"
@@ -6201,18 +6417,8 @@ key "Acar:2014:WNF:2660267.2660347"
  If both third parties exist on the same page, they can be shared through
  scripts or by looking for any IDs in the location URL.
  They can also be shared by one third-party sending requests to a second
- third-party (a fourth-party? 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Look up term, might be defined already.
-\end_layout
-
-\end_inset
-
-), either by leaking the location URL as an HTTP referrer or by embedding
- it in the request URL.
+ third-party (known as a fourth-party), either by leaking the location URL
+ as an HTTP referrer or by embedding it in the request URL.
  In crawls of Alexa's top 
 \begin_inset ERT
 status open
@@ -6232,12 +6438,20 @@ numprint{3000}
  from 1.4% to 11% when backend/server-to-server overlaps were modeled.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The study used a modified Firefox browser to look at values stored in primarily
  cookies.
  As all HTTP requests are recorded in this thesis, including HTTP cookie
  headers, a limited version of the same study could be performed.
- In addition, they look at in-browser scripting utilizing for example 
+\end_layout
+
+\begin_layout Itemize
+Acar 
+\emph on
+et al.
+
+\emph default
+ looks at in-browser scripting utilizing for example 
 \begin_inset Flex Code
 status collapsed
 
@@ -6305,9 +6519,9 @@ target "http://httparchive.org/"
 In an effort to measure web page speed on the internet, initially developed
  in October 2010, the HTTP Archive collects HAR data and runs analyses on
  them.
- Unfortunately, their data dumps are in a custom format, not the original
- HAR files, but there are some direct comparisons to be made with their
- 
+ Unfortunately, their official data dumps are in a custom format, not the
+ original HAR files, but there are some direct comparisons to be made with
+ their 
 \emph on
 Interesting stats
 \emph default
@@ -6340,6 +6554,12 @@ HTTPS Requests
 
 \begin_layout Itemize
 Total Requests per Page
+\end_layout
+
+\begin_layout Standard
+It seems there are unofficial, not yet fully developed, exports of HAR data.
+ Unfortunately they weren't made available until late in the thesis process,
+ and could not be used for software validation and comparison.
 \end_layout
 
 \begin_layout Chapter
