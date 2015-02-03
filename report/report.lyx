@@ -2706,6 +2706,11 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
+	legend columns=2,
+\end_layout
+
+\begin_layout Plain Layout
+
 ]
 \end_layout
 
@@ -2779,7 +2784,7 @@ nextgroupplot[
 \begin_layout Plain Layout
 
 	title=c.
- Resource distibution,
+ Resource security,
 \end_layout
 
 \begin_layout Plain Layout
@@ -2801,6 +2806,223 @@ nextgroupplot[
 
 	yticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-
 hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{All sec}{Secure
+}{green}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{Mix sec}{Mixed}
+{yellow}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{All insec}{Inse
+cure}{orange}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{groupplot}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Result-selection-http-codes-redirects-secure"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+HTTP status, redirects, resource security
+\end_layout
+
+\end_inset
+
+Selection of HTTP-www and HTTPS-www variations from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HTTP-status-codes"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:secure-mixed-insecure-redirects"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:secure-mixed-insecure-resources"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{external/remake next}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{groupplot}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	group style={
+\end_layout
+
+\begin_layout Plain Layout
+
+		group size=3 by 1,
+\end_layout
+
+\begin_layout Plain Layout
+
+		horizontal sep=8pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+	},
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=a.
+ Resource distribution,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={},
 \end_layout
 
 \begin_layout Plain Layout
@@ -2858,6 +3080,342 @@ External}{orange}{}
 
 
 \backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=b.
+ Tracker categories,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbarPart2,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ultra thin,
+\end_layout
+
+\begin_layout Plain Layout
+
+	bar width=2.5pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={},
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend columns=3,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{An
+y}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Disconn
+ect}{Disconnect}{orange!80!white}{bar shift=3pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Content
+}{Content}{olive!80!white}{bar shift=1.5pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Adverti
+sing}{Advertising}{teal!80!white}{bar shift=0pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Analyti
+cs}{Analytics}{purple!80!white}{bar shift=-1.5pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Social}
+{Social}{brown!80!white}{bar shift=-3pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextgroupplot[
+\end_layout
+
+\begin_layout Plain Layout
+
+	title=c.
+ Top organizations,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarMiniResults,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsMultiXbarPart2,
+\end_layout
+
+\begin_layout Plain Layout
+
+	ultra thin,
+\end_layout
+
+\begin_layout Plain Layout
+
+	bar width=2.5pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+	yticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-
+hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+\end_layout
+
+\begin_layout Plain Layout
+
+	legend columns=2,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Goog
+le}{Google}{red!90!white}{bar shift=2pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Face
+book}{Facebook}{blue!90!white}{bar shift=0pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Twit
+ter}{Twitter}{cyan!70!white}{bar shift=-2pt,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addplot+[
+\end_layout
+
+\begin_layout Plain Layout
+
+		stack plots=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+		only marks,
+\end_layout
+
+\begin_layout Plain Layout
+
+		mark=x,
+\end_layout
+
+\begin_layout Plain Layout
+
+		mark size=3pt,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill=white,
+\end_layout
+
+\begin_layout Plain Layout
+
+		draw=black,
+\end_layout
+
+\begin_layout Plain Layout
+
+		semithick,
+\end_layout
+
+\begin_layout Plain Layout
+
+		fill opacity=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+		update limits=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+		line legend,
+\end_layout
+
+\begin_layout Plain Layout
+
+	]
+\end_layout
+
+\begin_layout Plain Layout
+
+	table[y=Dataset,x=Disconnect]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addlegendentry{Disconnect}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 end{groupplot}
 \end_layout
 
@@ -2879,7 +3437,7 @@ end{tikzpicture}
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Result-selection-http-codes-redirects-internal-external"
+name "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
 
 \end_inset
 
@@ -2888,7 +3446,7 @@ name "fig:Result-selection-http-codes-redirects-internal-external"
 status open
 
 \begin_layout Plain Layout
-HTTP status, redirects, resource distribution
+Internal/external resources, tracker categories and top tracker organizations
 \end_layout
 
 \end_inset
@@ -2896,39 +3454,25 @@ HTTP status, redirects, resource distribution
 Selection of HTTP-www and HTTPS-www variations from Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:HTTP-status-codes"
+reference "fig:internal-mixed-external-resources"
 
 \end_inset
 
 , 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:secure-mixed-insecure-redirects"
+reference "fig:top-categories"
 
 \end_inset
 
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:internal-mixed-external-resources"
+reference "fig:google-facebook-twitter-coverage"
 
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Should se.2014-07-10.random.100000-https-www results be blanked out in B and
- C because of 0.3% response rates?
 \end_layout
 
 \end_inset
@@ -3317,11 +3861,11 @@ reference "sec:Internal-versus-external"
  strictly external resources in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-internal-external"
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
 
 \end_inset
 
-c for a selection of datasets, and Figure 
+a for a selection of datasets, and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -3354,7 +3898,16 @@ reference "fig:Result-selection-internal-secure-organizations"
 a shows the cumulative distribution function (CDF) of the ratio of external
  resources used by each domain, with 0% and 99% internal resources marked.
  In particular, we show the ratio of domains (y axis) as a function of the
- ratio of external resources seen by each domain (x axis).
+ ratio of internal resources seen by each domain (x axis).
+ This maps to the bar graph in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+a; 0% is all external, over 99% is all internal -- in between means mixed
+ security.
  Similar to the HTTPS adaption, we observe significant differences between
  randomly selected domains and the most popular (top ranked) domains.
  See how dataset HTTP/HTTPS variation lines follow each other for most datasets,
@@ -3418,7 +3971,7 @@ A parked domain is one that has been purchased from a domain name retailer,
  The same domains seem to not have HTTPS enabled, as can be seen in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-internal-external"
+reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
@@ -3451,7 +4004,7 @@ name "sec:Results-HTTP,-HTTPS-and-redirects"
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-internal-external"
+reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
@@ -3524,7 +4077,7 @@ numprint{1.23}
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-internal-external"
+reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
@@ -3532,7 +4085,7 @@ a shows the ratio of domains responding with redirects (x axis' 3xx responses),
  and the effect of these redirects are detailed in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Result-selection-http-codes-redirects-internal-external"
+reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
@@ -3685,9 +4238,41 @@ reference "sub:Domain-and-organization-counts"
 \end_layout
 
 \begin_layout Standard
-The organization with the most spread, by far, is Google.
- The runner ups with the broad domain class coverage are Facebook and Twitter,
- but in terms of domain coverage they are still far behind -- see section
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+c shows Google, Facebook and Twitter's coverage as well as an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+
+ marking the coverage of the entire Disconnect category of Disconnect.me's
+ blocking list which they are part of.
+ The organization with the most spread, by far, is Google.
+ Google alone has higher coverage than the Disconnect category, meaning
+ that a portion of websites use resources from Google domains in the content
+ category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Content"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The runner ups with broad domain class coverage are Facebook and Twitter,
+ but in terms of domain coverage they are still far behind -- see Section
  
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -16026,13 +16611,6 @@ status open
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tikzset{external/remake next}
-\end_layout
 
 \begin_layout Plain Layout
 
