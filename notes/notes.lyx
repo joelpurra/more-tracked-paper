@@ -678,6 +678,75 @@ target "https://scans.io/"
  to upload data into?
 \end_layout
 
+\begin_layout Itemize
+Look at Google's 
+\emph on
+Ad Exchange third- and fourth-party vendor declarations
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://support.google.com/3pascertification/table/3191570?hl=en"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, which has a list of ad exchange buyers and 
+\emph on
+Requirements for third-party ad serving
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://support.google.com/adwordspolicy/answer/94230?hl=en"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, which mentions that daisy-chaining other ad-vendors is allowed.
+\end_layout
+
+\begin_layout Itemize
+Look at Web Performance Today's 
+\emph on
+Fourth-party calls: What you don’t know can hurt your site… and your visitors
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.webperformancetoday.com/2011/07/14/fourth-party-calls-third-party-content/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Part
 Who to talk to
 \end_layout
