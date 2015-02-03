@@ -41,6 +41,11 @@
 	colnames from=Dataset
 	]\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted{datasets.non-failed.ratio-buckets.disconnect-organizations.normalized.cumulative.sorted.tsv}
 
+\pgfplotstableread[
+		format=file,
+		col sep=tab,
+	]{datasets.non-failed.domains.ratios.sorted.tsv}\tableDatasetsNonFailedDomainsRatiosSorted
+
 % Summaries
 % TODO: see if it's possible to filter rows from tables loaded above
 \pgfplotstableread[

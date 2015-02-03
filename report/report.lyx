@@ -813,7 +813,7 @@ data aggregators
 status open
 
 \begin_layout Plain Layout
-CBS 60 Minutes - 
+CBS 60 Minutes -- 
 \emph on
 The Data Brokers: Selling your personal information
 \emph default
@@ -850,7 +850,7 @@ rd issuers and payday and subprime lenders, according to a review of data
 status open
 
 \begin_layout Plain Layout
-Wall Street Journal - 
+Wall Street Journal -- 
 \emph on
 Data Brokers Come Under Fresh Scrutiny; Consumer Profiles Marketed to Lenders
 \emph default
@@ -14646,7 +14646,7 @@ begin{wide}
 \end_layout
 
 \begin_layout Section
-Request counts
+Domain and request counts
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Request-counts"
@@ -14658,7 +14658,8 @@ name "sec:Request-counts"
 
 \begin_layout Standard
 The table shows counts of domains and domains which have at least one internal/e
-xternal request.
+xternal request, and to how many uniexternal domains, primary domains or
+ Disconnect domains the requests went.
  Following that counts of all requests, internal requests and external requests.
  External requests matching Disconnect's blocking lists are also shown.
  This table is mostly interesting to show the scale of the data collection,
@@ -14762,6 +14763,24 @@ numprint{2389917}
 \end_layout
 
 \begin_layout Standard
+See also 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Requests-per-domain-and-ratios"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Undetected-external-domains"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -14775,7 +14794,9 @@ tsvtablewidedatasets{datasets.non-failed.requests.counts.sorted.tsv}{Requests
  type, column type=i}, display columns/4/.style={string type, column type=|i},
  display columns/5/.style={string type, column type=i}, display columns/6/.style={
 string type, column type=i}, display columns/7/.style={string type, column
- type=i}}
+ type=|i}, display columns/8/.style={string type, column type=i}, display
+ columns/9/.style={string type, column type=i}, display columns/10/.style={string
+ type, column type=i}}
 \end_layout
 
 \end_inset
@@ -18597,15 +18618,198 @@ begin{wide}
 \end_layout
 
 \begin_layout Section
-Non-blocked external domains
+Undetected external domains
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Undetected-external-domains"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+While all external resources are considered trackers, parts of this thesis
+ has concentrated on using Disconnect.me's blocking list for tracker verification.
+ But how effective is that list of 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Write about.
+
+
+\backslash
+numprint{2149}
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+known
+\emph default
+ and 
+\emph on
+recognized
+\emph default
+ tracker domains across the datasets? Below is a comparison with the unique
+ external primary domain count in each dataset; while the count is lower
+ than the total number of external domains as it excludes subdomains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+, it matches the blocking style of Disconnect better.
+\end_layout
+
+\begin_layout Standard
+The table below shows the number of unique external domains requested in
+ each dataset, unique external primary domains and unique domains marked
+ as trackers in Disconnect's blocking list.
+ The difference between the number of Disconnect's detected tracker domains
+ and external and primary domains respectively is shown next.
+ The next column group shows the ratio of detected Disconnect domains over
+ all external domains.
+ Lastly, the ratio of domains detected as well as domains undetected by
+ Disconnect, over the number of primary domains.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:non-blocked-external-domains"
+
+\end_inset
+
+ shows the ratio of detected and undetected primary domains (x axis) per
+ dataset.
+\end_layout
+
+\begin_layout Standard
+While some of the domains which have not been matched by Disconnect are
+ private/internal CDNs, the fact that less than 10% of external domains
+ are blocked in top website HTTP datasets is notable.
+ The blocking results are also around 10% or lower for random domain HTTP
+ datasets, but it seems it might be connected to the number of domains in
+ the dataset.
+ Only 3% of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{15746}
+\end_layout
+
+\end_inset
+
+ external primary domains in .se 100k random domain HTTP dataset were detected.
+ Smaller datasets, including HTTPS datasets with few reachable websites,
+ have a higher detection rate at 30% and more.
+\end_layout
+
+\begin_layout Standard
+Can a privacy tool using a 
+\emph on
+fixed blacklist
+\emph default
+ of domains to block be 
+\emph on
+trusted
+\emph default
+ -- or can it only be trusted to be 10% effective? Regular expression based
+ blocking, such as EasyList used by AdBlock, might be more effective, as
+ it can block resources by URL path separate from the URL domain name 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+ -- but it's no cure-all.
+ It does seem as if the blacklist model needs to be improved -- perhaps
+ by using whitelisting instead of blacklisting.
+ The question then becomes an issue of either 
+\emph on
+cat and mouse
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Cat-and-Mouse"
+
+\end_inset
+
+ -- if the whitelist is shared by many users -- or 
+\emph on
+convenience
+\emph default
+ -- if each user maintains their own whitelist.
+ At the moment it seems convenience and blacklists are winning, at the cost
+ of playing cat and mouse with third parties who end up being blocked.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtablewidedatasets{datasets.non-failed.domains.ratios.sorted.tsv}{Requests
+ per domain and ratios}{}{display columns/2/.style={string type, column type=i},
+ display columns/3/.style={string type, column type=i}, display columns/4/.style={
+string type, column type=i}, display columns/5/.style={string type, column
+ type=|i}, display columns/6/.style={string type, column type=i}, display
+ columns/7/.style={column type=|r|}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{futurework}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While only aggregate numbers per dataset have been presented here, it would
+ be interesting to use the full list of undetected primary domains to improve
+ Disconnect's blocking list.
+ While it is an endless endeavor, sorting by number of occurrences would
+ at least give a hint as to which domains might be useful to block.
+ The same list could be used to classify some of the domains as private/internal
+ CDNs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{futurework}
 \end_layout
 
 \end_inset
@@ -18640,6 +18844,298 @@ Pages with wide tables end here.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axis}[
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsStackedXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbar,
+\end_layout
+
+\begin_layout Plain Layout
+
+	allDatasetsXbarFullPage,
+\end_layout
+
+\begin_layout Plain Layout
+
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDomainsRatiosSorted}{Prim.
+ det.}{Detected}{green}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+XBarPlotFromDataset{
+\backslash
+tableDatasetsNonFailedDomainsRatiosSorted}{Undet.}{Undetected}{orange}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:non-blocked-external-domains"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Undetected external primary domains
+\end_layout
+
+\end_inset
+
+Distribution of external primary domains detected/undetected by Disconnect
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{portraitdatapage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with data end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables start here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Couldn't find another way to force the above graph to render properly, without
+ having a wide page afterwards.
+ Could be debugged and fixed.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{wide}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pages with wide tables end here.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+The end
+\end_layout
+
+\begin_layout Standard
+You can find updated document versions, as well as source code and datasets
+ online
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://joelpurra.com/projects/masters-thesis/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Thank you for reading this far -- feedback would be very much appreciated!
 \end_layout
 
 \end_body
