@@ -2547,7 +2547,9 @@ Provide insight/discussion about this observation.
 \end_layout
 
 \begin_layout Standard
-This chapter presents the main results.
+This chapter presents the main results, exemplified primarily by four datasets
+ in their HTTP-www and HTTPS-www variations; Alexa's top 10k websites, Alexa's
+ top .se websites, .se 100k random domains and Swedish municipalities.
  Supplementary results and additional details are provided in Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2645,8 +2647,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=a.
- Origin HTTP response codes,
+	title=(a) Origin HTTP response codes,
 \end_layout
 
 \begin_layout Plain Layout
@@ -2726,8 +2727,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=b.
- Origin redirects,
+	title=(b) Origin redirects,
 \end_layout
 
 \begin_layout Plain Layout
@@ -2829,8 +2829,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=c.
- Resource security,
+	title=(c) Resource security,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3040,8 +3039,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=a.
- Resource distribution,
+	title=(a) Resource distribution,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3124,8 +3122,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=b.
- Tracker categories,
+	title=(b) Tracker categories,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3146,11 +3143,6 @@ nextgroupplot[
 \begin_layout Plain Layout
 
 	allDatasetsMultiXbarPart2,
-\end_layout
-
-\begin_layout Plain Layout
-
-	ultra thin,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3198,7 +3190,7 @@ y}{black!20!white}{bar shift=0pt, bar width=8.5pt}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Disconn
-ect}{Disconnect}{orange!80!white}{bar shift=3pt,}
+ect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3212,7 +3204,7 @@ ect}{Disconnect}{orange!80!white}{bar shift=3pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Content
-}{Content}{olive!80!white}{bar shift=1.5pt,}
+}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3226,7 +3218,7 @@ tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Content
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Adverti
-sing}{Advertising}{teal!80!white}{bar shift=0pt,}
+sing}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3240,7 +3232,7 @@ sing}{Advertising}{teal!80!white}{bar shift=0pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Analyti
-cs}{Analytics}{purple!80!white}{bar shift=-1.5pt,}
+cs}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3254,7 +3246,7 @@ cs}{Analytics}{purple!80!white}{bar shift=-1.5pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Social}
-{Social}{brown!80!white}{bar shift=-3pt,}
+{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3270,8 +3262,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=c.
- Top organizations,
+	title=(c) Top organizations,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3292,11 +3283,6 @@ nextgroupplot[
 \begin_layout Plain Layout
 
 	allDatasetsMultiXbarPart2,
-\end_layout
-
-\begin_layout Plain Layout
-
-	ultra thin,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3345,7 +3331,7 @@ y}{black!20!white}{bar shift=0pt, bar width=8.5pt}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Goog
-le}{Google}{red!90!white}{bar shift=2pt,}
+le}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3359,7 +3345,7 @@ le}{Google}{red!90!white}{bar shift=2pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Face
-book}{Facebook}{blue!90!white}{bar shift=0pt,}
+book}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3373,7 +3359,7 @@ book}{Facebook}{blue!90!white}{bar shift=0pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Twit
-ter}{Twitter}{cyan!70!white}{bar shift=-2pt,}
+ter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3600,8 +3586,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=a.
- Internal resources,
+	title=(a) Internal resources,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3665,8 +3650,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=b.
- Secure resources,
+	title=(b) Secure resources,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3735,8 +3719,7 @@ nextgroupplot[
 
 \begin_layout Plain Layout
 
-	title=c.
- Disconnect's organizations,
+	title=(c) Disconnect's organizations,
 \end_layout
 
 \begin_layout Plain Layout
@@ -3906,8 +3889,27 @@ reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
-a shows the ratio of domains which respond to requests as non-null responses
- on the x axis.
+(a) shows the ratio of domains' HTTP response status code on the x axis
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:HTTP-status-codes"
+
+\end_inset
+
+.
+ There were few 1xx, 4xx and 5xx responses; the figure focuses on 2xx and
+ 3xx; no response is shown as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+null
+\end_layout
+
+\end_inset
+
+.
  In general, HTTPS usage is very low at less than 0.6% among random domains
  -- see random .se 
 \begin_inset Flex Code
@@ -3982,16 +3984,16 @@ reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
-a shows the ratio of domains responding with redirects (x axis' 3xx responses),
- and the effect of these redirects are detailed in Figure 
+(a) shows the ratio of domains responding with redirects (x axis' 3xx responses)
+, and the effect of these redirects are detailed in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
-b as ratio of domains (x axis) which are strictly secure, have mixed HTTP/HTTPS
- redirects, are strictly insecure or which could not be determined because
+(b) as ratio of domains (x axis) which are strictly secure, have mixed HTTP/HTTP
+S redirects, are strictly insecure or which could not be determined because
  of recorded URL mismatches.
  It is shown that redirects more often point to 
 \emph on
@@ -4046,7 +4048,7 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 \end_inset
 
-a for a selection of datasets, and Figure 
+(a) for a selection of datasets, and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:internal-mixed-external-resources"
@@ -4080,7 +4082,7 @@ reference "fig:Result-selection-internal-secure-organizations"
 
 \end_inset
 
-a shows the cumulative distribution function (CDF) of the ratio of external
+(a) shows the cumulative distribution function (CDF) of the ratio of external
  resources used by each domain, with 0% and 99% internal resources marked.
  In particular, we show the ratio of domains (y axis) as a function of the
  ratio of internal resources seen by each domain (x axis).
@@ -4091,7 +4093,7 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 \end_inset
 
-a; 0% is all external, over 99% is all internal -- in between means mixed
+(a); 0% is all external, over 99% is all internal -- in between means mixed
  security.
  Similar to the HTTPS adaption, we observe significant differences between
  randomly selected domains and the most popular (top ranked) domains.
@@ -4156,7 +4158,7 @@ reference "fig:Result-selection-http-codes-redirects-secure"
 
 \end_inset
 
-a, and the remaining HTTPS domains show the same internal resource ratio
+(a), and the remaining HTTPS domains show the same internal resource ratio
  characteristics as top domains.
  There is a wide variety of parked page styles, as well as other front pages
  without actual content, but they have not yet been fully investigated and
@@ -4220,7 +4222,7 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 \end_inset
 
-b shows coverage of the five categories in Disconnect.me's blocking list
+(b) shows coverage of the five categories in Disconnect.me's blocking list
  (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4295,8 +4297,8 @@ reference "fig:Result-selection-internal-secure-organizations"
 
 \end_inset
 
-c shows the CDF of the ratio of domains (y axis) with the number of organization
-s detected per domain (x axis) for a selection of datasets.
+(c) shows the CDF of the ratio of domains (y axis) with the number of organizati
+ons detected per domain (x axis) for a selection of datasets.
  The random .se domain HTTP variation has a different characteristic than
  others, with 40% of domains having no detected third party organizations;
  it can be due to domain registrars who serve parked domain page not being
@@ -4407,7 +4409,7 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 \end_inset
 
-c shows Google, Facebook and Twitter's coverage.
+(c) shows Google, Facebook and Twitter's coverage.
  It also shows the grey 
 \begin_inset Quotes eld
 \end_inset
@@ -17807,11 +17809,6 @@ begin{axis}[
 
 \begin_layout Plain Layout
 
-	ultra thin,
-\end_layout
-
-\begin_layout Plain Layout
-
 	bar width=2.5pt,
 \end_layout
 
@@ -17845,7 +17842,7 @@ k!20!white}{bar shift=0pt, bar width=8.5pt}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Disconnect}{Di
-sconnect}{orange!80!white}{bar shift=3pt,}
+sconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -17859,7 +17856,7 @@ sconnect}{orange!80!white}{bar shift=3pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Content}{Conte
-nt}{olive!80!white}{bar shift=1.5pt,}
+nt}{olive!80!white}{ultra thin, bar shift=1.5pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -17873,7 +17870,7 @@ nt}{olive!80!white}{bar shift=1.5pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Advertising}{A
-dvertising}{teal!80!white}{bar shift=0pt,}
+dvertising}{teal!80!white}{ultra thin, bar shift=0pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -17887,7 +17884,7 @@ dvertising}{teal!80!white}{bar shift=0pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Analytics}{Ana
-lytics}{purple!80!white}{bar shift=-1.5pt,}
+lytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -17901,7 +17898,7 @@ lytics}{purple!80!white}{bar shift=-1.5pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Social}{Social
-}{brown!80!white}{bar shift=-3pt,}
+}{brown!80!white}{ultra thin, bar shift=-3pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -18211,7 +18208,7 @@ k!20!white}{bar shift=0pt, bar width=8.5pt}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Google}{Goo
-gle}{red!90!white}{bar shift=2pt,}
+gle}{red!90!white}{ultra thin, bar shift=2pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -18225,7 +18222,7 @@ gle}{red!90!white}{bar shift=2pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Facebook}{F
-acebook}{blue!90!white}{bar shift=0pt,}
+acebook}{blue!90!white}{ultra thin, bar shift=0pt,}
 \end_layout
 
 \begin_layout Plain Layout
@@ -18239,7 +18236,7 @@ acebook}{blue!90!white}{bar shift=0pt,}
 XBarPlotFromDataset{
 \backslash
 tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Twitter}{Tw
-itter}{cyan!70!white}{bar shift=-2pt,}
+itter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
 \end_layout
 
 \begin_layout Plain Layout
