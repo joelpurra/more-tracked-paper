@@ -493,10 +493,10 @@ reference "sec:Results-Internal-and-external-requests"
 \end_inset
 
 ).
- Web sites using strictly internal resources are less than 7% of top sites,
+ Websites using strictly internal resources are less than 7% of top sites,
  even less in most categories of curated lists of Swedish websites, while
  it is more common among random domains at 10-30%.
- This means most web sites around the world have made an active choice to
+ This means most websites around the world have made an active choice to
  install external resources from third-party services, which means that
  users' traffic data and personal information is leaked (see Section 
 \begin_inset CommandInset ref
@@ -3995,7 +3995,7 @@ reference "fig:Result-selection-http-codes-redirects-secure"
 (b) as ratio of domains (x axis) which are strictly secure, have mixed HTTP/HTTP
 S redirects, are strictly insecure or which could not be determined because
  of recorded URL mismatches.
- It is shown that redirects more often point to 
+ It is surprising to see that redirects more often point to 
 \emph on
 insecure
 \emph default
@@ -4095,7 +4095,10 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 (a); 0% is all external, over 99% is all internal -- in between means mixed
  security.
- Similar to the HTTPS adaption, we observe significant differences between
+\end_layout
+
+\begin_layout Standard
+Similar to the HTTPS adaption, we observe significant differences between
  randomly selected domains and the most popular (top ranked) domains.
  See how dataset HTTP/HTTPS variation lines follow each other for most datasets,
  again pointing towards 
@@ -4106,7 +4109,11 @@ secure
 \begin_inset Quotes erd
 \end_inset
 
- HTTPS serving as many trackers as insecure HTTP.
+ HTTPS serving 
+\emph on
+as many trackers
+\emph default
+ as insecure HTTP.
  This means that a secure, encrypted connection protecting against eavesdropping
  doesn't automatically lead to 
 \emph on
@@ -4635,7 +4642,21 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+Two previously investigated pieces of data this thesis' subject was based
+ upon were .SE's statistics regarding the use of Google Analytics and the
+ adoption rates for HTTPS on Swedish websites.
+ Both have been thoroughly investigated, and below is a comparison to the
+ 
+\emph on
+.SE Health Status
+\emph default
+ reports as well as a few other reports.
+ After that, a summary of the software developed and open source contributions
+ follow.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -4960,28 +4981,24 @@ name "sec:Cat-and-Mouse"
 \end_layout
 
 \begin_layout Standard
-The paper 
-\emph on
-Cat and Mouse: Content Delivery Tradeoffs in Web Access
-\emph default
- 
+Similar to this thesis, Krishnamurthy and Wills 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
- uses a similar approach to detecting trackers -- or in their case advertisement
-s -- as in this thesis, using the Firefox browser plugin AdBlock as the
- base for their blocking model.
+ use a similar approach to detecting third-party resources -- or in their
+ case advertisements: the Firefox browser plugin AdBlock.
  The ad blocking list Filterset.G from 2005-10-10 contains 108 domains as
- well as from 55 regular expressions.
+ well as 55 regular expressions.
  Matching was done after collecting requested URLs using a local proxy server,
  which means that HTTPS requests were lost.
 \end_layout
 
 \begin_layout Standard
-As this thesis uses in-browser URL capturing, HTTPS requests have been captured.
+As this thesis uses in-browser URL capturing, HTTPS requests have been captured
+ -- a definite improvement and increase in the reliability of result.
  On the other hand, not performing URL path matching 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -4989,9 +5006,10 @@ reference "sec:Ad-and-privacy-blocking-lists"
 
 \end_inset
 
- -- the way Disconnect does it -- might lead to fewer detected trackers,
- as the paper shows that only 38% of their ad matches were domain matches,
- plus 10% which matched both domain and path rules.
+ and instead only using domains (the way Disconnect does it) might lead
+ to fewer detected trackers, as the paper shows that only 38% of their ad
+ matches were domain matches, plus 10% which matched both domain and path
+ rules.
  Their matching found 872 unique servers from 108 domain rules -- the 
 \begin_inset ERT
 status open
@@ -5036,6 +5054,29 @@ reference "sub:Disconnect-categories-coverage"
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "note:cloudfront.net-cdn-subdomains"
+
+\end_inset
+
+.
+ While this thesis has not confirmed that this is the case, it seems likely
+ that some easily blockable tracking is being replaced with a less fragile
+ business model where the tracker also adds value to the end user.
+ There are also two ways to look at it -- do service providers add tracking
+ to an existing service, or do they build a service to support tracking?
+ For Google, the most prevalent tracker organization, it might be a mixture
+ of both.
+ In the case of AddThis, providing a social sharing service 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Social"
+
+\end_inset
+
+, it is hard to tell as the service is operated by an advertisement firm
+ yet provides a wide-spread service 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-General"
 
 \end_inset
 
@@ -5093,16 +5134,27 @@ reference "tab:Cat-and-Mouse-adserver-match-distribution"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Can a relevant comparison be made with thesis results?
-\end_layout
+The paper's top ad server (determined by counting URLs) was doubleclick.net
+ at 8.8%.
+ While thesis data hasn't been determined in the same way, it seems that
+ Doubleclick has strengthened their position since then: comparing the coverage
+ of doubleclick.net 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-Google"
 
 \end_inset
 
-
+ to other advertisement domains, organizations or even the category seems
+ to point to that Doubleclick alone has more coverage than the other advertisers
+ together for several datasets.
+ Advertisement coverage was 58% for Alexa's top 500, while this thesis detects
+ 54% advertisement coverage 
+\emph on
+plus
+\emph default
+ an additional 52% doubleclick.net coverage -- the union has unfortunately
+ not been calculated.
 \end_layout
 
 \begin_layout Standard
@@ -5236,19 +5288,15 @@ name "sec:Follow-the-Money"
 \end_layout
 
 \begin_layout Standard
-In 
-\emph on
-Follow the Money: Understanding Economics of Online Aggregation and Advertising
-\emph default
- 
+Gill and Erramilli et al 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gill:2013:BPF:2504730.2504768"
 
 \end_inset
 
- some of the economical motivations behind tracking users across the web
- are explored.
+ have explored some of the economical motivations behind tracking users
+ across the web.
  Using HTTP traffic recorded from different networks, the paper looks at
  the presence of different 
 \emph on
@@ -5295,7 +5343,7 @@ numprint{1500000000}
 
 \end_inset
 
- sessions, presumably excludes HTTPS traffic, as it would be unavailable
+ sessions presumably excludes HTTPS traffic, as it would be unavailable
  to public network operators.
  The paper's Figure 3 shows that aggregator coverage is higher for the very
  top publishers; over 70% for the top 10.
@@ -5312,8 +5360,18 @@ reference "tab:Follow-the-Money-aggregators"
 \end_layout
 
 \begin_layout Standard
+It looks like the paper has grouped AdMob under Global Crossing, which was
+ a large network provider connecting 70 countries before being acquired
+ in 2011.
+ AdMob was acquired by Google already in 2009, so it's unclear why it's
+ listed separately; one reason might be because the dataset is mobile-centric
+ and that AS number is still labeled Global Crossing.
+\end_layout
+
+\begin_layout Standard
 This thesis shows even higher numbers for Disconnect's matching of Google
- and Facebook -- even when looking at the Alexa's top 
+ and Facebook -- 4 and 14 percentage points -- even when looking at the
+ Alexa's top 
 \begin_inset ERT
 status open
 
@@ -5341,12 +5399,6 @@ numprint{100000}
 \end_inset
 
 , but the other organizations show about the same coverage.
- It looks like the paper has grouped AdMob under Global Crossing, which
- was a large network provider connecting 70 countries before being acquired
- in 2011.
- AdMob was acquired by Google already in 2009, so it's unclear why it's
- listed separately; one reason might be because the dataset is mobile-centric
- and that AS number is still labeled Global Crossing.
 \end_layout
 
 \begin_layout Standard
@@ -5449,18 +5501,40 @@ desirable
 \begin_inset Quotes eld
 \end_inset
 
-by popular demand.
+by popular demand
 \begin_inset Quotes erd
 \end_inset
 
+ -- similar to CDNs (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Public-suffix-list"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Cat-and-Mouse"
+
+\end_inset
+
+).
  This brings an advantage to companies that can deliver content, as they
  can just as well use content usage data as pure web bug/tracker usage data
  when analyzing patterns.
 \end_layout
 
 \begin_layout Standard
-Google has several popular embeddable services in the content category,
- including Google Maps
+Google has several popular embeddable services in the content category (coverage
+ from large datasets in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+ in parentheses), including Google Maps
 \begin_inset Foot
 status open
 
@@ -5476,7 +5550,7 @@ target "https://developers.google.com/maps/documentation/embed/"
 
 \end_inset
 
-, Google Translate
+ (2-5%), Google Translate
 \begin_inset Foot
 status open
 
@@ -5508,7 +5582,7 @@ target "https://developers.google.com/youtube/player_parameters"
 
 \end_inset
 
-.
+ (3-7%).
  Lesser known examples include Recaptcha
 \begin_inset Foot
 status open
@@ -5562,13 +5636,17 @@ target "https://developers.google.com/speed/libraries/"
 
 \end_inset
 
- which serves popular javascript libraries from Google's extensive CDN network
- instead of the local server for site speed/performance gains are not visible
- as components, but they cannot be removed without affecting functionality.
- Especially the two latter, served from the googleapis.com domain, are prevalent
- in several of the datasets -- and they are usually loaded on every single
- page on a website, and thus gain full (but passive, as opposed to for example
- Google Analytics) insight on users' click paths and web history.
+ is a very popular service.
+ It hosts popular javascript libraries from Google's extensive CDN network
+ instead of the local server for site speed/performance gains, and is not
+ visible as components -- but they cannot be removed without affecting functiona
+lity.
+ Especially the two latter, served from the googleapis.com (30-56%) domain,
+ are prevalent in several of the datasets -- and they are usually loaded
+ on every single page on a website, and thus gain full insight on users'
+ click paths and web history.
+ The tracking is passive and on the HTTP level, as opposed to scripts executing
+ and collecting data such as Google Analytics (30-80%) and Doubleclick (11-53%).
 \end_layout
 
 \begin_layout Standard
@@ -9778,6 +9856,13 @@ ment categories respectively.
 
 \begin_layout Subsection
 Social
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Social"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
