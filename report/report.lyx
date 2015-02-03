@@ -440,7 +440,7 @@ reference "sec:Results-Internal-and-external-requests"
  and 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
+reference "sec:Results-Tracker-detection"
 
 \end_inset
 
@@ -492,7 +492,7 @@ reference "sec:Results-Internal-and-external-requests"
  users' traffic data and personal information is leaked (see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
+reference "sec:Results-Tracker-detection"
 
 \end_inset
 
@@ -502,7 +502,14 @@ reference "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
  have trackers and 78-100% of websites in the Swedish curated lists.
  The number of known tracker organizations is interesting to look at, as
  a higher number means users have less control over where leaked data ends
- up.
+ up 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Organizations-per-domain"
+
+\end_inset
+
+.
  Around 55% of random Swedish domains have 1-3 trackers, and about 5% have
  more than 3.
  Nearly 50% of global top sites load resources from 3 or more tracker organizati
@@ -539,7 +546,37 @@ reference "sub:Domain-and-organization-counts"
 .
  This means that any guesswork in what types of articles individuals read
  would read in a printed newspaper is gone -- and with that probably the
- guesswork in exactly what kind of opinions these individuals hold.
+ guesswork in exactly what kind of 
+\emph on
+personal opinions
+\emph default
+ these individuals hold.
+ It is clear that Google has the widest coverage by far -- Google trackers
+ alone are present on 
+\emph on
+over 90%
+\emph default
+ of websites in over half of the datasets 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Google's-coverage-is-impressive"
+
+\end_inset
+
+.
+ That being said, it is also hard to tell how many trackers are missed --
+ Disconnect's blocking list 
+\emph on
+only detect 10%
+\emph default
+ of external primary domains as trackers for top website datasets 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Tracker-detection-effectiveness"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -4125,10 +4162,10 @@ reference "sub:Ignore-domains-without-content"
 \end_layout
 
 \begin_layout Section
-Trackers, tracker categories and tracker organizations
+Tracker detection
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Results-Trackers-tracker-categories-and-tracker-organizations"
+name "sec:Results-Tracker-detection"
 
 \end_inset
 
@@ -4151,6 +4188,94 @@ reference "sub:Domain-and-organization-counts"
 \end_inset
 
 .
+ Looking at categories can also be interesting -- especially for the content
+ category, which isn't blocked by default by Disconnect.me.
+\end_layout
+
+\begin_layout Subsection
+Categories
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Results-Tracker-detection-Categories"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+b shows coverage of the five categories in Disconnect.me's blocking list
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Capturing-tracker-requests"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Disconnect-Categories"
+
+\end_inset
+
+), as well the grey 
+\begin_inset Quotes eld
+\end_inset
+
+any
+\begin_inset Quotes erd
+\end_inset
+
+ bar showing the union of known tracker coverage (x axis).
+ The special Disconnect category 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+ is predominant in most datasets, showing coverage almost as large as the
+ union of all categories.
+ The second largest category is content -- which is 
+\emph on
+not blocked by default
+\emph default
+ by Disconnect.me, as these requests have been 
+\emph on
+deemed desirable
+\emph default
+ even to privacy-aware users.
+ This means that even when running Disconnect.me's software, users are 
+\emph on
+still tracked
+\emph default
+ on 60-70% of websites 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-categories-coverage"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Organizations per domain
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Organizations-per-domain"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4254,61 +4379,15 @@ advertisement clicks
  sites to improve click-through rates.
 \end_layout
 
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+\begin_layout Subsection
+Google's coverage is impressive
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Google's-coverage-is-impressive"
 
 \end_inset
 
-b shows coverage of the five categories in Disconnect.me's blocking list
- (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Capturing-tracker-requests"
 
-\end_inset
-
-, 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Disconnect-Categories"
-
-\end_inset
-
-), as well the grey 
-\begin_inset Quotes eld
-\end_inset
-
-any
-\begin_inset Quotes erd
-\end_inset
-
- bar showing the union of known tracker coverage (x axis).
- The special Disconnect category 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Disconnect-category"
-
-\end_inset
-
- is predominant in most datasets, showing coverage almost as large as the
- union of all categories.
- The second largest category is content -- which is 
-\emph on
-not blocked by default
-\emph default
- by Disconnect.me -- as these requests have been 
-\emph on
-deemed desirable
-\emph default
- even to privacy-aware users.
- This means that even when running Disconnect.me's software, users are 
-\emph on
-still tracked
-\emph default
- on 60-70% of websites.
 \end_layout
 
 \begin_layout Standard
@@ -4319,7 +4398,8 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 
 \end_inset
 
-c shows Google, Facebook and Twitter's coverage as well as the grey 
+c shows Google, Facebook and Twitter's coverage.
+ It also shows the grey 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4338,7 +4418,14 @@ x
 \end_inset
 
  marking the coverage of the entire Disconnect category of Disconnect.me's
- blocking list which they are part of.
+ blocking list, which they are part of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-category"
+
+\end_inset
+
+.
  The organization with the most spread, 
 \emph on
 by far
@@ -4390,6 +4477,22 @@ reference "sub:Disconnect-Organizations-in-more-than-one-category"
 \end_inset
 
 .
+ While Disconnect's blocking list contains very many Google domains 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-Domains-per-organization"
+
+\end_inset
+
+, the coverage is not explained by the number of domains they own, but by
+ the popularity of their services 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-Google"
+
+\end_inset
+
+.
  In fact, at around 90% of the 
 \emph on
 total
@@ -4399,6 +4502,121 @@ total
 all
 \emph default
  known trackers.
+\end_layout
+
+\begin_layout Subsection
+Tracker detection effectiveness
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Tracker-detection-effectiveness"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While all external resources are considered trackers, parts of this thesis
+ has concentrated on using Disconnect.me's blocking list for tracker verification.
+ But how effective is that list of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{2149}
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+known
+\emph default
+ and 
+\emph on
+recognized
+\emph default
+ tracker domains across the datasets? See Section 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Undetected-external-domains"
+
+\end_inset
+
+ and Figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Undetected-external-domains"
+
+\end_inset
+
+ for the ratio of detected/undetected domains.
+ While some of the domains which have not been matched by Disconnect are
+ private/internal CDNs, the fact that less than 10% of external domains
+ are blocked in top website HTTP datasets is notable.
+ The blocking results are also around 10% or lower for random domain HTTP
+ datasets, but it seems it might be connected to the number of domains in
+ the dataset.
+ Only 3% of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{15746}
+\end_layout
+
+\end_inset
+
+ external primary domains in .se 100k random domain HTTP dataset were detected.
+ Smaller datasets, including HTTPS datasets with few reachable websites,
+ have a higher detection rate at 30% and more.
+\end_layout
+
+\begin_layout Standard
+Can a privacy tool using a 
+\emph on
+fixed blacklist
+\emph default
+ of domains to block be 
+\emph on
+trusted
+\emph default
+ -- or can it only be trusted to be 10% effective? Regular expression based
+ blocking, such as EasyList used by AdBlock, might be more effective, as
+ it can block resources by URL path separate from the URL domain name 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+ -- but it's no cure-all.
+ It does seem as if the blacklist model needs to be improved -- perhaps
+ by using whitelisting instead of blacklisting.
+ The question then becomes an issue of either 
+\emph on
+cat and mouse
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Cat-and-Mouse"
+
+\end_inset
+
+ -- if the whitelist is shared by many users -- or 
+\emph on
+convenience
+\emph default
+ -- if each user maintains their own whitelist.
+ At the moment it seems convenience and blacklists are winning, at the cost
+ of playing cat and mouse with third parties who end up being blocked.
 \end_layout
 
 \begin_layout Chapter
@@ -18680,7 +18898,7 @@ The table below shows the number of unique external domains requested in
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:non-blocked-external-domains"
+reference "fig:Undetected-external-domains"
 
 \end_inset
 
@@ -18976,7 +19194,7 @@ end{tikzpicture}
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:non-blocked-external-domains"
+name "fig:Undetected-external-domains"
 
 \end_inset
 
