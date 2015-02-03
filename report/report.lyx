@@ -249,31 +249,40 @@ numprint{150000}
 
 \begin_layout Abstract
 The data shows that known third-party resources including known trackers
- are present on over 70% 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-70-93%
-\end_layout
-
-\end_inset
-
- of sites, that third-party hosted 
+ are present on 
+\emph on
+over 90%
+\emph default
+ of most classes, that third-party hosted 
 \emph on
 content
 \emph default
  such as video, scripts and fonts make up a large portion of the known trackers
- seen on a typical website and that tracking is as prevalent on secure as
- insecure sites.
+ seen on a typical website and that tracking is just as prevalent on 
+\emph on
+secure
+\emph default
+ as insecure sites.
 \end_layout
 
 \begin_layout Abstract
-The observation that content is being served by known trackers may suggest
- that trackers are moving to providing services to the end user to avoid
- being blocked by privacy tools and ad blockers, while the observation that
- there is little difference in tracking between using HTTP and HTTPS connections
- may suggest that users are given a false sense of privacy when using HTTPS.
+Observations include that Google is the most widespread tracker organization
+ 
+\emph on
+by far
+\emph default
+, that content is being served by known trackers may suggest that trackers
+ are moving to providing services to the end user to 
+\emph on
+avoid being blocked
+\emph default
+ by privacy tools and ad blockers, and that the small difference in tracking
+ between using HTTP and HTTPS connections may suggest that users are given
+ a 
+\emph on
+false sense of privacy
+\emph default
+ when using HTTPS.
 \end_layout
 
 \begin_layout Standard
@@ -4628,19 +4637,6 @@ Discussion
 status open
 
 \begin_layout Plain Layout
-Compare with expected results.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
 Write about 
 \emph on
 Third-party Identity Management Usage on the Web
@@ -4797,7 +4793,7 @@ reference "sec:Failed-versus-non-failed"
 \emph default
  reports, according to Patrik Wallström, where they only download www variations.
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -5095,7 +5091,7 @@ reference "tab:Cat-and-Mouse-adserver-match-distribution"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -5108,7 +5104,7 @@ Can a relevant comparison be made with thesis results?
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -5831,7 +5827,7 @@ Related work
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -6106,19 +6102,6 @@ Domain Check
  this thesis.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about .SE's abuse work?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Cookie syncing
 \end_layout
@@ -6139,7 +6122,7 @@ key "Acar:2014:WNF:2660267.2660347"
  scripts or by looking for any IDs in the location URL.
  They can also be shared by one third-party sending requests to a second
  third-party (a fourth-party? 
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -6694,20 +6677,11 @@ Do Not Track
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about Do Not Track and the response/server-side counter-part.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 While the HTTP header 
+\emph on
+Do Not Track
+\emph default
+ (
 \begin_inset Flex Code
 status collapsed
 
@@ -6717,8 +6691,39 @@ DNT
 
 \end_inset
 
- (Do Not Track) has not been set, it would have been interesting to look
- at the difference in response from remote services.
+) has not been set, it would have been interesting to look at the difference
+ in response from remote services.
+ Detecting usage of the server-response header 
+\emph on
+Tracking Status Value
+\emph default
+ (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+TSV
+\end_layout
+
+\end_inset
+
+) would be a good start
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
  As cookie headers can be analyzed, the difference could have been detected
  both per origin domain and per connected service.
  See also the P3P analysis 
@@ -7457,7 +7462,7 @@ In conversations with Dwight Hunter, privacy policy researcher, he mentioned
  that P3P policies are seen as a good technical solution to policy problems
  in research he had read.
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -8771,7 +8776,7 @@ target "http://www.alexa.com/topsites"
 Alexa, owned by Amazon, is a well-known source of top sites in the world.
  It is used in many research papers, and can be seen as the standard dataset.
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -9662,7 +9667,7 @@ Sites that deliver content.
 \begin_layout Description
 apis.google.com One of Google's API domains.
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -9726,7 +9731,7 @@ vimeo.com A video site.
 \begin_layout Description
 www.google.com Google's main domain, which also hosts services such as search.
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -10321,7 +10326,7 @@ Automated web spider/bot software can bring a significant load to a web
  server, as the spidering speed can exceed user browsing speed by far --
  a single web spider can potentially request thousands of pages in the span
  of minutes, effectively being a denial of service attack 
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -11014,7 +11019,7 @@ unsuccessful
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -14011,32 +14016,6 @@ end{wide}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -14237,32 +14216,6 @@ end{portraitdatapage}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -14366,15 +14319,6 @@ reference "sec:Trackers-are-a-commercial-choice"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Write about any exciting conclusions.
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -14476,32 +14420,6 @@ status open
 
 \backslash
 end{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
 \end_layout
 
 \end_inset
@@ -14814,32 +14732,6 @@ status open
 
 \backslash
 end{portraitdatapage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
 \end_layout
 
 \end_inset
@@ -15427,32 +15319,6 @@ end{wide}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -15745,32 +15611,6 @@ end{portraitdatapage}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -16033,32 +15873,6 @@ status open
 
 \backslash
 end{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
 \end_layout
 
 \end_inset
@@ -16341,32 +16155,6 @@ end{portraitdatapage}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -16500,7 +16288,7 @@ reference "sub:Top-domains-Google"
 
 .
  
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -16697,7 +16485,7 @@ numprint{10000}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -16898,32 +16686,6 @@ end{wide}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -17082,32 +16844,6 @@ status open
 
 \backslash
 end{portraitdatapage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
 \end_layout
 
 \end_inset
@@ -17328,32 +17064,6 @@ end{wide}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -17516,32 +17226,6 @@ status open
 
 \backslash
 end{portraitdatapage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
 \end_layout
 
 \end_inset
@@ -18062,32 +17746,6 @@ end{wide}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -18319,32 +17977,6 @@ end{portraitdatapage}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -18482,32 +18114,6 @@ status open
 
 \backslash
 end{wide}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
 \end_layout
 
 \end_inset
@@ -18794,32 +18400,6 @@ end{portraitdatapage}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -19052,32 +18632,6 @@ end{wide}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data start here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -19230,32 +18784,6 @@ status open
 
 \backslash
 end{portraitdatapage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with data end here.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Pages with wide tables start here.
 \end_layout
 
 \end_inset
