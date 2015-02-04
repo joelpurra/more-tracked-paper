@@ -4383,18 +4383,6 @@ personal opinions
  While it is already known that commercial media outlets makes their money
  through advertising, this level of tracking might be surprising -- it seems
  to indicate that what news users read online is very well known.
- It could also mean that this type of intimate knowledge of what news is
- popular, connected with the kind of click traffic advertisers are seeing,
- means that they have financial incentive to control exactly what the media
- writes.
- Does bad news bring more 
-\emph on
-advertisement clicks
-\emph default
- (as opposed to visitors/readers) than good? -- write more about bad news.
- Advertisers could also provide their own expanded article categorization
- with fine-grained details and connect article reading to visits on other
- sites to improve click-through rates.
 \end_layout
 
 \begin_layout Subsection
@@ -4645,8 +4633,8 @@ Discussion
 Two previously investigated pieces of data this thesis' subject was based
  upon were .SE's statistics regarding the use of Google Analytics and the
  adoption rates for HTTPS on Swedish websites.
- Both have been thoroughly investigated, and below is a comparison to the
- 
+ Both have been thoroughly investigated and expanded upon.
+ Below is a comparison to the 
 \emph on
 .SE Health Status
 \emph default
@@ -5650,8 +5638,9 @@ lity.
  are prevalent in several of the datasets -- and they are usually loaded
  on every single page on a website, and thus gain full insight on users'
  click paths and web history.
- The tracking is passive and on the HTTP level, as opposed to scripts executing
- and collecting data such as Google Analytics (30-80%) and Doubleclick (11-53%).
+ The content tracking is passive and on the HTTP level, as opposed to scripts
+ executing and collecting data such as Google Analytics (30-80%) and Doubleclick
+ (11-53%).
 \end_layout
 
 \begin_layout Standard
@@ -5714,6 +5703,58 @@ not invented here
  thus results can also be shared.
  This should encourage other groups, as looking at example data might spark
  interest.
+\end_layout
+
+\begin_layout Section
+Tracking and the media
+\end_layout
+
+\begin_layout Standard
+Swedish media websites have been shown to have the highest amount of trackers
+ per site among the datasets -- both in general and for advertisements and
+ analytics trackers.
+ Media and the press is trying to be independent from their advertiser,
+ despite being a source of income.
+ Advertisement choices would be based on audience size and demographic.
+ If a printed newspaper writes a negative article about, or had an image
+ or tone that was not in line with the public image, a company could stop
+ advertising.
+ Even publishers themselves couldn't know what readers actually read, once
+ the paper had left the press.
+\end_layout
+
+\begin_layout Standard
+Current tracker technology allow both publishers and advertisers to see
+ 
+\emph on
+exactly
+\emph default
+ what users are reading online -- down to time spent per paragraph if they
+ wanted.
+ It could also mean that this type of intimate knowledge of what news is
+ popular, connected with the kind of click traffic advertisers are seeing,
+ means that they have financial incentive to control exactly what the media
+ 
+\emph on
+should
+\emph default
+ write -- as opposed to should not write.
+ Does bad news bring more 
+\emph on
+advertisement clicks
+\emph default
+ (as opposed to visitors/readers) than good? -- write more about bad news.
+\end_layout
+
+\begin_layout Standard
+Advertisers could also provide their own expanded article categorization
+ with fine-grained details, such as what kind of readers would be interested
+ in a certain piece.
+ This means they can connect article reading to visits on other sites to
+ improve click-through rates.
+ It is already known that data brokers and aggregators package and sell
+ data -- the news users read is undoubtedly connected to valuable data points,
+ such as education, income groups and political stance.
 \end_layout
 
 \begin_layout Section
