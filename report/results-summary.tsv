@@ -4,21 +4,21 @@ Over 90\% of most categories' domains rely on external resources -- external res
 }	{
 Uses more external resources than .dk, but less than .com and .net (\ref{sec:Internal-versus-external})
 }	{
-There are as many external resources, meaning as much tracking, on secure as insecure top domains (Figure \ref{fig:Result-selection-internal-secure-organizations}(a))
+There are at least as many external resources, meaning as much tracking, on secure as insecure top domains (Figure \ref{fig:Result-selection-internal-secure-organizations}(a))
 }
 {
 Only 13 of 290 municipalities have fully secure websites; no Swedish media sites are completely secure (\ref{sec:Insecure-versus-secure-resources})
 }	{
 YYY
 }	{
-ZZZ
+94\% of \numprint{5959} HTTPS-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
 }
 {
 25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely -- it's close, but still considered insecure (Figure \ref{fig:Result-selection-internal-secure-organizations}(b))
 }	{
 YYY
 }	{
-ZZZ
+78\% of \numprint{123000} HTTP-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
 }
 {
 XXX
@@ -44,14 +44,14 @@ A few global top domains load more than 75 known trackers on their front page al
 {
 XXX
 }	{
-YYY
+In the 100k .se domains Disconnect \emph{only detects 3%} of external primary domains as trackers (\ref{sub:Tracker-detection-effectiveness})
 }	{
-ZZZ
+Disconnect's blocking list \emph{only detects 10%} of external primary domains as trackers for top website datasets (\ref{sub:Tracker-detection-effectiveness})
 }
 {
-XXX
+Swedish media seems very social, with the highest Twitter and Facebook coverage (\ref{sub:Top-organizations})
 }	{
 YYY
 }	{
-ZZZ
+Twitter has about half the coverage of Facebook (\ref{sub:Top-organizations})
 }

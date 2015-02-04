@@ -541,7 +541,7 @@ numprint{3800}
  external requests 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sec:Request-counts"
+reference "sec:Domain-and-request-counts"
 
 \end_inset
 
@@ -576,7 +576,7 @@ reference "sub:Google's-coverage-is-impressive"
  That being said, it is also hard to tell how many trackers are missed --
  Disconnect's blocking list 
 \emph on
-only detect 10%
+only detects 10%
 \emph default
  of external primary domains as trackers for top website datasets 
 \begin_inset CommandInset ref
@@ -2142,7 +2142,7 @@ reference "sub:Analysis"
  Counts are summed up per domain 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sec:Request-counts"
+reference "sec:Domain-and-request-counts"
 
 \end_inset
 
@@ -4361,7 +4361,7 @@ numprint{3800}
  external requests 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sec:Request-counts"
+reference "sec:Domain-and-request-counts"
 
 \end_inset
 
@@ -5959,6 +5959,446 @@ g being included twice instead of .engineer and .engineering separately.
  to detect future inconsistencies in an automated manner.
 \end_layout
 
+\begin_layout Section
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Platform for Privacy Preferences (P3P) analysis
+\end_layout
+
+\end_inset
+
+Platform for Privacy Preferences (P3P) Project
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.w3.org/P3P/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ HTTP header analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Platform-for-Privacy-(P3P)-Project"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P3P is a way for websites to declare their policies and intentions for data
+ collected from web users.
+ It is declared in a machine-readable format, as an XML file and in a compact
+ encoding as an HTTP header.
+ W3C's work started in 1997 and P3P 1.0 became a W3C recommendation in 2002.
+ It never gained enough momentum and the work with P3P 1.1 was suspended
+ in 2006.
+ P3P is still implemented by many websites, even though it may not follow
+ the originally intended usage.
+\end_layout
+
+\begin_layout Standard
+In conversations with Dwight Hunter, privacy policy researcher, he mentioned
+ that P3P policies are seen as a good technical solution to policy problems
+ in research he had read.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add references to Dwight's claims?
+\end_layout
+
+\end_inset
+
+ Thesis data shows that this is not always true; there are policy-wise useless
+ P3P headers being sent from some webpages, most probably to bypass Internet
+ Explorer's (not all versions) strict cookie rules for third-party site
+ without a P3P HTTP header.
+ This has been highlighted by Microsoft in 2012, pointing at Google's P3P
+ use.
+\end_layout
+
+\begin_layout Quotation
+By default, IE blocks third-party cookies unless the site presents a P3P
+ Compact Policy Statement indicating how the site will use the cookie and
+ that the site’s use does not include tracking the user.
+ Google’s P3P policy causes Internet Explorer to accept Google’s cookies
+ even though the policy does not state Google’s intent.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://blogs.msdn.com/b/ie/archive/2012/02/20/google-bypassing-user-privacy-settings.aspx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at collected HAR data there are many examples of P3P headers.
+ In the dataset 
+\begin_inset Quotes eld
+\end_inset
+
+se.2014-07-10.random.100000-http
+\begin_inset Quotes erd
+\end_inset
+
+ from 2014-09-01 with about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{1944000}
+\end_layout
+
+\end_inset
+
+ recorded requests, about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{90000}
+\end_layout
+
+\end_inset
+
+ present a P3P policy.
+ There are about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numprint{550}
+\end_layout
+
+\end_inset
+
+ unique values, including example values shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Top-P3P-values"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tsvtable{p3p.counts.tsv}{}{display columns/1/.style={string type, column type=T}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Top-P3P-values"
+
+\end_inset
+
+Top P3P values
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Potato
+\begin_inset Quotes erd
+\end_inset
+
+ comes from an example in a discussion regarding Internet Explorer and cookie
+ blocking.
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\size normal
+\emph on
+Cookie blocked/not saved in IFRAME in Internet Explorer
+\family roman
+\series medium
+\shape up
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://stackoverflow.com/a/16475093"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ Other examples include 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="This is not a P3P policy! It is used to bypass IEs problematic handling
+ of cookies"
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="This is not a P3P policy.
+ Work on P3P has been suspended since 2006: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{http://www.w3.org/P3P/}
+\end_layout
+
+\end_inset
+
+"
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="This is not a P3P policy.
+ P3P is outdated."
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP=
+\backslash
+"Thanks IE8
+\backslash
+
+\end_layout
+
+\end_inset
+
+ (which is a malformed value), 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+CP="No P3P policy because it has been deprecated"
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This is but one example of where quantitive analysis of real-world web pages
+ shows differences between technical, intended or perceived usage.
+ While P3P may be an outdated example that has been researched 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CMU-CyLab-10-014"
+
+\end_inset
+
+, it shows how automated, generic tooling can help researchers a lot in
+ their understanding of usage in the wild.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../references/thesis,../references/rfc-selection"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Related work
 \end_layout
@@ -6628,6 +7068,8 @@ name "chap:Conclusions-and-future-work"
 \begin_layout Standard
 In this chapter we first summarize our main conclusions, list unanswered
  questions, and then we discuss promising directions for future work.
+ There are many potential improvements which could help other researchers,
+ as well as refine the analysis of the current thesis data.
 \end_layout
 
 \begin_layout Section
@@ -6635,20 +7077,84 @@ Conclusions
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+The use of external resources and known trackers is very high.
+ While it has been a trend to outsource resource hosting and to use third-party
+ services, it was previously unknown to what extent.
+ It has now been shown that most websites use external resources in some
+ form -- almost 80% of the 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Summarize conclusions.
+
+
+\backslash
+numprint{123000}
 \end_layout
 
 \end_inset
 
+ responding domains looking at the most common variation, HTTP-www 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Domain-and-request-counts"
 
+\end_inset
+
+.
+ This broad tracking should be a concern for privacy minded individuals
+ much as government controlled surveillance is.
+\end_layout
+
+\begin_layout Standard
+This concern should be even higher on HTTPS enabled websites.
+ Such sites have made an active choice to install encryption to avoid passive
+ surveillance and stave off potential attacks -- but 94% of HTTPS-www variation
+ domains use external resources 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Domain-and-request-counts"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It seems using a blacklist to stop trackers is the wrong way to go about
+ it.
+ Even with the crowdsourced list used by popular privacy tool Disconnect,
+ the blocking list 
+\emph on
+only detects 10%
+\emph default
+ of external primary domains as trackers for top website datasets 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Tracker-detection-effectiveness"
+
+\end_inset
+
+.
+ Looking at the sheer number of external domains in use, it is easy to understan
+d why blocking high-profile targets seems like a good option -- but if 90%
+ of external domains aren't listed even as known, 
+\emph on
+desireable
+\emph default
+ content, the blacklisting effort seems futile.
+ Further research could use other blacklists and compare effectiveness 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
-Unanswered questions
+Open questions
 \end_layout
 
 \begin_layout Standard
@@ -6664,6 +7170,11 @@ Could any external resources actually be considered internal, despite being
 \begin_layout Itemize
 Could internal resources also be seen as external, if another organization
  manage the servers?
+\end_layout
+
+\begin_layout Itemize
+If a resource whitelist is used, how large does it have to be to get a functiona
+l website -- and how to determine functionality?
 \end_layout
 
 \begin_layout Itemize
@@ -6699,6 +7210,10 @@ Can the same techniques be applied to data from countries other than Sweden?
 \end_layout
 
 \begin_layout Section
+Improving information sharing
+\end_layout
+
+\begin_layout Subsection
 Creating an information website
 \begin_inset CommandInset label
 LatexCommand label
@@ -6781,7 +7296,7 @@ reference "sub:HTTP-Archive"
  is doing but on a less continuous basis and with a shifting focus.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Package publicly available data
 \end_layout
 
@@ -6796,7 +7311,7 @@ Datasets based on publicly available datasets can be packaged for other
  improved.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Code documentation
 \end_layout
 
@@ -7133,7 +7648,7 @@ target "https://github.com/tribbloid/spookystuff"
  of for example entire TLD zones.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Domain lists
 \end_layout
 
@@ -7162,7 +7677,15 @@ target "http://www.kiaindex.net/"
 \end_layout
 
 \begin_layout Section
-Ad and privacy blocking lists
+Improved data analysis and accuracy
+\end_layout
+
+\begin_layout Standard
+Improvements to the data transformation and analysis steps.
+\end_layout
+
+\begin_layout Subsection
+Refined ad and privacy blocking lists
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Ad-and-privacy-blocking-lists"
@@ -7257,6 +7780,22 @@ target "https://www.ghostery.com/eula"
 \end_layout
 
 \begin_layout Standard
+In another approach, future research could use 
+\emph on
+whitelisting
+\emph default
+ to try to determine challenges in detecting and recording 
+\emph on
+desirable
+\emph default
+ and 
+\emph on
+functional
+\emph default
+ external resources.
+\end_layout
+
+\begin_layout Standard
 On a technical level, some blocking rule formats have also posed a problem
  in terms of implementation into the current data processing framework that
  is har-dulcify.
@@ -7328,14 +7867,6 @@ end{futurework}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Improving data analysis
-\end_layout
-
-\begin_layout Standard
-Improvements to the data transformation and analysis steps.
 \end_layout
 
 \begin_layout Subsection
@@ -7759,446 +8290,6 @@ reference "sec:Creating-an-information-web-site"
  divisions, which may cause some data/precision loss if reversed.
  If these data reductions can be deferred to a separate mapping step, computing
  time might be acceptable.
-\end_layout
-
-\begin_layout Section
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Platform for Privacy Preferences (P3P) analysis
-\end_layout
-
-\end_inset
-
-Platform for Privacy Preferences (P3P) Project
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.w3.org/P3P/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- HTTP header analysis
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Platform-for-Privacy-(P3P)-Project"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-P3P is a way for websites to declare their policies and intentions for data
- collected from web users.
- It is declared in a machine-readable format, as an XML file and in a compact
- encoding as an HTTP header.
- W3C's work started in 1997 and P3P 1.0 became a W3C recommendation in 2002.
- It never gained enough momentum and the work with P3P 1.1 was suspended
- in 2006.
- P3P is still implemented by many websites, even though it may not follow
- the originally intended usage.
-\end_layout
-
-\begin_layout Standard
-In conversations with Dwight Hunter, privacy policy researcher, he mentioned
- that P3P policies are seen as a good technical solution to policy problems
- in research he had read.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Add references to Dwight's claims?
-\end_layout
-
-\end_inset
-
- Thesis data shows that this is not always true; there are policy-wise useless
- P3P headers being sent from some webpages, most probably to bypass Internet
- Explorer's (not all versions) strict cookie rules for third-party site
- without a P3P HTTP header.
- This has been highlighted by Microsoft in 2012, pointing at Google's P3P
- use.
-\end_layout
-
-\begin_layout Quotation
-By default, IE blocks third-party cookies unless the site presents a P3P
- Compact Policy Statement indicating how the site will use the cookie and
- that the site’s use does not include tracking the user.
- Google’s P3P policy causes Internet Explorer to accept Google’s cookies
- even though the policy does not state Google’s intent.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://blogs.msdn.com/b/ie/archive/2012/02/20/google-bypassing-user-privacy-settings.aspx"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Looking at collected HAR data there are many examples of P3P headers.
- In the dataset 
-\begin_inset Quotes eld
-\end_inset
-
-se.2014-07-10.random.100000-http
-\begin_inset Quotes erd
-\end_inset
-
- from 2014-09-01 with about 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{1944000}
-\end_layout
-
-\end_inset
-
- recorded requests, about 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{90000}
-\end_layout
-
-\end_inset
-
- present a P3P policy.
- There are about 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{550}
-\end_layout
-
-\end_inset
-
- unique values, including example values shown in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Top-P3P-values"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tsvtable{p3p.counts.tsv}{}{display columns/1/.style={string type, column type=T}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Top-P3P-values"
-
-\end_inset
-
-Top P3P values
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes eld
-\end_inset
-
-Potato
-\begin_inset Quotes erd
-\end_inset
-
- comes from an example in a discussion regarding Internet Explorer and cookie
- blocking.
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-
-\size normal
-\emph on
-Cookie blocked/not saved in IFRAME in Internet Explorer
-\family roman
-\series medium
-\shape up
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\begin_inset CommandInset href
-LatexCommand href
-target "http://stackoverflow.com/a/16475093"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- Other examples include 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-CP="This is not a P3P policy! It is used to bypass IEs problematic handling
- of cookies"
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-CP="This is not a P3P policy.
- Work on P3P has been suspended since 2006: 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-url{http://www.w3.org/P3P/}
-\end_layout
-
-\end_inset
-
-"
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-CP="This is not a P3P policy.
- P3P is outdated."
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-CP=
-\backslash
-"Thanks IE8
-\backslash
-
-\end_layout
-
-\end_inset
-
- (which is a malformed value), 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-CP="No P3P policy because it has been deprecated"
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-This is but one example of where quantitive analysis of real-world web pages
- shows differences between technical, intended or perceived usage.
- While P3P may be an outdated example that has been researched 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CMU-CyLab-10-014"
-
-\end_inset
-
-, it shows how automated, generic tooling can help researchers a lot in
- their understanding of usage in the wild.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "../references/thesis,../references/rfc-selection"
-options "bibtotoc,plain"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter*
@@ -15118,7 +15209,7 @@ begin{wide}
 Domain and request counts
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Request-counts"
+name "sec:Domain-and-request-counts"
 
 \end_inset
 
@@ -15289,7 +15380,7 @@ Shown in the table below are ratios based on the request counts in Section
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Request-counts"
+reference "sec:Domain-and-request-counts"
 
 \end_inset
 
@@ -17242,7 +17333,7 @@ The below table shows the number of domains in the dataset, the number of
  requests classified as trackers in the Disconnect dataset (see also 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Request-counts"
+reference "sec:Domain-and-request-counts"
 
 \end_inset
 
@@ -17311,7 +17402,7 @@ The
  
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "sec:Request-counts"
+reference "sec:Domain-and-request-counts"
 
 \end_inset
 
