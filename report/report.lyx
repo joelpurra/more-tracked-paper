@@ -4638,7 +4638,7 @@ Two previously investigated pieces of data this thesis' subject was based
 \emph on
 .SE Health Status
 \emph default
- reports as well as a few other reports.
+ reports as well as a few other reports, in terms of results and methodology.
  After that, a summary of the software developed and open source contributions
  follow.
 \end_layout
@@ -4694,26 +4694,26 @@ key "Lowinder:2010:healthstatus,Lowinder:2011:healthstatus,Lowinder:2012:healths
 \end_layout
 
 \begin_layout Standard
-Thesis data from the HTTP-www 
+Thesis data from filtered HTTP-www 
 \emph on
 .SE Health Status
 \emph default
  domain lists shows usage in the category with the least coverage (financial
- services) is 58% while most are above 70% 
+ services) is 59% while the rest are above 74% 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Top-domains-Google"
 
 \end_inset
 
-; the average is 76%.
+; the average is 81%.
  The highest coverage category (government owned corporations) is even above
- 90%.
+ 94%.
  Since Google Analytics can now be used from the DoubleClick domain as well
  as Google offering several other services, looking only at the Google Analytics
  domain makes little sense -- instead it might make more sense to look at
  the organization Google as a whole.
- The coverage jumps quite a bit, with most categories landing above 85%
+ The coverage jumps quite a bit, with most categories landing above 90%
  
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -4721,7 +4721,18 @@ reference "sub:Top-organizations"
 
 \end_inset
 
-, which is also the overall average.
+, which is also the 
+\emph on
+.SE Health Status
+\emph default
+ average.
+\end_layout
+
+\begin_layout Standard
+This means that traffic data from at least 90% of web pages considered important
+ to the Swedish general public end up in Google's hands.
+ In a broader scope considering all known trackers, 95% of websites have
+ them installed.
 \end_layout
 
 \begin_layout Standard
