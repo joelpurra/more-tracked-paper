@@ -509,7 +509,10 @@ reference "sec:Results-Tracker-detection"
  Most websites also have at least one known tracker present; 53-72% of random
  domains have at least one tracker installed, while 88-98% of top websites
  have trackers and 78-100% of websites in the Swedish curated lists.
- The number of known tracker organizations is interesting to look at, as
+\begin_inset Newline newline
+\end_inset
+
+The number of known tracker organizations is interesting to look at, as
  a higher number means users have less control over where leaked data ends
  up 
 \begin_inset CommandInset ref
@@ -560,7 +563,10 @@ reference "sub:Domain-and-organization-counts"
 personal opinions
 \emph default
  these individuals hold.
- It is clear that Google has the widest coverage by far -- Google trackers
+\begin_inset Newline newline
+\end_inset
+
+It is clear that Google has the widest coverage by far -- Google trackers
  alone are present on 
 \emph on
 over 90%
@@ -2511,35 +2517,6 @@ Results
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Results"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-For each result:
-\end_layout
-
-\begin_layout Enumerate
-Describe expectations.
-\end_layout
-
-\begin_layout Enumerate
-Describe what is shown in figure/table.
-\end_layout
-
-\begin_layout Enumerate
-Describe key observations.
-\end_layout
-
-\begin_layout Enumerate
-Provide insight/discussion about this observation.
-\end_layout
 
 \end_inset
 
@@ -4547,14 +4524,14 @@ recognized
 \emph default
  tracker domains across the datasets? See Section 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "sec:Undetected-external-domains"
 
 \end_inset
 
  and Figure 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "fig:Undetected-external-domains"
 
 \end_inset
@@ -4582,47 +4559,6 @@ numprint{15746}
  external primary domains in .se 100k random domain HTTP dataset were detected.
  Smaller datasets, including HTTPS datasets with few reachable websites,
  have a higher detection rate at 30% and more.
-\end_layout
-
-\begin_layout Standard
-Can a privacy tool using a 
-\emph on
-fixed blacklist
-\emph default
- of domains to block be 
-\emph on
-trusted
-\emph default
- -- or can it only be trusted to be 10% effective? Regular expression based
- blocking, such as EasyList used by AdBlock, might be more effective, as
- it can block resources by URL path separate from the URL domain name 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Ad-and-privacy-blocking-lists"
-
-\end_inset
-
- -- but it's no cure-all.
- It does seem as if the blacklist model needs to be improved -- perhaps
- by using whitelisting instead of blacklisting.
- The question then becomes an issue of either 
-\emph on
-cat and mouse
-\emph default
- 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sec:Cat-and-Mouse"
-
-\end_inset
-
- -- if the whitelist is shared by many users -- or 
-\emph on
-convenience
-\emph default
- -- if each user maintains their own whitelist.
- At the moment it seems convenience and blacklists are winning, at the cost
- of playing cat and mouse with third parties who end up being blocked.
 \end_layout
 
 \begin_layout Chapter
@@ -5766,6 +5702,58 @@ Advertisers could also provide their own expanded article categorization
  It is already known that data brokers and aggregators package and sell
  data -- the news users read is undoubtedly connected to valuable data points,
  such as education, income groups and political stance.
+\end_layout
+
+\begin_layout Section
+Privacy tool reliability
+\end_layout
+
+\begin_layout Standard
+Can a privacy tool using a 
+\emph on
+fixed blacklist
+\emph default
+ of domains to block be 
+\emph on
+trusted
+\emph default
+ -- or can it only be trusted to be 10% effective 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Undetected-external-domains"
+
+\end_inset
+
+? Regular expression based blocking, such as EasyList used by AdBlock, might
+ be more effective, as it can block resources by URL path separate from
+ the URL domain name 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+ -- but it's no cure-all.
+ It does seem as if the blacklist model needs to be improved -- perhaps
+ by using whitelisting instead of blacklisting.
+ The question then becomes an issue of weighing a 
+\emph on
+cat and mouse
+\emph default
+ game 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Cat-and-Mouse"
+
+\end_inset
+
+ -- if the whitelist is shared by many users -- against 
+\emph on
+convenience
+\emph default
+ -- if each user maintains their own whitelist.
+ At the moment it seems convenience and blacklists are winning, at the cost
+ of playing cat and mouse with third parties who end up being blocked.
 \end_layout
 
 \begin_layout Section
@@ -8797,6 +8785,14 @@ description "Country-code second-level domain. A SLD that belongs to a country c
 LatexCommand nomenclature
 symbol "Second-level domain"
 description "(SLD) A domain that is directly below a TLD. Can be a domain registerable to the public, or a ccSLD."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Parked domain"
+description "A domain that has been purchased from a domain name retailer, but only shows a placeholder message – usually an advertisement for the domain name retailer itself."
 
 \end_inset
 
