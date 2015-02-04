@@ -479,11 +479,22 @@ security symbols
 \end_layout
 
 \begin_layout Enumerate
-The use of known, confirmed third-party trackers and other third-party services
- for different classes of domains, has been analyzed.
- Using public lists of potential tracker domains, we analyzed and compared
- the wide spread adaption of these services across domains within Sweden,
- as well as internationally.
+The use of 
+\emph on
+known
+\emph default
+ or 
+\emph on
+recognized
+\emph default
+ third-party trackers and other third-party (external) services for different
+ classes of domains, has been analyzed.
+ Using public lists of 
+\emph on
+recognized
+\emph default
+ tracker domains, we analyzed and compared the widespread adaption of these
+ services across domains within Sweden, as well as internationally.
  The use of external resources is high among all classes of domains (see
  Section 
 \begin_inset CommandInset ref
@@ -493,9 +504,9 @@ reference "sec:Results-Internal-and-external-requests"
 \end_inset
 
 ).
- Websites using strictly internal resources are less than 7% of top sites,
- even less in most categories of curated lists of Swedish websites, while
- it is more common among random domains at 10-30%.
+ Websites using strictly internal resources are relatively few; less than
+ 7% of top sites, even less in most categories of curated lists of Swedish
+ websites, but more common among random domains at 10-30%.
  This means most websites around the world have made an active choice to
  install external resources from third-party services, which means that
  users' traffic data and personal information is leaked (see Section 
@@ -506,15 +517,18 @@ reference "sec:Results-Tracker-detection"
 \end_inset
 
 ).
- Most websites also have at least one known tracker present; 53-72% of random
- domains have at least one tracker installed, while 88-98% of top websites
- have trackers and 78-100% of websites in the Swedish curated lists.
+ Most websites also have at least one 
+\emph on
+known
+\emph default
+ tracker present; 53-72% of random domains, 88-98% of top websites and 78-100%
+ of websites in the Swedish curated lists.
 \begin_inset Newline newline
 \end_inset
 
-The number of known tracker organizations is interesting to look at, as
- a higher number means users have less control over where leaked data ends
- up 
+The number of known tracker organizations present is interesting to look
+ at, as a higher number means users have less control over where leaked
+ data ends up 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Organizations-per-domain"
@@ -780,6 +794,13 @@ key "Kontaxis:2012:PSP:2362793.2362823,Krishnamurthy:2008:CPO:1397735.1397744"
 
 \begin_layout Section
 What is the information used for?
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:What-is-the-information-used-for"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4923,8 +4944,8 @@ key "Krishnamurthy:2006:CMC:1135777.1135829"
 
 \end_inset
 
- use a similar approach to detecting third-party resources -- or in their
- case advertisements: the Firefox browser plugin AdBlock.
+ use the Firefox browser plugin AdBlock to detecting third-party resources
+ -- or in their case advertisements.
  The ad blocking list Filterset.G from 2005-10-10 contains 108 domains as
  well as 55 regular expressions.
  Matching was done after collecting requested URLs using a local proxy server,
@@ -5000,18 +5021,35 @@ reference "note:cloudfront.net-cdn-subdomains"
  to an existing service, or do they build a service to support tracking?
  For Google, the most prevalent tracker organization, it might be a mixture
  of both.
- In the case of AddThis, providing a social sharing service 
+ In the case of AddThis, a wide-spread 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Top-domains-General"
+
+\end_inset
+
+ social sharing service 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Social"
 
 \end_inset
 
-, it is hard to tell as the service is operated by an advertisement firm
- yet provides a wide-spread service 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Top-domains-General"
+, it seems the service is provided as a way to track users.
+ The company is operated as a marketing firm selling audience information
+ to online advertisers, targeting social influencers
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/AddThis"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -5287,9 +5325,10 @@ numprint{1500000000}
  to public network operators.
  The paper's Figure 3 shows that aggregator coverage is higher for the very
  top publishers; over 70% for the top 10.
- Google again shows a significantly greater coverage at 80%, compared to
- Facebook's 23% in second place.
- The coverage of top aggregators on top publishers are shown in Table 
+\end_layout
+
+\begin_layout Standard
+The coverage of top aggregators on top publishers are shown in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Follow-the-Money-aggregators"
@@ -5297,19 +5336,21 @@ reference "tab:Follow-the-Money-aggregators"
 \end_inset
 
 , alongside numbers from this thesis.
+ This thesis doesn't use recorded HTTP traffic in the same way, and download
+ each domain only once per dataset, but looking at publisher coverage should
+ allow a comparison.
 \end_layout
 
 \begin_layout Standard
-It looks like the paper has grouped AdMob under Global Crossing, which was
- a large network provider connecting 70 countries before being acquired
+Google again shows a significantly greater coverage at 80%, compared to
+ Facebook's 23% in second place.
+ It looks like the paper has grouped AdMob under Global Crossing, which
+ was a large network provider connecting 70 countries before being acquired
  in 2011.
  AdMob was acquired by Google already in 2009, so it's unclear why it's
  listed separately; one reason might be because the dataset is mobile-centric
  and that AS number is still labeled Global Crossing.
-\end_layout
-
-\begin_layout Standard
-This thesis shows even higher numbers for Disconnect's matching of Google
+ Thesis results show even higher numbers for Disconnect's matching of Google
  and Facebook -- 4 and 14 percentage points -- even when looking at the
  Alexa's top 
 \begin_inset ERT
@@ -5541,8 +5582,7 @@ target "https://developers.google.com/recaptcha/"
 
  which is an embeddable service to block/disallow web crawlers/bots access
  to web page features.
- Those are visible examples, which users interact with.
- Google Fonts
+ Those are visible examples, which users interact with; Google Fonts
 \begin_inset Foot
 status open
 
@@ -5576,7 +5616,7 @@ target "https://developers.google.com/speed/libraries/"
 
 \end_inset
 
- is a very popular service.
+ is another very popular service yet unbranded service.
  It hosts popular javascript libraries from Google's extensive CDN network
  instead of the local server for site speed/performance gains, and is not
  visible as components -- but they cannot be removed without affecting functiona
@@ -5588,6 +5628,31 @@ lity.
  The content tracking is passive and on the HTTP level, as opposed to scripts
  executing and collecting data such as Google Analytics (30-80%) and Doubleclick
  (11-53%).
+\end_layout
+
+\begin_layout Standard
+As Disconnect's blocking blacklist is shown to cover only a fraction of
+ the external domains in use, a whitelist could be an alternative.
+ As Disconnect already has whitelisted the content category, it can be considere
+d a preview of what shared whitelisting might look like.
+ It is already the second largest category, in terms of coverage, with over
+ 50% of domains in most datasets having matches 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Disconnect-categories-coverage"
+
+\end_inset
+
+.
+ While the number of organizations being able to track users might be reduced
+ by whitelisting, it seems the problem needs more research 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Ad-and-privacy-blocking-lists"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -5658,20 +5723,23 @@ Tracking and the media
 
 \begin_layout Standard
 Swedish media websites have been shown to have the highest amount of trackers
- per site among the datasets -- both in general and for advertisements and
- analytics trackers.
- Media and the press is trying to be independent from their advertiser,
- despite being a source of income.
- Advertisement choices would be based on audience size and demographic.
- If a printed newspaper writes a negative article about, or had an image
- or tone that was not in line with the public image, a company could stop
- advertising.
- Even publishers themselves couldn't know what readers actually read, once
- the paper had left the press.
+ per site among the datasets -- both in general and for advertisement and
+ analytics categories.
+ Media and press are trying to be independent from and uninfluenced by their
+ advertiser, despite being a source of income.
+ 
 \end_layout
 
 \begin_layout Standard
-Current tracker technology allow both publishers and advertisers to see
+Advertisement choices are historically based on audience size and demographic,
+ determined by readership questionnaires.
+ Even publishers themselves couldn't know what pages and articles readers
+ 
+\emph on
+actually
+\emph default
+ read, once the paper had left the press.
+ Current tracker technology allow both publishers and advertisers to see
  
 \emph on
 exactly
@@ -5690,18 +5758,34 @@ should
 \emph on
 advertisement clicks
 \emph default
- (as opposed to visitors/readers) than good? -- write more about bad news.
-\end_layout
+ (or other measurable targets such as product purchases, as opposed to newspaper
+ readers) than good? -- spend more money advertising on articles about bad
+ news 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Weber:2012:MWQ:2380718.2380761"
 
-\begin_layout Standard
-Advertisers could also provide their own expanded article categorization
- with fine-grained details, such as what kind of readers would be interested
- in a certain piece.
- This means they can connect article reading to visits on other sites to
- improve click-through rates.
- It is already known that data brokers and aggregators package and sell
- data -- the news users read is undoubtedly connected to valuable data points,
- such as education, income groups and political stance.
+\end_inset
+
+.
+ This will eventually affect the publisher's advertisement income.
+ Advertisers could also separately investigate 
+\begin_inset Quotes eld
+\end_inset
+
+relatedness
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lv:2011:LMR:1963405.1963417"
+
+\end_inset
+
+ but use it to value advertisement and provide their own expanded article
+ categorization with fine-grained details for further refinement.
 \end_layout
 
 \begin_layout Section
@@ -5736,11 +5820,11 @@ reference "sec:Ad-and-privacy-blocking-lists"
  -- but it's no cure-all.
  It does seem as if the blacklist model needs to be improved -- perhaps
  by using whitelisting instead of blacklisting.
- The question then becomes an issue of weighing a 
+ The question then becomes an issue of weighing a game of 
 \emph on
 cat and mouse
 \emph default
- game 
+ 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Cat-and-Mouse"
@@ -6361,7 +6445,7 @@ This is but one example of where quantitive analysis of real-world web pages
  While P3P may be an outdated example that has been researched 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "CMU-CyLab-10-014"
+key "Leon:2010:TAM:1866919.1866932"
 
 \end_inset
 
@@ -6523,46 +6607,9 @@ Results for the .se zone and curated lists have during meetings with Wallström
 \end_layout
 
 \begin_layout Standard
-The thesis' software has been written with continuous usage over time in
- mind:
-\end_layout
-
-\begin_layout Itemize
-Open source software and open standards have been chosen.
-\end_layout
-
-\begin_layout Itemize
-A client-only architecture was chosen, over one where for example database
- server software would be required.
-\end_layout
-
-\begin_layout Itemize
-Repeated usage does not overwrite downloaded metadata.
-\end_layout
-
-\begin_layout Itemize
-Downloaded metadata is saved together with a screenshot, for visual validation
- as well as avoiding having to save downloaded data and to render it in
- the future.
-\end_layout
-
-\begin_layout Itemize
-Analysis software is written to only load the most recent data.
-\end_layout
-
-\begin_layout Itemize
-Analysis software ha been written with continuous merging of results in
- mind, so that each new piece of data would be immediately integrated into
- aggregate results.
-\end_layout
-
-\begin_layout Itemize
 Thesis input (domain lists) preparation was automated based on .SE:s internally
  used data formats.
-\end_layout
-
-\begin_layout Standard
-As the thesis is more detailed in analyzing web content than previous reports,
+ As the thesis is more detailed in analyzing web content than previous reports,
  there is not yet enough historic data to show a change over time.
 \end_layout
 
@@ -6655,7 +6702,7 @@ using the Centroid method
 ; insert reference to Han, E.
  and Karypis, G.
  2000.
- Centroid-based document classification: Analysis and experi- mental results.
+ Centroid-based document classification: Analysis and experimental results.
  In Proc.
  PKDD.
  Lyons, France.
@@ -6683,7 +6730,8 @@ reference "sub:Disconnect's-blocking-list"
 .
  It is a less generic way and possibly not fully effective on historical
  data, but accurate for the amount of work put in, as manual grouping and
- classification work is avoided by using crowdsourcing.
+ classification work is avoided -- and possibly improved -- by using crowdsourci
+ng.
 \end_layout
 
 \begin_layout Standard
@@ -7057,7 +7105,7 @@ name "chap:Conclusions-and-future-work"
 In this chapter we first summarize our main conclusions, list unanswered
  questions, and then we discuss promising directions for future work.
  There are many potential improvements which could help other researchers,
- as well as refine the analysis of the current thesis data.
+ as well as refine the analysis of data already collected for this thesis.
 \end_layout
 
 \begin_layout Section
@@ -7090,8 +7138,8 @@ reference "sec:Domain-and-request-counts"
 \end_inset
 
 .
- This broad tracking should be a concern for privacy minded individuals
- much as government controlled surveillance is.
+ This broad non-governmental tracking should be a concern for privacy minded
+ individuals much as government controlled surveillance is.
 \end_layout
 
 \begin_layout Standard
@@ -7128,7 +7176,7 @@ reference "sub:Tracker-detection-effectiveness"
 d why blocking high-profile targets seems like a good option -- but if 90%
  of external domains aren't listed even as known, 
 \emph on
-desireable
+desirable
 \emph default
  content, the blacklisting effort seems futile.
  Further research could use other blacklists and compare effectiveness 
@@ -7781,6 +7829,15 @@ desirable
 functional
 \emph default
  external resources.
+ An example of whitelisting already exists in Disconnect's content category,
+ which might be a good start 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Trackers-which-deliver-content"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -8309,19 +8366,6 @@ markboth{Thanks}{}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-Add list of collaborators in getting data, domains, help, advice etcetera.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section*
 The Internet Infrastructure Foundation
 \begin_inset Foot
@@ -8399,7 +8443,7 @@ Niklas
 Carlsson Associate Professor (Swedish: docent and universitetslektor) at
  Division for Database and Information Techniques (ADIT), Department of
  Computer and Information Science (IDA), Linköping University, Sweden.
- Thank you for being my examiner.
+ Thank you for being my examiner!
 \end_layout
 
 \begin_layout Description
@@ -8409,7 +8453,7 @@ Patrik
 
 Wallström Project Manager within R&D, .SE (The Internet Infrastructure Foundation
 ), Sweden.
- Thank you for being my technical supervisor.
+ Thank you for being my technical supervisor!
 \end_layout
 
 \begin_layout Description
@@ -8419,7 +8463,44 @@ Staffan
 
 Hagnell Head of New Businesses, .SE (The Internet Infrastructure Foundation),
  Sweden.
- Thank you for being my company supervisor.
+ Thank you for being my company supervisor!
+\end_layout
+
+\begin_layout Description
+Anton
+\begin_inset space ~
+\end_inset
+
+Nilsson Master student in Information Technology, Linköping University,
+ Sweden.
+ Thank you for being my opponent!
+\end_layout
+
+\begin_layout Section*
+Domains and data
+\end_layout
+
+\begin_layout Standard
+.SE (Richard Isberg, Tobbe Carlsson, Anne-Marie Eklund-Löwinder, Erika Lund),
+ DK Hostmaster A/S (Steen Vincentz Jensen, Lise Fuhr), , Reach50/Webmie
+ (Mika Wenell, Jyry Suvilehto), Alexa, Verisign, Disconnect.me, Mozilla.
+ Thank you!
+\end_layout
+
+\begin_layout Section*
+Tips, feedback, inspiration and help
+\end_layout
+
+\begin_layout Standard
+Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart
+ Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth
+ Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus
+ Bylund.
+ Thank you!
+\end_layout
+
+\begin_layout Standard
+And of course everyone I forgot -- sorry and thank you!
 \end_layout
 
 \begin_layout Standard
@@ -15214,8 +15295,8 @@ name "sec:Domain-and-request-counts"
 
 \begin_layout Standard
 The table shows counts of domains and domains which have at least one internal/e
-xternal request, and to how many uniexternal domains, primary domains or
- Disconnect domains the requests went.
+xternal request, and to how many external domains, primary domains or Disconnect
+ domains the requests went.
  Following that counts of all requests, internal requests and external requests.
  External requests matching Disconnect's blocking lists are also shown.
  This table is mostly interesting to show the scale of the data collection,
@@ -15718,6 +15799,16 @@ target "http://googleonlinesecurity.blogspot.in/2014/08/https-as-ranking-signal_
 
 
 \end_layout
+
+\end_inset
+
+.
+ There are other effects on network services though, such as reduced ability
+ for ISPs to cache results closer to network edges or companies to easily
+ inspect filter traffic 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Naylor:2014:CSH:2674005.2674991"
 
 \end_inset
 
