@@ -2807,8 +2807,14 @@ reference "sub:aggregate/analysis.sh"
 Apart from these general aggregates, har-dulcify allows specific questions/queri
 es to be executed against any of the steps from HAR data to the complete
  aggregates.
- This way very specific questions, including Google Tag Manager implications
- 
+ This way very specific questions 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:Questions"
+
+\end_inset
+
+, including Google Tag Manager implications 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:Google-Tag-Manager"
@@ -2822,16 +2828,11 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 
 \end_inset
 
-, such as can be answered 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "sub:Questions"
-
-\end_inset
-
 .
- There are also multiset scripts, collecting values from several datasets
- -- the basis for most of the detailed results' tables; see Appendix 
+ There are also multiset scripts, collecting values from several or all
+ 72 datasets at once.
+ Their output is the basis for most of the detailed results' tables and
+ graphs; see Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:Detailed-Results"
@@ -2842,7 +2843,7 @@ reference "chap:Detailed-Results"
 \end_layout
 
 \begin_layout Standard
-See also analysis details in Appendix 
+See also analysis methodology details in Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Analyzing-resources"
