@@ -285,6 +285,118 @@ false sense of privacy
  when using HTTPS.
 \end_layout
 
+\begin_layout Chapter*
+Acknowledgments
+\end_layout
+
+\begin_layout Section*
+The Internet Infrastructure Foundation
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.iis.se/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (.SE)
+\end_layout
+
+\begin_layout Standard
+.SE is also known as Stiftelsen för internetinfrastruktur (IIS).
+\end_layout
+
+\begin_layout Standard
+This thesis was written in the office of -- and in collaboration with --
+ .SE, who graciously supported me with domain data and internet knowledge.
+ Part of .SE’s research efforts include continuously analyzing internet infrastru
+cture and usage in Sweden.
+ .SE is an independent organization, responsible for the Swedish top level
+ domain, and working for the benefit of the public that promotes the positive
+ development of the internet in Sweden.
+\end_layout
+
+\begin_layout Section*
+Thesis supervision
+\end_layout
+
+\begin_layout Description
+Niklas
+\begin_inset space ~
+\end_inset
+
+Carlsson Associate Professor (Swedish: docent and universitetslektor) at
+ Division for Database and Information Techniques (ADIT), Department of
+ Computer and Information Science (IDA), Linköping University, Sweden.
+ Thank you for being my examiner!
+\end_layout
+
+\begin_layout Description
+Patrik
+\begin_inset space ~
+\end_inset
+
+Wallström Project Manager within R&D, .SE (The Internet Infrastructure Foundation
+), Sweden.
+ Thank you for being my technical supervisor!
+\end_layout
+
+\begin_layout Description
+Staffan
+\begin_inset space ~
+\end_inset
+
+Hagnell Head of New Businesses, .SE (The Internet Infrastructure Foundation),
+ Sweden.
+ Thank you for being my company supervisor!
+\end_layout
+
+\begin_layout Description
+Anton
+\begin_inset space ~
+\end_inset
+
+Nilsson Master student in Information Technology, Linköping University,
+ Sweden.
+ Thank you for being my opponent!
+\end_layout
+
+\begin_layout Section*
+Domains, data and software
+\end_layout
+
+\begin_layout Standard
+.SE (Richard Isberg, Tobbe Carlsson, Anne-Marie Eklund-Löwinder, Erika Lund),
+ DK Hostmaster A/S (Steen Vincentz Jensen, Lise Fuhr), Reach50/Webmie (Mika
+ Wenell, Jyry Suvilehto), Alexa, Verisign.
+ Disconnect.me, Mozilla.
+ PhantomJS, jq, GNU Parallel, LyX.
+ Thank you!
+\end_layout
+
+\begin_layout Section*
+Tips, feedback, inspiration and help
+\end_layout
+
+\begin_layout Standard
+Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart
+ Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth
+ Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus
+ Bylund.
+ Thank you!
+\end_layout
+
+\begin_layout Standard
+And of course everyone I forgot to mention -- sorry and thank you!
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
@@ -305,6 +417,453 @@ LatexCommand tableofcontents
 \begin_layout Standard
 \begin_inset FloatList figure
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "custom"
+width "20text%"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Content"
+description "Information and data that is presented to the user. Includes text, images, video and sound."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Resource"
+description "An entity external to the HTML page that requested it. Types of resources include images, video, audio, CSS, javascript and flash animations."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "External resource"
+description "A resource downloaded from a domain other than the page that requested it was served from."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "External service"
+description "A third party service that delives some kind of resource to the user's browser. The service itself can vary from showing additional information and content, to ads and hidden trackers.\\\\\\\\External services include file hosting services, CDNs, advertisting networks, statistics and analytics collectors, and third party content."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Tracker"
+description "A resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the same tracker)."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CDN"
+description "Content delivery network"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Content delivery network"
+description "(CDN) The speed at which data can be delivered is dependant on distance between the user and the server. To reduce latency and download times, a content delivery network places multiple servers with the same content in strategic locations, both geographic and network toplolgy wise, closer to groups of users.\\\\\\\\For example, a CDN could deploy servers in Europe, the US and Australia, and reduce loading speed by setting up the system to automatically use the closest location."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Domain name"
+description "A human-readable way to navigate to a service on the internet: example.com. Often implicitly meaning FQDN. Domains are also used, for example, as logical entities in regards to security and privacy scopes on the web, often implemented as same-origin policies. As an example, HTTP cookies are bound to domain that set them."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Third-party content"
+description "Content served by another organization than the organization serving the explicitly requested web page. Also see external resource."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Third-party service"
+description "A service provided by an organization other than the explicitly requested service. Also see external service."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Web site"
+description "A collection of web pages under the same organization or topic. Often all web pages on a domain is considered a site, but a single domain can also contain multiple sites."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Web service"
+description "A function performed on the internet, and in this document specifically web sites with a specific purpose directed towards human users. This includes search engines, social networks, online messaging and email as well as content sites such as news sites and blogs."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Web browser"
+description "Or browser. Software a user utilizes to retrieve, present and traverse information from the web."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URL"
+description "Uniform Resource Locator"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Uniform Resource Locator"
+description "(URL) A standard to define the address to resources, mostly on the internet, for example http://joelpurra.com/projects/masters-thesis/"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HTTP"
+description "Hypertext Transfer Protocol"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HTTPS"
+description "Secure HTTP, where data is transfered encrypted."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Hypertext Transfer Protocol"
+description "(HTTP) A protocol to transfer HTML and other web page resources across the internet."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Do Not Track"
+description "(DNT) A HTTP header used to indicate that the server should not record and track the client's traffic and other data."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DNT"
+description "Do Not Track"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "P3P"
+description "Platform for Privacy Preferences (P3P) Project"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Platform for Privacy Preferences Project"
+description "(P3P) A W3C standard for HTTP where server responses are annotated with an encoded privacy policy, so the client can display it to the user. Work has been discontinued since 2006."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".SE"
+description "The Internet Infrastructure Foundation. An independent organization for the benefit of the public that promotes the positive development of the internet in Sweden. .SE is responsible for the .se country code top level domain."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".se"
+description "The country code top level domain name for Sweden."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".dk"
+description "The country code top level domain name for Denmark."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".com"
+description "A generic top level domain. It has the greatest number of registered domain of all TLDs."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol ".net"
+description "A generic top level domain."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FQDN"
+description "Fully qualified domain name"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Fully qualified domain name"
+description "(FQDN) A domain name specific enough to be used on the internet. Has at least a TLD and a second-level domain name - but oftentimes more depending on TLD rules and organizational units."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Top level domain"
+description "(TLD) The last part of a domain name, such as .se or .com. Registration of TLDs is handled by ICANN."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "gTLD"
+description "Generic top level domain such as .com or .net."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ccTLD"
+description "A top level domain based on a country code, such as .se or .dk."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Primary domain"
+description "For the thesis, the first non-public suffix part of a domain name has been labeled the primary domain. For example example.com.br has been labeled the primary domain for www.company-abc.com.br, as .com.br is a public suffix."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Subdomain"
+description "A domain name that belongs to another domain name zone. For example service.example.net is a subdomain to example.net."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Superdomain"
+description "For the thesis, domains in parent zones have been labeled superdomains to their subdomains, such as such as example.se being a superdomain to www.example.se."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Public suffix"
+description "The part of a domain name that is unavilable for registrations, used for grouping. All TLDs are public suffixes, but some have one or more levels of public suffixes, such as .com.br for commercial domains in Brazil or .pp.se for privately owned personal domains (a public suffix which has been deprecated, but still exists)."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Zone"
+description "A technical as well as administrative part of DNS. Each dot in a domain name represents another zone, from the implicit root zone to TLDs and privately owned zones -- which in turn can contain more privately controlled zones."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SLD"
+description "Second-level domain"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ccSLD"
+description "Country-code second-level domain. A SLD that belongs to a country code TLD. A ccSLD is not for public use, which are required to register their domains on the third domain level."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Second-level domain"
+description "(SLD) A domain that is directly below a TLD. Can be a domain registerable to the public, or a ccSLD."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Parked domain"
+description "A domain that has been purchased from a domain name retailer, but only shows a placeholder message – usually an advertisement for the domain name retailer itself."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Alexa"
+description "A web traffic statistic service, owned by Amazon."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "jq"
+description "A tool and domain specific programming language to read and transform JSON data. See the software chapter."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "phantomjs"
+description "Browser software used for automated web site browsing. See the software chapter."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HAR"
+description "HTTP Archive (HAR) format, used to store recorded HTTP metadata from a web page visit. See the software chapter."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JavaScript Object Notation"
+description "(JSON) A data format based on Javascript objects. Often used on the internet for data transfer. Used in this thesis as the basis for all data transformation."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JSON"
+description "JavaScript Object Notation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GOCS"
+description "Government-owned corporations"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Government-owned corporations"
+description "(GOCS) State-owned corporations."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CDF"
+description "Cumulative distribution function."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Cumulative distribution function"
+description "(CDF) In this thesis usually a graph which shows the ratio of a property as seen per domain on the x axis, with the cumulative ratio of domains which show this property on the y axis. The steeper the curve is above an x value range, the higher the ratio of domains which fall within the range."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
 \end_inset
 
 
@@ -6453,24 +7012,6 @@ key "Leon:2010:TAM:1866919.1866932"
  their understanding of usage in the wild.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "../references/thesis,../references/rfc-selection"
-options "bibtotoc,plain"
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Related work
 \end_layout
@@ -8337,635 +8878,18 @@ reference "sec:Creating-an-information-web-site"
  time might be acceptable.
 \end_layout
 
-\begin_layout Chapter*
-Thanks
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-phantomsection
-\backslash
-addcontentsline{toc}{chapter}{Thanks}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-markboth{Thanks}{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
-The Internet Infrastructure Foundation
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- (.SE)
-\end_layout
-
-\begin_layout Standard
-.SE is also known as Stiftelsen för internetinfrastruktur (IIS).
-\end_layout
-
-\begin_layout Standard
-This thesis is being written in the office of -- and in collaboration with
- -- .SE, who graciously supported me with domain data and internet knowledge.
- Part of .SE’s research efforts include continuously analyzing internet infrastru
-cture and usage in Sweden.
- .SE is an independent organization, responsible for the Swedish top level
- domain, and working for the benefit of the public that promotes the positive
- development of the internet in Sweden.
- Their head office is in Stockholm.
- In 2013 they had 72 employees and a turnover of over 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-numprint{140}
-\end_layout
-
-\end_inset
-
- MSEK.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.iis.se/om/arsredovisningar/arsredovisning-2013/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
-Thesis supervision
-\end_layout
-
-\begin_layout Description
-Niklas
-\begin_inset space ~
-\end_inset
-
-Carlsson Associate Professor (Swedish: docent and universitetslektor) at
- Division for Database and Information Techniques (ADIT), Department of
- Computer and Information Science (IDA), Linköping University, Sweden.
- Thank you for being my examiner!
-\end_layout
-
-\begin_layout Description
-Patrik
-\begin_inset space ~
-\end_inset
-
-Wallström Project Manager within R&D, .SE (The Internet Infrastructure Foundation
-), Sweden.
- Thank you for being my technical supervisor!
-\end_layout
-
-\begin_layout Description
-Staffan
-\begin_inset space ~
-\end_inset
-
-Hagnell Head of New Businesses, .SE (The Internet Infrastructure Foundation),
- Sweden.
- Thank you for being my company supervisor!
-\end_layout
-
-\begin_layout Description
-Anton
-\begin_inset space ~
-\end_inset
-
-Nilsson Master student in Information Technology, Linköping University,
- Sweden.
- Thank you for being my opponent!
-\end_layout
-
-\begin_layout Section*
-Domains and data
-\end_layout
-
-\begin_layout Standard
-.SE (Richard Isberg, Tobbe Carlsson, Anne-Marie Eklund-Löwinder, Erika Lund),
- DK Hostmaster A/S (Steen Vincentz Jensen, Lise Fuhr), , Reach50/Webmie
- (Mika Wenell, Jyry Suvilehto), Alexa, Verisign, Disconnect.me, Mozilla.
- Thank you!
-\end_layout
-
-\begin_layout Section*
-Tips, feedback, inspiration and help
-\end_layout
-
-\begin_layout Standard
-Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart
- Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth
- Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus
- Bylund.
- Thank you!
-\end_layout
-
-\begin_layout Standard
-And of course everyone I forgot -- sorry and thank you!
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset Newpage clearpage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-phantomsection
-\backslash
-addcontentsline{toc}{chapter}{Nomenclature}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-markboth{Nomenclature}{}
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset nomencl_print
-LatexCommand printnomenclature
-set_width "custom"
-width "20text%"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Content"
-description "Information and data that is presented to the user. Includes text, images, video and sound."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Resource"
-description "An entity external to the HTML page that requested it. Types of resources include images, video, audio, CSS, javascript and flash animations."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "External resource"
-description "A resource downloaded from a domain other than the page that requested it was served from."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "External service"
-description "A third party service that delives some kind of resource to the user's browser. The service itself can vary from showing additional information and content, to ads and hidden trackers.\\\\\\\\External services include file hosting services, CDNs, advertisting networks, statistics and analytics collectors, and third party content."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Tracker"
-description "A resource external to the visited page, which upon access receives information about the user's system and the page that requested it.\\\\\\\\Basic information in the HTTP request to the resource URL includes user agent (browser vendor, type and version down to the patch level, operating system, sometimes hardware type) referer (the full URL of page that requested the resource), an etag (unique string identifying the data from a previous request to the same resource URL) and cookies (previously set by the same tracker)."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "CDN"
-description "Content delivery network"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Content delivery network"
-description "(CDN) The speed at which data can be delivered is dependant on distance between the user and the server. To reduce latency and download times, a content delivery network places multiple servers with the same content in strategic locations, both geographic and network toplolgy wise, closer to groups of users.\\\\\\\\For example, a CDN could deploy servers in Europe, the US and Australia, and reduce loading speed by setting up the system to automatically use the closest location."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Domain name"
-description "A human-readable way to navigate to a service on the internet: example.com. Often implicitly meaning FQDN. Domains are also used, for example, as logical entities in regards to security and privacy scopes on the web, often implemented as same-origin policies. As an example, HTTP cookies are bound to domain that set them."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Third-party content"
-description "Content served by another organization than the organization serving the explicitly requested web page. Also see external resource."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Third-party service"
-description "A service provided by an organization other than the explicitly requested service. Also see external service."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Web site"
-description "A collection of web pages under the same organization or topic. Often all web pages on a domain is considered a site, but a single domain can also contain multiple sites."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Web service"
-description "A function performed on the internet, and in this document specifically web sites with a specific purpose directed towards human users. This includes search engines, social networks, online messaging and email as well as content sites such as news sites and blogs."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Web browser"
-description "Or browser. Software a user utilizes to retrieve, present and traverse information from the web."
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "URL"
-description "Uniform Resource Locator"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Uniform Resource Locator"
-description "(URL) A standard to define the address to resources, mostly on the internet, for example http://joelpurra.com/projects/masters-thesis/"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "HTTP"
-description "Hypertext Transfer Protocol"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "HTTPS"
-description "Secure HTTP, where data is transfered encrypted."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Hypertext Transfer Protocol"
-description "(HTTP) A protocol to transfer HTML and other web page resources across the internet."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Do Not Track"
-description "(DNT) A HTTP header used to indicate that the server should not record and track the client's traffic and other data."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "DNT"
-description "Do Not Track"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "P3P"
-description "Platform for Privacy Preferences (P3P) Project"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Platform for Privacy Preferences Project"
-description "(P3P) A W3C standard for HTTP where server responses are annotated with an encoded privacy policy, so the client can display it to the user. Work has been discontinued since 2006."
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol ".SE"
-description "The Internet Infrastructure Foundation. An independent organization for the benefit of the public that promotes the positive development of the internet in Sweden. .SE is responsible for the .se country code top level domain."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol ".se"
-description "The country code top level domain name for Sweden."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol ".dk"
-description "The country code top level domain name for Denmark."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol ".com"
-description "A generic top level domain. It has the greatest number of registered domain of all TLDs."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol ".net"
-description "A generic top level domain."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "FQDN"
-description "Fully qualified domain name"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Fully qualified domain name"
-description "(FQDN) A domain name specific enough to be used on the internet. Has at least a TLD and a second-level domain name - but oftentimes more depending on TLD rules and organizational units."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Top level domain"
-description "(TLD) The last part of a domain name, such as .se or .com. Registration of TLDs is handled by ICANN."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "gTLD"
-description "Generic top level domain such as .com or .net."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "ccTLD"
-description "A top level domain based on a country code, such as .se or .dk."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Primary domain"
-description "For the thesis, the first non-public suffix part of a domain name has been labeled the primary domain. For example example.com.br has been labeled the primary domain for www.company-abc.com.br, as .com.br is a public suffix."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Subdomain"
-description "A domain name that belongs to another domain name zone. For example service.example.net is a subdomain to example.net."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Superdomain"
-description "For the thesis, domains in parent zones have been labeled superdomains to their subdomains, such as such as example.se being a superdomain to www.example.se."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Public suffix"
-description "The part of a domain name that is unavilable for registrations, used for grouping. All TLDs are public suffixes, but some have one or more levels of public suffixes, such as .com.br for commercial domains in Brazil or .pp.se for privately owned personal domains (a public suffix which has been deprecated, but still exists)."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Zone"
-description "A technical as well as administrative part of DNS. Each dot in a domain name represents another zone, from the implicit root zone to TLDs and privately owned zones -- which in turn can contain more privately controlled zones."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "SLD"
-description "Second-level domain"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "ccSLD"
-description "Country-code second-level domain. A SLD that belongs to a country code TLD. A ccSLD is not for public use, which are required to register their domains on the third domain level."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Second-level domain"
-description "(SLD) A domain that is directly below a TLD. Can be a domain registerable to the public, or a ccSLD."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Parked domain"
-description "A domain that has been purchased from a domain name retailer, but only shows a placeholder message – usually an advertisement for the domain name retailer itself."
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Alexa"
-description "A web traffic statistic service, owned by Amazon."
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "jq"
-description "A tool and domain specific programming language to read and transform JSON data. See the software chapter."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "phantomjs"
-description "Browser software used for automated web site browsing. See the software chapter."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "HAR"
-description "HTTP Archive (HAR) format, used to store recorded HTTP metadata from a web page visit. See the software chapter."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "JavaScript Object Notation"
-description "(JSON) A data format based on Javascript objects. Often used on the internet for data transfer. Used in this thesis as the basis for all data transformation."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "JSON"
-description "JavaScript Object Notation"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "GOCS"
-description "Government-owned corporations"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Government-owned corporations"
-description "(GOCS) State-owned corporations."
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "CDF"
-description "Cumulative distribution function."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Cumulative distribution function"
-description "(CDF) In this thesis usually a graph which shows the ratio of a property as seen per domain on the x axis, with the cumulative ratio of domains which show this property on the y axis. The steeper the curve is above an x value range, the higher the ratio of domains which fall within the range."
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../references/thesis,../references/rfc-selection"
+options "bibtotoc,plain"
 
 \end_inset
 
