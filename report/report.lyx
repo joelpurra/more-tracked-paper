@@ -946,7 +946,7 @@ Software for automated, repeatable retrieval and analysis of large amounts
  of websites has been developed, and released as open source (see Appendix
  
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Software"
 
 \end_inset
@@ -1539,8 +1539,39 @@ Based on a list of domains, the front page of each domain is downloaded
  In the following sections we describe each of these steps in more detail.
  For yet more details of the methodology, we refer to Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Methodology-details"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+To help the reader, explicit references of the form 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Domains"
+
+\end_inset
+
+ is used to refer to Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Domains"
+
+\end_inset
+
+ of Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Methodology-details"
+
+\end_inset
+
+.
+\end_layout
 
 \end_inset
 
@@ -1554,7 +1585,7 @@ reference "chap:Software"
 
  and the details of the results are presented in Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Detailed-Results"
 
 \end_inset
@@ -1582,7 +1613,7 @@ This thesis was written in the office of The Internet Infrastructure Foundation
 \emph default
  reports 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "sub:.SE-Health-Status"
 
 \end_inset
@@ -1791,7 +1822,7 @@ reference "tab:Domain-lists-in-use"
  in the thesis.
  More details on each sublist is provided in Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Methodology-details"
 
 \end_inset
@@ -2575,7 +2606,7 @@ reference "sec:Failed-domains"
 \begin_layout Standard
 Details about website and resource retrieval can be found in 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "sec:Retrieving-websites-and-resources"
 
 \end_inset
@@ -2802,7 +2833,7 @@ reference "sub:Questions"
  There are also multiset scripts, collecting values from several datasets
  -- the basis for most of the detailed results' tables; see Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Detailed-Results"
 
 \end_inset
@@ -2813,7 +2844,7 @@ reference "chap:Detailed-Results"
 \begin_layout Standard
 See also analysis details in Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "sec:Analyzing-resources"
 
 \end_inset
@@ -2869,7 +2900,7 @@ reference "chap:Results"
 
 , Appendix 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "chap:Detailed-Results"
 
 \end_inset
@@ -8274,14 +8305,14 @@ name "sec:Ad-and-privacy-blocking-lists"
 
 \begin_layout Standard
 There are several lists of known ads and privacy invading trackers in use
- in blocking software than Disconnect (see 
+ in blocking software than Disconnect 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand eqref
 reference "sub:Disconnect's-blocking-list"
 
 \end_inset
 
-).
+.
  One of the most popular ones is EasyList
 \begin_inset Foot
 status open
@@ -8385,14 +8416,14 @@ reference "sec:Trackers-which-deliver-content"
 On a technical level, some blocking rule formats have also posed a problem
  in terms of implementation into the current data processing framework that
  is har-dulcify.
- It relies heavily on jq (see 
+ It relies heavily on jq 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand eqref
 reference "sub:jq"
 
 \end_inset
 
-), which does not have a public release that implements in regular expressions
+, which does not have a public release that implements in regular expressions
  support, a major part of some blocking lists.
  The idea is that ads and related resources are filtered matching requests'
  complete URL against the blocking rules, which are a mixture of both more
@@ -10262,10 +10293,9 @@ name "sec:Retrieving-websites-and-resources"
 \end_layout
 
 \begin_layout Standard
-Websites based on lists of domains were downloaded using har-heedless, see
- 
+Websites based on lists of domains were downloaded using har-heedless 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand eqref
 reference "sub:har-heedless"
 
 \end_inset
@@ -11371,15 +11401,14 @@ System load has been shown to vary greatly based on the type of request,
  limit/timeout has been reached.
  Increasing the upper bound on parallelism and instead dynamically adjusting
  the number of concurrent requests emphasizing system load should decrease
- time needed to download a set of domains with a large failure rate (see
- 
+ time needed to download a set of domains with a large failure rate 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
 
 \end_inset
 
-).
+.
  Time limits can also be adjusted based on previous dataset results' actual
  reply timings found in HAR data, instead of setting a high and 
 \begin_inset Quotes eld
@@ -11511,9 +11540,9 @@ name "sec:Analyzing-resources"
 \end_layout
 
 \begin_layout Standard
-After downloading HAR files, they are processed using har-dulcify, see 
+After downloading HAR files, they are processed using har-dulcify 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand eqref
 reference "sub:har-dulcify"
 
 \end_inset
@@ -12254,15 +12283,15 @@ Google Tag Manager
 
 \begin_layout Standard
 One of the questions posed beforehand was if Google Tag Manager would have
- an impact upon results.
- This question is answered in 
+ an impact upon results; it has been answered with the help of this data
+ 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand eqref
 reference "sub:Google-Tag-Manager"
 
 \end_inset
 
- with the help of this data.
+.
 \end_layout
 
 \begin_layout Subsubsection
