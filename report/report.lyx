@@ -95,20 +95,6 @@ Master’s thesis
 \begin_inset Newline newline
 \end_inset
 
-
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-(Preliminary title)
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Swedes Online: You Are More Tracked Than You Think
 \end_layout
 
@@ -15439,7 +15425,7 @@ It is interesting to look at the number of requests, as they differ between
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15452,7 +15438,7 @@ Write about internal per domain.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15465,7 +15451,7 @@ Write about external per domain.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15478,7 +15464,7 @@ Write about disconnect per domain.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15491,7 +15477,7 @@ Write about internal ratio.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15504,7 +15490,7 @@ Write about external ratio.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15517,7 +15503,7 @@ Write about disconnect ratio.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -15530,7 +15516,7 @@ Write about external over internal ratio.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Greyedout
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
