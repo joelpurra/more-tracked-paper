@@ -4499,7 +4499,7 @@ status collapsed
 
 \end_inset
 
- responses.
+ responses for the se.r.100k-sw dataset.
  Reach50 top sites are leading the way with a 53% response rate 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -4578,9 +4578,9 @@ S redirects, are strictly insecure or which could not be determined because
 insecure
 \emph default
  than secure URLs -- even if the origin request was made to a secure URL.
- The secure random .se domains have a higher secure redirect ratio, but due
- to the very low response rate of 0.3% when using HTTPS -- and even fewer
- which use redirects -- it is hard to draw solid conclusions.
+ The secure random .se domains (se.r.100k-sw) have a higher secure redirect
+ ratio, but due to the very low response rate of 0.3% when using HTTPS --
+ and even fewer which use redirects -- it is hard to draw solid conclusions.
 \end_layout
 
 \begin_layout Standard
@@ -4616,8 +4616,9 @@ reference "sec:Internal-versus-external"
 \end_inset
 
 .
- Less than 10% of top sites use strictly internal resources, meaning up
- to 93% of top sites are composed using at least a portion of external resources.
+ Less than 10% of top sites (for example alexa.top.10k-hw) use strictly internal
+ resources, meaning up to 93% of top sites are composed using at least a
+ portion of external resources.
  See the percentage of domains (x axis) using strictly internal, mixed and
  strictly external resources in Figure 
 \begin_inset CommandInset ref
@@ -4717,8 +4718,9 @@ security symbols
 \end_layout
 
 \begin_layout Standard
-For the HTTP variation of random .se domains 40% use strictly external resources;
- this seems to be connected with the fact that many domains are 
+For the HTTP variation of random .se domains (se.r.100k-hw) 40% use strictly
+ external resources; this seems to be connected with the fact that many
+ domains are 
 \emph on
 parked
 \emph default
@@ -4884,12 +4886,12 @@ reference "fig:Result-selection-internal-secure-organizations"
 
 (c) shows the CDF of the ratio of domains (y axis) with the number of organizati
 ons detected per domain (x axis) for a selection of datasets.
- The random .se domain HTTP variation has a different characteristic than
- others, with 40% of domains having no detected third party organizations;
+ The random .se domain HTTP variation (se.r.100k-hw) has a different characteristic
+ than others, with 40% of domains having no detected third party organizations;
  it can be due to domain registrars who serve parked domain page not being
  listed as trackers.
- Around 55% of random Swedish HTTP domains have 1-3 trackers, and about
- 5% have more than 3.
+ Around 55% of random Swedish HTTP domains (se.r.100k-hw) have 1-3 trackers,
+ and about 5% have more than 3.
 \end_layout
 
 \begin_layout Standard
@@ -4912,9 +4914,9 @@ numprint{10000}
 
 \end_inset
 
- dataset, 70% of sites allow more than one external organization, 10% allow
- 13 or more and 1% even allow more than 48 trackers -- and that is looking
- only on the front page of the domain.
+ dataset (alexa.top.10k-hw and alexa.top.10k-sw), 70% of sites allow more than
+ one external organization, 10% allow 13 or more and 1% even allow more
+ than 48 trackers -- and that is looking only on the front page of the domain.
 \end_layout
 
 \begin_layout Standard
@@ -5140,7 +5142,7 @@ reference "fig:Undetected-external-domains"
  for the ratio of detected/undetected domains.
  While some of the domains which have not been matched by Disconnect are
  private/internal CDNs, the fact that less than 10% of external domains
- are blocked in top website HTTP datasets is notable.
+ are blocked in top website HTTP datasets (such as alexa.top.10k-hw) is notable.
  The blocking results are also around 10% or lower for random domain HTTP
  datasets, but it seems it might be connected to the number of domains in
  the dataset.
@@ -5157,7 +5159,8 @@ numprint{15746}
 
 \end_inset
 
- external primary domains in .se 100k random domain HTTP dataset were detected.
+ external primary domains in .se 100k random domain HTTP dataset (se.r.100k-hw)
+ were detected.
  Smaller datasets, including HTTPS datasets with few reachable websites,
  have a higher detection rate at 30% and more.
 \end_layout

@@ -5,19 +5,19 @@ Over 90\% of most categories' domains rely on external resources -- external res
 }	{
 Uses more external resources than .dk, but less than .com and .net (\ref{sec:Internal-versus-external})
 }	{
-There are at least as many external resources, meaning as much tracking, on secure as insecure top domains (Figure \ref{fig:Result-selection-internal-secure-organizations}(a))
+There are at least as many external resources, meaning as much tracking, on secure as insecure top domains (alexa.top.10k-hw and alexa.top.10k-sw in Figure \ref{fig:Result-selection-internal-secure-organizations}(a))
 }
 {
 % A
 }	{
-39\% use \emph{only} external resources (Figure \ref{fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations}(a))
+39\% use \emph{only} external resources (se.r.100k-hw in Figure \ref{fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations}(a))
 }	{
 94\% of \numprint{5959} HTTPS-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
 }
 {
 % A
 }	{
-Many random domains use only external resources due to being parked \ref{sec:Results-Internal-and-external-requests} or redirecting away from the origin domain (\ref{sec:HTTP,-HTTPS-and-redirects})
+Many random domains use only external resources due to being parked (\ref{sec:Results-Internal-and-external-requests}) or redirecting away from the origin domain (\ref{sec:HTTP,-HTTPS-and-redirects})
 }	{
 78\% of \numprint{123000} HTTP-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
 }
@@ -30,7 +30,7 @@ Only 0.3\% respond to secure requests, in line with .dk and .net, while .com has
 % C
 }
 {
-25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely -- it's close, but still considered insecure (Figure \ref{fig:Result-selection-internal-secure-organizations}(b))
+25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely -- it's close, but still considered insecure (se.hs.municip-sw in Figure \ref{fig:Result-selection-internal-secure-organizations}(b))
 }	{
 % B
 }	{
