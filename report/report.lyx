@@ -409,6 +409,22 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+markboth{Nomenclature}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "custom"
