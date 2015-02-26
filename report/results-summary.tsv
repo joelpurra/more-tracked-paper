@@ -1,4 +1,5 @@
 Swedish top/curated	Random .se	Other findings
+{}	{\centering\textbf{Internal vs external}}	{}
 {
 Over 90\% of most categories' domains rely on external resources -- external resources are considered trackers (\ref{sec:Internal-versus-external})
 }	{
@@ -7,37 +8,46 @@ Uses more external resources than .dk, but less than .com and .net (\ref{sec:Int
 There are at least as many external resources, meaning as much tracking, on secure as insecure top domains (Figure \ref{fig:Result-selection-internal-secure-organizations}(a))
 }
 {
-Only 13 of 290 municipalities have fully secure websites; no Swedish media sites are completely secure (\ref{sec:Insecure-versus-secure-resources})
+% A
 }	{
-Disconnect \emph{only detects 3\%} of external primary domains as trackers (\ref{sub:Tracker-detection-effectiveness})
+39\% use \emph{only} external resources (Figure \ref{fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations}(a))
 }	{
 94\% of \numprint{5959} HTTPS-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
 }
 {
-25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely -- it's close, but still considered insecure (Figure \ref{fig:Result-selection-internal-secure-organizations}(b))
-}	{
-39\% use \emph{only} external resources (Figure \ref{fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations}(a))
-}	{
-78\% of \numprint{123000} HTTP-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
-}
-{
-Swedish media seems very social, with the highest Twitter and Facebook coverage (\ref{sub:Top-organizations})
-}	{
-Only 0.3\% respond to secure requests, in line with .dk and .net, while .com has 0.5-0.6\% response rate (\ref{sec:Failed-versus-non-failed})
-}	{
-Twitter has about half the coverage of Facebook (\ref{sub:Top-organizations})
-}
-{
-Financial instititions redirect from secure \emph{to insecure} sites for 20\% of responding domains (\ref{sec:HTTP,-HTTPS-and-redirects})
+% A
 }	{
 Many random domains use only external resources due to being parked \ref{sec:Results-Internal-and-external-requests} or redirecting away from the origin domain (\ref{sec:HTTP,-HTTPS-and-redirects})
 }	{
-50\% of top sites always redirect to the www subdomain, 13\% always redirect to their primary domain (\ref{sec:HTTP,-HTTPS-and-redirects})
+78\% of \numprint{123000} HTTP-www variation domains call external domains (\ref{sec:Domain-and-request-counts})
+}
+{}	{\centering\textbf{Secure vs insecure}}	{}
+{
+Only 13 of 290 municipalities have fully secure websites; no Swedish media sites are completely secure (\ref{sec:Insecure-versus-secure-resources})
+}	{
+Only 0.3\% respond to secure requests, in line with .dk and .net, while .com has 0.5-0.6\% response rate (\ref{sec:Failed-versus-non-failed})
+}	{
+% C
 }
 {
-A single visit to each media sites would leak information to at least 57 organizations \ref{sub:Domain-and-organization-counts}
+25\% of Swedish municipalities responding to secure requests load 90\% of their resources securely -- it's close, but still considered insecure (Figure \ref{fig:Result-selection-internal-secure-organizations}(b))
 }	{
-Over 40\% use Google Analytics or Google API (\ref{sub:Top-domains-Google})
+% B
+}	{
+% C
+}
+{
+Financial institutions redirect from secure \emph{to insecure} sites for 20\% of responding domains (\ref{sec:HTTP,-HTTPS-and-redirects})
+}	{
+% B
+}	{
+% C
+}
+{}	{\centering\textbf{Known trackers}}	{}
+{
+A single visit to each media sites would leak information to at least 57 organizations (\ref{sub:Domain-and-organization-counts})
+}	{
+Disconnect \emph{only detects 3\%} of external primary domains as trackers (\ref{sub:Tracker-detection-effectiveness})
 }	{
 A few global top domains load more than 75 known trackers on their front page alone (\ref{sub:Domain-and-organization-counts})
 }
@@ -47,4 +57,26 @@ A few global top domains load more than 75 known trackers on their front page al
 58\% use content from known trackers (\ref{sub:Disconnect-categories-coverage})
 }	{
 Disconnect's blocking list \emph{only detects 10\%} of external primary domains as trackers for top website datasets (\ref{sub:Tracker-detection-effectiveness})
+}
+{
+% A
+}	{
+Over 40\% use Google Analytics or Google API (\ref{sub:Top-domains-Google})
+}	{
+% C
+}
+{}	{\centering\textbf{Other}}	{}
+{
+Swedish media seems very social, with the highest Twitter and Facebook coverage (\ref{sub:Top-organizations})
+}	{
+% B
+}	{
+Twitter has about half the coverage of Facebook (\ref{sub:Top-organizations})
+}
+{
+% A
+}	{
+% B
+}	{
+50\% of top sites always redirect to the www subdomain, 13\% always redirect to their primary domain (\ref{sec:HTTP,-HTTPS-and-redirects})
 }

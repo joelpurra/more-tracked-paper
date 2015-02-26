@@ -3125,6 +3125,9 @@ name "chap:Results"
 This chapter presents the main results, exemplified primarily by four datasets
  in their HTTP-www and HTTPS-www variations; Alexa's top 10k websites, Alexa's
  top .se websites, .se 100k random domains and Swedish municipalities.
+ Some result highlights from Swedish top/curated datasets, random .se domains
+ and findings from other domains in different categories are presented in
+ the table below.
  Supplementary results and additional details are provided in Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
