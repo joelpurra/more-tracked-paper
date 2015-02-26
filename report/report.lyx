@@ -684,6 +684,14 @@ description "(TLD) The last part of a domain name, such as .se or .com. Registra
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
+symbol "TLD"
+description "Top level domain."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
 symbol "gTLD"
 description "Generic top level domain such as .com or .net."
 
