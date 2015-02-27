@@ -229,7 +229,7 @@ numprint{150000}
 
 \end_inset
 
- websites, allowing comparison of HTTPS adaption and third-party tracking
+ websites, allowing comparison of HTTPS adoption and third-party tracking
  within and across the different classes of websites.
 \end_layout
 
@@ -989,10 +989,9 @@ target "http://joelpurra.com/projects/masters-thesis/"
 \end_layout
 
 \begin_layout Enumerate
-Adaption of HTTPS for different domains has been characterized from a Swedish
- perspective.
- The adaption between classes of domains within Sweden, as well as against
- popular international domains, are compared (see Section 
+HTTPS usage for different domains has been characterized from a Swedish
+ perspective; adoption rates are compared between classes of domains within
+ Sweden as well as against popular international domains (see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Results-HTTP,-HTTPS-and-redirects"
@@ -1017,7 +1016,7 @@ reference "sec:Results-Internal-and-external-requests"
 
  and 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "sec:Results-Tracker-detection"
 
 \end_inset
@@ -1062,7 +1061,7 @@ recognized
 \emph on
 recognized
 \emph default
- tracker domains, we analyzed and compared the widespread adaption of these
+ tracker domains, we analyzed and compared the widespread adoption of these
  services across domains within Sweden, as well as internationally.
  The use of external resources is high among all classes of domains (see
  Section 
@@ -2506,8 +2505,8 @@ Data collection
 \end_layout
 
 \begin_layout Standard
-The lists of domains have been fed to har-heedless, a tool specifically
- written for this thesis 
+The lists of domains have been used as input to har-heedless, a tool specificall
+y written for this thesis 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:har-heedless"
@@ -2593,7 +2592,7 @@ reference "sub:Parallelizing-downloads"
 
 \end_inset
 
-, with adjustable parallelism to fit the computer machine's power 
+, with adjustable parallelism to fit the computer machine's capacity 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sub:System-load-during-downloads"
@@ -2838,7 +2837,7 @@ reference "sec:HTTP,-HTTPS-and-redirects"
 
 \end_inset
 
-.
+, can be answered based using the input which fits best.
  There are also multiset scripts, collecting values from several or all
  72 datasets at once.
  Their output is the basis for most of the detailed results' tables and
@@ -4674,7 +4673,7 @@ reference "sec:Trackers-are-a-commercial-choice"
 \emph on
 as tracked
 \emph default
- on insecure as on secure sites.
+ on secure as on insecure sites.
 \end_layout
 
 \begin_layout Standard
@@ -4701,7 +4700,7 @@ reference "fig:Result-selection-internal-external-insecure-tracker-categories-to
 \end_layout
 
 \begin_layout Standard
-Similar to the HTTPS adaption, we observe significant differences between
+Similar to the HTTPS adoption, we observe significant differences between
  randomly selected domains and the most popular (top ranked) domains.
  See how dataset HTTP/HTTPS variation lines follow each other for most datasets,
  again pointing towards 
@@ -4796,8 +4795,8 @@ name "sec:Results-Tracker-detection"
 
 \begin_layout Standard
 While looking at the number of requests made to trackers can give a hint
- towards how much tracking is installed on a website, but it can be argued
- that one or two carefully composed requests can contain the same information
+ towards how much tracking is installed on a website, it can be argued that
+ one or two carefully composed requests can contain the same information
  as several request.
  The difference is merely technical, as not all types of resources can be
  efficiently bundled and transferred in a single requests, but require more
@@ -4919,9 +4918,9 @@ ons detected per domain (x axis) for a selection of datasets.
 \end_layout
 
 \begin_layout Standard
-It can again be seen that the amount of tracking is the same in other HTTP-www
- variations as in their respective HTTPS-www variation -- the figure shows
- that the lines follow each other.
+Once again it can be seen that the amount of tracking is the same in other
+ HTTP-www variations as in their respective HTTPS-www variation -- as the
+ figure shows, the lines follow each other.
  Most websites also have at least one known tracker present; 53-72% of random
  domains have at least one tracker installed, while 88-98% of top websites
  have trackers and 78-100% of websites in the Swedish curated lists.
@@ -5072,9 +5071,15 @@ reference "sub:Top-organizations"
  doesn't reach 40% in top or curated domains.
  Facebook coverage on random zone domains is 6-10%, which is also much lower
  than Google's numbers.
- Twitter generally has even lower coverage, at about half of that of Facebook
- on average.
- As can be seen, Google alone oftentimes has a coverage 
+ Twitter has even lower coverage, at about half of that of Facebook on average.
+ As can be seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Result-selection-internal-external-insecure-tracker-categories-top-organizations"
+
+\end_inset
+
+(c), Google alone oftentimes has a coverage 
 \emph on
 higher
 \emph default
@@ -5319,8 +5324,9 @@ begin{futurework}
 It is possible to extract the exact coverage for both Google Analytics and
  DoubleClick from the current dataset.
  Google Analytics already uses a domain of its own, and by writing a custom
- question separating DoubleClick's ad and analytics resource URLs analytics
- on that domain can be found as well.
+ question differentiating DoubleClick's ad specific resource URLs from analytics
+ specific resource URLs, analytics on doubleclick.net can be analyzed separately
+ as well.
 \end_layout
 
 \begin_layout Standard
@@ -5345,27 +5351,8 @@ Reachability
 
 \begin_layout Standard
 The random zone domain lists (.se, .dk, .com, .net) have download failures for
- 22-28% of all domains when it comes to 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-http://www.
-\end_layout
-
-\end_inset
-
- variations, where www has fewer failures 
+ 22-28% of all domains when it comes to HTTP without www and HTTP-www variations
+, where www has fewer failures 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "sec:Failed-versus-non-failed"
@@ -5435,8 +5422,10 @@ key "Lowinder:2008:healthstatus,Lowinder:2009:healthstatus,Lowinder:2010:healths
  up with the results in this thesis.
  Quality of the HTTPS certificate is also considered by looking at for example
  expiry date, deeming them correct or not.
- Measurements changed in 2009, so they might not be fully comparable.
- No HTTPS measurements were performed in 2012.
+ Data comparable to this thesis wasn't published in the report from 2007
+ and HTTPS measurements were not performed in 2012.
+ Also, measurements changed in 2009 so they might not be fully comparable
+ with earlier reports.
 \end_layout
 
 \begin_layout Standard
@@ -5459,7 +5448,7 @@ reference "sec:Failed-versus-non-failed"
  while the report shows 28%.
  The 2013 report also finds that 24% of HTTPS sites redirect from HTTPS
  back to HTTP.
- In this thesis is is shown that 22% of 
+ In this thesis it is shown that 22% of 
 \emph on
 .SE Health Status
 \emph default
@@ -5544,7 +5533,11 @@ name "sec:Cat-and-Mouse"
 \end_layout
 
 \begin_layout Standard
-Similar to this thesis, Krishnamurthy and Wills 
+Similar to the methodology used in this thesis, the 
+\emph on
+Cat and mouse
+\emph default
+ paper by Krishnamurthy and Wills 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy:2006:CMC:1135777.1135829"
@@ -5624,10 +5617,10 @@ reference "note:cloudfront.net-cdn-subdomains"
  While this thesis has not confirmed that this is the case, it seems likely
  that some easily blockable tracking is being replaced with a less fragile
  business model where the tracker also adds value to the end user.
- There are also two ways to look at it -- do service providers add tracking
- to an existing service, or do they build a service to support tracking?
- For Google, the most prevalent tracker organization, it might be a mixture
- of both.
+ There are two ways to look at this behavior -- do service providers add
+ tracking to an existing service, or do they build a service to support
+ tracking? For Google, the most prevalent tracker organization, it might
+ be a mixture of both.
  In the case of AddThis, a wide-spread 
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -5703,7 +5696,7 @@ reference "tab:Cat-and-Mouse-ad-coverage"
 
 \end_inset
 
- for ad coverage per dataset and 
+ for ad coverage per dataset and Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Cat-and-Mouse-adserver-match-distribution"
@@ -7550,7 +7543,7 @@ numprint{3000}
 \end_inset
 
  domains, one third-party script in particular sends requests with synced
- IDs to 25 domains; the IDs were eventually are shared with 43 domains.
+ IDs to 25 domains; the IDs were eventually shared with 43 domains.
  They also showed that a user's browsing history reconstruction rate rose
  from 1.4% to 11% when backend/server-to-server overlaps were modeled.
 \end_layout
@@ -9447,7 +9440,7 @@ status collapsed
 
 \end_inset
 
- is to different from the TLD 
+ is different from the TLD 
 \begin_inset Flex Code
 status collapsed
 
@@ -10278,7 +10271,7 @@ name "sub:Social"
 \end_layout
 
 \begin_layout Standard
-Site with an emphasis on social aspects.
+Sites with an emphasis on social aspects.
  They often have buttons to vote for, recommend or share with others.
 \end_layout
 
@@ -10450,9 +10443,9 @@ Cookies stored by a website may affect content upon requesting subsequent
  Each browser instance has been started without any cookies, and while cookie
  usage has not been turned off, none have been stored after finalizing the
  web page request.
- A cookie analysis still possible by looking at HTTP headers, but they have
- not been considered as an indicator of tracking as other techniques can
- serve the same purpose 
+ A cookie analysis is still possible by looking at HTTP headers, but they
+ have not been considered as an indicator of tracking as other techniques
+ can serve the same purpose 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Acar:2014:WNF:2660267.2660347,Eckersley2009unique"
@@ -10528,8 +10521,8 @@ Many of the external resources will be overlapping between websites and
 \end_layout
 
 \begin_layout Standard
-One of the technologies in determining if a locally cached file is the correct/l
-atest version includes the HTTP 
+One of the techniques in determining if a locally cached file is the correct/lat
+est version includes the HTTP 
 \begin_inset Flex Code
 status collapsed
 
@@ -11090,9 +11083,8 @@ Screenshots
 \end_layout
 
 \begin_layout Standard
-In order to visually being able to confirm that web pages have been downloaded
- correctly, a PNG screenshot can optionally be taken when the page has finished
- downloading.
+In order to visually confirm that web pages have been downloaded correctly,
+ a PNG screenshot can optionally be taken when the page has finished downloading.
  There is a processing cost associated with taking screenshots; it takes
  time for phantomjs to render the internal buffer as an image, convert it
  to base64 encoding for the augmented HAR data, jq to extract the image
@@ -11590,17 +11582,19 @@ name "sub:Extracting-HAR-format-parts"
 \end_layout
 
 \begin_layout Standard
-The specification includes fields that have to do with for example request/respo
-nse timings and data sizes.
+The HAR format specification includes fields that have to do with for example
+ request/response timings and data sizes.
  Those, and other fields, are not analyzed in this thesis, so the first
  step is to extract the relevant information.
+ These properties will be enough to see what kinds of resources are requested,
+ if requests are successful and where the request is made to.
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 URL The request's URL.
  Recorded whether the request is successful or not.
- Values outside of those starting with 
+ Although almost all requests are made to 
 \begin_inset Flex Code
 status collapsed
 
@@ -11620,7 +11614,19 @@ https://
 
 \end_inset
 
- are mostly ignored.
+ a negligible amount of other and non-standard (sometimes misspelled) protocols
+ have been registered.
+ Urls starting with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+data:
+\end_layout
+
+\end_inset
+
+ have been ignored, as they are page-internal.
 \end_layout
 
 \begin_layout Labeling
@@ -11727,11 +11733,6 @@ reference "sub:Status"
  HTTP status.
 \end_layout
 
-\begin_layout Standard
-These properties will be enough to see what kinds of resources are requested,
- if requests are successful and where the request is made to.
-\end_layout
-
 \begin_layout Subsection
 Expanding parts
 \begin_inset CommandInset label
@@ -11755,7 +11756,8 @@ key "rfc3986"
 
 \end_inset
 
-, with interesting ones for web listed and/or split up further here.
+, with interesting ones for standard web requests listed and/or split up
+ further to get a more fine-grained analysis.
 \end_layout
 
 \begin_layout Labeling
@@ -11816,8 +11818,8 @@ about
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Domain For this thesis, the domain part has been of a lot of interest, as
- it signifies the difference between internal and external resources.
+Domain For this thesis, the domain part has been of much interest, as it
+ signifies the difference between internal and external resources.
 \end_layout
 
 \begin_layout Labeling
@@ -11876,7 +11878,7 @@ name "sub:Status"
 \end_layout
 
 \begin_layout Standard
-The status is grouped into their defined groups by the first digit 
+The status value groups are defined by their first digit 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rfc7231"
@@ -12106,8 +12108,8 @@ Failed
 \begin_inset space ~
 \end_inset
 
-request The log file format is incomplete or the status is null or below
- 100 or above 599.
+request The log file format is incomplete or the status is null, below 100
+ or above 599.
 \end_layout
 
 \begin_layout Description
@@ -12290,8 +12292,8 @@ name "sub:Questions"
 
 \begin_layout Standard
 Where the aggregate analysis is not enough, there are custom questions.
- These questions/queries can be run against any previous intermediate step
- in the process, as they are saved to disk.
+ These questions/queries can be executed against any previous intermediate
+ step in the process, as they are saved to disk.
 \end_layout
 
 \begin_layout Subsubsection
@@ -12330,7 +12332,7 @@ Multiset queries
 After downloading several datasets, it is often interesting to compare them
  side by side.
  The multiset queries extract pieces of data from several datasets, and
- combine them into a single files.
+ combine them into a single file.
 \end_layout
 
 \begin_layout Chapter
@@ -13251,7 +13253,7 @@ target "https://github.com/joelpurra/har-dulcify"
 \end_layout
 
 \begin_layout Standard
-Extract data from HTTP Archive (HAR) files for an aggregate analysis.
+Extracts data from HTTP Archive (HAR) files for an aggregate analysis.
  HAR files by themselves contain too much data, so the relevant parts need
  to be extracted.
  The extracted parts are then broken down into smaller parts that are easier
@@ -13273,7 +13275,7 @@ one-shot/
 
  folder are used the most.
  These convenience scripts also leave the files from partial executions,
- so the can be used for other kinds of analysis.
+ so they can be used for other kinds of analysis.
 \end_layout
 
 \begin_layout Standard
@@ -13729,7 +13731,7 @@ Takes counts and lists of values, and reduces them to easy to present values,
  percentages and top lists.
  Results are also grouped in order to draw separate conclusions regarding
  non-failed domains and internal/external resources.
- A tree representation of the output after grouping.
+ Below, a tree representation of the output after grouping is shown.
  The origin represents the original request of the subsequently requested
  URLs.
 \end_layout
@@ -14104,7 +14106,7 @@ Differences between datasets
 \end_layout
 
 \begin_layout Standard
-Domains lists chosen for this thesis come in three major categories -- top
+Domain lists chosen for this thesis come in three major categories -- top
  lists, curated lists and random selection from zone files.
  While the top lists and curated lists are assumed to primarily contain
  sites with staff or enthusiasts to take care of them and make sure they
@@ -14756,7 +14758,8 @@ reference "fig:internal-mixed-external-resources"
 \end_layout
 
 \begin_layout Standard
-More detailed examples of distributions of resources are shown in 
+More detailed examples of distributions of resources are shown in Figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Cumulative-distribution-ratio-internal-resources"
@@ -14778,9 +14781,9 @@ reference "fig:Cumulative-distribution-ratio-internal-resources"
 Mixing resources from both internal and external domains is the most common
  way to compose a web page for datasets not randomly chosen from zones,
  although it is quite common for random domains as well.
- They do show relatively high tendencies to either extreme, with only either
- internal or external resources; in addition the usage of external resources
- is lower in HTTPS variations.
+ Random domains show relatively high tendencies to either extreme, with
+ only either internal or external resources; in addition the usage of external
+ resources is lower in HTTPS variations.
  As can be noted in both Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -14883,11 +14886,11 @@ reference "sec:Disconnect's-blocking-list-matches"
 \end_inset
 
 .
- While it requires more extensive reverse requests' domain usage mapping
- work to detect private CDN domains plus manual classification work, and
- might only be effective for top organizations with many services, it adds
- to seeing legal entities as information receivers rather than the merely
- technical domain partitioning.
+ Private CDN domain detection requires more extensive reverse requests'
+ domain usage mapping work plus manual classification work.
+ While the work put in might only be effective for top organizations with
+ many services, it adds to seeing legal entities as information receivers
+ rather than the merely technical domain partitioning.
  It also adds more questions -- could for example a private CDN domain hosted
  in another organization's datacenter be seen as both internal and external?
 \end_layout
@@ -15266,8 +15269,9 @@ name "sec:Domain-and-request-counts"
 \begin_layout Standard
 The table shows counts of domains and domains which have at least one internal/e
 xternal request, and to how many external domains, primary domains or Disconnect
- domains the requests went.
- Following that counts of all requests, internal requests and external requests.
+ domains the requests was sent.
+ Following that, counts of all requests, internal requests and external
+ requests.
  External requests matching Disconnect's blocking lists are also shown.
  This table is mostly interesting to show the scale of the data collection,
  in terms of number of requests made and analyzed.
@@ -15444,10 +15448,10 @@ reference "sec:Domain-and-request-counts"
 \begin_layout Standard
 It is interesting to look at the number of requests, as they differ between
  datasets.
- Random TLD domains have a low 26-29 requests per domain, random Alexa top
- sites a medium 71-76 -- but the very Alexa top comes in at 83-105.
- The smaller datasets Reach50 comes to 87, and the even smaller dataset
- 
+ Random TLD domains have a low average of 26-29 requests per domain, random
+ Alexa top sites an average 71-76 -- but the very top of the Alexa top list
+ comes in at 83-105.
+ The smaller datasets Reach50 reaches 87, and the even smaller dataset 
 \emph on
 .SE Health Status
 \emph default
@@ -15648,12 +15652,12 @@ reference "fig:secure-mixed-insecure-resources"
 \end_inset
 
  shows an overview of ratio of domains with strictly secure requests, mixed
- security or strictly secure requests (x axis) per dataset.
+ security or strictly insecure requests (x axis) per dataset.
 \end_layout
 
 \begin_layout Standard
 While the technology has been around a long time, it does not seem as if
- very many sites actually use HTTPS on their sites.
+ very many sites actually use HTTPS.
  Even origin sites that respond to HTTPS requests seem to either redirect
  to an HTTP site 
 \begin_inset CommandInset ref
@@ -16148,12 +16152,11 @@ name "sec:HTTP,-HTTPS-and-redirects"
 The table shows domains, domains with redirect responses to the origin request,
  the ratio of domains with redirects and the average length of the redirect
  chain per domain with redirects.
- Show next is the ratio of redirected domains making strictly internal or
- strictly external redirects, and how many domains mix internal and external
- redirect URLs.
- The same goes for insecure, secure and mixed security redirects -- plus
- a column with the ratio of domains where the final redirect is to a secure
- URL.
+ Shown next is the ratio of redirected domains making strictly internal,
+ domains mixing internal and external, and strictly external redirect URLs.
+ The same goes for insecure, mixed security and strictly secure redirects
+ -- plus a column with the ratio of domains where the final redirect is
+ to a secure URL.
  The last column shows the ratio of domains with mismatched redirect URLs
  without a subsequently requested URL.
 \end_layout
@@ -16779,7 +16782,7 @@ Note that web fonts have fairly low numbers here, but that they can also
  be served as styles which dynamically load additional fonts URLs.
  This is how Google Fonts do it, using the fonts.googleapis.com domain 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "sec:Trackers-which-deliver-content"
 
 \end_inset
@@ -16788,7 +16791,7 @@ reference "sec:Trackers-which-deliver-content"
  to browser web font compatibility level, which could then be factored into
  these numbers 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "sub:Top-domains-Google"
 
 \end_inset
@@ -16830,8 +16833,8 @@ Internal
 \end_layout
 
 \begin_layout Standard
-Internal request ratios for domains with at least one internal request,
- excluding the origin request.
+The table below shows internal request ratios for domains with at least
+ one internal request, excluding the origin request.
 \end_layout
 
 \begin_layout Standard
@@ -16856,8 +16859,8 @@ External
 \end_layout
 
 \begin_layout Standard
-External resources from each group enjoy almost the same coverage as their
- internal counterparts.
+The table below shows external resources from each group enjoy almost the
+ same coverage as their internal counterparts.
  Among non-zone datasets scripts often reach above 90% coverage, showing
  that active and popular web pages contain a lot of external dynamic material.
  Images, while not dynamic, as well as styles and html are also popular
@@ -17129,7 +17132,7 @@ reference "fig:Cumulative-distribution-ratio-disconnect-matches"
 \end_inset
 
  shows the CDF of the percentage of domains (y axis) which have a certain
- ratio of all requests match Disconnect's blocking list (x axis).
+ ratio of all requests matching Disconnect's blocking list (x axis).
  The leftmost marker for each dataset shows 0% Disconnect matches, and the
  rightmost marker shows 99% matches.
 \end_layout
@@ -17512,8 +17515,7 @@ reference "fig:Organizations-per-domain"
  we see that top sites have requests to more organizations than random domains
  do.
  Over 40% of random .se HTTP-www domains have no known trackers, about as
- many have share some information with one tracker and the top 1% have six
- or more.
+ many have one tracker and the top 1% have six or more.
  This is compared to 32% of Alexa's top site sharing information with more
  than five organizations, 10% have 13 or more, and 1% share information
  with at least 48 organizations.
@@ -18157,7 +18159,7 @@ reference "tab:Organizations-in-more-than-one-category"
 
 ) are let through to 67-78% of top domains and 38-56% or random domains.
  Mixing advertisement, or in this case tracking in general, with content
- has previously been discussed as way for organizations to avoid in-browser
+ has previously been discussed as a way for organizations to avoid in-browser
  blocking 
 \begin_inset CommandInset ref
 LatexCommand eqref
