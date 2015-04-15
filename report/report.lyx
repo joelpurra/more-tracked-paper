@@ -90,6 +90,58 @@ customHeadersFooters
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename ../publication/titelsid-en.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blankpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename ../publication/insid-en.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blankpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
 Master’s thesis
 \begin_inset Newline newline
@@ -19386,6 +19438,39 @@ target "http://joelpurra.com/projects/masters-thesis/"
 
 .
  Thank you for reading this far -- feedback would be very much appreciated!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+blankpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename ../publication/copyright_IDA-exjobbsrapport.pdf
+
+\end_inset
+
+
 \end_layout
 
 \end_body
