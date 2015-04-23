@@ -129,6 +129,37 @@ target "http://joelpurra.com/"
 \end_inset
 
 +46 70 352 1212
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Niklas Carlsson
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "nikca@ida.liu.se"
+type "mailto:"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.ida.liu.se/~nikca/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Date
