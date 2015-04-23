@@ -5,22 +5,6 @@
 \renewcommand{\sectionmark}[1]{} % Don't use sections in headers
 \renewcommand{\subsectionmark}[1]{} % Don't use subsections in headers
 
-\usepackage{color}
-\definecolor{updated}{rgb}{0.8,0.85,1}
-\definecolor{blankmessage}{rgb}{0.65,0.65,0.65}
-\definecolor{blankermessage}{rgb}{0.95,0.95,0.95}
-
-\newcommand{\blankpage}[0]{
-\vspace*{\fill}
-\begin{center}
-\textcolor{blankmessage}{This page intentionally left blank.} \\
-\textcolor{blankermessage}{Almost.}
-\end{center}
-\vspace{\fill}
-\thispagestyle{empty}
-\newpage
-}
-
 \usepackage{pdflscape}
 \usepackage{geometry}
 
@@ -80,8 +64,6 @@
 
 \providecommand{\versiononly}{\IfFileExists{.generated.version}{\readsinglelinefile{.generated.version}}{(Unknown~document~version)}}%
 \providecommand{\versionandtoday}{\versiononly~--~\today}
-
-\providecommand{\recentlyupdated}{\emph\textsc\textcolor{updated}{ ~Updated!~ }}
 
 \usepackage{longtable}
 \setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
