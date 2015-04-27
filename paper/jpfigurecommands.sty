@@ -1,0 +1,238 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jpfigurecommands}[2015/04/27 v0.1 Joel Purra, figure commands]
+
+\RequirePackage{pgfplotstable}
+
+\RequirePackage{kvoptions}
+ \SetupKeyvalOptions{%
+   family=JPFC,
+   prefix=JPFC@,
+   }
+
+\DeclareStringOption{pfx}
+\ProcessKeyvalOptions*
+
+
+% Speed up pgfplots/tikz figure generation by caching results.
+% LyX needs to be configured per user;
+% In LyX Preferences, File Handling, Converters:
+% For LaTeX (pdflatex) -> PDF (pdflatex) set the Converted field to:
+% pdflatex -shell-escape $$i
+% (Adding  -shell-escape is what is important.)
+\usepgfplotslibrary{external}
+% When using LyX, the command is executed in a temporary working directory; can't use a folder prefix.
+\tikzexternalize[prefix=\JPFC@pfx]
+% Use to remake all or remake a single figure.
+%\tikzset{external/force remake}
+%\tikzset{external/remake next}
+
+\usepgfplotslibrary{groupplots}
+
+\pgfplotsset{allDatasetsXbar/.style=
+{
+enlarge x limits=false,
+bar width=6pt,
+fill opacity=0.9,
+xmin=0,
+xmax=1,
+xtick={0,.2,.4,.6,.8,1},
+minor xtick={.1,.3,.5,.7,.9},
+xminorgrids=true,
+xmajorgrids=true,
+ytick=data,
+y dir=reverse,
+yticklabel pos=right,
+symbolic y coords={alexa.2014-09-01.random.10000-http,alexa.2014-09-01.random.10000-http-www,alexa.2014-09-01.random.10000-https,alexa.2014-09-01.random.10000-https-www,alexa.2014-09-01.top.10000-http,alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.dk.10000-http,alexa.2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.dk.10000-https,alexa.2014-09-01.top.dk.10000-https-www,alexa.2014-09-01.top.se.10000-http,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https,alexa.2014-09-01.top.se.10000-https-www,com.2014-08-29.random.10000-http,com.2014-08-29.random.10000-http-www,com.2014-08-29.random.10000-https,com.2014-08-29.random.10000-https-www,dk.2014-07-23.random.10000-http,dk.2014-07-23.random.10000-http-www,dk.2014-07-23.random.10000-https,dk.2014-07-23.random.10000-https-www,net.2014-08-29.random.10000-http,net.2014-08-29.random.10000-http-www,net.2014-08-29.random.10000-https,net.2014-08-29.random.10000-https-www,reach50.2014w35.se-http,reach50.2014w35.se-http-www,reach50.2014w35.se-https,reach50.2014w35.se-https-www,se.2014-07-10.random.100000-http,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.counties-http,se.healthstatus.2013.counties-http-www,se.healthstatus.2013.counties-https,se.healthstatus.2013.counties-https-www,se.healthstatus.2013.domain-registrars-http,se.healthstatus.2013.domain-registrars-http-www,se.healthstatus.2013.domain-registrars-https,se.healthstatus.2013.domain-registrars-https-www,se.healthstatus.2013.financial-services-http,se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.financial-services-https,se.healthstatus.2013.financial-services-https-www,se.healthstatus.2013.gocs-http,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.gocs-https,se.healthstatus.2013.gocs-https-www,se.healthstatus.2013.higher-education-http,se.healthstatus.2013.higher-education-http-www,se.healthstatus.2013.higher-education-https,se.healthstatus.2013.higher-education-https-www,se.healthstatus.2013.isps-http,se.healthstatus.2013.isps-http-www,se.healthstatus.2013.isps-https,se.healthstatus.2013.isps-https-www,se.healthstatus.2013.media-http,se.healthstatus.2013.media-http-www,se.healthstatus.2013.media-https,se.healthstatus.2013.media-https-www,se.healthstatus.2013.municipalities-http,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https,se.healthstatus.2013.municipalities-https-www,se.healthstatus.2013.public-authorities-http,se.healthstatus.2013.public-authorities-http-www,se.healthstatus.2013.public-authorities-https,se.healthstatus.2013.public-authorities-https-www},
+legend image code/.code={%
+\draw[#1] (0pt,-4pt) rectangle (8pt,4pt);
+},
+},
+allDatasetsXbarFullPage/.style=
+{
+enlarge y limits=0.008,
+width=.65\textwidth,
+height=1.47\textwidth,
+font=\small,
+legend columns=-1,
+legend style={at={(0.5,-16pt)},anchor=north}
+},
+allDatasetsXbarMiniResults/.style=
+{
+enlarge y limits=0.1,
+width=.4\textwidth,
+height=.325\textwidth,
+font=\tiny,
+legend columns=-1,
+legend style={at={(0.5,-12pt)},anchor=north},
+symbolic y coords={alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https-www,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https-www,},
+xticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
+},
+xticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
+},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
+}
+}
+\pgfplotsset{allDatasetsStackedXbar/.style=
+{
+xbar stacked=plus,
+},
+}
+
+\pgfplotsset{allDatasetsMultiXbar/.style=
+{
+xbar,
+},
+allDatasetsMultiXbarPart2/.style=
+{
+bar width=4pt,
+% bar direction=y,
+ymajorgrids=true,
+major y grid style={loosely dashed},
+},
+}
+
+\newcommand{\XBarPlotFromDataset}[5]{
+	\addplot[
+			fill=#4,#5
+		]
+		table[y=Dataset,x=#2]
+		{#1};
+	\addlegendentry{#3}
+}
+
+\pgfplotsset{datasetsCDF/.style=
+{
+xmin=0,
+xmax=1,
+ymin=0,
+ymax=1,
+grid=both,
+xtick={0,.1,...,1.1},
+ytick={0,.1,...,1.1},
+enlargelimits=false,
+% Marks 0% and 99%.
+mark repeat=99,
+% Using a custom position below.
+% legend pos=south east,
+legend style={
+at={(.99,.01)},
+anchor=south east,
+cells={anchor=west},
+},
+},
+datasetsCDFFullPage/.style=
+{
+width=\textwidth,
+height=1.46\textwidth,
+},
+datasetsCDFMiniResults/.style=
+{
+width=.4\textwidth,
+height=.325\textwidth,
+font=\tiny,
+xtick={0,.2,...,1.0},
+ytick={0,.2,...,1.0},
+minor xtick={0,.1,...,1.1},
+minor ytick={0,.1,...,1.1},
+xticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
+}
+}
+
+\pgfplotsset{datasetsOccurances/.style=
+{
+ymin=,
+xmin=0.1,
+xmax=100,
+xtick={0.1,1,2,3,4,5,10,20,50,100},
+minor xtick={6,7,8,9,30,40,60,70,80,90},
+xticklabel={%
+	\ifnum\ticknum=9%
+		$100^+$%
+	\else%
+		\pgfmathfloatparsenumber{\tick}%
+		\pgfmathfloatexp{\pgfmathresult}%
+		\pgfmathprintnumber[fixed,precision=0]{\pgfmathresult}%
+	\fi%
+},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
+},
+% Marks 0.1.
+mark repeat=1,
+mark indices={1},
+},
+datasetsOccurancesMiniResults/.style=
+{
+width=.35\textwidth,
+height=.325\textwidth,
+font=\tiny,
+xmax=15,
+xtick={0.1,1,5,10,15},
+ytick={0,.2,...,1.0},
+minor xtick={2,3,4,6,7,8,9,11,12,13,14},
+xticklabel={%
+	\pgfmathfloatparsenumber{\tick}%
+	% \pgfmathfloatexp{\pgfmathresult}%
+	\pgfmathprintnumber[fixed,precision=0]{\pgfmathresult}%
+},
+minor ytick={0,.1,...,1.1},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
+},
+}
+
+\newcommand{\CDFPlotFromDataset}[3]{
+	\addplot+[#3,solid,mark=*,every mark/.append style={#3,solid},]
+		table[x=colnames,y=#2-http-www]
+		{#1};
+	\addlegendentry{#2-http-www}
+	\addplot+[#3,dashed,mark=square*,every mark/.append style={#3,solid},]
+		table[x=colnames,y=#2-https-www]
+		{#1};
+	\addlegendentry{#2-https-www}
+}
+
+\newcommand{\CDFPlotFromDefaultDatasets}[1]{
+	\CDFPlotFromDataset{#1}{alexa.2014-09-01.top.10000}{red}
+	\CDFPlotFromDataset{#1}{alexa.2014-09-01.top.se.10000}{blue}
+	\CDFPlotFromDataset{#1}{se.2014-07-10.random.100000}{brown}
+	\CDFPlotFromDataset{#1}{se.healthstatus.2013.municipalities}{violet}
+	% \CDFPlotFromDataset{#1}{se.healthstatus.2013.media}{teal}
+}
+
+\newcommand{\CDFPlotFromDefaultDatasetsFile}[1]{
+	\pgfplotstabletranspose[colnames from=Dataset]\tableTransposedDatasetsFromFile{#1}
+
+	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsFromFile}
+}
+
+
+
+\endinput

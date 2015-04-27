@@ -1,0 +1,536 @@
+\documentclass[a4paper,english]{report}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+
+\makeatletter
+
+\usepackage{jpfigurecommands}
+\include{tableread}
+
+\makeatother
+
+\begin{document}
+
+
+\begin{tikzpicture}
+\begin{loglogaxis}[
+	xlabel=Domains,
+	ylabel=Organizations,
+	width=\textwidth,
+	height=0.5*\textwidth,
+	log ticks with fixed point,
+	xmin=0.7,
+	ymin=0.7,
+	enlarge x limits=upper,
+	enlarge y limits=upper,
+	xtick={1,2,3,4,10,32,40,71,271},
+	ytick=data,
+]
+\addplot[
+		ybar,
+		bar width=3pt,
+		thick,
+		fill=black,
+	]
+	table[x=Domains per organization,y=Organizations]
+	\tableDisconnectDomainsPerOrganization;
+\end{loglogaxis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=3 by 1,
+		horizontal sep=8pt,
+	},
+]
+
+\nextgroupplot[
+	title=(a) Origin HTTP response codes,
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarMiniResults,
+	yticklabels={},
+]
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSummary}{2xx}{2xx}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSummary}{3xx}{3xx}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSummary}{(null)}{(null)}{red}{}
+
+\nextgroupplot[
+	title=(b) Origin redirects,
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarMiniResults,
+	yticklabels={},
+	legend columns=2,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Sec}{Secure}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Mix sec}{Mixed}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Insec}{Insecure}{orange}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Mism}{Mismatch}{lightgray}{}
+
+\nextgroupplot[
+	title=(c) Resource security,
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarMiniResults,
+	yticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{All sec}{Secure}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{Mix sec}{Mixed}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{All insec}{Insecure}{orange}{}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=3 by 1,
+		horizontal sep=8pt,
+	},
+]
+
+\nextgroupplot[
+	title=(a) Resource distribution,
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarMiniResults,
+	yticklabels={},
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Internal}{Internal}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Mixed}{Mixed}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{External}{External}{orange}{}
+
+\nextgroupplot[
+	title=(b) Tracker categories,
+	allDatasetsMultiXbar,
+	allDatasetsXbar,
+	allDatasetsXbarMiniResults,
+	allDatasetsMultiXbarPart2,
+	bar width=2.5pt,
+	yticklabels={},
+	legend columns=3,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
+
+\nextgroupplot[
+	title=(c) Top organizations,
+	allDatasetsMultiXbar,
+	allDatasetsXbar,
+	allDatasetsXbarMiniResults,
+	allDatasetsMultiXbarPart2,
+	bar width=2.5pt,
+	yticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+	legend columns=3,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		semithick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Dataset,x=Disconnect]
+	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary;
+\addlegendentry{Disconnect}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=3 by 1,
+		horizontal sep=8pt,
+	},
+]
+
+\nextgroupplot[
+	title=(a) Internal resources,
+	datasetsCDF,
+	datasetsCDFMiniResults,
+	xlabel=Ratio of internal resources,
+	ylabel=Ratio of domains,
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
+
+\legend{}
+
+\nextgroupplot[
+	title=(b) Secure resources,
+	datasetsCDF,
+	datasetsCDFMiniResults,
+	xlabel=Ratio of secure resources,
+	%ylabel=Ratio of domains,
+	yticklabels={},
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
+
+\legend{}
+
+\nextgroupplot[
+	title=(c) Disconnect's organizations,
+	datasetsCDF,
+	datasetsOccurances,
+	datasetsOccurancesMiniResults,
+	xlabel=Number of organizations,
+	%ylabel=Ratio of domains,
+	yticklabels={},
+	legend columns=1,
+	legend style={at={(1.025,.5)}, anchor=west},
+]
+
+	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}
+
+\legend{alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=3 by 1,
+		horizontal sep=8pt,
+	},
+]
+
+\nextgroupplot[
+	title=(a) Internal resources,
+	datasetsCDF,
+	datasetsCDFMiniResults,
+	xlabel=Ratio of internal resources,
+	ylabel=Ratio of domains,
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
+
+\legend{}
+
+\nextgroupplot[
+	title=(b) Secure resources,
+	datasetsCDF,
+	datasetsCDFMiniResults,
+	xlabel=Ratio of secure resources,
+	%ylabel=Ratio of domains,
+	yticklabels={},
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
+
+\legend{}
+
+\nextgroupplot[
+	title=(c) Disconnect's organizations,
+	datasetsCDF,
+	datasetsOccurances,
+	datasetsOccurancesMiniResults,
+	xlabel=Number of organizations,
+	%ylabel=Ratio of domains,
+	yticklabels={},
+	legend columns=1,
+	legend style={at={(1.025,.5)}, anchor=west},
+]
+
+	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}
+
+\legend{alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+]
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{1xx}{1xx}{orange}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{2xx}{2xx}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{3xx}{3xx}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{4xx}{4xx}{orange}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{5xx}{5xx}{orange}{}
+
+\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{(null)}{(null)}{red}{}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Internal}{Internal}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Mixed}{Mixed}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{External}{External}{orange}{}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	datasetsCDF,
+	datasetsCDFFullPage,
+	xlabel=Ratio of internal resources,
+	ylabel=Ratio of domains,
+	legend style={
+		at={(.01,.99)},
+		anchor=north west,
+	},
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSorted}{All sec}{Secure}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSorted}{Mix sec}{Mixed}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSorted}{All insec}{Insecure}{orange}{}
+
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	datasetsCDF,
+	datasetsCDFFullPage,
+	xlabel=Ratio of secure resources,
+	ylabel=Ratio of domains,
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
+
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Sec}{Secure}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mix sec}{Mixed}{yellow}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Insec}{Insecure}{orange}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mism}{Mismatch}{lightgray}{}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		thick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Dataset,x=Final sec]
+	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
+\addlegendentry{Final redirect secure}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	datasetsCDF,
+	datasetsCDFFullPage,
+	xlabel=Ratio of Disconnect matches,
+	ylabel=Ratio of domains,
+]
+
+	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsIsDisconnectMatchNormalizedCumulativeSorted}
+
+	\CDFPlotFromDataset{\tableTransposedDatasetsNonFailedRatioBucketsIsDisconnectMatchNormalizedCumulativeSorted}{se.healthstatus.2013.media}{teal}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+	datasetsCDF,
+	datasetsOccurances,
+	datasetsCDFFullPage,
+	xlabel=Number of organizations,
+	ylabel=Ratio of domains,
+]
+
+	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}
+
+	\CDFPlotFromDataset{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}{se.healthstatus.2013.media}{teal}
+
+\end{semilogxaxis}
+\end{tikzpicture}
+
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsMultiXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+	allDatasetsMultiXbarPart2,
+	bar width=2.5pt,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsMultiXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+	allDatasetsMultiXbarPart2,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		semithick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Dataset,x=Disconnect]
+	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted;
+\addlegendentry{Disconnect}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+	allDatasetsStackedXbar,
+	allDatasetsXbar,
+	allDatasetsXbarFullPage,
+]
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDomainsRatiosSorted}{Prim. det.}{Detected}{green}{}
+
+\XBarPlotFromDataset{\tableDatasetsNonFailedDomainsRatiosSorted}{Undet.}{Undetected}{orange}{}
+
+\end{axis}
+\end{tikzpicture}
+
+
+
+\end{document}
