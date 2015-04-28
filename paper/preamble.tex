@@ -5,50 +5,7 @@
 \renewcommand{\sectionmark}[1]{} % Don't use sections in headers
 \renewcommand{\subsectionmark}[1]{} % Don't use subsections in headers
 
-\usepackage{pdflscape}
-\usepackage{geometry}
 
-\newenvironment{wide}{
-\pagebreak
-\newgeometry{
- top=15mm,
- inner=15mm,
- outer=15mm,
- bottom=15mm,
- headheight=15pt,
- headsep=5mm,
- footnotesep=5mm,
- footskip=10mm}
-\begin{landscape}
-% Use TiKZ?
-% http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
-\setlength\LTleft{0pt}            % default: \fill
-\setlength\LTright{0pt}           % default: \fill
-}{
-\end{landscape}
-\pagebreak
-\aftergroup\restoregeometry
-}
-
-\newenvironment{portraitdatapage}{
-\pagebreak
-\newgeometry{
- top=15mm,
- inner=15mm,
- outer=15mm,
- bottom=15mm,
- headheight=15pt,
- headsep=5mm,
- footnotesep=5mm,
- footskip=10mm}
-% Use TiKZ?
-% http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
-\setlength\LTleft{0pt}            % default: \fill
-\setlength\LTright{0pt}           % default: \fill
-}{
-\pagebreak
-\aftergroup\restoregeometry
-}
 
 \usepackage{url}
 \usepackage{numprint}
@@ -65,136 +22,6 @@
 \providecommand{\versiononly}{\IfFileExists{.generated.version}{\readsinglelinefile{.generated.version}}{(Unknown~document~version)}}%
 \providecommand{\versionandtoday}{\versiononly~--~\today}
 
-\usepackage{longtable}
-\setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
-
-\usepackage{caption}
-\usepackage{pgfplotstable}
-\usepackage{booktabs}
-\usepackage{colortbl}
-\usepackage{array}
-\pgfplotsset{compat=1.11}% supress warning
-
-\pgfplotstableset{
-% Write all longtable tables to disk.
-every table/.append style={outfile={.generated.report-table\@arabic\c@LT@tables.tex}},
-% Use cached/written files as input.
-include outfiles,
-% Change to true to force re-generation. It's easier to just delete all generated files.
-% force remake=true,
-}
-
-\newcolumntype{i}{>{\begin{pgfplotstablecoltype}[int detect]}r<{\end{pgfplotstablecoltype}}}
-\newcolumntype{f}{>{\begin{pgfplotstablecoltype}[fixed zerofill]}r<{\end{pgfplotstablecoltype}}}
-\newcolumntype{t}{>{\arraybackslash}p{.3\linewidth}}
-\newcolumntype{T}{>{\arraybackslash}p{.9\linewidth}}
-
-% TODO: reduce code-duplication between \tsvtablestyle/wide/widedatasets/superwidedatasets
-\newcommand{\tsvtablestyle}[0]{
-\pgfplotstableset{
-format=file,
-col sep=tab,
-multicolumn names={c},
-column type=r,
-int detect,
-zerofill=true,
-precision=3,
-1000 sep={\ },
-begin table=\begin{longtable*},
-end table=\end{longtable*},
-every odd row/.style={before row={\rowcolor[gray]{0.95}}},
-every head row/.style={before row=\toprule,after row={
-\toprule
-\addlinespace[0pt]
-\endhead
-},
-},
-every last row/.style={after row={
-\bottomrule
-}
-},
-}
-}
-
-\newcommand{\tsvtable}[3]{
-\tsvtablestyle
-\pgfplotstabletypeset[
-columns={#2},#3
-]{#1}
-}
-
-\newcommand{\tsvtablestylewide}[1]{
-\pgfplotstableset{
-format=file,
-col sep=tab,
-multicolumn names={c},
-column type=r,
-int detect,
-zerofill=true,
-precision=3,
-1000 sep={\ },
-begin table=\begin{longtable},
-end table=\end{longtable},
-every odd row/.style={before row={\rowcolor[gray]{0.95}}},
-every head row/.style={before row=\toprule,after row={
-\toprule
-\addlinespace[0pt]
-\endhead
-},
-},
-every last row/.style={after row={
-\bottomrule
-\caption{#1}}
-},
-}
-}
-
-\newcommand{\tsvtablewide}[4]{
-\tsvtablestylewide{#2}
-\pgfplotstabletypeset[
-columns={#3},#4
-]{#1}
-}
-
-\newcommand{\tsvtablewidedatasets}[4]{
-\tsvtablestylewide{#2}
-\pgfplotstabletypeset[
-columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i|},#4
-]{#1}
-}
-
-\newcommand{\tsvtablesuperwidedatasets}[4]{
-\tsvtablestylewide{#2}
-\pgfplotstabletypeset[
-columns={#3},every nth row={4[-1]}{after row={\addlinespace[0pt]\midrule\addlinespace[0pt]}},fixed,display columns/0/.style={string type, column type=l},display columns/1/.style={string type, column type=i|},%
-% Remove dataset dates.
-display columns/0/.append style={string replace*={2014-09-01.}{}},%
-display columns/0/.append style={string replace*={2014-08-29.}{}},%
-display columns/0/.append style={string replace*={2014-07-23.}{}},%
-display columns/0/.append style={string replace*={2014w35.}{}},%
-display columns/0/.append style={string replace*={2014-07-10.}{}},%
-% Shorten health status datasets.
-display columns/0/.append style={string replace*={healthstatus.2013.}{hs.}},%
-display columns/0/.append style={string replace*={.domain-registrars}{.registrars}},%
-display columns/0/.append style={string replace*={.financial-services}{.financial}},%
-display columns/0/.append style={string replace*={.higher-education}{.education}},%
-display columns/0/.append style={string replace*={.public-authorities}{.pubauth}},%
-% Shorten dataset counts.
-display columns/0/.append style={string replace*={100000}{100k}},%
-display columns/0/.append style={string replace*={10000}{10k}},%
-% Shorten Alexa datasets.
-display columns/0/.append style={string replace*={alexa.top.se.10k.}{alexa.top.se.}},%
-display columns/0/.append style={string replace*={alexa.top.dk.10k.}{alexa.top.dk.}},%
-% Shorten dataset type.
-display columns/0/.append style={string replace*={random.}{rnd.}},%
-display columns/0/.append style={string replace*={-https-www}{-sw}},%
-display columns/0/.append style={string replace*={-https}{-s}},%
-display columns/0/.append style={string replace*={-http-www}{-hw}},%
-display columns/0/.append style={string replace*={-http}{-h}},%
-,#4
-]{#1}
-}
-
 \newenvironment{futurework}{
 \begin{center}
 \begin{minipage}{.8\columnwidth}
@@ -209,4 +36,6 @@ display columns/0/.append style={string replace*={-http}{-h}},%
 \end{center}
 }
 
+\usepackage{jppagecommands}
+\usepackage[pfx=.generated.paper-]{jptablecommands}
 \usepackage[pfx=.generated.]{jpfigurecommands}

@@ -1,0 +1,191 @@
+\documentclass[a4paper,english]{report}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+
+\makeatletter
+
+\usepackage{url}
+\usepackage{numprint}
+\usepackage{jppagecommands}
+\usepackage[pfx=\jobname -]{jptablecommands}
+
+\makeatother
+
+\begin{document}
+
+
+
+\tsvtable{domains.datasets.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=l}, display columns/3/.style={string type, column type=l}}
+
+
+
+\tsvtable{disconnect.categories.tsv}{}{display columns/0/.style={string type, column type=l}}
+
+
+
+\tsvtable{disconnect.organizations-in-more-than-one-category.tsv}{}{string replace*={true}{x}, string replace*={false}{}, display columns/0/.style={string type, column type=l}, display columns/2/.style={string type, column type=c}, display columns/3/.style={string type, column type=c}, display columns/4/.style={string type, column type=c}, display columns/5/.style={string type, column type=c}, display columns/6/.style={string type, column type=c}}
+
+
+
+\tsvtable{domains.tlds.tsv}{}{display columns/2/.style={string type, column type=l}}
+
+
+\tsvtable{domains.se-health-status.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/3/.style={string type, column type=l}}
+
+
+
+\begin{wide}
+\tsvtablewide{results-summary.tsv}{Results summary}{}{every nth row={1}{before row/.add={\addlinespace[0pt]\midrule\addlinespace[0pt]}{}}, display columns/0/.style={string type, column type=t}, display columns/1/.style={string type, column type=|t|}, display columns/2/.style={string type, column type=t}}
+\end{wide}
+
+
+
+\tsvtable{se.health-status.https.tsv}{}{fixed, display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=i}, display columns/2/.style={clear infinite, string type, column type=i}, display columns/3/.style={clear infinite, string type, column type=i}, display columns/4/.style={clear infinite}, display columns/5/.style={clear infinite}, display columns/6/.style={clear infinite}}
+
+
+
+\tsvtable{krishnamurthy-2006-cmc-1135777.1135829_ad_coverage.tsv}{}{fixed, display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=i}, display columns/2/.style={string type, column type=i}, display columns/3/.style={string type, column type=i}}
+
+
+
+\tsvtable{krishnamurthy-2006-cmc-1135777.1135829_adserver_match_distribution.tsv}{}{fixed, precision=1, display columns/0/.style={string type, column type=l}}
+
+
+
+\tsvtable{gill-2013-bpf-2504730.2504768_aggregators.tsv}{}{fixed, precision=2, display columns/0/.style={string type, column type=l}, display columns/4/.style={clear infinite, column type=|r}}
+
+
+
+
+\tsvtable{p3p.counts.tsv}{}{display columns/1/.style={string type, column type=T}}
+
+
+
+\tsvtable{computer-machines.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=l}, display columns/2/.style={string type, column type=l}}
+
+
+
+\tsvtable{google-tag-manager.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/2/.style={string type, column type=r}}
+
+
+
+\tsvtable{output-filesize.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/3/.style={string type, column type=r}}
+
+
+
+\tsvtable{dataset-variations.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=l}, display columns/2/.style={string type, column type=l}}
+
+
+
+\tsvtable{system-load.tsv}{}{fixed, precision=1, display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=l}, display columns/2/.style={string type, column type=i}}
+
+
+
+\tsvtable{mime-types.tsv}{}{display columns/0/.style={string type, column type=l}, display columns/1/.style={string type, column type=l}}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.retries.rates.tsv}{Dataset HAR failure rates}{Dataset,Domains,Successful,Unsuccessful,Non-failed,Failed,Non-failure rate,Failure rate}{display columns/2/.style={string type, column type=i}, display columns/3/.style={string type, column type=i}, display columns/4/.style={string type, column type=i}, display columns/5/.style={string type, column type=i}, display columns/6/.style={column type=|r}}
+\end{wide}
+
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.request-status.coverage.origin.sorted.tsv}{Dataset origin HTTP response code/group coverage}{}{display columns/4/.style={column type=|r}, display columns/8/.style={column type=r|}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.classification.domain-scope.coverage.sorted.tsv}{Internal versus external resources coverage}{}{display columns/6/.style={column type=|r}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.requests.counts.sorted.tsv}{Requests per domain}{}{display columns/1/.style={string type, column type=i}, display columns/2/.style={string type, column type=i}, display columns/3/.style={string type, column type=i}, display columns/4/.style={string type, column type=|i}, display columns/5/.style={string type, column type=i}, display columns/6/.style={string type, column type=i}, display columns/7/.style={string type, column type=|i}, display columns/8/.style={string type, column type=i}, display columns/9/.style={string type, column type=i}, display columns/10/.style={string type, column type=i}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.requests.ratios.sorted.tsv}{Requests per domain and ratios}{}{display columns/1/.style={string type, column type=i}, display columns/4/.style={precision=0, column type=|r}, display columns/5/.style={precision=0}, display columns/6/.style={precision=0}, display columns/7/.style={precision=0}, display columns/8/.style={column type=|r}, display columns/11/.style={column type=|r}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.classification.secure.coverage.sorted.tsv}{Secure versus insecure resources coverage}{}{display columns/5/.style={column type=|r}, display columns/8/.style={column type=|r}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.origin-redirects.coverage.sorted.tsv}{Origin domains with redirects}{}{display columns/1/.style={string type, column type=i}, display columns/2/.style={string type, column type=i|}, display columns/5/.style={column type=|r}, display columns/8/.style={column type=|r}, display columns/12/.style={column type=|r}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.mime-types.groups.coverage.internal.sorted.tsv}{Content type group coverage (internal)}{}{}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.mime-types.groups.coverage.external.sorted.tsv}{Content type group coverage (external)}{}{}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.public-suffix.coverage.external.sorted.tsv}{Public suffixes in external resources}{}{}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablesuperwidedatasets{datasets.non-failed.classification.disconnect.coverage.sorted.tsv}{Disconnect coverage for internal, external and all requests}{}{display columns/2/.style={string type, column type=i}, display columns/5/.style={string type, column type=|i}, display columns/8/.style={column type=|r}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.disconnect.counts.sorted.tsv}{Disconnect requests, organizations and categories counts and ratios}{}{display columns/2/.style={string type, column type=i}, display columns/3/.style={string type, column type=i}, display columns/4/.style={string type, column type=i}, display columns/5/.style={string type, column type=i}, display columns/6/.style={column type=|r}, display columns/8/.style={column type=|r}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablesuperwidedatasets{datasets.non-failed.disconnect.domains.coverage.external.sorted.tsv}{Top Disconnect domain match coverage}{}{}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablesuperwidedatasets{datasets.non-failed.disconnect.domains.coverage.external.google.sorted.tsv}{Top Disconnect Google domain match coverage}{}{}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.disconnect.categories.coverage.external.sorted.tsv}{Disconnect category match coverage}{}{display columns/2/.style={column type=r|}}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablesuperwidedatasets{datasets.non-failed.disconnect.organizations.coverage.external.sorted.tsv}{Top Disconnect organization match coverage}{}{}
+\end{wide}
+
+
+
+\begin{wide}
+\tsvtablewidedatasets{datasets.non-failed.domains.ratios.sorted.tsv}{Requests per domain and ratios}{}{display columns/2/.style={string type, column type=i}, display columns/3/.style={string type, column type=i}, display columns/4/.style={string type, column type=i}, display columns/5/.style={string type, column type=|i}, display columns/6/.style={string type, column type=i}, display columns/7/.style={column type=|r|}}
+\end{wide}
+
+
+
+\end{document}

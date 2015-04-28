@@ -1,0 +1,52 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jptablecommands}[2015/04/27 v0.1 Joel Purra, table commands]
+
+
+\usepackage{pdflscape}
+\usepackage{geometry}
+
+\ProcessOptions\relax
+
+
+
+\newenvironment{wide}{
+\pagebreak
+\newgeometry{
+ top=15mm,
+ inner=15mm,
+ outer=15mm,
+ bottom=15mm,
+ headheight=15pt,
+ headsep=5mm,
+ footnotesep=5mm,
+ footskip=10mm}
+\begin{landscape}
+% Use TiKZ?
+% http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
+\setlength\LTleft{0pt}            % default: \fill
+\setlength\LTright{0pt}           % default: \fill
+}{
+\end{landscape}
+\pagebreak
+\aftergroup\restoregeometry
+}
+
+\newenvironment{portraitdatapage}{
+\pagebreak
+\newgeometry{
+ top=15mm,
+ inner=15mm,
+ outer=15mm,
+ bottom=15mm,
+ headheight=15pt,
+ headsep=5mm,
+ footnotesep=5mm,
+ footskip=10mm}
+% Use TiKZ?
+% http://tex.stackexchange.com/questions/40501/using-restoregeometry-in-environment-next-page-runs-off-the-page-bottom/40503#40503
+\setlength\LTleft{0pt}            % default: \fill
+\setlength\LTright{0pt}           % default: \fill
+}{
+\pagebreak
+\aftergroup\restoregeometry
+}
