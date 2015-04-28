@@ -13,6 +13,9 @@
 \ProcessKeyvalOptions*
 
 
+
+\pgfplotsset{compat=1.12}
+
 % Speed up pgfplots/tikz figure generation by caching results.
 % LyX needs to be configured per user;
 % In LyX Preferences, File Handling, Converters:
@@ -27,6 +30,12 @@
 %\tikzset{external/remake next}
 
 \usepgfplotslibrary{groupplots}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \pgfplotsset{allDatasetsXbar/.style=
 {
@@ -110,6 +119,109 @@ major y grid style={loosely dashed},
 		{#1};
 	\addlegendentry{#3}
 }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\pgfplotsset{allDatasetsYbar/.style=
+{
+enlarge y limits=false,
+bar width=6pt,
+fill opacity=0.9,
+ymin=0,
+ymax=1,
+ytick={0,.2,.4,.6,.8,1},
+minor ytick={.1,.3,.5,.7,.9},
+yminorgrids=true,
+ymajorgrids=true,
+xtick=data,
+x dir=reverse,
+xticklabel pos=lower,
+symbolic x coords={alexa.2014-09-01.random.10000-http,alexa.2014-09-01.random.10000-http-www,alexa.2014-09-01.random.10000-https,alexa.2014-09-01.random.10000-https-www,alexa.2014-09-01.top.10000-http,alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.dk.10000-http,alexa.2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.dk.10000-https,alexa.2014-09-01.top.dk.10000-https-www,alexa.2014-09-01.top.se.10000-http,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https,alexa.2014-09-01.top.se.10000-https-www,com.2014-08-29.random.10000-http,com.2014-08-29.random.10000-http-www,com.2014-08-29.random.10000-https,com.2014-08-29.random.10000-https-www,dk.2014-07-23.random.10000-http,dk.2014-07-23.random.10000-http-www,dk.2014-07-23.random.10000-https,dk.2014-07-23.random.10000-https-www,net.2014-08-29.random.10000-http,net.2014-08-29.random.10000-http-www,net.2014-08-29.random.10000-https,net.2014-08-29.random.10000-https-www,reach50.2014w35.se-http,reach50.2014w35.se-http-www,reach50.2014w35.se-https,reach50.2014w35.se-https-www,se.2014-07-10.random.100000-http,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.counties-http,se.healthstatus.2013.counties-http-www,se.healthstatus.2013.counties-https,se.healthstatus.2013.counties-https-www,se.healthstatus.2013.domain-registrars-http,se.healthstatus.2013.domain-registrars-http-www,se.healthstatus.2013.domain-registrars-https,se.healthstatus.2013.domain-registrars-https-www,se.healthstatus.2013.financial-services-http,se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.financial-services-https,se.healthstatus.2013.financial-services-https-www,se.healthstatus.2013.gocs-http,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.gocs-https,se.healthstatus.2013.gocs-https-www,se.healthstatus.2013.higher-education-http,se.healthstatus.2013.higher-education-http-www,se.healthstatus.2013.higher-education-https,se.healthstatus.2013.higher-education-https-www,se.healthstatus.2013.isps-http,se.healthstatus.2013.isps-http-www,se.healthstatus.2013.isps-https,se.healthstatus.2013.isps-https-www,se.healthstatus.2013.media-http,se.healthstatus.2013.media-http-www,se.healthstatus.2013.media-https,se.healthstatus.2013.media-https-www,se.healthstatus.2013.municipalities-http,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https,se.healthstatus.2013.municipalities-https-www,se.healthstatus.2013.public-authorities-http,se.healthstatus.2013.public-authorities-http-www,se.healthstatus.2013.public-authorities-https,se.healthstatus.2013.public-authorities-https-www},
+legend image code/.code={%
+\draw[#1] (0pt,-4pt) rectangle (8pt,4pt);
+},
+},
+allDatasetsYbarFullPage/.style=
+{
+enlarge x limits=0.008,
+width=1.47\textwidth,
+height=.65\textwidth,
+font=\small,
+legend columns=1,
+legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},}
+},
+allDatasetsYbarMiniResults/.style=
+{
+enlarge x limits=0.1,
+width=.325\textwidth,
+height=.4\textwidth,
+font=\tiny,
+legend columns=1,
+legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},},
+symbolic x coords={alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https-www,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https-www,},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill=false,
+/pgf/number format/precision=1
+},
+title style={at={(.5,.95)}},
+},
+xticklabel style={
+rotate=90,
+anchor=east,
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
+},
+yticklabel style={
+/pgf/number format/fixed,
+/pgf/number format/fixed zerofill,
+/pgf/number format/precision=2
+}
+}
+\pgfplotsset{allDatasetsStackedYbar/.style=
+{
+ybar stacked=plus,
+},
+allDatasetsStackedYbarPart2/.style=
+{
+bar direction=y,
+xmajorgrids=true,
+major x grid style={loosely dashed},
+},
+}
+
+\pgfplotsset{allDatasetsMultiYbar/.style=
+{
+ybar,
+},
+allDatasetsMultiYbarPart2/.style=
+{
+bar width=4pt,
+bar direction=y,
+xmajorgrids=true,
+major x grid style={loosely dashed},
+},
+}
+
+\newcommand{\YBarPlotFromDataset}[5]{
+	\addplot[
+			fill=#4,#5
+		]
+		table[y=#2,x=Dataset]
+		{#1};
+	\addlegendentry{#3}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \pgfplotsset{datasetsCDF/.style=
 {
@@ -232,6 +344,10 @@ title style={at={(.5,.95)}},
 
 	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsFromFile}
 }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

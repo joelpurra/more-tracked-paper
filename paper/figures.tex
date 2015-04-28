@@ -529,4 +529,89 @@
 
 
 
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=1 by 3,
+		horizontal sep=8pt,
+		vertical sep=16pt,
+	},
+]
+
+\nextgroupplot[
+	title=(a) Tracker categories,
+	allDatasetsMultiYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsMultiYbarPart2,
+	bar width=2.5pt,
+	xticklabels={},
+]
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
+
+\nextgroupplot[
+	title=(b) Top organizations,
+	allDatasetsMultiYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsMultiYbarPart2,
+	bar width=2.5pt,
+	xticklabels={},
+]
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		semithick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Disconnect,x=Dataset]
+	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary;
+\addlegendentry{Disconnect}
+
+\nextgroupplot[
+	title=(c) Resource distribution,
+	allDatasetsStackedYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsStackedYbarPart2,
+	xticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+]
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Internal}{Internal}{green}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Mixed}{Mixed}{yellow}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{External}{External}{orange}{}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+
 \end{document}
