@@ -8,21 +8,30 @@ Stay updated by watching this repository.
 
 
 
-## Generating paper.pdf
+## Generating `paper.pdf`
 
-Requirements
+Tables and figures are rendered separately from the paper, and then included.
 
-- `git`
-- [LyX](http://www.lyx.org/) with `lyx` in your `$PATH`.
-- `pdflatex`
-- [`-shell-escape` enabled for LyX's calls to `pdflatex`](http://tex.stackexchange.com/questions/16366/lyx-how-to-add-command-line-option-flag-for-latex-compiling) [(screenshot)](https://www.tug.org/PSTricks/main.cgi?file=pdf/pdfoutput#lyx).
 
 ```bash
-./generate-pdfs.sh
-open paper/paper.pdf
+# Render tables by parsing the tex twice.
+pdflatex tables.tex
+!!
+#open tables.pdf
+
+# Rendering figures requires -shell-escape.
+pdflatex -shell-escape figures.tex
+#open figures.pdf
 ```
 
-Errors are logged to `paper/generate-pdfs.sh.log`.
+
+```bash
+# Render main paper by parsing the tex twice.
+pdflatex paper.tex
+!!
+open paper.pdf
+```
+
 
 
 
