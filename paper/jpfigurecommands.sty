@@ -138,7 +138,7 @@ minor ytick={.1,.3,.5,.7,.9},
 yminorgrids=true,
 ymajorgrids=true,
 xtick=data,
-x dir=reverse,
+%x dir=reverse,
 xticklabel pos=lower,
 symbolic x coords={alexa.2014-09-01.random.10000-http,alexa.2014-09-01.random.10000-http-www,alexa.2014-09-01.random.10000-https,alexa.2014-09-01.random.10000-https-www,alexa.2014-09-01.top.10000-http,alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.dk.10000-http,alexa.2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.dk.10000-https,alexa.2014-09-01.top.dk.10000-https-www,alexa.2014-09-01.top.se.10000-http,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https,alexa.2014-09-01.top.se.10000-https-www,com.2014-08-29.random.10000-http,com.2014-08-29.random.10000-http-www,com.2014-08-29.random.10000-https,com.2014-08-29.random.10000-https-www,dk.2014-07-23.random.10000-http,dk.2014-07-23.random.10000-http-www,dk.2014-07-23.random.10000-https,dk.2014-07-23.random.10000-https-www,net.2014-08-29.random.10000-http,net.2014-08-29.random.10000-http-www,net.2014-08-29.random.10000-https,net.2014-08-29.random.10000-https-www,reach50.2014w35.se-http,reach50.2014w35.se-http-www,reach50.2014w35.se-https,reach50.2014w35.se-https-www,se.2014-07-10.random.100000-http,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.counties-http,se.healthstatus.2013.counties-http-www,se.healthstatus.2013.counties-https,se.healthstatus.2013.counties-https-www,se.healthstatus.2013.domain-registrars-http,se.healthstatus.2013.domain-registrars-http-www,se.healthstatus.2013.domain-registrars-https,se.healthstatus.2013.domain-registrars-https-www,se.healthstatus.2013.financial-services-http,se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.financial-services-https,se.healthstatus.2013.financial-services-https-www,se.healthstatus.2013.gocs-http,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.gocs-https,se.healthstatus.2013.gocs-https-www,se.healthstatus.2013.higher-education-http,se.healthstatus.2013.higher-education-http-www,se.healthstatus.2013.higher-education-https,se.healthstatus.2013.higher-education-https-www,se.healthstatus.2013.isps-http,se.healthstatus.2013.isps-http-www,se.healthstatus.2013.isps-https,se.healthstatus.2013.isps-https-www,se.healthstatus.2013.media-http,se.healthstatus.2013.media-http-www,se.healthstatus.2013.media-https,se.healthstatus.2013.media-https-www,se.healthstatus.2013.municipalities-http,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https,se.healthstatus.2013.municipalities-https-www,se.healthstatus.2013.public-authorities-http,se.healthstatus.2013.public-authorities-http-www,se.healthstatus.2013.public-authorities-https,se.healthstatus.2013.public-authorities-https-www},
 legend image code/.code={%
@@ -156,13 +156,12 @@ legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},}
 },
 allDatasetsYbarMiniResults/.style=
 {
-enlarge x limits=0.1,
-width=.325\textwidth,
-height=.4\textwidth,
+enlarge x limits={abs=8pt},
+width=.5\textwidth,
+height=.3\textwidth,
 font=\tiny,
 legend columns=1,
 legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},},
-symbolic x coords={alexa.2014-09-01.top.10000-http-www,alexa.2014-09-01.top.10000-https-www,alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.se.10000-https-www,se.2014-07-10.random.100000-http-www,se.2014-07-10.random.100000-https-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.municipalities-https-www,},
 yticklabel style={
 /pgf/number format/fixed,
 /pgf/number format/fixed zerofill=false,
@@ -181,7 +180,17 @@ yticklabel style={
 /pgf/number format/fixed,
 /pgf/number format/fixed zerofill,
 /pgf/number format/precision=2
-}
+},
+swedenDatasetsYbar/.style=
+{
+symbolic x coords={se.healthstatus.2013.counties-http-www,se.healthstatus.2013.domain-registrars-http-www,se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.higher-education-http-www,se.healthstatus.2013.isps-http-www,se.healthstatus.2013.media-http-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.public-authorities-http-www,reach50.2014w35.se-http-www,alexa.2014-09-01.top.se.10000-http-www,se.2014-07-10.random.100000-http-www,},
+%xticklabels={se.healthstatus.2013.counties-http-www,se.healthstatus.2013.domain-registrars-http-www,se.healthstatus.2013.financial-services-http-www,se.healthstatus.2013.gocs-http-www,se.healthstatus.2013.higher-education-http-www,se.healthstatus.2013.isps-http-www,se.healthstatus.2013.media-http-www,se.healthstatus.2013.municipalities-http-www,se.healthstatus.2013.public-authorities-http-www,reach50.2014w35.se-http-www,alexa.2014-09-01.top.se.10000-http-www,se.2014-07-10.random.100000-http-www,},
+},
+globalDatasetsYbar/.style=
+{
+symbolic x coords={alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.10000-http-www,se.2014-07-10.random.100000-http-www,dk.2014-07-23.random.10000-http-www,com.2014-08-29.random.10000-http-www,net.2014-08-29.random.10000-http-www,alexa.2014-09-01.random.10000-http-www,},
+%xticklabels={alexa.2014-09-01.top.se.10000-http-www,alexa.2014-09-01.top.dk.10000-http-www,alexa.2014-09-01.top.10000-http-www,se.2014-07-10.random.100000-http-www,dk.2014-07-23.random.10000-http-www,com.2014-08-29.random.10000-http-www,net.2014-08-29.random.10000-http-www,alexa.2014-09-01.random.10000-http-www,},
+},
 }
 \pgfplotsset{allDatasetsStackedYbar/.style=
 {

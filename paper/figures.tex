@@ -532,7 +532,7 @@
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
-		group size=1 by 3,
+		group size=2 by 3,
 		horizontal sep=8pt,
 		vertical sep=16pt,
 	},
@@ -545,20 +545,49 @@
 	allDatasetsYbarMiniResults,
 	allDatasetsMultiYbarPart2,
 	bar width=2.5pt,
+	swedenDatasetsYbar,
+	width=.55\textwidth,
 	xticklabels={},
 ]
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
+
+\legend{}
+
+\nextgroupplot[
+	title=(a) Tracker categories,
+	allDatasetsMultiYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsMultiYbarPart2,
+	bar width=2.5pt,
+	globalDatasetsYbar,
+	width=.4\textwidth,
+	yticklabels={},
+	xticklabels={},
+]
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
 
 \nextgroupplot[
 	title=(b) Top organizations,
@@ -567,16 +596,18 @@
 	allDatasetsYbarMiniResults,
 	allDatasetsMultiYbarPart2,
 	bar width=2.5pt,
+	swedenDatasetsYbar,
+	width=.55\textwidth,
 	xticklabels={},
 ]
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSweden}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSweden}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSummary}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSweden}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
 
 \addplot+[
 		stack plots=false,
@@ -591,7 +622,46 @@
 		line legend,
 	]
 	table[y=Disconnect,x=Dataset]
-	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSummary;
+	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSweden;
+\addlegendentry{Disconnect}
+
+\legend{}
+
+\nextgroupplot[
+	title=(b) Top organizations,
+	allDatasetsMultiYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsMultiYbarPart2,
+	bar width=2.5pt,
+	globalDatasetsYbar,
+	width=.4\textwidth,
+	yticklabels={},
+	xticklabels={},
+]
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedGlobal}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedGlobal}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedGlobal}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		semithick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Disconnect,x=Dataset]
+	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobal;
 \addlegendentry{Disconnect}
 
 \nextgroupplot[
@@ -600,14 +670,34 @@
 	allDatasetsYbar,
 	allDatasetsYbarMiniResults,
 	allDatasetsStackedYbarPart2,
-	xticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+	swedenDatasetsYbar,
+	width=.55\textwidth,
 ]
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Internal}{Internal}{green}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSweden}{Internal}{Internal}{green}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{Mixed}{Mixed}{yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSweden}{Mixed}{Mixed}{yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSummary}{External}{External}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedSweden}{External}{External}{orange}{}
+
+\legend{}
+
+\nextgroupplot[
+	title=(c) Resource distribution,
+	allDatasetsStackedYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsStackedYbarPart2,
+	globalDatasetsYbar,
+	width=.4\textwidth,
+	yticklabels={},
+]
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedGlobal}{Internal}{Internal}{green}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedGlobal}{Mixed}{Mixed}{yellow}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSortedGlobal}{External}{External}{orange}{}
 
 \end{groupplot}
 \end{tikzpicture}
