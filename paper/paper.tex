@@ -1,0 +1,377 @@
+%%\documentclass{sig-alternate}
+\documentclass{sig-alternate-10pt}
+%%\documentclass{sig-alternate-2013}
+%\newfont{\mycrnotice}{ptmr8t at 7pt}
+%\newfont{\myconfname}{ptmri8t at 7pt}
+%\let\crnotice\mycrnotice%
+%\let\confname\myconfname%
+
+\permission{Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are not made or 
+distributed for profit or commercial advantage and that copies bear this notice and the 
+full citation on the first page. Copyrights for components of this work owned by others 
+than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or 
+republish, to post on servers or to redistribute to lists, requires prior specific 
+permission and/or a fee. Request permissions from permissions@acm.org.}
+%%\conferenceinfo{MM'14,}{August 24--27, 2014, New York, NY, USA.}
+\conferenceinfo{Conference'15,}{Date, Year, Place}
+\copyrightetc{Copyright 2015 ACM \the\acmcopyr}
+\crdata{Blah-blah/numbers/ ...\$15.00.\\
+http://dx.doi.org/}
+
+\clubpenalty=10000 
+\widowpenalty = 10000
+
+%\usepackage[compress]{cite}
+\usepackage{cite}
+%\usepackage{fixltx2e}
+%\usepackage{hyperref}
+%\usepackage{graphicx}
+%\usepackage{varwidth}
+%\usepackage{subfig}
+%\usepackage{epsfig}
+\usepackage{subfigure}
+%\usepackage{booktabs}
+\usepackage{color}
+%\usepackage[...]{caption}
+
+%%%%%%%%%%%%%%%%%%%%%
+%%NEW
+\usepackage{url}
+
+
+%\newcommand{\textcolorRED}[2]{\textcolor{red}{#2}}
+\newcommand{\textcolorRED}[2]{#2}
+
+%\newcommand{\multi}[2]{\textcolor{green}{#1}}
+%\newcommand{\multi}[2]{\textcolor{green}{#2}}
+\newcommand{\multi}[2]{#2}
+
+
+
+%\DeclareCaptionType{copyrightbox}
+\begin{document}
+
+
+\title{Analysis of HTTPS Adoption and Third-party Tracking: \\A Swedish Perspective}
+%%\title{A Swedish Perspective of HTTPS Adoption and Third-party Tracking}
+
+%\numberofauthors{2}
+%\author{
+%Joel Purra\\
+%Link{\"{o}}ping University, Sweden\\
+%\email{mig@joelpurra.se}\\
+%\and
+%Niklas Carlsson\\
+%Link{\"{o}}ping University, Sweden\\
+%\email{niklas.carlsson@liu.se}\\
+%}
+
+\numberofauthors{2} %  in this sample file, there are a *total*
+\author{
+\alignauthor Joel Purra\\
+       \affaddr{Link{\"o}ping University}\\
+       \affaddr{Link{\"o}ping, Sweden}\\
+       \email{mig@joelpurra.se}
+\and
+\alignauthor Niklas Carlsson\\
+       \affaddr{Link{\"o}ping University}\\
+       \affaddr{Link{\"o}ping, Sweden}\\
+       \email{niklas.carlsson@liu.se}
+}
+
+\maketitle
+\begin{abstract}
+
+Blah blah
+
+\end{abstract}
+
+% A category with the (minimum) three required fields
+%\category{C.4}{Information Systems Organization}{Performance of Systems}
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+\category{C.2.2}{Information Systems Organization}{Network Protocols}[Applications] 
+%\category{H.5.1}{Multimedia Information Systems}{Video}
+
+
+%%\terms{Theory}
+
+\keywords{Blah blah}
+%%\keywords{Nonlinear streaming; Multipath streaming; HAS}
+
+\section{Introduction}
+
+We are living in an information society in which organizations constantly track our movements 
+on the world-wide web, and use the collected (and stored) information to analyze and gain 
+knowledge about us and our interests.  Website owners may use such knowledge to present personalized 
+content that may better match user interests, advertisement firms may use the knowledge to sell 
+targeted ads based on user interests, media analytics firms may use the data to verify 
+advertisement-related statistics, and data brokers may package and sell the user data 
+inferred from the user interests.
+
+Web usage is both actively and passively tracked.  With active tracking, third-party 
+scripts and plugins embedded within the visited websites, for example, are typically 
+used to extract and collect information about a user's every click, the time spent on 
+each page (even if inactive), the user environment (including operating system, window size, 
+screen resolution, and color depth), mouse movements, scrollbar location, installed fonts, 
+plugins, extensions, and any potential error reports, for example.  With passive measurements, 
+network traffic can be monitored at any point in the network, allowing user actions and user 
+interests to be inferred from the traffic patterns, HTTP-related information (such as URLs of 
+visited websites, previously visited websites, the client's browser, operating system, and cookies, for example), 
+and any other application specific information (including information sent to third-party trackers).
+
+In parallel with a trend towards increased user tracking, there has also been an increase in the 
+number of services that use HTTPS.  Such secure end-to-end connections (between the client and server) 
+help limit the amount of information that can be gained from passive data collection along the network path, 
+but does not protect against active third-party tracking enabled through embedded tracking code.  
+When considering the current state-of-the art, and these trends in particular, 
+a number of important question arise:  What is the status of the current HTTPS adoption?  
+How much third-party tracking is deployed?  Does third-party tracking usage differ for early 
+adapters of HTTPS? And, perhaps most importantly, how much privacy and protection against 
+third-party tracking can be gained from conscious use of HTTPS?  As of today, there have 
+only been some preliminary works touching upon the first two of these questions~\cite{BuMS11,NFL+14}, 
+but no work has carefully addressed all four questions.
+
+To carefully address these important and un-answered questions, this paper presents 
+a novel measurement methodology and analysis of the current HTTPS and third-party tracking usage.  
+Leveraging Swedish domain knowledge, the study presents results from both a national (Swedish) 
+perspective as well as based on a global perspective (using globally popular service, for example).  
+The paper makes three main contributions:
+
+First, we develop and release the software of a novel measurement framework for automated, 
+repeatable retrieval, and analysis of websites and their third-party usage and 
+HTTPS dynamics.~\footnote{Both the open source project and datasets used in the paper 
+are made public with this paper.   Code and datasets and can be found here: \url{http://joelpurra.com/projects/masters-thesis/}.}  
+The software is built on open source software, uses a non-modified ``standard'' headless browser, 
+and stores results into standardized HAR format.  To capture HTTPS adoption and redirections, 
+domains are visited using both \texttt{http} and \texttt{https}, with and without the \texttt{www} prefix. 
+Third-party resource usage is captured through post processing (including comparison with the tracker 
+lists of the popular privacy tool \texttt{disconnect.me}\footnote{ADD FOOTNOTE LINK TO DICONNECT.ME}) 
+and public suffix lists are used to identify domains and subdomains.
+
+Second, we characterize the HTTPS adoption and use of secure/non-secure third-party resources from 
+both a Swedish and global perspective.  We find that the HTTPS adoption among globally popular 
+websites (10-30\%, 50\% for the very top) and lists of both popular and important Swedish 
+websites (15-50\%) is much higher than for random domains (less than 1\%). Although it appears 
+that popular websites are much further along in their adoption, the low overall values suggest 
+that most websites are susceptible to passive eavesdropping anywhere along the network path.  
+To make things worse for the privacy conscious user, we have found that many websites redirect 
+their users from their secure (\texttt{https}) domain to their insecure (\texttt{http}) domain, 
+and most secure \texttt{https} domains relies heavily on both internal and external (third party) 
+resources delivered over HTTP (rather than HTTPS).  The use of third-party resources over HTTP 
+shows that a secure, encrypted connection to a website often does not ensure privacy neither 
+against active and passive tracking.  This may be concerning as users falsely might be lead to 
+believe that such “secure connection” (by many browsers labeled using a padlock) provides 
+protection against external tracking.
+
+Third, we characterize the third-party tracking usage and the companies that may get access 
+to user information when using HTTP and HTTPS.  Overall, the use of third-party (external) 
+resources is high among all classes of domains, regardless if HTTP or HTTPS is used.  
+For example, less than 7\% of the globally most popular domains use only internal resources.  
+These numbers are even lower for the most popular Swedish websites within most websites categories, 
+but greater among random domains (10-30\%), suggesting that users activates often can be tracked 
+through third-party resource usage.  In fact, most websites also have at least one {\em known} 
+tracker present: 53-72\% of random domains, 88-98\% of top websites, and 78-100\% of websites 
+in the different Swedish top-categories.  While Google has by far the greatest third-party 
+coverage among known tracker companies (e.g., Google has trackers on more than 90\% of the 
+websites within the majority of the website categories considered here), we have found that 
+there are many other third-party domains that may fly under the radar.  For example, 
+Disconnect's blocking list only detects 10\% of external primary domains.  With most 
+of these non-blocked third-party entries being third-party content providers, which are 
+known to keep track of users across services, we expect that there will be a continued 
+battle for the knowledge about our web activities.
+
+The remainder of the paper is organized as follows. Section~\ref{sec:background} gives 
+a brief background on online tracking.  Our methodology and measurement framework are 
+described in Section~\ref{sec:method}.  Section~\ref{sec:https} presents our 
+characterization results for HTTPS adoption and client redirections between 
+secure and non-secure resources.  Section~\ref{sec:tracking} characterizes the 
+third-party tracking landscape and how it differs between secure and non-secure 
+domains. Finally, Section~\ref{sec:related} discusses related works, before 
+Section~\ref{sec:conclusions} concludes the paper.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}\label{sec:background}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table*}[t]
+\centering
+\caption{Summary of domain lists.}
+\label{tab:domains}
+{\small
+\begin{tabular}{|l|c|r|l|r|r|}\hline
+\hline %% closing line
+Domain list       & Date       & Total size  & Selection & Selection size & Unique\\\hline
+.SE health status & 2014-03-27 & 980         & curated   & 915            & 915   \\\hline
+.se zone          & 2014-07-10 & 1,318,000   & random    & 100,000        & 100,000 \\\hline
+.dk zone          & 2014-07-23 & 1,260,000   & random    & 10,000         & 10,000 \\\hline
+.com zone         & 2014-08-27 & 114,178,000 & random    & 10,000         & 10,000 \\\hline
+.net zone         & 2014-08-27 & 15,096,000  & random    & 10,000         & 10,000 \\\hline
+reach50           & 2014-09-01 & 50          & top       & 50             & 50 \\\hline
+Alexa Top 1M      & 2014-09-01 & 1,000,000   & top       & 10,000         & 9,986 \\\hline
+                  &            &             & random    & 10,000         & 9,959 \\\hline
+                  &            &             & all .se   & 3,364          & 3 364 \\\hline
+                  &            &             & all .dk   & 2,637          & 2,637 \\\hline
+Total             &            & 132,852,050 &           & 156,907        & 156,045 \\\hline
+\end{tabular}}
+\vspace{-0pt}
+\end{table*}
+
+
+\section{Methodology}\label{sec:method}
+
+%In this work, 
+We perform a large-scale measurement campain in which 
+the front page of a large set of domains are visited
+using both \texttt{http} and \texttt{https}.
+(We also considered both domain variations 
+with and without the \texttt{www} prefix.)
+%%Based on a list of domains, 
+%%At a high level,
+With the tool developed in this project,
+%%\footnote{The browser does not have a visible window, as it is built for automation.}
+%%browser \texttt{phantomjs} downloads
+the front page of each domain is downloaded and parsed 
+using a headless (without display window) \texttt{phantomjs} browser 
+the same way a user's browser would.\footnote{
+As part of the validation process,
+the tool creates an image of the full website after the download is complete,
+but does not display the results to any user.}
+The URL of each requested resource is extracted, and associated with
+the domain it was loaded from. Each object and domain is classified 
+and prepared for post processing and analysis.
+
+{\bf Swedish perspective:}  
+First, our meaurements are performed from computers located in Sweden.
+Second, we leverage the domain lists from the .SE Health Status report\cite{},
+identified by the Internet Infrastructure Foundation (.SE) as the most important domains
+to Swedish internet usage and operation.
+Combined, these lists include approximately 1,000 domains in the
+categories: counties, domain registrars, financial services, government-owned corporations
+(GOCS), higher education, ISPs, media, municipalities, and public authorities.
+Third, we consider the 50 global websites most visited by Swedish Internet users (reach50),
+as well as randomly selected websites within the .se domain zone.
+
+{\bf Global baseline:}  To set our findings in perspective and to broader our
+conclusions we also consider globally popular websites (according to Alexa\footnote{
+Alexa (official website), \url{www.alexa.com}.}) and randomly selected websites 
+from the .com, .net, and .dk (Denmark) domain zones.
+Table~\ref{tab:domains} summarizes the domain lists used.
+%%and any bias due to geographic personalization by content providers and
+%%Content Delivery Networks (CDNs), for example.
+%%Client in Sweden and section of websites ...
+
+{\bf Data collection and parallelization:}
+HTTP/HTTPS traffic metadata such
+as requested URLs and their HTTP request/response headers have been recorded in the HTTP
+Archive (HAR) data format.
+During our data collection,
+multiple domains have been retrieved in parallel, 
+with parallelism adjusted to fit each computers' capacity. 
+To reduce the risk of intermittent errors,
+%% – either in software, on the network or in the remote system – 
+each failed access has been retried up to two times.
+
+%%{\bf Website selection:}  Different categories and different popularities ... Also Danish websites for sanity check.
+
+{\bf Data extraction:}
+A custom-built tool based on the command line JSON processor \texttt{jq}
+is used to covert the HAR data into JSON-based HAR data with information about both requests and responses.
+The extracted data includes protocol and hosts (e.g., from URLs), 
+HTTP status, mime-type, referer and redirect values – both
+for the origin domain's front page and any resources requests by it. 
+
+{\bf Domain identification and classification:}
+We classify each requested resource along many dimensions, 
+including its mime type, if it is retrieved securely,
+and if it is downloaded from a sub-domain or from a known third-party tracker, for example. 
+To determine the primary domain and subdomain(s) we use the public suffix list\footnote{REFERENCE/POINTER???} 
+(used by browser vendors to implement domain-dependent security measures)
+and match domains against it.  This is important to capture the relationships
+of second-level domains not open for commercial registration (e.g., \texttt{.com.br}
+under \texttt{.br}).  
+We refer to resources requested from the main page
+that are retrieved from the same domain, a subdomain
+or a superdomain as internal requests.
+Any other request is deemed as an external request.
+
+{\bf Tracker identification:}
+While there are public lists of known trackers, 
+%%used by browser privacy tools, they 
+these lists are often incomplete and out-of-date~\cite{ref35, ref22}.
+In fact,  any external resource can be used for third-party tracking.
+For example, even for static (non-script, non-executable) resources with no capabilities to
+dynamically survey the user’s browser or OS can track users across domains using
+the referer  HTTP header and custimized URI's, for example.
+These lists are therefor perhaps best seen as lists of confirmed, recognized third-party trackers.
+
+In our experiments, we do not block are requests.  Instead, URL are matched against known 
+trackers during post processing.  For this analysis, we use the tracker list
+used by the privacy tool Disconnect.me.  This list contains 2,149 domains,
+each belonging to one of 980 organizations and five tracker categories.
+
+ADD: STATS (maybe figure) about skew AND venn diagram of categories.
+
+%Not all domains in the list are treated the same by Disconnect.me; 
+%despite being listed as
+%known trackers, the content category (A.3.6) is not blocked by default in order to not disturb
+%the normal user experience too much. Most organizations are only associated with one domain,
+%but some organizations have more than one domain (A.3.3). Figure 3.1 shows the number of
+%organizations (out of the 980 organizations) that have a certain number of tracker domains (x
+%axis). We see that 47\% (459 of 980) have at least two domains listed by Disconnect.me. Google
+%(rightmost point) alone has 271 domains and Yahoo has 71. Some organizations have their
+%domains categorized in more than one category, as shown in detail in Table 3.3. Due to the
+%relaxed blocking of the content category this can provide a way to track users despite being
+%labeled a tracker organization.
+%While cookies used for tracking have been a concern for many, they are not necessary in order
+%to identify most users upon return, even uniquely on a global level [10]. Cookies have not been
+%considered to be an indicator of tracking, as it can be assumed that a combination of other server
+%and client side techniques can achieve the same goal as a normal tracking cookie [1].
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{HTTPS Adoption and Redirection}\label{sec:https}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Third-party Tracking}\label{sec:tracking}
+
+\subsection{External third-party resource usage}
+
+\subsection{Known trackers}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Work}\label{sec:related}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion and Conclusion}\label{sec:conclusions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+%{\small
+\bibliographystyle{abbrv}
+%\bibliographystyle{acm}
+\vspace{8pt}
+\bibliography{references}
+%}
+%%\bibliographystyle{plain}
+
+\end{document}
