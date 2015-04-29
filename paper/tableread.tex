@@ -187,3 +187,23 @@
 		col sep=tab,
 	]{datasets.non-failed.origin-redirects.coverage.sorted.global-http-www.tsv}\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww
 
+
+%%% Create tables on the fly
+
+\newcommand{\scatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww}[4]{
+	\pgfplotstableset{
+		create on use/Dataset/.style={create col/copy column from table={#3}{Dataset}},%
+		create on use/Category/.style={create col/set={#1}},%
+		create on use/http-www/.style={create col/copy column from table={#3}{#1}},%
+		create on use/https-www/.style={create col/copy column from table={#4}{#1}},%
+	}
+
+	\pgfplotstablenew[
+		columns={
+			Dataset,%
+			Category,%
+			http-www,%
+			https-www%
+		}
+	]{\pgfplotstablegetrowsof{#3}}#2%
+}

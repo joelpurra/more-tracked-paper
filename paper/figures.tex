@@ -839,4 +839,55 @@
 
 
 
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=2 by 1,
+		horizontal sep=8pt,
+		vertical sep=16pt,
+	},
+]
+
+	\nextgroupplot[
+		title=C1 Sweden,
+		xlabel=http-www,
+		ylabel=https-www,
+		allDatasetsScatter,
+		allDatasetsScatterMiniResults,
+		scatter/classes={
+			Any={mark=square*,blue},%
+			Disconnect={mark=triangle*,red},%
+			Content={mark=x,draw=black},%
+			Advertising={mark=o,draw=red},%
+			Analytics={mark=diamond,draw=blue},%
+			Social={mark=+,draw=green}%
+		},%
+	]
+	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpHttpsWww
+
+	\legend{}
+
+	\nextgroupplot[
+		title=C2 Global,
+		xlabel=http-www,
+		% ylabel=https-www,
+		allDatasetsScatter,
+		allDatasetsScatterMiniResults,
+		scatter/classes={
+			Any={mark=square*,blue},%
+			Disconnect={mark=triangle*,red},%
+			Content={mark=x,draw=black},%
+			Advertising={mark=o,draw=red},%
+			Analytics={mark=diamond,draw=blue},%
+			Social={mark=+,draw=green}%
+		},%
+		yticklabels={},
+	]
+	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpHttpsWww
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+
 \end{document}
