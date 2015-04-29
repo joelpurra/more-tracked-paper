@@ -532,7 +532,7 @@
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
-		group size=2 by 3,
+		group size=2 by 4,
 		horizontal sep=8pt,
 		vertical sep=16pt,
 	},
@@ -672,6 +672,7 @@
 	allDatasetsStackedYbarPart2,
 	swedenHttpsWwwDatasetsYbar,
 	width=.55\textwidth,
+	xticklabels={},
 ]
 
 \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{2xx}{2xx}{green}{}
@@ -680,13 +681,13 @@
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{(null)}{(null)}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Sec}{Secure}{green}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Sec}{3xx Secure}{green!30!yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mix sec}{Mixed}{yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mix sec}{3xx Mixed}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Insec}{Insecure}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Insec}{3xx Insecure}{red}{}
 
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mism}{Mismatch}{lightgray}{}
+% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
 
 \addplot+[
 		stack plots=false,
@@ -715,6 +716,7 @@
 	globalHttpsWwwDatasetsYbar,
 	width=.4\textwidth,
 	yticklabels={},
+	xticklabels={},
 ]
 
 \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{2xx}{2xx}{green}{}
@@ -723,13 +725,13 @@
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{(null)}{(null)}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Sec}{Secure}{green}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Sec}{3xx Secure}{green!30!yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mix sec}{Mixed}{yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mix sec}{3xx Mixed}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Insec}{Insecure}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Insec}{3xx Insecure}{red}{}
 
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mism}{Mismatch}{lightgray}{}
+% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
 
 \addplot+[
 		stack plots=false,
@@ -745,6 +747,89 @@
 	]
 	table[y=Final sec,x=Dataset]
 	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww;
+\addlegendentry{Final redirect secure}
+
+\nextgroupplot[
+	title=(d) Origin HTTP response codes,
+	allDatasetsStackedYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsStackedYbarPart2,
+	swedenHttpWwwDatasetsYbar,
+	width=.55\textwidth,
+]
+
+% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{2xx}{2xx}{green}{}
+
+% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{3xx}{3xx}{yellow}{}
+
+% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{(null)}{(null)}{red}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Sec}{3xx Secure}{green!30!yellow}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mix sec}{3xx Mixed}{yellow}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Insec}{3xx Insecure}{orange}{}
+
+% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		thick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Final sec,x=Dataset]
+	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww;
+\addlegendentry{Final redirect secure}
+
+\legend{}
+
+\nextgroupplot[
+	title=(d) Origin HTTP response codes,
+	allDatasetsStackedYbar,
+	allDatasetsYbar,
+	allDatasetsYbarMiniResults,
+	allDatasetsStackedYbarPart2,
+	globalHttpWwwDatasetsYbar,
+	width=.4\textwidth,
+	yticklabels={},
+]
+
+% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{2xx}{2xx}{green}{}
+
+% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{3xx}{3xx}{yellow}{}
+
+% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{(null)}{(null)}{red}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Sec}{3xx Secure}{green!30!yellow}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mix sec}{3xx Mixed}{yellow}{}
+
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Insec}{3xx Insecure}{orange}{}
+
+% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
+
+\addplot+[
+		stack plots=false,
+		only marks,
+		mark=x,
+		mark size=3pt,
+		fill=white,
+		draw=black,
+		thick,
+		fill opacity=1,
+		update limits=false,
+		line legend,
+	]
+	table[y=Final sec,x=Dataset]
+	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww;
 \addlegendentry{Final redirect secure}
 
 \end{groupplot}
