@@ -8,32 +8,10 @@
 \begin{document}
 
 
-\begin{tikzpicture}
-\begin{loglogaxis}[
-	xlabel=Domains,
-	ylabel=Organizations,
-	width=\textwidth,
-	height=0.5*\textwidth,
-	log ticks with fixed point,
-	xmin=0.7,
-	ymin=0.7,
-	enlarge x limits=upper,
-	enlarge y limits=upper,
-	xtick={1,2,3,4,10,32,40,71,271},
-	ytick=data,
-]
-\addplot[
-		ybar,
-		bar width=3pt,
-		thick,
-		fill=black,
-	]
-	table[x=Domains per organization,y=Organizations]
-	\tableDisconnectDomainsPerOrganization;
-\end{loglogaxis}
-\end{tikzpicture}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig 0: 4.1 in thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tikzpicture}
 \begin{groupplot}[
@@ -44,7 +22,7 @@
 ]
 
 \nextgroupplot[
-	title=(a) Origin HTTP response codes,
+	%title=(a) Origin HTTP response codes,
 	allDatasetsStackedXbar,
 	allDatasetsXbar,
 	allDatasetsXbarMiniResults,
@@ -58,7 +36,7 @@
 \XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSummary}{(null)}{(null)}{red}{}
 
 \nextgroupplot[
-	title=(b) Origin redirects,
+	%title=(b) Origin redirects,
 	allDatasetsStackedXbar,
 	allDatasetsXbar,
 	allDatasetsXbarMiniResults,
@@ -75,11 +53,11 @@
 \XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSummary}{Mism}{Mismatch}{lightgray}{}
 
 \nextgroupplot[
-	title=(c) Resource security,
+	%title=(c) Resource security,
 	allDatasetsStackedXbar,
 	allDatasetsXbar,
 	allDatasetsXbarMiniResults,
-	yticklabels={alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw},
+        yticklabels={Top-10K global,Top-10K global (HTTPS), Top .se, Top .se (HTTPS), Rand-100K .se,Rand-100K .se (HTTPS),Municipal .se,Muni cipal .se (HTTPS)},
 ]
 
 \XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSortedSummary}{All sec}{Secure}{green}{}
@@ -92,6 +70,10 @@
 \end{tikzpicture}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig 1: 4.2 in thesis (NOT USED)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tikzpicture}
 \begin{groupplot}[
@@ -178,59 +160,10 @@
 
 
 
-\begin{tikzpicture}
-\begin{groupplot}[
-	group style={
-		group size=3 by 1,
-		horizontal sep=8pt,
-	},
-]
-
-\nextgroupplot[
-	title=(a) Internal resources,
-	datasetsCDF,
-	datasetsCDFMiniResults,
-	xlabel=Ratio of internal resources,
-	ylabel=Ratio of domains,
-]
-
-	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
-
-\legend{}
-
-\nextgroupplot[
-	title=(b) Secure resources,
-	datasetsCDF,
-	datasetsCDFMiniResults,
-	xlabel=Ratio of secure resources,
-	%ylabel=Ratio of domains,
-	yticklabels={},
-]
-
-	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
-
-\legend{}
-
-\nextgroupplot[
-	title=(c) Disconnect's organizations,
-	datasetsCDF,
-	datasetsOccurances,
-	datasetsOccurancesMiniResults,
-	xlabel=Number of organizations,
-	%ylabel=Ratio of domains,
-	yticklabels={},
-	legend columns=1,
-	legend style={at={(1.025,.5)}, anchor=west},
-]
-
-	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}
-
-\legend{alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw}
-
-\end{groupplot}
-\end{tikzpicture}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig 2: 4.3 in thesis (NOT USED)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tikzpicture}
 \begin{groupplot}[
@@ -284,609 +217,39 @@
 \end{groupplot}
 \end{tikzpicture}
 
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsStackedXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-]
-
-\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{1xx}{1xx}{orange}{}
-
-\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{2xx}{2xx}{green}{}
-
-\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{3xx}{3xx}{yellow}{}
-
-\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{4xx}{4xx}{orange}{}
-
-\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{5xx}{5xx}{orange}{}
-
-\XBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSorted}{(null)}{(null)}{red}{}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsStackedXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-]
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Internal}{Internal}{green}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{Mixed}{Mixed}{yellow}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationDomainScopeCoverageSorted}{External}{External}{orange}{}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	datasetsCDF,
-	datasetsCDFFullPage,
-	xlabel=Ratio of internal resources,
-	ylabel=Ratio of domains,
-	legend style={
-		at={(.01,.99)},
-		anchor=north west,
-	},
-]
-
-	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsStackedXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-]
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSorted}{All sec}{Secure}{green}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSorted}{Mix sec}{Mixed}{yellow}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationSecureCoverageSorted}{All insec}{Insecure}{orange}{}
-
-\end{axis}
-\end{tikzpicture}
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	datasetsCDF,
-	datasetsCDFFullPage,
-	xlabel=Ratio of secure resources,
-	ylabel=Ratio of domains,
-]
-
-	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
-
-\end{axis}
-\end{tikzpicture}
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsStackedXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-]
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Sec}{Secure}{green}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mix sec}{Mixed}{yellow}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Insec}{Insecure}{orange}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted}{Mism}{Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Dataset,x=Final sec]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSorted;
-\addlegendentry{Final redirect secure}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	datasetsCDF,
-	datasetsCDFFullPage,
-	xlabel=Ratio of Disconnect matches,
-	ylabel=Ratio of domains,
-]
-
-	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsIsDisconnectMatchNormalizedCumulativeSorted}
-
-	\CDFPlotFromDataset{\tableTransposedDatasetsNonFailedRatioBucketsIsDisconnectMatchNormalizedCumulativeSorted}{se.healthstatus.2013.media}{teal}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{semilogxaxis}[
-	datasetsCDF,
-	datasetsOccurances,
-	datasetsCDFFullPage,
-	xlabel=Number of organizations,
-	ylabel=Ratio of domains,
-]
-
-	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}
-
-	\CDFPlotFromDataset{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}{se.healthstatus.2013.media}{teal}
-
-\end{semilogxaxis}
-\end{tikzpicture}
-
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsMultiXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-	allDatasetsMultiXbarPart2,
-	bar width=2.5pt,
-]
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=3pt,}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Content}{Content}{olive!80!white}{ultra thin, bar shift=1.5pt,}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=-1.5pt,}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Social}{Social}{brown!80!white}{ultra thin, bar shift=-3pt,}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsMultiXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-	allDatasetsMultiXbarPart2,
-]
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Google}{Google}{red!90!white}{ultra thin, bar shift=2pt,}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSorted}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=-2pt,}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		semithick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Dataset,x=Disconnect]
-	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSorted;
-\addlegendentry{Disconnect}
-
-\end{axis}
-\end{tikzpicture}
-
-
-
-\begin{tikzpicture}
-\begin{axis}[
-	allDatasetsStackedXbar,
-	allDatasetsXbar,
-	allDatasetsXbarFullPage,
-]
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDomainsRatiosSorted}{Prim. det.}{Detected}{green}{}
-
-\XBarPlotFromDataset{\tableDatasetsNonFailedDomainsRatiosSorted}{Undet.}{Undetected}{orange}{}
-
-\end{axis}
-\end{tikzpicture}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig 3: modfied 4.3(a) from thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tikzpicture}
 \begin{groupplot}[
-	group style={
-		group size=2 by 4,
-		horizontal sep=8pt,
-		vertical sep=16pt,
-	},
+        group style={
+                group size=2 by 1,
+                horizontal sep=8pt,
+        },
 ]
 
 \nextgroupplot[
-	title=B1(a) Tracker categories (http-www),
-	allDatasetsMultiYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsMultiYbarPart2,
-	bar width=2.5pt,
-	swedenHttpWwwDatasetsYbar,
-	width=.55\textwidth,
-	xticklabels={},
+        %title=(a) Internal resources,
+        datasetsCDF,
+        datasetsCDFMiniResults,
+        xlabel=Ratio of internal resources,
+        ylabel=Ratio of domains,
 ]
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
+        \CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=-3pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Content}{Content}{olive!80!white}{ultra thin, bar shift=-1.5pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=1.5pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Social}{Social}{brown!80!white}{ultra thin, bar shift=3pt,}
-
-\legend{}
-
-\nextgroupplot[
-	title=B2(a) Tracker categories (http-www),
-	allDatasetsMultiYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsMultiYbarPart2,
-	bar width=2.5pt,
-	globalHttpWwwDatasetsYbar,
-	width=.4\textwidth,
-	yticklabels={},
-	xticklabels={},
-]
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Disconnect}{Disconnect}{orange!80!white}{ultra thin, bar shift=-3pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Content}{Content}{olive!80!white}{ultra thin, bar shift=-1.5pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Advertising}{Advertising}{teal!80!white}{ultra thin, bar shift=0pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Analytics}{Analytics}{purple!80!white}{ultra thin, bar shift=1.5pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Social}{Social}{brown!80!white}{ultra thin, bar shift=3pt,}
-
-\nextgroupplot[
-	title=B1(b) Top organizations (http-www),
-	allDatasetsMultiYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsMultiYbarPart2,
-	bar width=2.5pt,
-	swedenHttpWwwDatasetsYbar,
-	width=.55\textwidth,
-	xticklabels={},
-]
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSwedenHttpWww}{Google}{Google}{red!90!white}{ultra thin, bar shift=-2pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSwedenHttpWww}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedSwedenHttpWww}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=2pt,}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		semithick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Disconnect,x=Dataset]
-	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww;
-\addlegendentry{Disconnect}
-
-\legend{}
-
-\nextgroupplot[
-	title=B2(b) Top organizations (http-www),
-	allDatasetsMultiYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsMultiYbarPart2,
-	bar width=2.5pt,
-	globalHttpWwwDatasetsYbar,
-	width=.4\textwidth,
-	yticklabels={},
-	xticklabels={},
-]
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedGlobalHttpWww}{Google}{Google}{red!90!white}{ultra thin, bar shift=-2pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedGlobalHttpWww}{Facebook}{Facebook}{blue!90!white}{ultra thin, bar shift=0pt,}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectOrganizationsCoverageExternalSortedGlobalHttpWww}{Twitter}{Twitter}{cyan!70!white}{ultra thin, bar shift=2pt,}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		semithick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Disconnect,x=Dataset]
-	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww;
-\addlegendentry{Disconnect}
-
-\nextgroupplot[
-	title=B1(c) Resp./redir. sec. (https-www),
-	allDatasetsStackedYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsStackedYbarPart2,
-	swedenHttpsWwwDatasetsYbar,
-	width=.55\textwidth,
-	xticklabels={},
-]
-
-\YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{2xx}{2xx}{green}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{3xx}{3xx}{yellow}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{(null)}{(null)}{red}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Sec}{3xx Secure}{green!30!yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mix sec}{3xx Mixed}{orange}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Insec}{3xx Insecure}{red}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww;
-\addlegendentry{3xx Final redirect secure}
-
-\legend{}
-
-\nextgroupplot[
-	title=B2(c) Resp./redir. sec. (https-www),
-	allDatasetsStackedYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsStackedYbarPart2,
-	globalHttpsWwwDatasetsYbar,
-	width=.4\textwidth,
-	yticklabels={},
-	xticklabels={},
-]
-
-\YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{2xx}{2xx}{green}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{3xx}{3xx}{yellow}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{(null)}{(null)}{red}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Sec}{3xx Secure}{green!30!yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mix sec}{3xx Mixed}{orange}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Insec}{3xx Insecure}{red}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww;
-\addlegendentry{3xx Final redirect secure}
-
-\nextgroupplot[
-	title=B1(d) Resp./redir. sec. (http-www),
-	allDatasetsStackedYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsStackedYbarPart2,
-	swedenHttpWwwDatasetsYbar,
-	width=.55\textwidth,
-	xticklabels={Counties,Domain registrars,Financial services,GOCS,Higher education,ISPs,Media,Municipalities,Public authorities,reach50,Top 10k .se,Rand 100k .se,},
-]
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{2xx}{2xx}{green}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{3xx}{3xx}{yellow}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{(null)}{(null)}{red}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Sec}{3xx Secure}{green!30!yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mix sec}{3xx Mixed}{yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Insec}{3xx Insecure}{orange}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww;
-\addlegendentry{3xx Final redirect secure}
-
-\legend{}
-
-\nextgroupplot[
-	title=B2(d) Resp./redir. sec. (http-www),
-	allDatasetsStackedYbar,
-	allDatasetsYbar,
-	allDatasetsYbarMiniResults,
-	allDatasetsStackedYbarPart2,
-	globalHttpWwwDatasetsYbar,
-	width=.4\textwidth,
-	yticklabels={},
-	xticklabels={Top 10k .se,Top 10k .dk,Top 10k global,Rand 100k .se,Rand 10k .dk,Rand 10k .com,Rand 10k .net,Rand 10k global,},
-]
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{2xx}{2xx}{green}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{3xx}{3xx}{yellow}{}
-
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{(null)}{(null)}{red}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Sec}{3xx Secure}{green!30!yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mix sec}{3xx Mixed}{yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Insec}{3xx Insecure}{orange}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww;
-\addlegendentry{3xx Final redirect secure}
+\legend{Top-10K global, Top-10K global (HTTPS), Top .se, Top .se (HTTPS), Rand-100K .se,Rand-100K .se (HTTPS),Municipal .se, Municipal .se (HTTPS)}
 
 \end{groupplot}
 \end{tikzpicture}
 
 
-
-\begin{tikzpicture}
-\begin{groupplot}[
-	group style={
-		group size=2 by 1,
-		horizontal sep=8pt,
-		vertical sep=16pt,
-	},
-]
-
-	\nextgroupplot[
-		title=C1 Sweden,
-		xlabel=http-www,
-		ylabel=https-www,
-		allDatasetsScatter,
-		allDatasetsScatterMiniResults,
-		scatter/classes={
-			Any={mark=square*,blue},%
-			Disconnect={mark=triangle*,red},%
-			Content={mark=x,draw=black},%
-			Advertising={mark=o,draw=red},%
-			Analytics={mark=diamond,draw=blue},%
-			Social={mark=+,draw=green}%
-		},%
-	]
-	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpHttpsWww
-
-	\legend{}
-
-	\nextgroupplot[
-		title=C2 Global,
-		xlabel=http-www,
-		% ylabel=https-www,
-		allDatasetsScatter,
-		allDatasetsScatterMiniResults,
-		scatter/classes={
-			Any={mark=square*,blue},%
-			Disconnect={mark=triangle*,red},%
-			Content={mark=x,draw=black},%
-			Advertising={mark=o,draw=red},%
-			Analytics={mark=diamond,draw=blue},%
-			Social={mark=+,draw=green}%
-		},%
-		yticklabels={},
-	]
-	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpHttpsWww
-
-\end{groupplot}
-\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fig 4: NEW ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

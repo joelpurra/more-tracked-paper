@@ -362,8 +362,19 @@ ADD: STATS (maybe figure) about skew AND venn diagram of categories.
 %considered to be an indicator of tracking, as it can be assumed that a combination of other server
 %and client side techniques can achieve the same goal as a normal tracking cookie [1].
 
-
-
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{paperFigs-figure0.pdf}
+\begin{tabular}{ccc}
+(a) Origin response code &
+(b) Origin redirect &
+(c) Resource breakdown \\
+\end{tabular}
+\caption{Example domain categories and their original responses, 
+redirects, and HTTPS usage for individual resource transfers.}
+\label{fig:httpsDiff}
+\vspace{-0pt}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -376,8 +387,6 @@ Here, we only show results when accessing the (secure on non-secure) \texttt{www
 While the results for the primary domain (without \texttt{www}),
 we note that 50\% of top sites always redirecting to the \texttt{www} subdomain
 and only 13\% always redirecting to their primary domain.
-
-INSERT FIGURE 4.1 from thesis (yticklabels={Top-10K global,Top-10K global (HTTPS), Top .se, Top .se (HTTPS), Rand-100K .se,Rand-100K .se (HTTPS),Municipal .se,Muni cipal .se (HTTPS)},)
 
 Figure~\ref{fig:httpsDiff} provides a head-to-head comparison of the 
 website downloads of four example categories when using HTTP and HTTPS.
@@ -427,7 +436,15 @@ and highest for popular domains (e.g., Reach50 - not shown - has 53\% response r
 %use the highest count of both internal and external resources – with numbers several times higher
 %than other domain lists – and more than 20\% of requests go to known trackers
 
-INSERT NEW FIGURES (HTTPS figure from this morning)
+\begin{figure*}[t]
+%% trim = l b r t
+\includegraphics[trim=0mm 47mm 0mm 56mm, clip, width=0.98\textwidth]{figures-figure16.pdf}
+\includegraphics[trim=0mm 0mm 0mm 106mm, clip, width=0.98\textwidth]{figures-figure16.pdf}
+\caption{Secure connections for succesful connections when trying to use HTTPS.
+(Note that the majority of websites (as per Figure~\ref{fig:httpsDiff}) do not respond.)}
+\label{fig:https}
+\vspace{-0pt}
+\end{figure*}
 
 We next take a closer look at the number of domains in the different categories 
 that allow the user to connect securely with the use of HTTPS.  Figure~\ref{fig:https} 
@@ -435,6 +452,16 @@ summarizes the security achieved either directly (``2xx'')
 or through different forms of redirects (``3xx'').  The left-hand figure
 shows different categories of national domains, and the righ-hand figure
 shows results for global domain categories.
+
+\begin{figure*}[t]
+%% trim = l b r t
+\includegraphics[trim=0mm 0mm 0mm 56mm, clip, width=0.98\textwidth]{figures-figure16.pdf}
+\caption{Secure connections for succesful HTTPS attempts (top row)
+and HTTP attempts (bottom row).
+(Note that the majority of websites does not respnd to HTTPS (as per Figure~\ref{fig:httpsDiff}).)}
+\label{fig:https2}
+\vspace{-0pt}
+\end{figure*}
 
 DISCUSS FIGURE
 
@@ -450,7 +477,16 @@ DISCUSS (but and maybe show figure) FOR WHEN USING HTTP FOR INITIAL REQUSET
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Third-party Tracking}\label{sec:tracking}
 
-INSERT FIGURE 4.3(a) and 4(b) FROM THE THESIS
+%%INSERT FIGURE 4.3(a) and 4(b) FROM THE THESIS
+
+\begin{figure}[t]
+%% trim = l b r t
+\includegraphics[trim=0mm 0mm 92mm 0mm, clip, width=0.31\textwidth]{paperFigs-figure2.pdf}
+\includegraphics[trim=112mm 0mm 0mm 0mm, clip, width=0.16\textwidth]{paperFigs-figure2.pdf}
+\caption{External third-party resource usage.}
+\label{fig:external}
+\vspace{-0pt}
+\end{figure}
 
 \subsection{External third-party resource usage}
 
@@ -500,15 +536,25 @@ included in the CDF of responding HTTPS sites.)
 %Figure~\ref{fig:external}(b) shows the CDF of the secure resource usage across
 %the same set of sites.
 
-INSERT FIGURES (a) and (b) FROM THIS MORNINGS FIGURES ...
+%%INSERT FIGURES (a) and (b) FROM THIS MORNINGS FIGURES ...
+\begin{figure*}[t]
+%% trim = l b r t
+\includegraphics[trim=0mm 73mm 0mm 0mm, clip, width=0.98\textwidth]{figures-figure16.pdf}
+\includegraphics[trim=0mm 0mm 0mm 106mm, clip, width=0.98\textwidth]{figures-figure16.pdf}
+\caption{Domain covererage of different categories of known tracker services (top row)
+and companies (bottom row), as per Disconnect's blocking list.}
+\label{fig:categories-companies}
+\vspace{-0pt}
+\end{figure*}
+
 
 \subsection{Known trackers}
 
 While the third-party resource usage provides insights to the maximum
 amount of external reources that may be used for third-party tracking,
 it does not give insights to who does the tracking and what type of 
-tracking that is done.
-To take a cloer look at these two aspects,
+tracking is being done.
+To glean some insights into these two aspects,
 we leverage Disconnect's tracker list,
 which categorize known trackers into categories as well as 
 a mapping of the organizations that owns these third-party tracking services.
@@ -516,7 +562,7 @@ a mapping of the organizations that owns these third-party tracking services.
 %%our analysis we use the services (and organizations owning these services)
 %%included in Disconnect's tracker list.
 
-Figure~\ref{fig:categories} breaks down the observed 
+Figure~\ref{fig:categories-companies} (top-row) breaks down the observed 
 tracker usage for each website categories,
 across the five tracker categories.
 The gray bars shows the coverage of the union of all known trackers (regardless of type).  
@@ -547,9 +593,22 @@ DISCUSS DIFFERENCES BETWEEN WEBSITE TYPES ...
 
 Finally, we take a break down the coverage of the three third-party players
 with the greatest coverage in our dataset: Google, Facebook, and Twitter.
-Figure~\ref{fig:companies} shows the coverage for these organizations 
+Figure~\ref{fig:categories-companies} (bottom-row) shows the coverage for these organizations 
 as observed across both national and international domain classes.
 
+
+\begin{figure}[t]
+%% trim = l b r t
+\centering
+\includegraphics[width=0.48\textwidth]{figures-figure17.pdf}
+\begin{tabular}{cc}
+(a) Sweden &
+(b) Global \\
+\end{tabular}
+\caption{Correlation of tracker coverage seen with HTTP and HTTPS.}
+\label{fig:scatter}
+\vspace{-0pt}
+\end{figure}
 
 MAYBE SOME MORE TEXT (based on text from 4.3.2 and foward ...):
 
