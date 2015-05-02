@@ -2,12 +2,14 @@
 
 \include{rendering-preamble}
 
-\usepackage{jpfigurecommands}
+\usepackage[pfx=figures-]{jpfigurecommands}
 \include{tableread}
 
 \begin{document}
 
 
+
+\tikzsetnextfilename{medium-domains-per-organization}
 \begin{tikzpicture}
 \begin{loglogaxis}[
 	xlabel=Domains,
@@ -35,6 +37,7 @@
 
 
 
+\tikzsetnextfilename{mini-3x1-status-redirects-secure-xbar}
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
@@ -93,6 +96,7 @@
 
 
 
+\tikzsetnextfilename{mini-3x1-internal-categories-organizations-xbar}
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
@@ -178,6 +182,7 @@
 
 
 
+\tikzsetnextfilename{mini-3x1-internal-secure-organizations-cdf}
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
@@ -232,60 +237,7 @@
 
 
 
-\begin{tikzpicture}
-\begin{groupplot}[
-	group style={
-		group size=3 by 1,
-		horizontal sep=8pt,
-	},
-]
-
-\nextgroupplot[
-	title=(a) Internal resources,
-	datasetsCDF,
-	datasetsCDFMiniResults,
-	xlabel=Ratio of internal resources,
-	ylabel=Ratio of domains,
-]
-
-	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
-
-\legend{}
-
-\nextgroupplot[
-	title=(b) Secure resources,
-	datasetsCDF,
-	datasetsCDFMiniResults,
-	xlabel=Ratio of secure resources,
-	%ylabel=Ratio of domains,
-	yticklabels={},
-]
-
-	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
-
-\legend{}
-
-\nextgroupplot[
-	title=(c) Disconnect's organizations,
-	datasetsCDF,
-	datasetsOccurances,
-	datasetsOccurancesMiniResults,
-	xlabel=Number of organizations,
-	%ylabel=Ratio of domains,
-	yticklabels={},
-	legend columns=1,
-	legend style={at={(1.025,.5)}, anchor=west},
-]
-
-	\CDFPlotFromDefaultDatasets{\tableTransposedDatasetsNonFailedRatioBucketsDisconnectOrganizationsNormalizedCumulativeSorted}
-
-\legend{alexa.top.10k-hw,alexa.top.10k-sw,alexa.top.se-hw,alexa.top.se-sw,se.r.100k-hw,se.r.100k-sw,se.hs.municip-hw,se.hs.municip-sw}
-
-\end{groupplot}
-\end{tikzpicture}
-
-
-
+\tikzsetnextfilename{full-http-status-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsStackedXbar,
@@ -310,6 +262,7 @@
 
 
 
+\tikzsetnextfilename{full-internal-resources-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsStackedXbar,
@@ -328,6 +281,7 @@
 
 
 
+\tikzsetnextfilename{full-internal-resources-cdf}
 \begin{tikzpicture}
 \begin{axis}[
 	datasetsCDF,
@@ -347,6 +301,7 @@
 
 
 
+\tikzsetnextfilename{full-secure-resources-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsStackedXbar,
@@ -364,6 +319,8 @@
 \end{tikzpicture}
 
 
+
+\tikzsetnextfilename{full-secure-resources-cdf}
 \begin{tikzpicture}
 \begin{axis}[
 	datasetsCDF,
@@ -378,6 +335,8 @@
 \end{tikzpicture}
 
 
+
+\tikzsetnextfilename{full-origin-redirect-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsStackedXbar,
@@ -414,6 +373,7 @@
 
 
 
+\tikzsetnextfilename{full-disconnect-matches-cdf}
 \begin{tikzpicture}
 \begin{axis}[
 	datasetsCDF,
@@ -431,6 +391,7 @@
 
 
 
+\tikzsetnextfilename{full-disconnect-organizations-cdf}
 \begin{tikzpicture}
 \begin{semilogxaxis}[
 	datasetsCDF,
@@ -449,7 +410,7 @@
 
 
 
-
+\tikzsetnextfilename{full-disconnect-categories-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsMultiXbar,
@@ -476,6 +437,7 @@
 
 
 
+\tikzsetnextfilename{full-disconnect-top-organizations-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsMultiXbar,
@@ -513,6 +475,7 @@
 
 
 
+\tikzsetnextfilename{full-disconnect-detection-xbar}
 \begin{tikzpicture}
 \begin{axis}[
 	allDatasetsStackedXbar,
@@ -529,6 +492,7 @@
 
 
 
+\tikzsetnextfilename{mini-2x2-categories-organizations}
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
@@ -598,7 +562,7 @@
 	bar width=2.5pt,
 	swedenHttpWwwDatasetsYbar,
 	width=.55\textwidth,
-	xticklabels={},
+	xticklabels={Counties,Domain registrars,Financial services,GOCS,Higher education,ISPs,Media,Municipalities,Public authorities,reach50,Top 10k .se,Rand 100k .se,},
 ]
 
 \YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
@@ -637,7 +601,7 @@
 	globalHttpWwwDatasetsYbar,
 	width=.4\textwidth,
 	yticklabels={},
-	xticklabels={},
+	xticklabels={Top 10k .se,Top 10k .dk,Top 10k global,Rand 100k .se,Rand 10k .dk,Rand 10k .com,Rand 10k .net,Rand 10k global,},
 ]
 
 \YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
@@ -664,6 +628,20 @@
 	\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww;
 \addlegendentry{Disconnect}
 
+\end{groupplot}
+\end{tikzpicture}
+
+
+
+\tikzsetnextfilename{mini-2x2-secure-response-redirect-ybar}
+\begin{tikzpicture}
+\begin{groupplot}[
+	group style={
+		group size=2 by 2,
+		horizontal sep=8pt,
+		vertical sep=16pt,
+	},
+]
 \nextgroupplot[
 	title=B1(c) Resp./redir. sec. (https-www),
 	allDatasetsStackedYbar,
@@ -839,6 +817,7 @@
 
 
 
+\tikzsetnextfilename{mini-2x1-categories-scatter}
 \begin{tikzpicture}
 \begin{groupplot}[
 	group style={
@@ -890,6 +869,7 @@
 
 
 
+\tikzsetnextfilename{mini-1x1-internal-resources-cdf}
 \begin{tikzpicture}
 \begin{axis}[
 	% title=(a) Internal resources,
