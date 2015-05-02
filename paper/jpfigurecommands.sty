@@ -170,8 +170,6 @@ yticklabel style={
 title style={at={(.5,.95)}},
 },
 xticklabel style={
-rotate=90,
-anchor=east,
 /pgf/number format/fixed,
 /pgf/number format/fixed zerofill,
 /pgf/number format/precision=2
@@ -398,8 +396,8 @@ title style={at={(.5,.95)}},
 	{
 		enlarge y limits={abs=8pt},
 		enlarge x limits={abs=8pt},
-		width=.5\textwidth,
-		height=.5\textwidth,
+		width=.35\textwidth,
+		height=.35\textwidth,
 		font=\tiny,
 		legend columns=1,
 		legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},},
@@ -409,16 +407,16 @@ title style={at={(.5,.95)}},
 			/pgf/number format/precision=1
 		},
 		title style={at={(.5,.95)}},
-	},
-	xticklabel style={
-		/pgf/number format/fixed,
-		/pgf/number format/fixed zerofill,
-		/pgf/number format/precision=2
-	},
-	yticklabel style={
-		/pgf/number format/fixed,
-		/pgf/number format/fixed zerofill,
-		/pgf/number format/precision=2
+		xticklabel style={
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill,
+			/pgf/number format/precision=1
+		},
+		yticklabel style={
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill,
+			/pgf/number format/precision=1
+		},
 	},
 }
 

@@ -563,6 +563,10 @@
 	swedenHttpWwwDatasetsYbar,
 	width=.55\textwidth,
 	xticklabels={Counties,Domain registrars,Financial services,GOCS,Higher education,ISPs,Media,Municipalities,Public authorities,reach50,Top 10k .se,Rand 100k .se,},
+	xticklabel style={
+		rotate=45,
+		anchor={north east},
+	},
 ]
 
 \YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
@@ -602,6 +606,10 @@
 	width=.4\textwidth,
 	yticklabels={},
 	xticklabels={Top 10k .se,Top 10k .dk,Top 10k global,Rand 100k .se,Rand 10k .dk,Rand 10k .com,Rand 10k .net,Rand 10k global,},
+	xticklabel style={
+		rotate=45,
+		anchor={north east},
+	},
 ]
 
 \YBarPlotFromDataset{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{Any}{Any}{black!20!white}{bar shift=0pt, bar width=8.5pt}
@@ -639,11 +647,11 @@
 	group style={
 		group size=2 by 2,
 		horizontal sep=8pt,
-		vertical sep=16pt,
+		vertical sep=8pt,
 	},
 ]
 \nextgroupplot[
-	title=B1(c) Resp./redir. sec. (https-www),
+	% title=B1(c) Resp./redir. sec. (https-www),
 	allDatasetsStackedYbar,
 	allDatasetsYbar,
 	allDatasetsYbarMiniResults,
@@ -659,11 +667,11 @@
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{(null)}{(null)}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Sec}{3xx Secure}{green!30!yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Sec}{3xx Sec}{green!30!yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mix sec}{3xx Mixed}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mix sec}{3xx Mix}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Insec}{3xx Insecure}{red}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Insec}{3xx Insec}{red}{}
 
 % \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
 
@@ -681,12 +689,12 @@
 	]
 	table[y=Final sec,x=Dataset]
 	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww;
-\addlegendentry{3xx Final redirect secure}
+\addlegendentry{3xx Final sec}
 
 \legend{}
 
 \nextgroupplot[
-	title=B2(c) Resp./redir. sec. (https-www),
+	% title=B2(c) Resp./redir. sec. (https-www),
 	allDatasetsStackedYbar,
 	allDatasetsYbar,
 	allDatasetsYbarMiniResults,
@@ -703,11 +711,11 @@
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{(null)}{(null)}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Sec}{3xx Secure}{green!30!yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Sec}{3xx Sec}{green!30!yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mix sec}{3xx Mixed}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mix sec}{3xx Mix}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Insec}{3xx Insecure}{red}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Insec}{3xx Insec}{red}{}
 
 % \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
 
@@ -725,10 +733,10 @@
 	]
 	table[y=Final sec,x=Dataset]
 	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww;
-\addlegendentry{3xx Final redirect secure}
+\addlegendentry{3xx Final sec}
 
 \nextgroupplot[
-	title=B1(d) Resp./redir. sec. (http-www),
+	% title=B1(d) Resp./redir. sec. (http-www),
 	allDatasetsStackedYbar,
 	allDatasetsYbar,
 	allDatasetsYbarMiniResults,
@@ -736,6 +744,10 @@
 	swedenHttpWwwDatasetsYbar,
 	width=.55\textwidth,
 	xticklabels={Counties,Domain registrars,Financial services,GOCS,Higher education,ISPs,Media,Municipalities,Public authorities,reach50,Top 10k .se,Rand 100k .se,},
+	xticklabel style={
+		rotate=45,
+		anchor={north east},
+	},
 ]
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{2xx}{2xx}{green}{}
@@ -744,11 +756,11 @@
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{(null)}{(null)}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Sec}{3xx Secure}{green!30!yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Sec}{3xx Sec}{green!30!yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mix sec}{3xx Mixed}{yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mix sec}{3xx Mix}{yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Insec}{3xx Insecure}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Insec}{3xx Insec}{orange}{}
 
 % \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
 
@@ -766,12 +778,12 @@
 	]
 	table[y=Final sec,x=Dataset]
 	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww;
-\addlegendentry{3xx Final redirect secure}
+\addlegendentry{3xx Final sec}
 
 \legend{}
 
 \nextgroupplot[
-	title=B2(d) Resp./redir. sec. (http-www),
+	% title=B2(d) Resp./redir. sec. (http-www),
 	allDatasetsStackedYbar,
 	allDatasetsYbar,
 	allDatasetsYbarMiniResults,
@@ -780,6 +792,10 @@
 	width=.4\textwidth,
 	yticklabels={},
 	xticklabels={Top 10k .se,Top 10k .dk,Top 10k global,Rand 100k .se,Rand 10k .dk,Rand 10k .com,Rand 10k .net,Rand 10k global,},
+	xticklabel style={
+		rotate=45,
+		anchor={north east},
+	},
 ]
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{2xx}{2xx}{green}{}
@@ -788,11 +804,11 @@
 
 % \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{(null)}{(null)}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Sec}{3xx Secure}{green!30!yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Sec}{3xx Sec}{green!30!yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mix sec}{3xx Mixed}{yellow}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mix sec}{3xx Mix}{yellow}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Insec}{3xx Insecure}{orange}{}
+\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Insec}{3xx Insec}{orange}{}
 
 % \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
 
@@ -810,7 +826,7 @@
 	]
 	table[y=Final sec,x=Dataset]
 	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww;
-\addlegendentry{3xx Final redirect secure}
+\addlegendentry{3xx Final sec}
 
 \end{groupplot}
 \end{tikzpicture}
@@ -828,7 +844,7 @@
 ]
 
 	\nextgroupplot[
-		title=C1 Sweden,
+		% title=C1 Sweden,
 		xlabel=http-www,
 		ylabel=https-www,
 		allDatasetsScatter,
@@ -847,7 +863,7 @@
 	\legend{}
 
 	\nextgroupplot[
-		title=C2 Global,
+		% title=C2 Global,
 		xlabel=http-www,
 		% ylabel=https-www,
 		allDatasetsScatter,
