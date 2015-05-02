@@ -1,0 +1,17 @@
+* text=auto
+
+*.tex text
+*.sty text
+*.cls text
+*.bib text
+*.lyx text
+
+*.tsv text
+
+*.md text
+
+*.sh text
+
+.gitattributes text
+.gitignore text
+
