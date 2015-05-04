@@ -1,0 +1,116 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jpfigurengcommands}[2015/05/04 v0.1 Joel Purra, figure next generation commands]
+
+\RequirePackage{pgfplotstable}
+
+\RequirePackage{kvoptions}
+ \SetupKeyvalOptions{%
+   family=JPFCNG,
+   prefix=JPFCNG@,
+   }
+
+\DeclareStringOption{pfx}
+\ProcessKeyvalOptions*
+
+\PassOptionsToPackage{pfx=\JPFCNG@pfx}{jpfigurecommands}
+\RequirePackage{jpfigurecommands}
+
+
+
+\pgfplotsset{compat=1.12}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\pgfplotsset{
+	allDatasetsScatter/.style=
+	{
+		scatter,
+		only marks,
+		point meta=explicit symbolic,
+		fill opacity=0.9,
+		ymin=0,
+		ymax=1,
+		ytick={0,.2,.4,.6,.8,1},
+		minor ytick={.1,.3,.5,.7,.9},
+		yminorgrids=true,
+		ymajorgrids=true,
+		xtick={0,.2,.4,.6,.8,1},
+		minor xtick={.1,.3,.5,.7,.9},
+		xminorgrids=true,
+		xmajorgrids=true,
+	},
+	allDatasetsScatterFullPage/.style=
+	{
+		width=1.47\textwidth,
+		height=.65\textwidth,
+		font=\small,
+		legend columns=1,
+		legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},}
+	},
+	allDatasetsScatterMiniResults/.style=
+	{
+		enlarge y limits={abs=8pt},
+		enlarge x limits={abs=8pt},
+		width=.35\textwidth,
+		height=.35\textwidth,
+		font=\tiny,
+		legend columns=1,
+		legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},},
+		yticklabel style={
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill=false,
+			/pgf/number format/precision=1
+		},
+		title style={at={(.5,.95)}},
+		xticklabel style={
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill,
+			/pgf/number format/precision=1
+		},
+		yticklabel style={
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill,
+			/pgf/number format/precision=1
+		},
+	},
+}
+
+\newcommand{\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww}[3]{
+	\scatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{#1}{\newScatterTable}{#2}{#3}
+
+	\addplot+[]
+	table[x=http-www,y=https-www,label=Category]
+	\newScatterTable;
+
+	\addlegendentry{#1}
+}
+
+\newcommand{\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww}[2]{
+	\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{Any}{#1}{#2}
+	\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{Disconnect}{#1}{#2}
+	\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{Content}{#1}{#2}
+	\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{Advertising}{#1}{#2}
+	\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{Analytics}{#1}{#2}
+	\addScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{Social}{#1}{#2}
+}
+
+\newcommand{\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpHttpsWww}[0]{
+	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpWww}{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpsWww}
+}
+
+\newcommand{\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpHttpsWww}[0]{
+	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpWww}{\tableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpsWww}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\endinput
