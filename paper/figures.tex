@@ -862,4 +862,31 @@
 
 
 
+\tikzsetnextfilename{mini-1x1-secure-resources-cdf}
+\begin{tikzpicture}
+\begin{axis}[
+	% title=(b) Secure resources,
+	datasetsCDF,
+	datasetsCDFMiniResults,
+	paperTight,
+	xlabel=Ratio of internal resources,
+	ylabel=Ratio of domains,
+	legend style={at={(1.03,.5)}, anchor=west},
+	xlabel style={
+		at={(0.5,0.1)}
+	},
+	ylabel style={
+		at={(0.17,0.5)}
+	},
+]
+
+	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-secure.normalized.cumulative.sorted.tsv}
+
+	\legend{Top 10k global,Top 10k global (HTTPS), Top 10k .se,Top 10k .se (HTTPS),Rand 100k .se,Rand 100k .se (HTTPS),Municipal .se,Municipal .se (HTTPS)},
+
+\end{axis}
+\end{tikzpicture}
+
+
+
 \end{document}
