@@ -643,6 +643,11 @@
 
 
 
+\createAdjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedHttpsWww{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpsWww}{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}
+\createAdjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedHttpsWww{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpsWww}{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}
+\createAdjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedHttpWww{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpWww}{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}
+\createAdjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedHttpWww{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpWww}{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}
+
 \tikzsetnextfilename{mini-2x2-secure-response-redirect-ybar}
 \begin{tikzpicture}
 \begin{groupplot}[
@@ -663,35 +668,15 @@
 	xticklabels={},
 ]
 
-\YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{2xx}{2xx}{green}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpsWww}{2xx}{2xx}{green}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{3xx}{3xx}{yellow}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpsWww}{3xx Sec}{3xx Sec}{green!30!yellow}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpsWww}{(null)}{(null)}{red}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpsWww}{3xx Mix sec}{3xx Mix}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Sec}{3xx Sec}{green!30!yellow}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpsWww}{3xx Insec}{3xx Insec}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mix sec}{3xx Mix}{orange}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Insec}{3xx Insec}{red}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpsWww;
-\addlegendentry{3xx Final sec}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpsWww}{3xx Mism}{3xx Mism}{lightgray}{}
 
 \legend{}
 
@@ -707,35 +692,15 @@
 	xticklabels={},
 ]
 
-\YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{2xx}{2xx}{green}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpsWww}{2xx}{2xx}{green}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{3xx}{3xx}{yellow}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpsWww}{3xx Sec}{3xx Sec}{green!30!yellow}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpsWww}{(null)}{(null)}{red}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpsWww}{3xx Mix sec}{3xx Mix}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Sec}{3xx Sec}{green!30!yellow}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpsWww}{3xx Insec}{3xx Insec}{red}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mix sec}{3xx Mix}{orange}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Insec}{3xx Insec}{red}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpsWww;
-\addlegendentry{3xx Final sec}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpsWww}{3xx Mism}{3xx Mism}{lightgray}{}
 
 \nextgroupplot[
 	% title=B1(d) Resp./redir. sec. (http-www),
@@ -754,35 +719,13 @@
 	},
 ]
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{2xx}{2xx}{green}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpWww}{3xx Sec}{3xx Sec}{green!30!yellow}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{3xx}{3xx}{yellow}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpWww}{3xx Mix sec}{3xx Mix}{yellow}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedSwedenHttpWww}{(null)}{(null)}{red}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpWww}{3xx Insec}{3xx Insec}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Sec}{3xx Sec}{green!30!yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mix sec}{3xx Mix}{yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Insec}{3xx Insec}{orange}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedSwedenHttpWww;
-\addlegendentry{3xx Final sec}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedSwedenHttpWww}{3xx Mism}{3xx Mism}{lightgray}{}
 
 \legend{}
 
@@ -804,35 +747,13 @@
 	},
 ]
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{2xx}{2xx}{green}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpWww}{3xx Sec}{3xx Sec}{green!30!yellow}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{3xx}{3xx}{yellow}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpWww}{3xx Mix sec}{3xx Mix}{yellow}{}
 
-% \YBarPlotFromDataset{\tableDatasetsRequestStatusCoverageOriginSortedGlobalHttpWww}{(null)}{(null)}{red}{}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpWww}{3xx Insec}{3xx Insec}{orange}{}
 
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Sec}{3xx Sec}{green!30!yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mix sec}{3xx Mix}{yellow}{}
-
-\YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Insec}{3xx Insec}{orange}{}
-
-% \YBarPlotFromDataset{\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww}{Mism}{3xx Mismatch}{lightgray}{}
-
-\addplot+[
-		stack plots=false,
-		only marks,
-		mark=x,
-		mark size=3pt,
-		fill=white,
-		draw=black,
-		thick,
-		fill opacity=1,
-		update limits=false,
-		line legend,
-	]
-	table[y=Final sec,x=Dataset]
-	\tableDatasetsNonFailedClassificationOriginRedirectsCoverageSortedGlobalHttpWww;
-\addlegendentry{3xx Final sec}
+\YBarPlotFromDataset{\adjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedGlobalHttpWww}{3xx Mism}{3xx Mism}{lightgray}{}
 
 \end{groupplot}
 \end{tikzpicture}

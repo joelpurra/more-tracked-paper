@@ -207,3 +207,79 @@
 		}
 	]{\pgfplotstablegetrowsof{#3}}#2%
 }
+
+\newcommand{\createAdjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedHttpsWww}[3]{
+	\pgfplotstableset{
+		create on use/Dataset/.style={create col/copy column from table={#2}{Dataset}},%
+		create on use/2xx Raw/.style={create col/copy column from table={#2}{2xx}},%
+		create on use/3xx Raw/.style={create col/copy column from table={#2}{3xx}},%
+		create on use/3xx Sec Raw/.style={create col/copy column from table={#3}{Sec}},%
+		create on use/3xx Mix sec Raw/.style={create col/copy column from table={#3}{Mix sec}},%
+		create on use/3xx Insec Raw/.style={create col/copy column from table={#3}{Insec}},%
+		create on use/3xx Mism Raw/.style={create col/copy column from table={#3}{Mism}},%
+		create on use/3xx Final sec Raw/.style={create col/copy column from table={#3}{Final sec}},%
+	}
+
+	\pgfplotstablenew[
+		columns={
+			Dataset,%
+			2xx Raw,%
+			3xx Raw,%
+			3xx Sec Raw,%
+			3xx Mix sec Raw,%
+			3xx Insec Raw,%
+			3xx Mism Raw,%
+			3xx Final sec Raw,%
+			Total Scale,%
+			2xx,%
+			3xx Sec,%
+			3xx Mix sec,%
+			3xx Insec,%
+			3xx Mism,%
+			3xx Final sec%
+		},
+		create on use/Total Scale/.style={create col/expr={1/(\thisrow{2xx Raw}+\thisrow{3xx Raw})}},%
+		create on use/2xx/.style={create col/expr={\thisrow{2xx Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Sec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Sec Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Mix sec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Mix sec Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Insec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Insec Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Mism/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Mism Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Final sec/.style={create col/expr={(\thisrow{2xx Raw}+\thisrow{3xx Raw}*\thisrow{3xx Final sec Raw})*\thisrow{Total Scale}}},%
+	]{\pgfplotstablegetrowsof{#2}}#1%
+}
+
+\newcommand{\createAdjustedTableDatasetsRequestStatusCoverageOriginRedirectSecuritySortedHttpWww}[3]{
+	\pgfplotstableset{
+		create on use/Dataset/.style={create col/copy column from table={#2}{Dataset}},%
+		create on use/3xx Raw/.style={create col/copy column from table={#2}{3xx}},%
+		create on use/3xx Sec Raw/.style={create col/copy column from table={#3}{Sec}},%
+		create on use/3xx Mix sec Raw/.style={create col/copy column from table={#3}{Mix sec}},%
+		create on use/3xx Insec Raw/.style={create col/copy column from table={#3}{Insec}},%
+		create on use/3xx Mism Raw/.style={create col/copy column from table={#3}{Mism}},%
+		create on use/3xx Final sec Raw/.style={create col/copy column from table={#3}{Final sec}},%
+	}
+
+	\pgfplotstablenew[
+		columns={
+			Dataset,%
+			3xx Raw,%
+			3xx Sec Raw,%
+			3xx Mix sec Raw,%
+			3xx Insec Raw,%
+			3xx Mism Raw,%
+			3xx Final sec Raw,%
+			Total Scale,%
+			3xx Sec,%
+			3xx Mix sec,%
+			3xx Insec,%
+			3xx Mism,%
+			3xx Final sec%
+		},
+		create on use/Total Scale/.style={create col/expr={1/\thisrow{3xx Raw}}},%
+		create on use/3xx Sec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Sec Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Mix sec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Mix sec Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Insec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Insec Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Mism/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Mism Raw}*\thisrow{Total Scale}}},%
+		create on use/3xx Final sec/.style={create col/expr={\thisrow{3xx Raw}*\thisrow{3xx Final sec Raw}*\thisrow{Total Scale}}},%
+	]{\pgfplotstablegetrowsof{#2}}#1%
+}
