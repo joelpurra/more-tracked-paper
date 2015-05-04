@@ -742,6 +742,7 @@
 	allDatasetsYbarMiniResults,
 	allDatasetsStackedYbarPart2,
 	swedenHttpWwwDatasetsYbar,
+	paperTight,
 	width=.55\textwidth,
 	xticklabels={Counties,Domain registrars,Financial services,GOCS,Higher education,ISPs,Media,Municipalities,Public authorities,reach50,Top 10k .se,Rand 100k .se,},
 	xticklabel style={
@@ -789,6 +790,7 @@
 	allDatasetsYbarMiniResults,
 	allDatasetsStackedYbarPart2,
 	globalHttpWwwDatasetsYbar,
+	paperTight,
 	width=.4\textwidth,
 	yticklabels={},
 	xticklabels={Top 10k .se,Top 10k .dk,Top 10k global,Rand 100k .se,Rand 10k .dk,Rand 10k .com,Rand 10k .net,Rand 10k global,},
@@ -839,9 +841,16 @@
 	% title=(a) Internal resources,
 	datasetsCDF,
 	datasetsCDFMiniResults,
+	paperTight,
 	xlabel=Ratio of internal resources,
 	ylabel=Ratio of domains,
-	legend style={at={(1.025,.5)}, anchor=west},
+	legend style={at={(1.03,.5)}, anchor=west},
+	xlabel style={
+		at={(0.5,0.1)}
+	},
+	ylabel style={
+		at={(0.17,0.5)}
+	},
 ]
 
 	\CDFPlotFromDefaultDatasetsFile{datasets.non-failed.ratio-buckets.is-internal-domain.normalized.cumulative.sorted.tsv}
