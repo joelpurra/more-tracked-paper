@@ -78,10 +78,30 @@
 	\scatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww{#1}{\tempScatterTable}{#2}{#3}
 
 	\addplot[]
-	table[x=http-www,y=https-www,meta=Category]
+	table[
+		x=http-www,
+		y=https-www,
+		meta=Category,
+	]
 	\tempScatterTable;
 
 	\addlegendentry{#1}
+
+	\addplot[
+		sharp plot,
+		no markers,
+		ultra thin,
+	]
+	table[
+		x=http-www,
+		y={
+			create col/linear regression={
+				y=https-www,
+			},
+		},
+		%meta=Category,
+	]
+	\tempScatterTable;
 }
 
 \newcommand{\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedHttpHttpsWww}[2]{
