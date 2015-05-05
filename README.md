@@ -19,9 +19,12 @@ pdflatex tables.tex
 !!
 #open tables.pdf
 
-# Rendering figures requires -shell-escape.
+# Rendering figures/figures-ng requires -shell-escape.
 pdflatex -shell-escape figures.tex
 #open figures.pdf
+
+pdflatex -shell-escape figures-ng.tex
+#open figures-ng.pdf
 ```
 
 
