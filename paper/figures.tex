@@ -965,4 +965,112 @@
 
 
 
+\tikzsetnextfilename{mini-1x1-alexa-rank-plot}
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+	xlabel=Alexa rank,
+	ylabel=Organizations,
+	xmin=0,
+	xmax=1000000,
+	ymin=0,
+	xmajorgrids=true,
+	ymajorgrids=true,
+	% xtick={0,10000,100000,1000000},
+	xminorgrids=true,
+	enlarge x limits=false,
+	enlarge y limits=false,
+	height=.25\textwidth,
+	width=\textwidth,
+	legend columns=1,
+	legend style={at={(1.05,0.5)},anchor=west,cells={anchor=west},},
+	xticklabel style={
+		/pgf/number format/.cd,
+		/pgf/number format/fixed,
+		/pgf/number format/fixed zerofill=false,
+		/pgf/number format/precision=2
+	},
+	yticklabel style={
+		/pgf/number format/fixed,
+		/pgf/number format/fixed zerofill=false,
+		/pgf/number format/precision=2
+	},
+]
+	% \addplot[
+	% 	% only marks,
+	% 	blue,
+	% 	% opacity=0.2,
+	% 	% mark size=0.5pt,
+	% ]
+	% table[
+	% 	x=Rank,
+	% 	y=Value,
+	% ]
+	% \tableAlexaRankBucketsSortedSeRandomHttpWww;
+
+	% \addlegendentry{se.2014-07-10.random.100000-http-www}
+
+
+	\addplot[
+		% only marks,
+		orange,
+		% opacity=0.2,
+		% mark size=0.5pt,
+	]
+	table[
+		x=Rank,
+		y=Value,
+	]
+	\tableAlexaRankBucketsSortedAlexaRandomHttpWww;
+
+	\addlegendentry{alexa.2014-09-01.random.10000-http-www}
+
+
+	\addplot[
+		% only marks,
+		green,
+		% opacity=0.2,
+		% mark size=0.5pt,
+	]
+	table[
+		x=Rank,
+		y=Value,
+	]
+	\tableAlexaRankBucketsSortedAlexaTopHttpWww;
+
+	\addlegendentry{alexa.2014-09-01.top.10000-http-www}
+
+
+	\addplot[
+		% only marks,
+		red,
+		% opacity=0.2,
+		% mark size=0.5pt,
+	]
+	table[
+		x=Rank,
+		y=Value,
+	]
+	\tableAlexaRankBucketsSortedAlexaTopSeHttpWww;
+
+	\addlegendentry{alexa.2014-09-01.top.se.10000-http-www}
+
+
+	\addplot[
+		% only marks,
+		purple,
+		% opacity=0.2,
+		% mark size=0.5pt,
+	]
+	table[
+		x=Rank,
+		y=Value,
+	]
+	\tableAlexaRankBucketsSortedAlexaTopDkHttpWww;
+
+	\addlegendentry{alexa.2014-09-01.top.dk.10000-http-www}
+\end{semilogxaxis}
+\end{tikzpicture}
+
+
+
 \end{document}
