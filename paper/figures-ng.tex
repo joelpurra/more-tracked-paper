@@ -30,10 +30,14 @@
 			Content={mark=x,draw=black},%
 			Advertising={mark=o,draw=red},%
 			Analytics={mark=diamond,draw=blue},%
-			Social={mark=+,draw=green}%
+			Social={mark=+,draw=teal},%
+			% Hack to put the helper line in the legend.
+			{}={mark=-,draw=gray}%
 		},
 	]
 	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpHttpsWww
+
+	\addDefaultScatterOneToOneTrendLine
 
 	\legend{}
 
@@ -49,11 +53,15 @@
 			Content={mark=x,draw=black},%
 			Advertising={mark=o,draw=red},%
 			Analytics={mark=diamond,draw=blue},%
-			Social={mark=+,draw=green}%
+			Social={mark=+,draw=teal},%
+			% Hack to put the helper line in the legend.
+			{}={mark=-,draw=gray}%
 		},
 		yticklabels={},
 	]
 	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpHttpsWww
+
+	\addDefaultScatterOneToOneTrendLine
 
 \end{groupplot}
 \end{tikzpicture}
