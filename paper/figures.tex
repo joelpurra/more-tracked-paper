@@ -921,7 +921,14 @@
 	xlabel=Ratio of internal resources,
 	ylabel=Ratio of domains,
 	legend columns=2,
-	legend style={at={(0.5,1.04)}, anchor=south},
+	legend style={
+		at={(0.5,1.04)},
+		anchor=south,
+		cells={
+			anchor=west,
+			font={\fontsize{3.5}{3.5}\selectfont},
+		},
+	},
 	xlabel style={
 		at={(0.5,0.1)}
 	},
