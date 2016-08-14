@@ -32,12 +32,19 @@
 			Analytics={mark=diamond,draw=blue},%
 			Social={mark=+,draw=teal},%
 			% Hack to put the helper line in the legend.
-			{}={mark=-,draw=gray}%
+			{}={mark=-,draw=gray},%
+			% Fix legend three-column layout by padding the last column with empty entries.
+			{}={mark=none},%
+			{}={mark=noney}%
 		},
 	]
 	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedSwedenHttpHttpsWww
 
 	\addDefaultScatterOneToOneTrendLine
+
+	% Fix legend three-column layout by padding the last column with empty entries.
+	\addlegendentry{}
+	\addlegendentry{}
 
 	\legend{}
 
@@ -55,13 +62,26 @@
 			Analytics={mark=diamond,draw=blue},%
 			Social={mark=+,draw=teal},%
 			% Hack to put the helper line in the legend.
-			{}={mark=-,draw=gray}%
+			{}={mark=-,draw=gray},%
+			% Fix legend three-column layout by padding the last column with empty entries.
+			{}={mark=none},%
+			{}={mark=noney}%
 		},
 		yticklabels={},
+		legend columns=3,
+		legend transposed=true,
+		legend style={
+			at={(0.0,1.03)},%
+			anchor=south%
+		},
 	]
 	\addDefaultScatterTableDatasetsNonFailedDisconnectCategoriesCoverageExternalSortedGlobalHttpHttpsWww
 
 	\addDefaultScatterOneToOneTrendLine
+
+	% Fix legend three-column layout by padding the last column with empty entries.
+	\addlegendentry{}
+	\addlegendentry{}
 
 \end{groupplot}
 \end{tikzpicture}
